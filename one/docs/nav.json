@@ -204,14 +204,6 @@
           "slug": "tree"
         },
         {
-          "title": "RegionPicker - 地域选择",
-          "slug": "region-picker"
-        },
-        {
-          "title": "Schedule - 时段选择",
-          "slug": "schedule"
-        },
-        {
           "title": "Slider - 滑块",
           "slug": "slider"
         },
@@ -588,14 +580,6 @@
         {
           "title": "Tree",
           "slug": "tree"
-        },
-        {
-          "title": "RegionPicker",
-          "slug": "region-picker"
-        },
-        {
-          "title": "Schedule",
-          "slug": "schedule"
         },
         {
           "title": "Slider",
