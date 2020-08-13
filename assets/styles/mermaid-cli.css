@@ -1,0 +1,50 @@
+svg {
+  font-family: "Helvetica Neue", Arial, PingFang SC, "Microsoft YaHei", sans-serif;
+  font-size: 13px;
+}
+
+svg .label {
+  color: #333;
+}
+svg .node rect,
+svg .node circle,
+svg .node ellipse,
+svg .node polygon {
+  fill: #eee;
+  stroke: #999;
+  stroke-width: 1px;
+}
+svg .node.clickable {
+  cursor: pointer;
+}
+svg .arrowheadPath {
+  fill: #333;
+}
+svg .edgePath .path {
+  stroke: #666;
+  stroke-width: 1.5px;
+}
+svg .edgeLabel {
+  background-color: #fff;
+}
+svg .cluster rect {
+  fill: #eaf2fb !important;
+  stroke: #26a !important;
+  stroke-width: 1px !important;
+}
+svg .cluster text {
+  fill: #333;
+}
+svg div.mermaidTooltip {
+  position: absolute;
+  text-align: center;
+  max-width: 200px;
+  padding: 2px;
+  font-family: "Helvetica Neue", Arial, PingFang SC, "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+  background: #eaf2fb;
+  border: 1px solid #26a;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 100;
+}

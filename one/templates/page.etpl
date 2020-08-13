@@ -1,0 +1,30 @@
+<template>
+<article class="content ${style}">
+${content | raw}</article>
+</template><!-- if: ${boilerplate} -->
+<script>
+import { htmlAttrs } from '~/common/i18n'<!-- for: ${components} as ${component} -->
+import ${component} from '~/components/${component}'<!-- /for --><!-- for: ${demos} as ${demo}, ${index} -->
+import Demo${index} from '${demo.src}'<!-- /for --><!-- if: ${demos.length} -->
+import OneDemo from '~/components/OneDemo'<!-- /if -->
+
+export default {
+  mixins: [htmlAttrs],
+  components: {
+    <!-- for: ${components} as ${component}, ${index} -->${component}<!-- if: (${index} < ${component.length} - 1) && ${demos.length} -->,
+    <!-- /if--><!-- /for --><!-- for: ${demos} as ${demo}, ${index} -->'${demo.name}': Demo${index},
+    <!-- /for --><!-- if: ${demos.length} -->OneDemo<!-- /if -->
+  }
+}
+</script><!-- else -->
+<script>
+import { htmlAttrs } from '~/common/i18n'
+
+export default {<!-- if: ${layout} -->
+  layout: '${layout}',
+<!-- /if -->
+  mixins: [htmlAttrs]
+}
+</script><!-- /else --><!-- if: ${style} -->
+
+<style lang="stylus" src="@/assets/styles/post.styl" scoped></style><!-- /if -->

@@ -1,0 +1,805 @@
+{
+  "zh-Hans": [
+    {
+      "title": "简介",
+      "slug": "",
+      "exact": true
+    },
+    {
+      "title": "起步",
+      "slug": "getting-started",
+      "children": [
+        {
+          "title": "babel-plugin-veui",
+          "slug": "babel-plugin-veui"
+        },
+        {
+          "title": "veui-loader",
+          "slug": "veui-loader"
+        },
+        {
+          "title": ":focus-visible",
+          "slug": "focus-visible"
+        },
+        {
+          "title": "预设样式",
+          "slug": "style-variants"
+        }
+      ]
+    },
+    {
+      "title": "组件",
+      "slug": "components",
+      "link": false,
+      "children": [
+        {
+          "title": "GridContainer - 栅格容器",
+          "slug": "grid-container"
+        },
+        {
+          "title": "GridRow - 栅格行",
+          "slug": "grid-row"
+        },
+        {
+          "title": "GridColumn - 栅格栏",
+          "slug": "grid-column"
+        },
+        {
+          "title": "Alert - 提示",
+          "slug": "alert"
+        },
+        {
+          "title": "Button - 按钮",
+          "slug": "button"
+        },
+        {
+          "title": "ButtonGroup - 按钮组",
+          "slug": "button-group",
+          "sub": true
+        },
+        {
+          "title": "Breadcrumb - 面包屑",
+          "slug": "breadcrumb"
+        },
+        {
+          "title": "BreadcrumbItem - 面包屑项",
+          "slug": "breadcrumb-item",
+          "sub": true
+        },
+        {
+          "title": "DatePicker - 日期选择",
+          "slug": "date-picker"
+        },
+        {
+          "title": "Calendar - 日历",
+          "slug": "calendar",
+          "sub": true
+        },
+        {
+          "title": "Carousel - 轮播",
+          "slug": "carousel"
+        },
+        {
+          "title": "Radio - 单选框",
+          "slug": "radio"
+        },
+        {
+          "title": "RadioGroup - 单选框组",
+          "slug": "radio-group",
+          "sub": true
+        },
+        {
+          "title": "RadioButtonGroup - 单选按钮组",
+          "slug": "radio-button-group"
+        },
+        {
+          "title": "Checkbox - 复选框",
+          "slug": "checkbox"
+        },
+        {
+          "title": "CheckboxGroup - 复选框组",
+          "slug": "checkbox-group",
+          "sub": true
+        },
+        {
+          "title": "CheckButtonGroup - 复选按钮组",
+          "slug": "check-button-group"
+        },
+        {
+          "title": "Badge - 徽标",
+          "slug": "badge"
+        },
+        {
+          "title": "Tag - 标签",
+          "slug": "tag"
+        },
+        {
+          "title": "Select - 下拉选择",
+          "slug": "select"
+        },
+        {
+          "title": "OptionGroup - 选项组",
+          "slug": "option-group",
+          "sub": true
+        },
+        {
+          "title": "Option - 选项",
+          "slug": "option",
+          "sub": true
+        },
+        {
+          "title": "Dropdown - 下拉菜单",
+          "slug": "dropdown"
+        },
+        {
+          "title": "Switch - 开关",
+          "slug": "switch"
+        },
+        {
+          "title": "Icon - 图标",
+          "slug": "icon"
+        },
+        {
+          "title": "Link - 链接",
+          "slug": "link"
+        },
+        {
+          "title": "Pagination - 翻页",
+          "slug": "pagination"
+        },
+        {
+          "title": "Progress - 进度条",
+          "slug": "progress"
+        },
+        {
+          "title": "Steps - 步骤条",
+          "slug": "steps"
+        },
+        {
+          "title": "AlertBox - 警告弹框",
+          "slug": "alert-box"
+        },
+        {
+          "title": "ConfirmBox - 确认弹框",
+          "slug": "confirm-box"
+        },
+        {
+          "title": "PromptBox - 输入弹框",
+          "slug": "prompt-box"
+        },
+        {
+          "title": "Toast - 消息提示",
+          "slug": "toast"
+        },
+        {
+          "title": "Tooltip - 浮层提示",
+          "slug": "tooltip"
+        },
+        {
+          "title": "Popover - 气泡提示",
+          "slug": "popover"
+        },
+        {
+          "title": "Dialog - 对话框",
+          "slug": "dialog"
+        },
+        {
+          "title": "Overlay - 浮层",
+          "slug": "overlay"
+        },
+        {
+          "title": "SearchBox - 搜索框",
+          "slug": "search-box"
+        },
+        {
+          "title": "Transfer - 穿梭框",
+          "slug": "transfer"
+        },
+        {
+          "title": "FilterPanel - 过滤面板",
+          "slug": "filter-panel"
+        },
+        {
+          "title": "Tree - 树形控件",
+          "slug": "tree"
+        },
+        {
+          "title": "RegionPicker - 地域选择",
+          "slug": "region-picker"
+        },
+        {
+          "title": "Schedule - 时段选择",
+          "slug": "schedule"
+        },
+        {
+          "title": "Slider - 滑块",
+          "slug": "slider"
+        },
+        {
+          "title": "Uploader - 上传",
+          "slug": "uploader"
+        },
+        {
+          "title": "Input - 输入",
+          "slug": "input"
+        },
+        {
+          "title": "Textarea - 文本域",
+          "slug": "textarea"
+        },
+        {
+          "title": "NumberInput - 数字输入",
+          "slug": "number-input"
+        },
+        {
+          "title": "InputGroup - 输入组件组",
+          "slug": "input-group"
+        },
+        {
+          "title": "Form - 表单",
+          "slug": "form"
+        },
+        {
+          "title": "Fieldset - 表单项集合",
+          "slug": "fieldset",
+          "sub": true
+        },
+        {
+          "title": "Field - 表单项",
+          "slug": "field",
+          "sub": true
+        },
+        {
+          "title": "Label - 标签",
+          "slug": "label"
+        },
+        {
+          "title": "Span - 行内文本",
+          "slug": "span"
+        },
+        {
+          "title": "Tabs - 标签页",
+          "slug": "tabs"
+        },
+        {
+          "title": "Tab - 标签",
+          "slug": "tab",
+          "sub": true
+        },
+        {
+          "title": "Table - 表格",
+          "slug": "table"
+        },
+        {
+          "title": "Column - 表格列",
+          "slug": "column",
+          "sub": true
+        },
+        {
+          "title": "Loading - 加载",
+          "slug": "loading"
+        },
+        {
+          "title": "TimePicker - 时间选择",
+          "slug": "time-picker"
+        },
+        {
+          "title": "Autocomplete - 自动完成",
+          "slug": "autocomplete"
+        },
+        {
+          "title": "Anchor - 锚点",
+          "slug": "anchor"
+        },
+        {
+          "title": "Drawer - 抽屉",
+          "slug": "drawer"
+        },
+        {
+          "title": "Embedded - 嵌入式面板",
+          "slug": "embedded"
+        },
+        {
+          "title": "Menu - 导航菜单",
+          "slug": "menu"
+        },
+        {
+          "title": "Collapse - 折叠式面板",
+          "slug": "collapse"
+        },
+        {
+          "title": "Accordion - 手风琴面板",
+          "slug": "accordion"
+        }
+      ]
+    },
+    {
+      "title": "指令",
+      "slug": "directives",
+      "link": false,
+      "children": [
+        {
+          "title": "v-outside",
+          "slug": "v-outside"
+        },
+        {
+          "title": "v-drag",
+          "slug": "v-drag"
+        },
+        {
+          "title": "v-resize",
+          "slug": "v-resize"
+        },
+        {
+          "title": "v-nudge",
+          "slug": "v-nudge"
+        },
+        {
+          "title": "v-longpress",
+          "slug": "v-longpress"
+        }
+      ]
+    },
+    {
+      "title": "插件",
+      "slug": "plugins",
+      "link": false,
+      "children": [
+        {
+          "title": "toast",
+          "slug": "toast"
+        },
+        {
+          "title": "alert",
+          "slug": "alert"
+        },
+        {
+          "title": "confirm",
+          "slug": "confirm"
+        },
+        {
+          "title": "prompt",
+          "slug": "prompt"
+        }
+      ]
+    },
+    {
+      "title": "高级",
+      "slug": "advanced",
+      "link": false,
+      "children": [
+        {
+          "title": "主题",
+          "slug": "theming"
+        },
+        {
+          "title": "自定义校验规则",
+          "slug": "custom-rules"
+        },
+        {
+          "title": "全局配置",
+          "slug": "global-config"
+        },
+        {
+          "title": "浮层管理",
+          "slug": "overlay"
+        }
+      ]
+    }
+  ],
+  "en-US": [
+    {
+      "title": "Intro",
+      "slug": "",
+      "exact": true
+    },
+    {
+      "title": "Getting started",
+      "slug": "getting-started",
+      "children": [
+        {
+          "title": "babel-plugin-veui",
+          "slug": "babel-plugin-veui"
+        },
+        {
+          "title": "veui-loader",
+          "slug": "veui-loader"
+        },
+        {
+          "title": ":focus-visible",
+          "slug": "focus-visible"
+        },
+        {
+          "title": "Style variants",
+          "slug": "style-variants"
+        }
+      ]
+    },
+    {
+      "title": "Components",
+      "slug": "components",
+      "link": false,
+      "children": [
+        {
+          "title": "GridContainer",
+          "slug": "grid-container"
+        },
+        {
+          "title": "GridRow",
+          "slug": "grid-row"
+        },
+        {
+          "title": "GridColumn",
+          "slug": "grid-column"
+        },
+        {
+          "title": "Alert",
+          "slug": "alert"
+        },
+        {
+          "title": "Button",
+          "slug": "button"
+        },
+        {
+          "title": "ButtonGroup",
+          "slug": "button-group",
+          "sub": true
+        },
+        {
+          "title": "Breadcrumb",
+          "slug": "breadcrumb"
+        },
+        {
+          "title": "BreadcrumbItem",
+          "slug": "breadcrumb-item",
+          "sub": true
+        },
+        {
+          "title": "DatePicker",
+          "slug": "date-picker"
+        },
+        {
+          "title": "Calendar",
+          "slug": "calendar",
+          "sub": true
+        },
+        {
+          "title": "Carousel",
+          "slug": "carousel"
+        },
+        {
+          "title": "Radio",
+          "slug": "radio"
+        },
+        {
+          "title": "RadioGroup",
+          "slug": "radio-group",
+          "sub": true
+        },
+        {
+          "title": "RadioButtonGroup",
+          "slug": "radio-button-group"
+        },
+        {
+          "title": "Checkbox",
+          "slug": "checkbox"
+        },
+        {
+          "title": "CheckboxGroup",
+          "slug": "checkbox-group",
+          "sub": true
+        },
+        {
+          "title": "CheckButtonGroup",
+          "slug": "check-button-group"
+        },
+        {
+          "title": "Badge",
+          "slug": "badge",
+          "disabled": true
+        },
+        {
+          "title": "Tag",
+          "slug": "tag",
+          "disabled": true
+        },
+        {
+          "title": "Select",
+          "slug": "select"
+        },
+        {
+          "title": "OptionGroup",
+          "slug": "option-group",
+          "sub": true
+        },
+        {
+          "title": "Option",
+          "slug": "option",
+          "sub": true
+        },
+        {
+          "title": "Dropdown",
+          "slug": "dropdown"
+        },
+        {
+          "title": "Switch",
+          "slug": "switch"
+        },
+        {
+          "title": "Icon",
+          "slug": "icon"
+        },
+        {
+          "title": "Link",
+          "slug": "link"
+        },
+        {
+          "title": "Pagination",
+          "slug": "pagination"
+        },
+        {
+          "title": "Progress",
+          "slug": "progress"
+        },
+        {
+          "title": "Steps",
+          "slug": "steps"
+        },
+        {
+          "title": "AlertBox",
+          "slug": "alert-box"
+        },
+        {
+          "title": "ConfirmBox",
+          "slug": "confirm-box"
+        },
+        {
+          "title": "PromptBox",
+          "slug": "prompt-box"
+        },
+        {
+          "title": "Toast",
+          "slug": "toast"
+        },
+        {
+          "title": "Tooltip",
+          "slug": "tooltip"
+        },
+        {
+          "title": "Dialog",
+          "slug": "dialog"
+        },
+        {
+          "title": "Overlay",
+          "slug": "overlay"
+        },
+        {
+          "title": "SearchBox",
+          "slug": "search-box"
+        },
+        {
+          "title": "Transfer",
+          "slug": "transfer"
+        },
+        {
+          "title": "FilterPanel",
+          "slug": "filter-panel"
+        },
+        {
+          "title": "Tree",
+          "slug": "tree"
+        },
+        {
+          "title": "RegionPicker",
+          "slug": "region-picker"
+        },
+        {
+          "title": "Schedule",
+          "slug": "schedule"
+        },
+        {
+          "title": "Slider",
+          "slug": "slider"
+        },
+        {
+          "title": "Uploader",
+          "slug": "uploader"
+        },
+        {
+          "title": "Input",
+          "slug": "input"
+        },
+        {
+          "title": "Textarea",
+          "slug": "textarea",
+          "disabled": true
+        },
+        {
+          "title": "NumberInput",
+          "slug": "number-input",
+          "disabled": true
+        },
+        {
+          "title": "InputGroup",
+          "slug": "input-group",
+          "disabled": true
+        },
+        {
+          "title": "Form",
+          "slug": "form",
+          "disabled": true
+        },
+        {
+          "title": "Fieldset",
+          "slug": "fieldset",
+          "disabled": true
+        },
+        {
+          "title": "Field",
+          "slug": "field",
+          "disabled": true
+        },
+        {
+          "title": "Label",
+          "slug": "label",
+          "disabled": true
+        },
+        {
+          "title": "Span",
+          "slug": "span",
+          "disabled": true
+        },
+        {
+          "title": "Tabs",
+          "slug": "tabs",
+          "disabled": true
+        },
+        {
+          "title": "Tab",
+          "slug": "tab",
+          "disabled": true
+        },
+        {
+          "title": "Table",
+          "slug": "table"
+        },
+        {
+          "title": "Column",
+          "slug": "column",
+          "sub": true
+        },
+        {
+          "title": "Loading - 加载",
+          "slug": "loading",
+          "disabled": true
+        },
+        {
+          "title": "TimePicker - 时间选择",
+          "slug": "time-picker",
+          "disabled": true
+        },
+        {
+          "title": "Autocomplete - 自动完成",
+          "slug": "autocomplete",
+          "disabled": true
+        },
+        {
+          "title": "Anchor - 锚点",
+          "slug": "anchor",
+          "disabled": true
+        },
+        {
+          "title": "Drawer - 抽屉",
+          "slug": "drawer",
+          "disabled": true
+        },
+        {
+          "title": "Embedded - 嵌入式面板",
+          "slug": "embedded",
+          "disabled": true
+        },
+        {
+          "title": "Menu - 导航菜单",
+          "slug": "menu",
+          "disabled": true
+        },
+        {
+          "title": "Collapse - 折叠式面板",
+          "slug": "collapse",
+          "disabled": true
+        },
+        {
+          "title": "Accordion - 手风琴面板",
+          "slug": "accordion",
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "title": "Directives",
+      "slug": "directives",
+      "link": false,
+      "children": [
+        {
+          "title": "v-outside",
+          "slug": "v-outside",
+          "disabled": true
+        },
+        {
+          "title": "v-drag",
+          "slug": "v-drag",
+          "disabled": true
+        },
+        {
+          "title": "v-resize",
+          "slug": "v-resize",
+          "disabled": true
+        },
+        {
+          "title": "v-nudge",
+          "slug": "v-nudge",
+          "disabled": true
+        },
+        {
+          "title": "v-longpress",
+          "slug": "v-longpress",
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "title": "Plugins",
+      "slug": "plugins",
+      "link": false,
+      "children": [
+        {
+          "title": "toast",
+          "slug": "toast",
+          "disabled": true
+        },
+        {
+          "title": "alert",
+          "slug": "alert",
+          "disabled": true
+        },
+        {
+          "title": "confirm",
+          "slug": "confirm",
+          "disabled": true
+        },
+        {
+          "title": "prompt",
+          "slug": "prompt",
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "title": "Advanced",
+      "slug": "advanced",
+      "link": false,
+      "children": [
+        {
+          "title": "Theming",
+          "slug": "theming",
+          "disabled": true
+        },
+        {
+          "title": "Custom rules",
+          "slug": "custom-rules",
+          "disabled": true
+        },
+        {
+          "title": "Global config",
+          "slug": "global-config",
+          "disabled": true
+        },
+        {
+          "title": "Overlay management",
+          "slug": "overlay",
+          "disabled": true
+        }
+      ]
+    }
+  ]
+}

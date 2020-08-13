@@ -1,0 +1,306 @@
+@import "~highlight.js/styles/atom-one-dark.css"
+@import "./mermaid.css"
+
+margin-y($top, $bottom = $top)
+  margin-top $top
+  margin-bottom $bottom
+
+.post
+  padding 30px 60px
+  font-size 14px
+  line-height 1.8
+  color #666
+  font-weight 400
+  hyphens auto
+
+  .post-layout &
+    min-height 100%
+    margin-bottom -192px
+
+    &::after
+      content ""
+      display block
+      height 192px
+
+  .post-layout.no-links &
+    margin-bottom -58px
+
+  .no-links &::after
+    height 58px
+
+  h1
+    margin-y(0, 1.25em)
+    font-size 36px
+
+    small
+      vertical-align 0.1em
+      color #999
+
+  h2
+    margin-y(1.3em, 1.2em)
+    font-size 30px
+
+    &::before
+      content "#"
+      margin-right 5px
+      color #ccc
+
+    & + h3
+      margin-top 2em
+
+  h3
+    margin-y(1.25em, 1.15em)
+    font-size 24px
+
+  h4
+    margin-y(1.15em, 1.1em)
+    font-size 18px
+
+  h5
+    margin-y(1.05em)
+    font-size 14px
+
+  h6
+    margin-y(1em)
+    font-size 12px
+
+  h1
+  h2
+  h3
+    font-weight 500
+    clear both
+
+  h1
+  h2
+  h3
+  h4
+  h5
+  h6
+    color #333
+    line-height 1
+
+  br
+    clear both
+
+  p
+    margin-y(0.5em)
+
+  ul
+  ol
+    padding-left 1.5em
+
+  blockquote
+    margin 1em 0
+    padding-left 1em
+    border-left 5px solid #f1f1f1
+    color #999
+
+  table
+    width 100%
+    border-collapse collapse
+    border 1px solid #f1f1f1
+    border-style none solid
+    margin-y(1.5em)
+
+    pre
+    table
+      max-width 480px
+
+  th
+  td
+    min-width 90px
+    padding 7px 14px
+    border 1px solid #f1f1f1
+    border-style solid none
+    text-align left
+
+    & > :first-child
+      margin-top 5px
+
+    & > :last-child
+      margin-bottom 5px
+
+    pre
+      padding 10px 15px
+
+    table
+      margin-y(0.2em, 0.5em)
+
+  td:first-child
+    white-space nowrap
+
+  a:link
+  a:visited
+    &:not([class^="veui-"])
+      text-decoration none
+      color #3998fc
+      transition color 0.2s
+
+      &:hover
+        color #3389e3
+
+      &:active
+        color #2e7aca
+
+  code
+    padding 2px 4px
+    background-color rgba(0, 0, 0, 0.024)
+    font-size 90%
+    overflow visible
+    hyphens none
+    font-family Menlo, consolas, monospace
+
+  hr
+    height 1px
+    margin 2em 0
+    padding 0
+    background-color #eff0f1
+    border 0
+    clear both
+
+  figure
+    float right
+    width 60%
+    margin 0 0 30px 20px
+
+    & + h1
+    & + h2
+    & + h3
+    & + h4
+    & + h5
+    & + h6
+      margin-top 0
+
+    img
+      display block
+      margin auto
+
+    .preview
+      padding 20px
+      overflow hidden
+      border 1px solid #e5e5e5
+      transition box-shadow 0.2s
+      cursor pointer
+      text-align center
+
+      &:hover
+        box-shadow 0 0 5px rgba(0, 0, 0, 0.2)
+
+    &.hero
+      width 100%
+      float none
+
+  figcaption
+    margin-top 10px
+    font-size 12px
+
+    p
+      margin 0
+      line-height 20px
+
+    .caption
+      font-weight 500
+
+    .desc
+      color #999
+
+  .comparison
+    float right
+    width 60%
+    margin 0 0 30px 20px
+
+    figure
+      width calc(50% - 5px)
+      margin 0
+
+    .good
+      float left
+
+    .bad
+      float right
+
+      .caption
+        color #ff5b5b
+
+  img
+    max-width 100%
+    max-height 100%
+
+  pre
+    border 1px solid #eee
+    padding 30px
+    background-color #f9f9f9
+    white-space pre
+    overflow auto
+
+    code
+      background-color transparent
+      padding 0
+
+  var
+    font-family "PT Serif", Georgia, serif
+
+  kbd
+    display inline-block
+    padding 3px 5px 6px
+    font-size 90%
+    line-height 10px
+    color #444d56
+    vertical-align 1px
+    background-color #fafbfc
+    border solid 1px #c6cbd1
+    border-bottom-color #959da5
+    border-radius 3px
+    box-shadow inset 0 -1px 0 #959da5
+
+  .custom-block
+    border 1px solid
+    margin 1em 0
+    padding 0.75em 1em
+
+    & > :first-child
+      margin-top 0
+
+    & > :last-child
+      margin-bottom 0
+
+  .alert
+  .warning
+  .tip
+    font-size 13px
+
+  .alert
+    border-color #fee
+    background-color tint(#fee, 50%)
+
+  .warning
+    border-color #fef4e6
+    background-color tint(#fef4e6, 50%)
+
+  .tip
+    border-color #d8ebff
+    background-color tint(#d8ebff, 50%)
+
+  .badges
+    border none
+    padding 0
+
+    code
+      padding 2px 3px
+      background #333
+      border-radius 3px
+      color #fff
+      font-size 80%
+
+  .oss-badges
+    border none
+    padding 0
+
+    a
+      margin-right 10px
+
+  .one-demo
+    margin 1em 0 1.25em
+
+  .one-details
+    margin-bottom 5px

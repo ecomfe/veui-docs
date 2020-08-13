@@ -1,0 +1,12 @@
+node_modules
+npm-debug.log
+one/build/deps.json
+.DS_Store
+.nuxt
+.vscode
+pages
+components/demos
+dist
+logs
+assets/data
+static/images/mermaid
