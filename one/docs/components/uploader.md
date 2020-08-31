@@ -227,6 +227,7 @@
 | `remove` | [^event-remove] |
 | `success` | 上传成功时触发，回调参数与 `remove` 事件的回调参数相同。 |
 | `failure` | 上传失败时触发，回调参数与 `remove` 事件的回调参数相同。 |
+| `invalid` | [^event-invalid] |
 | `statuschange` | [^event-statuschange] |
 | `progress` | [^event-progress] |
 
@@ -258,6 +259,27 @@
 | `status` | `string` | 上传状态。`'success'` 表示上传成功；`'uploading'` 表示正在上传；`'failure'` 表示上传失败。 |
 
 同时也包含在 `convert-response` 中添加的自定义属性。
++++
+^^^
+
+^^^event-invalid
+文件校验失败时触发，回调参数为 `(invalidInfo: Object)`。
+
++++回调参数字段详情
+
+| 名称 | 类型 | 描述 |
+| -- | -- | -- |
+| `file` | `Object` | 没有通过校验的文件信息。如果校验失败的原因是选择的文件数量超过最大数量 `max-count` 限制，则这个字段为空。 |
+| `errors` | `Array` | 包含该文件所有校验错误信息的数组，数组的每一项是包含校验失败信息的对象。 |
++++
+
++++校验失败信息字段详情
+
+| 名称 | 类型 | 描述 |
+| -- | -- | -- |
+| `type` | `string` | 校验失败的类型，类型可从 `Uploader` 组件 `export` 的 `(errors: Object)` 对象获取，`errors` 对象包含 `TYPE_INVALID`/`SIZE_INVALID`/`TOO_MANY_FILES`/`CUSTOM_INVALID` 这四个字段，分别对应文件类型、文件大小、文件数量、自定义校验失败。 |
+| `value` | `number|string|Object` | 当失败类型 `type` 是 `TYPE_INVALID` 时，`value` 的值是文件名称；当 `type` 是 `SIZE_INVALID` 时，`value` 的值是文件大小；当 `type` 是 `TOO_MANY_FILES` 时，`value` 的值是已选择的文件数量；当 `type` 是 `CUSTOM_INVALID` 时，`value` 的值是文件。 |
+| `message` | `string` | 检验失败的提示信息。 |
 +++
 ^^^
 
