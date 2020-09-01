@@ -269,7 +269,7 @@
 
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `file` | `Object` | 没有通过校验的文件信息，与 `remove` 事件的回调参数中的 `file` 相同。。如果校验失败的原因是选择的文件数量超过最大数量 `max-count` 限制，则这个字段为空。 |
+| `file` | `Object` | 没有通过校验的文件信息，与 `remove` 事件的回调参数中的 `file` 相同。如果校验失败的原因是选择的文件数量超过最大数量 `max-count` 限制，则这个字段为空。 |
 | `errors` | `Array<Object>` | 包含该文件所有校验错误信息的数组，数组的每一项是包含校验失败信息的对象。 |
 +++
 
@@ -277,19 +277,19 @@
 
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `type` | `string` | 校验失败的类型，类型可从 `Uploader` 组件 `export` 的 `(errors: Object)` 对象获取，`errors` 对象包含 `TYPE_INVALID`/`SIZE_INVALID`/`TOO_MANY_FILES`/`CUSTOM_INVALID` 这四个字段，分别对应文件类型、文件大小、文件数量、自定义校验失败。 |
-| `value` | `number|string|Object` | 当失败类型 `type` 是 `TYPE_INVALID` 时，`value` 的值是文件名称；当 `type` 是 `SIZE_INVALID` 时，`value` 的值是文件大小；当 `type` 是 `TOO_MANY_FILES` 时，`value` 的值是已选择的文件数量；当 `type` 是 `CUSTOM_INVALID` 时，`value` 的值是文件。 |
+| `type` | `string` | 校验失败的类型，类型可从 `Uploader` 组件 `export` 的 `(errors: Object)` 对象获取。 |
+| `value` | `number|string|Object` | 没有通过校验的值，根绝 `type` 的不同有不同的类型。 |
 | `message` | `string` | 检验失败的提示信息。 |
 +++
 
-+++export 的 errors 字段详情
++++校验失败信息 type 和 value 对应关系
 
-| 名称 | 类型 | 描述 |
-| -- | -- | -- |
-| `TYPE_INVALID` | `string` | 值为 `'type'`，表示文件类型校验失败。 |
-| `SIZE_INVALID` | `string` | 值为 `'size'`，表示文件大小校验失败。 |
-| `TOO_MANY_FILES` | `string` | 值为 `'count'`，表示选择的文件数量超过最大数量 `max-count` 限制。 |
-| `CUSTOM_INVALID` | `string` | 值为 `'custom'`，表示 `validator` 自定义校验失败。 |
+| 失败类型 | 失败描述 | value 的类型 | value 描述 |
+| -- | -- | -- | -- |
+| `TYPE_INVALID` | 文件类型校验失败。 | `string` | 文件名称。 |
+| `SIZE_INVALID` | 文件大小校验失败。 | `number` | 文件大小。 |
+| `TOO_MANY_FILES` | 选择的文件数量超过最大数量 `max-count` 限制。 | `number` | 已选择的文件数量。 |
+| `CUSTOM_INVALID` | `validator` 自定义校验失败。 | `Object` | 文件对象。 |
 +++
 
 ^^^
