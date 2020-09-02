@@ -18,14 +18,8 @@
     "restart": "npm run stop && npm run serve"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^7.2.3",
     "babel-plugin-lodash": "^3.3.4",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-plugin-veui": "^2.0.0-beta.4",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-2": "^6.24.1",
-    "cheerio": "^1.0.0-rc.3",
+    "babel-plugin-veui": "^2.0.0-beta.5",
     "eslint": "^5.15.1",
     "eslint-config-prettier": "^4.1.0",
     "eslint-config-standard": "^12.0.0",
@@ -57,7 +51,6 @@
     "puppeteer": "^2.1.1",
     "recursive-readdir": "^2.2.2",
     "recursive-readdir-sync": "^1.0.6",
-    "reduce-css-calc": "^2.1.4",
     "rehype-raw": "^2.0.0",
     "rehype-stringify": "^3.0.0",
     "remark": "^8.0.0",
@@ -74,20 +67,19 @@
     "stylus-loader": "^3.0.2",
     "unist-util-remove": "^1.0.1",
     "unist-util-visit": "^1.4.0",
-    "veui": "^2.0.0-beta.4",
-    "veui-loader": "^2.0.0-beta.4",
-    "veui-theme-dls": "^2.0.0-beta.4",
-    "veui-theme-dls-icons": "^2.0.0-beta.4",
-    "vue": "^2.6.11",
+    "veui": "^2.0.0-beta.5",
+    "veui-loader": "^2.0.0-beta.5",
+    "veui-theme-dls": "^2.0.0-beta.5",
+    "veui-theme-dls-icons": "^2.0.0-beta.5",
+    "vue": "^2.6.12",
     "vue-awesome": "^4.1.0",
-    "vue-directive-normalizer": "^0.1.0",
     "vue-i18n": "^8.16.0",
-    "vue-server-renderer": "^2.6.11",
-    "vue-template-compiler": "^2.6.11",
+    "vue-server-renderer": "^2.6.12",
+    "vue-template-compiler": "^2.6.12",
     "vue-windows": "^0.2.4"
   },
   "dependencies": {
     "express": "^4.16.2",
-    "forever": "^3.0.0"
+    "forever": "^3.0.2"
   }
 }

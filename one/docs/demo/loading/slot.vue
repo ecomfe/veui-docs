@@ -1,6 +1,6 @@
 <template>
 <article>
-  <div>
+  <section>
     Custom icon-star:
     <veui-loading
       loading
@@ -14,21 +14,21 @@
       </template>
       loading...
     </veui-loading>
-  </div>
-  <div>
-    Custom icon-sun:
+  </section>
+  <section>
+    Custom icon-sync:
     <veui-loading loading>
       <template #spinner>
         <veui-icon
           spin
-          name="sun"
+          name="sync"
         />
       </template>
       loading...
     </veui-loading>
-  </div>
-  <div>
-    Custom icon-umbrella:
+  </section>
+  <section>
+    Custom icon-clockwise:
     <veui-loading
       loading
       ui="reverse"
@@ -37,20 +37,20 @@
       <template #spinner>
         <veui-icon
           spin
-          name="umbrella"
+          name="clockwise"
         />
       </template>
       loading...
     </veui-loading>
-  </div>
+  </section>
 </article>
 </template>
 
 <script>
 import { Icon, Loading } from 'veui'
-import 'vue-awesome/icons/sun'
-import 'vue-awesome/icons/star'
-import 'vue-awesome/icons/umbrella'
+import 'veui-theme-dls-icons/sync'
+import 'veui-theme-dls-icons/star'
+import 'veui-theme-dls-icons/clockwise'
 
 export default {
   components: {
@@ -64,5 +64,9 @@ export default {
 .reverse {
   background: #ccc;
   padding: 8px;
+}
+
+.section {
+  margin-bottom: 20px;
 }
 </style>

@@ -30,7 +30,7 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | `normal` `m` | [^ui] |
+| `ui` | `string=` | - | [^ui] |
 | `loading` | `boolean` | `false` | 是否处于加载状态。 |
 
 ^^^ui
