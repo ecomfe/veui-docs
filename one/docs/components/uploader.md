@@ -227,6 +227,7 @@
 | `remove` | [^event-remove] |
 | `success` | 上传成功时触发，回调参数与 `remove` 事件的回调参数相同。 |
 | `failure` | 上传失败时触发，回调参数与 `remove` 事件的回调参数相同。 |
+| `invalid` | [^event-invalid] |
 | `statuschange` | [^event-statuschange] |
 | `progress` | [^event-progress] |
 
@@ -259,6 +260,38 @@
 
 同时也包含在 `convert-response` 中添加的自定义属性。
 +++
+^^^
+
+^^^event-invalid
+文件校验失败时触发，回调参数为 `(invalidInfo: Object)`。
+
++++参数字段详情
+
+| 名称 | 类型 | 描述 |
+| -- | -- | -- |
+| `file` | `Object` | 没有通过校验的文件信息，与 `remove` 事件的回调参数中的 `file` 相同。如果校验失败的原因是选择的文件数量超过最大数量 `max-count` 限制，则这个字段为空。 |
+| `errors` | `Array<Object>` | 包含该文件所有校验错误信息的数组，数组的每一项是包含校验失败信息的对象。 |
++++
+
++++校验失败信息字段详情
+
+| 名称 | 类型 | 描述 |
+| -- | -- | -- |
+| `type` | `string` | 校验失败的类型，类型可从 `Uploader` 组件 `export` 的 `(errors: Object)` 对象获取。 |
+| `value` | `number|string|Object` | 没有通过校验的值，根绝 `type` 的不同有不同的类型。 |
+| `message` | `string` | 检验失败的提示信息。 |
++++
+
++++校验失败信息 type 和 value 对应关系
+
+| 失败类型 | 失败描述 | value 的类型 | value 描述 |
+| -- | -- | -- | -- |
+| `TYPE_INVALID` | 文件类型校验失败。 | `string` | 文件名称。 |
+| `SIZE_INVALID` | 文件大小校验失败。 | `number` | 文件大小。 |
+| `TOO_MANY_FILES` | 选择的文件数量超过最大数量 `max-count` 限制。 | `number` | 已选择的文件数量。 |
+| `CUSTOM_INVALID` | `validator` 自定义校验失败。 | `Object` | 文件对象。 |
++++
+
 ^^^
 
 ^^^event-statuschange
