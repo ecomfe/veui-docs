@@ -37,6 +37,7 @@
 
 <script>
 import { Button, Icon } from 'veui'
+import 'veui-theme-dls-icons/home'
 
 export default {
   components: {

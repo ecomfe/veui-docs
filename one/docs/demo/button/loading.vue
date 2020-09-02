@@ -7,8 +7,8 @@
   </section>
   <section>
     <veui-button
-      :loading="loading"
       ui="primary"
+      :loading="loading"
     >
       Primary
     </veui-button>
@@ -16,20 +16,52 @@
       Normal
     </veui-button>
     <veui-button
+      ui="basic"
       :loading="loading"
+    >
+      Basic
+    </veui-button>
+    <veui-button
       ui="strong"
+      :loading="loading"
     >
       Strong
     </veui-button>
     <veui-button
+      ui="translucent"
       :loading="loading"
+    >
+      Translucent
+    </veui-button>
+  </section>
+  <section>
+    <veui-button
       ui="text"
+      :loading="loading"
     >
       Text
     </veui-button>
     <veui-button
-      :loading="loading"
       ui="icon"
+      :loading="loading"
+    >
+      <veui-icon name="home"/>
+    </veui-button>
+    <veui-button
+      ui="icon strong"
+      :loading="loading"
+    >
+      <veui-icon name="home"/>
+    </veui-button>
+    <veui-button
+      ui="icon aux"
+      :loading="loading"
+    >
+      <veui-icon name="home"/>
+    </veui-button>
+    <veui-button
+      ui="primary square"
+      :loading="loading"
     >
       <veui-icon name="home"/>
     </veui-button>
