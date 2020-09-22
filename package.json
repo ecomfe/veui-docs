@@ -43,7 +43,7 @@
     "lowlight": "^1.9.2",
     "mkdirp": "^0.5.5",
     "moment": "^2.22.2",
-    "nuxt": "^2.14.0",
+    "nuxt": "^2.14.6",
     "object-deep-search": "0.0.7",
     "one-mermaid.cli": "^0.6.0",
     "one-remark-mermaid": "^0.3.1",
