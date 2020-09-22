@@ -40,7 +40,7 @@
 | `footless` | `boolean=` | `false` | 是否不显示默认的底部操作栏。 |
 | `loading` | `boolean=` | `false` | 是否处于加载状态。处于加载状态时确定按钮也将进入加载状态，无法点击。 |
 | `priority` | `number=` | - | 对话框浮层层叠权重，参考 [`Overlay`](./overlay) 组件的 [`priority`](./overlay#props) 属性。 |
-| `before-close` | `function(string)=: boolean=|Promise<boolean=>` | - | [^before-close] |
+| `before-close` | `function(string): boolean=|Promise<boolean=>` | - | [^before-close] |
 | `overlay-class` | `string|Object=` | - | 对话框浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props) 属性。 |
 
 ^^^ui

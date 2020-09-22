@@ -168,15 +168,15 @@
 | 字段 | 类型 | 描述 |
 | -- | -- | -- |
 | `onload` | `function` | 上传完成的回调函数，参数内容与 `convert-response` prop 返回值相同。 |
-| `onprogress` | `function` | 上传进度发生变化的回调函数，参数为 `{ loaded: number, total: number }`，`loaded` 为已上传部分大小，`total` 为文件总大小。 |
+| `onprogress` | `function` | 上传进度发生变化的回调函数，参数为 `{ loaded: number, total: number }`，`loaded` 为已上传部分字节数，`total` 为文件总字节数。 |
+| `oncancel` | `function` | 自定义上传主动取消时对组件进行的回调，无参数。 |
 | `onerror` | `function` | 上传出错的回调函数，参数为 `{ message: string }`，`message` 为错误提示信息。 |
 
-该方法如果返回一个函数，该函数将在用户操作取消或上传组件销毁时被调用，用来中断自定义上传过程。
-
+如果 `upload` 返回一个函数，该函数将在用户操作取消或上传组件销毁时被调用，用来中断自定义上传过程。
 ^^^
 
 ^^^controls
-图片上传模式下，自定义配置图片遮罩浮层上的操作项，参数为 `(file: Object, defaultControls: Array<Object>)`，`file` 为文件相关信息，`defaultControls` 为包含默认的操作项的数组。该方法可根据文件状态的不同，返回包含不同的操作项的数组。每个操作项的具体字段如下：
+图片上传模式下，用来自定义配置图片遮罩浮层上的操作项，参数为 `(file: Object, defaultControls: Array<Object>)`，`file` 为文件相关信息，`defaultControls` 为包含默认的操作项的数组。可根据文件状态的不同，返回包含不同的操作项的数组。每个操作项的具体字段如下：
 
 +++字段详情
 | 字段 | 类型 | 描述 |
@@ -184,7 +184,6 @@
 | `name` | `string` | 操作项的名称，点击该按钮后会抛出同名的事件，事件的回调参数为 `(file: Object, index: number)`， `file` 为触发事件的文件对象，`index` 为文件在列表中的序号。 |
 | `icon` | `string` | 操作项使用的图标。 |
 | `disabled` | `boolean=` | 操作项是否被禁用。如果该字段为空，则该操作项的禁用状态跟随组件整体的禁用状态。 |
-
 ^^^
 
 ### 插槽
@@ -201,9 +200,9 @@
 | `failure` | 图片上传模式下，上传失败的单个图片的区域。作用域参数与 `file` 作用域插槽相同。 |
 
 ^^^button-label
-上传文件的按钮里的内容。
+上传按钮里的内容。
 
-默认内容：提示选择文件。
+默认内容：文件上传为提示选择文件，图片上传则为上传图片图标。
 ^^^
 
 ^^^file
@@ -263,10 +262,9 @@
 ^^^
 
 ^^^event-invalid
-文件校验失败时触发，回调参数为 `(invalidInfo: Object)`。
+文件校验失败时触发，回调参数为 `(validity: Object)`。
 
 +++参数字段详情
-
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `file` | `Object` | 没有通过校验的文件信息，与 `remove` 事件的回调参数中的 `file` 相同。如果校验失败的原因是选择的文件数量超过最大数量 `max-count` 限制，则这个字段为空。 |
@@ -274,24 +272,21 @@
 +++
 
 +++校验失败信息字段详情
-
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `type` | `string` | 校验失败的类型，类型可从 `Uploader` 组件 `export` 的 `(errors: Object)` 对象获取。 |
-| `value` | `number|string|Object` | 没有通过校验的值，根绝 `type` 的不同有不同的类型。 |
+| `type` | `string` | 校验失败的类型，类型枚举值可从 `Uploader.errors` 对象获取，如 `Uploader.errors.SIZE_INVALID`。 |
+| `value` | `number|string|Object` | 没有通过校验的值，根据 `type` 的不同有不同的类型。 |
 | `message` | `string` | 检验失败的提示信息。 |
 +++
 
-+++校验失败信息 type 和 value 对应关系
-
-| 失败类型 | 失败描述 | value 的类型 | value 描述 |
++++校验失败类型与参数关系
+| 类型 | 描述 | `value` 类型 | `value` 描述 |
 | -- | -- | -- | -- |
 | `TYPE_INVALID` | 文件类型校验失败。 | `string` | 文件名称。 |
-| `SIZE_INVALID` | 文件大小校验失败。 | `number` | 文件大小。 |
-| `TOO_MANY_FILES` | 选择的文件数量超过最大数量 `max-count` 限制。 | `number` | 已选择的文件数量。 |
-| `CUSTOM_INVALID` | `validator` 自定义校验失败。 | `Object` | 文件对象。 |
+| `SIZE_INVALID` | 文件大小校验失败。 | `number` | 文件大小字节数。 |
+| `TOO_MANY_FILES` | 选择的文件数超过 `max-count` 限制。 | `number` | 已选择的文件数。 |
+| `CUSTOM_INVALID` | `validator` 自定义校验失败。 | `Object` | 文件对象，字段同 `remove` 事件回调参数。 |
 +++
-
 ^^^
 
 ^^^event-statuschange

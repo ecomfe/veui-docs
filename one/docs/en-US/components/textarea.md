@@ -36,6 +36,7 @@ Use the `disabled` prop to set a textarea to disabled state.
 | `composition` | `boolean` | `false` | Whether the input process should be aware of composition. |
 | `select-on-focus` | `boolean` | `false` | Whether to select text content when focused. |
 | `autoresize` | `boolean` | `false` | Whether the textarea should automatically expand when the content exceeds default height. |
+| `get-length` | `function(string): number=` | Used to customize length calculation of the input. |
 
 ^^^ui
 预设样式。

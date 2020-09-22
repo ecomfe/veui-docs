@@ -8,6 +8,12 @@
 
 [[ demo src="/demo/check-button-group/default.vue" ]]
 
+### 单复选共存
+
+可以使用 `exclusive` 选项与 `empty-value` 实现一些单复选共存的场景。
+
+[[ demo src="/demo/check-button-group/exclusive.vue" ]]
+
 ## API
 
 ### 属性
@@ -19,6 +25,7 @@
 | `value` | `Array` | `[]` | [^value] |
 | `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
 | `readonly` | `boolean=` | `false` | 是否为只读状态。 |
+| `empty-value` | `*` | - | 当取消所有选择时组件需要默认选中的值，通常用于存在 `exclusive` 选项的场景。 |
 
 ^^^ui
 预设样式。
@@ -31,7 +38,7 @@
 ^^^
 
 ^^^items
-复选按钮组数据源，项目类型为 `{label, value, disabled, ...}`。
+复选按钮组数据源，项目类型为 `{label, value, disabled, exclusive, ...}`。
 
 +++字段详情
 | 名称 | 类型 | 描述 |
@@ -39,6 +46,7 @@
 | `label` | `string` | 选项的文字说明。 |
 | `value` | `*` | 选项对应的值。 |
 | `disabled` | `boolean=` | 选项是否为禁用。 |
+| `exclusive` | `boolean=` | 选项是否为排它项。当选项为排它项时，选中该项将取消选中其它所有选项。 |
 +++
 ^^^
 
@@ -86,3 +94,9 @@
 
 选中状态变化后触发，回调参数为 `(value: Array)`。`value` 为当前按钮组已选项内 `value` 字段组成的数组。
 ^^^
+
+### 图标
+
+| 名称 | 描述 |
+| -- | -- |
+| `check` | 已选标志。 |

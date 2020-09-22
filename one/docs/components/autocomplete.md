@@ -12,7 +12,7 @@
 | -- | -- | -- | -- |
 | `datasource` | `Array<string|Object>=` | `[]` | [^datasource] |
 | `value` | `*` | - | [^prop-value] |
-| `match` | `function(string|Object, string)=: boolean` | - | 自定义搜索逻辑。 |
+| `match` | `function(string|Object, string): boolean=` | - | 自定义搜索逻辑。 |
 | `strict` | `boolean=` | `false` | 建议下拉面板关闭时，若输入值没有完全匹配建议值，那么会清空输入值。 |
 | `suggest-trigger` | `string|Array<string>=` | `'input'` | 触发建议下拉面板的时机，可用值有：`'input'`、`'focus'`。 |
 | `placeholder` | `string=` |  | 输入占位符。 |

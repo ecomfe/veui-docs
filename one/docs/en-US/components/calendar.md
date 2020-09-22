@@ -35,7 +35,7 @@ When `multiple` and `range` are both set to `true`, you can select multiple date
 | `week-start` | `number=` | `calendar.weekStart` | The start of a week. Can be [globally configured](#global-config). |
 | `fill-month` | `boolean=` | `true` | Whether to show dates of previous and next month in current panel when there's only one month panel. |
 | `date-class` | `string|Array|Object|function=` | `{}` | Custom HTML `class` for specified date. All [`class` expressions supported by Vue](https://vuejs.org/v2/guide/class-and-style.html#Binding-HTML-Classes) are available for non-function values. When specified as a function, whose signature is `function(Date): string|Array<string>|Object<string, boolean>`, the return value is also `class` expressions suppported by Vue. |
-| `disabled-date` | `function(Date)=: boolean` | `() => false` | Whether the specified date is disabled and cannot be selected. |
+| `disabled-date` | `function(Date, Date=): boolean=` | `() => false` | Used to customize whether the specified date is disabled or not. The first parameter is the date to be used to determine if the date is disabled. When in the range selection process and a date is already selected, it is passed as the second parameter. |
 | `disabled` | `boolean=` | `false` | Whether the calendar is disabled. |
 | `readonly` | `boolean=` | `false` | Whether the calendar is read-only. |
 

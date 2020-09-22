@@ -35,6 +35,7 @@ Use the `disabled` prop to set an input to disabled state.
 | `clearable` | `boolean=` | `false` | Whether to show a clear button. |
 | `composition` | `boolean=` | `false` | Whether the input process should be aware of composition. |
 | `select-on-focus` | `boolean=` | `false` | Whether to select text content when focused. |
+| `get-length` | `function(string): number=` | Used to customize length calculation of the input. |
 
 ^^^ui
 Style variants.

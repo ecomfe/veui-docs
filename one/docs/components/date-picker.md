@@ -33,10 +33,11 @@
 | `week-start` | `number` | `calendar.weekStart` | 一周的起始。可进行[全局配置](./calendar#全局配置)。 |
 | `fill-month` | `boolean` | `true` | 当只有一个面板时，是否要在当前月份面板显示非本月日期。 |
 | `date-class` | `string|Array|Object|function` | `{}` | 特定日期的自定义 HTML `class`。传非函数时，数据格式为所有 Vue 支持的 `class` 表达式；传函数时，签名为 `function(Date): string|Array<string>|Object<string, boolean>`，返回值格式亦为所有 Vue 支持的 `class` 表达式。 |
-| `disabled-date` | `function(Date): boolean` | `() => false` | 特定日期是否禁用。 |
+| `disabled-date` | `function(Date, Date=): boolean=` | `() => false` | 用于自定义指定日期是否禁用。第一个参数为需要判断是否禁用的日期。当处于范围选择过程中且已经选择了一个日期，会作为第二个参数传入。 |
 | `clearable` | `boolean` | `false` | 已选值是否可以清除。 |
 | `placeholder` | `string` | `range ? datepicker.rangePlaceholder : datepicker.placeholder` | 未选择时的占位文本。可进行[全局配置](#全局配置)。 |
-| `format` | `string` | `'yyyy-MM-dd'`/`'yyyy-MM'`/`'yyyy'` | 用于格式化的字符串表达式，具体格式可以参见 [date-fns 的文档](https://date-fns.org/v2.12.0/docs/format)。 |
+| `format` | `string|function(Date): string=` | `'yyyy-MM-dd'`/`'yyyy-MM'`/`'yyyy'` | 使用字符串时，表示用于格式化/解析的字符串表达式，具体格式可以参见 [date-fns 的文档](https://date-fns.org/v2.12.0/docs/format)。传入函数可自定义格式化逻辑。 |
+| `parse` | `function(string): Date=` | - | 自定义将输入字符串解析为 `Date` 对象的函数。 |
 | `shortcuts` | `Array<Object>` | `datepicker.shortcuts` | [^shortcuts] |
 | `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
 | `readonly` | `boolean=` | `false` | 是否为只读状态。 |
@@ -181,6 +182,8 @@
 | 名称 | 描述 |
 | -- | -- |
 | `select` | [^event-select] |
+| `selectstart` | 选择日期范围时，选择完起始日期时触发，回调参数 `(picking: Date)`，表示已选的起始项日期。 |
+| `selectprogress` | [^event-selectprogress] |
 
 ^^^event-select
 :::badges
@@ -188,6 +191,17 @@
 :::
 
 选择修改后触发，回调参数为 `(selected)`。数据类型和 `selected` 属性一致。
+^^^
+
+^^^event-selectprogress
+选择日期范围时，在已经选择开始日期后，通过鼠标或键盘交互标记到的结束日期变更时触发。回调参数为 `(picking)`，表示当前标记的日期范围，类型取决于 `multiple` 属性的值。
+
++++参数详请
+| `multiple` | 类型 |
+| -- | -- |
+| `false` | `[Date, Date]` |
+| `true` | `Array<[Date, Date]>` |
++++
 ^^^
 
 ### 全局配置

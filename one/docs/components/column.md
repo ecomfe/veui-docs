@@ -19,7 +19,7 @@
 | `width` | `string=|number=` | - | 列宽，值为像素值。 |
 | `sortable` | `boolean=` | `false` | [^sortable] |
 | `align` | `string=` | - | 内容对齐方式，支持 `left`/`center`/`right`。 |
-| `span` | `function(number)=: Object` | | [^span] |
+| `span` | `function(number): Object=` | | [^span] |
 
 ^^^sortable
 本列是否支持排序。

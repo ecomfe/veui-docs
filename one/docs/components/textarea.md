@@ -36,6 +36,7 @@
 | `composition` | `boolean` | `false` | 是否感知输入法输入过程的值。 |
 | `select-on-focus` | `boolean` | `false` | 聚焦时是否自动选中文本域文本。 |
 | `autoresize` | `boolean` | `false` | 高度是否会被内容撑开。 |
+| `get-length` | `function(string): number=` | 自定义的字符长度计算函数。 |
 
 ^^^ui
 预设样式。

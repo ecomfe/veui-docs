@@ -19,7 +19,7 @@ See [the demos of `Table`](./table#demos).
 | `width` | `string=|number=` | - | The column width in `px` value. |
 | `sortable` | `boolean=` | `false` | [^sortable] |
 | `align` | `string=` | - | The alignment of cell content in the column. Supports `left`/`center`/`right`. |
-| `span` | `function(number)=: Object` | | [^span] |
+| `span` | `function(number): Object=` | | [^span] |
 
 ^^^sortable
 Whether current column is sortable.

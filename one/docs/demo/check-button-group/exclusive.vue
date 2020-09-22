@@ -1,19 +1,11 @@
 <template>
 <article>
   <section>
-    <h4>Normal size</h4>
+    <h4>Select size</h4>
     <veui-check-button-group
       v-model="selected"
       :items="licenses"
-    />
-    <p>Checked: {{ readable }}</p>
-  </section>
-  <section>
-    <h4>Small size</h4>
-    <veui-check-button-group
-      v-model="selected"
-      ui="s"
-      :items="licenses"
+      empty-value="any"
     />
     <p>Checked: {{ readable }}</p>
   </section>
@@ -29,19 +21,24 @@ export default {
   },
   data () {
     return {
-      selected: null,
+      selected: ['any'],
       licenses: [
         {
-          label: 'MIT License',
-          value: 'mit'
+          label: 'Any',
+          value: 'any',
+          exclusive: true
         },
         {
-          label: 'BSD License',
-          value: 'bsd'
+          label: 'Small',
+          value: 'sm'
         },
         {
-          label: 'Apache License 2.0',
-          value: 'apache2'
+          label: 'Medium',
+          value: 'md'
+        },
+        {
+          label: 'Large',
+          value: 'lg'
         }
       ]
     }

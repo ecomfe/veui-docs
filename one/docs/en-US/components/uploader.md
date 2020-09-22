@@ -40,6 +40,8 @@ Set the `type` prop to `image` to use the image upload mode.
 | `progress` | `string` | `'text'` | [^progress] |
 | `autoupload` | `boolean` | `true` | Whether to start upload as soon as a file is selected. |
 | `order` | `string` | `asc` | [^order] |
+| `upload` | `function(Object, Object): function` | - | [^upload] |
+| `controls` | `function(Object, Array<Object>): Array<Object>` | - | [^controls] |
 
 ^^^type
 The type of the uploader.
@@ -144,6 +146,31 @@ The order of displaying uploaded files according to start time.
 +++
 ^^^
 
+^^^upload
+Customizing the upload process in case the value of `request-mode` is `'custom'`, the first parameter is the native [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object and the second parameter is the object that contains callback functions associated with the upload process, with the following properties.
+
++++Properties
+| Property | Type | Description |
+| -- | -- | -- |
+| `onload` | `function` | The upload completion callback function whose arguments is the same as the `convert-response` prop's return value. |
+| `onprogress` | `function` | The callback function for upload progress, the parameter type being `{ loaded: number, total: number }`, `loaded` is the number of bytes that have been uploaded, and `total` is the total number of bytes in the file. |
+| `oncancel` | `function` | The callback to the component when the custom upload is actively cancelled, no parameters. |
+| `onerror` | `function` | The callback for upload error, the parameter type is `{ message: string }` and `message` is the error message. |
+
+If `upload` returns a function, it will be called when the user cancelled proactively or the upload component is destroyed, to abort the custom upload process.
+^^^
+
+^^^controls
+In image upload mode, it is used to customize the actions on the floating toolbar. The parameter types are `(file: Object, defaultControls: Array<Object>)`, where `file` is the file related information and `defaultControls` is the array containing the default actions. It can return an array of different actions depending on the file state. The specific properties for each action item are as follows.
+
++++Properties
+| Property | Type | Description |
+| -- | -- | -- |
+| `name` | `string` | The name of the action item. When the button is clicked, an event with the same name will be emitted, with `(file: Object, index: number)` as the callback parameter, `file` is the file object that triggered the event, and `index` is the number of the file in the list. |
+| `icon` | `string` | The icon of the action item. |
+| `disabled` | `boolean=` | Whether the action item is disabled. If this property is undefined, the disabled state of the action item follows the disabled state of the component. |
+^^^
+
 ### Slots
 
 | Name | Description |
@@ -162,7 +189,7 @@ The order of displaying uploaded files according to start time.
 | `extra-operation` | The content of extra operatins when under image upload mode, eg. custom buttons. Shares the same slot properties with slot `file'. |
 
 ^^^button-label
-The content of the uploader button. Suggests to select a file by default.
+The content of the uploader button. By default, it suggests to select a file for file uploaders and shows an upload icon for image uploaders.
 ^^^
 
 ^^^type-invalid
@@ -210,6 +237,7 @@ The content of each file.
 | `remove` | [^event-remove] |
 | `success` | Triggers when upload succeeded. Shares the same callback parameter list with the `remove` event. |
 | `failure` | Triggers when upload failed. Shares the same callback parameter list with the `remove` event. |
+| `invalid` | [^event-invalid] |
 | `statuschange` | [^event-statuschange] |
 | `progress` | [^event-progress] |
 
@@ -241,6 +269,34 @@ Triggered when a file is removed. The callback parameter list is `(file, index)`
 | `status` | `string` | The status of the upload process. Can be one of `'success'`/`'uploading'`/`'failure'`. |
 
 Fields added from `convert-response` are also available.
++++
+^^^
+
+^^^event-invalid
+Triggered when file validation fails. The callback parameter list is `(validity: Object)`.
+
++++Parameter properties
+| Name | Type | Description |
+| -- | -- | -- |
+| `file` | `Object` | The information about the file that failed the validation, being the same type as `file` in the callback parameter of the `remove` event. This property is empty if the validation fails because the number of files selected exceeds the `max-count` limit. |
+| `errors` | `Array<Object>` | Array of all the validation error messages of the file, each item in it is an object that contains validation failure information. |
++++
+
++++Validation error properties
+| Name | Type | Description |
+| -- | -- | -- |
+| `type` | `string` | The type of validation error, whose enum value can be accessed from the `Uploader.errors` object, eg. `Uploader.errors.SIZE_INVALID`. |
+| `value` | `number|string|Object` | The value that doesn't pass validation, can be different types depending on the `type` property. |
+| `message` | `string` | The validation error message. |
++++
+
++++Relationship between validation failure types and parameters
+| type | description | `value` type | `value` description |
+| -- | -- | -- | -- |
+| `TYPE_INVALID` | File type validation failure. | `string` | File name. |
+| `SIZE_INVALID` | File size validation failure. | `number` | File size in bytes. |
+| `TOO_MANY_FILES` | The number of selected files exceeds the `max-count` limit. | `number` | Number of files selected. |
+| `CUSTOM_INVALID` | Custom validation failure returned by `validator` prop. | `Object` | File object, same as `remove` event callback parameter. |
 +++
 ^^^
 

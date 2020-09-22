@@ -4,7 +4,7 @@
 
 ### 风格
 
-可选的 `ui` 属性值：`primary`/`strong`。
+可选的 `ui` 属性值：`primary`/`strong`/`basic`。
 
 [[ demo src="/demo/button-group/style.vue" ]]
 
@@ -44,6 +44,7 @@
 | -- | -- |
 | `primary` | 主要按钮，背景显示为主题色。 |
 | `strong` | 加强样式。 |
+| `basic` | 基础样式。 |
 | `xs` | 超小尺寸样式。 |
 | `s` | 小尺寸样式。 |
 | `m` | 中尺寸样式。 |

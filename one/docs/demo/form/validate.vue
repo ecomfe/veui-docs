@@ -22,10 +22,7 @@
       :rules="ageRule"
       label="年龄"
     >
-      <veui-input
-        v-model="formData.age"
-        placeholder="错误提示优先出在右侧"
-      />
+      <veui-input v-model="formData.age"/>
     </veui-field>
 
     <veui-field
@@ -129,7 +126,7 @@
       </veui-button>
       <veui-button
         :loading="isValidating"
-        @click="() => this.$refs.form.reset()"
+        @click="resetForm"
       >
         重置
       </veui-button>
@@ -320,6 +317,9 @@ export default {
     },
     handleInvalid () {
       this.isValidating = false
+    },
+    resetForm () {
+      this.$refs.form.reset()
     }
   }
 }

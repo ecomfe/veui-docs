@@ -21,7 +21,7 @@
 | `footless` | `boolean=` | `false` | 是否不显示默认的底部操作栏。 |
 | `loading` | `boolean=` | `false` | 是否处于加载状态。处于加载状态时确定按钮也将进入加载状态，无法点击。 |
 | `priority` | `number=` | - | 折叠式面板浮层层叠权重，参考 [`Overlay`](./overlay) 组件的 [`priority`](./overlay#props) 属性。 |
-| `before-close` | `function(string)=: boolean=|Promise<boolean=>` | - | 在将触发折叠式面板关闭的操作发生后执行，参考 [`Dialog`](./dialog) 组件的 [`before-close`](./dialog#props) 属性。 |
+| `before-close` | `function(string): boolean=|Promise<boolean=>` | - | 在将触发折叠式面板关闭的操作发生后执行，参考 [`Dialog`](./dialog) 组件的 [`before-close`](./dialog#props) 属性。 |
 | `overlay-class` | `string|Object=` | - | 折叠式面板浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props) 属性。 |
 
 ^^^ui

@@ -18,6 +18,12 @@
       <veui-button>Redo</veui-button>
     </veui-button-group>
   </section>
+  <section>
+    <veui-button-group ui="basic">
+      <veui-button>Undo</veui-button>
+      <veui-button>Redo</veui-button>
+    </veui-button-group>
+  </section>
 </article>
 </template>
 

@@ -4,7 +4,7 @@
 
 ### Stylistic variants
 
-Available style variants for the `ui` prop: `primary`/`strong`.
+Available style variants for the `ui` prop: `primary`/`strong`/`basic`.
 
 [[ demo src="/demo/button-group/style.vue" ]]
 
@@ -44,6 +44,7 @@ Style variants. A space-separated list of enum values.
 | -- | -- |
 | `primary` | Primary buttons. |
 | `strong` | Strong buttons. |
+| `basic` | Basic buttons. |
 | `xs` | Extra small. |
 | `s` | Small. |
 | `m` | Medium. |

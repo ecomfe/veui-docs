@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "babel-plugin-lodash": "^3.3.4",
-    "babel-plugin-veui": "^2.0.0-beta.5",
+    "babel-plugin-veui": "^2.0.0-beta.11",
     "eslint": "^5.15.1",
     "eslint-config-prettier": "^4.1.0",
     "eslint-config-standard": "^12.0.0",
@@ -33,6 +33,7 @@
     "esm": "^3.2.25",
     "etpl": "^3.2.0",
     "focus-visible": "^4.1.5",
+    "forever": "^3.0.2",
     "hastscript": "^3.1.0",
     "js-yaml": "^3.13.1",
     "less": "^3.9.0",
@@ -67,19 +68,15 @@
     "stylus-loader": "^3.0.2",
     "unist-util-remove": "^1.0.1",
     "unist-util-visit": "^1.4.0",
-    "veui": "^2.0.0-beta.5",
-    "veui-loader": "^2.0.0-beta.5",
-    "veui-theme-dls": "^2.0.0-beta.5",
-    "veui-theme-dls-icons": "^2.0.0-beta.5",
-    "vue": "^2.6.12",
+    "veui": "^2.0.0-beta.10",
+    "veui-loader": "^2.0.0-beta.11",
+    "veui-theme-dls": "^2.0.0-beta.11",
+    "veui-theme-dls-icons": "^2.0.0-beta.11",
     "vue-awesome": "^4.1.0",
     "vue-i18n": "^8.16.0",
-    "vue-server-renderer": "^2.6.12",
-    "vue-template-compiler": "^2.6.12",
     "vue-windows": "^0.2.4"
   },
   "dependencies": {
-    "express": "^4.16.2",
-    "forever": "^3.0.2"
+    "express": "^4.16.2"
   }
 }

@@ -33,10 +33,11 @@ When selecting a date range, the `shortcuts` prop can be used to provide predefi
 | `week-start` | `number=` | `calendar.weekStart` | The start of a week. Can be [globally configured](./calendar#global-config). |
 | `fill-month` | `boolean=` | `true` | Whether to show dates of previous and next month in current panel when there's only one month panel. |
 | `date-class` | `string|Array|Object|function=` | `{}` | Custom HTML `class` for specified date. All [`class` expressions supported by Vue](https://vuejs.org/v2/guide/class-and-style.html#Binding-HTML-Classes) are available for non-function values. When specified as a function, whose signature is `function(Date): string|Array<string>|Object<string, boolean>`, the return value is also `class` expressions suppported by Vue. |
-| `disabled-date` | `function(Date)=: boolean` | `() => false` | Whether the specified date is disabled and cannot be selected. |
+| `disabled-date` | `function(Date, Date=): boolean=` | `() => false` | Used to customize whether the specified date is disabled or not. The first parameter is the date to be used to determine if the date is disabled. When in the range selection process and a date is already selected, it is passed as the second parameter. |
 | `clearable` | `boolean=` | `false` | Whether selected date (ranges) can be cleared. |
 | `placeholder` | `string=` | `range ? datepicker.rangePlaceholder : datepicker.placeholder` | The placeholder text displayed when nothing is selected. Can be [globally configured](./calendar#global-config). |
-| `format` | `string=` | `'YYYY-MM-DD'` | The format expression for displaying final selected date (ranges). See details at [the documentation of date-fns](https://date-fns.org/v1.29.0/docs/format). |
+| `format` | `string|function(Date): string=` | `'YYYY-MM-DD'` | When being string type, denotes the format expression for displaying final selected date (ranges). See details at [the documentation of date-fns](https://date-fns.org/v1.29.0/docs/format). Can also be a function to customize the formatting logic. |
+| `parse` | `function(string): Date=` | Custom function to parse the input string expressions into `Date` objects. |
 | `shortcuts` | `Array<Object>=` | `datepicker.shortcuts` | [^shortcuts] |
 | `shortcuts-position` | `string=` | `datepicker.shortcutsPosition` | The position of shortcuts. Can be either `'before'` or `'after'`, corresponding to the before or after the content of the month panel respectively. Can be [globally configured](./calendar#global-config). |
 | `disabled` | `boolean=` | `false` | Whether the date picker is disabled. |
@@ -182,6 +183,8 @@ The content of each date cell in the dropdown overlay. Displays the correspondin
 | Name | Description |
 | -- | -- |
 | `select` | [^event-select] |
+| `selectstart` | Triggered when selecting a date range and a start date is selected. The callback parameter list is `(picking: Date)`, being the selected start date. |
+| `selectprogress` | [^event-selectprogress] |
 
 ^^^event-select
 :::badges
@@ -189,6 +192,17 @@ The content of each date cell in the dropdown overlay. Displays the correspondin
 :::
 
 Triggered when the selected date (range) is changed. The callback parameter list is `(selected)` with `selected` having the same type with the `selected` prop.
+^^^
+
+^^^event-selectprogress
+Triggered when selecting a date range and an end date is marked with pointer/keyboard interaction, and for each time the end date changes. The callback parameter list is `(picking)`, with `picking` being the marked date range. The type of `picking` depends on the value of the `multiple` prop.
+
++++Parameters types
+| `multiple` | Type |
+| -- | -- |
+| `false` | `[Date, Date]` |
+| `true` | `Array<[Date, Date]>` |
++++
 ^^^
 
 ### Global config

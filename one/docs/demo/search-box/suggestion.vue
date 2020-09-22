@@ -8,8 +8,8 @@
     @select="handleSelect"
   />
   <veui-search-box
-    ui="strong"
     v-model="value1"
+    ui="strong"
     clearable
     :suggestions="suggestions1"
     replace-on-select
@@ -71,7 +71,7 @@ export default {
   }
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .veui-search-box {
   margin-left: 1em;
 }

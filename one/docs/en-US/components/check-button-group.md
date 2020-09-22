@@ -19,6 +19,7 @@ Available values for the `ui` prop: `s`/`m`.
 | `value` | `Array` | `[]` | [^value] |
 | `disabled` | `boolean=` | `false` | Whether the check button group is disabled. |
 | `readonly` | `boolean=` | `false` | Whether the check button group is read-only. |
+| `empty-value` | `*` | - | The value to be selected when all selected values are deselected. Used when `exclusive` items are present. |
 
 ^^^ui
 Style variants.
@@ -26,12 +27,12 @@ Style variants.
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `m` | Medium. |
 | `s` | Small. |
+| `m` | Medium. |
 ^^^
 
 ^^^items
-The datasource of items with the item type being `{label, value, disabled, ...}`.
+The datasource of items with the item type being `{label, value, disabled, exclusive ...}`.
 
 +++Properties
 | Name | Type | Description |
