@@ -36,7 +36,7 @@
     "forever": "^3.0.2",
     "hastscript": "^3.1.0",
     "js-yaml": "^3.13.1",
-    "less": "^3.9.0",
+    "less": "3.9.0",
     "less-loader": "^4.1.0",
     "less-plugin-est": "^3.0.0",
     "lodash": "^4.17.10",
