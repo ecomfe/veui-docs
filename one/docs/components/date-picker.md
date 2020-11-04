@@ -39,6 +39,7 @@
 | `format` | `string|function(Date): string=` | `'yyyy-MM-dd'`/`'yyyy-MM'`/`'yyyy'` | 使用字符串时，表示用于格式化/解析的字符串表达式，具体格式可以参见 [date-fns 的文档](https://date-fns.org/v2.12.0/docs/format)。传入函数可自定义格式化逻辑。 |
 | `parse` | `function(string): Date=` | - | 自定义将输入字符串解析为 `Date` 对象的函数。 |
 | `shortcuts` | `Array<Object>` | `datepicker.shortcuts` | [^shortcuts] |
+| `expanded` | `boolean=` | `false` | [^expanded] |
 | `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
 | `readonly` | `boolean=` | `false` | 是否为只读状态。 |
 
@@ -157,6 +158,14 @@
 ]
 ```
 
+^^^expanded
+:::badges
+`.sync`
+:::
+
+下拉浮层是否展开。
+^^^
+
 ### 插槽
 
 | 名称 | 描述 |
@@ -184,6 +193,7 @@
 | `select` | [^event-select] |
 | `selectstart` | 选择日期范围时，选择完起始日期时触发，回调参数 `(picking: Date)`，表示已选的起始项日期。 |
 | `selectprogress` | [^event-selectprogress] |
+| `toggle` | 下拉浮层展开状态切换时触发，回调参数为 `(expanded: boolean)`。`expanded` 表示操作将触发下拉浮层展开还是收起。 |
 
 ^^^event-select
 :::badges

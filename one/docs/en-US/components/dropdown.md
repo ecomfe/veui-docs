@@ -53,6 +53,7 @@ Use the `trigger` prop to specify when to open the dropdown menu. Use the `split
 | `label` | `string` | - | The descriptive label of the dropdown button. |
 | `trigger` | `string=` | `'click'` | When to trigger the dropdown to open. Available values are `'click'`/`'hover'`. |
 | `split` | `boolean=` | `false` | Whether to split the dropdown button into a command button and a toggle button for the dropdown layer. |
+| `expanded` | `boolean=` | `false` | [^expanded] |
 | `disabled` | `boolean=` | `false` | Whether the dropdown is disabled. |
 | `overlay-class` | `string|Array|Object=` | - | See the `overlay-class` prop of [`Overlay`](./overlay). |
 
@@ -81,6 +82,14 @@ The list of options with the option type being `{label, value, dropdown, disable
 | `options` | `Array<Object>=` | The child options of current option. The item type is the same as the items of the `options` prop. |
 | `disabled` | `boolean=` | Whether the option is disabled. |
 +++
+^^^
+
+^^^expanded
+:::badges
+`.sync`
+:::
+
+Whether the dropdown menu is expanded.
 ^^^
 
 ### Slots
@@ -153,6 +162,7 @@ Additionally, custom properties in current option, apart from the listed ones, w
 | Name | Description |
 | -- | -- |
 | `click` | Triggered when an option is clicked. The callback parameter list is `(value: *=)`. `value` is the `value` property of the option being clicked. Also triggered when `split` is `true` and the command button is clicked, in this case there won't be a `value` argument. |
+| `toggle` | Triggered when the expanded state is going to change. The callback parameter list is `(expanded: boolean)`. `expanded` denotes whether the dropdown menu is to be expanded or collapsed. |
 
 ### Icons
 

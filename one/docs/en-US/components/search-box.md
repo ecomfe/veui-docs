@@ -38,6 +38,7 @@ Available size values for the `ui` prop: `xs`/`s`/`m`/`l`.
 | `suggestions` | `Array<string>|Array<Object>` | - | [^suggestions] |
 | `replace-on-select` | `boolean` | `true` | Whether to replace the content with suggestion item value when it's selected. |
 | `suggest-trigger` | `Array<string>|string` | `input` | [^suggest-trigger] |
+| `expanded` | `boolean=` | `false` | [^expanded] |
 | `disabled` | `boolean=` | `false` | Whether the search box is disabled. |
 | `readonly` | `boolean=` | `false` | Whether the search box is read-only. |
 
@@ -87,6 +88,14 @@ Specifies when the suggestion list is displayed. Can be either an event name or 
 +++
 ^^^
 
+^^^expanded
+:::badges
+`.sync`
+:::
+
+Whether the suggestion list is expanded (if there are no items in `suggestions`, the list won't be expanded even the value is `false`).
+^^^
+
 ### Slots
 
 | Name | Description |
@@ -128,6 +137,7 @@ When `suggestions` is an `Array<string>`, the `label` and `value` of the suggest
 | `suggest` | [^event-suggest] |
 | `select` | [^event-select] |
 | `search` | [^event-search] |
+| `toggle` | Triggered when the expanded state is going to change. The callback parameter list is `(expanded: boolean)`. `expanded` denotes whether the suggestion list is to be expanded or collapsed. |
 
 ^^^event-input
 Triggers when the input value changes. The callback parameter list is `(value: string)`.

@@ -40,6 +40,7 @@ When selecting a date range, the `shortcuts` prop can be used to provide predefi
 | `parse` | `function(string): Date=` | Custom function to parse the input string expressions into `Date` objects. |
 | `shortcuts` | `Array<Object>=` | `datepicker.shortcuts` | [^shortcuts] |
 | `shortcuts-position` | `string=` | `datepicker.shortcutsPosition` | The position of shortcuts. Can be either `'before'` or `'after'`, corresponding to the before or after the content of the month panel respectively. Can be [globally configured](./calendar#global-config). |
+| `expanded` | `boolean=` | `false` | [^expanded] |
 | `disabled` | `boolean=` | `false` | Whether the date picker is disabled. |
 | `readonly` | `boolean=` | `false` | Whether the date picker is read-only. |
 
@@ -160,6 +161,14 @@ The following example with `label`s may help to better understand the calculatio
 ]
 ```
 
+^^^expanded
+:::badges
+`.sync`
+:::
+
+Whether the dropdown overlay is expanded.
+^^^
+
 ### Slots
 
 | Name | Description |
@@ -185,6 +194,7 @@ The content of each date cell in the dropdown overlay. Displays the correspondin
 | `select` | [^event-select] |
 | `selectstart` | Triggered when selecting a date range and a start date is selected. The callback parameter list is `(picking: Date)`, being the selected start date. |
 | `selectprogress` | [^event-selectprogress] |
+| `toggle` | Triggered when the expanded state is going to change. The callback parameter list is `(expanded: boolean)`. `expanded` denotes whether the dropdown overlay is to be expanded or collapsed. |
 
 ^^^event-select
 :::badges

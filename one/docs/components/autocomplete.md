@@ -18,6 +18,7 @@
 | `placeholder` | `string=` |  | 输入占位符。 |
 | `select-on-focus` | `boolean=` | `false` | 聚焦时是否自动选中输入框文本。 |
 | `composition` | `boolean=` | `false` | 是否感知输入法输入过程的值。 |
+| `expanded` | `boolean=` | `false` | [^expanded] |
 | `clearable` | `boolean=` | `false` | 是否显示清除按钮。 |
 | `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
 | `readonly` | `boolean=` | `false` | 是否为只读状态。 |
@@ -40,6 +41,14 @@
 :::
 
 当前选中的值。
+^^^
+
+^^^expanded
+:::badges
+`.sync`
+:::
+
+建议面板是否展开（如果 `suggestions` 中没有待选项，则即使为 `true` 时面板也会关闭）。
 ^^^
 
 ### 插槽
@@ -78,9 +87,10 @@
 
 | 名称  | 描述 |
 | -- | -- |
-| input | [^event-input] |
-| suggest | 采纳建议时触发，参数是当前值。 |
-| clear | 清除当前值时触发。 |
+| `input` | [^event-input] |
+| `suggest` | 采纳建议时触发，参数是当前值。 |
+| `toggle` | 提示面板展开状态切换时触发，回调参数为 `(expanded: boolean)`。`expanded` 表示操作将触发提示面板展开还是收起。 |
+| `clear` | 清除当前值时触发。 |
 
 ^^^event-input
 :::badges

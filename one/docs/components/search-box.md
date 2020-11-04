@@ -38,6 +38,7 @@
 | `suggestions` | `Array<string>|Array<Object>` | - | [^suggestions] |
 | `replace-on-select` | `boolean` | `true` | 选择推荐项时是否自动使用其内容填充文本框。 |
 | `suggest-trigger` | `Array<string>|string` | `input` | [^suggest-trigger] |
+| `expanded` | `boolean=` | `false` | [^expanded] |
 | `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
 | `readonly` | `boolean=` | `false` | 是否为只读状态。 |
 
@@ -86,6 +87,14 @@
 +++
 ^^^
 
+^^^expanded
+:::badges
+`.sync`
+:::
+
+建议面板是否展开（如果 `suggestions` 中没有待选项，则即使为 `true` 时面板也会关闭）。
+^^^
+
 ### 插槽
 
 | 名称 | 描述 |
@@ -127,6 +136,7 @@
 | `suggest` | [^event-suggest] |
 | `select` | [^event-select] |
 | `search` | [^event-search] |
+| `toggle` | 提示面板展开状态切换时触发，回调参数为 `(expanded: boolean)`。`expanded` 表示操作将触发提示面板展开还是收起。 |
 
 ^^^event-input
 输入框中文本发生变化时触发该事件，回调参数为 `(value: string)`。

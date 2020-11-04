@@ -45,6 +45,7 @@
 | `clearable` | `boolean` | `false` | 是否可以清除已选内容。 |
 | `searchable` | `boolean` | `false` | 是否允许搜索选项。 |
 | `filter` | `function` | - | 选项过滤函数，签名为 `function(option: Object): boolean`。`option` 类型与 `options` 属性中的项相同。返回值表示是否将结果保留在下拉选项列表中。 |
+| `expanded` | `boolean=` | `false` | [^expanded] |
 | `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
 | `readonly` | `boolean=` | `false` | 是否为只读状态。 |
 | `overlay-class` | `string|Array|Object=` | - | 参考 [Overlay](./overlay) 组件的 [`overlay-class` 属性](./overlay#属性)。 |
@@ -81,6 +82,14 @@
 :::
 
 已选值。
+^^^
+
+^^^expanded
+:::badges
+`.sync`
+:::
+
+下拉菜单是否展开。
 ^^^
 
 ### 插槽
@@ -166,6 +175,7 @@
 | 名称 | 描述 |
 | -- | -- |
 | `change` | [^event-change] |
+| `toggle` | 下拉菜单展开状态切换时触发，回调参数为 `(expanded: boolean)`。`expanded` 表示操作将触发下拉菜单展开还是收起。 |
 
 ^^^event-change
 :::badges

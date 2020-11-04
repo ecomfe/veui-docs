@@ -53,6 +53,7 @@
 | `label` | `string` | - | 下拉按钮的描述文本。 |
 | `trigger` | `string=` | `'click'` | 触发下拉框展开的时机，可选值为 `'click'`/`'hover'`。 |
 | `split` | `boolean=` | `false` | 是否将下拉按钮分离为指令按钮和切换下拉按钮两部分。 |
+| `expanded` | `boolean=` | `false` | [^expanded] |
 | `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
 | `overlay-class` | `string|Array|Object=` | - | 参考 [Overlay](./overlay) 组件的 [`overlay-class` 属性](./overlay#属性)。 |
 
@@ -84,11 +85,19 @@
 +++
 ^^^
 
+^^^expanded
+:::badges
+`.sync`
+:::
+
+下拉菜单是否展开。
+^^^
+
 ### 插槽
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | 选项列表的内容。在没有指定 `options` 属性时，可以用来直接内联 `Option` 或 `OptionGroup` |
+| `default` | 选项列表的内容。在没有指定 `options` 属性时，可以用来直接内联 `Option` 或 `OptionGroup`。 |
 | `before` | 选项列表前的内容。无默认内容。 |
 | `after` | 选项列表后的内容。无默认内容。 |
 | `label` | [^scoped-slot-label] |
@@ -160,6 +169,7 @@
 | 名称 | 描述 |
 | -- | -- |
 | `click` | 点击选项后触发，回调参数为 `(value: *=)`。`value` 为当前已选项 `value` 字段的值。当 `split` 属性为 `true` 时，直接点击指令按钮部分也会触发，但不会携带 `value` 参数。 |
+| `toggle` | 下拉菜单展开状态切换时触发，回调参数为 `(expanded: boolean)`。`expanded` 表示操作将触发下拉菜单展开还是收起。 |
 
 ### 图标
 

@@ -37,6 +37,7 @@
 | `max` | `string` | - | 最大值限制。 |
 | `autofocus` | `boolean` | `false` | 是否自动获得焦点。 |
 | `clearable` | `boolean` | `false` | 已选值是否可以清除。 |
+| `expanded` | `boolean=` | `false` | [^expanded] |
 | `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
 | `readonly` | `boolean=` | `false` | 是否为只读状态。 |
 
@@ -57,6 +58,14 @@
 :::
 
 当前选中的值。
+^^^
+
+^^^expanded
+:::badges
+`.sync`
+:::
+
+下拉浮层是否展开。
 ^^^
 
 ### 插槽
@@ -85,6 +94,7 @@
 | -- | -- |
 | `input` | [^event-input] |
 | `change` | 若当前选中的值发生变化，在时间选择下拉面板关闭时会触发该事件，参数是当前选中值。 |
+| `toggle` | 下拉浮层展开状态切换时触发，回调参数为 `(expanded: boolean)`。`expanded` 表示操作将触发下拉浮层展开还是收起。 |
 | `clear` | 清除当前选中的值。 |
 
 ^^^event-input

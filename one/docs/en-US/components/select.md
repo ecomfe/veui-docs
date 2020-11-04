@@ -45,6 +45,7 @@ Use the `multiple` prop to enable multiple selections.
 | `clearable` | `boolean` | `false` | Whether the select is clearable. |
 | `searchable` | `boolean` | `false` | Whether the options are searchable. |
 | `filter` | `function` | - | Filter function for the options. The type is `function(option: Object): boolean`. The type of `option` is the same as the `options` prop. The return value denotes whether the option is shown inside the options dropdown. |
+| `expanded` | `boolean=` | `false` | [^expanded] |
 | `disabled` | `boolean=` | `false` | Whether the select is disabled. |
 | `readonly` | `boolean=` | `false` | Whether the select is read-only. |
 | `overlay-class` | `string|Array|Object=` | - | See the `overlay-class` prop of [`Overlay`](./overlay). |
@@ -80,6 +81,14 @@ The list of options with the option type being `{label, value, options, disabled
 :::
 
 The value of the selected option.
+^^^
+
+^^^expanded
+:::badges
+`.sync`
+:::
+
+Whether the dropdown menu is expanded.
 ^^^
 
 ### Slots
@@ -157,6 +166,7 @@ Additionally, custom properties in current option, apart from the listed ones, w
 | Name | Description |
 | -- | -- |
 | `change` | [^event-change] |
+| `toggle` | Triggered when the expanded state is going to change. The callback parameter list is `(expanded: boolean)`. `expanded` denotes whether the dropdown menu is to be expanded or collapsed. |
 
 ^^^event-change
 :::badges
