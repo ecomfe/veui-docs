@@ -68,7 +68,7 @@
     "stylus-loader": "^3.0.2",
     "unist-util-remove": "^1.0.1",
     "unist-util-visit": "^1.4.0",
-    "veui": "^2.0.0-beta.10",
+    "veui": "^2.0.0-beta.11",
     "veui-loader": "^2.0.0-beta.11",
     "veui-theme-dls": "^2.0.0-beta.11",
     "veui-theme-dls-icons": "^2.0.0-beta.11",
