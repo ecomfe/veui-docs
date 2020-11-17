@@ -53,6 +53,7 @@ Rows can be expanded into sub-rows.
 | `order` | `string|boolean` | `false` | The order for sorting the specified column. `false` denotes no specific order, while string values of `'asc'`/`'desc'` denote ascending/descending order respectively. |
 | `order-by` | `string` | - | The column which is currently sorted by. The value should be defined as the `field` prop for one of the children `Column` components. |
 | `scroll` | `number` | - | The maximun height of the scrollable area inside the table body. When table content exceeds the specified height, internal scroll will be enabled and the head/foot will become fixed. |
+| `loading` | `boolean` | `false` | Whether table data is being loaded. |
 
 ^^^ui
 Style variants.

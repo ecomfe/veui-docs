@@ -81,7 +81,7 @@
 | `panel` | 选项卡下方面板区域。 |
 | `extra` | 位于标签页右侧的扩展区域。 |
 | `tab-item` | [^tab-item] |
-| `tab-label` | 标签选项卡文本区域，默认内容为选项卡文本。作用域参数同 `tab-item` 插槽。 |
+| `tab-label` | 标签选项卡文本区域，默认内容为选项卡文本。作用域参数同 `tab-item` 插槽，`attrs`/`activate` 除外。 |
 
 ^^^tab-item
 标签选项卡区域，默认内容为选项卡对应的按钮/链接。作用域参数为标签属性描述对象。
@@ -93,9 +93,13 @@
 | `name` | `string` | 选项卡名称。 |
 | `disabled` | `boolean=` | 选项卡是否禁用。 |
 | `to` | `string` | 选项卡路由信息。 |
+| `active` | `boolean` | 选项卡是否是激活项。 |
+| `index` | `number` | 选项卡位于列表中的索引值。 |
 | `native` | `boolean` | 路由模式是否强制使用原生的 `<a>` 元素。 |
 | `removable` | `boolean` | 是否可删除。 |
 | `status` | `string` | 选项卡状态。 |
+| `attrs` | `Object<string, string>` | 其它需要输出到选项卡元素上的 HTML 属性，例如 `role`/`aria-selected`/`aria-controls` 等。 |
+| `activate` | `function(): void` | 激活当前选项卡的方法。 |
 +++
 ^^^
 
