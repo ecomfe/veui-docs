@@ -72,7 +72,7 @@
 | `item` | [^scoped-slot-item] |
 
 ^^^scoped-slot-item
-默认作用域插槽，用来定制每个按钮的内容。
+用来定制每个按钮的内容。
 
 默认内容：`label` 属性值。
 
