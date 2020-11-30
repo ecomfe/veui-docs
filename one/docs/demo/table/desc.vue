@@ -25,8 +25,8 @@
           {{ bid | currency }}
         </template>
         <template #desc="{ close }">
-          <p>这是一段对 bid 字段的注释</p>
-          <veui-button @click="close">关闭</veui-button>
+          <p>This is a description for bid.</p>
+          <veui-button @click="close">close</veui-button>
         </template>
       </veui-table-column>
       <veui-table-column
@@ -104,7 +104,7 @@ export default {
           updateDate: '20180109'
         }
       ],
-      nameDesc: "这是对 Name 字段的注释"
+      nameDesc: "This is a description for name."
     }
   },
   computed: {
@@ -127,9 +127,5 @@ section {
 
 h4 {
   margin-top: 0;
-}
-
-.veui-checkbox {
-  margin-right: 20px;
 }
 </style>

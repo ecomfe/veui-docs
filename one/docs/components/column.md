@@ -20,7 +20,7 @@
 | `sortable` | `boolean=` | `false` | [^sortable] |
 | `align` | `string=` | - | 内容对齐方式，支持 `left`/`center`/`right`。 |
 | `span` | `function(number): Object=` | | [^span] |
-| `desc` | `string` | - | 表头节点的注释。 |
+| `desc` | `string` | - | 表头描述。 |
 
 ^^^sortable
 本列是否支持排序。
@@ -77,5 +77,5 @@
 ^^^
 
 ^^^scoped-slot-desc
-表头注释。提供 `close` 函数，用于关闭注释的 `Popover` 容器。使用此插槽时会覆盖 `Column` 的插槽 `desc` 内容。
+表头描述。提供 `close` 函数，用于关闭展现描述内容的容器。使用此插槽时会覆盖 `Column` 的插槽 `desc` 内容。
 ^^^
