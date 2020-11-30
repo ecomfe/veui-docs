@@ -10,6 +10,7 @@ function appendLoader (config, loader) {
 
 module.exports = {
   target: 'static',
+  telemetry: false,
 
   /**
    * Headers of the page
