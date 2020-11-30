@@ -36,9 +36,9 @@
 
 [[ demo src="/demo/table/expandable.vue" ]]
 
-### 表头注释
+### 表头描述
 
-支持表头增加注释
+支持表头增加描述
 
 [[ demo src="/demo/table/desc.vue" ]]
 
