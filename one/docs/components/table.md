@@ -60,7 +60,6 @@
 | `order-by` | `string` | - | 用于指定当前基于哪一列进行了排序，值必须来自内部某个 `Column` 组件的 `field` 属性。 |
 | `scroll` | `number` | - | 指定滚动区域的最大高度，当超出此高度时，表格将进入固定表头和底部只允许数据区域滚动的模式。 |
 | `loading` | `boolean` | `false` | 指定表格是否处于加载状态。 |
-| `desc` | `string` | - | 表头节点的注释。 |
 
 ^^^ui
 预设样式。
@@ -99,16 +98,11 @@
 | `no-data` | 用于定义无数据时要展现的内容。 |
 | `foot` | 表格脚部内容，整个区域将打通成为一个容器，不再保留分列。 |
 | `sub-row` | [^scoped-slot-sub-row] |
-| `desc` | [^scoped-slot-desc] |
 
 ^^^scoped-slot-sub-row
 展开行后子行的内容。使用此插槽时，内容会作为行展开下方通栏显式的子行内容。使用此插槽时会覆盖 `Column` 的插槽 `sub-row` 内容。
 
 作用域参数为 `data` 内当前行数据中的所有字段，以及当前行对应索引值 `index`。
-^^^
-
-^^^scoped-slot-desc
-表头注释，提供 `close` 函数，用户关闭注释的 `Popover` 容器。使用此插槽时会覆盖 `Column` 的插槽 `desc` 内容。
 ^^^
 
 ### 事件

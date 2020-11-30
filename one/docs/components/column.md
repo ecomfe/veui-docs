@@ -20,6 +20,7 @@
 | `sortable` | `boolean=` | `false` | [^sortable] |
 | `align` | `string=` | - | 内容对齐方式，支持 `left`/`center`/`right`。 |
 | `span` | `function(number): Object=` | | [^span] |
+| `desc` | `string` | - | 表头节点的注释。 |
 
 ^^^sortable
 本列是否支持排序。
@@ -45,6 +46,7 @@
 | `foot` | [^slot-foot] |
 | `default` | [^scoped-slot-default] |
 | `sub-row` | [^scoped-slot-sub-row] |
+| `desc` | [^scoped-slot-desc] |
 
 ^^^slot-foot
 列脚区域。
@@ -72,4 +74,8 @@
 :::warning
 如果所属的 `Table` 组件定义了插槽 `sub-row`，单独列的 `sub-row` 将被覆盖。
 :::
+^^^
+
+^^^scoped-slot-desc
+表头注释。提供 `close` 函数，用于关闭注释的 `Popover` 容器。使用此插槽时会覆盖 `Column` 的插槽 `desc` 内容。
 ^^^
