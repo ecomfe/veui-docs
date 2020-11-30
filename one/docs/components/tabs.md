@@ -42,6 +42,7 @@
 | `addable` | `boolean` | `false` | 是否可以增加标签。 |
 | `max` | `number` | - | 可增加标签的上限值。 |
 | `tip` | `string` | - | 提示文本。 |
+| `eager` | `boolean` | `false` | 是否立即渲染所有非当前激活项的标签面板内容（并隐藏）。 |
 
 ^^^ui
 预设样式。
