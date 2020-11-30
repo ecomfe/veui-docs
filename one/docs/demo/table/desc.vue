@@ -38,19 +38,6 @@
           {{ updateDate | date }}
         </template>
       </veui-table-column>
-      <veui-table-column
-        field="operation"
-        title="Operations"
-      >
-        <template slot-scope="{ index }">
-          <veui-button
-            ui="text"
-            @click="remove(index)"
-          >
-            Remove
-          </veui-button>
-        </template>
-      </veui-table-column>
     </veui-table>
   </section>
 </article>
@@ -80,25 +67,25 @@ export default {
       size: 'm',
       data: [
         {
-          id: '3154',
+          id: '31541',
           name: 'Steve Rogers',
           bid: 1024,
           updateDate: '20131117'
         },
         {
-          id: '3155',
+          id: '31552',
           name: 'Thor Odinson',
           bid: 598,
           updateDate: '20140214'
         },
         {
-          id: '3156',
+          id: '31563',
           name: 'Tony Stark',
           bid: 820,
           updateDate: '20170610'
         },
         {
-          id: '3157',
+          id: '31574',
           name: 'Stephen Strange',
           bid: 736,
           updateDate: '20180109'
@@ -110,11 +97,6 @@ export default {
   computed: {
     ui () {
       return `${this.density} ${this.size}`
-    }
-  },
-  methods: {
-    remove (index) {
-      this.data.splice(index, 1)
     }
   }
 }
