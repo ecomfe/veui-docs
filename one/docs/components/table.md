@@ -38,7 +38,7 @@
 
 ### 表头描述
 
-支持表头增加描述
+使用 `desc` 属性或 `desc` 插槽来为表头增加描述信息。
 
 [[ demo src="/demo/table/desc.vue" ]]
 
