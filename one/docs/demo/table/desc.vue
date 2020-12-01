@@ -29,15 +29,6 @@
           <veui-button @click="close">close</veui-button>
         </template>
       </veui-table-column>
-      <veui-table-column
-        field="updateDate"
-        title="Last updated"
-        align="center"
-      >
-        <template slot-scope="{ updateDate }">
-          {{ updateDate | date }}
-        </template>
-      </veui-table-column>
     </veui-table>
   </section>
 </article>
@@ -55,16 +46,10 @@ export default {
   filters: {
     currency (value) {
       return '¥' + value.toFixed(2)
-    },
-    date (value) {
-      let [, ...parts] = value.match(/(\d{4})(\d{2})(\d{2})/) || []
-      return parts.join('-')
     }
   },
   data () {
     return {
-      density: 'normal',
-      size: 'm',
       data: [
         {
           id: '31541',
@@ -91,12 +76,7 @@ export default {
           updateDate: '20180109'
         }
       ],
-      nameDesc: "This is a description for name."
-    }
-  },
-  computed: {
-    ui () {
-      return `${this.density} ${this.size}`
+      nameDesc: 'This is a description for name.'
     }
   }
 }
