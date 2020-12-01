@@ -36,6 +36,12 @@
 
 [[ demo src="/demo/table/expandable.vue" ]]
 
+### 表头描述
+
+使用 `desc` 属性或 `desc` 插槽来为表头增加描述信息。
+
+[[ demo src="/demo/table/desc.vue" ]]
+
 ## API
 
 ### 属性
