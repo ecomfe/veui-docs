@@ -64,3 +64,11 @@ export default {
   margin-right: 20px;
 }
 </style>
+
+<docs>
+`s`/`m` 用于指定内容的尺寸，会被继承到内部的组件上。而 `narrow`/`medium`/`wide`/`fullscreen`/`auto` 是对话框本身所占区域的大小，可以与 `s`/`m` 混合使用。
+</docs>
+
+<docs locale="en-US">
+`s`/`m` are used to specify size for internal content and will be inherited by components inside the dialog. While `narrow`/`medium`/`wide`/`fullscreen`/`auto` are used to specify the dimension of the dialog itself, thus can be used together with `s`/`m`.
+</docs>

@@ -2,6 +2,12 @@
 
 ## Demos
 
+### Sizes and fullscreen
+
+Available size/dimension variants for the `ui` prop: `s`/`m`/`narrow`/`medium`/`wide`/`auto`.
+
+[[ demo src="/demo/dialog/size.vue" ]]
+
 ### Modal and non-modal
 
 [[ demo src="/demo/dialog/modal.vue" ]]

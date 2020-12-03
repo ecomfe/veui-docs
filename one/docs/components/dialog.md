@@ -4,6 +4,8 @@
 
 ### 尺寸与全屏
 
+可选的 `ui` 属性值：`s`/`m`/`narrow`/`medium`/`wide`/`auto`。
+
 [[ demo src="/demo/dialog/size.vue" ]]
 
 ### 模态与非模态
