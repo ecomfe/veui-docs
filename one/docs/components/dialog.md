@@ -2,6 +2,10 @@
 
 ## 示例
 
+### 尺寸与全屏
+
+[[ demo src="/demo/dialog/size.vue" ]]
+
 ### 模态与非模态
 
 [[ demo src="/demo/dialog/modal.vue" ]]

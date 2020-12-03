@@ -1,5 +1,5 @@
 import { compact, find } from 'lodash'
-import nav from '../assets/data/nav.json'
+import nav from './nav'
 
 export const LOCALES = [
   {

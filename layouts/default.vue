@@ -23,7 +23,7 @@ import OneHeader from '../components/OneHeader'
 import OneMenu from '../components/OneMenu'
 import OneFooter from '../components/OneFooter'
 import OneBackToTop from '../components/OneBackToTop'
-import nav from '../assets/data/nav.json'
+import nav from '../common/nav'
 import i18n from '../common/i18n'
 import i18nMgr from 'veui/managers/i18n'
 
