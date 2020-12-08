@@ -54,6 +54,7 @@ module.exports = {
   css: ['veui-theme-dls/common.less', '@/assets/styles/global.styl'],
 
   plugins: [
+    { src: '~plugins/config.js' },
     { src: '~plugins/i18n.js' },
     { src: '~plugins/l10n.js' },
     { src: '~plugins/hm.js', ssr: false },

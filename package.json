@@ -15,11 +15,12 @@
     "daemon": "NODE_ENV=production HOST=0.0.0.0 forever start -p . -a -l ./logs/forever.log -o ./logs/access.log -e ./logs/error.log app.js",
     "serve": "NODE_ENV=production PORT=80 HOST=0.0.0.0 forever -p . -a -l ./logs/forever.log -o ./logs/access.log -e ./logs/error.log app.js",
     "stop": "forever stop app.js",
-    "restart": "npm run stop && npm run serve"
+    "restart": "npm run stop && npm run serve",
+    "update:veui": "npm i -D {veui-loader,veui,veui-theme-dls,babel-plugin-veui,veui-theme-dls-icons}@latest"
   },
   "devDependencies": {
     "babel-plugin-lodash": "^3.3.4",
-    "babel-plugin-veui": "^2.0.0-beta.18",
+    "babel-plugin-veui": "^2.0.0-beta.22",
     "dls-icons-vue": "^0.14.0",
     "eslint": "^5.15.1",
     "eslint-config-prettier": "^4.1.0",
@@ -69,10 +70,10 @@
     "stylus-loader": "^3.0.2",
     "unist-util-remove": "^1.0.1",
     "unist-util-visit": "^1.4.0",
-    "veui": "^2.0.0-beta.18",
-    "veui-loader": "^2.0.0-beta.18",
-    "veui-theme-dls": "^2.0.0-beta.18",
-    "veui-theme-dls-icons": "^2.0.0-beta.18",
+    "veui": "^2.0.0-beta.22",
+    "veui-loader": "^2.0.0-beta.22",
+    "veui-theme-dls": "^2.0.0-beta.22",
+    "veui-theme-dls-icons": "^2.0.0-beta.22",
     "vue-awesome": "^4.1.0",
     "vue-i18n": "^8.16.0",
     "vue-windows": "^0.2.4"
