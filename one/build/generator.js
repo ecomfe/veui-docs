@@ -9,14 +9,12 @@ import { get, removeFile } from './deps'
 const DOCS_DIR = resolve(__dirname, '../docs')
 const PAGES_DIR = resolve(__dirname, '../../pages')
 const DEMOS_DIR = resolve(__dirname, '../../components/demos')
-const MERMAID_DIR = resolve(__dirname, '../../static/images/mermaid')
 const ASSETS_DIR = resolve(__dirname, '../../assets')
 
 export function generatePages (file, stats) {
   if (!file) {
     rimraf.sync(PAGES_DIR)
     rimraf.sync(DEMOS_DIR)
-    rimraf.sync(MERMAID_DIR)
     rimraf.sync(resolve(__dirname, './deps.json'))
     console.log('Regenerating all files...')
     handleFile(DOCS_DIR)

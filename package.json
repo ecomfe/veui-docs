@@ -47,8 +47,6 @@
     "moment": "^2.22.2",
     "nuxt": "^2.14.6",
     "object-deep-search": "0.0.7",
-    "one-mermaid.cli": "^0.6.0",
-    "one-remark-mermaid": "^0.3.1",
     "prettier": "^1.16.4",
     "prettier-eslint": "^8.8.2",
     "puppeteer": "^2.1.1",

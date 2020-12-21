@@ -1,32 +1,14 @@
-import { resolve, join } from 'path'
 import visit from 'unist-util-visit'
 import h from 'hastscript'
 import { removeClass, addClass, hasClass } from './rehype-util-class'
-import { readFileSync } from './util'
 
 const RE_SPACE = /[\w\r\n]*/
-const MERMAID_DIR = resolve(__dirname, '../../static/images/mermaid')
 
 export default function attacher () {
   return tree => {
     visit(tree, 'element', (node, index, { children }) => {
       let { tagName, properties, properties: { src, alt, title, className } } = node
       if (tagName !== 'img' || src.match(/^\w+:\/\//)) {
-        return
-      }
-
-      if (title && title.indexOf('mermaid') !== -1) {
-        let fig = h(
-          'figure.hero.mermaid',
-          {
-            'v-once': true
-          },
-          {
-            type: 'raw',
-            value: readFileSync(join(MERMAID_DIR, src))
-          }
-        )
-        children.splice(index, 1, fig)
         return
       }
 

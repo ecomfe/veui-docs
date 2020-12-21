@@ -102,18 +102,7 @@
 
 ### 表单提交流程
 
-```mermaid
-graph TD
-A[Native submit event] --> B[Clone data object]
-B --> C["beforeValidate(data)"]
-C -- not set / resolved --> D["validate()"]
-D --> E{isValid?}
-E -- Y --> F["afterValidate(data)"]
-F -- not set / reslved --> G["$emit('submit', data, event')"]
-C -- rejected --> H["$emit('invalid', result)"]
-D -- N --> H
-F -- rejected --> H
-```
+<img class="preview hero" src="/images/development/form/flow.png">
 
 :::warning
 `beforeValidate` 和 `afterValidate` 以及 `sumbit` 事件操作的 `data` 均为 props `data` 的同一个副本。考虑到校验信息和 UI 中数据的一致性，`validate` 的目标数据是 props `data` 的源数据。因此在 `beforeValidate` 中**不建议**修改 `data` 副本。
@@ -172,27 +161,10 @@ validators: [
 
 #### 交互过程的校验
 
-```mermaid
-graph LR
-A[Interaction events] -->B[Field#validate]
-A --> C[validators.validate]
-B --> D{isValid?}
-C --> D
-D -- Y --> E[Hide validities]
-D -- N --> F[Show errors]
-```
+<img class="preview hero" src="/images/development/form/interaction.png">
 
 #### 提交过程的校验
 
-```mermaid
-graph LR
-A[validate] -->B[Field#validate]
-A --> C[validators.validate]
-B --> D[Merge validities]
-C --> D
-D --> E{isValid?}
-E -- Y --> F["Promise.resolve(true)"]
-E -- N --> G["Promise.resolve(error)"]
-```
+<img class="preview hero" src="/images/development/form/submit.png">
 
 提交时，其中一个过程的校验失败不会导致整个校验终止，校验信息将在两个过程执行完毕后进行整合，并传递到 [`invalid`](#事件) 事件中去。
