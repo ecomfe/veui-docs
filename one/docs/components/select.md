@@ -99,12 +99,12 @@
 | `default` | 选项列表的内容。在没有指定 `options` 属性时，可以用来直接内联 `Option` 或 `OptionGroup`。 |
 | `before` | 选项列表前的内容。无默认内容。 |
 | `after` | 选项列表后的内容。无默认内容。 |
-| `label` | [^scoped-slot-label] |
-| `group-label` | [^scoped-slot-group-label] |
-| `option-label` | [^scoped-slot-option-label] |
-| `option` | [^scoped-slot-option] |
+| `label` | [^slot-label] |
+| `group-label` | [^slot-group-label] |
+| `option-label` | [^slot-option-label] |
+| `option` | [^slot-option] |
 
-^^^scoped-slot-label
+^^^slot-label
 下拉按钮文本区域。
 
 默认内容：已选项对应的 `label` 属性值或内联模式下已选项的文本内容。
@@ -121,7 +121,7 @@
 另外，当前选项数据中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。
 ^^^
 
-^^^scoped-slot-group-label
+^^^slot-group-label
 下拉选项组（带 `options` 的选项）的标题文本区域。
 
 默认内容：选项的 `label` 属性值。
@@ -136,7 +136,7 @@
 另外，当前选项数据中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。
 ^^^
 
-^^^scoped-slot-option-label
+^^^slot-option-label
 下拉选项（不带 `options` 的选项）的文本区域。
 
 默认内容：选项的 `label` 属性值。
@@ -153,7 +153,7 @@
 另外，当前选项数据中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。
 ^^^
 
-^^^scoped-slot-option
+^^^slot-option
 可供选择的下拉选项的整个区域。
 
 默认内容：`Option` 内的组件默认结构。

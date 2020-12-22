@@ -62,9 +62,9 @@ Selected date(s) or date range(s). Data type differs according to `multiple` and
 | -- | -- |
 | `before` | Customizable area before the content of the month panel(s). |
 | `after` | Customizable area after the content of the month panel(s). |
-| `date` | [^scoped-slot-date] |
+| `date` | [^slot-date] |
 
-^^^scoped-slot-date
+^^^slot-date
 The content of each date cell. Displays the corresponding day of month by default.
 
 +++Scope properties

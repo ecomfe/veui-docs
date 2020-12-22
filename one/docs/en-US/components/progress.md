@@ -43,9 +43,9 @@ The status of the progress. Available values are `success`/`alert`, denoting suc
 
 | Name | Description |
 | -- | -- |
-| `default` | [^scoped-slot-default] |
+| `default` | [^slot-default] |
 
-^^^scoped-slot-default
+^^^slot-default
 The description content. Displays the percentage value of the progress by default.
 
 +++Scope properties

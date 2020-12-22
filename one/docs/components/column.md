@@ -21,6 +21,7 @@
 | `align` | `string=` | - | 内容对齐方式，支持 `left`/`center`/`right`。 |
 | `span` | `function(number): Object=` | | [^span] |
 | `desc` | `string` | - | 表头描述。 |
+| `filter-value` | `*` | - | 筛选条件取值，目前仅支持 `true` 表示已经过筛选。 |
 
 ^^^sortable
 本列是否支持排序。
@@ -44,9 +45,10 @@
 | -- | -- |
 | `head` | 列头区域。 |
 | `foot` | [^slot-foot] |
-| `default` | [^scoped-slot-default] |
-| `sub-row` | [^scoped-slot-sub-row] |
-| `desc` | [^scoped-slot-desc] |
+| `default` | [^slot-default] |
+| `sub-row` | [^slot-sub-row] |
+| `desc` | [^slot-desc] |
+| `filter` | [^slot-filter] |
 
 ^^^slot-foot
 列脚区域。
@@ -56,7 +58,7 @@
 :::
 ^^^
 
-^^^scoped-slot-default
+^^^slot-default
 单元格的内容。
 
 默认内容：表格 `data` 数据项中与 `field` 属性对应的字段值。
@@ -64,7 +66,7 @@
 作用域参数为 `data` 内当前行数据中的所有字段。
 ^^^
 
-^^^scoped-slot-sub-row
+^^^slot-sub-row
 展开行后子行的内容。使用此插槽时，内容会作为行展开下方子行中对应列的单元格内容。行数据源来自 `data` 中对应主行数据的 `children` 数组，展开的子行数与 `children` 内数据项数相同，使用相同的列配置。
 
 默认内容：表格 `data[i].children[j]` 数据项中与 `field` 属性对应的字段值。
@@ -76,6 +78,22 @@
 :::
 ^^^
 
-^^^scoped-slot-desc
-表头描述。提供 `close` 函数，用于关闭展现描述内容的容器。使用此插槽时会覆盖 `Column` 的插槽 `desc` 内容。
+^^^slot-desc
+表头描述。使用此插槽时会覆盖 `Column` 的 `desc` 属性。
+
++++作用域参数
+| 名称 | 类型 | 描述 |
+| -- | -- | -- |
+| `close` | `function(): void` | 关闭展现描述内容的容器。 |
++++
+^^^
+
+^^^slot-filter
+筛选浮层的内容。
+
++++作用域参数
+| 名称 | 类型 | 描述 |
+| -- | -- | -- |
+| `close` | `function(): void` | 关闭筛选浮层。 |
++++
 ^^^

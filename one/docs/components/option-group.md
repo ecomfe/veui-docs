@@ -47,12 +47,12 @@
 | 名称 | 描述 |
 | -- | -- |
 | `default` | 选项列表的内容。在没有指定 `options` 属性时，可以用来直接内联 `Option` 或其它 `OptionGroup` 组件。 |
-| `label` | [^scoped-slot-label] |
-| `group-label` | [^scoped-slot-group-label] |
-| `option-label` | [^scoped-slot-option-label] |
-| `option` | [^scoped-slot-option] |
+| `label` | [^slot-label] |
+| `group-label` | [^slot-group-label] |
+| `option-label` | [^slot-option-label] |
+| `option` | [^slot-option] |
 
-^^^scoped-slot-label
+^^^slot-label
 选项组标题文本区域。
 
 默认内容：`label` 属性对应的文本。
@@ -65,7 +65,7 @@
 +++
 ^^^
 
-^^^scoped-slot-group-label
+^^^slot-group-label
 子选项组的标题文本区域。
 
 默认内容：带 `options` 的选项对应的 `label` 属性值。
@@ -80,7 +80,7 @@
 另外，当前选项组数据中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。
 ^^^
 
-^^^scoped-slot-option-label
+^^^slot-option-label
 选项的文本区域。
 
 默认内容：不带 `options` 的选项对应的 `label` 属性值。
@@ -97,7 +97,7 @@
 另外，当前选项数据中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。
 ^^^
 
-^^^scoped-slot-option
+^^^slot-option
 可供选择的选项的整个区域。
 
 默认内容：`Option` 内的组件默认结构。

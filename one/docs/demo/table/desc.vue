@@ -2,7 +2,6 @@
 <article>
   <section>
     <veui-table
-      :ui="ui"
       :data="data"
       key-field="id"
     >

@@ -41,9 +41,9 @@ The array of selected `value`s.
 
 | Name | Description |
 | -- | -- |
-| `label` | [^scoped-slot-label] |
+| `label` | [^slot-label] |
 
-^^^scoped-slot-label
+^^^slot-label
 The label content of each node. Displays the `label` property of each item by default.
 
 +++Scope properties

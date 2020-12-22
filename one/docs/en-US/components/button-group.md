@@ -69,9 +69,9 @@ The datasource array for buttons in the group. The type of each item is `{label,
 | Name | Description |
 | -- | -- |
 | `default` | Button group's content. |
-| `item` | [^scoped-slot-item] |
+| `item` | [^slot-item] |
 
-^^^scoped-slot-item
+^^^slot-item
 The content of each button.
 
 Shows the text specified by the `label` prop by default.

@@ -170,9 +170,9 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `date` | [^scoped-slot-date] |
+| `date` | [^slot-date] |
 
-^^^scoped-slot-date
+^^^slot-date
 浮层中日历的单日单元格内的区域，可用来定制每一天对应区域的内容。
 
 默认内容：对应日期的 `date`。

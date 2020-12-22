@@ -54,12 +54,12 @@ The datasource of steps with item type being `{ label, desc, to, status }`.
 
 | Name | Description |
 | -- | -- |
-| `default` | [^scoped-slot-default] |
+| `default` | [^slot-default] |
 | `index` | The step index. Displays an index value starts from `1`, a success icon for finished steps by default and an error icon for error steps. Resides inside the default slot and share the same scope properties. |
 | `label` | The step label. Displays the `label` prop by default. Resides inside the default slot and share the same scope properties. |
 | `desc` | The step description. Displays the `desc` prop by default. Resides inside the default slot and share the same scope properties. |
 
-^^^scoped-slot-default
+^^^slot-default
 The content of each step. Displays the step index/completed icon, label and description by default.
 
 +++Scope properties

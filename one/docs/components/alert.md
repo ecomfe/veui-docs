@@ -60,12 +60,12 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | [^scoped-slot-default] |
+| `default` | [^slot-default] |
 | `title` | 消息标题的内容区域。 |
 | `extra` | 消息之后的额外内容区域。 |
 | `content` | 整个消息区域，包括状态图标、切换按钮、关闭按钮等。 |
 
-^^^scoped-slot-default
+^^^slot-default
 消息内容区域。
 
 默认内容：消息文本。

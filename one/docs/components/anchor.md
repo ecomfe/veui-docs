@@ -44,10 +44,10 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `item` | [^scoped-slot-item] |
-| `item-label` | [^scoped-slot-item-label] |
+| `item` | [^slot-item] |
+| `item-label` | [^slot-item-label] |
 
-^^^scoped-slot-item
+^^^slot-item
 渲染每个锚点链接。
 
 默认内容：锚点链接。
@@ -55,7 +55,7 @@
 作用域参数参见 `items` 属性详情。
 ^^^
 
-^^^scoped-slot-item-label
+^^^slot-item-label
 渲染每个锚点链接的文本。
 
 默认内容：锚点链接的描述文本 `label`。

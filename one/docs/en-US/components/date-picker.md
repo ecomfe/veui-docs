@@ -173,9 +173,9 @@ Whether the dropdown overlay is expanded.
 
 | Name | Description |
 | -- | -- |
-| `date` | [^scoped-slot-date] |
+| `date` | [^slot-date] |
 
-^^^scoped-slot-date
+^^^slot-date
 The content of each date cell in the dropdown overlay. Displays the corresponding day of month by default.
 
 +++Scope properties

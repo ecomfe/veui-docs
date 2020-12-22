@@ -54,9 +54,9 @@ The `value`s of the selected items.
 
 | Name | Description |
 | -- | -- |
-| `item` | [^scoped-slot-item] |
+| `item` | [^slot-item] |
 
-^^^scoped-slot-item
+^^^slot-item
 The label content of each button. Displays the value of the `label` prop by default.
 
 +++Scope properties

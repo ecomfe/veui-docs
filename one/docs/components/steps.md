@@ -54,12 +54,12 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | [^scoped-slot-default] |
+| `default` | [^slot-default] |
 | `index` | 序号部分内容，默认显示从 `1` 开始的序号，已完成的步骤显示完成图标，出错的步骤显示出错图标。位于 `default` 内部，作用域参数同 `default`。 |
 | `label` | 步骤标题部分内容，默认显示 `steps` 中项目的 `label` 字段。位于 `default` 内部，作用域参数同 `default`。 |
 | `desc` | 步骤描述部分内容，默认显示 `steps` 中项目的 `desc` 字段。位于 `default` 内部，作用域参数同 `default`。 |
 
-^^^scoped-slot-default
+^^^slot-default
 整个步骤项内容。
 
 默认内容：序号/完成图标、步骤标题、描述等内容。

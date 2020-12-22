@@ -69,9 +69,9 @@
 | 名称 | 描述 |
 | -- | -- |
 | `default` | 按钮组内容区。 |
-| `item` | [^scoped-slot-item] |
+| `item` | [^slot-item] |
 
-^^^scoped-slot-item
+^^^slot-item
 用来定制每个按钮的内容。
 
 默认内容：`label` 属性值。

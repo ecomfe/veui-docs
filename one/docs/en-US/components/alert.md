@@ -60,12 +60,12 @@ The index of current message displayed when having multiple messages.
 
 | Name | Description |
 | -- | -- |
-| `default` | [^scoped-slot-default] |
+| `default` | [^slot-default] |
 | `title` | The content area of the alert title. |
 | `extra` | The extra content after the alert message. |
 | `content` | The content of the whole component, including message text, status icon, previous/next navigation and close button. |
 
-^^^scoped-slot-default
+^^^slot-default
 The content of the message.
 
 Default: message text.

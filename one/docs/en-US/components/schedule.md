@@ -59,12 +59,12 @@ Shortcut selection list. The type is `{label: string, selected: boolean|Array}`.
 | `header-content` | The content of the header section, not including the container. |
 | `shortcuts` | The shortcuts section of the header section. |
 | `legend` | The legends section of the header section. |
-| `legend-label` | [^scoped-slot-legend-label] |
-| `hour` | [^scoped-slot-hour] |
-| `label` | [^scoped-slot-label] |
-| `tooltip` | [^scoped-slot-tooltip] |
+| `legend-label` | [^slot-legend-label] |
+| `hour` | [^slot-hour] |
+| `label` | [^slot-label] |
+| `tooltip` | [^slot-tooltip] |
 
-^^^scoped-slot-legend-label
+^^^slot-legend-label
 The text label of each legend. Displays the `label` property of each legend by default.
 
 +++Scope properties
@@ -77,7 +77,7 @@ The text label of each legend. Displays the `label` property of each legend by d
 Additionally, custom properties inside `statuses` apart from the listed ones will also be passes into the scope object via `v-bind`.
 ^^^
 
-^^^scoped-slot-hour
+^^^slot-hour
 The content of each hour cell.
 
 +++Scope properties
@@ -88,7 +88,7 @@ The content of each hour cell.
 +++
 ^^^
 
-^^^scoped-slot-label
+^^^slot-label
 The content of the selected label. By default, displays the time range in the form of <code>&#0096;${from}:00–${to + 1}:00&#0096;</code> when it's more than 3 hours, displays “Entire Day” when every hour of a day are selected; displays nothing for less than 3 hours.
 
 +++Scope properties
@@ -99,7 +99,7 @@ The content of the selected label. By default, displays the time range in the fo
 +++
 ^^^
 
-^^^scoped-slot-tooltip
+^^^slot-tooltip
 The tooltip for each hour cell. Displays <code>&#0096;${hour}:00–${hour + 1}:00&#0096;</code> for current hour by default.
 
 +++Scope properties

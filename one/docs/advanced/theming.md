@@ -82,7 +82,7 @@ VEUI 中各个组件的可切换的预设样式是通过为主题包提供可扩
 | `boolean` | `boolean` | `false` | 预设 `ui` 属性是否为布尔型。 |
 | `inherit` | `boolean` | `false` | 预设 `ui` 属性值是否会被子组件继承。 |
 
-以 `Select` 组件为例：
+以 `NumberInput` 组件为例：
 
 ```js
 import config from 'veui/managers/config'
@@ -90,11 +90,13 @@ import config from 'veui/managers/config'
 config.defaults({
   ui: {
     size: {
-      values: ['large', 'small', 'tiny', 'micro'],
+      values: ['xs', 's', 'm'],
+      default: 'm',
       inherit: true
     },
     style: {
-      values: ['alt']
+      values: ['normal', 'strong'],
+      default: 'normal'
     }
   }
 }, 'select')
@@ -103,13 +105,13 @@ config.defaults({
 在上面这个例子中，我们定义了两个 `ui` 属性：`size` 和 `style`。它们都是枚举类型，其中 `size` 值可被子组件继承。最终调用 `Select` 组件时，可以这样启用预设样式：
 
 ```html
-<veui-select ui="alt small">...</veui-select>
+<veui-select ui="strong s">...</veui-select>
 ```
 
 当然，我们也可以完全不定义 `ui` 属性的详情，这时 VEUI 会将用户书写的 `ui` 属性原样输出，不会进行去重、同属性的属性值冲突检测、继承等特殊处理。
 
 :::warning
-由于 `ui` 属性最后会将值打平输出到 DOM 元素上，所以各个属性的值不能冲突。
+由于 `ui` 属性最后会将值序列化为空格分隔的字符串输出到 DOM 元素上，所以各个属性的值不能冲突。
 :::
 
 ### 指定组件内部组件的预设样式
@@ -127,8 +129,29 @@ config.defaults({
 }, 'select')
 ```
 
+如果希望部件的 `ui` 属性值可以根据声明/继承的值动态计算得出，也可以直接使用计算函数：
+
+```js
+import config from 'veui/managers/config'
+
+const SIZE_MAPPING = {
+  xs: 's',
+  s: 's',
+  m: 's',
+  l: 'm'
+}
+
+config.defaults({
+  parts: {
+    item: ({ size }) => SIZE_MAPPING[size]
+  }
+}, 'select')
+```
+
+上面的例子中，组件内部件 `item` 的 `ui` 属性将在 `size` 属性的基础上进行一次映射。
+
 ## 主题包列表
 
-* [veui-theme-dls](https://github.com/ecomfe/veui/tree/dev/packages/veui-theme-dls)：基于 DLS 的 VEUI 2.x 主题
-* [veui-theme-blue](https://github.com/ecomfe/veui-theme-blue)：基于 Theme Blue 的 VEUI 1.x 主题
+* [veui-theme-dls](https://github.com/ecomfe/veui/tree/dev/packages/veui-theme-dls)：基于 Light DLS 的 VEUI 2.x 主题
+* [veui-theme-blue](https://github.com/ecomfe/veui-theme-blue)：基于 Theme Blue 的 VEUI 2.x 主题
 * [veui-theme-spectre](https://justineo.github.io/veui-theme-spectre/demo/)：基于 Spectre.css 的 VEUI 1.x 主题

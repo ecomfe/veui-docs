@@ -97,9 +97,9 @@
 | `default` | 用于定义表格列，只能包含 `Column` 组件。 |
 | `no-data` | 用于定义无数据时要展现的内容。 |
 | `foot` | 表格脚部内容，整个区域将打通成为一个容器，不再保留分列。 |
-| `sub-row` | [^scoped-slot-sub-row] |
+| `sub-row` | [^slot-sub-row] |
 
-^^^scoped-slot-sub-row
+^^^slot-sub-row
 展开行后子行的内容。使用此插槽时，内容会作为行展开下方通栏显式的子行内容。使用此插槽时会覆盖 `Column` 的插槽 `sub-row` 内容。
 
 作用域参数为 `data` 内当前行数据中的所有字段，以及当前行对应索引值 `index`。

@@ -62,9 +62,9 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `item` | [^scoped-slot-item] |
+| `item` | [^slot-item] |
 
-^^^scoped-slot-item
+^^^slot-item
 按钮内文本区域。
 
 默认内容：`label` 属性值。

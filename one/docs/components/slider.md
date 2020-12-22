@@ -82,10 +82,10 @@
 | -- | -- |
 | `track` | 滑轨。默认内容：横线。 |
 | `tip-label` | 浮动提示文本。默认内容：当前 `value` 值。 |
-| `thumb` | [^scoped-slot-thumb] |
-| `tip` | [^scoped-slot-tip] |
+| `thumb` | [^slot-thumb] |
+| `tip` | [^slot-tip] |
 
-^^^scoped-slot-thumb
+^^^slot-thumb
 滑块。
 
 默认内容：圆形按钮。
@@ -100,7 +100,7 @@
 +++
 ^^^
 
-^^^scoped-slot-tip
+^^^slot-tip
 浮动提示。
 
 默认内容：内容为 `value` 的 Tooltip 组件。

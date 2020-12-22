@@ -41,9 +41,9 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `label` | [^scoped-slot-label] |
+| `label` | [^slot-label] |
 
-^^^scoped-slot-label
+^^^slot-label
 每个节点文本描述的内容。
 
 默认内容：每个节点 `label` 字段对应的文本内容。

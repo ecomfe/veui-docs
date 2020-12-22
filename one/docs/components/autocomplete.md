@@ -55,10 +55,10 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `suggestions` | [^scoped-slot-suggestions] |
-| `option-label` | [^scoped-slot-option-label] |
+| `suggestions` | [^slot-suggestions] |
+| `option-label` | [^slot-option-label] |
 
-^^^scoped-slot-suggestions
+^^^slot-suggestions
 
 下拉建议面板插槽。
 
@@ -70,7 +70,7 @@
 +++
 ^^^
 
-^^^scoped-slot-option-label
+^^^slot-option-label
 
 下拉面板中选项插槽。
 

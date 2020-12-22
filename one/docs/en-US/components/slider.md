@@ -83,10 +83,10 @@ When `parse` and `format` are specified, values can be of any type, and `parse` 
 | -- | -- |
 | `track` | The track of the slider. Displays a bar by default. |
 | `tip-label` | The tooltip content. Displays the current `value` or its item by default. |
-| `thumb` | [^scoped-slot-thumb] |
-| `tip` | [^scoped-slot-tip] |
+| `thumb` | [^slot-thumb] |
+| `tip` | [^slot-tip] |
 
-^^^scoped-slot-thumb
+^^^slot-thumb
 The thumb(s) of the slider. Displays a round button by default.
 
 +++Scope properties
@@ -99,7 +99,7 @@ The thumb(s) of the slider. Displays a round button by default.
 +++
 ^^^
 
-^^^scoped-slot-tip
+^^^slot-tip
 The entire tooltip for each thumb. Displays a `Tooltip` component with `value` as its content by default.
 
 +++Scope properties

@@ -59,12 +59,12 @@
 | `header-content` | 顶部区域的内容，不包括外层容器。 |
 | `shortcuts` | 顶部快捷选项区域。 |
 | `legend` | 顶部图例区域。 |
-| `legend-label` | [^scoped-slot-legend-label] |
-| `hour` | [^scoped-slot-hour] |
-| `label` | [^scoped-slot-label] |
-| `tooltip` | [^scoped-slot-tooltip] |
+| `legend-label` | [^slot-legend-label] |
+| `hour` | [^slot-hour] |
+| `label` | [^slot-label] |
+| `tooltip` | [^slot-tooltip] |
 
-^^^scoped-slot-legend-label
+^^^slot-legend-label
 每个图例的文本区域。
 
 默认内容：每个图例状态 `label` 字段对应的文本内容。
@@ -79,7 +79,7 @@
 另外，`status` 内对应图例状态对象中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。
 ^^^
 
-^^^scoped-slot-hour
+^^^slot-hour
 每小时区域的内容。
 
 默认内容：无。
@@ -92,7 +92,7 @@
 +++
 ^^^
 
-^^^scoped-slot-label
+^^^slot-label
 已选时间段的区域。
 
 默认内容：时段在 3 小时及以上时，显示时段范围 <code>&#0096;${from}:00–${to + 1}:00&#0096;</code>；选择全天的显示为“全天”；小于 3 小时无内容。
@@ -105,7 +105,7 @@
 +++
 ^^^
 
-^^^scoped-slot-tooltip
+^^^slot-tooltip
 光标移入每个小时格子的悬浮提示内容。
 
 默认内容：当前小时格子的时间范围 <code>&#0096;${hour}:00–${hour + 1}:00&#0096;</code>。

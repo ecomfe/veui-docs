@@ -81,9 +81,9 @@ The behavior triggers item switch when radio indicator is displayed.
 
 | Name | Description |
 | -- | -- |
-| `item` | [^scoped-slot-item] |
+| `item` | [^slot-item] |
 
-^^^scoped-slot-item
+^^^slot-item
 The content of each carousel item. Displays the corresponding image by default.
 
 The slot scope properties are the same as each item inside `datasource` (including custom properties), with an extra `index: number`, which denotes the index within the datasource. i.e. The `slot-scope` is in the form of `{src, alt, label, index, ...}`.

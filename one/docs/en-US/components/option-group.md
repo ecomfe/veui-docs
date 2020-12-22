@@ -47,12 +47,12 @@ The way to display child options.
 | Name | Description |
 | -- | -- |
 | `default` | The content of the options dropdown. Can be used to place `Option`s or `OptionGroups`s when the `options` prop is not specified. |
-| `label` | [^scoped-slot-label] |
-| `group-label` | [^scoped-slot-group-label] |
-| `option-label` | [^scoped-slot-option-label] |
-| `option` | [^scoped-slot-option] |
+| `label` | [^slot-label] |
+| `group-label` | [^slot-group-label] |
+| `option-label` | [^slot-option-label] |
+| `option` | [^slot-option] |
 
-^^^scoped-slot-label
+^^^slot-label
 The label of the option group. Displays the `label` prop by default.
 
 +++Scope properties
@@ -63,7 +63,7 @@ The label of the option group. Displays the `label` prop by default.
 +++
 ^^^
 
-^^^scoped-slot-group-label
+^^^slot-group-label
 The label text of each option group (option with child `options`). Displays the `label` of the option by default.
 
 +++Scope properties
@@ -76,7 +76,7 @@ The label text of each option group (option with child `options`). Displays the 
 Additionally, custom properties in current option, apart from the listed ones, will also be passes into the scope object via `v-bind`.
 ^^^
 
-^^^scoped-slot-option-label
+^^^slot-option-label
 The label text of each option (option without child `options`). Displays the `label` of the option by default.
 
 +++Scope properties
@@ -91,7 +91,7 @@ The label text of each option (option without child `options`). Displays the `la
 Additionally, custom properties in current option, apart from the listed ones, will also be passes into the scope object via `v-bind`.
 ^^^
 
-^^^scoped-slot-option
+^^^slot-option
 The entire content area of each option (option without child `options`). Displays the default content of `Options` component by default.
 
 +++Scope properties

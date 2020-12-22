@@ -91,9 +91,9 @@ The values of expanded rows. Each item is the value keyed by the `key-field` pro
 | `default` | The columns of the table. Can only have `Column` components as children. |
 | `no-data` | The content to be displayed when there's no data to show. |
 | `foot` | The content of the table foot. Will span across all columns when defined. |
-| `sub-row` | [^scoped-slot-sub-row] |
+| `sub-row` | [^slot-sub-row] |
 
-^^^scoped-slot-sub-row
+^^^slot-sub-row
 The content of the expanded sub-row. Will span across all columns and override the `sub-row` slot of the `Column` components inside the table.
 
 The slot scope properties are the same as each item inside `datasource`, with an extra `index: number`, which denotes the index within the datasource.

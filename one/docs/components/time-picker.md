@@ -72,9 +72,9 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `option` | [^scoped-slot-option] |
+| `option` | [^slot-option] |
 
-^^^scoped-slot-option
+^^^slot-option
 
 下拉面板中的时间选项插槽。
 

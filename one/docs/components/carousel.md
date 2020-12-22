@@ -81,9 +81,9 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `item` | [^scoped-slot-item] |
+| `item` | [^slot-item] |
 
-^^^scoped-slot-item
+^^^slot-item
 可用来定制每个轮播项的区域。
 
 默认内容：轮播项图片。

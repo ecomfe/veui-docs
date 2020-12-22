@@ -43,9 +43,9 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | [^scoped-slot-default] |
+| `default` | [^slot-default] |
 
-^^^scoped-slot-default
+^^^slot-default
 可用来定制文字提示区域的内容。
 
 默认内容：完成率百分比。

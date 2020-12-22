@@ -17,7 +17,7 @@
 
 VEUI is designed to keep components and styles separated. Users can develop and specify their own theme package for VEUI. `veui-theme-dls` is the built-in theme package.
 
-VEUI is published as ES modules with untranspiled ES next code thus requires to be compiled along with the application project.
+VEUI is published as Vue single file components and ES modules with untranspiled ES next code thus requires to be compiled along with the application project.
 
 Apart from components, VEUI also offers various powerful directives and plugins to boost application development based on Vue.js.
 

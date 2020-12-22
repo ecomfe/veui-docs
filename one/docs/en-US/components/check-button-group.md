@@ -55,9 +55,9 @@ The `value`s of the selected items.
 
 | Name | Description |
 | -- | -- |
-| `item` | [^scoped-slot-item] |
+| `item` | [^slot-item] |
 
-^^^scoped-slot-item
+^^^slot-item
 The label content of each button. Displays the value of the `label` prop by default.
 
 +++Scope properties
@@ -85,3 +85,9 @@ Additionally, custom properties apart from the listed ones will also be passes i
 
 Triggers when the selected item changed. The callback parameter list is `(value: Array)` and `value` is the value array of the selected items.
 ^^^
+
+### Icons
+
+| Name | Description |
+| -- | -- |
+| `check` | The loading spinner. |

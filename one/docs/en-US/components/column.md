@@ -20,6 +20,8 @@ See [the demos of `Table`](./table#demos).
 | `sortable` | `boolean=` | `false` | [^sortable] |
 | `align` | `string=` | - | The alignment of cell content in the column. Supports `left`/`center`/`right`. |
 | `span` | `function(number): Object=` | | [^span] |
+| `desc` | `string` | - | The description of the column head. |
+| `filter-value` | `*` | - | The value of filter condition. `true` is the only value supported for now which indicates the column is filtered. |
 
 ^^^sortable
 Whether current column is sortable.
@@ -43,8 +45,10 @@ You can learn more abut how to use this in `Table` component's [Demos › Advanc
 | -- | -- |
 | `head` | The table head. |
 | `foot` | [^slot-foot] |
-| `default` | [^scoped-slot-default] |
-| `sub-row` | [^scoped-slot-sub-row] |
+| `default` | [^slot-default] |
+| `sub-row` | [^slot-sub-row] |
+| `desc` | [^slot-desc] |
+| `filter` | [^slot-filter] |
 
 ^^^slot-foot
 The table foot.
@@ -54,13 +58,13 @@ The table foot.
 :::
 ^^^
 
-^^^scoped-slot-default
+^^^slot-default
 The content of the table cell. Displays the property value corresponds to the `field` property in table's `data` prop.
 
 The slot scope properties are the same as each item inside `data`, with an extra `index: number`, which denotes the index within the row data.
 ^^^
 
-^^^scoped-slot-sub-row
+^^^slot-sub-row
 The content of cells in a sub row. Sub row data comes from the `children` array inside the row data in `Table`s `data` prop. The number of sub rows are determined by the length of the `children` array and the sub rows share the same column configuration with the table.
 
 Displays the value keyed by the `field` prop inside the sub row data, which is `data[i].children[j]` of the parent table.
@@ -70,4 +74,24 @@ The slot scope properties are the same as each item inside `children`, with an e
 :::warning
 The `sub-row` slot of `Column` will be ignored when content is provided for `Table`'s `sub-row` slot.
 :::
+^^^
+
+^^^slot-desc
+The content of the description overlay. Will override the `desc` prop when set.
+
++++Scope properties
+| Name | Type | Description |
+| -- | -- | -- |
+| `close` | `function(): void` | Used to close the description overlay. |
++++
+^^^
+
+^^^slot-filter
+The content of the filter dropdown.
+
++++Scope properties
+| Name | Type | Description |
+| -- | -- | -- |
+| `close` | `function(): void` | Used to close the filter dropdown. |
++++
 ^^^
