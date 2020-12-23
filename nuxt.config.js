@@ -61,10 +61,6 @@ module.exports = {
     { src: '~plugins/algolia.js', ssr: false }
   ],
 
-  generate: {
-    subFolders: false
-  },
-
   /**
    * Build configuration
    */
