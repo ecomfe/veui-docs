@@ -19,6 +19,7 @@
     "update:veui": "npm i -D {veui-loader,veui,veui-theme-dls,babel-plugin-veui,veui-theme-dls-icons}@latest"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-veui": "^2.0.0-beta.24",
     "dls-icons-vue": "^0.14.0",

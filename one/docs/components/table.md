@@ -18,6 +18,12 @@
 
 [[ demo src="/demo/table/advanced.vue" ]]
 
+### 筛选
+
+使用 `filter` 插槽来开启自定义筛选功能。
+
+[[ demo src="/demo/table/filter.vue" ]]
+
 ### 内部滚动模式
 
 允许启用内部滚动模式，以达到固定表头表底的效果。

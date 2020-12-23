@@ -18,6 +18,12 @@ Supports specifying row keys, mode of selection, and sorting by values of specif
 
 [[ demo src="/demo/table/advanced.vue" ]]
 
+### Filter
+
+Use the `filter` slot to enable custom column filter dropdown.
+
+[[ demo src="/demo/table/filter.vue" ]]
+
 ### Scroll inside
 
 Allow table content to be scrollable inside the table body, i.e. the effect of fixed head/foot.
