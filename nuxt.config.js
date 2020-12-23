@@ -69,7 +69,7 @@ module.exports = {
    * Build configuration
    */
   build: {
-    transpile: ['veui', 'vue-awesome', 'resize-detector', 'dls-graphics'],
+    transpile: ['veui', 'vue-awesome', 'resize-detector', 'less-plugin-dls', 'dls-graphics'],
 
     babel: {
       plugins: ['veui', 'lodash']
