@@ -103,6 +103,7 @@ Whether the dropdown menu is expanded.
 | `group-label` | [^slot-group-label] |
 | `option-label` | [^slot-option-label] |
 | `option` | [^slot-option] |
+| `trigger` | [^slot-trigger] |
 
 ^^^slot-label
 The content of the select button. Displays the `label` prop by default.
@@ -155,6 +156,27 @@ The entire content area of each option (option without child `options`). Display
 +++
 
 Additionally, custom properties in current option, apart from the listed ones, will also be passes into the scope object via `v-bind`.
+^^^
+
+^^^slot-trigger
+The entire drop-down trigger area. Displays the dropdown button by default.
+
++++Scope properties
+| Name | Type | Description |
+| --- | --- | --- |
+| `attrs` | `Object` | Attributes that need to be output to the trigger element, including `aria-*`/`disabled`, etc., can be output using `v-bind="attrs"`. |
+| `handlers` | `Object` | [^handlers-desc] |
+| `expanded` | `boolean` | Whether the dropdown menu is expanded or not. |
+| `toggle` | `function(force?: boolean): void` | Used to toggle the expanded state of the dropdown menu. |
++++
+^^^
+
+^^^^handlers-desc
+Event listeners that need to be bound to the trigger element, can be output using `v-on="handlers"`.
+
+:::tip
+The element used to bind `handlers` needs to support focus acquisition so that various keyboard interactions can still be triggered properly.
+:::
 ^^^
 
 ### Events

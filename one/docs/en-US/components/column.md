@@ -21,7 +21,10 @@ See [the demos of `Table`](./table#demos).
 | `align` | `string=` | - | The alignment of cell content in the column. Supports `left`/`center`/`right`. |
 | `span` | `function(number): Object=` | | [^span] |
 | `desc` | `string` | - | The description of the column head. |
-| `filter-value` | `*` | - | The value of filter condition. `true` is the only value supported for now which indicates the column is filtered. |
+| `filter-value` | `*` | - | [^filter-value] |
+| `filter-multiple` | `boolean=` | `false` | Whether the built-in filter is multi-select or not. |
+| `filter-options` | `Array<Object>` | - | The list of filter options, with items of type `{label, value, options, disabled, ...}`, see the `options` prop of the [`Select`](./select) component. |
+| `filter-title` | `string=` | - | The title of the filter dropdown. |
 
 ^^^sortable
 Whether current column is sortable.
@@ -37,6 +40,14 @@ A function that defines how cells should span across rows/columns. The type is `
 :::tip
 You can learn more abut how to use this in `Table` component's [Demos › Advanced](./table#advanced).
 :::
+^^^
+
+^^^filter-value
+:::badges
+`.sync`
+:::
+
+The value of current filter condition. `null` means not filtered. When `filter-multiple` is `true`, the value is an array of selected values.
 ^^^
 
 ### Slots

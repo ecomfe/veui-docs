@@ -23,6 +23,7 @@ Set the `type` prop to `image` to use the image upload mode.
 | `ui` | `string=` | - | [^ui] |
 | `type` | `string` | `'file'` | [^type] |
 | `value` | `Object|Array<Object>` | - | [^value] |
+| `key-field` | `string` | `'key'` | Used to specify a unique key for the file object, as a basis for correctly handling the order of the file list when the data changes. |
 | `name` | `string` | `'file'` | The `name` of native `<input>` elements. |
 | `action` | `string` | - | Upload URL. |
 | `headers` | `Object` | `uploader.headers` | Extra [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers). Can be globally configured. |
@@ -43,6 +44,17 @@ Set the `type` prop to `image` to use the image upload mode.
 | `upload` | `function(Object, Object): function` | - | [^upload] |
 | `controls` | `function(Object, Array<Object>): Array<Object>` | - | [^controls] |
 
+^^^ui
+Style variants.
+
++++Enum values
+| Value | Description |
+| -- | -- |
+| `s` | Small. |
+| `m` | Medium. |
++++
+^^^
+
 ^^^type
 The type of the uploader.
 
@@ -55,11 +67,7 @@ The type of the uploader.
 ^^^
 
 ^^^value
-+++Type details
-| `max-count` | Type |
-| -- | -- |
-| `1` | `Object` |
-| > `1`, or `null` | `Array<Object>` |
+Returns an array of file objects when `multiple` is `true`. When `max-count` is set to a value greater than `1`, then `multiple` treated as `true`.
 
 The type of single file is `{name: string, src: string, ...}`, and fields added inside `convert-response`.
 +++
@@ -110,16 +118,6 @@ Converts response data to standard format that can be consumed by the uploader, 
 | `message` | `string=` | Error message when upload fails. Required when `success` is `false`. |
 
 Additional fields can be added to the response data. These data fields will be included in the `value` prop and parameter of callbacks `change`, `success`, `failure`, `remove` and `progress` events. Can be globally configured.
-+++
-^^^
-
-^^^ui
-Style variants.
-
-+++Enum values
-| Value | Description |
-| -- | -- |
-| `horizontal` | Horizontal style. |
 +++
 ^^^
 

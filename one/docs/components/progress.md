@@ -19,6 +19,8 @@
 | `decimal-place` | `number` | `0` | 保留的小数位数。 |
 | `status` | `string` | - | [^status] |
 | `autosucceed` | `boolean|number` | - | 是否在进度值到达最大时自动进入 `success` 状态。`true` 表示直接进入成功状态，如果是 `number` 类型则表示在到达最大值后切换为成功状态前等待的毫秒数。 |
+| `indeterminate` | `boolean` | `false` | 是否不确定进度，目前仅支持在 `type` 为 `bar` 时生效。 |
+
 
 ^^^ui
 预设样式。

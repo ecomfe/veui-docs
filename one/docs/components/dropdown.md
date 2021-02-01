@@ -104,6 +104,7 @@
 | `group-label` | [^slot-group-label] |
 | `option-label` | [^slot-option-label] |
 | `option` | [^slot-option] |
+| `trigger` | [^slot-trigger] |
 
 ^^^slot-label
 下拉按钮文本区域。
@@ -162,6 +163,29 @@
 +++
 
 另外，当前选项数据中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。
+^^^
+
+^^^slot-trigger
+整个下拉触发区域。
+
+默认内容：下拉按钮。
+
++++作用域参数
+| 名称 | 类型 | 描述 |
+| -- | -- | -- |
+| `attrs` | `Object` | 需要输出到触发元素上的属性，包括 `aria-*`/`disabled` 等，可以使用 `v-bind="attrs"` 统一进行输出。 |
+| `handlers` | `Object` | [^handlers-desc] |
+| `expanded` | `boolean` | 下拉菜单是否展开。 |
+| `toggle` | `function(force?: boolean): void` | 用于切换下拉菜单展开状态。 |
++++
+^^^
+
+^^^handlers-desc
+需要绑定到触发元素上的事件监听器，可以使用 `v-on="handlers"` 统一进行输出。
+
+:::tip
+用于绑定 `handlers` 的元素需要支持获取焦点，以使各种键盘交互依然可以正常触发。
+:::
 ^^^
 
 ### 事件

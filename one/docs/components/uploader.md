@@ -32,8 +32,10 @@
 
 | 属性 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
+| `ui` | `string=` | - | [^ui] |
 | `type` | `string` | `'file'` | [^type] |
 | `value` | `Object|Array<Object>` | - | [^value] |
+| `key-field` | `string` | `'key'` | 用于指定文件对象的唯一 key，作为数据变化时正确处理文件列表顺序的依据。 |
 | `name` | `string` | `'file'` | 原生 `<input>` 元素的 `name`。 |
 | `action` | `string` | - | 上传地址。 |
 | `headers` | `Object` | `uploader.headers` | 需要加入 [HTTP 请求头](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers) 的内容。可进行全局统一配置。 |
@@ -55,6 +57,17 @@
 | `upload` | `function(Object, Object): function` | - | [^upload] |
 | `controls` | `function(Object, Array<Object>): Array<Object>` | - | [^controls] |
 
+^^^ui
+预设样式。
+
++++枚举值
+| 值 | 描述 |
+| -- | -- |
+| `s` | 小尺寸样式。 |
+| `m` | 中尺寸样式。 |
++++
+^^^
+
 ^^^type
 上传类型。
 
@@ -67,11 +80,7 @@
 ^^^
 
 ^^^value
-+++字段详情
-| `max-count` | 字段类型 |
-| -- | -- |
-| `1` | `Object` |
-| 大于 `1` 或 `null` | `Array<Object>` |
+当 `multiple` 为 `true`，返回文件对象的数组。另外，当 `max-count` 被设置为大于 `1` 的值，则会视为开启了 `multiple`。
 
 每个文件对象的类型为 `{name: string, src: string, ...}`，以及在 `convert-response` 中自定义添加的字段。
 +++

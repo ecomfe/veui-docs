@@ -19,6 +19,7 @@
 | `decimal-place` | `number` | `0` | Decimal place for the progress value. |
 | `status` | `string` | - | [^status] |
 | `autosucceed` | `boolean|number` | - | Whether automatically enter the `success` status when the progress reaches the maximum value. `true` denotes entering immediately, while `number` values denotes the delay in milliseconds before entering the `success` status. |
+| `indeterminate` | `boolean` | `false` | Whether the progress is indeterminate. Currently only works when `type` is `bar`. |
 
 ^^^ui
 Style variants.
