@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "npm run docs && HOST=0.0.0.0 nuxt & node -r esm ./one/build/watch.js",
-    "build": "npm run docs && nuxt build",
+    "build": "NODE_ENV=production npm run docs && nuxt build",
     "docs": "node -r esm ./one/build/generate.js",
     "start": "nuxt start",
     "generate": "npm run docs && nuxt generate",
