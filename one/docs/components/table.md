@@ -66,6 +66,7 @@
 | `order-by` | `string` | - | 用于指定当前基于哪一列进行了排序，值必须来自内部某个 `Column` 组件的 `field` 属性。 |
 | `scroll` | `number` | - | 指定滚动区域的最大高度，当超出此高度时，表格将进入固定表头和底部只允许数据区域滚动的模式。 |
 | `loading` | `boolean` | `false` | 指定表格是否处于加载状态。 |
+| `allowed-orders` | `Array` | `[false, 'desc', 'asc']` | [^allowed-orders] |
 
 ^^^ui
 预设样式。
@@ -95,6 +96,19 @@
 
 已展开行。为已展开行 `key-field` 对应字段值的数组。
 ^^^
+
+^^^allowed-orders
+在表格层级指定列的排序范围。
+
++++值范围
+| 值 | 描述 |
+| -- | -- |
+| `false` | 不排序。 |
+| `'asc'` | 升序。 |
+| `'desc'` | 降序。 |
++++
+^^^
+
 
 ### 插槽
 
