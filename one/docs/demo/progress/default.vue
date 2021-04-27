@@ -24,6 +24,11 @@
     >
       Circular
     </veui-checkbox>
+    <veui-checkbox
+      v-model="indeterminate"
+    >
+      Indeterminate
+    </veui-checkbox>
   </section>
   <section>
     <veui-progress
@@ -31,6 +36,7 @@
       :value="value"
       :desc="desc"
       :autosucceed="autoSucceed"
+      :indeterminate="indeterminate"
       :decimal-place="1"
       :min="0"
       :max="100"
@@ -53,7 +59,8 @@ export default {
       type: 'bar',
       value: 66.6,
       desc: true,
-      autoSucceed: true
+      autoSucceed: true,
+      indeterminate: false
     }
   }
 }
