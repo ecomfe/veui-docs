@@ -25,6 +25,7 @@
 | `filter-multiple` | `boolean=` | `false` | 内置筛选是否为多选。 |
 | `filter-options` | `Array<Object>` | - | 筛选选项列表，项目的类型为 `{label, value, options, disabled, ...}`，可参考 [`Select`](./select) 组件的 `options` 属性。 |
 | `filter-title` | `string=` | - | 筛选下拉的标题。 |
+| `allowed-orders` | `Array` | `[false, 'desc', 'asc']` | [^allowed-orders] |
 
 ^^^sortable
 本列是否支持排序。
@@ -48,6 +49,18 @@
 :::
 
 筛选条件取值，值为 `null` 表示未经过筛选。当 `filter-multiple` 为 `true` 时，值为已选项值的数组。
+^^^
+
+^^^allowed-orders
+指定该列的排序范围。
+
++++值范围
+| 值 | 描述 |
+| -- | -- |
+| `false` | 不排序。 |
+| `'asc'` | 升序。 |
+| `'desc'` | 降序。 |
++++
 ^^^
 
 ### 插槽
