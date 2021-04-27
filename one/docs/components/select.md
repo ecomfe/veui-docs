@@ -104,6 +104,7 @@
 | `option-label` | [^slot-option-label] |
 | `option` | [^slot-option] |
 | `trigger` | [^slot-trigger] |
+| `selected` | [^slot-selected] |
 
 ^^^slot-before
 选项列表前的内容。无默认内容。
@@ -207,6 +208,27 @@
 :::tip
 用于绑定 `handlers` 的元素需要支持获取焦点，以使各种键盘交互依然可以正常触发。
 :::
+^^^
+
+^^^slot-selected
+选中值渲染区域。
+
+默认内容：单选时渲染选中项目的标签；多选时将每个选中项目的标签渲染成`Tag`。
+
++++单选时的作用域参数
+| 名称 | 类型 | 描述 |
+| -- | -- | -- |
+| `label` | `string` | 选项文本。 |
+| `value` | `*` | 选项值。 |
+| `selected` | `boolean` | 是否已选择。 |
+| `disabled` | `boolean=` | 选项是否禁用。 |
++++
+
++++多选时的作用域参数
+| 名称 | 类型 | 描述 |
+| -- | -- | -- |
+| `selected` | `Array<Object>` | 选中项数据的数组。 |
++++
 ^^^
 
 ### 事件
