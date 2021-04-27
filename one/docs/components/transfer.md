@@ -35,6 +35,7 @@
 | `selected-placeholder` | `string` | - | 已选区内搜索框的占位文本。 |
 | `selected-show-mode` | `string` | `'tree'` | [^selected-show-mode] |
 | `keys` | `string|function` | `'value'` | [^keys] |
+| `merge-checked` | `string` | `keep-all` | [^merge-checked] |
 
 ^^^ui
 预设样式。
@@ -107,6 +108,19 @@ function (keyword, { label }) {
 自定义获取 `datasource` 中每一项的 `value` 值（具备唯一性）。可以用字符串的形式直接指定 `datasource` 中的哪个属性作为 `value`，也可以传递一个函数更加灵活地去生成 `value` 值。
 
 若类型为 `function`，参数为 `(item: Object)`，`item` 是 `datasource` 中的一个节点的属性，返回值是添加到 `selected` 中的值。
+^^^
+
+^^^merge-checked
+
+选中值的合并策略。
+
++++枚举值
+| 值 | 描述 |
+| -- | -- |
+| `keep-all` | 父子节点都会在选中值中。 |
+| `upwards` | 尽可能往祖先方向合并选中值。 |
+| `downwards` | 尽可能往后代方向合并选中值。 |
++++
 ^^^
 
 ### 插槽

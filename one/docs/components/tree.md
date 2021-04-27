@@ -29,6 +29,7 @@
 | `checked` | `Array` | `[]` | [^checked] |
 | `selectable` | `boolean` | `false` | 点击整个节点区域时是否选中该节点。 |
 | `selected` | `string` | - | [^selected] |
+| `merge-checked` | `string` | `keep-all` | [^merge-checked] |
 
 ^^^ui
 预设样式。
@@ -76,6 +77,19 @@
 :::
 
 当前被选中的叶节点的值，是一个对应于 `datasource` 中节点数据中 `value` 属性的数组。
+^^^
+
+^^^merge-checked
+
+选中值的合并策略。
+
++++枚举值
+| 值 | 描述 |
+| -- | -- |
+| `keep-all` | 父子节点都会在选中值中。 |
+| `upwards` | 尽可能往祖先方向合并选中值。 |
+| `downwards` | 尽可能往后代方向合并选中值。 |
++++
 ^^^
 
 ### 插槽
