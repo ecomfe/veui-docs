@@ -302,6 +302,10 @@
         {
           "title": "Accordion - 手风琴面板",
           "slug": "accordion"
+        },
+        {
+          "title": "Lightbox - 灯箱",
+          "slug": "lightbox"
         }
       ]
     },
