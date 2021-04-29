@@ -14,6 +14,12 @@
 
 [[ demo src="/demo/uploader/image.vue" ]]
 
+### 媒体上传
+
+设置 `type` 的值为 `media` 进入媒体上传模式。
+
+[[ demo src="/demo/uploader/media.vue" ]]
+
 ### 前端校验
 
 图片格式、大小、数量校验以及使用 `validator` 自定义校验。
@@ -56,6 +62,12 @@
 | `picker-position` | `string` | `'after'` | [^picker-position] |
 | `upload` | `function(Object, Object): function` | - | [^upload] |
 | `controls` | `function(Object, Array<Object>): Array<Object>` | - | [^controls] |
+| `multiple` | `boolean` | `false` | 上传多个文件，当 `max-count` 是 `1`，`multiple` 是 `true`，那么 `value` 也是数组。 |
+| `entries` | `function(Array<Object>): Array<Object>` | - | [^entries] |
+| `after-pick` | `function(Array<Object>): void` | - | 选择文件之后的回调。 |
+| `sortable` | `boolean` | `false` | 文件列表是否可以排序。 |
+| `preview-options` | `object` | `{wrap: true, indicator: 'number'}` | 传递给 [`Lightbox`](./lightbox) 的预览选项|
+
 
 ^^^ui
 预设样式。
@@ -76,6 +88,8 @@
 | -- | -- |
 | `file` | 文件上传。 |
 | `image` | 图片上传。 |
+| `media` | 媒体上传（支持视频和图片）。 |
+| `video` | 视频上传。 |
 +++
 ^^^
 
@@ -194,6 +208,10 @@
 | `label` | `string` | 操作项的文字描述。 |
 | `icon` | `string` | 操作项使用的图标。 |
 | `disabled` | `boolean=` | 操作项是否被禁用。如果该字段为空，则该操作项的禁用状态跟随组件整体的禁用状态。 |
+^^^
+
+^^^entries
+控制每个上传文件的操作项，如删除，预览等，会传递默认的操作项数组作为参数，返回实际生效的操作项数组。操作项对象一般是 `{name, icon, label}`。
 ^^^
 
 ### 插槽
