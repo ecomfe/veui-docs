@@ -28,6 +28,10 @@
 
 [[ demo src="/demo/dialog/stack.vue" ]]
 
+### Loading or Disabled
+
+[[ demo src="/demo/dialog/status.vue" ]]
+
 ## API
 
 ### 属性
@@ -45,6 +49,7 @@
 | `inline` | `boolean=` | `false` | 是否内联在内容中显示并占用内容空间。 |
 | `footless` | `boolean=` | `false` | 是否不显示默认的底部操作栏。 |
 | `loading` | `boolean=` | `false` | 是否处于加载状态。处于加载状态时确定按钮也将进入加载状态，无法点击。 |
+| `disabled` | `boolean=` | `false` | 是否处于禁用状态。处于加载状态时确定按钮也将进入禁用状态，无法点击。 |
 | `priority` | `number=` | - | 对话框浮层层叠权重，参考 [`Overlay`](./overlay) 组件的 [`priority`](./overlay#props) 属性。 |
 | `before-close` | `function(string): boolean=|Promise<boolean=>` | - | [^before-close] |
 | `overlay-class` | `string|Object=` | - | 对话框浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props) 属性。 |
