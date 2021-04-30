@@ -22,6 +22,14 @@
 
 [[ demo src="/demo/directives/drag/axis.vue" ]]
 
+水平排序。
+
+[[ demo src="/demo/directives/drag/sort-x.vue" ]]
+
+垂直排序。
+
+[[ demo src="/demo/directives/drag/sort-y.vue" ]]
+
 ## API
 
 :::tip
@@ -41,6 +49,7 @@
 | `axis` | `string` | - | 限制所有目标元素只能在水平或者垂直方向上做变换。取值为：`x`、`y`。 |
 | `dragstart` | `function(): Object` | `function() {}` | [^dragstart] |
 | `drag` | `function(): Object` | `function() {}` | [^drag] |
+| `disabled` | `boolean` | `false` | 动态开关该指令 |
 | `dragend` | `function(): Object` | `function() {}` | 鼠标拖拽结束事件的回调函数。回调参数同 `drag`。 |
 | `ready` | `function` | `function() {}` | 指令初始化完成的回调函数，会传出一个句柄对象参数，该对象上有一个 `reset()` 方法，用于将所有目标元素重置为变换之前的样子。 |
 
@@ -107,6 +116,31 @@
 ```html
 <div v-drag:box1,box2></div>
 ```
+
+
+## 拖拽排序（v-drag.sort）
+
+可以通过 `v-drag.sort` 或 `v-drag="{type: 'sort', ...}"` 来实现拖拽排序
+
+### 绑定值
+
+类型：`Object`。
+
+| 参数 | 类型 | 默认值 | 描述 |
+| -- | -- | -- | -- |
+| `name` | `string` | - | 用来标记一组项目，在这组项目中进行排序。 |
+| `type` | `string` | - | 该参数指定变化的类型，拖拽排序是 `sort` 。 |
+| `containment` | `string|Vue|HTMLElement|Object` | - | 参见上面的基础描述 |
+| `axis` | `string` | - | 限制所有目标元素只能在水平或者垂直方向上做排序。取值为：`x`、`y`。 |
+| `callback` | `function(toIndex: number, fromIndex: number): void` | - | [^sort_callback] |
+| `debug` | `boolean` | `false` | 在开发模式（process.env.NODE_ENV === 'development'）下在 DOM 上显示热区标记以方便调试。 |
+
+^^^sort_callback
+排序指令仅仅通过该回调告诉用户排序的情况，即：从原来位置（`fromIndex`）移动到新位置（`toIndex`）,用户自己应该在该回调中对数据源进行调整位置。
+
+** 回调触发时机：当 *fromIndex* 元素的中心点拖动到热区（*toIndex* 元素尾部和 *toIndex+1* 元素首部之间的区域）中触发。**
+
+^^^
 
 ## 扩展
 
