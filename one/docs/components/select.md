@@ -235,6 +235,7 @@
 
 | 名称 | 描述 |
 | -- | -- |
+| `input` | 输入搜索关键词时触发。回调参数为 `(value: string)`，`value` 为输入框的 `value` 值。 |
 | `change` | [^event-change] |
 | `toggle` | 下拉菜单展开状态切换时触发，回调参数为 `(expanded: boolean)`。`expanded` 表示操作将触发下拉菜单展开还是收起。 |
 
