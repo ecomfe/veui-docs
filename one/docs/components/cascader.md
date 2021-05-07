@@ -246,6 +246,7 @@
 
 | 名称 | 描述 |
 | -- | -- |
+| `input` | 输入搜索关键词时触发。回调参数为 `(value: string)`，`value` 为输入框的 `value` 值。 |
 | `select` | [^event-select] |
 | `afteropen` | 下拉打开后触发。 |
 | `afterclose` | 下拉关闭后触发。 |
