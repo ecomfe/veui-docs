@@ -49,7 +49,7 @@
 | `axis` | `string` | - | 限制所有目标元素只能在水平或者垂直方向上做变换。取值为：`x`、`y`。 |
 | `dragstart` | `function(): Object` | `function() {}` | [^dragstart] |
 | `drag` | `function(): Object` | `function() {}` | [^drag] |
-| `disabled` | `boolean` | `false` | 动态开关该指令 |
+| `disabled` | `boolean` | `false` | 该指令是否被禁用。 |
 | `dragend` | `function(): Object` | `function() {}` | 鼠标拖拽结束事件的回调函数。回调参数同 `drag`。 |
 | `ready` | `function` | `function() {}` | 指令初始化完成的回调函数，会传出一个句柄对象参数，该对象上有一个 `reset()` 方法，用于将所有目标元素重置为变换之前的样子。 |
 
@@ -120,7 +120,7 @@
 
 ## 拖拽排序（v-drag.sort）
 
-可以通过 `v-drag.sort` 或 `v-drag="{type: 'sort', ...}"` 来实现拖拽排序
+可以通过 `v-drag.sort` 或 `v-drag="{type: 'sort', ...}"` 来实现拖拽排序。
 
 ### 绑定值
 

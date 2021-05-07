@@ -1,25 +1,27 @@
 <template>
 <article>
   <section class="cascader-config">
-    <veui-checkbox v-model="clearable2">Clearable</veui-checkbox>
-    <veui-checkbox v-model="showSelectAll2">有全选</veui-checkbox>
+    <veui-checkbox ui="s" v-model="clearable2">Clearable</veui-checkbox>
+    <veui-checkbox ui="s" v-model="showSelectAll2">ShowSelectAll</veui-checkbox>
     <veui-radio
       v-model="trigger2"
+      ui="s"
       value="click"
       name="columnTrigger2"
-    >点击展开</veui-radio>
+    >click to expand</veui-radio>
     <veui-radio
       v-model="trigger2"
+      ui="s"
       value="hover"
       name="columnTrigger2"
-    >hover展开</veui-radio>
+    >hover to expand</veui-radio>
     <label>
       Max:
-      <veui-number-input v-model="max2"/>
+      <veui-number-input ui="s" v-model="max2"/>
     </label>
     <label>
-      列宽度:
-      <veui-input v-model="columnWidth2"/>
+      columnWidth:
+      <veui-input ui="s" v-model="columnWidth2"/>
     </label>
   </section>
   <veui-cascader
@@ -182,7 +184,8 @@ export default {
   align-items: center;
   height: 32px;
   & > * {
-    margin-right: 32px;
+    margin-right: 8px;
+    font-size: 12px;
   }
   .veui-input {
     width: 80px;
