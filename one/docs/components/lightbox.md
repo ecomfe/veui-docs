@@ -21,7 +21,7 @@
 | `before-close` | `function(string): boolean=|Promise<boolean=>` | - | [^before-close] |
 | `overlay-class` | `string|Array|Object=` | - | 浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props) 属性。 |
 | `indicator` | `string=` | `'number'` | [^indicator] |
-| `options` | `object=` | `{video: {muted: true, autoplay: true, controls: true}}` | 额外配置。 |
+| `options` | `Object=` | `{ video: { muted: true, autoplay: true, controls: true } }` | 额外配置。 |
 
 ^^^open
 :::badges
@@ -32,7 +32,7 @@
 ^^^
 
 ^^^datasource
-灯箱数据源，项目类型为：`{src, alt, type}`。
+灯箱数据源，项目类型为：`{ src, alt, type, desc }`。
 
 +++字段详情
 | 名称 | 类型 | 描述 |

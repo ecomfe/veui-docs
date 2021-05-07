@@ -124,9 +124,11 @@ export default {
     border-color: peachpuff;
   }
 }
+</style>
 
+<style lang="less" scoped>
 .list-move {
-  // UE 给出的动画曲线是 0.25, 0.1, 0.25, 1，就是 ease
+  // 动画曲线是 0.25, 0.1, 0.25, 1，就是 ease
   transition: transform 200ms ease;
 }
 </style>

@@ -102,7 +102,7 @@
 +++枚举值
 | 值 | 描述 |
 | -- | -- |
-| `hover` | hover展开下一级。 |
+| `hover` | 光标悬浮展开下一级。 |
 | `click` | 点击展开下一级。 |
 +++
 ^^^
@@ -130,8 +130,8 @@
 +++枚举值
 | 值 | 描述 |
 | -- | -- |
-| `complete` | 完整展示选中值的父子路径，如`中国 > 上海`。 |
-| `simple` | 仅仅展示选中值。 |
+| `complete` | 完整展示选中值的路径，如“中国 > 上海”。 |
+| `simple` | 仅仅展示选中值文本。 |
 +++
 ^^^
 
@@ -159,13 +159,13 @@
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `value` | `*` | 已选项值。 |
-| `selected` | `object` | 已选项 |
+| `selected` | `Object` | 已选项对象。 |
 | `expanded` | `boolean` | 下拉菜单是否展开。 |
 | `keyword` | `string` | 搜索值。 |
-| `select` | `function(value: *): void` | 用于设置已选项。 |
-| `updateExpanded` | `function(expanded: boolean): void` | 用于切换下拉菜单展开状态。 |
-| `clearSelected` | `function(): void` | 用于清除已选项。 |
-| `removeSelected` | `function(option: object): void` | 用于删除某个已选项，参数 `option` 是该已选项。 |
+| `select` | `function(option: Object): void` | 用于设置已选项。 |
+| `toggle` | `function(force: boolean): void` | 用于切换下拉菜单展开状态。 |
+| `clear` | `function(): void` | 用于清除已选项。 |
+| `remove` | `function(option: Object): void` | 用于删除某个已选项，参数 `option` 是该已选项。 |
 | `updateKeyword` | `function(keyword: string): void` | 用于修改搜索值。 |
 +++
 ^^^
@@ -176,7 +176,7 @@
 +++作用域参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `option` | `object` | 该列的父选项，其中 `options` 属性可以拿到当前列的数据。 |
+| `option` | `Object` | 该列的父选项，其中 `options` 属性可以拿到当前列的数据。 |
 +++
 ^^^
 
@@ -206,10 +206,10 @@
 +++作用域参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `option` | `object` | 当前选项。 |
-| `select` | `function(option: object): void` | 选中当前选项。 |
-| `expand` | `function(option: object): void` | 展开当前选项。 |
-| `click` | `function(option: object): void` | 点击当前选项内容区，会按情况选中和(或)展开当前选项。 |
+| `option` | `Object` | 当前选项。 |
+| `select` | `function(option: Object): void` | 选中当前选项。 |
+| `expand` | `function(option: Object): void` | 展开当前选项。 |
+| `click` | `function(option: Object): void` | 点击当前选项内容区，会按情况选中和(或)展开当前选项。 |
 +++
 ^^^
 
