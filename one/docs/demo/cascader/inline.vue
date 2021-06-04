@@ -3,6 +3,7 @@
   <veui-cascader
     v-model="value"
     searchable
+    inline
     :options="options"
   />
 </article>
