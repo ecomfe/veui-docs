@@ -97,7 +97,6 @@
 当 `multiple` 为 `true`，返回文件对象的数组。另外，当 `max-count` 被设置为大于 `1` 的值，则会视为开启了 `multiple`。
 
 每个文件对象的类型为 `{name: string, src: string, ...}`，以及在 `convert-response` 中自定义添加的字段。
-+++
 ^^^
 
 ^^^request-mode
