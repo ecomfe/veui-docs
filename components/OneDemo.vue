@@ -98,6 +98,8 @@ export default {
 
 .demo
   border 1px solid #eee
+  border-top-left-radius 4px
+  border-top-right-radius 4px
   padding 30px
 
 .desc
@@ -106,11 +108,15 @@ export default {
   background-color #fcfcfc
 
 .source
+  overflow hidden
   transition height 0.3s
 
   & >>> pre
     margin-top 0
     margin-bottom 0
+
+    .expanded &
+      border-radius 0
 
 .desc
 .source >>> pre
@@ -126,6 +132,8 @@ export default {
   width 100%
   height 40px
   border 1px solid #eee
+  border-bottom-left-radius 4px
+  border-bottom-right-radius 4px
   background-color #fff
   transition background-color 0.3s
   outline none

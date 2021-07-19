@@ -33,13 +33,13 @@ module.exports = {
   /**
    * Customize the progress bar color
    */
-  loading: { color: '#1e1f24' },
+  loading: { color: '#0052cc' },
 
   pageTransition: {
     css: false
   },
 
-  css: ['veui-theme-dls/common.less', '@/assets/styles/global.styl', '@/assets/styles/post.styl'],
+  css: ['veui-theme-dls/common.less', '@/assets/styles/global.styl'],
 
   plugins: [
     { src: '~plugins/i18n.js' },

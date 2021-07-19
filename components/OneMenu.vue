@@ -122,7 +122,7 @@ export default {
   width 100%
   height 100%
 
-  ::v-deep .veui-menu-tree-wrapper
+  & >>> .veui-menu-tree-wrapper
     display flex
     flex-direction column
     flex-grow 1
@@ -132,7 +132,7 @@ export default {
     .veui-menu-tree
       overflow auto
 
-  ::v-deep .DocSearch
+  & >>> .DocSearch
     margin 0
     border-radius 6px
     font inherit
@@ -177,6 +177,7 @@ export default {
 
   .filter
     margin 20px 0 20px 20px
+    height 36px
 
   .search
     display block

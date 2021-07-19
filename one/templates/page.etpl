@@ -25,4 +25,6 @@ export default {<!-- if: ${layout} -->
 <!-- /if -->
   mixins: [htmlAttrs]
 }
-</script><!-- /else -->
+</script><!-- /else --><!-- if: ${style} -->
+
+<style lang="stylus" src="@/assets/styles/post.styl" scoped></style><!-- /if -->
