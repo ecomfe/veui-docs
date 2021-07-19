@@ -39,7 +39,7 @@ module.exports = {
     css: false
   },
 
-  css: ['veui-theme-dls/common.less', '@/assets/styles/global.styl'],
+  css: ['veui-theme-dls/common.less', '@/assets/styles/global.styl', '@/assets/styles/post.styl'],
 
   plugins: [
     { src: '~plugins/i18n.js' },

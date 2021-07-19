@@ -132,6 +132,11 @@ export default {
     .veui-menu-tree
       overflow auto
 
+  ::v-deep .DocSearch
+    margin 0
+    border-radius 6px
+    font inherit
+
   h2
     display flex
     align-items center

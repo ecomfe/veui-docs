@@ -1,15 +1,19 @@
+$primary = #0052cc
+
 // only enable on Retina displays
 @media screen and (min-resolution 2dppx)
   html
     -webkit-font-smoothing antialiased
     -moz-osx-font-smoothing grayscale
 
-
-
 *
 *::before
 *::after
   box-sizing border-box
+
+:root
+  --docsearch-primary-color $primary !important
+  --docsearch-searchbox-shadow inset 0 0 0 2px $primary !important
 
 html
   font-weight 400
@@ -35,69 +39,3 @@ a:focus
 
 main
   line-height 1.5
-
-menu
-  margin 0
-  padding 0
-
-.menu-item
-  list-style none
-  line-height 1
-
-.menu-link
-  display block
-  position relative
-  text-decoration none
-  cursor default
-
-  a&
-    cursor pointer
-
-  &::after
-    content ""
-    position absolute
-    bottom 2px
-    left 50%
-    width 0
-    height 2px
-    transition width 0.2s, left 0.2s
-
-  a&:focus::after
-  a&:hover::after
-    width 100%
-    left 0
-
-.algolia-autocomplete
-  .algolia-docsearch-suggestion--title:last-child
-    margin-bottom 0
-
-  .ds-dropdown-menu
-    &
-    & [class^=ds-dataset-]
-      border-radius 3px
-
-    &::before
-      width 10px
-      height 10px
-      top -4px
-
-    .ds-suggestion.ds-cursor .algolia-docsearch-suggestion
-      &.suggestion-layout-simple
-      &:not(.suggestion-layout-simple) .algolia-docsearch-suggestion--content
-        background-color #f8f8f8
-
-  .algolia-docsearch-suggestion--category-header
-    font-size 14px
-
-  .algolia-docsearch-suggestion--subcategory-column
-    font-size 12px
-    overflow hidden
-    white-space nowrap
-    text-overflow ellipsis
-
-  .algolia-docsearch-suggestion--highlight
-    color #fff
-    background-color #111
-
-  .algolia-docsearch-suggestion--text .algolia-docsearch-suggestion--highlight
-    box-shadow inset 0 -2px 0 0 #111
