@@ -1,90 +1,53 @@
 <template>
 <aside class="one-nav">
-  <nav class="secondary">
-    <h2><span>VEUI<small>beta</small></span></h2>
-    <section class="desc">
-      <a href="https://github.com/ecomfe/veui">
-        <img
-          alt="VEUI on GitHub"
-          src="https://badgen.net/badge/-/GitHub?icon=github&label"
-          width="69.2"
-          height="20"
-        >
-      </a>
-      <nuxt-link
-        :class="{
-          'locale-swith': true,
-          disabled: altLocale.disabled
-        }"
-        :to="altLocale.disabled ? '' : altLocale.to"
-      >
-        {{ altLocale.label }}
-      </nuxt-link>
-    </section>
-    <section class="filter">
-      <input
-        type="text"
-        placeholder="Search…"
-        class="search"
-      >
-    </section>
-    <menu class="menu">
-      <template v-for="(item, i) in nav">
-        <li
-          :key="`menu-${i}`"
-          class="menu-item"
-        >
-          <nuxt-link
-            v-if="item.link !== false"
-            class="menu-link"
-            :exact="item.exact"
-            :to="getLocalePath(`/${item.slug}`)"
+  <veui-menu
+    class="one-menu"
+    :items="menuItems"
+    :expanded.sync="expanded"
+  >
+    <template #before>
+      <h2>VEUI</h2>
+      <section class="desc">
+        <a href="https://github.com/ecomfe/veui">
+          <img
+            alt="VEUI on GitHub"
+            src="https://badgen.net/badge/-/GitHub?icon=github&label"
+            width="69.2"
+            height="20"
           >
-            {{ item.title }}
-          </nuxt-link>
-          <span
-            v-else
-            class="menu-link"
-          >{{ item.title }}</span>
-          <menu
-            v-if="item.children && item.children.length"
-            class="menu"
-          >
-            <template
-              v-for="(subItem, j) in item.children"
-            >
-              <li
-                v-if="!subItem.hidden"
-                :key="`sub-${j}`"
-                class="menu-item"
-              >
-                <nuxt-link
-                  :class="{
-                    'menu-link': true,
-                    'menu-link-disabled': subItem.disabled,
-                    'menu-link-sub': subItem.sub,
-                    'menu-link-active': isActive(`/${item.slug}/${subItem.slug}`)
-                  }"
-                  :exact="subItem.exact"
-                  :to="subItem.disabled ? '/' : getLocalePath(`/${item.slug}/${subItem.slug}`)"
-                  v-html="getTitleHTML(subItem.title)"
-                />
-              </li>
-            </template>
-          </menu>
-        </li>
-      </template>
-    </menu>
-  </nav>
+        </a>
+        <nuxt-link
+          :class="{
+            'locale-swith': true,
+            disabled: altLocale.disabled,
+          }"
+          :to="altLocale.disabled ? '' : altLocale.to"
+        >
+          {{ altLocale.label }}
+        </nuxt-link>
+      </section>
+      <section class="filter">
+        <one-search/>
+      </section>
+    </template>
+    <template #item-label="{ label, sub }">
+      {{ label }}<small>{{ sub }}</small>
+    </template>
+  </veui-menu>
 </aside>
 </template>
 
 <script>
-import { escape } from 'lodash'
 import i18n from '../common/i18n'
+import OneSearch from './OneSearch'
+import { Menu } from 'veui'
 
 export default {
   name: 'one-menu',
+  components: {
+    'one-search': OneSearch,
+    'veui-menu': Menu
+  },
   mixins: [i18n],
   props: {
     nav: {
@@ -92,6 +55,11 @@ export default {
       default () {
         return []
       }
+    }
+  },
+  data () {
+    return {
+      expanded: []
     }
   },
   computed: {
@@ -105,52 +73,37 @@ export default {
         disabled,
         label
       }
+    },
+    menuItems () {
+      return this.nav.map(item => this.normalizeItem(item))
     }
   },
-  watch: {
-    $route: 'scrollActiveIntoView'
-  },
-  mounted () {
-    this.scrollActiveIntoView()
-  },
-  beforeDestroy () {
-    clearTimeout(this.timer)
+  created () {
+    this.expanded = this.menuItems.map(({ name }) => name)
   },
   methods: {
-    getTitleHTML (title) {
+    getTitleDetail (title) {
       let [main, sub] = title.split(' - ')
-      return escape(main) + (sub ? `<small>${escape(sub)}</small>` : '')
+      return [main, sub]
     },
     isActive (path) {
       let { route = {} } = this.$router.resolve(path) || {}
       return route.name === this.$route.name
     },
-    scrollActiveIntoView () {
-      this.timer = setTimeout(() => {
-        if (!this.$el) {
-          return
-        }
-        let active =
-          this.$el.querySelector('.nuxt-link-exact-active') ||
-          this.$el.querySelector('.menu-link-active')
-        if (!active) {
-          return
-        }
+    normalizeItem ({ title, children, slug, link, disabled }, base = '') {
+      const fullSlug = `${base}/${slug}`
+      const localePath = this.getLocalePath(fullSlug)
+      const to = (link !== false && fullSlug) ? localePath : null
+      const [main, sub] = this.getTitleDetail(title)
 
-        let menu = active.offsetParent
-        if (!menu) {
-          return
-        }
-        if (
-          active.offsetTop < menu.scrollTop ||
-          active.offsetTop + active.offsetHeight > menu.scrollTop
-        ) {
-          active.scrollIntoView({
-            behavior: 'smooth',
-            block: 'nearest'
-          })
-        }
-      })
+      return {
+        label: main,
+        sub,
+        to,
+        name: fullSlug,
+        disabled,
+        children: children ? children.map(child => this.normalizeItem(child, fullSlug)) : []
+      }
     }
   }
 }
@@ -159,42 +112,32 @@ export default {
 <style lang="stylus" scoped>
 .one-nav
   position fixed
-  top 60px
+  top 0
   bottom 0
   left 0
+  width 280px
   z-index 1
-  padding-top 30px
-  border-right 1px solid #e5e5e5
 
-.primary
-  margin-left -250px
-
-.secondary
+.one-menu
+  width 100%
   height 100%
-  position relative
-  display flex
-  justify-content stretch
-  flex-direction column
-  float left
-  width 240px
+
+  ::v-deep .veui-menu-tree-wrapper
+    display flex
+    flex-direction column
+    flex-grow 1
+    height 100%
+    overflow visible
+
+    .veui-menu-tree
+      overflow auto
 
   h2
     display flex
     align-items center
-    margin 0 0 0 20px
+    margin 30px 0 0 20px
     font-size 20px
     font-weight 500
-
-    span
-      position relative
-
-      small
-        position absolute
-        font-size 16px
-        font-weight 400
-        transform scale(0.75) translateY(-3px)
-        margin-left 3px
-        opacity 0.7
 
     a
       display block
@@ -207,6 +150,10 @@ export default {
 
       img
         display block
+
+  small
+    margin-left 8px
+    opacity 0.7
 
   .locale-swith
     display block
@@ -224,8 +171,7 @@ export default {
       border-color #999
 
   .filter
-    margin-top 20px
-    margin-left 20px
+    margin 20px 0 20px 20px
 
   .search
     display block
@@ -241,66 +187,6 @@ export default {
     &.focus-visible
       border-color #999
       box-shadow 0 0 0 2px rgba(0, 0, 0, 0.15)
-
-  & > .menu
-    position relative
-    width 100%
-    flex 1 1 auto
-    margin-top 25px
-    padding-left 20px
-    overflow auto
-
-  .menu
-  .menu-item
-  .menu-link
-    float left
-    clear left
-
-  .menu .menu
-    margin 3.5px 0
-
-  .menu-item
-    margin 3.5px 0
-    font-size 16px
-
-    .menu-item
-      font-size 13px
-
-      .menu-link
-        color #333
-        font-weight 400
-
-        & >>> small
-          color #999
-          font-size 13px
-          margin-left 10px
-          white-space nowrap
-
-        &::after
-          display block
-
-  .menu-link
-    float left
-    clear left
-    color #333
-    font-weight 500
-    padding 9px 0
-    text-decoration none
-
-    &-disabled
-      opacity 0.3
-      pointer-events none
-
-    // &-sub
-    // margin-left 10px
-    &::after
-      background-color #999
-
-  .nuxt-link-exact-active::after
-  .menu-link-active::after
-    width 100%
-    left 0
-    background-color #333
 
 .toggle
   margin-right 15px

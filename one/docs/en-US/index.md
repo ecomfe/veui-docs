@@ -1,7 +1,7 @@
 # VEUI
 
 :::oss-badges
-[<img alt="VEUI on GitHub" src="https://badgen.net/badge/-/VEUI?label=GitHub" width="85.2" height="20">](https://github.com/ecomfe/veui) [<img alt="VEUI on CircleCI" src="https://badgen.net/circleci/github/ecomfe/veui?label=CircleCI" width="105.1" height="20">](https://circleci.com/gh/ecomfe/veui) [<img alt="VEUI on npm" src="https://badgen.net/npm/v/veui" width="133.5" height="20">](https://www.npmjs.com/package/veui)
+[<img alt="VEUI on CircleCI" src="https://badgen.net/circleci/github/ecomfe/veui?label=CircleCI&cache=300" height="20">](https://circleci.com/gh/ecomfe/veui) [<img alt="VEUI on npm" src="https://badgen.net/npm/v/veui?cache=300" height="20">](https://www.npmjs.com/package/veui)
 :::
 
 > VEUI is an enterprise UI component library, based on [Vue.js](https://vuejs.org).

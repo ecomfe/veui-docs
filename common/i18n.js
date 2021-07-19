@@ -74,14 +74,13 @@ export default {
     }
   },
   methods: {
-    getLocalePath (path, locale) {
-      let loc = locale || this.locale
-      if (loc === DEFAULT_LOCALE) {
+    getLocalePath (path, locale = this.locale) {
+      if (locale === DEFAULT_LOCALE) {
         return path
       }
-      return `/${loc}${path}`.replace(/\/$/, '')
+      return `/${locale}${path}`.replace(/\/$/, '')
     },
-    isPathDisabled (path, locale) {
+    isPathDisabled (path, locale = this.locale) {
       let segments = compact(path.split('/'))
       let navItem = segments.reduce((node, seg) => {
         if (!node) {

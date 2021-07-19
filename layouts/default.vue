@@ -5,7 +5,6 @@
     'no-links': !hasFooterLinks
   }"
 >
-  <one-header/>
   <one-menu :nav="nav"/>
   <nuxt/>
   <one-footer
@@ -19,7 +18,6 @@
 
 <script>
 import 'focus-visible'
-import OneHeader from '../components/OneHeader'
 import OneMenu from '../components/OneMenu'
 import OneFooter from '../components/OneFooter'
 import OneBackToTop from '../components/OneBackToTop'
@@ -30,7 +28,6 @@ import i18nMgr from 'veui/managers/i18n'
 export default {
   name: 'main-doc',
   components: {
-    OneHeader,
     OneMenu,
     OneFooter,
     OneBackToTop
@@ -81,15 +78,13 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-$sidebar-width = 240px
+$sidebar-width = 280px
 
 main
   height 100%
 
 .content
-  margin-top 60px
-
-.content, .footer
+.footer
   max-width 1180px - $sidebar-width
   min-width 560px
   transition margin-left 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86)

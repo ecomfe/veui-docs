@@ -27,19 +27,7 @@ module.exports = {
       }
     ],
     link: [
-      { rel: 'shortcut icon', href: 'https://www.baidu.com/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://code.bdstatic.com/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.css'
-      }
-    ],
-    script: [
-      {
-        src:
-          'https://code.bdstatic.com/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.js',
-        body: true
-      }
+      { rel: 'shortcut icon', href: 'https://www.baidu.com/favicon.ico' }
     ]
   },
   /**
@@ -54,11 +42,9 @@ module.exports = {
   css: ['veui-theme-dls/common.less', '@/assets/styles/global.styl'],
 
   plugins: [
-    { src: '~plugins/config.js' },
     { src: '~plugins/i18n.js' },
     { src: '~plugins/l10n.js' },
-    { src: '~plugins/hm.js', ssr: false },
-    { src: '~plugins/algolia.js', ssr: false }
+    { src: '~plugins/hm.js', ssr: false }
   ],
 
   /**
