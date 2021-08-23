@@ -28,13 +28,16 @@ Available size variants for the `ui` prop: `s`/`m`.
 | -- | -- | -- | -- |
 | `ui` | `string=` | - | [^ui] |
 | `datasource` | `Array<Object>` | `[]` | [^datasource] |
-| `searchable` | `boolean` | `true` | Whether to allow search. |
-| `filter` | `function` | See description | [^filter] |
-| `selected` | `Array` | `[]` | [^selected] |
-| `candidate-placeholder` | `string` | - | The placeholder text in the search input of the candidate panel. |
-| `selected-placeholder` | `string` | - | The placeholder text in the search input of the selected panel. |
-| `selected-show-mode` | `string` | `'tree'` | [^selected-show-mode] |
-| `keys` | `string|function` | `'value'` | The customized unique key for `datasource` items. String values can be used to specify which field value is used. Also a function can bu used to specify a customized key value. |
+| `searchable` | `boolean=` | `true` | Whether to allow search. |
+| `filter` | `function=` | See description | [^filter] |
+| `selected` | `Array=` | `[]` | [^selected] |
+| `candidate-placeholder` | `string=` | - | The placeholder text in the search input of the candidate panel. |
+| `selected-placeholder` | `string=` | - | The placeholder text in the search input of the selected panel. |
+| `candidate-label` | `string=` | - | The title of the candidates panel. |
+| `selected-label` | `string=` | - | The title of the selected panel. |
+| `selected-show-mode` | `string=` | `'tree'` | [^selected-show-mode] |
+| `keys` | `string|function=` | `'value'` | The customized unique key for `datasource` items. String values can be used to specify which field value is used. Also a function can bu used to specify a customized key value. |
+| `merge-checked` | `string=` | `keep-all` | [^merge-checked] |
 
 ^^^ui
 Style variants.
@@ -102,20 +105,52 @@ To specify how should items inside selected panel be displayed.
 +++
 ^^^
 
+^^^merge-checked
+
+Merge strategy for selected values. When all child nodes under a node are selected, you can choose to keep only the parent node, only the child nodes, or both.
+
++++Enumerated values
+| Value | Description |
+| --- | --- |
+| `keep-all` | The parent and child nodes will both be in the selected value. |
+| `upwards` | Merge selected values as far as possible in the ancestor direction. |
+| `downwards` | Merge selected values in the direction of descendants if possible. |
++++
+^^^
+
 ### Slots
 
 | Name | Description |
 | -- | -- |
-| `candidate-head` | The head area of the candidate panel. |
-| `selected-head` | The head area of the selected panel. |
-| `candidate-title` | The title text of the candidate panel. |
-| `selected-title` | The title text of the selected panel. |
+| `candidate` | The candidate panel. |
+| `candidate-head` | [^candidate-head] |
+| `selected-head` | [^selected-head] |
+| `candidate-title` | The title text of the candidate panel. Shares the same scope properties with slot `candidate-head`. |
+| `selected-title` | The title text of the selected panel. Shares the same scope properties with slot `selected-head`. |
 | `candidate-no-data` | The content displayed when there's no data inside the candidate panel. |
 | `selected-no-data` | The content displayed when there's no data inside the selected panel. |
 | `candidate-item` | [^candidate-item] |
 | `selected-item` | [^selected-item] |
 | `candidate-item-label` | Label text of each item inside the candidate panel. Shares the same scope properties with slot `candidate-item`. |
 | `selected-item-label` | Label text of each item inside the selected panel. Shares the same scope properties with slot `selected-item` when `selected-show-mode` is `'tree'`. Otherwise this slot specifies custom content for any item along the path for all selected leaf item and shares the same scope properties with slot `candidate-item`. |
+
+^^^candidate-head
+The head area of the candidate panel.
+
++++Scope properties
+| Name | Type | Description |
+| -- | -- | -- |
+| `count` | `number` | The number of candidate items. |
+^^^
+
+^^^selected-head
+The head area of the selected panel.
+
++++Scope properties
+| Name | Type | Description |
+| -- | -- | -- |
+| `count` | `number` | The number of selected items. |
+^^^
 
 ^^^candidate-item
 The content of each item inside the candidate panel.

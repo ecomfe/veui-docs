@@ -33,7 +33,8 @@ Use the `trigger` prop to specify when to show/hide the tooltip.
 | `trigger` | `string` | `'hover'` | [^trigger] |
 | `interactive` | `boolean` | `true` | Whether the tooltip content is interactive. When set to `false`, the tooltip will be automatically hidden after the event specified by `trigger` is triggered outside the `target`. |
 | `hide-delay` | `number` | `tooltip.hideDelays` | Time (in milliseconds) to wait before hiding the tooltip after the close trigger is triggered. Can be used to prevent the tooltip being immediately closed after pointer leaves the `target` element and before it enters the tooltip itself. |
-| `overlay-class` | `string|Array|Object=` | - | See the [`overlay-class` prop](./overlay#props) of the [`Overlay`](./overlay) component. |
+| `overlay-class` | `string|Array|Object=` | - | See the [`overlay-class`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
+| `overlay-style` | `string|Array|Object=` | - | See the [`overlay-style`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
 
 ^^^ui
 Style variants.

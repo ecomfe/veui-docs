@@ -43,6 +43,7 @@
 | `inline` | `boolean` | `false` | 是否将浮层渲染为内联内容。 |
 | `local` | `boolean` | `false` | 是否将浮层保留在原来的 DOM 位置，而非移动到全局位置并参与[全局浮层管理](../advanced/overlay)。 |
 | `overlay-class` | `string|Array|Object=` | - | [^overlay-class] |
+| `overlay-style` | `string|Array|Object=` | - | [^overlay-style] |
 | `options` | `Object` | 透传给底层 Popper.js 实现的 `modifiers` 配置项，具体内容参见[这里](https://popper.js.org/docs/v1/#modifiers)。 |
 
 ^^^open
@@ -81,6 +82,9 @@
 :::
 ^^^
 
+^^^overlay-style
+浮层根元素的样式，数据格式为所有 [Vue 支持的 `style` 表达式](https://cn.vuejs.org/v2/guide/class-and-style.html#%E7%BB%91%E5%AE%9A%E5%86%85%E8%81%94%E6%A0%B7%E5%BC%8F)。
+^^^
 ### 插槽
 
 | 名称 | 描述 |

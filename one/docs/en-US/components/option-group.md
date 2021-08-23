@@ -17,7 +17,8 @@ See [the demos of `Select`](./select#demos) or [the demos of `Dropdown`](./dropd
 | `label` | `string` | The descriptive label of the option group. |
 | `options` | `Array<Object>` | `[]` | [^options] |
 | `position` | `string` | `inline` | [^position] |
-| `overlay-class` | `string|Array|Object=` | - | See the `overlay-class` prop of [`Overlay`](./overlay). |
+| `overlay-class` | `string|Array|Object=` | - | See the [`overlay-class`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
+| `overlay-style` | `string|Array|Object=` | - | See the [`overlay-style`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
 
 ^^^options
 The list of options with the option type being `{label, value, disabled, ...}`.

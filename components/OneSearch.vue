@@ -1,8 +1,21 @@
 <template>
-<div id="docsearch"/>
+<div class="one-search">
+  <veui-search-box
+    v-model="query"
+    class="input"
+    :placeholder="searchPlaceholder"
+    @input="handleInput"
+  />
+  <div
+    ref="docsearch"
+    class="docsearch"
+  />
+</div>
 </template>
 
 <script>
+import { SearchBox } from 'veui'
+import { createElement } from 'preact'
 import i18n from '../common/i18n'
 
 function isSpecialClick (event) {
@@ -16,7 +29,20 @@ function isSpecialClick (event) {
 }
 export default {
   name: 'one-search',
+  components: {
+    'veui-search-box': SearchBox
+  },
   mixins: [i18n],
+  data () {
+    return {
+      query: ''
+    }
+  },
+  computed: {
+    searchPlaceholder () {
+      return this.locale === 'zh-Hans' ? '⌘ K | 搜索…' : '⌘ K | Search...'
+    }
+  },
   watch: {
     locale (val) {
       this.update(val)
@@ -39,7 +65,7 @@ export default {
         docsearch({
           apiKey: '21cdc123c620ec4bb81259c32e90c08f',
           indexName: 'veui',
-          container: '#docsearch',
+          container: this.$refs.docsearch,
           searchParameters: {
             facetFilters: [`lang:${locale}`]
           },
@@ -64,12 +90,9 @@ export default {
             })
           },
           hitComponent: ({ hit, children }) => {
-            return {
-              type: 'a',
-              ref: undefined,
-              constructor: undefined,
-              key: undefined,
-              props: {
+            return createElement(
+              'a',
+              {
                 href: hit.url,
                 onClick: event => {
                   if (isSpecialClick(event)) {
@@ -93,15 +116,41 @@ export default {
                 },
                 children
               }
-            }
+            )
           }
         })
       })
     },
     update (locale) {
-      this.$el.innerHTML = '<div id="docsearch"></div>'
+      this.$refs.docsearch.innerHTML = ''
       this.initialize(locale)
+    },
+    handleInput (value) {
+      if (!value) {
+        return
+      }
+
+      this.teleportQuery(value)
+    },
+    teleportQuery (value) {
+      this.query = ''
+      const docsearchButton = this.$refs.docsearch.querySelector('.DocSearch')
+      docsearchButton.click()
+
+      setTimeout(() => {
+        const docsearchInput = document.getElementById('docsearch-input')
+        docsearchInput.value = value
+        docsearchInput.dispatchEvent(new Event('input'))
+      })
     }
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+.input
+  width auto
+
+.docsearch
+  display none
+</style>

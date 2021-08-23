@@ -29,7 +29,7 @@
 
 <img class="preview hero" src="/images/development/advanced/overlay-tree.png">
 
-树中每一个蓝色节点都对应关联到具体的[浮层组件](../componets/overlay)实例。针对上图，树的构造顺序可以是：
+树中每一个蓝色节点都对应关联到具体的[浮层组件](../components/overlay)实例。针对上图，树的构造顺序可以是：
 
 1. 弹出“对话框 1”，创建一个“对话框 1”节点，根据节点权重信息创建一个分组，然后将分组挂在 root 节点之下。
 2. 弹出“对话框 2”，创建一个“对话框 2”节点，发现已经存在相同权重的分组，就直接将“对话框 2”节点放置在该分组的末尾位置。
@@ -105,7 +105,7 @@ VEUI 中，浮层支持两种定位方式：
 
 以坐标方式定位时，需要自己写 CSS 进行控制（浮层模块内部只会生成浮层根元素的 `z-index` 值）。
 
-相对元素定位时，可以通过[浮层组件](../components/overlay)的 `options` 属性描述偏移和变换规则。由于目前内部采用 [Tether](http://tether.io/) 实现，因此完整的配置项可以参考 [Tether 官网](http://tether.io/#options)。同时，也支持一些常见场景的简化配置：<code>{ position: &#0096;${side}-${align}&#0096; }</code>，`side` 表示浮层根元素位于目标元素哪一边（`top`/`right`/`bottom`/`left`），`align` 表示对齐方式（`start`/`end`）。其中 `side` 是必须的，`align` 不传表示居中。推荐尽量使用简化的配置。
+相对元素定位时，可以通过[浮层组件](../components/overlay)的 `options` 属性描述偏移和变换规则。由于目前内部采用 [Popper.js](https://popper.js.org/docs/v1/) 实现，因此完整的配置项可以参考 [Popper.js 官网](https://popper.js.org/docs/v1/#popperdefaults--codeobjectcode)。
 
 ## 样式
 

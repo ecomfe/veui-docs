@@ -43,6 +43,7 @@ The stacking order of child overlays a affected by their parent overlays.
 | `inline` | `boolean` | `false` | Whether to render the overlay as inline content. |
 | `local` | `boolean` | `false` | Whether to keep the overlay in it's original DOM location, instead of moving it to the global scope and participates in the [global overlay management](../advanced/overlay). |
 | `overlay-class` | `string|Array|Object=` | - | [^overlay-class] |
+| `overlay-style` | `string|Array|Object=` | - | [^overlay-style] |
 | `options` | `Object` | Configuration object passed to the `modifiers` option of the underlying Popper.js implementation. See [here](https://popper.js.org/docs/v1/#modifiers) for more details. |
 
 ^^^open
@@ -80,6 +81,9 @@ The class expression applied to the root element of the overlay. Supports all va
 As the root element of all overlays are placed as direct children of the `<body>` element, this prop can be used to specify custom classes for the root element to customize styles.
 :::
 ^^^
+
+^^^overlay-style
+The style expression applied to the root element of the overlay. Supports all values defined by [Vue's `style` expressions](https://vuejs.org/v2/guide/class-and-style.html#Binding-Inline-Styles).
 
 ### Slots
 

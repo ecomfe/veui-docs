@@ -45,6 +45,9 @@ Available size/dimension variants for the `ui` prop: `s`/`m`/`narrow`/`medium`/`
 | `inline` | `boolean=` | `false` | Whether the dialog is displayed inline thus takes up space. |
 | `footless` | `boolean=` | `false` | Whether to hide the default footer. |
 | `loading` | `boolean=` | `false` | Wehter the dialog is in loading state. When loading, the OK button will enter loading state as well and become unclickable. |
+| `disabled` | `boolean=` | `false` | Wehter the dialog is disabled. When disabled, the OK button will be disabled as well and become unclickable. |
+| `ok-label` | `string=` | - | The text content of the “OK” button. |
+| `cancel-label` | `string=` | - | The text content of the “Cancel” button. |
 | `priority` | `number=` | - | The stacking priority of the dialog overlay. See the [`priority`](./overlay#props) prop of [`Overlay`](./overlay) component. |
 | `before-close` | `function(string): boolean=|Promise<boolean=>` | - | [^before-close] |
 | `overlay-class` | `string|Object=` | - | The class expression applied to the root element of the dialog overlay. See the [`overlay-class`](./overlay#props) prop of [`Overlay`](./overlay) component. |

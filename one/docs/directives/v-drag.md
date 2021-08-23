@@ -42,10 +42,9 @@
 
 | 参数 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `targets` | `Array<string|Vue|HTMLElement>` | `[]` | [^targets] |
+| `targets` | `Array<string | Vue | HTMLElement>` | `[]` | [^targets] |
 | `type` | `string` | - | 该参数指定变化的类型，目前内置了 `translate` 类型（变换目标元素位置），可以进行[扩展](#扩展)。 |
-| `draggable` | `boolean` | `true` | 是否响应鼠标拖拽操作。 |
-| `containment` | `string|Vue|HTMLElement|Object` | - | [^containment] |
+| `containment` | `string | Vue | HTMLElement | Object` | - | [^containment] |
 | `axis` | `string` | - | 限制所有目标元素只能在水平或者垂直方向上做变换。取值为：`x`、`y`。 |
 | `dragstart` | `function(): Object` | `function() {}` | [^dragstart] |
 | `drag` | `function(): Object` | `function() {}` | [^drag] |
@@ -93,10 +92,10 @@
 +++类型详情
 | 类型 | 描述 |
 | -- | -- |
-| `string` | 如果以 `@` 开头（可以通过[全局配置](../advanced/global-config) `drag.prefix` 修改），就被认为是特殊逻辑，会透传给具体的 Handler 处理；否则，在指令所在组件上下文中，根据 `ref` 查找指定的 DOM 元素。 |
+| `string` | 如果以 `@` 开头，就被认为是特殊逻辑，会透传给具体的 Handler 处理；否则，在指令所在组件上下文中，根据 `ref` 查找指定的 DOM 元素。 |
 | `Vue` | 根据组件实例找到 DOM 元素。 |
 | `HTMLElement` | 直接接收 DOM 元素。 |
-| `Object` | 接受任意包含 `{top, left, width, height}` 字段的普通对象，表示相对于视口的矩形区域的坐标和尺寸，四个字段均为 `number` 类型。 |
+| `Object` | 接受任意包含 `{ top, left, width, height }` 字段的普通对象，表示相对于视口的矩形区域的坐标和尺寸，四个字段均为 `number` 类型。 |
 +++
 ^^^
 
@@ -120,7 +119,7 @@
 
 ## 拖拽排序（v-drag.sort）
 
-可以通过 `v-drag.sort` 或 `v-drag="{type: 'sort', ...}"` 来实现拖拽排序。
+可以通过 `v-drag.sort` 或 `v-drag="{ type: 'sort', ... }"` 来实现拖拽排序。
 
 ### 绑定值
 
@@ -130,16 +129,13 @@
 | -- | -- | -- | -- |
 | `name` | `string` | - | 用来标记一组项目，在这组项目中进行排序。 |
 | `type` | `string` | - | 该参数指定变化的类型，拖拽排序是 `sort` 。 |
-| `containment` | `string|Vue|HTMLElement|Object` | - | 参见上面的基础描述 |
+| `containment` | `string | Vue | HTMLElement` | - | 参见指令基础描述，对于拖拽排序功能不支持 `Object` 类型的值。 |
 | `axis` | `string` | - | 限制所有目标元素只能在水平或者垂直方向上做排序。取值为：`x`、`y`。 |
-| `callback` | `function(toIndex: number, fromIndex: number): void` | - | [^sort_callback] |
-| `debug` | `boolean` | `false` | 在开发模式（process.env.NODE_ENV === 'development'）下在 DOM 上显示热区标记以方便调试。 |
+| `sort` | `function(fromIndex: number, toIndex: number): void` | - | [^sort_callback] |
+| `handle` | `string | Vue | HTMLElement` | - | 指定拖拽排序的拖拽操作的“把手”元素，只有拖动对应元素才会触发排序。类型同 `containment` 参数。 |
 
 ^^^sort_callback
-排序指令仅仅通过该回调告诉用户排序的情况，即：从原来位置（`fromIndex`）移动到新位置（`toIndex`）,用户自己应该在该回调中对数据源进行调整位置。
-
-** 回调触发时机：当 *fromIndex* 元素的中心点拖动到热区（*toIndex* 元素尾部和 *toIndex+1* 元素首部之间的区域）中触发。**
-
+排序指令仅仅通过该回调告诉用户排序的情况，即：从原来位置（`fromIndex`）移动到新位置（`toIndex`），需要自行据此对数据源进行更新。
 ^^^
 
 ## 扩展

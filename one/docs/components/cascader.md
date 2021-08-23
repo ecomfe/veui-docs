@@ -51,7 +51,8 @@
 | `value-display` | `'complete' | 'simple'` | `simple` | [^value-display] |
 | `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
 | `readonly` | `boolean=` | `false` | 是否为只读状态。 |
-| `overlay-class` | `string|Array|Object=` | - | 参考 [Overlay](./overlay) 组件的 [`overlay-class` 属性](./overlay#属性)。 |
+| `overlay-class` | `string|Array|Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#属性) 属性。 |
+| `overlay-style` | `string|Array|Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#属性) 属性。 |
 
 ^^^ui
 预设样式。

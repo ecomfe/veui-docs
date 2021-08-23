@@ -48,7 +48,8 @@ Use the `multiple` prop to enable multiple selections.
 | `expanded` | `boolean=` | `false` | [^expanded] |
 | `disabled` | `boolean=` | `false` | Whether the select is disabled. |
 | `readonly` | `boolean=` | `false` | Whether the select is read-only. |
-| `overlay-class` | `string|Array|Object=` | - | See the `overlay-class` prop of [`Overlay`](./overlay). |
+| `overlay-class` | `string|Array|Object=` | - | See the [`overlay-class`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
+| `overlay-style` | `string|Array|Object=` | - | See the [`overlay-style`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
 
 ^^^ui
 Style variants.

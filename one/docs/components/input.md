@@ -36,6 +36,7 @@
 | `composition` | `boolean=` | `false` | 是否感知输入法输入过程的值。 |
 | `select-on-focus` | `boolean=` | `false` | 聚焦时是否自动选中输入框文本。 |
 | `get-length` | `function(string): number=` | 自定义的字符长度计算函数。 |
+| `trim` | `boolean|string=` | `false` | [^trim] |
 
 ^^^ui
 预设样式。
@@ -67,6 +68,18 @@
 | `text` | 文本输入框。 |
 | `password` | 密码输入框。 |
 | `hidden` | 隐藏的输入框，但是值允许提交。 |
++++
+^^^
+
+^^^trim
+是否移除前后空格。当为 `true` 时，会移除前后空格，当为 `false` 时，不移除前后空格。设置为字符串时，按指定方式进行移除。
+
++++枚举值
+| 值 | 描述 |
+| -- | -- |
+| `both` | 移除两端空格。等同于 `true` 时的行为。 |
+| `start` | 移除开始空格。 |
+| `end` | 移除末尾空格。 |
 +++
 ^^^
 

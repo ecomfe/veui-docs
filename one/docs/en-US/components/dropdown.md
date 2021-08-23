@@ -55,7 +55,8 @@ Use the `trigger` prop to specify when to open the dropdown menu. Use the `split
 | `split` | `boolean=` | `false` | Whether to split the dropdown button into a command button and a toggle button for the dropdown layer. |
 | `expanded` | `boolean=` | `false` | [^expanded] |
 | `disabled` | `boolean=` | `false` | Whether the dropdown is disabled. |
-| `overlay-class` | `string|Array|Object=` | - | See the `overlay-class` prop of [`Overlay`](./overlay). |
+| `overlay-class` | `string|Array|Object=` | - | See the [`overlay-class`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
+| `overlay-style` | `string|Array|Object=` | - | See the [`overlay-style`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
 
 ^^^ui
 Style variants.

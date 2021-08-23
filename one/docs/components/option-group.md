@@ -17,7 +17,8 @@
 | `label` | `string` | - | 选项组的标题。 |
 | `options` | `Array<Object>` | `[]` | [^options] |
 | `position` | `string` | `inline` | [^position] |
-| `overlay-class` | `string|Array|Object=` | - | 参考 [Overlay](./overlay) 组件的 `overlay-class` 属性。 |
+| `overlay-class` | `string|Array|Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#属性) 属性。 |
+| `overlay-style` | `string|Array|Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#属性) 属性。 |
 
 ^^^options
 选项列表，项目的类型为 `{label, value, disabled, ...}`。

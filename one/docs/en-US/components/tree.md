@@ -29,6 +29,7 @@ Available size variants for the `ui` prop: `s`/`m`.
 | `checked` | `Array` | `[]` | [^checked] |
 | `selectable` | `boolean` | `false` | Whether the nodes are selectable. |
 | `selected` | `string` | - | [^selected] |
+| `merge-checked` | `string` | `keep-all` | [^merge-checked] |
 
 ^^^ui
 Style variants.
@@ -75,6 +76,19 @@ An array consists of the `value` from datasource items that denotes the checked 
 :::
 
 An array consists of the `value` from datasource items that denotes the selected nodes.
+^^^
+
+^^^merge-checked
+
+Merge strategy for selected values. When all child nodes under a node are selected, you can choose to keep only the parent node, only the child nodes, or both.
+
++++Enumerated values
+| Value | Description |
+| --- | --- |
+| `keep-all` | The parent and child nodes will both be in the selected value. |
+| `upwards` | Merge selected values as far as possible in the ancestor direction. |
+| `downwards` | Merge selected values in the direction of descendants if possible. |
++++
 ^^^
 
 ### Slots

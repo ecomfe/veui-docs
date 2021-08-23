@@ -34,7 +34,6 @@ Set the `type` prop to `image` to use the image upload mode.
 | `data-type`| `string` | `'json'` | [^data-type] |
 | `convert-response` | `uploader.convertResponse` | - | [^convert-response] |
 | `accept` | `string` | - | The same as the `accept` attribute of native `<input>` elements. Works as an extra layer of validation on top of browsers' file filter. Will skip validation when MIME type doesn't match file extension, eg. `application/msword`. |
-| `extensions` | `Array<string>` | `['jpg', 'jpeg', 'gif', 'png', 'bmp', 'tif', 'tiff', 'webp', 'apng', 'svg']` | To specify all valid file extensions when `accept` is set to values like `'image/*'`. |
 | `max-count` | `number` | - | The maximum file count. |
 | `max-size` | `number|string` | - | The maximun size of a single file. When being a `number`, the unit will be `byte`. When being a `string`, units can be added after numbers, including `b`/`kb`/`mb`/`gb`/`tb`. |
 | `payload` | `Object` | - | The extra data payload to be sent together with the file. |

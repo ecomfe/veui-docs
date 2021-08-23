@@ -6,29 +6,30 @@
     :expanded.sync="expanded"
   >
     <template #before>
-      <h2>VEUI</h2>
-      <section class="desc">
-        <a href="https://github.com/ecomfe/veui">
-          <img
-            alt="VEUI on GitHub"
-            src="https://badgen.net/badge/-/GitHub?icon=github&label"
-            width="69.2"
-            height="20"
+      <header>
+        <h2>VEUI</h2>
+        <section class="desc">
+          <a href="https://github.com/ecomfe/veui">
+            <img
+              alt="VEUI on GitHub"
+              src="https://badgen.net/badge/-/GitHub?icon=github&label"
+              height="20"
+            >
+          </a>
+          <nuxt-link
+            :class="{
+              'locale-swith': true,
+              disabled: altLocale.disabled,
+            }"
+            :to="altLocale.disabled ? '' : altLocale.to"
           >
-        </a>
-        <nuxt-link
-          :class="{
-            'locale-swith': true,
-            disabled: altLocale.disabled,
-          }"
-          :to="altLocale.disabled ? '' : altLocale.to"
-        >
-          {{ altLocale.label }}
-        </nuxt-link>
-      </section>
-      <section class="filter">
-        <one-search/>
-      </section>
+            {{ altLocale.label }}
+          </nuxt-link>
+        </section>
+        <section class="search">
+          <one-search/>
+        </section>
+      </header>
     </template>
     <template #item-label="{ label, sub }">
       {{ label }}<small>{{ sub }}</small>
@@ -93,7 +94,7 @@ export default {
     normalizeItem ({ title, children, slug, link, disabled }, base = '') {
       const fullSlug = `${base}/${slug}`
       const localePath = this.getLocalePath(fullSlug)
-      const to = (link !== false && fullSlug) ? localePath : null
+      const to = (link !== false && fullSlug && !disabled) ? localePath : null
       const [main, sub] = this.getTitleDetail(title)
 
       return {
@@ -137,10 +138,13 @@ export default {
     border-radius 6px
     font inherit
 
+  header
+    padding 32px 20px 20px
+
   h2
     display flex
     align-items center
-    margin 30px 0 0 20px
+    margin 0 0 16px
     font-size 20px
     font-weight 500
 
@@ -150,8 +154,7 @@ export default {
     & + .desc
       display flex
       align-items center
-      margin-top 15px
-      margin-left 20px
+      margin-bottom 20px
 
       img
         display block
@@ -175,27 +178,13 @@ export default {
     &:hover
       border-color #999
 
-  .filter
-    margin 20px 0 20px 20px
-    height 36px
-
   .search
-    display block
-    width 180px
-    height 32px
-    padding 0 7px
-    border 1px solid #dbdbdb
-    border-radius 4px
-    outline none
-    font-size 13px
-    transition all 0.2s
-
-    &.focus-visible
-      border-color #999
-      box-shadow 0 0 0 2px rgba(0, 0, 0, 0.15)
+    margin-top 16px
+    margin-right 12px
+    flex-shrink 0
 
 .toggle
-  margin-right 15px
+  margin-right 16px
   font-size 13px
   vertical-align middle
 

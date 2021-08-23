@@ -52,7 +52,6 @@
 | `data-type`| `string` | `'json'` | [^data-type] |
 | `convert-response` | `uploader.convertResponse` | - | [^convert-response] |
 | `accept` | `string` | - | 与原生 `<input>` 元素 的 `accept` 相同，在浏览器的文件类型筛选后再加一层校验。对于类似 `application/msword` 这样的 MIME type 与扩展名对不上的情形跳过校验。 |
-| `extensions` | `Array<string>` | `['jpg', 'jpeg', 'gif', 'png', 'bmp', 'tif', 'tiff', 'webp', 'apng', 'svg']` | 如果 `accept` 的值是类似 `'image/*'` 这样的形式，可以指定能通过校验的所有的扩展名。 |
 | `max-count` | `number` | - | 最大文件数量。 |
 | `max-size` | `number|string` | - | 单个文件的最大大小，如果是 `number`，单位是 `byte`；如果是 `string`，支持在数字后面添加单位，单位可以是 `b`/`kb`/`mb`/`gb`/`tb`。 |
 | `validator` | `function(Object): Object|Promise<Object>` | - | [^validator] |

@@ -14,7 +14,13 @@ The title and content are both customizable.
 | --- | --- | --- | --- |
 | `open` | `boolean` | `false` | [^open] |
 | `title` | `string=` | - | The title of the confirm box. |
-| `overlay-class` | `string|Array|Object=` | - | See the `overlay-class` prop of [`Overlay`](./overlay). |
+| `loading` | `boolean=` | `false` | Wehter the confirm box is in loading state. When loading, the OK button will enter loading state as well and become unclickable. |
+| `disabled` | `boolean=` | `false` | Wehter the confirm box is disabled. When disabled, the OK button will be disabled as well and become unclickable. |
+| `ok-label` | `string=` | - | The text content of the “OK” button. |
+| `cancel-label` | `string=` | - | The text content of the “Cancel” button. |
+| `before-close` | `function(string): boolean=|Promise<boolean=>` | - | Executed when user interaction is about to trigger closing the confirm box. See the [`before-close`](./dialog#props) prop of the [`Dialog`](./dialog) component. |
+| `overlay-class` | `string|Array|Object=` | - | See the [`overlay-class`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
+| `overlay-style` | `string|Array|Object=` | - | See the [`overlay-style`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
 
 ^^^open
 :::badges

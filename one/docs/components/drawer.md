@@ -34,7 +34,11 @@
 | `draggable` | `boolean` | `false` | 是否可拖拽。 |
 | `escapable` | `boolean` | `false` | 按下 <kbd>esc</kbd> 键是否可以关闭抽屉。仅在 `closable` 为 `true` 时生效。 |
 | `footless` | `boolean` | `false` | 是否不显示默认的底部操作栏。 |
-| `before-close` | `function(string): boolean=|Promise<boolean=>` | - | 在将触发抽屉关闭的操作发生后执行，参考 [`Dialog`](./dialog) 组件的 [`before-close`](./dialog#props) 属性。 |
+| `loading` | `boolean=` | `false` | 是否处于加载状态。处于加载状态时确定按钮也将进入加载状态，无法点击。 |
+| `disabled` | `boolean=` | `false` | 是否处于禁用状态。处于禁用状态时确定按钮也将进入禁用状态，无法点击。 |
+| `ok-label` | `string=` | - | “确定”按钮的文字内容。 |
+| `cancel-label` | `string=` | - | “取消”按钮的文字内容。 |
+| `before-close` | `function(string): boolean=|Promise<boolean=>` | - | 在将触发关闭的操作发生后执行，参考 [`Dialog`](./dialog) 组件的 [`before-close`](./dialog#props) 属性。 |
 | `overlay-class` | `string|Object` | - | 抽屉浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props) 属性。 |
 
 ^^^ui

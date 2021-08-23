@@ -32,7 +32,8 @@ Use the `trigger` prop to specify when to show/hide the popover.
 | `position` | `string` | `'top'` | [^position] |
 | `trigger` | `string` | `'hover'` | [^trigger] |
 | `hide-delay` | `number` | `tooltip.hideDelays` | Time (in milliseconds) to wait before hiding the popover after the close trigger is triggered. Can be used to prevent the popover being immediately closed after pointer leaves the `target` element and before it enters the popover itself. |
-| `overlay-class` | `string|Array|Object=` | - | See the [`overlay-class` prop](./overlay#props) of the [`Overlay`](./overlay) component. |
+| `overlay-class` | `string|Array|Object=` | - | See the [`overlay-class`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
+| `overlay-style` | `string|Array|Object=` | - | See the [`overlay-style`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
 
 ^^^ui
 Style variants.

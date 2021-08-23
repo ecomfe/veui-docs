@@ -6,7 +6,7 @@
 
 ## Demos
 
-See [the demos of `Breadcrumb`](./grid-breadcrumb#demos).
+See [the demos of `Breadcrumb`](./breadcrumb#demos).
 
 ## API
 

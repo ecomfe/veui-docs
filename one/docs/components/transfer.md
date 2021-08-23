@@ -28,14 +28,16 @@
 | -- | -- | -- | -- |
 | `ui` | `string=` | - | [^ui] |
 | `datasource` | `Array<Object>` | `[]` | [^datasource] |
-| `searchable` | `boolean` | `true` | 是否允许搜索。 |
-| `filter` | `function` | 见描述 | [^filter] |
-| `selected` | `Array` | `[]` | [^selected] |
-| `candidate-placeholder` | `string` | - | 待选区内搜索框的占位文本。 |
-| `selected-placeholder` | `string` | - | 已选区内搜索框的占位文本。 |
-| `selected-show-mode` | `string` | `'tree'` | [^selected-show-mode] |
+| `searchable` | `boolean=` | `true` | 是否允许搜索。 |
+| `filter` | `function=` | 见描述 | [^filter] |
+| `selected` | `Array=` | `[]` | [^selected] |
+| `candidate-placeholder` | `string=` | - | 待选区内搜索框的占位文本。 |
+| `selected-placeholder` | `string=` | - | 已选区内搜索框的占位文本。 |
+| `candidate-label` | `string=` | - | “待选项”标题的文字内容。 |
+| `selected-label` | `string=` | - | “已选项”标题的文字内容。 |
+| `selected-show-mode` | `string=` | `'tree'` | [^selected-show-mode] |
 | `keys` | `string|function` | `'value'` | [^keys] |
-| `merge-checked` | `string` | `keep-all` | [^merge-checked] |
+| `merge-checked` | `string=` | `keep-all` | [^merge-checked] |
 
 ^^^ui
 预设样式。
@@ -67,7 +69,7 @@
 +++参数详情
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `from` | `string` | 搜索来源，可选枚举值：`'candidate'`、`'selected'`。`'candidate'` 表示是备选列表触发的搜索，`'selected'` 表示是已选列表触发的搜索。 |
+| `from` | `string` | 搜索来源，可选枚举值：`'candidate'`、`'selected'`。`'candidate'` 表示是待选列表触发的搜索，`'selected'` 表示是已选列表触发的搜索。 |
 | `keyword` | `string` | 搜索关键词。 |
 | `item` | `Object` | 当前遍历到的数据项。 |
 | `index` | `number` | 当前数据项在兄弟项目中的索引。 |
@@ -127,16 +129,37 @@ function (keyword, { label }) {
 
 | 名称 | 描述 |
 | -- | -- |
-| `candidate-head` | 待选区内顶部标题区域。 |
-| `selected-head` | 已选区内顶部标题区域。 |
-| `candidate-title` | 待选区内顶部标题文本区域。 |
-| `selected-title` | 已选区内顶部标题文本区域。 |
+| `candidate` | 整个待选区。 |
+| `candidate-head` | [^candidate-head] |
+| `selected-head` | [^selected-head] |
+| `candidate-title` | 待选区内顶部标题文本区域。作用域参数与 `candidate-head` 一致。 |
+| `selected-title` | 已选区内顶部标题文本区域。作用域参数与 `selected-head` 一致。 |
 | `candidate-no-data` | 数据源没数据时显示的内容。 |
 | `selected-no-data` | 没有已选项时显示的内容。 |
 | `candidate-item` | [^candidate-item] |
 | `selected-item` | [^selected-item] |
 | `candidate-item-label` | 待选区内每一项的文本区域。作用域参数与 `candidate-item` 一致。 |
 | `selected-item-label` | 已选区内每一项的文本区域。当 `selected-show-mode` 为 `'tree'` 时作用域参数与 `selected-item` 一致。否则该插槽对应每个已选叶子项目的整条路径上的每个节点内容，此时作用域参数与 `candidate-item` 一致。 |
+
+^^^candidate-head
+待选区内顶部标题区域。
+
++++作用域参数
+| 名称 | 类型 | 描述 |
+| -- | -- | -- |
+| `count` | `number` | 待选项的数量。 |
++++
+^^^
+
+^^^selected-head
+已选区内顶部标题区域。
+
++++作用域参数
+| 名称 | 类型 | 描述 |
+| -- | -- | -- |
+| `count` | `number` | 已选项的数量。 |
++++
+^^^
 
 ^^^candidate-item
 待选区内的每一项内容。

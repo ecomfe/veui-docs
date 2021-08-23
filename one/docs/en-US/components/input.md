@@ -36,6 +36,7 @@ Use the `disabled` prop to set an input to disabled state.
 | `composition` | `boolean=` | `false` | Whether the input process should be aware of composition. |
 | `select-on-focus` | `boolean=` | `false` | Whether to select text content when focused. |
 | `get-length` | `function(string): number=` | Used to customize length calculation of the input. |
+| `trim` | `boolean|string=` | `false` | [^trim] |
 
 ^^^ui
 Style variants.
@@ -69,6 +70,17 @@ The type of the input. See the [`type`](https://developer.mozilla.org/en-US/docs
 | `hidden` | Hidden input but holds a value to submit. |
 +++
 ^^^
+
+^^^trim
+Wether to trim the input value. If set to `true`, the input value will be trimmed from both ends. If set to `false`, the input value will not be trimmed. If set to a string, the input value will be trimmed from the specified side.
+
++++Enum
+| Value | Description |
+| -- | -- |
+| `both` | Trim from both ends. Equivalent to `true`. |
+| `start` | Trim from the start. |
+| `end` | Trim from the end. |
++++
 
 ### Slots
 
