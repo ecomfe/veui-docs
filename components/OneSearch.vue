@@ -70,14 +70,14 @@ export default {
             facetFilters: [`lang:${locale}`]
           },
           navigator: {
-            navigate ({ suggestionUrl }) {
+            navigate: ({ itemUrl }) => {
               const { pathname: hitPathname } = new URL(
-                window.location.origin + suggestionUrl
+                window.location.origin + itemUrl
               )
               if (this.$router.history.current.path === hitPathname) {
-                window.location.assign(window.location.origin + suggestionUrl)
+                window.location.assign(window.location.origin + itemUrl)
               } else {
-                this.$router.push(suggestionUrl)
+                this.$router.push(itemUrl)
               }
             }
           },
