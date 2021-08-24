@@ -1,24 +1,24 @@
 <template>
 <article>
-  <p>
+  <section>
     <veui-input
       ui="l"
       value="Large"
     />
-  </p>
-  <p><veui-input value="Normal"/></p>
-  <p>
+  </section>
+  <section><veui-input value="Normal"/></section>
+  <section>
     <veui-input
       ui="s"
       value="Small"
     />
-  </p>
-  <p>
+  </section>
+  <section>
     <veui-input
       ui="xs"
       value="Extra small"
     />
-  </p>
+  </section>
 </article>
 </template>
 
@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style lang="less" scoped docs>
-p {
+section {
   margin-bottom: 1em;
 }
 </style>

@@ -6,33 +6,33 @@
     </veui-checkbox>
   </section>
   <section>
-    <p>
+    <section>
       <veui-input
         :readonly="readonly"
         ui="l"
         value="Large"
       />
-    </p>
-    <p>
+    </section>
+    <section>
       <veui-input
         :readonly="readonly"
         value="Normal"
       />
-    </p>
-    <p>
+    </section>
+    <section>
       <veui-input
         :readonly="readonly"
         ui="s"
         value="Small"
       />
-    </p>
-    <p>
+    </section>
+    <section>
       <veui-input
         :readonly="readonly"
         ui="xs"
         value="Extra small"
       />
-    </p>
+    </section>
   </section>
 </article>
 </template>
@@ -54,8 +54,7 @@ export default {
 </script>
 
 <style lang="less" scoped docs>
-section,
-p {
+section {
   margin-bottom: 1em;
 }
 </style>
