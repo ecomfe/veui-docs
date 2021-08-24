@@ -18,10 +18,6 @@
           "slug": "veui-loader"
         },
         {
-          "title": ":focus-visible",
-          "slug": "focus-visible"
-        },
-        {
           "title": "预设样式",
           "slug": "style-variants"
         }
@@ -337,6 +333,10 @@
         {
           "title": "v-longpress",
           "slug": "v-longpress"
+        },
+        {
+          "title": "v-tooltip",
+          "slug": "v-tooltip"
         }
       ]
     },
@@ -404,10 +404,6 @@
         {
           "title": "veui-loader",
           "slug": "veui-loader"
-        },
-        {
-          "title": ":focus-visible",
-          "slug": "focus-visible"
         },
         {
           "title": "Style variants",
@@ -661,48 +657,58 @@
           "sub": true
         },
         {
-          "title": "Loading - 加载",
+          "title": "Loading",
           "slug": "loading",
           "disabled": true
         },
         {
-          "title": "TimePicker - 时间选择",
+          "title": "TimePicker",
           "slug": "time-picker",
           "disabled": true
         },
         {
-          "title": "Autocomplete - 自动完成",
+          "title": "Autocomplete",
           "slug": "autocomplete",
           "disabled": true
         },
         {
-          "title": "Anchor - 锚点",
+          "title": "Anchor",
           "slug": "anchor",
           "disabled": true
         },
         {
-          "title": "Drawer - 抽屉",
+          "title": "Drawer",
           "slug": "drawer",
           "disabled": true
         },
         {
-          "title": "Embedded - 嵌入式面板",
+          "title": "Embedded",
           "slug": "embedded",
           "disabled": true
         },
         {
-          "title": "Menu - 导航菜单",
+          "title": "Menu",
           "slug": "menu",
           "disabled": true
         },
         {
-          "title": "Collapse - 折叠式面板",
+          "title": "Collapse",
           "slug": "collapse",
           "disabled": true
         },
         {
-          "title": "Accordion - 手风琴面板",
+          "title": "Accordion",
           "slug": "accordion",
+          "disabled": true
+        },
+        {
+          "title": "Lightbox",
+          "slug": "lightbox",
+          "disabled": true
+        },
+        {
+          "title": "Cascader",
+          "slug": "cascader",
           "disabled": true
         }
       ]
@@ -735,6 +741,11 @@
         {
           "title": "v-longpress",
           "slug": "v-longpress",
+          "disabled": true
+        },
+        {
+          "title": "v-tooltip",
+          "slug": "v-tooltip",
           "disabled": true
         }
       ]

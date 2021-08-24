@@ -93,8 +93,6 @@ VEUI 采取了样式主题与组件代码分离的开发、发布方式。组件
 
 在使用 `veui-theme-dls` 时，需要先全局引入基础样式以及，包括样式的 normalize 及一些基本元素的样式。
 
-除此之外还需自行引入 `:focus-visible` polyfill 以更好地处理焦点交互样式（[为什么？](./getting-started/focus-visible)）。
-
 从 JavaScript 引入：
 
 ```js

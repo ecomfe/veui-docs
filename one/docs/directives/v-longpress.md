@@ -41,7 +41,7 @@
 | `repeatInterval` | `number` | `longpress.repeatInterval` | 重复触发回调间隔的毫秒数。可进行[全局配置](#全局配置)。 |
 
 :::warning
- `Object` 类型提供的参数会覆盖通过指令参数、修饰符指定的参数。
+`Object` 类型提供的参数会覆盖通过指令参数、修饰符指定的参数。
 :::
 
 ### 修饰符

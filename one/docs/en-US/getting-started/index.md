@@ -91,8 +91,6 @@ We intend to transpile and build VEUI and its dependencies along with the applic
 
 When using `veui-theme-dls`, you need to import the base stylesheet, which includes style normalization.
 
-You also need to import `:focus-visible` polyfill for better focus style to work properly ([Why?](./getting-started/focus-visible)).
-
 Import from JavaScript:
 
 ```js
