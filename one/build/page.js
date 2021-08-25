@@ -59,7 +59,7 @@ export function renderDocToPage (file) {
   let src = resolve(DOCS_DIR, file)
   let dest = resolve(PAGES_DIR, replaceExtSync(file, 'vue'))
   let { contents, data } = renderFile(src, dest)
-  let { demos = {}, components = {}, meta = {}, deps = {} } = data
+  let { demos = {}, components = {}, meta = {}, deps = {}, hasAlert = false } = data
 
   Object.keys(deps || {}).forEach(dep => {
     add({ [dep]: { [src]: true } })
@@ -77,7 +77,8 @@ export function renderDocToPage (file) {
       }
     }),
     components: componentList,
-    boilerplate: demoList.length || componentList.length,
+    alert: hasAlert,
+    boilerplate: demoList.length || componentList.length || hasAlert,
     layout,
     style: style || 'post'
   })

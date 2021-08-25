@@ -8,7 +8,7 @@ margin-y($top, $bottom = $top)
   padding 30px 60px
   font-size 14px
   line-height 1.8
-  color #666
+  color #282c33
   font-weight 400
   hyphens auto
 
@@ -265,22 +265,12 @@ margin-y($top, $bottom = $top)
     & > :last-child
       margin-bottom 0
 
-  .alert
-  .warning
-  .tip
-    font-size 13px
+  .veui-alert
+    p:first-child
+      margin-top 0
 
-  .alert
-    border-color #fee
-    background-color tint(#fee, 50%)
-
-  .warning
-    border-color #fef4e6
-    background-color tint(#fef4e6, 50%)
-
-  .tip
-    border-color #d8ebff
-    background-color tint(#d8ebff, 50%)
+    p:last-child
+      margin-bottom 0
 
   .badges
     border none

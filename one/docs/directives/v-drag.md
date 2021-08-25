@@ -6,27 +6,27 @@
 
 ## 示例
 
-拖动元素。
+### 拖动元素
 
 [[ demo src="/demo/directives/drag/base.vue" ]]
 
-在指定元素区域内拖动。
+### 在指定元素区域内拖动
 
 [[ demo src="/demo/directives/drag/containment.vue" ]]
 
-拖动多个元素。
+### 拖动多个元素
 
 [[ demo src="/demo/directives/drag/targets.vue" ]]
 
-限制拖动方向。
+### 限制拖动方向。
 
 [[ demo src="/demo/directives/drag/axis.vue" ]]
 
-水平排序。
+### 水平排序
 
 [[ demo src="/demo/directives/drag/sort-x.vue" ]]
 
-垂直排序。
+### 垂直排序
 
 [[ demo src="/demo/directives/drag/sort-y.vue" ]]
 

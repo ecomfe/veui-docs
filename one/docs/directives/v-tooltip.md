@@ -10,6 +10,8 @@ VEUI 对通过 `v-tooltip` 定义的全局浮层提示进行了统一的体验�
 
 ## 示例
 
+[[ demo src="/demo/directives/tooltip.vue" ]]
+
 ## API
 
 :::tip
