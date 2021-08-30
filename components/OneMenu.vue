@@ -12,7 +12,7 @@
           <a href="https://github.com/ecomfe/veui">
             <img
               alt="VEUI on GitHub"
-              src="https://badgen.net/badge/-/GitHub?icon=github&label"
+              src="https://img.shields.io/github/stars/ecomfe/veui?label=stars&logo=github"
               height="20"
             >
           </a>
