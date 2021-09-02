@@ -22,7 +22,7 @@ npm i --save-dev less less-loader veui-loader babel-plugin-veui babel-plugin-lod
 ```js
 module.exports = {
   presets: [
-    '@vue/app'
+    '@vue/cli-plugin-babel/preset'
   ],
   plugins: [
     'veui',
@@ -42,16 +42,14 @@ module.exports = {
   css: {
     loaderOptions: {
       less: {
-        javascriptEnabled: true
+        lessOptions: {
+          javascriptEnabled: true
+        }
       }
     }
   },
-  transpileDependencies: [
-    'veui',
-    'vue-awesome',
-    'resize-detector'
-  ],
-  chainWebpack: config => {
+  transpileDependencies: ['veui'],
+  chainWebpack (config) {
     config.module
       .rule('veui')
       .test(/\.vue$/)
@@ -80,7 +78,6 @@ module.exports = {
 想了解配置 `veui-loader` 的更多细节，请移步[这里](/getting-started/veui-loader)。
 
 +++为什么要配置这些选项？
-
 VEUI 采取了样式主题与组件代码分离的开发、发布方式。组件代码对样式代码没有显式的依赖，故以源码方式引入时，需要使用 `veui-loader` 配置关联的主题包。
 
 如需使用默认的样式包 `veui-theme-dls`，我们还需要确保在 webpack 配置中引入 `veui-loader`。同时由于 Less 3+ 不再默认开启内联 JavaScript 解析，而 `veui-theme-dls` 依赖了这一功能，所以我们需要手动开启配置项。

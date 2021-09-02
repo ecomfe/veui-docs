@@ -22,7 +22,7 @@ You need to configure the auto-generated `babel.config.js` as follows:
 ```js
 module.exports = {
   presets: [
-    '@vue/app'
+    '@vue/cli-plugin-babel/preset'
   ],
   plugins: [
     'veui',
@@ -42,16 +42,14 @@ module.exports = {
   css: {
     loaderOptions: {
       less: {
-        javascriptEnabled: true
+        lessOptions: {
+          javascriptEnabled: true
+        }
       }
     }
   },
-  transpileDependencies: [
-    'veui',
-    'vue-awesome',
-    'resize-detector'
-  ],
-  chainWebpack: config => {
+  transpileDependencies: ['veui'],
+  chainWebpack (config) {
     config.module
       .rule('veui')
       .test(/\.vue$/)
