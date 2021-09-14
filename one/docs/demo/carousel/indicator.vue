@@ -6,11 +6,29 @@
       v-model="indicator"
       :items="indicators"
     />
+    <h4>Indicator position（仅在对齐方式是 end 时生效）</h4>
+    <veui-radio-group
+      v-model="indicatorPosition"
+      :items="positions"
+    />
+    <h4>Indicator alignment</h4>
+    <veui-radio-group
+      v-model="alignment"
+      :items="alignments"
+    />
+    <h4>Controls position</h4>
+    <veui-radio-group
+      v-model="position"
+      :items="positions"
+    />
   </section>
   <section>
     <veui-carousel
       :datasource="items"
       :indicator="indicator"
+      :indicator-position="indicatorPosition"
+      :indicator-alignment="alignment"
+      :controls-position="position"
     />
   </section>
 </article>
@@ -46,11 +64,23 @@ export default {
           label: 'Dolphin'
         }
       ],
-      indicator: 'radio',
+      indicator: 'bar',
+      indicatorPosition: 'inside',
+      position: 'inside',
+      alignment: 'start',
       indicators: [
-        { label: 'Radio', value: 'radio' },
+        { label: 'Bar', value: 'bar' },
         { label: 'Number', value: 'number' },
+        { label: 'Dot', value: 'dot' },
         { label: 'None', value: 'none' }
+      ],
+      alignments: [
+        { value: 'start', label: 'start' },
+        { value: 'end', label: 'end' }
+      ],
+      positions: [
+        { label: 'Inside', value: 'inside' },
+        { label: 'Outside', value: 'outside' }
       ]
     }
   }
@@ -60,6 +90,9 @@ export default {
 <style lang="less" scoped docs>
 h4 {
   margin: 0 0 10px;
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
 }
 
 section {

@@ -306,6 +306,10 @@
         {
           "title": "Cascader - 级联器",
           "slug": "cascader"
+        },
+        {
+          "title": "ConfigProvider - 配置器",
+          "slug": "config-provider"
         }
       ]
     },

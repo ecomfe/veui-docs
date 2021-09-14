@@ -8,9 +8,11 @@
 
 [[ demo src="/demo/carousel/switch.vue" ]]
 
-### 进度指示器类型
+### 进度指示器和切换按钮
 
 使用 `indicator` 属性来指定进度指示器类型。
+
+使用 `controls-position` 属性来切换按钮相对于布局方向的位置。
 
 [[ demo src="/demo/carousel/indicator.vue" ]]
 
@@ -19,6 +21,26 @@
 指定 `autoplay` 属性来允许自动播放。
 
 [[ demo src="/demo/carousel/autoplay.vue" ]]
+
+### 切换效果
+
+指定 `effect` 属性来设置切换效果。
+
+[[ demo src="/demo/carousel/effect.vue" ]]
+
+### 纵向布局
+
+指定 `vertical` 属性来允许纵向布局的轮播。
+
+[[ demo src="/demo/carousel/vertical.vue" ]]
+
+### 轮播项设置
+
+`slides-per-view` 属性来指定同时显示多少个轮播项。
+
+`slides-per-group` 属性来指定每次前后切换的一组包含多少个轮播项。
+
+[[ demo src="/demo/carousel/slides.vue" ]]
 
 ## API
 
@@ -34,6 +56,15 @@
 | `pause-on-hover` | `boolean=` | `false` | 在自动轮播时，鼠标悬浮后是否暂停。 |
 | `interval` | `number=` | `3000` | 在自动轮播时，切换间隔的毫秒数。 |
 | `wrap` | `boolean=` | `false` | 是否可以循环播放。 |
+| `effect` | `'fade' | 'slide'` | `'fade'` | 指定轮播切换效果，其中 `fade` 仅在切换组个数与同时显示个数相同时生效。 |
+| `vertical` | `boolean=` | `false` | 是否是纵向布局的轮播。 |
+| `indicator-alignment` | `'start' | 'end'` | `start` | 用于支持指示器的相对于布局方向的位置。 |
+| `indicator-position` | `'outside' | 'inside'` | `inside` | 用于支持指示器显示在轮播容器的内部/外部。 |
+| `controls-position` | `'outside' | 'inside'` | `inside` | 用于支持切换按钮相对于布局方向的位置。 |
+| `slide-aspect-ratio` | `number= | '${number}/${number}'` | - | 指定不同轮播项类型的默认配置。 |
+| `options` | `object=` | `{ video: { muted: true, autoplay: true, controls: true, loop: true } }` | 用于指定每个轮播项的纵横比。 |
+| `slides-per-view` | `number=` | `1` | 指定同时显示多少个轮播项。 |
+| `slides-per-group` | `number=` | `1` | 指定每次前后切换的一组包含多少个轮播项。 |
 
 ^^^datasource
 轮播图数据源，项目类型为：`{src, alt, label}`。
@@ -41,9 +72,10 @@
 +++字段详情
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `src` | `string` | 图片源地址。 |
-| `alt` | `string` | 图片的降级描述文本。 |
-| `label` | `string` | 图片的描述性标题。 |
+| `src` | `string` | 媒体源地址。 |
+| `alt` | `string` | 媒体的降级描述文本。 |
+| `label` | `string` | 媒体的描述性标题。 |
+| `type` | `string` | 媒体的描述性标题，视频需要指定 `video`。 |
 +++
 ^^^
 
@@ -61,8 +93,9 @@
 +++枚举值
 | 值 | 描述 |
 | -- | -- |
-| `radio` | 单选按钮型。 |
+| `bar` | 单选按钮型，用于替换之前的 `radio`（`radio` 也保持兼容支持）。 |
 | `number` | 显示「当前页数/全部页数」文字提示。 |
+| `dot` | 圆点型。 |
 | `none` | 不显示指示器。 |
 ^^^
 
