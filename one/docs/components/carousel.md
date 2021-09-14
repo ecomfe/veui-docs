@@ -8,11 +8,9 @@
 
 [[ demo src="/demo/carousel/switch.vue" ]]
 
-### 进度指示器和切换按钮
+### 进度指示器
 
 使用 `indicator` 属性来指定进度指示器类型。
-
-使用 `controls-position` 属性来切换按钮相对于布局方向的位置。
 
 [[ demo src="/demo/carousel/indicator.vue" ]]
 
@@ -31,6 +29,8 @@
 ### 纵向布局
 
 指定 `vertical` 属性来允许纵向布局的轮播。
+
+使用 `controls-position` 属性来切换按钮相对于布局方向的位置。
 
 [[ demo src="/demo/carousel/vertical.vue" ]]
 
@@ -58,16 +58,16 @@
 | `wrap` | `boolean=` | `false` | 是否可以循环播放。 |
 | `effect` | `'fade' | 'slide'` | `'fade'` | 指定轮播切换效果，其中 `fade` 仅在切换组个数与同时显示个数相同时生效。 |
 | `vertical` | `boolean=` | `false` | 是否是纵向布局的轮播。 |
-| `indicator-alignment` | `'start' | 'end'` | `start` | 用于支持指示器的相对于布局方向的位置。 |
+| `indicator-align` | `'start' | 'end'` | `start` | 用于支持指示器的相对于布局方向的位置。 |
 | `indicator-position` | `'outside' | 'inside'` | `inside` | 用于支持指示器显示在轮播容器的内部/外部。 |
 | `controls-position` | `'outside' | 'inside'` | `inside` | 用于支持切换按钮相对于布局方向的位置。 |
 | `slide-aspect-ratio` | `number= | '${number}/${number}'` | - | 指定不同轮播项类型的默认配置。 |
-| `options` | `object=` | `{ video: { muted: true, autoplay: true, controls: true, loop: true } }` | 用于指定每个轮播项的纵横比。 |
+| `options` | `Object=` | `{ video: { muted: true, autoplay: true, controls: true, loop: true } }` | 用于指定每个轮播项的纵横比。 |
 | `slides-per-view` | `number=` | `1` | 指定同时显示多少个轮播项。 |
 | `slides-per-group` | `number=` | `1` | 指定每次前后切换的一组包含多少个轮播项。 |
 
 ^^^datasource
-轮播图数据源，项目类型为：`{src, alt, label}`。
+轮播图数据源，项目类型为：`{src, alt, label, type}`。
 
 +++字段详情
 | 名称 | 类型 | 描述 |

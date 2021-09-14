@@ -1,9 +1,17 @@
 <template>
 <article>
   <section>
+    <h4>Controls position</h4>
+    <veui-radio-group
+      v-model="position"
+      :items="positions"
+    />
+  </section>
+  <section>
     <veui-carousel
       :datasource="items"
       effect="slide"
+      :controls-position="position"
       vertical
     />
   </section>
@@ -11,11 +19,12 @@
 </template>
 
 <script>
-import { Carousel } from 'veui'
+import { Carousel, RadioGroup } from 'veui'
 
 export default {
   components: {
-    'veui-carousel': Carousel
+    'veui-carousel': Carousel,
+    'veui-radio-group': RadioGroup
   },
   data () {
     return {
@@ -38,6 +47,11 @@ export default {
           alt: 'A white and gray dolphin in blue water.',
           label: 'Dolphin'
         }
+      ],
+      position: 'inside',
+      positions: [
+        { label: 'Inside', value: 'inside' },
+        { label: 'Outside', value: 'outside' }
       ]
     }
   }

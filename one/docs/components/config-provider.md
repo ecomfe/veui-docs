@@ -2,9 +2,7 @@
 
 ## 示例
 
-### 配置 `Select` 的 placeholder
-
-可选的尺寸 `ui` 属性值：`s`/`m`。
+### 配置 `Select` 的 `placeholder`
 
 [[ demo src="/demo/config-provider/select.vue" ]]
 
@@ -21,4 +19,4 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | 直接渲染出来，其中 `VEUI` 的组件会响应对应的配置值。 |
+| `default` | 需要接收配置的内容，其中 VEUI 的组件会响应对应的配置值。 |
