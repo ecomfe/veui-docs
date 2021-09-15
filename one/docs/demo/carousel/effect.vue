@@ -1,28 +1,16 @@
 <template>
 <article>
   <section>
-    <h4>Indicator type</h4>
+    <h4>Effect type</h4>
     <veui-radio-group
-      v-model="indicator"
-      :items="indicators"
-    />
-    <h4>Indicator position（仅在对齐方式是 end 时生效）</h4>
-    <veui-radio-group
-      v-model="indicatorPosition"
-      :items="positions"
-    />
-    <h4>Indicator alignment</h4>
-    <veui-radio-group
-      v-model="align"
-      :items="alignments"
+      v-model="effect"
+      :items="effects"
     />
   </section>
   <section>
     <veui-carousel
       :datasource="items"
-      :indicator="indicator"
-      :indicator-position="indicatorPosition"
-      :indicator-alignment="align"
+      :effect="effect"
     />
   </section>
 </article>
@@ -30,8 +18,6 @@
 
 <script>
 import { Carousel, RadioGroup } from 'veui'
-
-// TODO update alignment
 
 export default {
   components: {
@@ -60,22 +46,10 @@ export default {
           label: 'Dolphin'
         }
       ],
-      indicator: 'bar',
-      indicatorPosition: 'inside',
-      align: 'start',
-      indicators: [
-        { label: 'Bar', value: 'bar' },
-        { label: 'Number', value: 'number' },
-        { label: 'Dot', value: 'dot' },
-        { label: 'None', value: 'none' }
-      ],
-      alignments: [
-        { value: 'start', label: 'start' },
-        { value: 'end', label: 'end' }
-      ],
-      positions: [
-        { label: 'Inside', value: 'inside' },
-        { label: 'Outside', value: 'outside' }
+      effect: 'fade',
+      effects: [
+        { label: 'Fade', value: 'fade' },
+        { label: 'Slide', value: 'slide' }
       ]
     }
   }
@@ -85,9 +59,6 @@ export default {
 <style lang="less" scoped docs>
 h4 {
   margin: 0 0 10px;
-  &:not(:first-child) {
-    margin-top: 10px;
-  }
 }
 
 section {

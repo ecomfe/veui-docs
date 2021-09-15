@@ -42,7 +42,6 @@
 | `placeholder` | `string` | `cascader.placeholder` | 未选择时的占位文本。 |
 | `clearable` | `boolean` | `false` | 是否可以清除已选内容。 |
 | `searchable` | `boolean` | `false` | 是否允许搜索选项。 |
-| `filter` | `function` | - | 选项过滤函数，签名为 `function(option: Object): boolean`。`option` 类型与 `options` 属性中的项相同。返回值表示是否将结果保留在下拉选项列表中。 |
 | `expanded` | `boolean=` | `false` | [^expanded] |
 | `column-trigger` | `hover | click` | `click` | [^column-trigger] |
 | `select-mode` | `'leaf-only' | 'any'` | `any` | [^select-mode] |
