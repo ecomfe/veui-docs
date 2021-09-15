@@ -97,6 +97,8 @@ Merge strategy for selected values. When all child nodes under a node are select
 | -- | -- |
 | `item` | [^item] |
 | `item-label` | The label of each node. Shares the same scope properties with the `item` slot. |
+| `item-before` | The area before the label of each node. Shares the same scope properties with the `item` slot. |
+| `item-after` | The area after the label of each node. Shares the same scope properties with the `item` slot. |
 
 ^^^item
 The content of each entire node.

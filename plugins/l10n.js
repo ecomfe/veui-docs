@@ -4,7 +4,8 @@ i18n.register(
   'zh-Hans',
   {
     showCode: '显示代码',
-    hideCode: '隐藏代码'
+    hideCode: '隐藏代码',
+    playInCsb: '在 CodeSandbox 中打开'
   },
   {
     ns: 'onedemo'
@@ -15,7 +16,8 @@ i18n.register(
   'en-US',
   {
     showCode: 'Show code',
-    hideCode: 'Hide code'
+    hideCode: 'Hide code',
+    playInCsb: 'Open in CodeSandbox'
   },
   {
     ns: 'onedemo'

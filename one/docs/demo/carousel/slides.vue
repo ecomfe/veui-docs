@@ -8,7 +8,7 @@
       :slides-per-view="2"
       effect="slide"
       indicator-position="outside"
-      indicator-alignment="end"
+      indicator-align="end"
       wrap
     />
     <h4>2 view, 1 group</h4>
@@ -18,7 +18,7 @@
       :slides-per-view="2"
       effect="slide"
       indicator-position="outside"
-      indicator-alignment="end"
+      indicator-align="end"
       wrap
     />
   </section>

@@ -34,7 +34,7 @@
 | `select-on-focus` | `boolean` | `false` | 聚焦时是否自动选中数字输入框文本。 |
 | `max` | `number` | - | 允许的最大值。 |
 | `min` | `number` | - | 允许的最小值。 |
-| `decimalPlace` | `number` | 0 | 数值的小数精度位数，默认精确到整数位，`-1` 表示不处理精度。 |
+| `decimal-place` | `number` | 0 | 数值的小数精度位数，默认精确到整数位，`-1` 表示不处理精度。 |
 
 ^^^ui
 预设样式。

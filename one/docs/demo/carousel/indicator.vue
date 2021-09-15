@@ -22,7 +22,7 @@
       :datasource="items"
       :indicator="indicator"
       :indicator-position="indicatorPosition"
-      :indicator-alignment="align"
+      :indicator-align="align"
     />
   </section>
 </article>
