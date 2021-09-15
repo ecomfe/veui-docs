@@ -25,7 +25,9 @@ export default {
   },
   data () {
     return {
-      names: Object.keys(Icon.icons).sort()
+      names: Object.keys(Icon.icons)
+        .filter(name => !name.startsWith('one-demo-') && Icon.icons[name])
+        .sort()
     }
   }
 }

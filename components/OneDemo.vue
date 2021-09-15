@@ -28,7 +28,7 @@
     >
       <veui-icon
         scale="0.8"
-        name="csb"
+        name="one-demo-csb"
       />
     </veui-button>
     <veui-button
@@ -36,7 +36,7 @@
       ui="icon"
       @click="localExpanded = !localExpanded"
     >
-      <veui-icon :name="localExpanded ? 'code-off' : 'code'"/>
+      <veui-icon :name="localExpanded ? 'one-demo-code-off' : 'one-demo-code'"/>
     </veui-button>
   </section>
   <section
@@ -102,17 +102,17 @@ export default {
 }
 
 Icon.register({
-  'code': {
+  'one-demo-code': {
     width: 24,
     height: 24,
     d: 'M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6l6 6l1.4-1.4zm5.2 0l4.6-4.6l-4.6-4.6L16 6l6 6l-6 6l-1.4-1.4z'
   },
-  'code-off': {
+  'one-demo-code-off': {
     width: 24,
     height: 24,
     d: 'M19.17 12l-4.58-4.59L16 6l6 6l-3.59 3.59L17 14.17L19.17 12zM1.39 4.22l4.19 4.19L2 12l6 6l1.41-1.41L4.83 12L7 9.83l12.78 12.78l1.41-1.41L2.81 2.81L1.39 4.22z'
   },
-  'csb': {
+  'one-demo-csb': {
     width: 32,
     height: 32,
     d: 'M2.667 8l13.938-8l13.943 8l.12 15.932L16.605 32L2.667 24zm2.786 3.307v6.344l4.458 2.479v4.688l5.297 3.063V16.85zm22.318 0l-9.755 5.542V27.88l5.292-3.063v-4.682l4.464-2.484zM6.844 8.802l9.74 5.526l9.76-5.573l-5.161-2.932l-4.547 2.594l-4.573-2.625z'
