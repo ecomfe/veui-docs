@@ -19,10 +19,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
 .target {
   width: 80px;
   height: 80px;
-  background: @veui-gray-color-6;
+  background: #e7e7e7;
 }
 </style>
