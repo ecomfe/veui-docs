@@ -61,7 +61,7 @@ export default {
 }
 </script>
 
-<style lang="less" docs scoped>
+<style lang="less" scoped>
 section {
   margin-bottom: 20px;
 }

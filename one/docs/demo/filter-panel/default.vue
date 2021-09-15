@@ -56,7 +56,7 @@ export default {
 }
 </script>
 
-<style lang="less" docs scoped>
+<style lang="less" scoped>
 .item {
   padding: 8px 15px;
 }

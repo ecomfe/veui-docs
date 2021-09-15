@@ -19,14 +19,12 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .veui-button {
   width: 120px;
   margin-right: 1em;
 }
-</style>
 
-<style lang="less" scoped>
 .veui-button[ui~="secondary"] {
   background-color: #e5e5ff;
 

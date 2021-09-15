@@ -18,7 +18,7 @@
 
 [[ demo src="/demo/directives/drag/targets.vue" ]]
 
-### 限制拖动方向。
+### 限制拖动方向
 
 [[ demo src="/demo/directives/drag/axis.vue" ]]
 

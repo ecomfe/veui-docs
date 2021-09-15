@@ -77,14 +77,16 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .anchor-demo {
   position: relative;
+
   .line {
     position: absolute;
     top: 0;
     width: 180px;
     border-top: 1px solid red;;
+
     &::after {
       content: "0";
       position: absolute;
@@ -114,6 +116,7 @@ export default {
     width: 100px;
     height: 150px;
     flex: none;
+
     & + .block {
       margin-top: 20px;
     }
@@ -124,6 +127,7 @@ export default {
     left: 250px;
     top: 50px;
   }
+
   .anchor-two {
     position: absolute;
     left: 450px;

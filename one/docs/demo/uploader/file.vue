@@ -45,13 +45,12 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
-section {
-  width: 45%;
-  float: left;
+<style lang="less" scoped>
+article {
+  display: flex;
 }
 
-article {
-  overflow: hidden;
+section {
+  width: 45%;
 }
 </style>

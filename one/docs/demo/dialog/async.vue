@@ -106,7 +106,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 article > .veui-button {
   margin-right: 20px;
 }

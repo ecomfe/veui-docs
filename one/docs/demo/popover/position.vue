@@ -192,7 +192,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .veui-grid-container {
   width: 80%;
   min-width: 600px;

@@ -86,7 +86,7 @@ export default {
 }
 </script>
 
-<style lang="less" docs scoped>
+<style lang="less" scoped>
 .demo {
   height: 50px;
   line-height: 50px;

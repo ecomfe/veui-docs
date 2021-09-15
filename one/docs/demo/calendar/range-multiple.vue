@@ -54,7 +54,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 article {
   overflow: hidden;
 }

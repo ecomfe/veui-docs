@@ -31,13 +31,13 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 article {
   overflow: hidden;
 }
 
 .item {
-  @grid-size: 128px;
+  @grid-size: 120px;
   float: left;
   width: @grid-size;
   height: calc(@grid-size + 3em);
@@ -51,7 +51,7 @@ article {
     font-size: 1.5em;
     line-height: @grid-size;
     border-radius: 4px;
-    transition: border-color .2s;
+    transition: border-color 0.2s;
 
     &:hover {
       border-color: #ccc;

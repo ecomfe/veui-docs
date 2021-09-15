@@ -2,10 +2,17 @@
 <article>
   <div class="op-wrap">
     <veui-button @click="aOpen = true">
-        Open Dialog
+      Open Dialog
     </veui-button>
-    <veui-checkbox v-model="loading">Loading</veui-checkbox>
-    <veui-checkbox class="ml-3p" v-model="disabled">Disabled</veui-checkbox>
+    <veui-checkbox v-model="loading">
+      Loading
+    </veui-checkbox>
+    <veui-checkbox
+      v-model="disabled"
+      class="ml-3p"
+    >
+      Disabled
+    </veui-checkbox>
   </div>
   <veui-dialog
     :open.sync="aOpen"
@@ -37,14 +44,14 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .veui-button {
   margin-right: 20px;
 }
 .op-wrap {
-    display: flex;
+  display: flex;
 }
 .ml-3p {
-    margin-left: 12px;
+  margin-left: 12px;
 }
 </style>

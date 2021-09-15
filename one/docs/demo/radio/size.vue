@@ -36,7 +36,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .veui-radio {
   margin-right: 20px;
 }

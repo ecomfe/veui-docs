@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 section:not(:last-child) {
   margin-bottom: 20px;
 }

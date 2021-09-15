@@ -71,7 +71,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .anchor-offset-demo {
   position: relative;
 
@@ -80,7 +80,8 @@ export default {
     position: absolute;
     top: 20px;
     width: 180px;
-    border-top: 1px solid red;;
+    border-top: 1px solid red;
+
     &::after {
       content: "targetOffset: 20px";
       position: absolute;
@@ -90,9 +91,11 @@ export default {
       font-size: 12px;
     }
   }
+
   .sticky-offset-line {
     top: 30px;
     left: 250px;
+
     &::after {
       content: "stickyOffset: 30px";
     }
@@ -117,10 +120,12 @@ export default {
     width: 100px;
     height: 150px;
     flex: none;
+
     & + .block {
       margin-top: 20px;
     }
   }
+
   .anchor-two {
     position: absolute;
     left: 250px;

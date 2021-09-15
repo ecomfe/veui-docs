@@ -134,9 +134,7 @@ export default {
 .veui-checkbox {
   margin: 8px 16px;
 }
-</style>
 
-<style lang="less" scoped docs>
 section {
   margin-bottom: 20px;
 }

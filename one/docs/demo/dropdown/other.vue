@@ -122,9 +122,10 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .container {
   margin-bottom: 1em;
+
   .veui-dropdown {
     margin-left: 1em;
   }

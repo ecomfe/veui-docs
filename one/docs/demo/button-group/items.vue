@@ -28,7 +28,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .veui-button-group {
   margin-right: 1em;
 }

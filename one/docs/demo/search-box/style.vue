@@ -15,7 +15,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .veui-search-box {
   margin-right: 1em;
 }

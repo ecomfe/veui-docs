@@ -32,10 +32,11 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .veui-loading {
   margin-left: 1em;
 }
+
 .reverse {
   background: #ccc;
   padding: 8px;

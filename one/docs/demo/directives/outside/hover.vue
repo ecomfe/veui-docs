@@ -31,12 +31,11 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
-@import "~veui-theme-dls/lib.less";
-
+<style lang="less" scoped>
 .box {
-  .size(500px, 100px);
-  background: @veui-gray-color-8;
+  width: 500px;
+  height: 100px;
+  background: #f7f7f7;
   display: flex;
   align-items: center;
   justify-content: center;

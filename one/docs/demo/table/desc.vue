@@ -25,7 +25,9 @@
         </template>
         <template #desc="{ close }">
           <p>This is a description for bid.</p>
-          <veui-button @click="close">close</veui-button>
+          <veui-button @click="close">
+            close
+          </veui-button>
         </template>
       </veui-table-column>
     </veui-table>
@@ -81,7 +83,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 section {
   margin-bottom: 20px;
 }

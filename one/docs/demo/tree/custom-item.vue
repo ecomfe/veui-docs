@@ -176,11 +176,9 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
-@import "~veui-theme-dls/lib.less";
-
+<style lang="less" scoped>
 article {
-  .clearfix();
+  display: flex;
 }
 
 h4 {
@@ -188,12 +186,9 @@ h4 {
 }
 
 section {
-  float: left;
   width: 45%;
 }
-</style>
 
-<style lang="less">
 .custom-toggle {
   margin-right: 4px;
 }

@@ -3,18 +3,24 @@
   <div>
     <veui-check-box
       v-model="wrap"
-    >循环播放</veui-check-box>
+    >
+      循环播放
+    </veui-check-box>
     <veui-check-box
       v-model="indicator"
       true-value="number"
       false-value="none"
-    >头部页码</veui-check-box>
+    >
+      头部页码
+    </veui-check-box>
   </div>
   <veui-button
     class="mt-3p"
     ui="primary"
     @click="open = true"
-  >展现灯箱</veui-button>
+  >
+    展现灯箱
+  </veui-button>
   <veui-lightbox
     :open.sync="open"
     :datasource="items"
@@ -41,7 +47,7 @@ export default {
     }
   },
   computed: {
-    items() {
+    items () {
       return [
         {
           src:
@@ -73,10 +79,11 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .veui-checkbox {
   margin-right: 15px;
 }
+
 .mt-3p {
   margin-top: 12px;
 }

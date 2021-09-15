@@ -60,9 +60,7 @@ article {
     margin: 2px 0; /* Just for showcase */
   }
 }
-</style>
 
-<style lang="less" scoped docs>
 .content {
   background-color: #eee;
   height: 100%;

@@ -64,27 +64,28 @@ export default {
       indicatorPosition: 'inside',
       align: 'start',
       indicators: [
-        { label: 'Bar', value: 'bar' },
-        { label: 'Number', value: 'number' },
-        { label: 'Dot', value: 'dot' },
-        { label: 'None', value: 'none' }
+        { label: 'bar', value: 'bar' },
+        { label: 'number', value: 'number' },
+        { label: 'dot', value: 'dot' },
+        { label: 'none', value: 'none' }
       ],
       alignments: [
-        { value: 'start', label: 'start' },
-        { value: 'end', label: 'end' }
+        { label: 'start', value: 'start' },
+        { label: 'end', value: 'end' }
       ],
       positions: [
-        { label: 'Inside', value: 'inside' },
-        { label: 'Outside', value: 'outside' }
+        { label: 'inside', value: 'inside' },
+        { label: 'outside', value: 'outside' }
       ]
     }
   }
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 h4 {
   margin: 0 0 10px;
+
   &:not(:first-child) {
     margin-top: 10px;
   }

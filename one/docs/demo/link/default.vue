@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 h4 {
   margin-top: 0;
 }

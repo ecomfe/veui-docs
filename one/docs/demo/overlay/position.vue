@@ -40,7 +40,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .centered-overlay {
   position: fixed;
   top: 50%;
@@ -49,15 +49,11 @@ export default {
   width: 200px;
   height: 100px;
 }
-</style>
-
-<style lang="less" docs>
-@import "~veui-theme-dls/lib.less";
 
 .centered-overlay {
   line-height: 100px;
   text-align: center;
-  border: 1px solid @veui-gray-color-5;
+  border: 1px solid #dbdbdb;
   background-color: #fff;
 }
 </style>

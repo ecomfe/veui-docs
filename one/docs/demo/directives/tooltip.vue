@@ -39,7 +39,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .veui-button + .veui-button {
   margin-left: 8px;
 }

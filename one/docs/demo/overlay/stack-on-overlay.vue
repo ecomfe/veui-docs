@@ -60,10 +60,21 @@ export default {
 }
 </script>
 
-<style lang="less" docs scoped>
-.veui-button {
-  margin-right: 10px;
+<style lang="less" scoped>
+.veui-overlay {
+  display: none;
+}
+
+.relative-overlay {
+  width: 200px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+
+  .veui-button {
+    margin-left: 10px;
+  }
 }
 </style>
-
-<style lang="less" src="./relative.less" docs></style>

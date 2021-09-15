@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .veui-badge {
   & + & {
     margin-left: 2em;

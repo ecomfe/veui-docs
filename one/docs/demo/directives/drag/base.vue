@@ -18,11 +18,11 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
-@import "~veui-theme-dls/lib.less";
+<style lang="less" scoped>
 
 .target {
-  .size(80px);
+  width: 80px;
+  height: 80px;
   background: @veui-gray-color-6;
 }
 </style>

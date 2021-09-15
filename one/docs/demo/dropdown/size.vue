@@ -64,7 +64,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .veui-dropdown {
   max-width: 120px;
   margin-right: 10px;

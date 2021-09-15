@@ -141,13 +141,14 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .cascader-wrap {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  .veui-cascader + .veui-cascader{
-      margin-top: 12px;
-  }
+}
+
+.veui-cascader + .veui-cascader {
+  margin-top: 12px;
 }
 </style>

@@ -76,14 +76,16 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs-loading>
+<style lang="less" scoped>
 .reverse {
   background: #ccc;
   padding: 8px;
 }
+
 .veui-loading {
   margin-left: 1em;
 }
+
 .container {
   margin-bottom: 2em;
 }

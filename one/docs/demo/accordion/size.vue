@@ -34,7 +34,8 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped docs>
-section
-  margin-bottom 20px
+<style scoped>
+section {
+  margin-bottom: 20px;
+}
 </style>

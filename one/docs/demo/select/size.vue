@@ -51,7 +51,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .veui-select {
   max-width: 120px;
   margin-right: 10px;

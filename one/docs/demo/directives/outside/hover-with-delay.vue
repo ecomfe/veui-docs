@@ -43,14 +43,13 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
-@import "~veui-theme-dls/lib.less";
-
+<style lang="less" scoped>
 .box1,
 .box2,
 .box3 {
-  .size(200px, 100px);
-  background: @veui-gray-color-8;
+  width: 200px;
+  height: 100px;
+  background: #f7f7f7;
   margin-right: 30px;
   display: inline-flex;
   align-items: center;

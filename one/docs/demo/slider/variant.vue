@@ -91,9 +91,7 @@ export default {
   border: 1px solid #fff;
   font-size: 12px;
 }
-</style>
 
-<style lang="less" scoped docs>
 section {
   margin-top: 1em;
   background-color: #fafafa;

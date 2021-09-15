@@ -42,7 +42,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .veui-breadcrumb:first-child {
   margin-bottom: 20px;
 }

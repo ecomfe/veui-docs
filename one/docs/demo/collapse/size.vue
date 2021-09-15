@@ -28,7 +28,8 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped docs>
-section
-  margin-bottom 20px
+<style lang="less" scoped>
+section {
+  margin-bottom: 20px;
+}
 </style>

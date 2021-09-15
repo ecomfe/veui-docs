@@ -48,10 +48,12 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped docs>
-.veui-checkbox
-  & + &
-    margin-left 20px
+<style lang="less" scoped>
+.veui-checkbox {
+  & + & {
+    margin-left: 20px;
+  }
+}
 </style>
 
 <docs>

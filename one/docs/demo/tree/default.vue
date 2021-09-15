@@ -165,7 +165,11 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
+article {
+  display: flex;
+}
+
 h4 {
   margin: 0;
 }
@@ -175,10 +179,5 @@ h4 + h4 {
 
 section {
   width: 45%;
-  float: left;
-}
-
-article {
-  overflow: hidden;
 }
 </style>

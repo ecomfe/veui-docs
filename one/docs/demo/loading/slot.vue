@@ -60,7 +60,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .reverse {
   background: #ccc;
   padding: 8px;

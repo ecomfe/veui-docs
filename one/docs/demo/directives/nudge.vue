@@ -45,19 +45,18 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
-@import "~veui-theme-dls/lib.less";
-
+<style lang="less" scoped>
 article {
   display: flex;
 }
 
 .box {
-  .size(200px, 50px);
+  width: 200px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid @veui-gray-color-5;
+  border: 1px solid #dbdbdb;
   background: #fff;
   margin-right: 40px;
   user-select: none;
@@ -67,7 +66,7 @@ article {
   line-height: 1;
 
   &:focus {
-    background-color: @veui-gray-color-6;
+    background-color: #e7e7e7;
   }
 }
 

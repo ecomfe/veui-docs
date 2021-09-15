@@ -44,9 +44,7 @@ export default {
 .veui-tag {
   margin-right: 10px;
 }
-</style>
 
-<style lang="less" scoped docs>
 section {
   margin-bottom: 20px;
 }

@@ -6,29 +6,29 @@
 </article>
 </template>
 
-<style lang="stylus" scoped docs>
-p
-  margin-bottom 1em
-
-button
-  width 120px
-  height 36px
-  margin-right 1em
-  background #fff
-  border solid 1px #999
-  padding 3px 6px
-  text-align center
-  transition background-color 0.3s
-
-  &:hover
-    background-color #f8f8f8
-
-  &:active
-    background-color #eee
-</style>
-
 <style lang="less" scoped>
+p {
+  margin-bottom: 1em;
+}
+
 button {
+  width: 120px;
+  height: 36px;
+  margin-right: 1em;
+  background: #fff;
+  border: solid 1px #999;
+  padding: 3px 6px;
+  text-align: center;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #f8f8f8;
+  }
+
+  &:active {
+    background-color: #eee;
+  }
+
   &:focus {
     outline: 2px solid #eee;
   }

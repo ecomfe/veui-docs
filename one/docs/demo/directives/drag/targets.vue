@@ -28,12 +28,11 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
-@import "~veui-theme-dls/lib.less";
-
+<style lang="less" scoped>
 .target {
-  .size(80px);
-  background: @veui-gray-color-6;
+  width: 80px;
+  height: 80px;
+  background: #e7e7e7;
   display: inline-flex;
   margin-right: 40px;
   align-items: center;
@@ -42,7 +41,8 @@ export default {
 }
 
 .container {
-  .size(100%, 300px);
-  background: @veui-gray-color-8;
+  width: 100%;
+  height: 300px;
+  background: #f7f7f7;
 }
 </style>

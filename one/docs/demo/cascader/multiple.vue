@@ -1,32 +1,52 @@
 <template>
 <article>
   <section class="cascader-config">
-    <veui-checkbox ui="s" v-model="clearable2">Clearable</veui-checkbox>
-    <veui-checkbox ui="s" v-model="showSelectAll2">ShowSelectAll</veui-checkbox>
+    <veui-checkbox
+      v-model="clearable2"
+      ui="s"
+    >
+      Clearable
+    </veui-checkbox>
+    <veui-checkbox
+      v-model="showSelectAll2"
+      ui="s"
+    >
+      ShowSelectAll
+    </veui-checkbox>
     <veui-radio
       v-model="trigger2"
       ui="s"
       value="click"
       name="columnTrigger2"
-    >click to expand</veui-radio>
+    >
+      click to expand
+    </veui-radio>
     <veui-radio
       v-model="trigger2"
       ui="s"
       value="hover"
       name="columnTrigger2"
-    >hover to expand</veui-radio>
+    >
+      hover to expand
+    </veui-radio>
     <label>
       Max:
-      <veui-number-input ui="s" v-model="max2"/>
+      <veui-number-input
+        v-model="max2"
+        ui="s"
+      />
     </label>
     <label>
       columnWidth:
-      <veui-input ui="s" v-model="columnWidth2"/>
+      <veui-input
+        v-model="columnWidth2"
+        ui="s"
+      />
     </label>
   </section>
   <veui-cascader
-    class="mt-3p"
     v-model="value2"
+    class="mt-3p"
     :options="options"
     :searchable="searchable2"
     :column-trigger="trigger2"
@@ -178,7 +198,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .cascader-config {
   display: flex;
   align-items: center;
