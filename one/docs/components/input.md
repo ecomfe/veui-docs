@@ -20,6 +20,18 @@
 
 [[ demo src="/demo/input/disabled.vue" ]]
 
+### 感知输入法
+
+设置 `composition` 来感知输入法输入过程中的值。
+
+[[ demo src="/demo/input/composition.vue" ]]
+
+### 过滤首尾空白字符
+
+设置 `trim` 来自动过滤用户输入的首尾空白字符。
+
+[[ demo src="/demo/input/trim.vue" ]]
+
 ## API
 
 ### 属性

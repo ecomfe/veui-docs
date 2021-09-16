@@ -40,12 +40,14 @@ export default {
     let media = [
       {
         type: 'image',
-        src: '/images/development/uploader/demo-image1.jpg'
+        src: '/images/development/uploader/demo-image1.jpg',
+        key: 0
       },
       {
         type: 'video',
         src: 'https://nadvideo2.baidu.com/5dafd8544f4f53b27a5f59b0ab780403_1920_1080.mp4',
-        poster: 'https://feed-image.baidu.com/0/pic/4dced79d185a16e228652b136f653dcc.jpg'
+        poster: 'https://feed-image.baidu.com/0/pic/4dced79d185a16e228652b136f653dcc.jpg',
+        key: 1
       }
     ]
     return {

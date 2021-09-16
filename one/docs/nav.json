@@ -196,10 +196,6 @@
           "slug": "transfer"
         },
         {
-          "title": "FilterPanel - 过滤面板",
-          "slug": "filter-panel"
-        },
-        {
           "title": "Tree - 树形控件",
           "slug": "tree"
         },
@@ -288,12 +284,12 @@
           "slug": "drawer"
         },
         {
-          "title": "Embedded - 嵌入式面板",
-          "slug": "embedded"
+          "title": "Menu - 边栏菜单",
+          "slug": "menu"
         },
         {
-          "title": "Menu - 导航菜单",
-          "slug": "menu"
+          "title": "Nav - 导航菜单",
+          "slug": "nav"
         },
         {
           "title": "Collapse - 折叠式面板",
@@ -590,10 +586,6 @@
           "slug": "transfer"
         },
         {
-          "title": "FilterPanel",
-          "slug": "filter-panel"
-        },
-        {
           "title": "Tree",
           "slug": "tree"
         },
@@ -691,11 +683,6 @@
         {
           "title": "Drawer",
           "slug": "drawer",
-          "disabled": true
-        },
-        {
-          "title": "Embedded",
-          "slug": "embedded",
           "disabled": true
         },
         {

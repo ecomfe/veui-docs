@@ -106,6 +106,7 @@ export default {
 <style lang="less" scoped>
 .autocomplete-normal-demo {
   display: flex;
+
   section + section {
     margin-left: 60px;
   }

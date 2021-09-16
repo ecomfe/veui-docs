@@ -13,17 +13,7 @@
     >
       {{ i.label }}
     </div>
-
-    <section class="anchor-one">
-      <h3>普通锚点</h3>
-      <veui-anchor
-        :items="coffees"
-        :sticky="false"
-        container="container"
-      />
-    </section>
     <section class="anchor-two">
-      <h3>吸附锚点</h3>
       <veui-anchor
         :items="coffees"
         container="container"
@@ -45,7 +35,7 @@ export default {
       coffees: [
         {
           label: 'Infused',
-          value: '#infused',
+          value: '#infused2',
           children: [
             {
               label: 'Breadcrumb',
@@ -55,7 +45,7 @@ export default {
         },
         {
           label: 'Boiled',
-          value: '#boiled',
+          value: '#boiled2',
           children: [
             {
               label: 'Button',
@@ -65,11 +55,11 @@ export default {
         },
         {
           label: 'Espresso',
-          value: '#espresso'
+          value: '#espresso2'
         },
         {
           label: 'Milk coffee',
-          value: '#milk-coffee'
+          value: '#milk-coffee2'
         }
       ]
     }
@@ -80,22 +70,6 @@ export default {
 <style lang="less" scoped>
 .anchor-demo {
   position: relative;
-
-  .line {
-    position: absolute;
-    top: 0;
-    width: 180px;
-    border-top: 1px solid red;;
-
-    &::after {
-      content: "0";
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      color: red;
-      font-size: 12px;
-    }
-  }
 
   .anchor-wrapper {
     position: relative;
@@ -112,7 +86,7 @@ export default {
 
   .block {
     white-space: nowrap;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #000;
     width: 100px;
     height: 150px;
     flex: none;
@@ -130,7 +104,7 @@ export default {
 
   .anchor-two {
     position: absolute;
-    left: 450px;
+    left: 250px;
     top: 50px;
   }
 }
@@ -138,5 +112,5 @@ export default {
 </style>
 
 <docs>
-虚线框标记容器。
+虚线框标记容器，实线标记锚点项顶部，当二者重合触发激活。
 </docs>

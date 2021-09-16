@@ -30,11 +30,13 @@ export default {
     let files = [
       {
         name: 'demo-file1.txt',
-        src: '/file/demo-file1.txt'
+        src: '/file/demo-file1.txt',
+        key: 0
       },
       {
         name: 'demo-file2.txt',
-        src: '/file/demo-file2.txt'
+        src: '/file/demo-file2.txt',
+        key: 1
       }
     ]
     return {

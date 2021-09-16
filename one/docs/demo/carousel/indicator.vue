@@ -11,7 +11,7 @@
       v-model="indicatorPosition"
       :items="positions"
     />
-    <h4>Indicator alignment</h4>
+    <h4>Indicator align</h4>
     <veui-radio-group
       v-model="align"
       :items="alignments"
@@ -30,8 +30,6 @@
 
 <script>
 import { Carousel, RadioGroup } from 'veui'
-
-// TODO update alignment
 
 export default {
   components: {

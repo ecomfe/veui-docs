@@ -39,7 +39,7 @@ export default {
       coffees: [
         {
           label: 'Infused',
-          value: '#infused2',
+          value: '#infused1',
           children: [
             {
               label: 'Breadcrumb',
@@ -49,7 +49,7 @@ export default {
         },
         {
           label: 'Boiled',
-          value: '#boiled2',
+          value: '#boiled1',
           children: [
             {
               label: 'Button',
@@ -59,11 +59,11 @@ export default {
         },
         {
           label: 'Espresso',
-          value: '#espresso2'
+          value: '#espresso1'
         },
         {
           label: 'Milk coffee',
-          value: '#milk-coffee2'
+          value: '#milk-coffee1'
         }
       ]
     }
@@ -83,7 +83,7 @@ export default {
     border-top: 1px solid red;
 
     &::after {
-      content: "targetOffset: 20px";
+      content: "targetOffset（切换于此）";
       position: absolute;
       right: 0;
       bottom: 0;
@@ -97,7 +97,7 @@ export default {
     left: 250px;
 
     &::after {
-      content: "stickyOffset: 30px";
+      content: "stickyOffset（吸附于此）";
     }
   }
 
@@ -116,7 +116,7 @@ export default {
 
   .block {
     white-space: nowrap;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #000;
     width: 100px;
     height: 150px;
     flex: none;
@@ -136,5 +136,9 @@ export default {
 </style>
 
 <docs>
-虚线框标记容器。
+虚线框标记容器，黑实线标记锚点项顶部。
+
+当黑实线和 `tagetOffset` 线重合触发激活。
+
+`Anchor` 吸附在 `stickyOffset` 线处。
 </docs>
