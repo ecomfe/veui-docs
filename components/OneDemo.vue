@@ -36,7 +36,9 @@
       ui="icon"
       @click="localExpanded = !localExpanded"
     >
-      <veui-icon :name="localExpanded ? 'one-demo-code-off' : 'one-demo-code'"/>
+      <veui-icon
+        :name="localExpanded ? 'one-demo-code-off' : 'one-demo-code'"
+      />
     </veui-button>
   </section>
   <section
@@ -96,9 +98,14 @@ export default {
   },
   methods: {
     play () {
-      createCodeSandbox(this.$refs.source.textContent.replace(/from 'veui'/g, 'from \'veui/dist/veui.esm\''))
+      createCodeSandbox(preprocess(this.$refs.source.textContent))
     }
   }
+}
+
+function preprocess (code) {
+  return code.replace(/from 'veui'/g, `from 'veui/dist/veui.esm'`)
+    .replace(/(?:import 'veui-theme-dls-icons[^']+'\n)+/g, `import 'veui-theme-dls-icons/dist/icons.esm'\n`)
 }
 
 Icon.register({

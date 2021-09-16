@@ -28,8 +28,8 @@ export function createCodeSandbox (sfc) {
 
 const meta = `{
   "dependencies": {
-    "veui": "2.1.1",
-    "veui-theme-dls": "2.1.1",
+    "veui": "2.1.2",
+    "veui-theme-dls": "2.1.2",
     "vue": "2.6.14"
   }
 }
