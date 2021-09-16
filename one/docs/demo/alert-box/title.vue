@@ -31,9 +31,8 @@
 </template>
 
 <script>
-import { AlertBox, Button, Icon } from 'veui'
+import { AlertBox, Button, Icon, toast } from 'veui'
 import 'veui-theme-dls-icons/info-circle'
-import toast from 'veui/managers/toast'
 
 export default {
   components: {

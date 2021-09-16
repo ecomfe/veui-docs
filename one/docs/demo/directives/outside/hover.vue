@@ -10,8 +10,7 @@
 </template>
 
 <script>
-import outside from 'veui/directives/outside'
-import toast from 'veui/managers/toast'
+import { outside, toast } from 'veui'
 
 export default {
   directives: {

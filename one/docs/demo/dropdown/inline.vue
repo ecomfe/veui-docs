@@ -48,8 +48,7 @@
 </template>
 
 <script>
-import { Dropdown, OptionGroup, Option } from 'veui'
-import toast from 'veui/managers/toast'
+import { Dropdown, OptionGroup, Option, toast } from 'veui'
 
 export default {
   components: {

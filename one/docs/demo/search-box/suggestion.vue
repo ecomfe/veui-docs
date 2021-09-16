@@ -19,8 +19,7 @@
 </template>
 
 <script>
-import { SearchBox } from 'veui'
-import toast from 'veui/managers/toast'
+import { SearchBox, toast } from 'veui'
 
 export default {
   components: {

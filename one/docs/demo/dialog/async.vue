@@ -49,8 +49,7 @@
 </template>
 
 <script>
-import { Dialog, Button } from 'veui'
-import toast from 'veui/managers/toast'
+import { Dialog, Button, toast } from 'veui'
 
 function fakeRequest () {
   return new Promise(resolve =>

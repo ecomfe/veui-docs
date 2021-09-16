@@ -16,8 +16,7 @@
 </template>
 
 <script>
-import { PromptBox, Button } from 'veui'
-import toast from 'veui/managers/toast'
+import { PromptBox, Button, toast } from 'veui'
 
 export default {
   components: {

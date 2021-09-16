@@ -15,8 +15,7 @@
 </template>
 
 <script>
-import { ConfirmBox, Button } from 'veui'
-import toast from 'veui/managers/toast'
+import { ConfirmBox, Button, toast } from 'veui'
 
 export default {
   components: {
