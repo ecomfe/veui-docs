@@ -42,6 +42,13 @@
 
 [[ demo src="/demo/carousel/slides.vue" ]]
 
+
+### 轮播项纵横比
+
+设置 `slide-aspect-ratio` 属性来指定每个轮播项的纵横比。
+
+[[ demo src="/demo/carousel/ratio.vue" ]]
+
 ## API
 
 ### 属性

@@ -20,6 +20,14 @@
 
 [[ demo src="/demo/date-picker/shortcuts.vue" ]]
 
+### 禁用和只读
+
+设置 `disabled` 属性可使组件处于禁用状态。
+
+设置 `readonly` 属性可使组件处于只读状态。
+
+[[ demo src="/demo/date-picker/disabled.vue" ]]
+
 ## API
 
 ### 属性

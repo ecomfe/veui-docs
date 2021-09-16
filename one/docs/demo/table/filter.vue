@@ -25,7 +25,7 @@
         title="Bid"
         width="160"
         align="right"
-        :filter-value="filtered"
+        :filter-value="filtered || null"
       >
         <template #default="{ bid }">
           {{ bid | currency }}
@@ -111,7 +111,7 @@ export default {
         }
       ],
       crowded: false,
-      filtered: false
+      filtered: null
     }
   },
   computed: {

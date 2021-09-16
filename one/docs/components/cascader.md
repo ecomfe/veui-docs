@@ -27,6 +27,24 @@
 
 [[ demo src="/demo/cascader/multiple.vue" ]]
 
+### 选择模式
+
+使用 `select-mode` 属性来控制在单选模式下哪些项目可以被选中。
+
+[[ demo src="/demo/cascader/select-mode.vue" ]]
+
+### 子项展开时机
+
+使用 `column-trigger` 属性来控制下拉面板中下级的展开时机。
+
+[[ demo src="/demo/cascader/column-trigger.vue" ]]
+
+### 渲染选中值
+
+使用 `value-display` 属性来控制选中值如何展示。
+
+[[ demo src="/demo/cascader/value-display.vue" ]]
+
 ## API
 
 ### 属性
@@ -52,6 +70,8 @@
 | ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
 | ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
 | ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
+| ``match`` | `(item, keyword, { ancestors }) => boolean | Array<[number, number]>` | - | 支持自定义高亮逻辑， 默认大小写不敏感，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
+| ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | 支持自定义搜索命中逻辑，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
 
 ^^^ui
 预设样式。

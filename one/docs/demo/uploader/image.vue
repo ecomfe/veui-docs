@@ -39,10 +39,12 @@ export default {
   data () {
     let images = [
       {
-        src: '/images/development/uploader/demo-image1.jpg'
+        src: '/images/development/uploader/demo-image1.jpg',
+        key: 0
       },
       {
-        src: '/images/development/uploader/demo-image2.jpg'
+        src: '/images/development/uploader/demo-image2.jpg',
+        key: 1
       }
     ]
     return {

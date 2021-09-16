@@ -32,6 +32,25 @@
 
 [[ demo src="/demo/uploader/custom.vue" ]]
 
+### 拖拽排序
+
+设置 `sortable` 属性来指定上传项目之间可以拖拽排序。
+
+[[ demo src="/demo/uploader/sortable.vue" ]]
+
+### 已上传项自定义操作
+
+设置 `controls` 属性来指定悬浮到每个上传项时的操作选项。
+
+[[ demo src="/demo/uploader/controls.vue" ]]
+
+### 上传入口自定义操作
+
+设置 `entries` 属性来指定悬浮到继续上传项目时的操作选项。
+
+[[ demo src="/demo/uploader/entries.vue" ]]
+
+
 ## API
 
 ### 属性

@@ -14,6 +14,18 @@
 
 [[ demo src="/demo/alert/multiple.vue" ]]
 
+### 标题
+
+设置 `title` 属性来指定消息标题。
+
+[[ demo src="/demo/alert/title.vue" ]]
+
+### 额外内容
+
+通过 `extra` 插槽来指定消息之后的额外内容区域。
+
+[[ demo src="/demo/alert/extra.vue" ]]
+
 ## API
 
 ### 属性

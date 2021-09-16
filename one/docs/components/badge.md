@@ -14,6 +14,12 @@
 
 [[ demo src="/demo/badge/number.vue" ]]
 
+### 右上角圆点徽标
+
+不提供徽标内容时，徽标将以圆点样式显示在右上角。
+
+[[ demo src="/demo/badge/corner-dot.vue" ]]
+
 ### 圆点徽标
 
 不提供插槽内容时，徽标将以圆点样式显示。

@@ -2,7 +2,29 @@
 
 ## 示例
 
+### 触发建议的时机
+
+设置 `suggest-trigger` 来指定触发建议的时机。
+
 [[ demo src="/demo/autocomplete/normal.vue" ]]
+
+### 严格模式
+
+设置 `strict` 属性来指定严格模式，若输入值没有完全匹配建议值，那么在失焦时会清空输入值。
+
+[[ demo src="/demo/autocomplete/strict.vue" ]]
+
+### 自定义搜索逻辑
+
+设置 `match` 属性来自定义自定义高亮逻辑。
+
+设置 `filter` 属性来自定义搜索命中逻辑。
+
+:::tip
+`match` 用于高亮显示匹配文本的逻辑；而 `filter` 是控制是否命中。默认情况下 `filter` 会过滤掉未被 `match` 匹配的节点，且将包含非叶子节点。如希望搜索结果中都是叶子节点，可通过重写 `filter` 过滤掉非叶子节点。
+:::
+
+[[ demo src="/demo/autocomplete/custom.vue" ]]
 
 ## API
 
@@ -12,7 +34,8 @@
 | -- | -- | -- | -- |
 | ``datasource`` | `Array<string | Object>=` | `[]` | [^datasource] |
 | ``value`` | `*` | - | [^prop-value] |
-| ``match`` | `function(string | Object, string): boolean=` | - | 自定义搜索逻辑。 |
+| ``match`` | `(item, keyword, { ancestors }) => boolean | [number, number] | Array<[number, number]>` | - | 支持自定义高亮逻辑，默认进行大小写不敏感的子串匹配。 |
+| ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | 支持自定义搜索命中逻辑。 |
 | ``strict`` | `boolean=` | `false` | 建议下拉面板关闭时，若输入值没有完全匹配建议值，那么会清空输入值。 |
 | ``suggest-trigger`` | `string | Array<string>=` | `'input'` | 触发建议下拉面板的时机，可用值有：`'input'`、`'focus'`。 |
 | ``placeholder`` | `string=` |  | 输入占位符。 |

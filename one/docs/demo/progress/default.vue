@@ -4,6 +4,7 @@
     <veui-number-input
       v-model="value"
       :min="0"
+      :decimal-place="1"
       :max="100"
     />
   </section>
@@ -59,7 +60,7 @@ export default {
       type: 'bar',
       value: 66.6,
       desc: true,
-      autoSucceed: true,
+      autoSucceed: 200,
       indeterminate: false
     }
   }

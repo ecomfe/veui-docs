@@ -8,11 +8,29 @@
 
 [[ demo src="/demo/check-button-group/default.vue" ]]
 
+### 简单样式
+
+设置 `ui` 属性值：`simple` 来指定简单样式。
+
+[[ demo src="/demo/check-button-group/simple.vue" ]]
+
 ### 单复选共存
 
 可以使用 `exclusive` 选项与 `empty-value` 实现一些单复选共存的场景。
 
 [[ demo src="/demo/check-button-group/exclusive.vue" ]]
+
+### 额外描述
+
+在数据源的项目中设置 `desc` 字段或者通过 `desc` 插槽来指定额外描述。额外描述会在悬浮时显示。
+
+[[ demo src="/demo/check-button-group/desc.vue" ]]
+
+### 最小宽度
+
+通过设置 `ui` 属性值 `stable` 来开启项目的最小宽度。
+
+[[ demo src="/demo/check-button-group/stable.vue" ]]
 
 ## API
 
@@ -38,7 +56,7 @@
 ^^^
 
 ^^^items
-复选按钮组数据源，项目类型为 `{label, value, disabled, exclusive, ...}`。
+复选按钮组数据源，项目类型为 `{ label, value, disabled, exclusive, desc, ... }`。
 
 +++字段详情
 | 名称 | 类型 | 描述 |
@@ -47,6 +65,7 @@
 | `value` | `*` | 选项对应的值。 |
 | `disabled` | `boolean=` | 选项是否为禁用。 |
 | `exclusive` | `boolean=` | 选项是否为排它项。当选项为排它项时，选中该项将取消选中其它所有选项。 |
+| `desc` | `string` | 选项的额外描述信息。 |
 +++
 ^^^
 
@@ -63,6 +82,7 @@
 | 名称 | 描述 |
 | -- | -- |
 | ``item`` | [^slot-item] |
+| ``desc`` | 按钮的额外描述信息，作用域参数同 `item` 插槽。 |
 
 ^^^slot-item
 按钮内文本区域。

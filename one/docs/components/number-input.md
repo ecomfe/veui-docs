@@ -20,6 +20,14 @@
 
 [[ demo src="/demo/number-input/disabled.vue" ]]
 
+### 精度位数和递增/递减
+
+设置 `decimal-place` 来指定数值的小数精度位数。
+
+设置 `step` 来指定每次递增/减的数值。
+
+[[ demo src="/demo/number-input/decimal.vue" ]]
+
 ## API
 
 ### 属性
@@ -35,6 +43,7 @@
 | ``max`` | `number` | - | 允许的最大值。 |
 | ``min`` | `number` | - | 允许的最小值。 |
 | ``decimal-place`` | `number` | 0 | 数值的小数精度位数，默认精确到整数位，`-1` 表示不处理精度。 |
+| ``step`` | `number` | 1 | 每次递增/递减的数值。 |
 
 ^^^ui
 预设样式。

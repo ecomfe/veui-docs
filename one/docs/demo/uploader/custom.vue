@@ -30,9 +30,11 @@ export default {
       action: 'https://app.fakejson.com/q/ELymQ7xh?token=AWFkjMICPSAB_bO_z-Lnog',
       images: [
         {
+          key: 0,
           src: '/images/development/uploader/demo-image1.jpg'
         },
         {
+          key: 1,
           src: '/images/development/uploader/demo-image2.jpg'
         }
       ],

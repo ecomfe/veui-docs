@@ -30,6 +30,15 @@
 
 [[ demo src="/demo/select/multiple.vue" ]]
 
+
+### 自定义已选项展示
+
+使用 `label` 插槽来自定义**下拉关闭时**已选项如何展示。
+
+使用 `select` 插槽来自定义已选项如何展示，和下拉是否关闭无关。
+
+[[ demo src="/demo/select/selected.vue" ]]
+
 ## API
 
 ### 属性
@@ -50,6 +59,8 @@
 | ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
 | ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
 | ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
+| ``match`` | `(item, keyword, { ancestors }) => boolean | Array<[number, number]>` | - | 支持自定义高亮逻辑， 默认大小写不敏感，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
+| ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | 支持自定义搜索命中逻辑，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
 
 ^^^ui
 预设样式。

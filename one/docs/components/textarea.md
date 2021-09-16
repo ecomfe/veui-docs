@@ -20,6 +20,12 @@
 
 [[ demo src="/demo/textarea/disabled.vue" ]]
 
+### 自动扩展
+
+设置 `autoresize` 来使文本域处于自动扩展状态。
+
+[[ demo src="/demo/textarea/autoresize.vue" ]]
+
 ## API
 
 ### 属性
