@@ -57,7 +57,8 @@ import { Button, Icon } from 'veui'
 import tooltip from 'veui/directives/tooltip'
 import i18n from 'veui/mixins/i18n'
 import { BrowserWindow } from 'vue-windows'
-import { createCodeSandbox } from './play'
+import { getLocale } from '../common/i18n'
+import { createCodeSandbox } from '../common/play'
 
 export default {
   name: 'one-demo',
@@ -98,14 +99,14 @@ export default {
   },
   methods: {
     play () {
-      createCodeSandbox(preprocess(this.$refs.source.textContent))
+      let locale = getLocale(this.$route.path)
+      createCodeSandbox(preprocess(this.$refs.source.textContent), { locale })
     }
   }
 }
 
 function preprocess (code) {
   return code.replace(/from 'veui'/g, `from 'veui/dist/veui.esm'`)
-    .replace(/(?:import 'veui-theme-dls-icons[^']+'\n)+/g, `import 'veui-theme-dls-icons/dist/icons.esm'\n`)
 }
 
 Icon.register({

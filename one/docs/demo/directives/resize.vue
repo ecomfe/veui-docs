@@ -47,8 +47,7 @@
 </template>
 
 <script>
-import { Button } from 'veui'
-import { resize } from 'veui/directives'
+import { Button, resize } from 'veui'
 
 export default {
   components: {

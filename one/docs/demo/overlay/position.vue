@@ -18,8 +18,7 @@
 </template>
 
 <script>
-import { Overlay, Button } from 'veui'
-import outside from 'veui/directives/outside'
+import { Overlay, Button, outside } from 'veui'
 
 export default {
   components: {

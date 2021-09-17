@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import drag from 'veui/directives/drag'
+import { drag } from 'veui'
 
 export default {
   directives: {

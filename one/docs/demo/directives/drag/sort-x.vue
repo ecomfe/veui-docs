@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import drag from 'veui/directives/drag'
+import { drag } from 'veui'
 
 const items = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'.split(/[,. ]+/).filter(Boolean)
 

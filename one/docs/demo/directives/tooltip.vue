@@ -22,8 +22,7 @@
 </template>
 
 <script>
-import { Button, Icon } from 'veui'
-import tooltip from 'veui/directives/tooltip'
+import { Button, Icon, tooltip } from 'veui'
 import 'veui-theme-dls-icons/zoom-in'
 import 'veui-theme-dls-icons/upload'
 import 'veui-theme-dls-icons/trash'

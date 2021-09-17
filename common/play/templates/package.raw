@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "veui": "2.1.2",
+    "veui-theme-dls": "2.1.2",
+    "vue": "2.6.14"
+  }
+}

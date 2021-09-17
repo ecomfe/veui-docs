@@ -39,7 +39,7 @@ module.exports = {
     css: false
   },
 
-  css: ['veui-theme-dls/common.less', '@/assets/styles/global.styl'],
+  css: ['veui-theme-dls/common.less', '@/assets/styles/global.styl', 'veui-theme-dls/'],
 
   plugins: [
     { src: '~plugins/i18n.js' },
@@ -82,10 +82,6 @@ module.exports = {
         options: {
           locale: ['zh-Hans', 'en-US'],
           modules: [
-            {
-              package: 'veui-theme-dls',
-              fileName: '{module}.less'
-            },
             {
               package: 'veui-theme-dls',
               fileName: '{module}.js',

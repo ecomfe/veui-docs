@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import nudge from 'veui/directives/nudge'
+import { nudge } from 'veui'
 
 export default {
   directives: {
