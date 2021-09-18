@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import 'focus-visible'
 import 'veui-theme-dls/dist/dls.esm'
 import 'veui-theme-dls-icons/dist/icons.esm'
 import 'veui/dist/locale.{{locale}}.esm'
