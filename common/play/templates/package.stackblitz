@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "veui": "^2.1.3",
-    "veui-theme-dls": "^2.1.3",
-    "veui-theme-dls-icons": "^2.1.3",
+    "veui": "latest",
+    "veui-theme-dls": "latest",
+    "veui-theme-dls-icons": "latest",
     "vue": "^2.6.14"
   },
   "devDependencies": {
