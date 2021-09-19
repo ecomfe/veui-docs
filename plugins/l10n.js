@@ -5,7 +5,8 @@ i18n.register(
   {
     showCode: '显示代码',
     hideCode: '隐藏代码',
-    playInCsb: '在 CodeSandbox 中打开'
+    playInCodeSandbox: '在 CodeSandbox 中打开',
+    playInStackBlitz: '在 StackBlitz 中打开'
   },
   {
     ns: 'onedemo'
@@ -17,7 +18,8 @@ i18n.register(
   {
     showCode: 'Show code',
     hideCode: 'Hide code',
-    playInCsb: 'Open in CodeSandbox'
+    playInCodeSandbox: 'Open in CodeSandbox',
+    playInStackBlitz: 'Open in StackBlitz'
   },
   {
     ns: 'onedemo'

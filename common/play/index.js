@@ -1,18 +1,58 @@
 import { loading } from 'dls-graphics'
+import sdk from '@stackblitz/sdk'
 /* eslint-disable import/no-webpack-loader-syntax */
-import meta from '!!raw-loader!./templates/package.raw'
-import prettier from '!!raw-loader!./templates/.prettierrc.raw'
-import index from '!!raw-loader!./templates/index.raw.html'
-import landing from '!!raw-loader!./templates/landing.raw.html'
-import main from '!!raw-loader!./templates/main.raw.js'
-import app from '!!raw-loader!./templates/App.raw.vue'
+import packageCodeSandbox from '!!raw-loader!./templates/package.codesandbox'
+import packageStackBlitz from '!!raw-loader!./templates/package.stackblitz'
+import rcStackBlitz from '!!raw-loader!./templates/.stackblitzrc'
+import vueConfig from '!!raw-loader!./templates/vue.config.js'
+import prettier from '!!raw-loader!./templates/.prettierrc'
+import index from '!!raw-loader!./templates/index.html'
+import landing from '!!raw-loader!./templates/landing.html'
+import main from '!!raw-loader!./templates/main.js'
+import app from '!!raw-loader!./templates/App.vue'
 /* eslint-enable import/no-webpack-loader-syntax */
+
+const PLAYGROUND_FILES = {
+  CodeSandbox: {
+    'package.json': packageCodeSandbox,
+    '.prettierrc': prettier,
+    'public/index.html': index,
+    'src/main.js': main,
+    'src/App.vue': app
+  },
+  StackBlitz: {
+    'package.json': packageStackBlitz,
+    '.prettierrc': prettier,
+    'public/index.html': index,
+    'src/main.js': main,
+    'src/App.vue': app,
+    '.stackblitzrc': rcStackBlitz,
+    'vue.config.js': vueConfig
+  }
+}
+
+const PLAY_IMPLS = {
+  CodeSandbox: createCodeSandbox,
+  StackBlitz: createStackBlitz
+}
+
+export function play (sfc, { locale, vendor }) {
+  PLAY_IMPLS[vendor](sfc, { locale })
+}
 
 const API_CSB = 'https://codesandbox.io/api/v1/sandboxes/define'
 
 export function createCodeSandbox (sfc, { locale }) {
   const win = window.open()
   win.document.write(landing.replace('{{loading}}', genLoading()))
+
+  const files = Object.entries(
+    getPlaygroundFiles({ locale, vendor: 'CodeSandbox' })
+  ).reduce((acc, [key, value]) => {
+    acc[key] = { content: value }
+    return acc
+  }, {})
+
   fetch(`${API_CSB}?json=1`, {
     method: 'POST',
     headers: {
@@ -21,9 +61,9 @@ export function createCodeSandbox (sfc, { locale }) {
     },
     body: JSON.stringify({
       files: {
-        ...getTemplateFiles({ locale }),
+        ...files,
         'src/Demo.vue': {
-          content: sfc
+          content: sfc.replace(/from 'veui'/g, `from 'veui/dist/veui.esm'`)
         }
       }
     })
@@ -34,24 +74,31 @@ export function createCodeSandbox (sfc, { locale }) {
     })
 }
 
-function getTemplateFiles ({ locale }) {
-  return {
-    'package.json': {
-      content: meta
+export function createStackBlitz (sfc, { locale }) {
+  sdk.openProject(
+    {
+      title: 'VEUI Playground',
+      files: {
+        ...getPlaygroundFiles({ locale, vendor: 'StackBlitz' }),
+        'src/Demo.vue': sfc
+      },
+      description: 'Online playground for VEUI.',
+      template: 'node'
     },
-    '.prettierrc': {
-      content: prettier
-    },
-    'public/index.html': {
-      content: index
-    },
-    'src/main.js': {
-      content: main.replace('{{locale}}', locale)
-    },
-    'src/App.vue': {
-      content: app
+    {
+      openFile: 'src/Demo.vue'
     }
-  }
+  )
+}
+
+function getPlaygroundFiles ({ locale, vendor }) {
+  return Object.entries(PLAYGROUND_FILES[vendor]).reduce(
+    (acc, [key, value]) => {
+      acc[key] = value.replace('{{locale}}', locale)
+      return acc
+    },
+    {}
+  )
 }
 
 function genLoading () {

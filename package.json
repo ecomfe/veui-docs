@@ -21,6 +21,7 @@
   "devDependencies": {
     "@docsearch/css": "^3.0.0-alpha.39",
     "@docsearch/js": "^3.0.0-alpha.39",
+    "@stackblitz/sdk": "^1.5.2",
     "babel-eslint": "^10.1.0",
     "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-veui": "^2.1.0",
