@@ -20,7 +20,7 @@
         width="160"
         align="right"
       >
-        <template slot-scope="{ bid }">
+        <template #default="{ bid }">
           {{ bid | currency }}
         </template>
       </veui-table-column>
@@ -29,7 +29,7 @@
         title="Last updated"
         align="center"
       >
-        <template slot-scope="{ updateDate }">
+        <template #default="{ updateDate }">
           {{ updateDate | date }}
         </template>
       </veui-table-column>

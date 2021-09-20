@@ -63,7 +63,7 @@
         width="160"
         align="right"
       >
-        <template slot-scope="{ bid }">
+        <template #default="{ bid }">
           {{ bid | currency }}
         </template>
         <template #foot>
@@ -75,7 +75,7 @@
         title="Last updated"
         align="center"
       >
-        <template slot-scope="{ id, updateDate }">
+        <template #default="{ id, updateDate }">
           <span :ref="`time-a-${id}`">{{ updateDate | date }}</span>
           <veui-tooltip :target="`time-a-${id}`">
             {{ updateDate | time }}
@@ -87,7 +87,7 @@
         field="operation"
         title="Opertaions"
       >
-        <template slot-scope="{ index }">
+        <template #default="{ index }">
           <veui-button
             ui="text"
             @click="del(index)"

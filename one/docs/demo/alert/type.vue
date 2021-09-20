@@ -7,7 +7,7 @@
     Press any key to continue...
   </veui-alert>
   <veui-alert type="warning">
-    <code>scope</code> is deprecated. Use <code>slot-scope</code> instead.
+    <code>slot-scope</code> is deprecated. Use <code>v-slot</code> instead.
   </veui-alert>
   <veui-alert
     type="error"

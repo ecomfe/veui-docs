@@ -41,7 +41,7 @@
         width="160"
         align="right"
       >
-        <template slot-scope="{ bid }">
+        <template #default="{ bid }">
           {{ bid | currency }}
         </template>
       </veui-table-column>
@@ -50,7 +50,7 @@
         title="Last updated"
         align="center"
       >
-        <template slot-scope="{ updateDate }">
+        <template #default="{ updateDate }">
           {{ updateDate | date }}
         </template>
       </veui-table-column>
@@ -58,7 +58,7 @@
         field="operation"
         title="Operations"
       >
-        <template slot-scope="{ index }">
+        <template #default="{ index }">
           <veui-button
             ui="text"
             @click="remove(index)"

@@ -4,7 +4,7 @@
     title="Browsers"
     :datasource="browsersDatasource"
   >
-    <template slot-scope="{ items }">
+    <template #default="{ items }">
       <div
         v-for="item in items"
         v-show="!item.hidden"

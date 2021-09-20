@@ -20,7 +20,7 @@
         width="160"
         align="right"
       >
-        <template slot-scope="{ bid }">
+        <template #default="{ bid }">
           {{ bid | currency }}
         </template>
         <template #desc="{ close }">
