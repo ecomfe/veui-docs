@@ -95,6 +95,14 @@
       />
     </ul>
   </section>
+  <section
+    v-if="filteredChangelog.length === 0"
+    class="not-found"
+    @click="updateShrugger"
+  >
+    <span class="emoji">{{ shrugger }} </span>
+    <p>没有符合条件的变更记录。</p>
+  </section>
 </article>
 </template>
 
@@ -105,7 +113,7 @@ import changelog from '../assets/data/changelog.json'
 
 const allTypes = [
   { label: '非兼容性变更', value: 'breaking', emoji: '⚠️' },
-  { label: '主要变更', value: ' feature', emoji: '💡' },
+  { label: '主要变更', value: 'feature', emoji: '💡' },
   { label: '问题修复', value: 'bugfix', emoji: '🐞' },
   { label: '实验性功能', value: 'experimental', emoji: '🧪' }
 ]
@@ -123,6 +131,11 @@ function isMajor (version) {
 
 function isMinor (version) {
   return /^\d+\.(?:[1-9]|\d{2,}).0$/.test(version)
+}
+
+function getShrugger () {
+  const candidates = ['🤷🏻‍♀️', '🤷🏼‍♀️', '🤷🏽‍♀️', '🤷🏾‍♀️', '🤷🏿‍♀️', '🤷🏻‍♂️', '🤷🏼‍♂️', '🤷🏽‍♂️', '🤷🏾‍♂️', '🤷🏿‍♂️']
+  return candidates[Math.floor(Math.random() * candidates.length)]
 }
 
 export default {
@@ -146,7 +159,8 @@ export default {
       compare: false,
       tag: null,
       from: null,
-      to: allVersions[0].value
+      to: allVersions[0].value,
+      shrugger: getShrugger()
     }
   },
   computed: {
@@ -180,9 +194,17 @@ export default {
       }
     }
   },
+  mounted () {
+    ['from', 'to', 'compare', 'tag', 'type'].forEach((key) => {
+      this.$watch(key, this.updateShrugger)
+    })
+  },
   methods: {
     isMajor,
-    isMinor
+    isMinor,
+    updateShrugger () {
+      this.shrugger = getShrugger()
+    }
   }
 }
 </script>
@@ -225,4 +247,21 @@ h2
 
   small
     font-size 18px
+
+.not-found
+  display inline-flex
+  flex-direction column
+  align-items center
+  margin 32px
+  color #ababab
+  font-size 28px
+  cursor pointer
+  user-select none
+
+  .emoji
+    font-size 64px
+    opacity 0.75
+
+  p
+    margin 0 -0.75em 0 0
 </style>
