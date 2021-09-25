@@ -24,16 +24,10 @@ export default function attacher () {
               {
                 slot: 'source'
               },
-              h(
-                'div',
-                {
-                  'v-pre': true
-                },
-                {
-                  type: 'raw',
-                  value: code
-                }
-              )
+              {
+                type: 'raw',
+                value: code
+              }
             ),
             h(
               'template',

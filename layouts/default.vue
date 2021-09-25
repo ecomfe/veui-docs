@@ -89,3 +89,5 @@ main
   min-width 560px
   transition margin-left 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86)
 </style>
+
+<style lang="stylus" src="@/assets/styles/post.styl"></style>

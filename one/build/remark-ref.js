@@ -1,4 +1,4 @@
-import tokenizer from './refBlock'
+import tokenizer from './ref-block'
 import visit from 'unist-util-visit'
 import remove from 'unist-util-remove'
 import { render } from './page'
@@ -35,7 +35,7 @@ export default function attacher () {
 
     visit(tree, 'linkReference', (node, index, parent) => {
       let { identifier } = node
-      let [match, id] = identifier.match(RE_REF)
+      let [match, id] = identifier.match(RE_REF) || []
       if (!match || !id || !data.refs[id]) {
         return
       }

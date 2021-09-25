@@ -1,4 +1,4 @@
-import tokenizer from './customBlock'
+import tokenizer from './custom-block'
 import visit from 'unist-util-visit'
 import { render } from './page'
 

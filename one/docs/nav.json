@@ -6,6 +6,10 @@
       "exact": true
     },
     {
+      "title": "升级日志",
+      "slug": "changelog"
+    },
+    {
       "title": "起步",
       "slug": "getting-started",
       "children": [
@@ -398,6 +402,10 @@
       "exact": true
     },
     {
+      "title": "Changelog",
+      "slug": "changelog"
+    },
+    {
       "title": "Getting started",
       "slug": "getting-started",
       "children": [
@@ -713,6 +721,11 @@
         {
           "title": "Cascader",
           "slug": "cascader",
+          "disabled": true
+        },
+        {
+          "title": "ConfigProvider",
+          "slug": "config-provider",
           "disabled": true
         }
       ]

@@ -1,10 +1,11 @@
-import { statSync } from 'fs'
+import { statSync, writeFileSync } from 'fs'
 import { resolve, relative, extname, basename, sep } from 'path'
 import readdirpSync from 'recursive-readdir-sync'
 import rimraf from 'rimraf'
 import { copyFileSync, replaceExtSync } from './util'
 import { renderDocToPage } from './page'
 import { get, removeFile } from './deps'
+import { getChangelogData } from './changelog'
 
 const DOCS_DIR = resolve(__dirname, '../docs')
 const PAGES_DIR = resolve(__dirname, '../../pages')
@@ -18,17 +19,28 @@ export function generatePages (file, stats) {
     rimraf.sync(resolve(__dirname, './deps.json'))
     console.log('Regenerating all files...')
     handleFile(DOCS_DIR)
+    handleChangelog()
     console.log('...done.')
   } else {
     handleFile(file, stats)
   }
 }
 
+function handleChangelog () {
+  const changelogData = getChangelogData()
+  writeFileSync(
+    resolve(ASSETS_DIR, 'data', 'changelog.json'),
+    JSON.stringify(changelogData, null, 2)
+  )
+}
+
 function handleFile (file, stats) {
   let segments = relative(DOCS_DIR, file).split(sep)
-  if (segments.some(segment => {
-    return segment.startsWith('_') || segment.startsWith('.')
-  })) {
+  if (
+    segments.some(segment => {
+      return segment.startsWith('_') || segment.startsWith('.')
+    })
+  ) {
     return
   }
 
@@ -74,9 +86,10 @@ function handleFile (file, stats) {
     default: {
       let relDest = relative(DOCS_DIR, file)
 
-      let dest = relDest.split(sep).indexOf('demo') === -1
-        ? resolve(PAGES_DIR, relDest)
-        : resolve(DEMOS_DIR, relDest)
+      let dest =
+        relDest.split(sep).indexOf('demo') === -1
+          ? resolve(PAGES_DIR, relDest)
+          : resolve(DEMOS_DIR, relDest)
       if (remove) {
         rimraf.sync(dest)
         console.log(`[${relDest}] removed.`)

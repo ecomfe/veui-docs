@@ -49,6 +49,5 @@ export default {
 
 section {
   margin-bottom: 20px;
-  text-align: center;
 }
 </style>
