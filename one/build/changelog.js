@@ -1,7 +1,6 @@
 import { readFileSync } from 'fs'
 import cheerio from 'cheerio'
 import { render } from './page'
-
 const VERSION_RE = /^(\d+\.\d+\.\d+(?:-[a-z]+(?:\.\d+)?)?)(?:\s+"([^"]+)")?$/i
 function getVersion (title = '') {
   const [, version, codeName] = title.trim().match(VERSION_RE) || []
@@ -37,6 +36,25 @@ function getTags (comment) {
       return tag
     })
     .filter(tag => !!tag)
+}
+
+const EDIT_TYPE_RE = /^\[([+-^])\]/
+const EDIT_TYPE_MAP = {
+  '-': 'remove',
+  '+': 'add',
+  '^': 'modify'
+}
+function getEditType (text) {
+  const [, sign] = text.match(EDIT_TYPE_RE) || []
+  if (sign) {
+    return EDIT_TYPE_MAP[sign]
+  }
+
+  return null
+}
+
+function trim (text) {
+  return text.trim().replace(/^\n+|\n+$/g, '')
 }
 
 function extract (html) {
@@ -85,18 +103,27 @@ function extract (html) {
           .reduce((all, current) => all.concat(current), [])
 
         $change.contents().filter((_, el) => el.type === 'comment').remove()
+        $change.find('*').contents().filter((_, el) => el.type === 'comment').remove()
+
+        const $container = trim($change.html()).startsWith('<p>') ? $change.children('p').first() : $change
+
+        let html = trim($container.html())
+        const editType = getEditType($container.text())
+        html = html.replace(EDIT_TYPE_RE, '')
+
+        $container.html(html)
 
         versionLog.changeset.push({
           type,
           tags,
-          content: $change.html().replace(/^\n+|\n+$/g, '')
+          editType,
+          content: trim($change.html())
         })
       })
     })
 
     changelog.push(versionLog)
   })
-
   return changelog
 }
 

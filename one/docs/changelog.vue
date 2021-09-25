@@ -85,14 +85,21 @@
         minor: isMinor(version),
       }"
     >
-      {{ version }} <small>{{ codeName }}</small>
+      {{ version }}<small v-if="codeName">{{ codeName }}</small>
     </h2>
-    <ul>
+    <ul class="changeset">
       <li
         v-for="({ type, tags, content }, index) of changeset"
         :key="index"
-        v-html="content"
-      />
+        class="change"
+        :class="type"
+      >
+        <span
+          class="emoji"
+          :title="getTypeLabel(type)"
+        >{{ getTypeEmoji(type) }}</span>
+        <div v-html="content"/>
+      </li>
     </ul>
   </section>
   <section
@@ -117,6 +124,10 @@ const allTypes = [
   { label: '问题修复', value: 'bugfix', emoji: '🐞' },
   { label: '实验性功能', value: 'experimental', emoji: '🧪' }
 ]
+const typeMap = allTypes.reduce((map, { label, value, emoji }) => {
+  map[value] = { label, emoji }
+  return map
+}, {})
 
 const allVersions = changelog.map(({ version }) => ({ label: version, value: version }))
 const allTags = [
@@ -190,7 +201,8 @@ export default {
   watch: {
     compare (val) {
       if (!val) {
-        this.from = this.to = null
+        this.from = null
+        this.to = allVersions[0].value
       }
     }
   },
@@ -202,6 +214,12 @@ export default {
   methods: {
     isMajor,
     isMinor,
+    getTypeEmoji (type) {
+      return typeMap[type].emoji
+    },
+    getTypeLabel (type) {
+      return typeMap[type].label
+    },
     updateShrugger () {
       this.shrugger = getShrugger()
     }
@@ -231,6 +249,8 @@ export default {
     margin-bottom 0
 
 h2
+  display flex
+  align-items center
   font-size 20px
   margin 1.2em 0 0.6em
 
@@ -246,7 +266,30 @@ h2
       content "§"
 
   small
-    font-size 18px
+    font-size 14px
+
+    &::before
+      content "·"
+      font-size 20px
+      margin 0 8px
+
+.changeset
+  list-style-type none
+  padding-left 0
+
+.change
+  display flex
+
+  .emoji
+    flex none
+    margin-right 8px
+    cursor help
+
+  & >>> p
+    margin-top 0
+
+    &:only-child
+      margin 0
 
 .not-found
   display inline-flex
