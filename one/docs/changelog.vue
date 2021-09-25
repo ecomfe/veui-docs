@@ -207,7 +207,7 @@ export default {
     }
   },
   mounted () {
-    ['from', 'to', 'compare', 'tag', 'type'].forEach((key) => {
+    ['from', 'to', 'compare', 'tag', 'types'].forEach((key) => {
       this.$watch(key, this.updateShrugger)
     })
   },
