@@ -4,7 +4,7 @@
   :class="{ 'filter-version': compareValid }"
 >
   <h1 data-markdown>
-    变更日志
+    升级日志
   </h1>
   <veui-form
     style="--dls-field-label-width: 4em"
