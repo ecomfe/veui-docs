@@ -7,7 +7,7 @@
     升级日志
   </h1>
   <veui-form
-    style="--dls-field-label-width: 4em"
+    style="--dls-field-label-width: calc(4em + 2px); /* WTF Safari? */"
     ui="s"
     class="form"
   >
