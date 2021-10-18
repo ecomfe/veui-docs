@@ -62,7 +62,7 @@
 ^^^
 
 ^^^routes
-面包屑配置，项目类型为 `{label: string, type: string, to: string|Object=, native: boolean=}`，除 `label` 外字段详情可参考 [`BreadcrumbItem`](./breadcrumb-item) 组件的属性。
+面包屑配置，项目类型为 `{label: string, type: string, to: string | Object=, native: boolean=}`，除 `label` 外字段详情可参考 [`BreadcrumbItem`](./breadcrumb-item) 组件的属性。
 
 :::warning
 默认情况下，最后一项始终会显示成普通文本样式。

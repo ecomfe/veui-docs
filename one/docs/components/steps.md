@@ -45,7 +45,7 @@
 | -- | -- | -- |
 | `label` | `string` | 步骤标题。 |
 | `desc` | `string` | 步骤描述。 |
-| `to` | `string|Object` | 步骤链接。类型见 [`Link`](./link#属性) 组件的同名属性。 |
+| `to` | `string | Object` | 步骤链接。类型见 [`Link`](./link#属性) 组件的同名属性。 |
 | `status` | `string` | 步骤状态。可选值为默认和 `error`。 |
 +++
 ^^^
@@ -69,7 +69,7 @@
 | -- | -- | -- |
 | `label` | `string` | 步骤标题。同 `steps` 属性中项目的 `label` 字段。 |
 | `desc` | `string` | 步骤描述。同 `steps` 属性中项目的 `desc` 字段。 |
-| `to` | `string|Object` | 步骤链接。同 `steps` 属性中项目的 `to` 字段。 |
+| `to` | `string | Object` | 步骤链接。同 `steps` 属性中项目的 `to` 字段。 |
 | `status` | `string` | 步骤状态。同 `steps` 属性中项目的 `status` 字段。 |
 | `index` | `number` | 步骤索引值。 |
 

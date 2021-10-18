@@ -22,7 +22,7 @@
 | -- | -- | -- | -- |
 | `type` | `string=` | `'success'` | [^type] |
 | `title` | `string` | - | 消息标题。 |
-| `message` | `string|Array<string>` | - | 消息内容，当类型为数组时会显示多条数据并支持切换上一条/下一条。 |
+| `message` | `string | Array<string>` | - | 消息内容，当类型为数组时会显示多条数据并支持切换上一条/下一条。 |
 | `closable` | `boolean=` | `false` | 是否允许关闭。 |
 | `open` | `boolean=` | `true` | [^open] |
 | `index` | `number=` | `0` | [^index] |

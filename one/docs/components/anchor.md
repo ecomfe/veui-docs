@@ -24,9 +24,9 @@
 | -- | -- | -- | -- |
 | `items` | `Array<{value, label, children}>` | `[]` | [^items] |
 | `sticky` | `boolean=` | `false` | 是否有吸附效果。 |
-| `container` | `string|HTMLElement|Window=` | - | `Anchor` 吸附与判断锚点激活所参考的容器。 |
-| `target-offset` | `string|number=` | `0` | 当某个锚点处于到容器的 `target-offset` 位置，那么对应的锚点链接处于激活状态。 |
-| `sticky-offset` | `string|number=` | `0` | 对于 sticky `Anchor` 而言，当容器滚动到 `sticky-offset` 位置，那么该 `Anchor` 开始吸附。 |
+| `container` | `string | HTMLElement | Window=` | - | `Anchor` 吸附与判断锚点激活所参考的容器。 |
+| `target-offset` | `string | number=` | `0` | 当某个锚点处于到容器的 `target-offset` 位置，那么对应的锚点链接处于激活状态。 |
+| `sticky-offset` | `string | number=` | `0` | 对于 sticky `Anchor` 而言，当容器滚动到 `sticky-offset` 位置，那么该 `Anchor` 开始吸附。 |
 
 ^^^items
 数据源数组，每个项目类型为 `{label, value, children, ...}`。

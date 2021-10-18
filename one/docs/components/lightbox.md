@@ -19,7 +19,7 @@
 | `escapable` | `boolean=` | `true` | 按下 <kbd>esc</kbd> 键是否可以关闭浮层。仅在 `closable` 为 `true` 时生效。 |
 | `priority` | `number=` | - | 浮层层叠权重，参考 [`Overlay`](./overlay) 组件的 [`priority`](./overlay#props) 属性。 |
 | `before-close` | `function(string): boolean=|Promise<boolean=>` | - | [^before-close] |
-| `overlay-class` | `string|Array|Object=` | - | 浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props) 属性。 |
+| `overlay-class` | `string | Array | Object=` | - | 浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props) 属性。 |
 | `indicator` | `string=` | `'number'` | [^indicator] |
 | `options` | `Object=` | `{ video: { muted: true, autoplay: true, controls: true } }` | 额外配置。 |
 

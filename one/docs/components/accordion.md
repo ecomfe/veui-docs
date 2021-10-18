@@ -26,7 +26,7 @@
 | -- | -- | -- | -- |
 | `multiple` | `boolean=` | `false` | 是否允许多个子面板同时展开。 |
 | `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
-| `expanded` | `string|Array<string>` | - | [^expanded] |
+| `expanded` | `string | Array<string>` | - | [^expanded] |
 
 ^^^expanded
 :::badges
@@ -56,6 +56,6 @@
 | -- | -- | -- |
 | `expand` | `boolean` | 是否展开。 |
 | `name` | `string` | 被切换的折叠面板标识。 |
-| `expanded` | `string|Array<string>` | 当前所有被展开的折叠面板标识。 |
+| `expanded` | `string | Array<string>` | 当前所有被展开的折叠面板标识。 |
 +++
 ^^^

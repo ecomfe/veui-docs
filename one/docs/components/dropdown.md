@@ -55,8 +55,8 @@
 | `split` | `boolean=` | `false` | 是否将下拉按钮分离为指令按钮和切换下拉按钮两部分。 |
 | `expanded` | `boolean=` | `false` | [^expanded] |
 | `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
-| `overlay-class` | `string|Array|Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#属性) 属性。 |
-| `overlay-style` | `string|Array|Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#属性) 属性。 |
+| `overlay-class` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#属性) 属性。 |
+| `overlay-style` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#属性) 属性。 |
 
 ^^^ui
 预设样式。

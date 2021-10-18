@@ -40,7 +40,7 @@
 | --- | --- | --- | --- |
 | `ui` | `string=` | - | [^ui] |
 | `type` | `string` | `'file'` | [^type] |
-| `value` | `Object|Array<Object>` | - | [^value] |
+| `value` | `Object | Array<Object>` | - | [^value] |
 | `key-field` | `string` | `'key'` | 用于指定文件对象的唯一 key，作为数据变化时正确处理文件列表顺序的依据。 |
 | `name` | `string` | `'file'` | 原生 `<input>` 元素的 `name`。 |
 | `action` | `string` | - | 上传地址。 |
@@ -53,8 +53,8 @@
 | `convert-response` | `uploader.convertResponse` | - | [^convert-response] |
 | `accept` | `string` | - | 与原生 `<input>` 元素 的 `accept` 相同，在浏览器的文件类型筛选后再加一层校验。对于类似 `application/msword` 这样的 MIME type 与扩展名对不上的情形跳过校验。 |
 | `max-count` | `number` | - | 最大文件数量。 |
-| `max-size` | `number|string` | - | 单个文件的最大大小，如果是 `number`，单位是 `byte`；如果是 `string`，支持在数字后面添加单位，单位可以是 `b`/`kb`/`mb`/`gb`/`tb`。 |
-| `validator` | `function(Object): Object|Promise<Object>` | - | [^validator] |
+| `max-size` | `number | string` | - | 单个文件的最大大小，如果是 `number`，单位是 `byte`；如果是 `string`，支持在数字后面添加单位，单位可以是 `b`/`kb`/`mb`/`gb`/`tb`。 |
+| `validator` | `function(Object): Object | Promise<Object>` | - | [^validator] |
 | `payload` | `Object` | - | 附带在上传请求中的额外参数。 |
 | `autoupload` | `boolean` | `true` | 指定是否在选完文件后立刻上传。 |
 | `order` | `string` | `'asc'` | [^order] |
@@ -262,7 +262,7 @@
 +++参数详情
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `value` | `Object|Array<Object>` | 组件的 `value` 的值。 |
+| `value` | `Object | Array<Object>` | 组件的 `value` 的值。 |
 +++
 ^^^
 
@@ -301,7 +301,7 @@
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `type` | `string` | 校验失败的类型，类型枚举值可从 `Uploader.errors` 对象获取，如 `Uploader.errors.SIZE_INVALID`。 |
-| `value` | `number|string|Object` | 没有通过校验的值，根据 `type` 的不同有不同的类型。 |
+| `value` | `number | string | Object` | 没有通过校验的值，根据 `type` 的不同有不同的类型。 |
 | `message` | `string` | 检验失败的提示信息。 |
 +++
 

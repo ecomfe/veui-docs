@@ -21,7 +21,7 @@
 | `ui` | `string=` | - | [^ui] |
 | `page` | `number` | `1` | 当前页码（从 `1` 开始）。 |
 | `total` | `number` | - | 总页数。 |
-| `to` | `string|Object` | `''` | [^to] |
+| `to` | `string | Object` | `''` | [^to] |
 | `native` | `boolean` | `false` | 原生链接跳转。 |
 | `page-size` | `number` | `pagination.pageSize` | [^page-size] |
 | `page-sizes` | `Array` | `pagination.pageSizes` | 每页个数候选项。 |

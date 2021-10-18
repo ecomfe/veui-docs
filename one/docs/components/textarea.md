@@ -31,7 +31,7 @@
 | `disabled` | `boolean=` | `false` | 文本域是否为禁用状态。 |
 | `readonly` | `boolean=` | `false` | 文本域是否为只读状态。 |
 | `line-number` | `boolean` | `false` | 是否显示行号。 |
-| `rows` | `number|string` | - | 默认情况下文本域可视行数。 |
+| `rows` | `number | string` | - | 默认情况下文本域可视行数。 |
 | `placeholder` | `string` | - | 输入占位符。 |
 | `composition` | `boolean` | `false` | 是否感知输入法输入过程的值。 |
 | `select-on-focus` | `boolean` | `false` | 聚焦时是否自动选中文本域文本。 |

@@ -14,7 +14,7 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| `to` | `string|Object` | - | 点击面包屑项之后要跳转到的地址。见 [`Link`](./link#属性) 组件的同名属性。 |
+| `to` | `string | Object` | - | 点击面包屑项之后要跳转到的地址。见 [`Link`](./link#属性) 组件的同名属性。 |
 | `type` | `string` | `'link'` | [^link] |
 | `native` | `boolean` | `false` | 当值为 `true` 且指定了 `to` 时，会直接使用原生 `<a>` 元素，`to` 值会被设置到 `<a>` 标签的 `href` 属性上。 |
 

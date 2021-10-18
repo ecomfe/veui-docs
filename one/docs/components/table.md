@@ -62,7 +62,7 @@
 | `selected` | `Array<*>|*` | `[]` | [^selected] |
 | `expandable` | `boolean` | `false` | 是否允许展开行。 |
 | `expanded` | `Array<*>` | `[]` | [^expanded] |
-| `order` | `string|boolean` | `false` | 排序顺序。为 `false` 时表示无序，为字符串值 `'asc'`/`'desc'` 时分别为升序/降序。 |
+| `order` | `string | boolean` | `false` | 排序顺序。为 `false` 时表示无序，为字符串值 `'asc'`/`'desc'` 时分别为升序/降序。 |
 | `order-by` | `string` | - | 用于指定当前基于哪一列进行了排序，值必须来自内部某个 `Column` 组件的 `field` 属性。 |
 | `scroll` | `number` | - | 指定滚动区域的最大高度，当超出此高度时，表格将进入固定表头和底部只允许数据区域滚动的模式。 |
 | `loading` | `boolean` | `false` | 指定表格是否处于加载状态。 |
@@ -140,7 +140,7 @@
 | -- | -- | -- |
 | `selected` | `boolean` | `true` 表示已选择，`false` 则表示取消选择。 |
 | `item` | `Object` | 选择状态发生变化的 `data` 属性中的数据项。当存在纵向合并单元格且以相应行作为键进行选择时，将返回第一条相关的 `data` 数据项。 |
-| `selectedItems` | `Object<string, Object|Array>` | 当前所有已选项的信息，键为 `key-field` 对应字段，值为对应的 `data` 数据项。当存在纵向合并单元格且以相应行作为键进行选择时，值为所有相关行数据项组成的数组。 |
+| `selectedItems` | `Object<string, Object | Array>` | 当前所有已选项的信息，键为 `key-field` 对应字段，值为对应的 `data` 数据项。当存在纵向合并单元格且以相应行作为键进行选择时，值为所有相关行数据项组成的数组。 |
 +++
 ^^^
 
@@ -151,6 +151,6 @@
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `field` | `string` | 基于哪一列进行排序。值来自对应 `Column` 组件的 `field` 属性。 |
-| `order` | `string|boolean` | 同 [`order` 属性](#属性)。 |
+| `order` | `string | boolean` | 同 [`order` 属性](#属性)。 |
 +++
 ^^^

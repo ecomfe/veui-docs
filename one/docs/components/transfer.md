@@ -36,7 +36,7 @@
 | `candidate-label` | `string=` | - | “待选项”标题的文字内容。 |
 | `selected-label` | `string=` | - | “已选项”标题的文字内容。 |
 | `selected-show-mode` | `string=` | `'tree'` | [^selected-show-mode] |
-| `keys` | `string|function` | `'value'` | [^keys] |
+| `keys` | `string | function` | `'value'` | [^keys] |
 | `merge-checked` | `string=` | `keep-all` | [^merge-checked] |
 
 ^^^ui

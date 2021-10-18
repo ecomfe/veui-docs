@@ -11,7 +11,7 @@
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
 | `selected` | `Object` | - | [^selected] |
-| `hour-class` | `string|Array|Object|function` | `{}` | 特定小时的自定义 HTML `class`。传非函数时，数据格式为所有 [Vue 支持的 `class` 表达式](https://cn.vuejs.org/v2/guide/class-and-style.html#%E7%BB%91%E5%AE%9A-HTML-Class)；传函数时，签名为 `function(day: number, hour: number): string|Array<string>|Object<string, boolean>`，返回值格式亦为所有 Vue 支持的 `class` 表达式。 |
+| `hour-class` | `string | Array | Object | function` | `{}` | 特定小时的自定义 HTML `class`。传非函数时，数据格式为所有 [Vue 支持的 `class` 表达式](https://cn.vuejs.org/v2/guide/class-and-style.html#%E7%BB%91%E5%AE%9A-HTML-Class)；传函数时，签名为 `function(day: number, hour: number): string | Array<string>|Object<string, boolean>`，返回值格式亦为所有 Vue 支持的 `class` 表达式。 |
 | `disabled-date` | `function(number, number): boolean` | `() => false` | 特定小时是否禁用。参数类型为 `(day: number, hour: number)`，分别表示一周的第几天（`0` 表示周日）及对应的小时数。 |
 | `shortcuts` | `Array` | `schedule.shortcuts` | [^shortcuts] |
 | `shortcuts-display` | `string` | `'inline'` | 快捷选择项的显示方式，支持 `inline`/`popup`，分别对应内联按钮组与下拉选择。 |
@@ -46,7 +46,7 @@
 ^^^
 
 ^^^shortcuts
-快捷选择选项列表。类型为 `{label: string, selected: boolean|Array}`。
+快捷选择选项列表。类型为 `{label: string, selected: boolean | Array}`。
 
 `label` 为显示的提示文字。`selected` 表示预选择的时段，类型为数组时，格式与 `selected` 属性相同；值为 `true` 时等同于 `[[0, 23]]`。
 ^^^

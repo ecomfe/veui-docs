@@ -39,7 +39,7 @@
 | `ok-label` | `string=` | - | “确定”按钮的文字内容。 |
 | `cancel-label` | `string=` | - | “取消”按钮的文字内容。 |
 | `before-close` | `function(string): boolean=|Promise<boolean=>` | - | 在将触发关闭的操作发生后执行，参考 [`Dialog`](./dialog) 组件的 [`before-close`](./dialog#props) 属性。 |
-| `overlay-class` | `string|Object` | - | 抽屉浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props) 属性。 |
+| `overlay-class` | `string | Object` | - | 抽屉浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props) 属性。 |
 
 ^^^ui
 预设样式。

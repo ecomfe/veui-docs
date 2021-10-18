@@ -28,12 +28,12 @@
 | -- | -- | -- | -- |
 | `ui` | `string=` | - | [^ui] |
 | `open` | `boolean` | `false` | [^open] |
-| `target` | `string|Vue|Node` | - | 参考 [`Overlay`](./overlay) 组件的 `target` 属性。 |
+| `target` | `string | Vue | Node` | - | 参考 [`Overlay`](./overlay) 组件的 `target` 属性。 |
 | `position` | `string` | `'top'` | [^position] |
 | `trigger` | `string` | `'hover'` | [^trigger] |
 | `hide-delay` | `number` | `tooltip.hideDelays` | 触发关闭条件满足后延迟关闭等待时间的毫秒数。可以用来防止光标移出 `target` 后移入气泡进行交互前已经自动关闭。 |
-| `overlay-class` | `string|Array|Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#属性) 属性。 |
-| `overlay-style` | `string|Array|Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#属性) 属性。 |
+| `overlay-class` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#属性) 属性。 |
+| `overlay-style` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#属性) 属性。 |
 
 ^^^ui
 预设样式。

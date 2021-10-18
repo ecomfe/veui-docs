@@ -54,7 +54,7 @@
 | `cancel-label` | `string=` | - | “取消”按钮的文字内容。 |
 | `priority` | `number=` | - | 对话框浮层层叠权重，参考 [`Overlay`](./overlay) 组件的 [`priority`](./overlay#props) 属性。 |
 | `before-close` | `function(string): boolean=|Promise<boolean=>` | - | [^before-close] |
-| `overlay-class` | `string|Object=` | - | 对话框浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props) 属性。 |
+| `overlay-class` | `string | Object=` | - | 对话框浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props) 属性。 |
 
 ^^^ui
 预设样式。

@@ -45,13 +45,13 @@
 | `expanded` | `boolean=` | `false` | [^expanded] |
 | `column-trigger` | `hover | click` | `click` | [^column-trigger] |
 | `select-mode` | `'leaf-only' | 'any'` | `any` | [^select-mode] |
-| `column-width` | `number|string` | - | [^column-width] |
+| `column-width` | `number | string` | - | [^column-width] |
 | `show-select-all` | `boolean` | `false` | 在多选模式下是否有全选按钮。 |
 | `value-display` | `'complete' | 'simple'` | `simple` | [^value-display] |
 | `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
 | `readonly` | `boolean=` | `false` | 是否为只读状态。 |
-| `overlay-class` | `string|Array|Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#属性) 属性。 |
-| `overlay-style` | `string|Array|Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#属性) 属性。 |
+| `overlay-class` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#属性) 属性。 |
+| `overlay-style` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#属性) 属性。 |
 
 ^^^ui
 预设样式。

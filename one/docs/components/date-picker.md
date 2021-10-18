@@ -28,15 +28,15 @@
 | -- | -- | -- | -- |
 | `type` | `string` | `'date'` | 日历的类型，可用值为 `'date'`/`'month'`/`'year'`，分别对应日期/月/年视图。 |
 | `range` | `boolean` | `false` | 是否选择日期范围。 |
-| `selected` | `Date|Array` | - | [^selected] |
+| `selected` | `Date | Array` | - | [^selected] |
 | `today` | `Date` | `new Date()` | 「今天」的日期。 |
 | `week-start` | `number` | `calendar.weekStart` | 一周的起始。可进行[全局配置](./calendar#全局配置)。 |
 | `fill-month` | `boolean` | `true` | 当只有一个面板时，是否要在当前月份面板显示非本月日期。 |
-| `date-class` | `string|Array|Object|function` | `{}` | 特定日期的自定义 HTML `class`。传非函数时，数据格式为所有 Vue 支持的 `class` 表达式；传函数时，签名为 `function(Date): string|Array<string>|Object<string, boolean>`，返回值格式亦为所有 Vue 支持的 `class` 表达式。 |
+| `date-class` | `string | Array | Object | function` | `{}` | 特定日期的自定义 HTML `class`。传非函数时，数据格式为所有 Vue 支持的 `class` 表达式；传函数时，签名为 `function(Date): string | Array<string>|Object<string, boolean>`，返回值格式亦为所有 Vue 支持的 `class` 表达式。 |
 | `disabled-date` | `function(Date, Date=): boolean=` | `() => false` | 用于自定义指定日期是否禁用。第一个参数为需要判断是否禁用的日期。当处于范围选择过程中且已经选择了一个日期，会作为第二个参数传入。 |
 | `clearable` | `boolean` | `false` | 已选值是否可以清除。 |
 | `placeholder` | `string` | `range ? datepicker.rangePlaceholder : datepicker.placeholder` | 未选择时的占位文本。可进行[全局配置](#全局配置)。 |
-| `format` | `string|function(Date): string=` | `'yyyy-MM-dd'`/`'yyyy-MM'`/`'yyyy'` | 使用字符串时，表示用于格式化/解析的字符串表达式，具体格式可以参见 [date-fns 的文档](https://date-fns.org/v2.12.0/docs/format)。传入函数可自定义格式化逻辑。 |
+| `format` | `string | function(Date): string=` | `'yyyy-MM-dd'`/`'yyyy-MM'`/`'yyyy'` | 使用字符串时，表示用于格式化/解析的字符串表达式，具体格式可以参见 [date-fns 的文档](https://date-fns.org/v2.12.0/docs/format)。传入函数可自定义格式化逻辑。 |
 | `parse` | `function(string): Date=` | - | 自定义将输入字符串解析为 `Date` 对象的函数。 |
 | `shortcuts` | `Array<Object>` | `datepicker.shortcuts` | [^shortcuts] |
 | `expanded` | `boolean=` | `false` | [^expanded] |
@@ -91,7 +91,7 @@
 
 #### 快捷选项偏移量数据格式
 
-`shortcuts` 列表项中的 `from` 及 `to` 字段格式相同，分别用来设置开始结束日期的计算方式。格式为 `number|Object`，默认值为 `0`。
+`shortcuts` 列表项中的 `from` 及 `to` 字段格式相同，分别用来设置开始结束日期的计算方式。格式为 `number | Object`，默认值为 `0`。
 
 * 类型为 `number` 时，表示以「今天」为基准，偏移指定天数，比如 `-1` 等价于 `{ startOf: 'day', days: -1 }`，即「昨天」；
 * 类型为 `Object` 时，支持的格式为：`{startOf: string=, days: number=, weeks: number=, months: number=, }`。

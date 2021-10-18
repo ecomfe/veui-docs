@@ -57,7 +57,7 @@
 | -- | -- | -- |
 | `fields` | `Array` | 对应 `Field` 的 `field` 描述的集合。事件会绑定到对应 `Field` 中的输入组件上。 |
 | `validate` | `function` | 自定义校验函数，传入参数为 `(data[fields[0]], data[fields[1]], ...)`，`data` 为表单 `data` 属性值的引用。返回 `undefined`/`true` 代表校验成功，返回 `{[field]: message, ...}` 表示校验失败信息，详见[表单 › 表单校验逻辑](#表单校验逻辑)。 |
-| `triggers` | `string|Array<string>` | 事件名称集合。 |
+| `triggers` | `string | Array<string>` | 事件名称集合。 |
 +++
 
 

@@ -10,11 +10,11 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `datasource` | `Array<string|Object>=` | `[]` | [^datasource] |
+| `datasource` | `Array<string | Object>=` | `[]` | [^datasource] |
 | `value` | `*` | - | [^prop-value] |
-| `match` | `function(string|Object, string): boolean=` | - | 自定义搜索逻辑。 |
+| `match` | `function(string | Object, string): boolean=` | - | 自定义搜索逻辑。 |
 | `strict` | `boolean=` | `false` | 建议下拉面板关闭时，若输入值没有完全匹配建议值，那么会清空输入值。 |
-| `suggest-trigger` | `string|Array<string>=` | `'input'` | 触发建议下拉面板的时机，可用值有：`'input'`、`'focus'`。 |
+| `suggest-trigger` | `string | Array<string>=` | `'input'` | 触发建议下拉面板的时机，可用值有：`'input'`、`'focus'`。 |
 | `placeholder` | `string=` |  | 输入占位符。 |
 | `select-on-focus` | `boolean=` | `false` | 聚焦时是否自动选中输入框文本。 |
 | `composition` | `boolean=` | `false` | 是否感知输入法输入过程的值。 |
@@ -65,7 +65,7 @@
 +++作用域参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `datasource` | `Array<string|Object>` | 数据源，类型同 `datasource` 属性。 |
+| `datasource` | `Array<string | Object>` | 数据源，类型同 `datasource` 属性。 |
 | `keyword` | `string` | 搜索关键词。 |
 +++
 ^^^

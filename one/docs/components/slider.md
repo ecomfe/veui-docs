@@ -46,7 +46,7 @@
 | -- | -- | -- | -- |
 | `ui` | `string=` | - | [^ui] |
 | `value` | `*|Array<*>` | - | [^value] |
-| `secondary-progress` | `number|Array<number>` | `0` | 次要条。 |
+| `secondary-progress` | `number | Array<number>` | `0` | 次要条。 |
 | `min` | `number` | `0` | `value` 经过 `parse` 函数处理后允许的最小值。 |
 | `max` | `number` | `1` | `value` 经过 `parse` 函数处理后允许的最大值。 |
 | `step` | `number` | `0` | `value` 经过 `parse` 函数处理后的步进值。 |

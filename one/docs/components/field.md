@@ -21,7 +21,7 @@
 | `tip` | `string` | - | 表单项提示。 |
 | `name` | `string` | - | 表单项名称，可用于指定数据字段名或展示错误消息的定位。 |
 | `field` | `string` | - | [^field] |
-| `rules` | `string|Array<Object>` | - | [^rules] |
+| `rules` | `string | Array<Object>` | - | [^rules] |
 
 ^^^ui
 预设样式。
@@ -79,7 +79,7 @@ let minLengthRule = {
 | `triggers` | `string` | 触发校验的事件名称集合，逗号分隔。 |
 | `name` | `string` | 规则名称。 |
 | `value` | `*` | 规则要匹配的值。`boolean` 类型的规则，默认为 `true`。 |
-| `message` | `string|function` | [^message] |
+| `message` | `string | function` | [^message] |
 | `priority` | `number` | 规则优先级，可以覆盖规则默认优先级。 |
 +++
 
@@ -88,7 +88,7 @@ let minLengthRule = {
 | -- | -- | -- |
 | `required` | `boolean` | 值不能为空值（`null`/`undefined`/`''`/`[]`）。 |
 | `numeric` | `boolean` | 值必须可描述十进制数值。(`6`/`66.6`/`6e6`/`'6'`/`.6`) |
-| `pattern` | `RegExp|string` | 正则匹配。 |
+| `pattern` | `RegExp | string` | 正则匹配。 |
 | `maxLength` | `number` | 值的 `length` 属性不能大于限定值。 |
 | `minLength` | `number` | 值的 `length` 属性不能小于限定值。 |
 | `max` | `number` | 值不能大于限定值。 |
