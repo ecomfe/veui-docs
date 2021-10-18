@@ -44,7 +44,7 @@
 | `local` | `boolean` | `false` | 是否将浮层保留在原来的 DOM 位置，而非移动到全局位置并参与[全局浮层管理](../advanced/overlay)。 |
 | `overlay-class` | `string | Array | Object=` | - | [^overlay-class] |
 | `overlay-style` | `string | Array | Object=` | - | [^overlay-style] |
-| `options` | `Object` | 透传给底层 Popper.js 实现的 `modifiers` 配置项，具体内容参见[这里](https://popper.js.org/docs/v1/#modifiers)。 |
+| `options` | `Object` | - | 透传给底层 Popper.js 实现的 `modifiers` 配置项，具体内容参见[这里](https://popper.js.org/docs/v1/#modifiers)。 |
 
 ^^^open
 :::badges

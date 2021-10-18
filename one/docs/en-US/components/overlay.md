@@ -44,7 +44,7 @@ The stacking order of child overlays a affected by their parent overlays.
 | `local` | `boolean` | `false` | Whether to keep the overlay in it's original DOM location, instead of moving it to the global scope and participates in the [global overlay management](../advanced/overlay). |
 | `overlay-class` | `string|Array|Object=` | - | [^overlay-class] |
 | `overlay-style` | `string|Array|Object=` | - | [^overlay-style] |
-| `options` | `Object` | Configuration object passed to the `modifiers` option of the underlying Popper.js implementation. See [here](https://popper.js.org/docs/v1/#modifiers) for more details. |
+| `options` | `Object` | - | Configuration object passed to the `modifiers` option of the underlying Popper.js implementation. See [here](https://popper.js.org/docs/v1/#modifiers) for more details. |
 
 ^^^open
 :::badges
