@@ -4,19 +4,19 @@
 
 ### 风格
 
-可选的风格 `ui` 属性值：`alt`。
+可选的风格 [`ui`](#props-ui) 属性值：`alt`。
 
 [[ demo src="/demo/tooltip/style.vue" ]]
 
 ### 定位
 
-使用 `position` 属性来指定浮层显示的位置。
+使用 [`position`](#props-position) 属性来指定浮层显示的位置。
 
 [[ demo src="/demo/tooltip/position.vue" ]]
 
 ### 触发时机
 
-使用 `trigger` 属性来指定显示/隐藏浮层的时机。
+使用 [`trigger`](#props-trigger) 属性来指定显示/隐藏浮层的时机。
 
 [[ demo src="/demo/tooltip/trigger.vue" ]]
 
@@ -26,16 +26,16 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `open` | `boolean` | `false` | [^open] |
-| `target` | `string | Vue | Node` | - | 参考 [`Overlay`](./overlay) 组件的 `target` 属性。 |
-| `position` | `string` | `'top'` | [^position] |
-| `aim-center` | `boolean` | `false` | 指定浮层提示箭头是否始终指向目标元素中心。 |
-| `trigger` | `string` | `'hover'` | [^trigger] |
-| `interactive` | `boolean` | `true` | 浮层内容是否允许交互。如果为 `false` 则在 `target` 外满足 `trigger` 指定的条件浮层即自动关闭。 |
-| `hide-delay` | `number` | `tooltip.hideDelays` | 触发关闭条件满足后延迟关闭等待时间的毫秒数。可以用来防止光标移出 `target` 后移入浮层进行交互前已经自动关闭。 |
-| `overlay-class` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#属性) 属性。 |
-| `overlay-style` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#属性) 属性。 |
+| ``ui`` | `string=` | - | [^ui] |
+| ``open`` | `boolean` | `false` | [^open] |
+| ``target`` | `string | Vue | Node` | - | 参考 [`Overlay`](./overlay) 组件的 [`target`](./overlay#props-target) 属性。 |
+| ``position`` | `string` | `'top'` | [^position] |
+| ``aim-center`` | `boolean` | `false` | 指定浮层提示箭头是否始终指向目标元素中心。 |
+| ``trigger`` | `string` | `'hover'` | [^trigger] |
+| ``interactive`` | `boolean` | `true` | 浮层内容是否允许交互。如果为 `false` 则在 `target` 外满足 `trigger` 指定的条件浮层即自动关闭。 |
+| ``hide-delay`` | `number` | `tooltip.hideDelays` | 触发关闭条件满足后延迟关闭等待时间的毫秒数。可以用来防止光标移出 `target` 后移入浮层进行交互前已经自动关闭。 |
+| ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
+| ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 
 ^^^ui
 预设样式。
@@ -71,10 +71,10 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | 浮层提示内容。 |
+| ``default`` | 浮层提示内容。 |
 
 ### 全局配置
 
 | 配置项 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `tooltip.hideDelay` | `number` | `300` | 见 [`hide-delay` 属性](#属性)。 |
+| ``tooltip.hideDelay`` | `number` | `300` | 见 [`hide-delay`](#props-hide-delay) 属性。 |

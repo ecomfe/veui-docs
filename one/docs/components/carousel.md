@@ -10,35 +10,35 @@
 
 ### 进度指示器
 
-使用 `indicator` 属性来指定进度指示器类型。
+使用 [`indicator`](#props-indicator) 属性来指定进度指示器类型。
 
 [[ demo src="/demo/carousel/indicator.vue" ]]
 
 ### 自动切换
 
-指定 `autoplay` 属性来允许自动播放。
+指定 [`autoplay`](#props-autoplay) 属性来允许自动播放。
 
 [[ demo src="/demo/carousel/autoplay.vue" ]]
 
 ### 切换效果
 
-指定 `effect` 属性来设置切换效果。
+指定 [`effect`](#props-effect) 属性来设置切换效果。
 
 [[ demo src="/demo/carousel/effect.vue" ]]
 
 ### 纵向布局
 
-指定 `vertical` 属性来允许纵向布局的轮播。
+指定 [`vertical`](#props-vertical) 属性来允许纵向布局的轮播。
 
-使用 `controls-position` 属性来切换按钮相对于布局方向的位置。
+使用 [`controls-position`](#props-controls-position) 属性来切换按钮相对于布局方向的位置。
 
 [[ demo src="/demo/carousel/vertical.vue" ]]
 
 ### 轮播项设置
 
-`slides-per-view` 属性来指定同时显示多少个轮播项。
+[`slides-per-view`](#props-slides-per-view) 属性来指定同时显示多少个轮播项。
 
-`slides-per-group` 属性来指定每次前后切换的一组包含多少个轮播项。
+[`slides-per-group`](#props-slides-per-group) 属性来指定每次前后切换的一组包含多少个轮播项。
 
 [[ demo src="/demo/carousel/slides.vue" ]]
 
@@ -48,23 +48,23 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `datasource` | `Array<Object>` | `[]` | [^datasource] |
-| `index` | `number=` | `0` | [^index] |
-| `indicator` | `string=` | `'radio'` | [^indicator] |
-| `switch-trigger` | `string=` | `'click'` | [^switch-trigger] |
-| `autoplay` | `boolean=` | `false` | 是否自动轮播。 |
-| `pause-on-hover` | `boolean=` | `false` | 在自动轮播时，鼠标悬浮后是否暂停。 |
-| `interval` | `number=` | `3000` | 在自动轮播时，切换间隔的毫秒数。 |
-| `wrap` | `boolean=` | `false` | 是否可以循环播放。 |
-| `effect` | `'fade' | 'slide'` | `'fade'` | 指定轮播切换效果，其中 `fade` 仅在切换组个数与同时显示个数相同时生效。 |
-| `vertical` | `boolean=` | `false` | 是否是纵向布局的轮播。 |
-| `indicator-align` | `'start' | 'end'` | `start` | 用于支持指示器的相对于布局方向的位置。 |
-| `indicator-position` | `'outside' | 'inside'` | `inside` | 用于支持指示器显示在轮播容器的内部/外部。 |
-| `controls-position` | `'outside' | 'inside'` | `inside` | 用于支持切换按钮相对于布局方向的位置。 |
-| `slide-aspect-ratio` | `number= | '${number}/${number}'` | - | 指定不同轮播项类型的默认配置。 |
-| `options` | `Object=` | `{ video: { muted: true, autoplay: true, controls: true, loop: true } }` | 用于指定每个轮播项的纵横比。 |
-| `slides-per-view` | `number=` | `1` | 指定同时显示多少个轮播项。 |
-| `slides-per-group` | `number=` | `1` | 指定每次前后切换的一组包含多少个轮播项。 |
+| ``datasource`` | `Array<Object>` | `[]` | [^datasource] |
+| ``index`` | `number=` | `0` | [^index] |
+| ``indicator`` | `string=` | `'radio'` | [^indicator] |
+| ``switch-trigger`` | `string=` | `'click'` | [^switch-trigger] |
+| ``autoplay`` | `boolean=` | `false` | 是否自动轮播。 |
+| ``pause-on-hover`` | `boolean=` | `false` | 在自动轮播时，鼠标悬浮后是否暂停。 |
+| ``interval`` | `number=` | `3000` | 在自动轮播时，切换间隔的毫秒数。 |
+| ``wrap`` | `boolean=` | `false` | 是否可以循环播放。 |
+| ``effect`` | `'fade' | 'slide'` | `'fade'` | 指定轮播切换效果，其中 `fade` 仅在切换组个数与同时显示个数相同时生效。 |
+| ``vertical`` | `boolean=` | `false` | 是否是纵向布局的轮播。 |
+| ``indicator-align`` | `'start' | 'end'` | `start` | 用于支持指示器的相对于布局方向的位置。 |
+| ``indicator-position`` | `'outside' | 'inside'` | `inside` | 用于支持指示器显示在轮播容器的内部/外部。 |
+| ``controls-position`` | `'outside' | 'inside'` | `inside` | 用于支持切换按钮相对于布局方向的位置。 |
+| ``slide-aspect-ratio`` | `number= | '${number}/${number}'` | - | 指定不同轮播项类型的默认配置。 |
+| ``options`` | `Object=` | `{ video: { muted: true, autoplay: true, controls: true, loop: true } }` | 用于指定每个轮播项的纵横比。 |
+| ``slides-per-view`` | `number=` | `1` | 指定同时显示多少个轮播项。 |
+| ``slides-per-group`` | `number=` | `1` | 指定每次前后切换的一组包含多少个轮播项。 |
 
 ^^^datasource
 轮播图数据源，项目类型为：`{src, alt, label, type}`。
@@ -114,21 +114,21 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `item` | [^slot-item] |
+| ``item`` | [^slot-item] |
 
 ^^^slot-item
 可用来定制每个轮播项的区域。
 
 默认内容：轮播项图片。
 
-作用域参数为 `datasource` 属性每个列表项的内容（可以有自定义字段）加上 `index: number` 表示轮播项的序号。即整个 `slot-scope` 绑定的值为 `{src, alt, label, index, ...}`。
+作用域参数为 [`datasource`](#props-datasource) 属性每个列表项的内容（可以有自定义字段）加上 `index: number` 表示轮播项的序号。即整个 `slot-scope` 绑定的值为 `{src, alt, label, index, ...}`。
 ^^^
 
 ### 事件
 
 | 名称 | 描述 |
 | -- | -- |
-| `change` | [^event-change] |
+| ``change`` | [^event-change] |
 
 ^^^event-change
 
@@ -139,5 +139,5 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `prev` | 上一页。 |
-| `next` | 下一页。 |
+| ``prev`` | 上一页。 |
+| ``next`` | 下一页。 |

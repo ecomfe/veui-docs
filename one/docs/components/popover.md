@@ -4,19 +4,19 @@
 
 ### 风格
 
-可选的 `ui` 属性值：`s`/`m`。
+可选的 [`ui`](#props-ui) 属性值：`s` / `m`。
 
 [[ demo src="/demo/popover/ui.vue" ]]
 
 ### 定位
 
-使用 `position` 属性来指定气泡显示的位置。
+使用 [`position`](#props-position) 属性来指定气泡显示的位置。
 
 [[ demo src="/demo/popover/position.vue" ]]
 
 ### 触发时机
 
-使用 `trigger` 属性来指定显示/隐藏气泡的时机。
+使用 [`trigger`](#props-trigger) 属性来指定显示/隐藏气泡的时机。
 
 [[ demo src="/demo/popover/trigger.vue" ]]
 
@@ -26,14 +26,14 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `open` | `boolean` | `false` | [^open] |
-| `target` | `string | Vue | Node` | - | 参考 [`Overlay`](./overlay) 组件的 `target` 属性。 |
-| `position` | `string` | `'top'` | [^position] |
-| `trigger` | `string` | `'hover'` | [^trigger] |
-| `hide-delay` | `number` | `tooltip.hideDelays` | 触发关闭条件满足后延迟关闭等待时间的毫秒数。可以用来防止光标移出 `target` 后移入气泡进行交互前已经自动关闭。 |
-| `overlay-class` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#属性) 属性。 |
-| `overlay-style` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#属性) 属性。 |
+| ``ui`` | `string=` | - | [^ui] |
+| ``open`` | `boolean` | `false` | [^open] |
+| ``target`` | `string | Vue | Node` | - | 参考 [`Overlay`](./overlay) 组件的 [`target`](./overlay#props-target) 属性。 |
+| ``position`` | `string` | `'top'` | [^position] |
+| ``trigger`` | `string` | `'hover'` | [^trigger] |
+| ``hide-delay`` | `number` | `tooltip.hideDelays` | 触发关闭条件满足后延迟关闭等待时间的毫秒数。可以用来防止光标移出 `target` 后移入气泡进行交互前已经自动关闭。 |
+| ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
+| ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 
 ^^^ui
 预设样式。
@@ -68,4 +68,4 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | 气泡提示内容。 |
+| ``default`` | 气泡提示内容。 |

@@ -4,19 +4,19 @@
 
 ### 尺寸
 
-可选的尺寸 `ui` 属性值：`s`/`m`。
+可选的尺寸 [`ui`](#props-ui) 属性值：`s` / `m`。
 
 [[ demo src="/demo/tag/size.vue" ]]
 
 ### 可选择
 
-使用 `selectable` 属性使标签可以切换选中状态。
+使用 [`selectable`](#props-selectable) 属性使标签可以切换选中状态。
 
 [[ demo src="/demo/tag/selectable.vue" ]]
 
 ### 可移除
 
-使用 `removable` 属性使标签可以被移除。
+使用 [`removable`](#props-removable) 属性使标签可以被移除。
 
 [[ demo src="/demo/tag/removable.vue" ]]
 
@@ -26,16 +26,16 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `type` | `string=` | `'default'` | [^type] |
-| `selectable` | `boolean=` | `false` | 是否允许选择。 |
-| `selected` | `boolean=` | `false` | [^selected] |
-| `removable` | `boolean=` | `false` | 是否允许删除。 |
-| `removed` | `boolean=` | `false` | [^removed] |
-| `disabled` | `boolean=` | `false` | 是否禁用。 |
+| ``ui`` | `string=` | - | [^ui] |
+| ``type`` | `string=` | `'default'` | [^type] |
+| ``selectable`` | `boolean=` | `false` | 是否允许选择。 |
+| ``selected`` | `boolean=` | `false` | [^selected] |
+| ``removable`` | `boolean=` | `false` | 是否允许删除。 |
+| ``removed`` | `boolean=` | `false` | [^removed] |
+| ``disabled`` | `boolean=` | `false` | 是否禁用。 |
 
 :::warning
-`selectable` 和 `removable` 属性不允许同时为 `true`。
+[`selectable`](#props-selectable) 和 [`removable`](#props-removable) 属性不允许同时为 `true`。
 :::
 
 ^^^ui
@@ -85,16 +85,16 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | 内容区。 |
+| ``default`` | 内容区。 |
 
 ### 事件
 
 | 名称 | 描述 |
 | -- | -- |
-| `remove` | 点击删除按钮时触发。 |
+| ``remove`` | 点击删除按钮时触发。 |
 
 ### 图标
 
 | 名称 | 描述 |
 | -- | -- |
-| `remove` | 删除。 |
+| ``remove`` | 删除。 |

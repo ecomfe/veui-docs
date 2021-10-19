@@ -33,9 +33,9 @@ export default {
 </style>
 
 <docs>
-可将消息内容写在默认插槽中，也可以通过 `message` 属性进行指定。
+可将消息内容写在默认插槽中，也可以通过 [`message`](#props-message) 属性进行指定。
 </docs>
 
 <docs locale="en-US">
-Messages can either be specified in the default slot, or via the `message` prop.
+Messages can either be specified in the default slot, or via the [`message`](#props-message) prop.
 </docs>

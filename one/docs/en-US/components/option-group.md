@@ -14,11 +14,11 @@ See [the demos of `Select`](./select#demos) or [the demos of `Dropdown`](./dropd
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| `label` | `string` | The descriptive label of the option group. |
-| `options` | `Array<Object>` | `[]` | [^options] |
-| `position` | `string` | `inline` | [^position] |
-| `overlay-class` | `string|Array|Object=` | - | See the [`overlay-class`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
-| `overlay-style` | `string|Array|Object=` | - | See the [`overlay-style`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
+| ``label`` | `string` | The descriptive label of the option group. |
+| ``options`` | `Array<Object>` | `[]` | [^options] |
+| ``position`` | `string` | `inline` | [^position] |
+| ``overlay-class`` | `string | Array | Object=` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
+| ``overlay-style`` | `string | Array | Object=` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
 
 ^^^options
 The list of options with the option type being `{label, value, disabled, ...}`.
@@ -47,14 +47,14 @@ The way to display child options.
 
 | Name | Description |
 | -- | -- |
-| `default` | The content of the options dropdown. Can be used to place `Option`s or `OptionGroups`s when the `options` prop is not specified. |
-| `label` | [^slot-label] |
-| `group-label` | [^slot-group-label] |
-| `option-label` | [^slot-option-label] |
-| `option` | [^slot-option] |
+| ``default`` | The content of the options dropdown. Can be used to place `Option`s or `OptionGroups`s when the [`options`](#props-options) prop is not specified. |
+| ``label`` | [^slot-label] |
+| ``group-label`` | [^slot-group-label] |
+| ``option-label`` | [^slot-option-label] |
+| ``option`` | [^slot-option] |
 
 ^^^slot-label
-The label of the option group. Displays the `label` prop by default.
+The label of the option group. Displays the [`label`](#props-label) prop by default.
 
 +++Scope properties
 | Name | Type | Description |
@@ -111,4 +111,4 @@ Additionally, custom properties in current option, apart from the listed ones, w
 
 | Name | Description |
 | -- | -- |
-| `expandable` | Expandable options. |
+| ``expandable`` | Expandable options. |

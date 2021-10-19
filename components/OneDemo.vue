@@ -162,9 +162,8 @@ Icon.register({
   & >>> pre
     margin-top 0
     margin-bottom 0
-
-    .expanded &
-      border-radius 0
+    border-top-right-radius 0
+    border-top-left-radius 0
 
 .desc
 .source >>> pre
@@ -185,6 +184,9 @@ Icon.register({
   background-color #fff
   transition background-color 0.3s
   outline none
+
+  .expanded &
+    border-radius 0
 
   .veui-button
     font-size 18px

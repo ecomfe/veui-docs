@@ -14,14 +14,14 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `readonly` | `boolean=` | `false` | 内部输入组件是否为只读状态。 |
-| `disabled` | `boolean=` | `false` | 内部输入组件是否为禁用状态。 |
-| `label` | `string` | - | 表单项描述。 |
-| `tip` | `string` | - | 表单项提示。 |
-| `name` | `string` | - | 表单项名称，可用于指定数据字段名或展示错误消息的定位。 |
-| `field` | `string` | - | [^field] |
-| `rules` | `string | Array<Object>` | - | [^rules] |
+| ``ui`` | `string=` | - | [^ui] |
+| ``readonly`` | `boolean=` | `false` | 内部输入组件是否为只读状态。 |
+| ``disabled`` | `boolean=` | `false` | 内部输入组件是否为禁用状态。 |
+| ``label`` | `string` | - | 表单项描述。 |
+| ``tip`` | `string` | - | 表单项提示。 |
+| ``name`` | `string` | - | 表单项名称，可用于指定数据字段名或展示错误消息的定位。 |
+| ``field`` | `string` | - | [^field] |
+| ``rules`` | `string | Array<Object>` | - | [^rules] |
 
 ^^^ui
 预设样式。
@@ -86,8 +86,8 @@ let minLengthRule = {
 +++内置规则
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `required` | `boolean` | 值不能为空值（`null`/`undefined`/`''`/`[]`）。 |
-| `numeric` | `boolean` | 值必须可描述十进制数值。(`6`/`66.6`/`6e6`/`'6'`/`.6`) |
+| `required` | `boolean` | 值不能为空值（`null` / `undefined` / `''` / `[]`）。 |
+| `numeric` | `boolean` | 值必须可描述十进制数值。(`6` / `66.6` / `6e6` / `'6'` / `.6`) |
 | `pattern` | `RegExp | string` | 正则匹配。 |
 | `maxLength` | `number` | 值的 `length` 属性不能大于限定值。 |
 | `minLength` | `number` | 值的 `length` 属性不能小于限定值。 |
@@ -105,12 +105,12 @@ let minLengthRule = {
 ^^^
 
 ^^^field
-非必须，默认取 `name` 属性值。在特殊情况下，用于指定表单 `data` 属性对应字段的路径。
+非必须，默认取 [`name`](#props-name) 属性值。在特殊情况下，用于指定表单 [`data`](./form#props-data) 属性对应字段的路径。
 
 +++格式示例
 | 值 | 描述 |
 | -- | -- |
-| `username` | 对应表单 `data` 属性引用值的 `username` 属性，等价于 `data.username`。 |
+| `username` | 对应表单 [`data`](./form#props-data) 属性引用值的 `username` 属性，等价于 `data.username`。 |
 | `users[0]` | 等价于 `data.users[0]`。 |
 | `user.username` | 等价于 `data.user.username`。 |
 +++
@@ -120,12 +120,12 @@ let minLengthRule = {
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | 用于内联输入组件。无默认内容。 |
-| `label` | 填充表单项描述的内容。默认为 `label` 属性的文本值。 |
-| `tip` | 填充表单项提示的内容。默认为 `tip` 属性的文本值。 |
+| ``default`` | 用于内联输入组件。无默认内容。 |
+| ``label`` | 填充表单项描述的内容。默认为 [`label`](#props-label) 属性的文本值。 |
+| ``tip`` | 填充表单项提示的内容。默认为 [`tip`](#props-tip) 属性的文本值。 |
 
 ### 图标
 
 | 名称 | 描述 |
 | -- | -- |
-| `alert` | 警示图标。 |
+| ``alert`` | 警示图标。 |

@@ -14,4 +14,4 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | 栅格行内容，直接子组件只能包含 [`GridColumn`](./grid-column) 组件。 |
+| ``default`` | 栅格行内容，直接子组件只能包含 [`GridColumn`](./grid-column) 组件。 |

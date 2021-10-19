@@ -4,7 +4,7 @@
 
 ### 尺寸
 
-可选的尺寸 `ui` 属性值：`xs`/`s`/`m`。
+可选的尺寸 [`ui`](#props-ui) 属性值：`xs` / `s` / `m`。
 
 [[ demo src="/demo/number-input/size.vue" ]]
 
@@ -26,15 +26,15 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `value` | `number` | - | [^value] |
-| `readonly` | `boolean=` | `false` | 数字输入框是否为只读状态。 |
-| `disabled` | `boolean=` | `false` | 数字输入框是否为禁用状态。 |
-| `placeholder` | `string` | - | 输入占位符。 |
-| `select-on-focus` | `boolean` | `false` | 聚焦时是否自动选中数字输入框文本。 |
-| `max` | `number` | - | 允许的最大值。 |
-| `min` | `number` | - | 允许的最小值。 |
-| `decimal-place` | `number` | 0 | 数值的小数精度位数，默认精确到整数位，`-1` 表示不处理精度。 |
+| ``ui`` | `string=` | - | [^ui] |
+| ``value`` | `number` | - | [^value] |
+| ``readonly`` | `boolean=` | `false` | 数字输入框是否为只读状态。 |
+| ``disabled`` | `boolean=` | `false` | 数字输入框是否为禁用状态。 |
+| ``placeholder`` | `string` | - | 输入占位符。 |
+| ``select-on-focus`` | `boolean` | `false` | 聚焦时是否自动选中数字输入框文本。 |
+| ``max`` | `number` | - | 允许的最大值。 |
+| ``min`` | `number` | - | 允许的最小值。 |
+| ``decimal-place`` | `number` | 0 | 数值的小数精度位数，默认精确到整数位，`-1` 表示不处理精度。 |
 
 ^^^ui
 预设样式。
@@ -60,8 +60,8 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `before` | 数字输入框前置内容。 |
-| `after` | 数字输入框后置内容。位于增减按钮之后。 |
+| ``before`` | 数字输入框前置内容。 |
+| ``after`` | 数字输入框后置内容。位于增减按钮之后。 |
 
 :::warning
 注意，插槽宽度会挤压输入框宽度。
@@ -71,8 +71,8 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `change` | [^event-change] |
-| `input` | [^event-input] |
+| ``change`` | [^event-change] |
+| ``input`` | [^event-input] |
 
 ^^^event-change
 原生 `change` 事件，回调参数为 `(value, event)`。
@@ -103,5 +103,5 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `increase` | 增加按钮。 |
-| `decrease` | 减少按钮。 |
+| ``increase`` | 增加按钮。 |
+| ``decrease`` | 减少按钮。 |

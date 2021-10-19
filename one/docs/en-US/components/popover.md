@@ -4,19 +4,19 @@
 
 ### Style variants
 
-Available size variants for the `ui` prop: `s`/`m`.
+Available size variants for the [`ui`](#props-ui) prop: `s` / `m`.
 
 [[ demo src="/demo/popover/ui.vue" ]]
 
 ### Position
 
-Use the `position` prop to specify the placement of the popover.
+Use the [`position`](#props-position) prop to specify the placement of the popover.
 
 [[ demo src="/demo/popover/position.vue" ]]
 
 ### Triggers
 
-Use the `trigger` prop to specify when to show/hide the popover.
+Use the [`trigger`](#props-trigger) prop to specify when to show/hide the popover.
 
 [[ demo src="/demo/popover/trigger.vue" ]]
 
@@ -26,14 +26,14 @@ Use the `trigger` prop to specify when to show/hide the popover.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `open` | `boolean` | `false` | [^open] |
-| `target` | `string|Vue|Node` | - | See the [`target` prop](./overlay#props) of thh [`Overlay`](./overlay) component. |
-| `position` | `string` | `'top'` | [^position] |
-| `trigger` | `string` | `'hover'` | [^trigger] |
-| `hide-delay` | `number` | `tooltip.hideDelays` | Time (in milliseconds) to wait before hiding the popover after the close trigger is triggered. Can be used to prevent the popover being immediately closed after pointer leaves the `target` element and before it enters the popover itself. |
-| `overlay-class` | `string|Array|Object=` | - | See the [`overlay-class`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
-| `overlay-style` | `string|Array|Object=` | - | See the [`overlay-style`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
+| ``ui`` | `string=` | - | [^ui] |
+| ``open`` | `boolean` | `false` | [^open] |
+| ``target`` | `string | Vue | Node` | - | See the [`target`](./overlay#props-target) prop of thh [`Overlay`](./overlay) component. |
+| ``position`` | `string` | `'top'` | [^position] |
+| ``trigger`` | `string` | `'hover'` | [^trigger] |
+| ``hide-delay`` | `number` | `tooltip.hideDelays` | Time (in milliseconds) to wait before hiding the popover after the close trigger is triggered. Can be used to prevent the popover being immediately closed after pointer leaves the `target` element and before it enters the popover itself. |
+| ``overlay-class`` | `string | Array | Object=` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
+| ``overlay-style`` | `string | Array | Object=` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
 
 ^^^ui
 Style variants.
@@ -68,4 +68,4 @@ eg. `click` denotes showing the popover after clicking the `target` and hiding i
 
 | Name | Description |
 | -- | -- |
-| `default` | The content of the popover. |
+| ``default`` | The content of the popover. |

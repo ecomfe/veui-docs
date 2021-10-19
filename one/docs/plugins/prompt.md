@@ -23,7 +23,7 @@ Vue.use(prompt)
 ^^^options
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `overlayClass` | `string|Object|Array<string>` | 添加到输入弹框浮层根节点的类名。 |
+| `overlayClass` | `string | Object | Array<string>` | 添加到输入弹框浮层根节点的类名。 |
 | `ok` | `function(): Promise<void>` | 点击“确定”按钮后，在 `success` 方法返回的 `Promise` resolve 前插入异步流程。如果该函数返回的 `Promise` 被 resolve，则弹框会被关闭，否则不会关闭。 |
 | `cancel` | `function(): Promise<void>` | 点击“取消”按钮后，在 `success` 方法返回的 `Promise` resolve 前插入异步流程。如果该函数返回的 `Promise` 被 resolve，则弹框会被关闭，否则不会关闭。 |
 ^^^

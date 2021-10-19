@@ -137,9 +137,9 @@ h4 {
 </style>
 
 <docs>
-在固定列模式下，必须为被固定的列指定 `width` 属性。
+在固定列模式下，必须为被固定的列指定 [`width`](./column#props-width) 属性。
 </docs>
 
 <docs locale="en-US">
-The `width` prop must be specified for fixed columns.
+The [`width`](./column#props-width) prop must be specified for fixed columns.
 </docs>

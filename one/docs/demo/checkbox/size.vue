@@ -57,9 +57,9 @@ export default {
 </style>
 
 <docs>
-可以使用 `indeterminate` 属性来设置半选状态。
+可以使用 [`indeterminate`](#props-indeterminate) 属性来设置半选状态。
 </docs>
 
 <docs locale="en-US">
-Use the `indeterminate` prop to put the checkbox in indeterminate state.
+Use the [`indeterminate`](#props-indeterminate) prop to put the checkbox in indeterminate state.
 </docs>

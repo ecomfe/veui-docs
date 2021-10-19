@@ -26,10 +26,10 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `type` | `string=` | `'error'` | [^type] |
-| `value` | `string | number` | - | 徽标内容值。为 `number` 类型值时，会受 `max` 属性限制。为 `string` 类型时，`max` 会被忽略。 |
-| `max` | `number=` | `badge.max` | 徽标数值的最大值，当 `value` 超过此值时，徽标内容会显示为 `{max}+`。当 `value` 为 `string` 时会被忽略。 |
-| `hidden` | `boolean=` | `false` | 是否处于隐藏状态。 |
+| ``type`` | `string=` | `'error'` | [^type] |
+| ``value`` | `string | number` | - | 徽标内容值。为 `number` 类型值时，会受 [`max`](#props-max) 属性限制。为 `string` 类型时，`max` 会被忽略。 |
+| ``max`` | `number=` | `badge.max` | 徽标数值的最大值，当 `value` 超过此值时，徽标内容会显示为 `{max}+`。当 `value` 为 `string` 时会被忽略。 |
+| ``hidden`` | `boolean=` | `false` | 是否处于隐藏状态。 |
 
 ^^^type
 徽标状态类型。自带样式的可选值如下。使用其它值时需要自行定义 `.veui-badge-{type}` 的样式。
@@ -49,4 +49,4 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | 需要显示徽标的目标内容。 |
+| ``default`` | 需要显示徽标的目标内容。 |

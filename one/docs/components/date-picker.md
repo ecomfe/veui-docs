@@ -4,19 +4,19 @@
 
 ### 单日选择
 
-默认情况下，在下拉浮层中单击日期可以选中一个日期。可以配置 `clearable` 属性来允许清除已选值，用 `placeholder` 属性来配置未选择时的占位文本。
+默认情况下，在下拉浮层中单击日期可以选中一个日期。可以配置 [`clearable`](#props-clearable) 属性来允许清除已选值，用 [`placeholder`](#props-placeholder) 属性来配置未选择时的占位文本。
 
 [[ demo src="/demo/date-picker/default.vue" ]]
 
 ### 日期范围选择
 
-配置 `range` 属性时，可以在下拉浮层中选择一个日期范围。
+配置 [`range`](#props-range) 属性时，可以在下拉浮层中选择一个日期范围。
 
 [[ demo src="/demo/date-picker/range.vue" ]]
 
 ### 设置快捷选项
 
-选择日期范围时，可以通过配置 `shortcuts` 属性来提供快捷选项。
+选择日期范围时，可以通过配置 [`shortcuts`](#props-shortcuts) 属性来提供快捷选项。
 
 [[ demo src="/demo/date-picker/shortcuts.vue" ]]
 
@@ -26,29 +26,29 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `type` | `string` | `'date'` | 日历的类型，可用值为 `'date'`/`'month'`/`'year'`，分别对应日期/月/年视图。 |
-| `range` | `boolean` | `false` | 是否选择日期范围。 |
-| `selected` | `Date | Array` | - | [^selected] |
-| `today` | `Date` | `new Date()` | 「今天」的日期。 |
-| `week-start` | `number` | `calendar.weekStart` | 一周的起始。可进行[全局配置](./calendar#全局配置)。 |
-| `fill-month` | `boolean` | `true` | 当只有一个面板时，是否要在当前月份面板显示非本月日期。 |
-| `date-class` | `string | Array | Object | function` | `{}` | 特定日期的自定义 HTML `class`。传非函数时，数据格式为所有 Vue 支持的 `class` 表达式；传函数时，签名为 `function(Date): string | Array<string>|Object<string, boolean>`，返回值格式亦为所有 Vue 支持的 `class` 表达式。 |
-| `disabled-date` | `function(Date, Date=): boolean=` | `() => false` | 用于自定义指定日期是否禁用。第一个参数为需要判断是否禁用的日期。当处于范围选择过程中且已经选择了一个日期，会作为第二个参数传入。 |
-| `clearable` | `boolean` | `false` | 已选值是否可以清除。 |
-| `placeholder` | `string` | `range ? datepicker.rangePlaceholder : datepicker.placeholder` | 未选择时的占位文本。可进行[全局配置](#全局配置)。 |
-| `format` | `string | function(Date): string=` | `'yyyy-MM-dd'`/`'yyyy-MM'`/`'yyyy'` | 使用字符串时，表示用于格式化/解析的字符串表达式，具体格式可以参见 [date-fns 的文档](https://date-fns.org/v2.12.0/docs/format)。传入函数可自定义格式化逻辑。 |
-| `parse` | `function(string): Date=` | - | 自定义将输入字符串解析为 `Date` 对象的函数。 |
-| `shortcuts` | `Array<Object>` | `datepicker.shortcuts` | [^shortcuts] |
-| `expanded` | `boolean=` | `false` | [^expanded] |
-| `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
-| `readonly` | `boolean=` | `false` | 是否为只读状态。 |
+| ``type`` | `string` | `'date'` | 日历的类型，可用值为 `'date'` / `'month'` / `'year'`，分别对应日期/月/年视图。 |
+| ``range`` | `boolean` | `false` | 是否选择日期范围。 |
+| ``selected`` | `Date | Array` | - | [^selected] |
+| ``today`` | `Date` | `new Date()` | 「今天」的日期。 |
+| ``week-start`` | `number` | `calendar.weekStart` | 一周的起始。可进行[全局配置](./calendar#configs-calendar-weekstart)。 |
+| ``fill-month`` | `boolean` | `true` | 当只有一个面板时，是否要在当前月份面板显示非本月日期。 |
+| ``date-class`` | `string | Array | Object | function` | `{}` | 特定日期的自定义 HTML `class`。传非函数时，数据格式为所有 Vue 支持的 `class` 表达式；传函数时，签名为 `function(Date): string | Array<string>|Object<string, boolean>`，返回值格式亦为所有 Vue 支持的 `class` 表达式。 |
+| ``disabled-date`` | `function(Date, Date=): boolean=` | `() => false` | 用于自定义指定日期是否禁用。第一个参数为需要判断是否禁用的日期。当处于范围选择过程中且已经选择了一个日期，会作为第二个参数传入。 |
+| ``clearable`` | `boolean` | `false` | 已选值是否可以清除。 |
+| ``placeholder`` | `string` | `range ? datepicker.rangePlaceholder : datepicker.placeholder` | 未选择时的占位文本。可分别对[日期范围](#configs-datepicker-rangePlaceholder)与[单个日期](#configs-datepicker-placeholder)进行全局配置。 |
+| ``format`` | `string | function(Date): string=` | `'yyyy-MM-dd'` / `'yyyy-MM'` / `'yyyy'` | 使用字符串时，表示用于格式化/解析的字符串表达式，具体格式可以参见 [date-fns 的文档](https://date-fns.org/v2.12.0/docs/format)。传入函数可自定义格式化逻辑。 |
+| ``parse`` | `function(string): Date=` | - | 自定义将输入字符串解析为 `Date` 对象的函数。 |
+| ``shortcuts`` | `Array<Object>` | `datepicker.shortcuts` | [^shortcuts] |
+| ``expanded`` | `boolean=` | `false` | [^expanded] |
+| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
 
 ^^^selected
 :::badges
 `v-model`
 :::
 
-已选日期（范围）的值，根据 `range` 属性值的不同，数据格式不同。
+已选日期（范围）的值，根据 [`range`](#props-range) 属性值的不同，数据格式不同。
 
 +++类型详情
 | `range` | 类型 |
@@ -59,7 +59,7 @@
 ^^^
 
 ^^^shortcuts
-在选择范围时，可以定制的浮层中的快捷选择项列表，格式为 `Array<{label, from, to}>`。可进行[全局配置](#全局配置)。
+在选择范围时，可以定制的浮层中的快捷选择项列表，格式为 `Array<{label, from, to}>`。可进行[全局配置](#configs-datepicker-shortcuts)。
 
 +++字段详情
 <table>
@@ -99,7 +99,7 @@
   +++字段详情
   | 名称 | 类型 | 默认值 | 描述 |
   | -- | -- | -- | -- |
-  | `startOf` | `string=` | `'day'` | 起始日期基准，支持的值有 `'day'`/`'week'`/`'month'`/`'quarter'`/`'year'`。 |
+  | `startOf` | `string=` | `'day'` | 起始日期基准，支持的值有 `'day'` / `'week'` / `'month'` / `'quarter'` / `'year'`。 |
   | `day` | `number=` | - | 偏移的天数。 |
   | `week` | `number=` | - | 偏移的周数。 |
   | `month` | `number=` | - | 偏移的月数。 |
@@ -170,7 +170,7 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `date` | [^slot-date] |
+| ``date`` | [^slot-date] |
 
 ^^^slot-date
 浮层中日历的单日单元格内的区域，可用来定制每一天对应区域的内容。
@@ -190,21 +190,21 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `select` | [^event-select] |
-| `selectstart` | 选择日期范围时，选择完起始日期时触发，回调参数 `(picking: Date)`，表示已选的起始项日期。 |
-| `selectprogress` | [^event-selectprogress] |
-| `toggle` | 下拉浮层展开状态切换时触发，回调参数为 `(expanded: boolean)`。`expanded` 表示操作将触发下拉浮层展开还是收起。 |
+| ``select`` | [^event-select] |
+| ``selectstart`` | 选择日期范围时，选择完起始日期时触发，回调参数 `(picking: Date)`，表示已选的起始项日期。 |
+| ``selectprogress`` | [^event-selectprogress] |
+| ``toggle`` | 下拉浮层展开状态切换时触发，回调参数为 `(expanded: boolean)`。`expanded` 表示操作将触发下拉浮层展开还是收起。 |
 
 ^^^event-select
 :::badges
 `v-model`
 :::
 
-选择修改后触发，回调参数为 `(selected)`。数据类型和 `selected` 属性一致。
+选择修改后触发，回调参数为 `(selected)`。数据类型和 [`selected`](#props-selected) 属性一致。
 ^^^
 
 ^^^event-selectprogress
-选择日期范围时，在已经选择开始日期后，通过鼠标或键盘交互标记到的结束日期变更时触发。回调参数为 `(picking)`，表示当前标记的日期范围，类型取决于 `multiple` 属性的值。
+选择日期范围时，在已经选择开始日期后，通过鼠标或键盘交互标记到的结束日期变更时触发。回调参数为 `(picking)`，表示当前标记的日期范围，类型取决于 [`multiple`](#props-multiple) 属性的值。
 
 +++参数详请
 | `multiple` | 类型 |
@@ -218,13 +218,13 @@
 
 | 配置项 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `datepicker.shortcuts` | `Array` | `[]` | 快捷选项配置。 |
-| `datepicker.placeholder` | `string` | `@@datepicker.selectDate` | 选择单日时，未选择状态的占位文本。 |
-| `datepicker.monthPlaceholder` | `string` | `@@datepicker.selectMonth` | 选择月份时，未选择状态的占位文本。 |
-| `datepicker.yearPlaceholder` | `string` | `@@datepicker.selectYear` | 选择年时，未选择状态的占位文本。 |
-| `datepicker.rangePlaceholder` | `string` | `@@datepicker.selectRange` | 选择日期范围时，未选择状态的占位文本。 |
-| `datepicker.monthRangePlaceholder` | `string` | `@@datepicker.selectMonthRange` | 选择月份范围时，未选择状态的占位文本。 |
-| `datepicker.yearRangePlaceholder` | `string` | `@@datepicker.selectYearRange` | 选择年份范围时，未选择状态的占位文本。 |
+| ``datepicker.shortcuts`` | `Array` | `[]` | 快捷选项配置。 |
+| ``datepicker.placeholder`` | `string` | `@@datepicker.selectDate` | 选择单日时，未选择状态的占位文本。 |
+| ``datepicker.monthPlaceholder`` | `string` | `@@datepicker.selectMonth` | 选择月份时，未选择状态的占位文本。 |
+| ``datepicker.yearPlaceholder`` | `string` | `@@datepicker.selectYear` | 选择年时，未选择状态的占位文本。 |
+| ``datepicker.rangePlaceholder`` | `string` | `@@datepicker.selectRange` | 选择日期范围时，未选择状态的占位文本。 |
+| ``datepicker.monthRangePlaceholder`` | `string` | `@@datepicker.selectMonthRange` | 选择月份范围时，未选择状态的占位文本。 |
+| ``datepicker.yearRangePlaceholder`` | `string` | `@@datepicker.selectYearRange` | 选择年份范围时，未选择状态的占位文本。 |
 
 :::tip
 `@@` 开头的值表示引用多语言配置中的相应字段。
@@ -234,5 +234,5 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `calendar` | 日历。 |
-| `clear` | 清除内容。 |
+| ``calendar`` | 日历。 |
+| ``clear`` | 清除内容。 |

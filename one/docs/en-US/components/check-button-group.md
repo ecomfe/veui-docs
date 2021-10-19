@@ -4,7 +4,7 @@
 
 ### Size variants
 
-Available values for the `ui` prop: `s`/`m`.
+Available values for the [`ui`](#props-ui) prop: `s` / `m`.
 
 [[ demo src="/demo/check-button-group/default.vue" ]]
 
@@ -14,12 +14,12 @@ Available values for the `ui` prop: `s`/`m`.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `items` | `Array<Object>` | `[]` | [^items] |
-| `value` | `Array` | `[]` | [^value] |
-| `disabled` | `boolean=` | `false` | Whether the check button group is disabled. |
-| `readonly` | `boolean=` | `false` | Whether the check button group is read-only. |
-| `empty-value` | `*` | - | The value to be selected when all selected values are deselected. Used when `exclusive` items are present. |
+| ``ui`` | `string=` | - | [^ui] |
+| ``items`` | `Array<Object>` | `[]` | [^items] |
+| ``value`` | `Array` | `[]` | [^value] |
+| ``disabled`` | `boolean=` | `false` | Whether the check button group is disabled. |
+| ``readonly`` | `boolean=` | `false` | Whether the check button group is read-only. |
+| ``empty-value`` | `*` | - | The value to be selected when all selected values are deselected. Used when `exclusive` items are present. |
 
 ^^^ui
 Style variants.
@@ -55,10 +55,10 @@ The `value`s of the selected items.
 
 | Name | Description |
 | -- | -- |
-| `item` | [^slot-item] |
+| ``item`` | [^slot-item] |
 
 ^^^slot-item
-The label content of each button. Displays the value of the `label` prop by default.
+The label content of each button. Displays the value of the `label` property by default.
 
 +++Scope properties
 | Name | Type | Description |
@@ -76,7 +76,7 @@ Additionally, custom properties apart from the listed ones will also be passes i
 
 | Name | Description |
 | -- | -- |
-| `change` | [^event-change] |
+| ``change`` | [^event-change] |
 
 ^^^event-change
 :::badges
@@ -90,4 +90,4 @@ Triggers when the selected item changed. The callback parameter list is `(value:
 
 | Name | Description |
 | -- | -- |
-| `check` | The loading spinner. |
+| ``check`` | The loading spinner. |

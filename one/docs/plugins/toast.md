@@ -20,7 +20,7 @@ Vue.use(toast)
 ^^^options
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `type` | `string` | `'info'` | 提示类型，可选值为 `'success'`/`'warning'`/`'info'`/`'errro'`。 |
+| `type` | `string` | `'info'` | 提示类型，可选值为 `'success'` / `'warning'` / `'info'` / `'errro'`。 |
 | `duration` | `number` | `3000` |  设置消息经过指定的毫秒数之后消失。 |
 ^^^
 

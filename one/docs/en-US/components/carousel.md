@@ -10,13 +10,13 @@ Use the `index` to control the current item to be displayed.
 
 ### Indicator type
 
-Use the `indicator` prop to specify the type of step indicators.
+Use the [`indicator`](#props-indicator) prop to specify the type of step indicators.
 
 [[ demo src="/demo/carousel/indicator.vue" ]]
 
 ### Autoplay
 
-Use the `autoplay` prop to enable autoplay.
+Use the [`autoplay`](#props-autoplay) prop to enable autoplay.
 
 [[ demo src="/demo/carousel/autoplay.vue" ]]
 
@@ -26,14 +26,14 @@ Use the `autoplay` prop to enable autoplay.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| `datasource` | `Array<Object>` | `[]` | [^datasource] |
-| `index` | `number=` | `0` | [^index] |
-| `indicator` | `string=` | `'radio'` | [^indicator] |
-| `switch-trigger` | `string=` | `'click'` | [^switch-trigger] |
-| `autoplay` | `boolean=` | `false` | Whether to autoplay the carousel. |
-| `pause-on-hover` | `boolean=` | `false` | Whether to pause the cycling on hover when autoplaying. |
-| `interval` | `number=` | `3000` | The amount of time to delay between automatically cycling an item. |
-| `wrap` | `boolean=` | `false` | Whether the carousel should cycle continuously or have hard stops. |
+| ``datasource`` | `Array<Object>` | `[]` | [^datasource] |
+| ``index`` | `number=` | `0` | [^index] |
+| ``indicator`` | `string=` | `'radio'` | [^indicator] |
+| ``switch-trigger`` | `string=` | `'click'` | [^switch-trigger] |
+| ``autoplay`` | `boolean=` | `false` | Whether to autoplay the carousel. |
+| ``pause-on-hover`` | `boolean=` | `false` | Whether to pause the cycling on hover when autoplaying. |
+| ``interval`` | `number=` | `3000` | The amount of time to delay between automatically cycling an item. |
+| ``wrap`` | `boolean=` | `false` | Whether the carousel should cycle continuously or have hard stops. |
 
 ^^^datasource
 The media datasource for the carousel, with the item type being `{src, alt, label}`.
@@ -81,7 +81,7 @@ The behavior triggers item switch when radio indicator is displayed.
 
 | Name | Description |
 | -- | -- |
-| `item` | [^slot-item] |
+| ``item`` | [^slot-item] |
 
 ^^^slot-item
 The content of each carousel item. Displays the corresponding image by default.
@@ -93,7 +93,7 @@ The slot scope properties are the same as each item inside `datasource` (includi
 
 | Name | Description |
 | -- | -- |
-| `change` | [^event-change] |
+| ``change`` | [^event-change] |
 
 ^^^event-change
 Triggered the current item changed. The callback argument list is `(to: number, from: number)`. `to` and `from` denote the new index and the old index respectively.
@@ -103,5 +103,5 @@ Triggered the current item changed. The callback argument list is `(to: number, 
 
 | Name | Description |
 | -- | -- |
-| `prev` | Previous item. |
-| `next` | Next item. |
+| ``prev`` | Previous item. |
+| ``next`` | Next item. |

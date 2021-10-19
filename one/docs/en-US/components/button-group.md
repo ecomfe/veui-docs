@@ -4,25 +4,25 @@
 
 ### Stylistic variants
 
-Available style variants for the `ui` prop: `primary`/`strong`/`basic`.
+Available style variants for the [`ui`](#props-ui) prop: `primary` / `strong` / `basic`.
 
 [[ demo src="/demo/button-group/style.vue" ]]
 
 ### Size variants
 
-Available size variants for the `ui` prop: `xs`/`s`/`m`/`l`/`xl`.
+Available size variants for the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l` / `xl`.
 
 [[ demo src="/demo/button-group/size.vue" ]]
 
 ### Use datasource via `items`
 
-Use the `items` prop to provide content with a datasource.
+Use the [`items`](#props-items) prop to provide content with a datasource.
 
 [[ demo src="/demo/button-group/items.vue" ]]
 
 ### Disabled state
 
-Use the `disabled` prop to set the button group to disabled state.
+Use the [`disabled`](#props-disabled) prop to set the button group to disabled state.
 
 [[ demo src="/demo/button-group/disabled.vue" ]]
 
@@ -32,9 +32,9 @@ Use the `disabled` prop to set the button group to disabled state.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `items` | `Array<Object>` | - | [^items] |
-| `disabled` | `boolean=` | `false` | Whether the button is disabled. |
+| ``ui`` | `string=` | - | [^ui] |
+| ``items`` | `Array<Object>` | - | [^items] |
+| ``disabled`` | `boolean=` | `false` | Whether the button is disabled. |
 
 ^^^ui
 Style variants. A space-separated list of enum values.
@@ -68,13 +68,13 @@ The datasource array for buttons in the group. The type of each item is `{label,
 
 | Name | Description |
 | -- | -- |
-| `default` | Button group's content. |
-| `item` | [^slot-item] |
+| ``default`` | Button group's content. |
+| ``item`` | [^slot-item] |
 
 ^^^slot-item
 The content of each button.
 
-Shows the text specified by the `label` prop by default.
+Shows the text specified by the `label` property by default.
 
 +++Scope properties
 | Name | Type | Description |
@@ -92,7 +92,7 @@ Additionally, custom properties apart from the listed ones will also be passes i
 
 | Name | Description |
 | -- | -- |
-| `click` | [^click-event] |
+| ``click`` | [^click-event] |
 | <var>&lt;value&gt;</var> | [^value-var-event] |
 
 ^^^click-event
@@ -107,5 +107,5 @@ Triggered upon clicks. The callback parameter list is `(item, index)`.
 ^^^
 
 ^^^value-var-event
-If the corresponding item has a string `value` property, an event with the name of `value` value will be emitted each time the button is clicked. It shares the same parameters with the `click` event.
+If the corresponding item has a string `value` property, an event with the name of `value` value will be emitted each time the button is clicked. It shares the same parameters with the [`click`](#events-click) event.
 ^^^

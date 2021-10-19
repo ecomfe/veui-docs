@@ -71,5 +71,5 @@ article {
 </style>
 
 <docs>
-可以在 `GridContainer` 上使用 `columns`/`margin`/`gutter` 调整布局参数。
+可以在 `GridContainer` 上使用 `columns` / `margin` / `gutter` 调整布局参数。
 </docs>

@@ -53,9 +53,9 @@ export default {
 </style>
 
 <docs>
-可以使用 `max` 属性，指定可现实数字的最大值，超过则显示为“<var>max</var>+”。
+可以使用 [`max`](#props-max) 属性，指定可现实数字的最大值，超过则显示为“<var>max</var>+”。
 </docs>
 
 <docs locale="en-US">
-Use the `max` prop to specify the max value can be displayed. Displays “<var>max</var>+” when value is larger than `max`.
+Use the [`max`](#props-max) prop to specify the max value can be displayed. Displays “<var>max</var>+” when value is larger than `max`.
 </docs>

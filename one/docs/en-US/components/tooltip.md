@@ -4,19 +4,19 @@
 
 ### Style variants
 
-Available style variant for the `ui` prop: `alt`.
+Available style variant for the [`ui`](#props-ui) prop: `alt`.
 
 [[ demo src="/demo/tooltip/style.vue" ]]
 
 ### Position
 
-Use the `position` prop to specify the placement of the tooltip.
+Use the [`position`](#props-position) prop to specify the placement of the tooltip.
 
 [[ demo src="/demo/tooltip/position.vue" ]]
 
 ### Triggers
 
-Use the `trigger` prop to specify when to show/hide the tooltip.
+Use the [`trigger`](#props-trigger) prop to specify when to show/hide the tooltip.
 
 [[ demo src="/demo/tooltip/trigger.vue" ]]
 
@@ -26,16 +26,16 @@ Use the `trigger` prop to specify when to show/hide the tooltip.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `open` | `boolean` | `false` | [^open] |
-| `target` | `string|Vue|Node` | - | See the [`target` prop](./overlay#props) of thh [`Overlay`](./overlay) component. |
-| `position` | `string` | `'top'` | [^position] |
-| `aim-center` | `boolean` | `false` | Whether the tooltip arrow always points to the center of the target element. |
-| `trigger` | `string` | `'hover'` | [^trigger] |
-| `interactive` | `boolean` | `true` | Whether the tooltip content is interactive. When set to `false`, the tooltip will be automatically hidden after the event specified by `trigger` is triggered outside the `target`. |
-| `hide-delay` | `number` | `tooltip.hideDelays` | Time (in milliseconds) to wait before hiding the tooltip after the close trigger is triggered. Can be used to prevent the tooltip being immediately closed after pointer leaves the `target` element and before it enters the tooltip itself. |
-| `overlay-class` | `string|Array|Object=` | - | See the [`overlay-class`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
-| `overlay-style` | `string|Array|Object=` | - | See the [`overlay-style`](./overlay#props) prop of the [`Overlay`](./overlay) component. |
+| ``ui`` | `string=` | - | [^ui] |
+| ``open`` | `boolean` | `false` | [^open] |
+| ``target`` | `string | Vue | Node` | - | See the [`target`](./overlay#props-to) prop of thh [`Overlay`](./overlay) component. |
+| ``position`` | `string` | `'top'` | [^position] |
+| ``aim-center`` | `boolean` | `false` | Whether the tooltip arrow always points to the center of the target element. |
+| ``trigger`` | `string` | `'hover'` | [^trigger] |
+| ``interactive`` | `boolean` | `true` | Whether the tooltip content is interactive. When set to `false`, the tooltip will be automatically hidden after the event specified by `trigger` is triggered outside the `target`. |
+| ``hide-delay`` | `number` | `tooltip.hideDelays` | Time (in milliseconds) to wait before hiding the tooltip after the close trigger is triggered. Can be used to prevent the tooltip being immediately closed after pointer leaves the `target` element and before it enters the tooltip itself. |
+| ``overlay-class`` | `string | Array | Object=` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
+| ``overlay-style`` | `string | Array | Object=` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
 
 ^^^ui
 Style variants.
@@ -71,10 +71,10 @@ eg. `click` denotes showing the tooltip after clicking the `target` and hiding i
 
 | Name | Description |
 | -- | -- |
-| `default` | The content of the tooltip. |
+| ``default`` | The content of the tooltip. |
 
-### Global config
+### Configs
 
 | Key | Type | Default | Description |
 | -- | -- | -- | -- |
-| `tooltip.hideDelay` | `number` | `300` | See the [`hide-delay` prop](#props). |
+| ``tooltip.hideDelay`` | `number` | `300` | See the [`hide-delay`](#props-hide-delay) prop. |

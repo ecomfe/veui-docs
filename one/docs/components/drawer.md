@@ -4,13 +4,13 @@
 
 ### 位置
 
-使用 `placement` 属性控制抽屉弹出的位置。
+使用 [`placement`](#props-placement) 属性控制抽屉弹出的位置。
 
 [[ demo src="/demo/drawer/placement.vue" ]]
 
 ### 模态与非模态
 
-使用 `modal` 属性控制抽屉是否为模态类型。
+使用 [`modal`](#props-modal) 属性控制抽屉是否为模态类型。
 
 [[ demo src="/demo/drawer/modal.vue" ]]
 
@@ -24,22 +24,22 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `placement` | `string` | `'right'` | [^placement] |
-| `modal` | `boolean` | `true` | 是否是模态抽屉。模态抽屉默认遮挡底层（无法点击）且抢占焦点（关闭后焦点会回归）。 |
-| `title` | `string` | - | 抽屉标题文本。如果指定了 `title` 插槽，则优先使用 `title` 插槽。 |
-| `open` | `boolean` | `false` | [^open] |
-| `closable` | `boolean` | `true` | 是否显示关闭按钮。 |
-| `outside-closable` | `boolean` | `false` | 点击抽屉外部时是否关闭抽屉。 |
-| `draggable` | `boolean` | `false` | 是否可拖拽。 |
-| `escapable` | `boolean` | `false` | 按下 <kbd>esc</kbd> 键是否可以关闭抽屉。仅在 `closable` 为 `true` 时生效。 |
-| `footless` | `boolean` | `false` | 是否不显示默认的底部操作栏。 |
-| `loading` | `boolean=` | `false` | 是否处于加载状态。处于加载状态时确定按钮也将进入加载状态，无法点击。 |
-| `disabled` | `boolean=` | `false` | 是否处于禁用状态。处于禁用状态时确定按钮也将进入禁用状态，无法点击。 |
-| `ok-label` | `string=` | - | “确定”按钮的文字内容。 |
-| `cancel-label` | `string=` | - | “取消”按钮的文字内容。 |
-| `before-close` | `function(string): boolean=|Promise<boolean=>` | - | 在将触发关闭的操作发生后执行，参考 [`Dialog`](./dialog) 组件的 [`before-close`](./dialog#props) 属性。 |
-| `overlay-class` | `string | Object` | - | 抽屉浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props) 属性。 |
+| ``ui`` | `string=` | - | [^ui] |
+| ``placement`` | `string` | `'right'` | [^placement] |
+| ``modal`` | `boolean` | `true` | 是否是模态抽屉。模态抽屉默认遮挡底层（无法点击）且抢占焦点（关闭后焦点会回归）。 |
+| ``title`` | `string` | - | 抽屉标题文本。如果指定了 [`title`](#slots-title) 插槽，则优先使用 [`title`](#slots-title) 插槽。 |
+| ``open`` | `boolean` | `false` | [^open] |
+| ``closable`` | `boolean` | `true` | 是否显示关闭按钮。 |
+| ``outside-closable`` | `boolean` | `false` | 点击抽屉外部时是否关闭抽屉。 |
+| ``draggable`` | `boolean` | `false` | 是否可拖拽。 |
+| ``escapable`` | `boolean` | `false` | 按下 <kbd>esc</kbd> 键是否可以关闭抽屉。仅在 `closable` 为 `true` 时生效。 |
+| ``footless`` | `boolean` | `false` | 是否不显示默认的底部操作栏。 |
+| ``loading`` | `boolean=` | `false` | 是否处于加载状态。处于加载状态时确定按钮也将进入加载状态，无法点击。 |
+| ``disabled`` | `boolean=` | `false` | 是否处于禁用状态。处于禁用状态时确定按钮也将进入禁用状态，无法点击。 |
+| ``ok-label`` | `string=` | - | “确定”按钮的文字内容。 |
+| ``cancel-label`` | `string=` | - | “取消”按钮的文字内容。 |
+| ``before-close`` | `function(string): boolean=|Promise<boolean=>` | - | 在将触发关闭的操作发生后执行，参考 [`Dialog`](./dialog) 组件的 [`before-close`](./dialog#props-before-close) 属性。 |
+| ``overlay-class`` | `string | Object` | - | 抽屉浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
 
 ^^^ui
 预设样式。
@@ -78,9 +78,9 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | 内容区。 |
-| `title` | 标题区。若同时指定了 `title` 属性和 `title` 插槽，以后者为准。 |
-| `foot` | [^slot-foot] |
+| ``default`` | 内容区。 |
+| ``title`` | 标题区。若同时指定了 [`title`](#props-title) 属性和 [`title`](#slots-title) 插槽，以后者为准。 |
+| ``foot`` | [^slot-foot] |
 
 ^^^slot-foot
 底部区域，默认会展示“确定”、“取消”按钮。
@@ -96,7 +96,7 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `ok` | 点击“确定”按钮时或通过调用作用域函数 `close('ok')` 时触发。 |
-| `cancel` | 点击“取消”按钮、关闭按钮、通过 <kbd>esc</kbd> 关闭抽屉时，或者通过调用作用域函数 `close('cancel')` 时触发。 |
+| ``ok`` | 点击“确定”按钮时或通过调用作用域函数 `close('ok')` 时触发。 |
+| ``cancel`` | 点击“取消”按钮、关闭按钮、通过 <kbd>esc</kbd> 关闭抽屉时，或者通过调用作用域函数 `close('cancel')` 时触发。 |
 | <var>&lt;value&gt;</var> | 通过调用作用域函数 `close(value)` 时触发。 |
-| `afterclose` | 浮层关闭后触发。如果样式主题提供了退出动画，将在退出动画完毕后触发。 |
+| ``afterclose`` | 浮层关闭后触发。如果样式主题提供了退出动画，将在退出动画完毕后触发。 |

@@ -23,7 +23,7 @@ Vue.use(confirm)
 ^^^options
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `overlayClass` | `string|Object|Array<string>` | 添加到确认弹框浮层根节点的类名。 |
+| `overlayClass` | `string | Object | Array<string>` | 添加到确认弹框浮层根节点的类名。 |
 | `ok` | `function(): Promise<void>` | 点击“确定”按钮后调用。如果该函数返回的 `Promise` 被 resolve，则弹框会被关闭，否则不会关闭。 |
 | `cancel` | `function(): Promise<void>` | 点击“取消”按钮后调用。如果该函数返回的 `Promise` 被 resolve，则弹框会被关闭，否则不会关闭。 |
 ^^^

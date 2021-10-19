@@ -10,11 +10,11 @@
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| `datasource` | `Array<Object>` | `[]` | [^datasource] |
-| `selected` | `Array<string>` | - | [^selected] |
-| `include-indeterminate` | `boolean` | `false` | Whether to include indeterminate node into selected nodes. Non-leaf nodes inside `datasource` will be in indeterminate state if their descendant nodes are partially selected. |
-| `disabled` | `boolean=` | `false` | Whether the region picker is disabled. |
-| `readonly` | `boolean=` | `false` | Whether the region picker is read-only. |
+| ``datasource`` | `Array<Object>` | `[]` | [^datasource] |
+| ``selected`` | `Array<string>` | - | [^selected] |
+| ``include-indeterminate`` | `boolean` | `false` | Whether to include indeterminate node into selected nodes. Non-leaf nodes inside `datasource` will be in indeterminate state if their descendant nodes are partially selected. |
+| ``disabled`` | `boolean=` | `false` | Whether the region picker is disabled. |
+| ``readonly`` | `boolean=` | `false` | Whether the region picker is read-only. |
 
 ^^^datasource
 The datasource of the region picker. The type of node item is `{label, value, disabled, children, ...}`.
@@ -41,7 +41,7 @@ The array of selected `value`s.
 
 | Name | Description |
 | -- | -- |
-| `label` | [^slot-label] |
+| ``label`` | [^slot-label] |
 
 ^^^slot-label
 The label content of each node. Displays the `label` property of each item by default.
@@ -68,12 +68,12 @@ When `level` is `2` and `overlay` is `true`, the information of selected node co
 
 | Name | Description |
 | -- | -- |
-| `select` | [^event-select] |
+| ``select`` | [^event-select] |
 
 ^^^event-select
 :::badges
 `v-model`
 :::
 
-Triggered when the selection changed. The callback parameter list is `(value: Array)`. The type of `value` is the same as the `selected` prop.
+Triggered when the selection changed. The callback parameter list is `(value: Array)`. The type of `value` is the same as the [`selected`](#props-selected) prop.
 ^^^

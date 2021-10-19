@@ -4,37 +4,37 @@
 
 ### 尺寸
 
-可选的尺寸 `ui` 属性值：`s`/`m`。
+可选的尺寸 [`ui`](#props-ui) 属性值：`s` / `m`。
 
 [[ demo src="/demo/slider/size.vue" ]]
 
 ### 只读/禁用
 
-设置 `readonly` 属性来使设置滑块只读，设置 `disabled` 属性来使设置滑块禁用。
+设置 [`readonly`](#props-readonly) 属性来使设置滑块只读，设置 [`disabled`](#props-disabled) 属性来使设置滑块禁用。
 
 [[ demo src="/demo/slider/editable.vue" ]]
 
 ### 步进
 
-使用 `step` 属性来指定步进值，使点击调节按钮或按下 <kbd>←</kbd>、<kbd>→</kbd> 键时根据指定步进值来调整输入值。
+使用 [`step`](#props-step) 属性来指定步进值，使点击调节按钮或按下 <kbd>←</kbd>、<kbd>→</kbd> 键时根据指定步进值来调整输入值。
 
 [[ demo src="/demo/slider/steps.vue" ]]
 
 ### 范围
 
-使用 `max`/`min` 属性来指定拖动范围两端的值。
+使用 [`max`](#props-max) / [`min`](#props-min) 属性来指定拖动范围两端的值。
 
 [[ demo src="/demo/slider/range.vue" ]]
 
 ### 次级条
 
-使用 `secondary-progress` 属性来指定一个次级进度条。
+使用 [`secondary-progress`](#props-secondary-progress) 属性来指定一个次级进度条。
 
 [[ demo src="/demo/slider/buffer.vue" ]]
 
 ### 定制内容
 
-使用 `thumb`/`tip` 插槽来自定义滑块按钮、悬浮提示等内容。
+使用 [`thumb`](#slots-thumb) / [`tip`](#slots-tip) 插槽来自定义滑块按钮、悬浮提示等内容。
 
 [[ demo src="/demo/slider/variant.vue" ]]
 
@@ -44,15 +44,15 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `value` | `*|Array<*>` | - | [^value] |
-| `secondary-progress` | `number | Array<number>` | `0` | 次要条。 |
-| `min` | `number` | `0` | `value` 经过 `parse` 函数处理后允许的最小值。 |
-| `max` | `number` | `1` | `value` 经过 `parse` 函数处理后允许的最大值。 |
-| `step` | `number` | `0` | `value` 经过 `parse` 函数处理后的步进值。 |
-| `mark` | `boolean` | `false` | 是否显示步进标记。 |
-| `parse` | `function` | `val => val` | 传入值处理函数。 |
-| `format` | `function` | `val => val` | 输出值处理函数。 |
+| ``ui`` | `string=` | - | [^ui] |
+| ``value`` | `*|Array<*>` | - | [^value] |
+| ``secondary-progress`` | `number | Array<number>` | `0` | 次要条。 |
+| ``min`` | `number` | `0` | `value` 经过 `parse` 函数处理后允许的最小值。 |
+| ``max`` | `number` | `1` | `value` 经过 `parse` 函数处理后允许的最大值。 |
+| ``step`` | `number` | `0` | `value` 经过 `parse` 函数处理后的步进值。 |
+| ``mark`` | `boolean` | `false` | 是否显示步进标记。 |
+| ``parse`` | `function` | `val => val` | 传入值处理函数。 |
+| ``format`` | `function` | `val => val` | 输出值处理函数。 |
 
 ^^^ui
 预设样式。
@@ -80,10 +80,10 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `track` | 滑轨。默认内容：横线。 |
-| `tip-label` | 浮动提示文本。默认内容：当前 `value` 值。 |
-| `thumb` | [^slot-thumb] |
-| `tip` | [^slot-tip] |
+| ``track`` | 滑轨。默认内容：横线。 |
+| ``tip-label`` | 浮动提示文本。默认内容：当前 `value` 值。 |
+| ``thumb`` | [^slot-thumb] |
+| ``tip`` | [^slot-tip] |
 
 ^^^slot-thumb
 滑块。
@@ -118,7 +118,7 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `input` | [^event-input] |
+| ``input`` | [^event-input] |
 
 ^^^event-input
 :::badges

@@ -11,7 +11,7 @@ The `ui` prop takes a string consists of a list of whitespace-separated tokens, 
 ```
 
 :::tip
-As we know, most component libraries provide style variants via enum props like `shape`/`size`/`type`/... .
+As we know, most component libraries provide style variants via enum props like `shape` / `size` / `type`/... .
 
 While our design goal is that VEUI should not be bound to a specific design language tightly (though it's hard to completely decouple component structure/behavior and design languages). If we use enum props, once we need to create a completely new theme package but some of the new style variants cannot be described with the preserved enum props, we'll have to use something like `class` to attach style hooks to implement these style variants.
 

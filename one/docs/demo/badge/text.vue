@@ -50,9 +50,9 @@ export default {
 </style>
 
 <docs>
-可以使用 `type` 属性，指定徽标在不同功能状态下的样式。
+可以使用 [`type`](#props-type) 属性，指定徽标在不同功能状态下的样式。
 </docs>
 
 <docs locale="en-US">
-Use the `type` prop to apply different contextual styles.
+Use the [`type`](#props-type) prop to apply different contextual styles.
 </docs>

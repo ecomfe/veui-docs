@@ -14,4 +14,4 @@ See [the demos of `GridContainer`](./grid-container#demos).
 
 | Name | Description |
 | -- | -- |
-| `default` | The content of the grid row. Can only have [`GridColumn`](./grid-column) components as direct children. |
+| ``default`` | The content of the grid row. Can only have [`GridColumn`](./grid-column) components as direct children. |

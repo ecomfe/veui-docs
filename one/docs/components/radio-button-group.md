@@ -4,7 +4,7 @@
 
 ### 尺寸
 
-可选的 `ui` 属性值：`s`/`m`。
+可选的 [`ui`](#props-ui) 属性值：`s` / `m`。
 
 [[ demo src="/demo/radio-button-group/default.vue" ]]
 
@@ -14,11 +14,11 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `items` | `Array<Object>` | `[]` | [^items] |
-| `value` | `*` | - | [^value] |
-| `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
-| `readonly` | `boolean=` | `false` | 是否为只读状态。 |
+| ``ui`` | `string=` | - | [^ui] |
+| ``items`` | `Array<Object>` | `[]` | [^items] |
+| ``value`` | `*` | - | [^value] |
+| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
 
 ^^^ui
 预设样式。
@@ -54,7 +54,7 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `item` | [^slot-item] |
+| ``item`` | [^slot-item] |
 
 ^^^slot-item
 按钮内文本区域。
@@ -77,7 +77,7 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `change` | [^event-change] |
+| ``change`` | [^event-change] |
 
 ^^^event-change
 :::badges

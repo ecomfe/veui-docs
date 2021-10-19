@@ -4,7 +4,7 @@
 
 ### 尺寸
 
-可选的 `ui` 属性值：`xs`/`s`/`m`。
+可选的 [`ui`](#props-ui) 属性值：`xs` / `s` / `m`。
 
 [[ demo src="/demo/switch/size.vue" ]]
 
@@ -20,12 +20,12 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `checked` | `boolean` | `false` | [^checked] |
-| `true-value` | `*` | `true` | 打开状态对应的值。 |
-| `false-value` | `*` | `false` | 关闭状态对应的值。 |
-| `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
-| `readonly` | `boolean=` | `false` | 是否为只读状态。 |
+| ``ui`` | `string=` | - | [^ui] |
+| ``checked`` | `boolean` | `false` | [^checked] |
+| ``true-value`` | `*` | `true` | 打开状态对应的值。 |
+| ``false-value`` | `*` | `false` | 关闭状态对应的值。 |
+| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
 
 ^^^ui
 预设样式。
@@ -51,21 +51,21 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | 开关的描述文本，点击时会切换选择状态。无默认内容。 |
+| ``default`` | 开关的描述文本，点击时会切换选择状态。无默认内容。 |
 
 ### 事件
 
 | 名称 | 描述 |
 | -- | -- |
-| `change` | 用户切换打开状态时触发，回调参数为 `(checked: boolean)`。`checked` 表示当前是否打开。 |
-| `input` | [^event-input] |
+| ``change`` | 用户切换打开状态时触发，回调参数为 `(checked: boolean)`。`checked` 表示当前是否打开。 |
+| ``input`` | [^event-input] |
 
 ^^^event-input
 :::badges
 `v-model`
 :::
 
-打开状态变化后触发，回调参数为 `(val: *)`。`val` 为当前 `model` 属性的值。与 `change` 事件不同，`input` 事件在数据操作导致状态变化时也会触发。
+打开状态变化后触发，回调参数为 `(val: *)`。`val` 为当前 `v-model` 的值。与 [`change`](#events-change) 事件不同，`input` 事件在数据操作导致状态变化时也会触发。
 ^^^
 
 此外，`Switch` 支持如下的原生事件：

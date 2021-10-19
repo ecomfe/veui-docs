@@ -10,11 +10,11 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `datasource` | `Array<Object>` | `[]` | [^datasource] |
-| `selected` | `Array<string>` | - | [^selected] |
-| `include-indeterminate` | `boolean` | `false` | 是否将半选状态的节点加入已选项。`datasource` 节点中的非叶子节点若有部分子孙节点被选中，则为半选状态。 |
-| `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
-| `readonly` | `boolean=` | `false` | 是否为只读状态。 |
+| ``datasource`` | `Array<Object>` | `[]` | [^datasource] |
+| ``selected`` | `Array<string>` | - | [^selected] |
+| ``include-indeterminate`` | `boolean` | `false` | 是否将半选状态的节点加入已选项。`datasource` 节点中的非叶子节点若有部分子孙节点被选中，则为半选状态。 |
+| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
 
 ^^^datasource
 数据源，项目类型为 `{label, value, disabled, children, ...}`。
@@ -41,7 +41,7 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `label` | [^slot-label] |
+| ``label`` | [^slot-label] |
 
 ^^^slot-label
 每个节点文本描述的内容。
@@ -70,12 +70,12 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `select` | [^event-select] |
+| ``select`` | [^event-select] |
 
 ^^^event-select
 :::badges
 `v-model`
 :::
 
-选中状态变化后触发，回调参数为 `(value: Array)`。`value` 类型与 `selected` 属性相同。
+选中状态变化后触发，回调参数为 `(value: Array)`。`value` 类型与 [`selected`](#props-selected) 属性相同。
 ^^^

@@ -38,34 +38,34 @@
 
 | 属性 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| `ui` | `string=` | - | [^ui] |
-| `type` | `string` | `'file'` | [^type] |
-| `value` | `Object | Array<Object>` | - | [^value] |
-| `key-field` | `string` | `'key'` | 用于指定文件对象的唯一 key，作为数据变化时正确处理文件列表顺序的依据。 |
-| `name` | `string` | `'file'` | 原生 `<input>` 元素的 `name`。 |
-| `action` | `string` | - | 上传地址。 |
-| `headers` | `Object` | `uploader.headers` | 需要加入 [HTTP 请求头](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers) 的内容。可进行全局统一配置。 |
-| `with-credentials` | `boolean` | `true` | 同 `XMLHttpRequest` 的 `with-credentials` 属性。 |
-| `request-mode` | `string` | `uploader.requestMode` | [^request-mode] |
-| `iframe-mode` | `string` | `uploader.iframeMode` | [^iframe-mode] |
-| `callback-namespace` | `string` | `uploader.callbackNamespace` | 在 `request-mode` 的值为 `'iframe'` 并且 `iframe-mode` 的值为 `'callback'` 的模式下，指定回调函数的命名空间，放在 `window` 对象下。可进行全局统一配置。 |
-| `data-type`| `string` | `'json'` | [^data-type] |
-| `convert-response` | `uploader.convertResponse` | - | [^convert-response] |
-| `accept` | `string` | - | 与原生 `<input>` 元素 的 `accept` 相同，在浏览器的文件类型筛选后再加一层校验。对于类似 `application/msword` 这样的 MIME type 与扩展名对不上的情形跳过校验。 |
-| `max-count` | `number` | - | 最大文件数量。 |
-| `max-size` | `number | string` | - | 单个文件的最大大小，如果是 `number`，单位是 `byte`；如果是 `string`，支持在数字后面添加单位，单位可以是 `b`/`kb`/`mb`/`gb`/`tb`。 |
-| `validator` | `function(Object): Object | Promise<Object>` | - | [^validator] |
-| `payload` | `Object` | - | 附带在上传请求中的额外参数。 |
-| `autoupload` | `boolean` | `true` | 指定是否在选完文件后立刻上传。 |
-| `order` | `string` | `'asc'` | [^order] |
-| `picker-position` | `string` | `'after'` | [^picker-position] |
-| `upload` | `function(Object, Object): function` | - | [^upload] |
-| `controls` | `function(Object, Array<Object>): Array<Object>` | - | [^controls] |
-| `multiple` | `boolean` | `false` | 上传多个文件，当 `max-count` 是 `1`，`multiple` 是 `true`，那么 `value` 也是数组。 |
-| `entries` | `function(Array<Object>): Array<Object>` | - | [^entries] |
-| `after-pick` | `function(Array<Object>): void` | - | 选择文件之后的回调。 |
-| `sortable` | `boolean` | `false` | 文件列表是否可以排序。 |
-| `preview-options` | `object` | `{wrap: true, indicator: 'number'}` | 传递给 [`Lightbox`](./lightbox) 的预览选项|
+| ``ui`` | `string=` | - | [^ui] |
+| ``type`` | `string` | `'file'` | [^type] |
+| ``value`` | `Object | Array<Object>` | - | [^value] |
+| ``key-field`` | `string` | `'key'` | 用于指定文件对象的唯一 key，作为数据变化时正确处理文件列表顺序的依据。 |
+| ``name`` | `string` | `'file'` | 原生 `<input>` 元素的 `name`。 |
+| ``action`` | `string` | - | 上传地址。 |
+| ``headers`` | `Object` | `uploader.headers` | 需要加入 [HTTP 请求头](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers) 的内容。可进行[全局统一配置](#configs-uploader-headers)。 |
+| ``with-credentials`` | `boolean` | `true` | 同 `XMLHttpRequest` 的 [`withCredentials`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/withCredentials) 属性。 |
+| ``request-mode`` | `string` | `uploader.requestMode` | [^request-mode] |
+| ``iframe-mode`` | `string` | `uploader.iframeMode` | [^iframe-mode] |
+| ``callback-namespace`` | `string` | `uploader.callbackNamespace` | 在 `request-mode` 的值为 `'iframe'` 并且 `iframe-mode` 的值为 `'callback'` 的模式下，指定回调函数的命名空间，放在 `window` 对象下。可进行[全局统一配置](#configs-uploader-callbackNamespace)。 |
+| ``data-type``| `string` | `'json'` | [^data-type] |
+| ``convert-response`` | `uploader.convertResponse` | - | [^convert-response] |
+| ``accept`` | `string` | - | 与原生 `<input>` 元素 的 [`accept`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/file#%E9%99%90%E5%88%B6%E5%8F%AF%E6%8E%A5%E5%8F%97%E7%9A%84%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B) 属性相同，在浏览器的文件类型筛选后再加一层校验。对于类似 `application/msword` 这样的 MIME type 与扩展名对不上的情形跳过校验。 |
+| ``max-count`` | `number` | - | 最大文件数量。 |
+| ``max-size`` | `number | string` | - | 单个文件的最大大小，如果是 `number`，单位是 `byte`；如果是 `string`，支持在数字后面添加单位，单位可以是 `b` / `kb` / `mb` / `gb` / `tb`。 |
+| ``validator`` | `function(Object): Object | Promise<Object>` | - | [^validator] |
+| ``payload`` | `Object` | - | 附带在上传请求中的额外参数。 |
+| ``autoupload`` | `boolean` | `true` | 指定是否在选完文件后立刻上传。 |
+| ``order`` | `string` | `'asc'` | [^order] |
+| ``picker-position`` | `string` | `'after'` | [^picker-position] |
+| ``upload`` | `function(Object, Object): function` | - | [^upload] |
+| ``controls`` | `function(Object, Array<Object>): Array<Object>` | - | [^controls] |
+| ``multiple`` | `boolean` | `false` | 上传多个文件，当 `max-count` 是 `1`，`multiple` 是 `true`，那么 `value` 也是数组。 |
+| ``entries`` | `function(Array<Object>): Array<Object>` | - | [^entries] |
+| ``after-pick`` | `function(Array<Object>): void` | - | 选择文件之后的回调。 |
+| ``sortable`` | `boolean` | `false` | 文件列表是否可以排序。 |
+| ``preview-options`` | `object` | `{wrap: true, indicator: 'number'}` | 传递给 [`Lightbox`](./lightbox) 的预览选项。 |
 
 
 ^^^ui
@@ -99,7 +99,7 @@
 ^^^
 
 ^^^request-mode
-指定异步上传方式。可进行全局统一配置。
+指定异步上传方式。可进行[全局统一配置](#configs-uploader-request-mode)。
 
 +++枚举值
 | 值 | 描述 |
@@ -111,13 +111,13 @@
 ^^^
 
 ^^^iframe-mode
-指定在 `request-mode` 的值为 `iframe` 的模式下，上传成功后的回调方式。可进行全局统一配置。
+指定在 [`request-mode`](#props-request-mode) 的值为 `iframe` 的模式下，上传成功后的回调方式。可进行[全局统一配置](#configs-uploader-request-mode)。
 
 +++枚举值
 | 值 | 描述 |
 | -- | -- |
 | `postmessage` | 通过 `PostMessage` 回调。 |
-| `callback` | 通过调用 `window` 的 `callback-namespace` 里的回调函数回调。 |
+| `callback` | 通过调用 `window` 的 [`callback-namespace`](#props-callback-namespace) 里的回调函数回调。 |
 +++
 ^^^
 
@@ -143,7 +143,7 @@
 | `src` | `string=` | 文件的地址。`success` 为 `true` 时必须。 |
 | `message` | `string=` | 上传失败时的出错信息。`success` 为 `false` 时必须。 |
 
-还可以给返回结果加上其它自定义的属性，这些自定义属性会被包含在 `value` 以及 `change`、`success`、`failure`、`remove`、`progress` 事件的回调参数 `file` 中 。可进行全局统一配置。
+还可以给返回结果加上其它自定义的属性，这些自定义属性会被包含在 [`value`](#props-value) 以及 [`change`](#events-change)、[`success`](#events-success)、[`failure`](#events-failure)、[`remove`](#events-remove)、[`progress`](#events-progress) 事件的回调参数 `file` 中 。可进行[全局统一配置](#configs-uploader-convert-response)。
 +++
 ^^^
 
@@ -188,7 +188,7 @@
 +++字段详情
 | 字段 | 类型 | 描述 |
 | -- | -- | -- |
-| `onload` | `function` | 上传完成的回调函数，参数内容与 `convert-response` prop 返回值相同。 |
+| `onload` | `function` | 上传完成的回调函数，参数内容与 [`convert-response`](#props-convert-response) 属性返回值相同。 |
 | `onprogress` | `function` | 上传进度发生变化的回调函数，参数为 `{ loaded: number, total: number }`，`loaded` 为已上传部分字节数，`total` 为文件总字节数。 |
 | `oncancel` | `function` | 自定义上传主动取消时对组件进行的回调，无参数。 |
 | `onerror` | `function` | 上传出错的回调函数，参数为 `{ message: string }`，`message` 为错误提示信息。 |
@@ -209,21 +209,21 @@
 ^^^
 
 ^^^entries
-控制每个上传文件的操作项，如删除，预览等，会传递默认的操作项数组作为参数，返回实际生效的操作项数组。操作项对象参考 `controls` 属性的字段详情。
+控制每个上传文件的操作项，如删除，预览等，会传递默认的操作项数组作为参数，返回实际生效的操作项数组。操作项对象参考 [`controls`](#props-controls) 属性的字段详情。
 ^^^
 
 ### 插槽
 
 | 名称 | 描述 |
 | -- | -- |
-| `button-label` | [^button-label] |
-| `upload` | 图片上传模式下，上传按钮的区域。 |
-| `desc` | 对文件数量、格式、大小等的提示内容。 |
-| `file` | [^file] |
-| `file-before` | 单个文件内容之前的区域。作用域参数与 `file` 插槽相同。 |
-| `file-after` | 单个文件内容之后的区域。作用域参数与 `file` 插槽相同。 |
-| `uploading` | 图片上传模式下，上传中的单个图片的区域。作用域参数与 `file` 插槽相同。 |
-| `failure` | 图片上传模式下，上传失败的单个图片的区域。作用域参数与 `file` 插槽相同。 |
+| ``button-label`` | [^button-label] |
+| ``upload`` | 图片上传模式下，上传按钮的区域。 |
+| ``desc`` | 对文件数量、格式、大小等的提示内容。 |
+| ``file`` | [^file] |
+| ``file-before`` | 单个文件内容之前的区域。作用域参数与 [`file`](#slots-file) 插槽相同。 |
+| ``file-after`` | 单个文件内容之后的区域。作用域参数与 [`file`](#slots-file) 插槽相同。 |
+| ``uploading`` | 图片上传模式下，上传中的单个图片的区域。作用域参数与 [`file`](#slots-file) 插槽相同。 |
+| ``failure`` | 图片上传模式下，上传失败的单个图片的区域。作用域参数与 [`file`](#slots-file) 插槽相同。 |
 
 ^^^button-label
 上传按钮里的内容。
@@ -248,13 +248,13 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `change` | [^event-change] |
-| `remove` | [^event-remove] |
-| `success` | 上传成功时触发，回调参数与 `remove` 事件的回调参数相同。 |
-| `failure` | 上传失败时触发，回调参数与 `remove` 事件的回调参数相同。 |
-| `invalid` | [^event-invalid] |
-| `statuschange` | [^event-statuschange] |
-| `progress` | [^event-progress] |
+| ``change`` | [^event-change] |
+| ``remove`` | [^event-remove] |
+| ``success`` | 上传成功时触发，回调参数与 [`remove`](#events-remove) 事件的回调参数相同。 |
+| ``failure`` | 上传失败时触发，回调参数与 [`remove`](#events-remove) 事件的回调参数相同。 |
+| ``invalid`` | [^event-invalid] |
+| ``statuschange`` | [^event-statuschange] |
+| ``progress`` | [^event-progress] |
 
 ^^^event-change
 只在上传成功、删除文件时触发，回调参数为 `(value)`。
@@ -283,7 +283,7 @@
 | `src` | `string` | 文件地址。 |
 | `status` | `string` | 上传状态。`'success'` 表示上传成功；`'uploading'` 表示正在上传；`'failure'` 表示上传失败。 |
 
-同时也包含在 `convert-response` 中添加的自定义属性。
+同时也包含在 [`convert-response`](#props-convert-response) 中添加的自定义属性。
 +++
 ^^^
 
@@ -293,7 +293,7 @@
 +++参数字段详情
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `file` | `Object` | 没有通过校验的文件信息，与 `remove` 事件的回调参数中的 `file` 相同。如果校验失败的原因是选择的文件数量超过最大数量 `max-count` 限制，则这个字段为空。 |
+| `file` | `Object` | 没有通过校验的文件信息，与 [`remove`](#events-remove) 事件的回调参数中的 `file` 相同。如果校验失败的原因是选择的文件数量超过最大数量 `max-count` 限制，则这个字段为空。 |
 | `errors` | `Array<Object>` | 包含该文件所有校验错误信息的数组，数组的每一项是包含校验失败信息的对象。 |
 +++
 
@@ -311,7 +311,7 @@
 | `TYPE_INVALID` | 文件类型校验失败。 | `string` | 文件名称。 |
 | `SIZE_INVALID` | 文件大小校验失败。 | `number` | 文件大小字节数。 |
 | `TOO_MANY_FILES` | 选择的文件数超过 `max-count` 限制。 | `number` | 已选择的文件数。 |
-| `CUSTOM_INVALID` | `validator` 自定义校验失败。 | `Object` | 文件对象，字段同 `remove` 事件回调参数。 |
+| `CUSTOM_INVALID` | `validator` 自定义校验失败。 | `Object` | 文件对象，字段同 [`remove`](#events-remove) 事件回调参数。 |
 +++
 ^^^
 
@@ -334,7 +334,7 @@
 +++参数详情
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `file` | `Object` | 与 `remove` 事件的回调参数中的 `file` 相同。 |
+| `file` | `Object` | 与 [`remove`](#events-remove) 事件的回调参数中的 `file` 相同。 |
 | `index` | `number` | 正在上传的文件的序号。 |
 | `event` | [`Event`](https://developer.mozilla.org/zh-CN/docs/Web/Events/progress) | 上传进度原生事件。 |
 +++
@@ -344,23 +344,23 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `uploader.requestMode` | `string` | `'xhr'` | 参见 [`request-mode`](#props) 属性。 |
-| `uploader.iframeMode` | `string` | `'postmessage'` | 参见 [`iframe-mode`](#props) 属性。 |
-| `uploader.callbackNamespace` | `string` | `'veuiUploadResult'` | 参见 [`callback-namespace`](#props) 属性。 |
-| `uploader.headers` | `Object` | - | 参见 [`headers`](#props) 属性。 |
-| `uploader.convertResponse` | `function(Object): Object` | - | 参见 [`convert-response`](#props) 属性。 |
-| `uploader.pickerPosition` | `string` | `'after'` | 参见 [`picker-position`](#props) 属性。 |
+| ``uploader.requestMode`` | `string` | `'xhr'` | 参见 [`request-mode`](#props-request-mode) 属性。 |
+| ``uploader.iframeMode`` | `string` | `'postmessage'` | 参见 [`iframe-mode`](#props-iframe-mode) 属性。 |
+| ``uploader.callbackNamespace`` | `string` | `'veuiUploadResult'` | 参见 [`callback-namespace`](#props-callback-namespace) 属性。 |
+| ``uploader.headers`` | `Object` | - | 参见 [`headers`](#props-headers) 属性。 |
+| ``uploader.convertResponse`` | `function(Object): Object` | - | 参见 [`convert-response`](#props-convert-response) 属性。 |
+| ``uploader.pickerPosition`` | `string` | `'after'` | 参见 [`picker-position`](#props-picker-position) 属性。 |
 
 ### 图标
 
 | 名称 | 描述 |
 | -- | -- |
-| `upload` | 上传文件。 |
-| `add-image` | 上传图片。 |
-| `clear` | 删除。 |
-| `success` | 上传成功。 |
-| `failure` | 上传失败。 |
-| `loading` | 上传中。 |
-| `file` | 已上传文件。 |
-| `alert` | 校验失败警告。 |
-| `preview` | 预览图片。 |
+| ``upload`` | 上传文件。 |
+| ``add-image`` | 上传图片。 |
+| ``clear`` | 删除。 |
+| ``success`` | 上传成功。 |
+| ``failure`` | 上传失败。 |
+| ``loading`` | 上传中。 |
+| ``file`` | 已上传文件。 |
+| ``alert`` | 校验失败警告。 |
+| ``preview`` | 预览图片。 |

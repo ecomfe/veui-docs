@@ -34,17 +34,17 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | 预设样式。`veui-theme-dls` 未提供，可自定义。 |
-| `open` | `boolean` | `false` | [^open] |
-| `target` | `string | Vue | Element` | - | [^target] |
-| `priority` | `number` | - | [^priority] |
-| `autofocus` | `boolean` | - | 是否自动抢占焦点到浮层内的第一个可聚焦元素。 |
-| `modal` | `boolean` | `false` | 是否是模态浮层。模态浮层会抢占焦点且限制键盘导航处于浮层内部（关闭后焦点会回归）。 |
-| `inline` | `boolean` | `false` | 是否将浮层渲染为内联内容。 |
-| `local` | `boolean` | `false` | 是否将浮层保留在原来的 DOM 位置，而非移动到全局位置并参与[全局浮层管理](../advanced/overlay)。 |
-| `overlay-class` | `string | Array | Object=` | - | [^overlay-class] |
-| `overlay-style` | `string | Array | Object=` | - | [^overlay-style] |
-| `options` | `Object` | - | 透传给底层 Popper.js 实现的 `modifiers` 配置项，具体内容参见[这里](https://popper.js.org/docs/v1/#modifiers)。 |
+| ``ui`` | `string=` | - | 预设样式。`veui-theme-dls` 未提供，可自定义。 |
+| ``open`` | `boolean` | `false` | [^open] |
+| ``target`` | `string | Vue | Element` | - | [^target] |
+| ``priority`` | `number` | - | [^priority] |
+| ``autofocus`` | `boolean` | - | 是否自动抢占焦点到浮层内的第一个可聚焦元素。 |
+| ``modal`` | `boolean` | `false` | 是否是模态浮层。模态浮层会抢占焦点且限制键盘导航处于浮层内部（关闭后焦点会回归）。 |
+| ``inline`` | `boolean` | `false` | 是否将浮层渲染为内联内容。 |
+| ``local`` | `boolean` | `false` | 是否将浮层保留在原来的 DOM 位置，而非移动到全局位置并参与[全局浮层管理](../advanced/overlay)。 |
+| ``overlay-class`` | `string | Array | Object=` | - | [^overlay-class] |
+| ``overlay-style`` | `string | Array | Object=` | - | [^overlay-style] |
+| ``options`` | `Object` | - | 透传给底层 Popper.js 实现的 `modifiers` 配置项，具体内容参见[这里](https://popper.js.org/docs/v1/#modifiers)。 |
 
 ^^^open
 :::badges
@@ -55,7 +55,7 @@
 ^^^
 
 ^^^target
-允许通过 [`ref`](https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E8%AE%BF%E9%97%AE%E5%AD%90%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B%E6%88%96%E5%AD%90%E5%85%83%E7%B4%A0)、[Vue 组件实例](https://cn.vuejs.org/v2/guide/instance.html)、[`Element`](https://developer.mozilla.org/zh-CN/docs/Web/API/Element) 的方式指定目标元素。如果目标元素存在，浮层会相对于该元素进行定位，具体定位参数由 `options` 属性指定。
+允许通过 [`ref`](https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E8%AE%BF%E9%97%AE%E5%AD%90%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B%E6%88%96%E5%AD%90%E5%85%83%E7%B4%A0)、[Vue 组件实例](https://cn.vuejs.org/v2/guide/instance.html)、[`Element`](https://developer.mozilla.org/zh-CN/docs/Web/API/Element) 的方式指定目标元素。如果目标元素存在，浮层会相对于该元素进行定位，具体定位参数由 [`options`](#props-options) 属性指定。
 
 +++类型详情
 | 类型 | 描述 |
@@ -89,18 +89,18 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | 浮层内容。 |
+| ``default`` | 浮层内容。 |
 
 ### 事件
 
 | 名称 | 描述 |
 | -- | -- |
-| `locate` | 浮层定位发生变化时触发。 |
-| `afteropen` | 浮层打开后触发。如果样式主题提供了退出动画，将在退出动画完毕后触发。 |
-| `afterclose` | 浮层关闭后触发。如果样式主题提供了退出动画，将在退出动画完毕后触发。 |
+| ``locate`` | 浮层定位发生变化时触发。 |
+| ``afteropen`` | 浮层打开后触发。如果样式主题提供了退出动画，将在退出动画完毕后触发。 |
+| ``afterclose`` | 浮层关闭后触发。如果样式主题提供了退出动画，将在退出动画完毕后触发。 |
 
 ### 全局配置
 
 | 配置项 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `overlay.overlayClass` | `string | Array | Object=` | `[]` | 全局配置需要添加到浮层容器上的类名，数据格式为所有 [Vue 支持的 `class` 表达式](https://cn.vuejs.org/v2/guide/class-and-style.html#%E7%BB%91%E5%AE%9A-HTML-Class)。 |
+| ``overlay.overlayClass`` | `string | Array | Object=` | `[]` | 全局配置需要添加到浮层容器上的类名，数据格式为所有 [Vue 支持的 `class` 表达式](https://cn.vuejs.org/v2/guide/class-and-style.html#%E7%BB%91%E5%AE%9A-HTML-Class)。 |

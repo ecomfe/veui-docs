@@ -4,25 +4,25 @@
 
 ### Stylistic variants
 
-Available style variants for the `ui` prop: `primary`/`strong`/`translucent`/`text`/`icon`.
+Available style variants for the [`ui`](#props-ui) prop: `primary` / `strong` / `translucent` / `text` / `icon`.
 
 [[ demo src="/demo/button/style.vue" ]]
 
 ### Size variants
 
-Available size variants for the `ui` prop: `xs`/`s`/`m`/`l`/`xl`.
+Available size variants for the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l` / `xl`.
 
 [[ demo src="/demo/button/size.vue" ]]
 
 ### Disabled state
 
-Use the `disabled` prop to set a button to disabled state.
+Use the [`disabled`](#props-disabled) prop to set a button to disabled state.
 
 [[ demo src="/demo/button/disabled.vue" ]]
 
 ### Loading state
 
-Use the `loading` prop to set a button to loading state (which will not respond upon clicks).
+Use the [`loading`](#props-loading) prop to set a button to loading state (which will not respond upon clicks).
 
 [[ demo src="/demo/button/loading.vue" ]]
 
@@ -32,10 +32,10 @@ Use the `loading` prop to set a button to loading state (which will not respond 
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `disabled` | `boolean=` | `false` | Whether the button is disabled. |
-| `type` | `string=` | `'button'` | [^type] |
-| `loading` | `boolean=` | `false` | Whether the button is in loading state. Loading buttons won't respond to user interactions. |
+| ``ui`` | `string=` | - | [^ui] |
+| ``disabled`` | `boolean=` | `false` | Whether the button is disabled. |
+| ``type`` | `string=` | `'button'` | [^type] |
+| ``loading`` | `boolean=` | `false` | Whether the button is in loading state. Loading buttons won't respond to user interactions. |
 
 ^^^ui
 Style variants. A space-separated list of enum values.
@@ -46,11 +46,11 @@ Style variants. A space-separated list of enum values.
 | `normal` | Normal button. Default style. |
 | `primary` | Primary button. |
 | `basic` | Basic button. |
-| `strong` | Strong button. Can be used alone or together with `text`/`icon`. |
+| `strong` | Strong button. Can be used alone or together with `text` / `icon`. |
 | `translucent` | Translucent button, typically used on dark background. |
 | `text` | Text button. |
 | `icon` | Icon button. |
-| `aux` | Auxilary button. Need to be used with `text`/`icon` styles. |
+| `aux` | Auxilary button. Need to be used with `text` / `icon` styles. |
 | `square` | Square button. Can be used with other styles. |
 | `xs` | Extra small. |
 | `s` | Small. |
@@ -80,7 +80,7 @@ Note that the default value is different from the native `<button>` element. You
 
 | Name | Description |
 | -- | -- |
-| `default` | Content of the button. |
+| ``default`` | Content of the button. |
 
 ### Events
 
@@ -90,4 +90,4 @@ Additionally, `Button` exposes all native events available for native `<button>`
 
 | Name | Description |
 | -- | -- |
-| `loading` | The loading spinner. |
+| ``loading`` | The loading spinner. |

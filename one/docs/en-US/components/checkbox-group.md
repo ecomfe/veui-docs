@@ -4,7 +4,7 @@
 
 ### Size variants
 
-Available size variant for the `ui` prop: `s`/`m`.
+Available size variant for the [`ui`](#props-ui) prop: `s` / `m`.
 
 [[ demo src="/demo/checkbox-group/default.vue" ]]
 
@@ -14,12 +14,12 @@ Available size variant for the `ui` prop: `s`/`m`.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `items` | `Array<Object>` | `[]` | [^items] |
-| `value` | `Array` | `[]` | [^value] |
-| `disabled` | `boolean=` | `false` | Whether the checkbox group is disabled. |
-| `readonly` | `boolean=` | `false` | Whether the checkbox group is read-only. |
-| `empty-value` | `*` | - | The value to be selected when all selected values are deselected. Used when `exclusive` items are present. |
+| ``ui`` | `string=` | - | [^ui] |
+| ``items`` | `Array<Object>` | `[]` | [^items] |
+| ``value`` | `Array` | `[]` | [^value] |
+| ``disabled`` | `boolean=` | `false` | Whether the checkbox group is disabled. |
+| ``readonly`` | `boolean=` | `false` | Whether the checkbox group is read-only. |
+| ``empty-value`` | `*` | - | The value to be selected when all selected values are deselected. Used when `exclusive` items are present. |
 
 ^^^ui
 Style variants.
@@ -56,10 +56,10 @@ The `value`s of the selected items.
 
 | Name | Description |
 | -- | -- |
-| `item` | [^slot-item] |
+| ``item`` | [^slot-item] |
 
 ^^^slot-item
-The label content of each checkbox. Displays the value of the `label` prop by default.
+The label content of each checkbox. Displays the value of the `label` property by default.
 
 +++Scope properties
 | Name | Type | Description |
@@ -77,7 +77,7 @@ Additionally, custom properties apart from the listed ones will also be passes i
 
 | Name | Description |
 | -- | -- |
-| `change` | [^event-change] |
+| ``change`` | [^event-change] |
 
 ^^^event-change
 :::badges

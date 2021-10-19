@@ -44,6 +44,7 @@ module.exports = {
   plugins: [
     { src: '~plugins/i18n.js' },
     { src: '~plugins/l10n.js' },
+    { src: '~plugins/target.js', ssr: false },
     { src: '~plugins/hm.js', ssr: false }
   ],
 

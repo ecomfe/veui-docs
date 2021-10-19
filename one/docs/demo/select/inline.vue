@@ -94,7 +94,7 @@ export default {
 </style>
 
 <docs>
-可以使用 `clearable` 属性将 `Select` 组件设置为允许删除已选值的模式。将 `OptionGroup` 的 `position` 属性设置为 `popup` 后可以让子选项在新的浮动子菜单中展现。
+可以使用 [`clearable`](#props-clearable) 属性将 `Select` 组件设置为允许删除已选值的模式。将 `OptionGroup` 的 [`position`](./option-group#props-position) 属性设置为 `popup` 后可以让子选项在新的浮动子菜单中展现。
 </docs>
 
 <docs locale="en-US">

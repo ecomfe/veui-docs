@@ -1,4 +1,4 @@
-@import "~highlight.js/styles/atom-one-light.css"
+@import "~highlight.js/styles/night-owl.css"
 
 margin-y($top, $bottom = $top)
   margin-top $top
@@ -141,19 +141,20 @@ margin-y($top, $bottom = $top)
   th
   td
     min-width 90px
-    padding 7px 14px
+    padding 8px 14px
     border 1px solid #f1f1f1
     border-style solid none
     text-align left
+    vertical-align top
 
     & > :first-child
-      margin-top 5px
+      margin-top 0
 
     & > :last-child
-      margin-bottom 5px
+      margin-bottom 0
 
     pre
-      padding 10px 15px
+      font-size 90%
 
     table
       margin-y(0.2em, 0.5em)
@@ -177,13 +178,15 @@ margin-y($top, $bottom = $top)
 
   code
   code&
-    padding 2px 4px
-    background-color #0066ff16
     font-size 90%
-    overflow visible
     hyphens none
-    border-radius 3px
     font-family Menlo, consolas, monospace
+
+    &:not(pre > code)
+      padding 2px 4px
+      background-color #0066ff16
+      overflow visible
+      border-radius 3px
 
   hr
   hr&
@@ -249,17 +252,14 @@ margin-y($top, $bottom = $top)
 
   pre
   pre&
-    border 1px solid #eee
     border-radius 4px
-    padding 18px 24px
-    background-color #f9f9f9
     white-space pre
     overflow auto
+    line-height 1.6
 
     code
       border none
-      background-color transparent
-      padding 0
+      padding 18px 24px
 
   var
     font-family "PT Serif", Georgia, serif
@@ -318,3 +318,23 @@ margin-y($top, $bottom = $top)
 
     a
       margin-right 10px
+
+  [data-target]
+    outline 2px solid transparent
+    outline-offset -1px
+    animation target-blink 3s ease 1 both
+
+  .hljs-attr
+    color #c5e478
+
+@keyframes target-blink
+  0%
+    outline-color #8fbcff
+
+  5%
+  15%
+    outline-color #0052cc
+
+  10%
+  95%
+    outline-color #8fbcff

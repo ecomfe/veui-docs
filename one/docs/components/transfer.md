@@ -4,7 +4,7 @@
 
 ### 尺寸
 
-可选的尺寸 `ui` 属性值：`s`/`m`。
+可选的尺寸 [`ui`](#props-ui) 属性值：`s` / `m`。
 
 [[ demo src="/demo/transfer/size.vue" ]]
 
@@ -26,18 +26,18 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `datasource` | `Array<Object>` | `[]` | [^datasource] |
-| `searchable` | `boolean=` | `true` | 是否允许搜索。 |
-| `filter` | `function=` | 见描述 | [^filter] |
-| `selected` | `Array=` | `[]` | [^selected] |
-| `candidate-placeholder` | `string=` | - | 待选区内搜索框的占位文本。 |
-| `selected-placeholder` | `string=` | - | 已选区内搜索框的占位文本。 |
-| `candidate-label` | `string=` | - | “待选项”标题的文字内容。 |
-| `selected-label` | `string=` | - | “已选项”标题的文字内容。 |
-| `selected-show-mode` | `string=` | `'tree'` | [^selected-show-mode] |
-| `keys` | `string | function` | `'value'` | [^keys] |
-| `merge-checked` | `string=` | `keep-all` | [^merge-checked] |
+| ``ui`` | `string=` | - | [^ui] |
+| ``datasource`` | `Array<Object>` | `[]` | [^datasource] |
+| ``searchable`` | `boolean=` | `true` | 是否允许搜索。 |
+| ``filter`` | `function=` | 见描述 | [^filter] |
+| ``selected`` | `Array=` | `[]` | [^selected] |
+| ``candidate-placeholder`` | `string=` | - | 待选区内搜索框的占位文本。 |
+| ``selected-placeholder`` | `string=` | - | 已选区内搜索框的占位文本。 |
+| ``candidate-label`` | `string=` | - | “待选项”标题的文字内容。 |
+| ``selected-label`` | `string=` | - | “已选项”标题的文字内容。 |
+| ``selected-show-mode`` | `string=` | `'tree'` | [^selected-show-mode] |
+| ``keys`` | `string | function` | `'value'` | [^keys] |
+| ``merge-checked`` | `string=` | `keep-all` | [^merge-checked] |
 
 ^^^ui
 预设样式。
@@ -73,7 +73,7 @@
 | `keyword` | `string` | 搜索关键词。 |
 | `item` | `Object` | 当前遍历到的数据项。 |
 | `index` | `number` | 当前数据项在兄弟项目中的索引。 |
-| `datasource` | `Array<Object>` | 与 `datasource` 属性一致。 |
+| `datasource` | `Array<Object>` | 与 [`datasource`](#props-datasource) 属性一致。 |
 +++
 
 +++默认值
@@ -92,7 +92,7 @@ function (keyword, { label }) {
 `v-model`
 :::
 
-当前选中的值，是 `datasource` 中选中项的 `value` 集合（受 `keys` 属性影响）。
+当前选中的值，是 `datasource` 中选中项的 `value` 集合（受 [`keys`](#props-keys) 属性影响）。
 ^^^
 
 ^^^selected-show-mode
@@ -129,17 +129,17 @@ function (keyword, { label }) {
 
 | 名称 | 描述 |
 | -- | -- |
-| `candidate` | 整个待选区。 |
-| `candidate-head` | [^candidate-head] |
-| `selected-head` | [^selected-head] |
-| `candidate-title` | 待选区内顶部标题文本区域。作用域参数与 `candidate-head` 一致。 |
-| `selected-title` | 已选区内顶部标题文本区域。作用域参数与 `selected-head` 一致。 |
-| `candidate-no-data` | 数据源没数据时显示的内容。 |
-| `selected-no-data` | 没有已选项时显示的内容。 |
-| `candidate-item` | [^candidate-item] |
-| `selected-item` | [^selected-item] |
-| `candidate-item-label` | 待选区内每一项的文本区域。作用域参数与 `candidate-item` 一致。 |
-| `selected-item-label` | 已选区内每一项的文本区域。当 `selected-show-mode` 为 `'tree'` 时作用域参数与 `selected-item` 一致。否则该插槽对应每个已选叶子项目的整条路径上的每个节点内容，此时作用域参数与 `candidate-item` 一致。 |
+| ``candidate`` | 整个待选区。 |
+| ``candidate-head`` | [^candidate-head] |
+| ``selected-head`` | [^selected-head] |
+| ``candidate-title`` | 待选区内顶部标题文本区域。作用域参数与 `candidate-head` 一致。 |
+| ``selected-title`` | 已选区内顶部标题文本区域。作用域参数与 `selected-head` 一致。 |
+| ``candidate-no-data`` | 数据源没数据时显示的内容。 |
+| ``selected-no-data`` | 没有已选项时显示的内容。 |
+| ``candidate-item`` | [^candidate-item] |
+| ``selected-item`` | [^selected-item] |
+| ``candidate-item-label`` | 待选区内每一项的文本区域。作用域参数与 `candidate-item` 一致。 |
+| ``selected-item-label`` | 已选区内每一项的文本区域。当 `selected-show-mode` 为 `'tree'` 时作用域参数与 `selected-item` 一致。否则该插槽对应每个已选叶子项目的整条路径上的每个节点内容，此时作用域参数与 `candidate-item` 一致。 |
 
 ^^^candidate-head
 待选区内顶部标题区域。
@@ -193,15 +193,15 @@ function (keyword, { label }) {
 
 | 名称 | 描述 |
 | -- | -- |
-| `select` | 切换选择时触发。回调参数为 `(selected: Array<string>)`。`selected` 为已选项 `value` 字段集合。 |
+| ``select`` | 切换选择时触发。回调参数为 `(selected: Array<string>)`。`selected` 为已选项 `value` 字段集合。 |
 
 ### 图标
 
 | 名称 | 描述 |
 | -- | -- |
-| `checked` | 已选状态。 |
-| `select` | 待选择。 |
-| `remove` | 移除。 |
-| `expand` | 收起状态，点击后展开。 |
-| `collapse` | 展开状态，点击后收起。 |
-| `separator` | 当 `selected-show-mode` 为 `'flat'` 时层级间的分隔符。 |
+| ``checked`` | 已选状态。 |
+| ``select`` | 待选择。 |
+| ``remove`` | 移除。 |
+| ``expand`` | 收起状态，点击后展开。 |
+| ``collapse`` | 展开状态，点击后收起。 |
+| ``separator`` | 当 `selected-show-mode` 为 `'flat'` 时层级间的分隔符。 |

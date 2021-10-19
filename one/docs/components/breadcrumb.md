@@ -8,13 +8,13 @@
 
 ### 风格
 
-可选的风格 `ui` 属性值：`strong`。
+可选的风格 [`ui`](#props-ui) 属性值：`strong`。
 
 [[ demo src="/demo/breadcrumb/style.vue" ]]
 
 ### 尺寸
 
-可选的尺寸 `ui` 属性值：`s`/`m`。
+可选的尺寸 [`ui`](#props-ui) 属性值：`s` / `m`。
 
 [[ demo src="/demo/breadcrumb/size.vue" ]]
 
@@ -38,7 +38,7 @@
 
 ### 事件监听
 
-监听跳转事件后处理而非直接路由跳转。
+监听 [`redirect`](#events-redirect) 事件后处理而非直接路由跳转。
 
 [[ demo src="/demo/breadcrumb/redirect.vue" ]]
 
@@ -48,8 +48,8 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| `ui` | `string=` | - | [^ui] |
-| `routes` | `Array<Object>` | `[]` | [^routes] |
+| ``ui`` | `string=` | - | [^ui] |
+| ``routes`` | `Array<Object>` | `[]` | [^routes] |
 
 ^^^ui
 预设样式。
@@ -73,9 +73,9 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | 支持内联模式，直接传入 [`BreadcrumbItem`](./breadcrumb-item) 组件列表。填充后 `routes` 属性将被忽略。 |
-| `item` | [^slot-item] |
-| `separator` | [^slot-separator] |
+| ``default`` | 支持内联模式，直接传入 [`BreadcrumbItem`](./breadcrumb-item) 组件列表。填充后 [`routes`](#props-routes) 属性将被忽略。 |
+| ``item`` | [^slot-item] |
+| ``separator`` | [^slot-separator] |
 
 ^^^slot-item
 用于为每个项目自定义内容。默认内容为 `routes` 项目的 `label` 或 [`BreadcrumbItem`]('./breadcrumb-item) 组件的默认插槽。
@@ -99,7 +99,7 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `redirect` | [^redirect] |
+| ``redirect`` | [^redirect] |
 
 ^^^redirect
 点击 `type` 为 `link` 的项目时将触发该事件，回调参数为 `(event, route, index)`。
@@ -107,8 +107,8 @@
 +++参数详情
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `event` | [Event](https://developer.mozilla.org/zh-CN/docs/Web/Events/click) | 事件对象。 |
-| `route` | `Object` | 面包屑条目对象。 |
-| `index` | `number` | 当前点击条目的索引。 |
+| ``event`` | [Event](https://developer.mozilla.org/zh-CN/docs/Web/Events/click) | 事件对象。 |
+| ``route`` | `Object` | 面包屑条目对象。 |
+| ``index`` | `number` | 当前点击条目的索引。 |
 +++
 ^^^

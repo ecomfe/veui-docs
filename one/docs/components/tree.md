@@ -4,7 +4,7 @@
 
 ### 尺寸
 
-可选的尺寸 `ui` 属性值：`m`/`s`。
+可选的尺寸 [`ui`](#props-ui) 属性值：`m` / `s`。
 
 [[ demo src="/demo/tree/size.vue" ]]
 
@@ -22,14 +22,14 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `datasource` | `Array<Object>` | `[]` | [^datasource] |
-| `expanded` | `Array` | `[]` | [^expanded] |
-| `checkable` | `boolean` | `false` | 子节点是否可勾选。 |
-| `checked` | `Array` | `[]` | [^checked] |
-| `selectable` | `boolean` | `false` | 点击整个节点区域时是否选中该节点。 |
-| `selected` | `string` | - | [^selected] |
-| `merge-checked` | `string` | `keep-all` | [^merge-checked] |
+| ``ui`` | `string=` | - | [^ui] |
+| ``datasource`` | `Array<Object>` | `[]` | [^datasource] |
+| ``expanded`` | `Array` | `[]` | [^expanded] |
+| ``checkable`` | `boolean` | `false` | 子节点是否可勾选。 |
+| ``checked`` | `Array` | `[]` | [^checked] |
+| ``selectable`` | `boolean` | `false` | 点击整个节点区域时是否选中该节点。 |
+| ``selected`` | `string` | - | [^selected] |
+| ``merge-checked`` | `string` | `keep-all` | [^merge-checked] |
 
 ^^^ui
 预设样式。
@@ -96,10 +96,10 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `item` | [^item] |
-| `item-label` | 每个节点的文本区域。作用域参数与 `item` 插槽一致。 |
-| `item-before` | 每个节点的文本之前的区域。作用域参数与 `item` 插槽一致。 |
-| `item-after` | 每个节点的文本之后的区域。作用域参数与 `item` 插槽一致。 |
+| ``item`` | [^item] |
+| ``item-label`` | 每个节点的文本区域。作用域参数与 [`item`](#slots-item) 插槽一致。 |
+| ``item-before`` | 每个节点的文本之前的区域。作用域参数与 [`item`](#slots-item) 插槽一致。 |
+| ``item-after`` | 每个节点的文本之后的区域。作用域参数与 [`item`](#slots-item) 插槽一致。 |
 
 ^^^item
 每个节点的整个内容区域。
@@ -122,10 +122,10 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `click` | [^click] |
-| `expand` | [^expand] |
-| `collapse` | [^collapse] |
-| `check` | [^check] |
+| ``click`` | [^click] |
+| ``expand`` | [^expand] |
+| ``collapse`` | [^collapse] |
+| ``check`` | [^check] |
 
 ^^^click
 点击节点触发，回调参数为 `(item, parents, index, depth)`。
@@ -153,7 +153,7 @@
 ^^^
 
 ^^^collapse
-点击收起图标或者整个节点时触发，由 `item-click` 属性决定，回调参数为 `(item, index, depth)`。
+点击收起图标或者整个节点时触发，由 [`item-click`](#props-item-click) 属性决定，回调参数为 `(item, index, depth)`。
 
 +++参数详情
 | 名称 | 类型 | 描述 |
@@ -169,12 +169,12 @@
 `v-model`
 :::
 
-勾选状态变化后触发，回调参数为 `(value: Array)`。`value` 为当前勾选中的叶节点的 `value` 字段组成的数组（受 `keys` 属性影响）。
+勾选状态变化后触发，回调参数为 `(value: Array)`。`value` 为当前勾选中的叶节点的 `value` 字段组成的数组（受 [`keys`](#props-keys) 属性影响）。
 ^^^
 
 ### 图标
 
 | 名称 | 描述 |
 | -- | -- |
-| `expand` | 收起状态，点击后展开。 |
-| `collapse` | 展开状态，点击后收起。 |
+| ``expand`` | 收起状态，点击后展开。 |
+| ``collapse`` | 展开状态，点击后收起。 |

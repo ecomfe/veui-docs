@@ -85,7 +85,7 @@ main
 
 .content
 .footer
-  max-width 1180px - $sidebar-width
+  max-width 1346px - $sidebar-width
   min-width 560px
   transition margin-left 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86)
 </style>

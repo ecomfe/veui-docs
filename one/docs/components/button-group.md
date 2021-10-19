@@ -4,19 +4,19 @@
 
 ### 风格
 
-可选的 `ui` 属性值：`primary`/`strong`/`basic`。
+可选的 [`ui`](#props-ui) 属性值：`primary` / `strong` / `basic`。
 
 [[ demo src="/demo/button-group/style.vue" ]]
 
 ### 尺寸
 
-可选的 `ui` 属性值：`xs`/`s`/`m`/`l`/`xl`。
+可选的 [`ui`](#props-ui) 属性值：`xs` / `s` / `m` / `l` / `xl`。
 
 [[ demo src="/demo/button-group/size.vue" ]]
 
 ### 使用 `items` 数据源
 
-可以使用 `items` 属性通过数据源指定按钮内容。
+可以使用 [`items`](#props-items) 属性通过数据源指定按钮内容。
 
 [[ demo src="/demo/button-group/items.vue" ]]
 
@@ -32,9 +32,9 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `items` | `Array<Object>` | - | [^items] |
-| `disabled` | `boolean=` | `false` | 按钮是否为禁用状态。 |
+| ``ui`` | `string=` | - | [^ui] |
+| ``items`` | `Array<Object>` | - | [^items] |
+| ``disabled`` | `boolean=` | `false` | 按钮是否为禁用状态。 |
 
 ^^^ui
 预设样式。为空格分隔的一组枚举值的组合。
@@ -68,13 +68,13 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | 按钮组内容区。 |
-| `item` | [^slot-item] |
+| ``default`` | 按钮组内容区。 |
+| ``item`` | [^slot-item] |
 
 ^^^slot-item
 用来定制每个按钮的内容。
 
-默认内容：`label` 属性值。
+默认内容：[`label`](#props-label) 属性值。
 
 +++作用域参数
 | 名称 | 类型 | 描述 |
@@ -92,7 +92,7 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `click` | [^click-event] |
+| ``click`` | [^click-event] |
 | <var>&lt;value&gt;</var> | [^value-var-event] |
 
 ^^^click-event
@@ -107,5 +107,5 @@
 ^^^
 
 ^^^value-var-event
-如果对应数据项有字符串类型的 `value` 字段，则在点击后触发名为 `value` 值的事件，参数与 `click` 事件相同。
+如果对应数据项有字符串类型的 `value` 字段，则在点击后触发名为 `value` 值的事件，参数与 [`click`](#events-click) 事件相同。
 ^^^

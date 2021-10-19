@@ -8,25 +8,25 @@
 
 ### 尺寸
 
-可选的尺寸 `ui` 属性值：`xs`/`s`/`m`/`l`。
+可选的尺寸 [`ui`](#props-ui) 属性值：`xs` / `s` / `m` / `l`。
 
 [[ demo src="/demo/select/size.vue" ]]
 
 ### 内联模式
 
-`Select` 组件内支持内联使用 `OptionGroup` 及 `Option` 组件来代替 `options` 属性。
+`Select` 组件内支持内联使用 `OptionGroup` 及 `Option` 组件来代替 [`options`](#props-options) 属性。
 
 [[ demo src="/demo/select/inline.vue" ]]
 
 ### 搜索选项
 
-使用 `searchable` 属性来开启选项搜索。
+使用 [`searchable`](#props-searchable) 属性来开启选项搜索。
 
 [[ demo src="/demo/select/searchable.vue" ]]
 
 ### 多选
 
-使用 `multiple` 属性来开启多选模式。
+使用 [`multiple`](#props-multiple) 属性来开启多选模式。
 
 [[ demo src="/demo/select/multiple.vue" ]]
 
@@ -36,20 +36,20 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `options` | `Array<Object>` | - | [^options] |
-| `value` | `Array<*>|*` | - | [^value] |
-| `multiple` | `boolean` | `false` | 是否允许多选。 |
-| `max` | `number` | - | 多选时允许选择的项目上限。 |
-| `placeholder` | `string` | `select.placeholder` | 未选择时的占位文本。 |
-| `clearable` | `boolean` | `false` | 是否可以清除已选内容。 |
-| `searchable` | `boolean` | `false` | 是否允许搜索选项。 |
-| `filter` | `function` | - | 选项过滤函数，签名为 `function(option: Object): boolean`。`option` 类型与 `options` 属性中的项相同。返回值表示是否将结果保留在下拉选项列表中。 |
-| `expanded` | `boolean=` | `false` | [^expanded] |
-| `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
-| `readonly` | `boolean=` | `false` | 是否为只读状态。 |
-| `overlay-class` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#属性) 属性。 |
-| `overlay-style` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#属性) 属性。 |
+| ``ui`` | `string=` | - | [^ui] |
+| ``options`` | `Array<Object>` | - | [^options] |
+| ``value`` | `Array<*>|*` | - | [^value] |
+| ``multiple`` | `boolean` | `false` | 是否允许多选。 |
+| ``max`` | `number` | - | 多选时允许选择的项目上限。 |
+| ``placeholder`` | `string` | `select.placeholder` | 未选择时的占位文本。 |
+| ``clearable`` | `boolean` | `false` | 是否可以清除已选内容。 |
+| ``searchable`` | `boolean` | `false` | 是否允许搜索选项。 |
+| ``filter`` | `function` | - | 选项过滤函数，签名为 `function(option: Object): boolean`。`option` 类型与 [`options`](#props-options) 属性中的项相同。返回值表示是否将结果保留在下拉选项列表中。 |
+| ``expanded`` | `boolean=` | `false` | [^expanded] |
+| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
+| ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
+| ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 
 ^^^ui
 预设样式。
@@ -72,7 +72,7 @@
 | -- | -- | -- |
 | `label` | `string` | 选项的文字说明。 |
 | `value` | `*` | 选项对应的值。 |
-| `options` | `Array<Object>=` | 选项的子选项数组，数组项类型同 `options` 属性数组项。 |
+| `options` | `Array<Object>=` | 选项的子选项数组，数组项类型同 [`options`](#props-options) 属性数组项。 |
 | `disabled` | `boolean=` | 选项是否为禁用。 |
 +++
 ^^^
@@ -97,15 +97,15 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | 选项列表的内容。在没有指定 `options` 属性时，可以用来直接内联 `Option` 或 `OptionGroup`。 |
-| `before` | [^slot-before] |
-| `after` | 选项列表后的内容。无默认内容。作用域参数同 `before` 插槽。 |
-| `label` | [^slot-label] |
-| `group-label` | [^slot-group-label] |
-| `option-label` | [^slot-option-label] |
-| `option` | [^slot-option] |
-| `trigger` | [^slot-trigger] |
-| `selected` | [^slot-selected] |
+| ``default`` | 选项列表的内容。在没有指定 [`options`](#props-options) 属性时，可以用来直接内联 `Option` 或 `OptionGroup`。 |
+| ``before`` | [^slot-before] |
+| ``after`` | 选项列表后的内容。无默认内容。作用域参数同 [`before`](#slots-before) 插槽。 |
+| ``label`` | [^slot-label] |
+| ``group-label`` | [^slot-group-label] |
+| ``option-label`` | [^slot-option-label] |
+| ``option`` | [^slot-option] |
+| ``trigger`` | [^slot-trigger] |
+| ``selected`` | [^slot-selected] |
 
 ^^^slot-before
 选项列表前的内容。无默认内容。
@@ -194,7 +194,7 @@
 +++作用域参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `attrs` | `Object` | 需要输出到触发元素上的属性，包括 `aria-*`/`disabled` 等，可以使用 `v-bind="attrs"` 统一进行输出。 |
+| `attrs` | `Object` | 需要输出到触发元素上的属性，包括 `aria-*` / `disabled` 等，可以使用 `v-bind="attrs"` 统一进行输出。 |
 | `handlers` | `Object` | [^handlers-desc] |
 | `value` | `*` | 已选项值。 |
 | `select` | `function(value: *): void` | 用于切换已选项。 |
@@ -236,9 +236,9 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `input` | 输入搜索关键词时触发。回调参数为 `(value: string)`，`value` 为输入框的 `value` 值。 |
-| `change` | [^event-change] |
-| `toggle` | 下拉菜单展开状态切换时触发，回调参数为 `(expanded: boolean)`。`expanded` 表示操作将触发下拉菜单展开还是收起。 |
+| ``input`` | 输入搜索关键词时触发。回调参数为 `(value: string)`，`value` 为输入框的 `value` 值。 |
+| ``change`` | [^event-change] |
+| ``toggle`` | 下拉菜单展开状态切换时触发，回调参数为 `(expanded: boolean)`。`expanded` 表示操作将触发下拉菜单展开还是收起。 |
 
 ^^^event-change
 :::badges
@@ -252,7 +252,7 @@
 
 | 配置项 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `select.placeholder` | `string` | `@@select.placeholder` | 未选择时的占位内容。 |
+| ``select.placeholder`` | `string` | `@@select.placeholder` | 未选择时的占位内容。 |
 
 :::tip
 `@@` 开头的值表示引用多语言配置中的相应字段。
@@ -262,5 +262,5 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `expand` | 展开浮层。 |
-| `collapse` | 收起浮层。 |
+| ``expand`` | 展开浮层。 |
+| ``collapse`` | 收起浮层。 |

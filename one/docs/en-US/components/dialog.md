@@ -4,7 +4,7 @@
 
 ### Sizes and fullscreen
 
-Available size/dimension variants for the `ui` prop: `s`/`m`/`narrow`/`medium`/`wide`/`auto`.
+Available size/dimension variants for the [`ui`](#props-ui) prop: `s` / `m` / `narrow` / `medium` / `wide` / `auto`.
 
 [[ demo src="/demo/dialog/size.vue" ]]
 
@@ -34,23 +34,24 @@ Available size/dimension variants for the `ui` prop: `s`/`m`/`narrow`/`medium`/`
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `modal` | `boolean=` | `true` | Whether to display a backdrop to block interactions with the content underneath. Modal dialogs preempt focus by default (will return focus when closed). |
-| `title` | `string=` | - | The title of the dialog. Will be ignored if `title` slot is specified. |
-| `open` | `boolean=` | `false` | [^open] |
-| `closable` | `boolean=` | `true` | Whether to display a close button at the top right corner. |
-| `outside-closable` | `boolean=` | `false` | Wether to close the dialog when user click outside. |
-| `draggable` | `boolean=` | `false` | Whether the dialog is draggable. |
-| `escapable` | `boolean=` | `false` | Whether to allow closing the dialog after pressing <kbd>esc</kbd>. Only works when `closable` is set to `true`. |
-| `inline` | `boolean=` | `false` | Whether the dialog is displayed inline thus takes up space. |
-| `footless` | `boolean=` | `false` | Whether to hide the default footer. |
-| `loading` | `boolean=` | `false` | Wehter the dialog is in loading state. When loading, the OK button will enter loading state as well and become unclickable. |
-| `disabled` | `boolean=` | `false` | Wehter the dialog is disabled. When disabled, the OK button will be disabled as well and become unclickable. |
-| `ok-label` | `string=` | - | The text content of the “OK” button. |
-| `cancel-label` | `string=` | - | The text content of the “Cancel” button. |
-| `priority` | `number=` | - | The stacking priority of the dialog overlay. See the [`priority`](./overlay#props) prop of [`Overlay`](./overlay) component. |
-| `before-close` | `function(string): boolean=|Promise<boolean=>` | - | [^before-close] |
-| `overlay-class` | `string|Object=` | - | The class expression applied to the root element of the dialog overlay. See the [`overlay-class`](./overlay#props) prop of [`Overlay`](./overlay) component. |
+| ``ui`` | `string=` | - | [^ui] |
+| ``modal`` | `boolean=` | `true` | Whether to display a backdrop to block interactions with the content underneath. Modal dialogs preempt focus by default (will return focus when closed). |
+| ``title`` | `string=` | - | The title of the dialog. Will be ignored if [`title`](#slots-title) slot is specified. |
+| ``open`` | `boolean=` | `false` | [^open] |
+| ``closable`` | `boolean=` | `true` | Whether to display a close button at the top right corner. |
+| ``outside-closable`` | `boolean=` | `false` | Wether to close the dialog when user click outside. |
+| ``draggable`` | `boolean=` | `false` | Whether the dialog is draggable. |
+| ``escapable`` | `boolean=` | `false` | Whether to allow closing the dialog after pressing <kbd>esc</kbd>. Only works when `closable` is set to `true`. |
+| ``inline`` | `boolean=` | `false` | Whether the dialog is displayed inline thus takes up space. |
+| ``footless`` | `boolean=` | `false` | Whether to hide the default footer. |
+| ``loading`` | `boolean=` | `false` | Wehter the dialog is in loading state. When loading, the OK button will enter loading state as well and become unclickable. |
+| ``disabled`` | `boolean=` | `false` | Wehter the dialog is disabled. When disabled, the OK button will be disabled as well and become unclickable. |
+| ``ok-label`` | `string=` | - | The text content of the “OK” button. |
+| ``cancel-label`` | `string=` | - | The text content of the “Cancel” button. |
+| ``priority`` | `number=` | - | The stacking priority of the dialog overlay. See the [`priority`](./overlay#props-priority) prop of [`Overlay`](./overlay) component. |
+| ``before-close`` | `function(string): boolean=|Promise<boolean=>` | - | [^before-close] |
+| ``overlay-class`` | `string | Object=` | - | The class expression applied to the root element of the dialog overlay. See the [`overlay-class`](./overlay#props-overlay-class) prop of [`Overlay`](./overlay) component. |
+| ``overlay-style`` | `string | Array | Object=` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
 
 ^^^ui
 Style variants.
@@ -109,7 +110,7 @@ methods: {
 | Name | Description |
 | -- | -- |
 | `default` | The content of the dialog. |
-| `title` | The title of the dialog. Will ignore the `title` prop if this slot is specified. |
+| `title` | The title of the dialog. Will ignore the [`title`](#props-title) prop if this slot is specified. |
 | `foot` | [^slot-foot] |
 
 ^^^slot-foot

@@ -14,11 +14,11 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `label` | `string` | - | 选项组的标题。 |
-| `options` | `Array<Object>` | `[]` | [^options] |
-| `position` | `string` | `inline` | [^position] |
-| `overlay-class` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#属性) 属性。 |
-| `overlay-style` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#属性) 属性。 |
+| ``label`` | `string` | - | 选项组的标题。 |
+| ``options`` | `Array<Object>` | `[]` | [^options] |
+| ``position`` | `string` | `inline` | [^position] |
+| ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
+| ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 
 ^^^options
 选项列表，项目的类型为 `{label, value, disabled, ...}`。
@@ -47,16 +47,16 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | 选项列表的内容。在没有指定 `options` 属性时，可以用来直接内联 `Option` 或其它 `OptionGroup` 组件。 |
-| `label` | [^slot-label] |
-| `group-label` | [^slot-group-label] |
-| `option-label` | [^slot-option-label] |
-| `option` | [^slot-option] |
+| ``default`` | 选项列表的内容。在没有指定 [`options`](#props-options) 属性时，可以用来直接内联 `Option` 或其它 `OptionGroup` 组件。 |
+| ``label`` | [^slot-label] |
+| ``group-label`` | [^slot-group-label] |
+| ``option-label`` | [^slot-option-label] |
+| ``option`` | [^slot-option] |
 
 ^^^slot-label
 选项组标题文本区域。
 
-默认内容：`label` 属性对应的文本。
+默认内容：[`label`](#props-label) 属性对应的文本。
 
 +++作用域参数
 | 名称 | 类型 | 描述 |
@@ -119,4 +119,4 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `expandable` | 可展开的项目。 |
+| ``expandable`` | 可展开的项目。 |

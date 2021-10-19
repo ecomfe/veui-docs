@@ -10,14 +10,14 @@
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| `selected` | `Object` | - | [^selected] |
-| `hour-class` | `string|Array|Object|function` | `{}` | The customized HTML `class` for the hour cell. When not being a function, supports all values defined by [Vue's `class` expressions](https://vuejs.org/v2/guide/class-and-style.html#Binding-HTML-Classes). If it's a function, the signature is `function(day: number, hour: number): string|Array<string>|Object<string, boolean>`. The return value is also a Vue `class` expression. |
-| `disabled-date` | `function(number, number): boolean` | `() => false` | Whether the hour cell is disabled. Parameter list is `(day: number, hour: number)`. `day` and `hour` denote the day of week and the hour respectively. Return value specifies whether the hour cell is disabled from selection. |
-| `shortcuts` | `Array` | `schedule.shortcuts` | [^shortcuts] |
-| `shortcuts-display` | `string` | `'inline'` | The display mode of the shortcuts. Supported values are `inline`/`popup`, which denote inline button groups and dropdown select, respectively. |
-| `statuses` | `Array<{label: string, value: string}>` | `schedule.statuses` | The datasource of the legends. Legend items will have a `class` value of <code>&#0096;veui-schedule-legend-${value}&#0096;</code> and the `label` property will be the text label of each status. |
-| `disabled` | `boolean=` | `false` | Whether the schedule component is disabled. |
-| `readonly` | `boolean=` | `false` | Whether the schedule component is read-only. |
+| ``selected`` | `Object` | - | [^selected] |
+| ``hour-class`` | `string | Array | Object | function` | `{}` | The customized HTML `class` for the hour cell. When not being a function, supports all values defined by [Vue's `class` expressions](https://vuejs.org/v2/guide/class-and-style.html#Binding-HTML-Classes). If it's a function, the signature is `function(day: number, hour: number): string | Array<string>|Object<string, boolean>`. The return value is also a Vue `class` expression. |
+| ``disabled-date`` | `function(number, number): boolean` | `() => false` | Whether the hour cell is disabled. Parameter list is `(day: number, hour: number)`. `day` and `hour` denote the day of week and the hour respectively. Return value specifies whether the hour cell is disabled from selection. |
+| ``shortcuts`` | `Array` | `schedule.shortcuts` | [^shortcuts] |
+| ``shortcuts-display`` | `string` | `'inline'` | The display mode of the shortcuts. Supported values are `inline` / `popup`, which denote inline button groups and dropdown select, respectively. |
+| ``statuses`` | `Array<{label: string, value: string}>` | `schedule.statuses` | The datasource of the legends. Legend items will have a `class` value of <code>&#0096;veui-schedule-legend-${value}&#0096;</code> and the `label` property will be the text label of each status. |
+| ``disabled`` | `boolean=` | `false` | Whether the schedule component is disabled. |
+| ``readonly`` | `boolean=` | `false` | Whether the schedule component is read-only. |
 
 ^^^selected
 :::badges
@@ -46,23 +46,23 @@ This sample stands for 9:00–18:00 of Monday and 0:00–3:00 & 18:00–21:00 of
 ^^^
 
 ^^^shortcuts
-Shortcut selection list. The type is `{label: string, selected: boolean|Array}`.
+Shortcut selection list. The type is `{label: string, selected: boolean | Array}`.
 
-`label` denotes the text label of each item. `selected` denotes the predefined time ranges. When being an array, it shares the same data type with the `selected` prop. When being `true`, it's same as `[[0, 23]]`.
+`label` denotes the text label of each item. `selected` denotes the predefined time ranges. When being an array, it shares the same data type with the [`selected`](#props-selected) prop. When being `true`, it's same as `[[0, 23]]`.
 ^^^
 
 ### Slots
 
 | Name | Description |
 | -- | -- |
-| `header` | The entire header section. |
-| `header-content` | The content of the header section, not including the container. |
-| `shortcuts` | The shortcuts section of the header section. |
-| `legend` | The legends section of the header section. |
-| `legend-label` | [^slot-legend-label] |
-| `hour` | [^slot-hour] |
-| `label` | [^slot-label] |
-| `tooltip` | [^slot-tooltip] |
+| ``header`` | The entire header section. |
+| ``header-content`` | The content of the header section, not including the container. |
+| ``shortcuts`` | The shortcuts section of the header section. |
+| ``legend`` | The legends section of the header section. |
+| ``legend-label`` | [^slot-legend-label] |
+| ``hour`` | [^slot-hour] |
+| ``label`` | [^slot-label] |
+| ``tooltip`` | [^slot-tooltip] |
 
 ^^^slot-legend-label
 The text label of each legend. Displays the `label` property of each legend by default.
@@ -114,21 +114,21 @@ The tooltip for each hour cell. Displays <code>&#0096;${hour}:00–${hour + 1}:0
 
 | Name | Description |
 | -- | -- |
-| `select` | [^event-select] |
+| ``select`` | [^event-select] |
 
 ^^^event-select
 :::badges
 `v-model`
 :::
 
-Triggered when selection changed. The callback parameter list is `(value: Object)`. `value` shares the same type with the `selected` prop.
+Triggered when selection changed. The callback parameter list is `(value: Object)`. `value` shares the same type with the [`selected`](#props-selected) prop.
 ^^^
 
-### Global config
+### Configs
 
 | Key | Type | Default | Description |
 | -- | -- | -- | -- |
-| `schedule.statuses` | Array<{name, label}> | See description. | [^config-statuses] |
+| ``schedule.statuses`` | Array<{name, label}> | See description. | [^config-statuses] |
 
 ^^^config-statuses
 The default status list with item type being `{name: string, label: string}`. The default value is:

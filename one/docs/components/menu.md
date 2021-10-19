@@ -10,7 +10,7 @@
 
 ### 可折叠
 
-使用 `collapsible` 属性控制菜单是否可以折叠。
+使用 [`collapsible`](#props-collapsible) 属性控制菜单是否可以折叠。
 
 [[ demo src="/demo/menu/collaspible.vue" ]]
 
@@ -24,13 +24,13 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `items` | `Array<Object>=` | `[]` | [^items] |
-| `active` | `string` | - | [^active] |
-| `matches` | `function(Object, string): boolean` | - | [^matches] |
-| `collapsible` | `boolean` | `false` | 整个导航菜单是否可折叠。 |
-| `collapsed` | `boolean` | `false` | [^collapsed] |
-| `expanded` | `Array<string>=` | `[]` | [^expanded] |
+| ``ui`` | `string=` | - | [^ui] |
+| ``items`` | `Array<Object>=` | `[]` | [^items] |
+| ``active`` | `string` | - | [^active] |
+| ``matches`` | `function(Object, string): boolean` | - | [^matches] |
+| ``collapsible`` | `boolean` | `false` | 整个导航菜单是否可折叠。 |
+| ``collapsed`` | `boolean` | `false` | [^collapsed] |
+| ``expanded`` | `Array<string>=` | `[]` | [^expanded] |
 
 
 ^^^ui
@@ -45,7 +45,7 @@
 ^^^
 
 ^^^active
-当前激活节点，若该节点定义了 `name` 则就是该 `name` 值，否则该值是由 `to` 生成的路由路径（[route.path](https://router.vuejs.org/api/#route-object-properties)）。
+当前激活节点，若该节点定义了 `name` 则就是该 `name` 值，否则该值是由 `to` 生成的路由路径（[route.path](https://router.vuejs.org/zh/api/#%E8%B7%AF%E7%94%B1%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7)）。
 
 ^^^
 
@@ -56,7 +56,7 @@
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `label` | `string` | 节点的文字描述。 |
-| `to` | `string | Object` | 节点的导航目的地。参考 [`Link`](./link) 组件的 [`to`](./link#props) 属性。 |
+| `to` | `string | Object` | 节点的导航目的地。参考 [`Link`](./link) 组件的 [`to`](./link#props-to) 属性。 |
 | `name` | `string` | 节点的唯一标识，`name` 和 `to` 二者至少有一个存在。 |
 | `disabled` | `boolean=` | 节点是否被禁用。 |
 | `icon` | `string|{render: function}` | 首层节点使用的图标。 |
@@ -89,23 +89,23 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `before` | 前置插槽。 |
-| `item` | [^item] |
-| `icon` | [^icon] |
-| `item-label` | [^item-label] |
-| `after` | 后置插槽。 |
+| ``before`` | 前置插槽。 |
+| ``item`` | [^item] |
+| ``icon`` | [^icon] |
+| ``item-label`` | [^item-label] |
+| ``after`` | 后置插槽。 |
 
 
 ^^^item
 每个节点的渲染插槽。
 
-默认内容：渲染了 `icon` 插槽和 `item-label` 插槽。
+默认内容：渲染了 [`icon`](#slots-icon) 插槽和 [`item-label`](#slots-item-label) 插槽。
 
 +++作用域参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `label` | `string` | 图标名称。 |
-| `to` | `string | Object` | 节点的导航目的地。参考 [`Link`](./link) 组件的 [`to`](./link#props) 属性。 |
+| `to` | `string | Object` | 节点的导航目的地。参考 [`Link`](./link) 组件的 [`to`](./link#props-to) 属性。 |
 | `name` | `string` | 节点的唯一标识，`name` 和 `to` 二者至少有一个存在。 |
 | `disabled` | `boolean=` | 节点是否被禁用。 |
 | `icon` | `string` | 首层节点使用的图标。 |
@@ -126,22 +126,22 @@
 ^^^
 
 ^^^item-label
-节点的 `label` 插槽。
+节点的文字标签插槽。
 
 默认内容：渲染节点对应的 `Link`。
 
-作用域参数参考 `item` 插槽。
+作用域参数参考 [`item`](#slots-item) 插槽。
 ^^^
 
 ### 事件
 
 | 名称 | 描述 |
 | -- | -- |
-| `activate` | 用户点击有 `to` 的节点触发，参数是激活节点的整个 `item` 数据。 |
-| `click` | 用户点击节点时触发，参数是激活节点整个 `item` 数据。 |
+| ``activate`` | 用户点击有 `to` 的节点触发，参数是激活节点的整个 `item` 数据。 |
+| ``click`` | 用户点击节点时触发，参数是激活节点整个 `item` 数据。 |
 
 ### 图标
 | 名称 | 描述 |
 | -- | -- |
-| `expand` | 展开。 |
-| `collapse` | 折叠。 |
+| ``expand`` | 展开。 |
+| ``collapse`` | 折叠。 |

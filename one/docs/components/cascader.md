@@ -5,25 +5,25 @@
 
 ### 尺寸
 
-可选的尺寸 `ui` 属性值：`xs`/`s`/`m`/`l`。
+可选的尺寸 [`ui`](#props-ui) 属性值：`xs` / `s` / `m` / `l`。
 
 [[ demo src="/demo/cascader/size.vue" ]]
 
 ### 内联模式
 
-使用 `inline` 属性来开启内联模式。
+使用 [`inline`](#props-inline) 属性来开启内联模式。
 
 [[ demo src="/demo/cascader/inline.vue" ]]
 
 ### 搜索选项
 
-使用 `searchable` 属性来开启选项搜索。
+使用 [`searchable`](#props-searchable) 属性来开启选项搜索。
 
 [[ demo src="/demo/cascader/searchable.vue" ]]
 
 ### 多选
 
-使用 `multiple` 属性来开启多选模式。
+使用 [`multiple`](#props-multiple) 属性来开启多选模式。
 
 [[ demo src="/demo/cascader/multiple.vue" ]]
 
@@ -33,25 +33,25 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `options` | `Array<Object>` | - | [^options] |
-| `value` | `Array<*>|*` | - | [^value] |
-| `multiple` | `boolean` | `false` | 是否允许多选。 |
-| `inline` | `boolean` | `false` | 下拉面板是否内联展示。 |
-| `max` | `number` | - | 多选时允许选择的项目上限。 |
-| `placeholder` | `string` | `cascader.placeholder` | 未选择时的占位文本。 |
-| `clearable` | `boolean` | `false` | 是否可以清除已选内容。 |
-| `searchable` | `boolean` | `false` | 是否允许搜索选项。 |
-| `expanded` | `boolean=` | `false` | [^expanded] |
-| `column-trigger` | `hover | click` | `click` | [^column-trigger] |
-| `select-mode` | `'leaf-only' | 'any'` | `any` | [^select-mode] |
-| `column-width` | `number | string` | - | [^column-width] |
-| `show-select-all` | `boolean` | `false` | 在多选模式下是否有全选按钮。 |
-| `value-display` | `'complete' | 'simple'` | `simple` | [^value-display] |
-| `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
-| `readonly` | `boolean=` | `false` | 是否为只读状态。 |
-| `overlay-class` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#属性) 属性。 |
-| `overlay-style` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#属性) 属性。 |
+| ``ui`` | `string=` | - | [^ui] |
+| ``options`` | `Array<Object>` | - | [^options] |
+| ``value`` | `Array<*>|*` | - | [^value] |
+| ``multiple`` | `boolean` | `false` | 是否允许多选。 |
+| ``inline`` | `boolean` | `false` | 下拉面板是否内联展示。 |
+| ``max`` | `number` | - | 多选时允许选择的项目上限。 |
+| ``placeholder`` | `string` | `cascader.placeholder` | 未选择时的占位文本。 |
+| ``clearable`` | `boolean` | `false` | 是否可以清除已选内容。 |
+| ``searchable`` | `boolean` | `false` | 是否允许搜索选项。 |
+| ``expanded`` | `boolean=` | `false` | [^expanded] |
+| ``column-trigger`` | `hover | click` | `click` | [^column-trigger] |
+| ``select-mode`` | `'leaf-only' | 'any'` | `any` | [^select-mode] |
+| ``column-width`` | `number | string` | - | [^column-width] |
+| ``show-select-all`` | `boolean` | `false` | 在多选模式下是否有全选按钮。 |
+| ``value-display`` | `'complete' | 'simple'` | `simple` | [^value-display] |
+| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
+| ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
+| ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 
 ^^^ui
 预设样式。
@@ -75,7 +75,7 @@
 | `label` | `string` | 选项的文字说明。 |
 | `value` | `*` | 选项对应的值。 |
 | `position` | `string` | 下级节点如何展示，默认弹出，可以设置 `inline` 来内联显示。 |
-| `options` | `Array<Object>=` | 选项的子选项数组，数组项类型同 `options` 属性数组项。 |
+| `options` | `Array<Object>=` | 选项的子选项数组，数组项类型同 [`options`](#props-options) 属性数组项。 |
 | `disabled` | `boolean=` | 选项是否为禁用。 |
 +++
 ^^^
@@ -139,16 +139,16 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `trigger` | [^slot-trigger] |
-| `pane` | 下拉面板中的内容插槽。用域参数同 `trigger` 插槽。 |
-| `before` | 选项列表前的内容。无默认内容。作用域参数同 `trigger` 插槽。 |
-| `after` | 选项列表后的内容。无默认内容。作用域参数同 `trigger` 插槽。 |
-| `column-before` | [^slot-column-before] |
-| `column-after` | 下拉面板中每列后的区域。无默认内容。作用域参数同 `column-before` 插槽。 |
-| `label` | [^slot-label] |
-| `option-label` | [^slot-option-label] |
-| `option` | [^slot-option] |
-| `selected` | [^slot-selected] |
+| ``trigger`` | [^slot-trigger] |
+| ``pane`` | 下拉面板中的内容插槽。用域参数同 [`trigger`](#slots-trigger) 插槽。 |
+| ``before`` | 选项列表前的内容。无默认内容。作用域参数同 [`trigger`](#slots-trigger) 插槽。 |
+| ``after`` | 选项列表后的内容。无默认内容。作用域参数同 [`trigger`](#slots-trigger) 插槽。 |
+| ``column-before`` | [^slot-column-before] |
+| ``column-after`` | 下拉面板中每列后的区域。无默认内容。作用域参数同 [`column-before`](#slots-column-before) 插槽。 |
+| ``label`` | [^slot-label] |
+| ``option-label`` | [^slot-option-label] |
+| ``option`` | [^slot-option] |
+| ``selected`` | [^slot-selected] |
 
 ^^^slot-trigger
 整个下拉触发区域。
@@ -218,7 +218,7 @@
 
 默认内容：`Option` 内的组件默认结构。
 
-作用域参数同 `option-label` 插槽。
+作用域参数同 [`option-label`](#slots-option-label) 插槽。
 ^^^
 
 ^^^slot-selected
@@ -246,10 +246,10 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `input` | 输入搜索关键词时触发。回调参数为 `(value: string)`，`value` 为输入框的 `value` 值。 |
-| `select` | [^event-select] |
-| `afteropen` | 下拉打开后触发。 |
-| `afterclose` | 下拉关闭后触发。 |
+| ``input`` | 输入搜索关键词时触发。回调参数为 `(value: string)`，`value` 为输入框的 `value` 值。 |
+| ``select`` | [^event-select] |
+| ``afteropen`` | 下拉打开后触发。 |
+| ``afterclose`` | 下拉关闭后触发。 |
 
 ^^^event-select
 :::badges
@@ -263,7 +263,7 @@
 
 | 配置项 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `cascader.placeholder` | `string` | `@@cascader.placeholder` | 未选择时的占位内容。 |
+| ``cascader.placeholder`` | `string` | `@@cascader.placeholder` | 未选择时的占位内容。 |
 
 :::tip
 `@@` 开头的值表示引用多语言配置中的相应字段。
@@ -273,7 +273,7 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `expand` | 展开下拉。 |
-| `collapse` | 收起下拉。 |
-| `clear` | 清除。 |
-| `separator` | 分隔符。 |
+| ``expand`` | 展开下拉。 |
+| ``collapse`` | 收起下拉。 |
+| ``clear`` | 清除。 |
+| ``separator`` | 分隔符。 |

@@ -68,9 +68,9 @@ section {
 </style>
 
 <docs>
-`ButtonGroup` 的 `disabled` 属性仅在使用 `items` 指定内容时生效，如果使用内联的 `Button` 组件，则需要为每个按钮分别指定 `disabled` 属性。
+`ButtonGroup` 的 [`disabled`](#props-disabled) 属性仅在使用 `items` 指定内容时生效，如果使用内联的 `Button` 组件，则需要为每个按钮分别指定 [`disabled`](./button#props-disabled) 属性。
 </docs>
 
 <docs locale="en-US">
-When given a string `value` property on an item, clicking the corresponding button will emit an event with the same name on `ButtonGroup`.
+The [`disabled`](#props-disabled) prop of `ButtonGroup` only takes effect when the content is specified using `items`, and if inline `Button` components are used, you need to specify the [`disabled`](./button#props-disabled) prop for each button.
 </docs>

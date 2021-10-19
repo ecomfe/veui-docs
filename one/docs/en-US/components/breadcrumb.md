@@ -8,13 +8,13 @@
 
 ### Stylistic variants
 
-Available style variants for the `ui` prop: `strong`.
+Available style variants for the [`ui`](#props-ui) prop: `strong`.
 
 [[ demo src="/demo/breadcrumb/style.vue" ]]
 
 ### Size variants
 
-Available size variants for the `ui` prop: `s`/`m`.
+Available size variants for the [`ui`](#props-ui) prop: `s` / `m`.
 
 [[ demo src="/demo/breadcrumb/size.vue" ]]
 
@@ -26,7 +26,7 @@ Can be used with embedded `BreadcrumbItem`s.
 
 ### Using datasource
 
-Can be used with the `routes` prop as well.
+Can be used with the [`routes`](#props-routes) prop as well.
 
 [[ demo src="/demo/breadcrumb/datasource.vue" ]]
 
@@ -38,7 +38,7 @@ Separators can be customized.
 
 ### Events mode
 
-Handling `redirect` event instead of redirect with router.
+Handling [`redirect`](#events-redirect) event instead of redirect with router.
 
 [[ demo src="/demo/breadcrumb/redirect.vue" ]]
 
@@ -48,8 +48,8 @@ Handling `redirect` event instead of redirect with router.
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
-| `ui` | `string=` | - | [^ui] |
-| `routes` | `Array<Object>` | `[]` | [^routes] |
+| ``ui`` | `string=` | - | [^ui] |
+| ``routes`` | `Array<Object>` | `[]` | [^routes] |
 
 ^^^ui
 Style variants.
@@ -63,7 +63,7 @@ Style variants.
 ^^^
 
 ^^^routes
-The datasource for breadcrumb items. The type of items is `{label: string, type: string, to: string|Object=, native: boolean=}`. Properties apart from `label` can be referred to the props of [`BreadcrumbItem`](./breadcrumb-item) component.
+The datasource for breadcrumb items. The type of items is `{label: string, type: string, to: string | Object=, native: boolean=}`. Properties apart from `label` can be referred to the props of [`BreadcrumbItem`](./breadcrumb-item) component.
 
 :::warning
 The last item will always be displayed as plain text by default.
@@ -74,9 +74,9 @@ The last item will always be displayed as plain text by default.
 
 | Name | Description |
 | -- | -- |
-| `default` | The items of the breadcrumb. Can only have [`BreadcrumbItem`](./breadcrumb-item) components as direct children. The `routes` prop will be ignored when this slot is specified. |
-| `item` | [^slot-item] |
-| `separator` | [^slot-separator] |
+| ``default`` | The items of the breadcrumb. Can only have [`BreadcrumbItem`](./breadcrumb-item) components as direct children. The [`routes`](#props-routes) prop will be ignored when this slot is specified. |
+| ``item`` | [^slot-item] |
+| ``separator`` | [^slot-separator] |
 
 ^^^slot-item
 The content of each breadcrumb item. Default to the `label` properties of each item within `routes`, or the default slot content of [`BreadcrumbItem`]('./breadcrumb-item) components.
@@ -100,7 +100,7 @@ When using Vue.js version `2.5.17` and below, it's required to bind a `slot-scop
 
 | Name | Description |
 | -- | -- |
-| `redirect` | [^redirect] |
+| ``redirect`` | [^redirect] |
 
 ^^^redirect
 

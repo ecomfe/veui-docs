@@ -71,9 +71,9 @@ section {
 </style>
 
 <docs>
-可使用 `max` 属性控制选中选项的最大数量。这种场景下也可以使用 `searchable` 属性控制是否允许搜索选项。
+可使用 [`max`](#props-max) 属性控制选中选项的最大数量。这种场景下也可以使用 [`searchable`](#props-searchable) 属性控制是否允许搜索选项。
 </docs>
 
 <docs locale="en-US">
-Use `max` to specify the max number of options that can be selected. The `searchable` prop can also be used here to make options searchable.
+Use `max` to specify the max number of options that can be selected. The [`searchable`](#props-searchable) prop can also be used here to make options searchable.
 </docs>

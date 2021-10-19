@@ -4,7 +4,7 @@
 
 ### 尺寸
 
-可选的 `ui` 属性值：`s`/`m`。
+可选的 [`ui`](#props-ui) 属性值：`s` / `m`。
 
 [[ demo src="/demo/checkbox-group/default.vue" ]]
 
@@ -20,12 +20,12 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `items` | `Array<Object>` | `[]` | [^items] |
-| `value` | `Array` | `[]` | [^value] |
-| `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
-| `readonly` | `boolean=` | `false` | 是否为只读状态。 |
-| `empty-value` | `*` | - | 当取消所有选择时组件需要默认选中的值，通常用于存在 `exclusive` 选项的场景。 |
+| ``ui`` | `string=` | - | [^ui] |
+| ``items`` | `Array<Object>` | `[]` | [^items] |
+| ``value`` | `Array` | `[]` | [^value] |
+| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
+| ``empty-value`` | `*` | - | 当取消所有选择时组件需要默认选中的值，通常用于存在 `exclusive` 选项的场景。 |
 
 ^^^ui
 预设样式。
@@ -62,7 +62,7 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `item` | [^slot-item] |
+| ``item`` | [^slot-item] |
 
 ^^^slot-item
 选项描述文本区域。
@@ -85,7 +85,7 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `change` | [^event-change] |
+| ``change`` | [^event-change] |
 
 ^^^event-change
 :::badges

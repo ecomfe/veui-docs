@@ -4,7 +4,7 @@
 
 ### Size variants
 
-Available size variants for the `ui` prop: `s`/`m`.
+Available size variants for the [`ui`](#props-ui) prop: `s` / `m`.
 
 [[ demo src="/demo/tree/size.vue" ]]
 
@@ -22,14 +22,14 @@ Available size variants for the `ui` prop: `s`/`m`.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `datasource` | `Array<Object>` | `[]` | [^datasource] |
-| `expanded` | `Array` | `[]` | [^expanded] |
-| `checkable` | `boolean` | `false` | Whether the rows are checkable. |
-| `checked` | `Array` | `[]` | [^checked] |
-| `selectable` | `boolean` | `false` | Whether the nodes are selectable. |
-| `selected` | `string` | - | [^selected] |
-| `merge-checked` | `string` | `keep-all` | [^merge-checked] |
+| ``ui`` | `string=` | - | [^ui] |
+| ``datasource`` | `Array<Object>` | `[]` | [^datasource] |
+| ``expanded`` | `Array` | `[]` | [^expanded] |
+| ``checkable`` | `boolean` | `false` | Whether the rows are checkable. |
+| ``checked`` | `Array` | `[]` | [^checked] |
+| ``selectable`` | `boolean` | `false` | Whether the nodes are selectable. |
+| ``selected`` | `string` | - | [^selected] |
+| ``merge-checked`` | `string` | `keep-all` | [^merge-checked] |
 
 ^^^ui
 Style variants.
@@ -95,10 +95,10 @@ Merge strategy for selected values. When all child nodes under a node are select
 
 | Name | Description |
 | -- | -- |
-| `item` | [^item] |
-| `item-label` | The label of each node. Shares the same scope properties with the `item` slot. |
-| `item-before` | The area before the label of each node. Shares the same scope properties with the `item` slot. |
-| `item-after` | The area after the label of each node. Shares the same scope properties with the `item` slot. |
+| ``item`` | [^item] |
+| ``item-label`` | The label of each node. Shares the same scope properties with the [`item`](#slots-item) slot. |
+| ``item-before`` | The area before the label of each node. Shares the same scope properties with the [`item`](#slots-item) slot. |
+| ``item-after`` | The area after the label of each node. Shares the same scope properties with the [`item`](#slots-item) slot. |
 
 ^^^item
 The content of each entire node.
@@ -120,9 +120,9 @@ Additionally, custom properties apart from the listed ones will also be passes i
 
 | Name | Description |
 | -- | -- |
-| `click` | [^click] |
-| `expand` | [^expand] |
-| `collapse` | [^collapse] |
+| ``click`` | [^click] |
+| ``expand`` | [^expand] |
+| ``collapse`` | [^collapse] |
 
 ^^^click
 Triggered when the node is clicked. The callback parameter list is `(item, parents, index, depth)`.
@@ -165,5 +165,5 @@ Triggered when the node is collapsed. The callback parameter list is `(item, ind
 
 | Name | Description |
 | -- | -- |
-| `expand` | Click to expand (currently being collapsed). |
-| `collapse` | Click to collapse (currently being expanded). |
+| ``expand`` | Click to expand (currently being collapsed). |
+| ``collapse`` | Click to collapse (currently being expanded). |

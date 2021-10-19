@@ -24,7 +24,7 @@
 
 ### 绑定值
 
-类型：`function|Object`。
+类型：`function | Object`。
 
 使用 `function` 类型则绑定值表示按下方向键后触发的回调函数。例如：
 
@@ -58,7 +58,7 @@
 
 ### 修饰符
 
-对应 `Object` 类型绑定值中的 `axis`/`step`。例如：
+对应 `Object` 类型绑定值中的 `axis` / `step`。例如：
 
 ```html
 <div tabindex="-1" v-nudge.x.2="{ update: delta => this.val += delta }"></div>

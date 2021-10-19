@@ -14,7 +14,7 @@
 
 ### 绑定值
 
-类型：`function|Object`。
+类型：`function | Object`。
 
 使用 `function` 类型则绑定值表示触发长按或后续重复触发的回调函数。例如：
 
@@ -35,10 +35,10 @@
 
 | 参数 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `timeout` | `number` | `longpress.timeout` | 触发长按等待的毫秒数。可进行[全局配置](#全局配置)。 |
+| `timeout` | `number` | `longpress.timeout` | 触发长按等待的毫秒数。可进行[全局配置](#configs-longpress-timeout)。 |
 | `handler` | `function` | `function() {}` | 触发长按及后续重复触发时的回调函数。 |
 | `repeat` | `boolean` | `false` | 保持长按时是否重复触发回调，类似按下键盘按键后连续自动输入的效果。 |
-| `repeatInterval` | `number` | `longpress.repeatInterval` | 重复触发回调间隔的毫秒数。可进行[全局配置](#全局配置)。 |
+| `repeatInterval` | `number` | `longpress.repeatInterval` | 重复触发回调间隔的毫秒数。可进行[全局配置](#configs-longpress-repeatInterval)。 |
 
 :::warning
 `Object` 类型提供的参数会覆盖通过指令参数、修饰符指定的参数。

@@ -4,25 +4,25 @@
 
 ### Stylistic variants
 
-Available style variants for the `ui` prop: `normal`/`strong`/`reverse`.
+Available style variants for the [`ui`](#props-ui) prop: `normal` / `strong` / `reverse`.
 
 [[demo src="/demo/loading/style.vue"]]
 
 ### Size variants
 
-Available size variants for the `ui` prop: `s`/`m`/`l`.
+Available size variants for the [`ui`](#props-ui) prop: `s` / `m` / `l`.
 
 [[demo src="/demo/loading/size.vue"]]
 
 ### Layout variants
 
-Available layout variants for the `ui` prop: `vertical`.
+Available layout variants for the [`ui`](#props-ui) prop: `vertical`.
 
 [[demo src="/demo/loading/layout.vue"]]
 
 ### Custom loading icons
 
-Using `spinner` slot to replace default loading icon.
+Using [`spinner`](#slots-spinner) slot to replace default loading icon.
 
 [[demo src="/demo/loading/slot.vue"]]
 
@@ -30,8 +30,8 @@ Using `spinner` slot to replace default loading icon.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `loading` | `boolean` | `false` | Whether the component is in loading state. |
+| ``ui`` | `string=` | - | [^ui] |
+| ``loading`` | `boolean` | `false` | Whether the component is in loading state. |
 
 ^^^ui
 Style variants. A space-separated list of enum values.
@@ -52,5 +52,5 @@ Style variants. A space-separated list of enum values.
 
 | Name | Description |
 | -- | -- |
-| `spinner` | Loading icon. |
-| `default` | Loading description. |
+| ``spinner`` | Loading icon. |
+| ``default`` | Loading description. |

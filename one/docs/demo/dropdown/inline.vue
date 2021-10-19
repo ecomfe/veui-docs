@@ -65,5 +65,5 @@ export default {
 </script>
 
 <docs>
-将 `OptionGroup` 的 `position` 属性设置为 `popup` 后可以让子选项在新的浮动子菜单中展现。
+将 `OptionGroup` 的 [`position`](#props-position) 属性设置为 `popup` 后可以让子选项在新的浮动子菜单中展现。
 </docs>

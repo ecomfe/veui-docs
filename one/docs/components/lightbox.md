@@ -10,18 +10,18 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | 预设样式。`veui-theme-dls` 未提供，可自定义。 |
-| `open` | `boolean` | `false` | [^open] |
-| `datasource` | `Array<Object>` | `[]` | [^datasource] |
-| `index` | `number=` | `0` | [^index] |
-| `wrap` | `boolean=` | `false` | 是否可以循环播放。 |
-| `closable` | `boolean=` | `true` | 是否显示关闭按钮。 |
-| `escapable` | `boolean=` | `true` | 按下 <kbd>esc</kbd> 键是否可以关闭浮层。仅在 `closable` 为 `true` 时生效。 |
-| `priority` | `number=` | - | 浮层层叠权重，参考 [`Overlay`](./overlay) 组件的 [`priority`](./overlay#props) 属性。 |
-| `before-close` | `function(string): boolean=|Promise<boolean=>` | - | [^before-close] |
-| `overlay-class` | `string | Array | Object=` | - | 浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props) 属性。 |
-| `indicator` | `string=` | `'number'` | [^indicator] |
-| `options` | `Object=` | `{ video: { muted: true, autoplay: true, controls: true } }` | 额外配置。 |
+| ``ui`` | `string=` | - | 预设样式。`veui-theme-dls` 未提供，可自定义。 |
+| ``open`` | `boolean` | `false` | [^open] |
+| ``datasource`` | `Array<Object>` | `[]` | [^datasource] |
+| ``index`` | `number=` | `0` | [^index] |
+| ``wrap`` | `boolean=` | `false` | 是否可以循环播放。 |
+| ``closable`` | `boolean=` | `true` | 是否显示关闭按钮。 |
+| ``escapable`` | `boolean=` | `true` | 按下 <kbd>esc</kbd> 键是否可以关闭浮层。仅在 `closable` 为 `true` 时生效。 |
+| ``priority`` | `number=` | - | 浮层层叠权重，参考 [`Overlay`](./overlay) 组件的 [`priority`](./overlay#props-priority) 属性。 |
+| ``before-close`` | `function(string): boolean=|Promise<boolean=>` | - | [^before-close] |
+| ``overlay-class`` | `string | Array | Object=` | - | 浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
+| ``indicator`` | `string=` | `'number'` | [^indicator] |
+| ``options`` | `Object=` | `{ video: { muted: true, autoplay: true, controls: true } }` | 额外配置。 |
 
 ^^^open
 :::badges
@@ -75,15 +75,15 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `item` | [^slot-item] |
-| `desc` | [^slot-desc] |
+| ``item`` | [^slot-item] |
+| ``desc`` | [^slot-desc] |
 
 ^^^slot-item
 可用来定制每个灯箱项的媒体展示区域。
 
 默认内容：每项图片或视频。
 
-作用域参数为 `datasource` 属性每个列表项的内容（可以有自定义字段）加上 `index: number` 表示轮播项的序号。即整个 `slot-scope` 绑定的值为 `{src, alt, type, desc, index, ...}`。
+作用域参数为 [`datasource`](#props-datasource) 属性每个列表项的内容（可以有自定义字段）加上 `index: number` 表示轮播项的序号。即整个 `slot-scope` 绑定的值为 `{src, alt, type, desc, index, ...}`。
 ^^^
 
 ^^^slot-desc
@@ -91,19 +91,19 @@
 
 默认内容：每项描述文字。
 
-作用域参数为 `datasource` 属性每个列表项的内容（可以有自定义字段）加上 `index: number` 表示轮播项的序号。即整个 `slot-scope` 绑定的值为 `{src, alt, type, desc, index, ...}`。
+作用域参数为 [`datasource`](#props-datasource) 属性每个列表项的内容（可以有自定义字段）加上 `index: number` 表示轮播项的序号。即整个 `slot-scope` 绑定的值为 `{src, alt, type, desc, index, ...}`。
 ^^^
 
 ### 事件
 
 | 名称 | 描述 |
 | -- | -- |
-| `cancel` | 灯箱关闭后触发。 |
+| ``cancel`` | 灯箱关闭后触发。 |
 
 ### 图标
 
 | 名称 | 描述 |
 | -- | -- |
-| `close` | 关闭。 |
-| `prev` | 上一页。 |
-| `next` | 下一页。 |
+| ``close`` | 关闭。 |
+| ``prev`` | 上一页。 |
+| ``next`` | 下一页。 |

@@ -112,9 +112,9 @@ article > .veui-button {
 </style>
 
 <docs>
-当你希望统一处理用户可能触发对话框关闭的操作，请使用 `before-close` 属性传入统一的处理函数，此时无论是点击“确定”/“取消”按钮、关闭按钮还是按下 <kbd>esc</kbd> 触发的关闭操作，都会统一进入 `before-close` 的处理流程。如果逻辑相对简单，比如取消时没有额外逻辑，可以直接操作 `open` 属性来关闭对话框。
+当你希望统一处理用户可能触发对话框关闭的操作，请使用 [`before-close`](#props-before-close) 属性传入统一的处理函数，此时无论是点击“确定”/“取消”按钮、关闭按钮还是按下 <kbd>esc</kbd> 触发的关闭操作，都会统一进入 `before-close` 的处理流程。如果逻辑相对简单，比如取消时没有额外逻辑，可以直接操作 [`open`](#props-open) 属性来关闭对话框。
 </docs>
 
 <docs locale="en-US">
-When you want a unified process to handle all user interactions that might trigger the dialog to be closed, you can leverage the `before-close` function prop. No matter the close behavior is about to be triggered by clicking “OK”/“Cancel” buttons, the close button or pressing <kbd>esc</kbd>, `before-close` will always take over the following process. If the logic is relatively simple, you can manipulate `open` prop directly to close the dialog.
+When you want a unified process to handle all user interactions that might trigger the dialog to be closed, you can leverage the `before-close` function prop. No matter the close behavior is about to be triggered by clicking “OK”/“Cancel” buttons, the close button or pressing <kbd>esc</kbd>, `before-close` will always take over the following process. If the logic is relatively simple, you can manipulate [`open`](#props-open) prop directly to close the dialog.
 </docs>

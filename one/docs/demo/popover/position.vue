@@ -147,5 +147,5 @@ section + section {
 </style>
 
 <docs>
-使用 `aim-center` 属性来设置浮层提示箭头始终对准目标元素中心，适合用于目标元素较小的场景。
+使用 [`aim-center`](#props-aim-center) 属性来设置浮层提示箭头始终对准目标元素中心，适合用于目标元素较小的场景。
 </docs>

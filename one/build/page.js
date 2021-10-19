@@ -12,6 +12,7 @@ import etpl from 'etpl'
 import { readFileSync, writeFileSync, replaceExtSync } from './util'
 import demo from './remark-demo'
 import ref from './remark-ref'
+import anchor from './remark-anchor'
 import details from './remark-details'
 import custom from './remark-custom'
 import extractFrontmatter from './remark-extract-frontmatter'
@@ -30,6 +31,7 @@ const PAGE_TPL = readFileSync(resolve(__dirname, '../templates/page.etpl'))
 const renderPage = etpl.compile(PAGE_TPL)
 
 const md = remark()
+  .use(anchor)
   .use(custom)
   .use(details)
   .use(ref)

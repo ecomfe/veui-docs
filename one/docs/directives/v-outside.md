@@ -26,7 +26,7 @@
 
 ### 绑定值
 
-类型：`function|Object`。
+类型：`function | Object`。
 
 通过 `function` 类型配置触发外部事件时的回调函数。例如：
 
@@ -48,7 +48,7 @@
 
 | 参数 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `refs` | `Array<string|Vue|HTMLElement>` | `[]` | [^refs] |
+| `refs` | `Array<string | Vue | HTMLElement>` | `[]` | [^refs] |
 | `handler` | `function(event: Event): void` | `function() {}` | 外部事件触发时的回调函数，会接收到相应的原生事件对象参数。回调函数的 `event` 参数会根据 `trigger` 参数变成相应的原生事件对象。 |
 | `trigger` | `string` | `'click'` | 外部事件名，可取的值有：`click`，`mousedown`，`mouseup`，`hover`，`focus`。 |
 | `delay` | `number` | `0` | 在 `trigger` 为 `hover` 的时候，鼠标移出目标元素 `delay` 毫秒之后，才触发回调函数。如果在 `delay` 毫秒之内，鼠标重新移回了目标元素集合内，就不会触发回调函数。 |
@@ -72,7 +72,7 @@
 
 ### 修饰符
 
-对应 `Object` 类型绑定值中的 `trigger`/`delay`/`excludeSelf`。例如：
+对应 `Object` 类型绑定值中的 `trigger` / `delay` / `excludeSelf`。例如：
 
 ```html
 <div v-outside.hover.200.excludeSelf></div>

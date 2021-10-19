@@ -1,6 +1,6 @@
 # 自定义校验规则
 
-对于多值校验，[表单 › validators 属性](../components/form#属性)提供了比较完善的功能来实现自定义校验。对于单值校验，`Field` 组件内置了 7 种常见规则，具体参考[表单项 › rule 属性](../components/field#属性)。如果无法覆盖需求，`VEUI` 校验规则模块允许你添加自定义规则。
+对于多值校验，[表单 › validators 属性](../components/form#props-validators)提供了比较完善的功能来实现自定义校验。对于单值校验，`Field` 组件内置了 7 种常见规则，具体参考[表单项 › rule 属性](../components/field#props-rule)。如果无法覆盖需求，`VEUI` 校验规则模块允许你添加自定义规则。
 
 ## 示例
 
@@ -17,18 +17,20 @@ ruleManager.addRule('range', {
 })
 ```
 
-```html
+```vue
+<template>
 <veui-field
-  :rules=[{
+  :rules="[{
     triggers: 'change'
     name: 'range',
     value: {
       ceil: 100,
       floor: 50
     }
-  }]
+  }]"
   ...
 >...</veui-field>
+</template>
 ```
 
 ## API
@@ -36,7 +38,7 @@ ruleManager.addRule('range', {
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `validate` | `function(value: *, ruleValue: ?*=)` | 校验逻辑，`value` 为 `Field` 需要校验的值，`ruleValue` 可选，根据规则需要添加，表示规则的限定值。 |
-| `message` | `function|string` | [^message] |
+| `message` | `function | string` | [^message] |
 | `priority` | `number` | [^priority] |
 
 ^^^message

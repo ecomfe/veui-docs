@@ -4,7 +4,7 @@
 
 ### 尺寸
 
-可选的尺寸 `ui` 属性值：`xs`/`s`/`m`/`l`。
+可选的尺寸 [`ui`](#props-ui) 属性值：`xs` / `s` / `m` / `l`。
 
 [[ demo src="/demo/input/size.vue" ]]
 
@@ -26,17 +26,17 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `value` | `string` | '' | [^value] |
-| `disabled` | `boolean=` | `false` | 输入框是否为禁用状态。 |
-| `readonly` | `boolean=` | `false` | 输入框是否为只读状态。 |
-| `type` | `string=` | `'text'` | [^type] |
-| `placeholder` | `string=` | - | 输入占位符。 |
-| `clearable` | `boolean=` | `false` | 是否显示清除按钮。 |
-| `composition` | `boolean=` | `false` | 是否感知输入法输入过程的值。 |
-| `select-on-focus` | `boolean=` | `false` | 聚焦时是否自动选中输入框文本。 |
-| `get-length` | `function(string): number=` | 自定义的字符长度计算函数。 |
-| `trim` | `boolean | string=` | `false` | [^trim] |
+| ``ui`` | `string=` | - | [^ui] |
+| ``value`` | `string` | '' | [^value] |
+| ``disabled`` | `boolean=` | `false` | 输入框是否为禁用状态。 |
+| ``readonly`` | `boolean=` | `false` | 输入框是否为只读状态。 |
+| ``type`` | `string=` | `'text'` | [^type] |
+| ``placeholder`` | `string=` | - | 输入占位符。 |
+| ``clearable`` | `boolean=` | `false` | 是否显示清除按钮。 |
+| ``composition`` | `boolean=` | `false` | 是否感知输入法输入过程的值。 |
+| ``select-on-focus`` | `boolean=` | `false` | 聚焦时是否自动选中输入框文本。 |
+| ``get-length`` | `function(string): number=` | 自定义的字符长度计算函数。 |
+| ``trim`` | `boolean | string=` | `false` | [^trim] |
 
 ^^^ui
 预设样式。
@@ -87,9 +87,9 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `before` | 输入框内前置内容。 |
-| `after` | 输入框内后置内容。 |
-| `placeholder` | 未输入时的占位内容。 |
+| ``before`` | 输入框内前置内容。 |
+| ``after`` | 输入框内后置内容。 |
+| ``placeholder`` | 未输入时的占位内容。 |
 
 :::warning
 注意，插槽宽度会挤压输入框宽度。
@@ -99,8 +99,8 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `change` | [^event-change] |
-| `input` | [^event-input] |
+| ``change`` | [^event-change] |
+| ``input`` | [^event-input] |
 
 ^^^event-change
 输入框内容变化时触发，即原生 `change` 事件触发时。回调参数为 `(value, event)`。
@@ -118,7 +118,7 @@
 `v-model`
 :::
 
-有效输入时触发，受 `composition` 属性影响。回调参数为 `(value: string)`，`value` 为输入框的 `value` 值。
+有效输入时触发，受 [`composition`](#props-composition) 属性影响。回调参数为 `(value: string)`，`value` 为输入框的 `value` 值。
 ^^^
 
 此外，`Input` 支持如下的原生事件：
@@ -131,4 +131,4 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `remove` | 清除按钮。 |
+| ``remove`` | 清除按钮。 |

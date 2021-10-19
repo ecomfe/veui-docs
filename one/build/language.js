@@ -20,9 +20,9 @@ export function vue (hljs) {
             className: 'string',
             endsParent: true,
             variants: [
-              {begin: /"/, end: /"/},
-              {begin: /'/, end: /'/},
-              {begin: /[^\s"'=<>`]+/}
+              { begin: /"/, end: /"/ },
+              { begin: /'/, end: /'/ },
+              { begin: /[^\s"'=<>`]+/ }
             ]
           }
         ]
@@ -49,7 +49,7 @@ export function vue (hljs) {
         */
         begin: '<style(?=\\s|>|$)',
         end: '>',
-        keywords: {name: 'style'},
+        keywords: { name: 'style' },
         contains: [TAG_INTERNALS],
         starts: {
           end: '</style>',
@@ -62,7 +62,7 @@ export function vue (hljs) {
         // See the comment in the <style tag about the lookahead pattern
         begin: '<script(?=\\s|>|$)',
         end: '>',
-        keywords: {name: 'script'},
+        keywords: { name: 'script' },
         contains: [TAG_INTERNALS],
         starts: {
           end: '</script>',
@@ -75,7 +75,7 @@ export function vue (hljs) {
         // See the comment in the <style tag about the lookahead pattern
         begin: '<template(?=\\s|>|$)',
         end: '>',
-        keywords: {name: 'template'},
+        keywords: { name: 'template' },
         contains: [TAG_INTERNALS],
         starts: {
           end: '</template>',

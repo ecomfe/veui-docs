@@ -4,7 +4,7 @@ export default function scrollBehavior (to) {
     return {
       selector: decodeURIComponent(to.hash),
       offset: {
-        y: 20
+        y: 32
       }
     }
   }

@@ -4,13 +4,13 @@
 
 ### 风格
 
-可选的 `ui` 属性值：`strong`。
+可选的 [`ui`](#props-ui) 属性值：`strong`。
 
 [[ demo src="/demo/search-box/style.vue" ]]
 
 ### 尺寸
 
-可选的 `ui` 属性值：`xs`/`s`/`m`/`l`。
+可选的 [`ui`](#props-ui) 属性值：`xs` / `s` / `m` / `l`。
 
 [[ demo src="/demo/search-box/size.vue" ]]
 
@@ -28,19 +28,19 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `placeholder` | `string` | - | 搜索框占位符。 |
-| `value` | `string` | - | [^value] |
-| `autofocus` | `boolean` | `false` | 是否自动聚焦。 |
-| `clearable` | `boolean` | `false` | 是否显示清除按钮。 |
-| `select-on-focus` | `boolean` | `false` | 聚焦时是否自动选择文本。 |
-| `composition` | `boolean` | `false` | 是否感知输入法状态。 |
-| `suggestions` | `Array<string>|Array<Object>` | - | [^suggestions] |
-| `replace-on-select` | `boolean` | `true` | 选择推荐项时是否自动使用其内容填充文本框。 |
-| `suggest-trigger` | `Array<string>|string` | `input` | [^suggest-trigger] |
-| `expanded` | `boolean=` | `false` | [^expanded] |
-| `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
-| `readonly` | `boolean=` | `false` | 是否为只读状态。 |
+| ``ui`` | `string=` | - | [^ui] |
+| ``placeholder`` | `string` | - | 搜索框占位符。 |
+| ``value`` | `string` | - | [^value] |
+| ``autofocus`` | `boolean` | `false` | 是否自动聚焦。 |
+| ``clearable`` | `boolean` | `false` | 是否显示清除按钮。 |
+| ``select-on-focus`` | `boolean` | `false` | 聚焦时是否自动选择文本。 |
+| ``composition`` | `boolean` | `false` | 是否感知输入法状态。 |
+| ``suggestions`` | `Array<string>|Array<Object>` | - | [^suggestions] |
+| ``replace-on-select`` | `boolean` | `true` | 选择推荐项时是否自动使用其内容填充文本框。 |
+| ``suggest-trigger`` | `Array<string>|string` | `input` | [^suggest-trigger] |
+| ``expanded`` | `boolean=` | `false` | [^expanded] |
+| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
 
 ^^^ui
 按钮预设样式。
@@ -82,7 +82,7 @@
 | 值 | 描述 |
 | -- | -- |
 | `focus` | 输入框聚焦时。 |
-| `input` | 输入框触发 `input` 事件时。 |
+| `input` | 输入框触发 [`input`](#events-input) 事件时。 |
 | `submit` | 点击搜索按钮时。 |
 +++
 ^^^
@@ -99,10 +99,10 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `suggestions` | [^slot-suggestions] |
-| `suggestions-before` | 插入推荐列表前的内容。 |
-| `suggestions-after` | 插入推荐列表后的内容。 |
-| `suggestion` | [^slot-suggestion] |
+| ``suggestions`` | [^slot-suggestions] |
+| ``suggestions-before`` | 插入推荐列表前的内容。 |
+| ``suggestions-after`` | 插入推荐列表后的内容。 |
+| ``suggestion`` | [^slot-suggestion] |
 
 ^^^slot-suggestions
 推荐列表内容。
@@ -110,7 +110,7 @@
 +++作用域参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `suggestions` | `Array<{value: string, label: string}>` | 从 `suggestions` 属性归一化类型后的推荐列表。 |
+| `suggestions` | `Array<{value: string, label: string}>` | 从 [`suggestions`](#props-suggestions) 属性归一化类型后的推荐列表。 |
 | `select` | `function(suggestion: {value: string, label: string}): void` | 选择指定的推荐项。 |
 
 ^^^slot-suggestion
@@ -132,11 +132,11 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `input` | [^event-input] |
-| `suggest` | [^event-suggest] |
-| `select` | [^event-select] |
-| `search` | [^event-search] |
-| `toggle` | 提示面板展开状态切换时触发，回调参数为 `(expanded: boolean)`。`expanded` 表示操作将触发提示面板展开还是收起。 |
+| ``input`` | [^event-input] |
+| ``suggest`` | [^event-suggest] |
+| ``select`` | [^event-select] |
+| ``search`` | [^event-search] |
+| ``toggle`` | 提示面板展开状态切换时触发，回调参数为 `(expanded: boolean)`。`expanded` 表示操作将触发提示面板展开还是收起。 |
 
 ^^^event-input
 输入框中文本发生变化时触发该事件，回调参数为 `(value: string)`。
@@ -183,4 +183,4 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `search` | 搜索。 |
+| ``search`` | 搜索。 |

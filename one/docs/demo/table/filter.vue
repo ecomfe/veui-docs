@@ -145,9 +145,9 @@ h4 {
 </style>
 
 <docs>
-可以使用 `crowded` 这个 `ui` 属性值来在需要展示很多列的布局下默认隐藏筛选按钮。
+可以使用 `crowded` 这个 [`ui`](#props-ui) 属性值来在需要展示很多列的布局下默认隐藏筛选按钮。
 </docs>
 
 <docs locale="en-US">
-You can use the `ui` prop value `crowded` to hide filter button by default when there are too many columns to be displayed.
+You can use the [`ui`](#props-ui) prop value `crowded` to hide filter button by default when there are too many columns to be displayed.
 </docs>

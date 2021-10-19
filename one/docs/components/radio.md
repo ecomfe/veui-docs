@@ -4,13 +4,13 @@
 
 ### 尺寸
 
-可选的 `ui` 属性值：`s`/`m`。
+可选的 [`ui`](#props-ui) 属性值：`s` / `m`。
 
 [[ demo src="/demo/radio/size.vue" ]]
 
 ### 值设定
 
-可以通过设置 `value` 来修改选中状态下 `model` 属性（`v-model`）的值。
+可以通过设置 [`value`](props-value) 属性来修改选中状态下 `v-model` 的值。
 
 [[ demo src="/demo/radio/model.vue" ]]
 
@@ -20,11 +20,11 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `checked` | `boolean` | `false` | [^checked] |
-| `value` | `*` | `true` | 选中状态对应的值。 |
-| `disabled` | `boolean=` | `false` | 是否为禁用状态。 |
-| `readonly` | `boolean=` | `false` | 是否为只读状态。 |
+| ``ui`` | `string=` | - | [^ui] |
+| ``checked`` | `boolean` | `false` | [^checked] |
+| ``value`` | `*` | `true` | 选中状态对应的值。 |
+| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
 
 ^^^ui
 预设样式。
@@ -49,21 +49,21 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | 单选框的描述文本，点击时会进行选中。无默认内容。 |
+| ``default`` | 单选框的描述文本，点击时会进行选中。无默认内容。 |
 
 ### 事件
 
 | 名称 | 描述 |
 | -- | -- |
-| `change` | 用户切换选中状态时触发，回调参数为 `(checked: boolean)`。`checked` 表示当前是否选中。 |
-| `input` | [^event-input] |
+| ``change`` | 用户切换选中状态时触发，回调参数为 `(checked: boolean)`。`checked` 表示当前是否选中。 |
+| ``input`` | [^event-input] |
 
 ^^^event-input
 :::badges
 `v-model`
 :::
 
-选中状态变化后触发，回调参数为 `(val: *)`。`val` 为当前 `v-model` 的值。与 `change` 事件不同，`input` 事件在数据操作导致状态变化时也会触发。
+选中状态变化后触发，回调参数为 `(val: *)`。`val` 为当前 `v-model` 的值。与 [`change`](#events-change) 事件不同，`input` 事件在数据操作导致状态变化时也会触发。
 ^^^
 
 此外，`Radio` 支持如下的原生事件：

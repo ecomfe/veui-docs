@@ -188,9 +188,9 @@ export default {
 </script>
 
 <docs>
-自定义 `filter` 以根据 `label`/`value`/`id` 筛选。
+自定义 `filter` 以根据 `label` / `value` / `id` 筛选。
 </docs>
 
 <docs locale="en-US">
-Customize `filter` to filter by any of `label`/`value`/`id`.
+Customize `filter` to filter by any of `label` / `value` / `id`.
 </docs>

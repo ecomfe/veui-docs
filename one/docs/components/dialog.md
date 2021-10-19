@@ -4,7 +4,7 @@
 
 ### 尺寸与全屏
 
-可选的 `ui` 属性值：`s`/`m`/`narrow`/`medium`/`wide`/`auto`。
+可选的 [`ui`](#props-ui) 属性值：`s` / `m` / `narrow` / `medium` / `wide` / `auto`。
 
 [[ demo src="/demo/dialog/size.vue" ]]
 
@@ -38,23 +38,24 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `modal` | `boolean=` | `true` | 是否是模态对话框。模态对话框默认遮挡底层（无法点击）且抢占焦点（关闭后焦点会回归）。 |
-| `title` | `string=` | - | 对话框标题文本。如果指定了 `title` 插槽，则优先使用 `title` 插槽。 |
-| `open` | `boolean` | `false` | [^open] |
-| `closable` | `boolean=` | `true` | 是否显示关闭按钮。 |
-| `outside-closable` | `boolean=` | `false` | 点击对话框外部时是否关闭对话框。 |
-| `draggable` | `boolean=` | `false` | 是否可拖拽。 |
-| `escapable` | `boolean=` | `false` | 按下 <kbd>esc</kbd> 键是否可以关闭对话框。仅在 `closable` 为 `true` 时生效。 |
-| `inline` | `boolean=` | `false` | 是否内联在内容中显示并占用内容空间。 |
-| `footless` | `boolean=` | `false` | 是否不显示默认的底部操作栏。 |
-| `loading` | `boolean=` | `false` | 是否处于加载状态。处于加载状态时确定按钮也将进入加载状态，无法点击。 |
-| `disabled` | `boolean=` | `false` | 是否处于禁用状态。处于禁用状态时确定按钮也将进入禁用状态，无法点击。 |
-| `ok-label` | `string=` | - | “确定”按钮的文字内容。 |
-| `cancel-label` | `string=` | - | “取消”按钮的文字内容。 |
-| `priority` | `number=` | - | 对话框浮层层叠权重，参考 [`Overlay`](./overlay) 组件的 [`priority`](./overlay#props) 属性。 |
-| `before-close` | `function(string): boolean=|Promise<boolean=>` | - | [^before-close] |
-| `overlay-class` | `string | Object=` | - | 对话框浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props) 属性。 |
+| ``ui`` | `string=` | - | [^ui] |
+| ``modal`` | `boolean=` | `true` | 是否是模态对话框。模态对话框默认遮挡底层（无法点击）且抢占焦点（关闭后焦点会回归）。 |
+| ``title`` | `string=` | - | 对话框标题文本。如果指定了 [`title`](#slots-title) 插槽，则优先使用 [`title`](#slots-title) 插槽。 |
+| ``open`` | `boolean` | `false` | [^open] |
+| ``closable`` | `boolean=` | `true` | 是否显示关闭按钮。 |
+| ``outside-closable`` | `boolean=` | `false` | 点击对话框外部时是否关闭对话框。 |
+| ``draggable`` | `boolean=` | `false` | 是否可拖拽。 |
+| ``escapable`` | `boolean=` | `false` | 按下 <kbd>esc</kbd> 键是否可以关闭对话框。仅在 `closable` 为 `true` 时生效。 |
+| ``inline`` | `boolean=` | `false` | 是否内联在内容中显示并占用内容空间。 |
+| ``footless`` | `boolean=` | `false` | 是否不显示默认的底部操作栏。 |
+| ``loading`` | `boolean=` | `false` | 是否处于加载状态。处于加载状态时确定按钮也将进入加载状态，无法点击。 |
+| ``disabled`` | `boolean=` | `false` | 是否处于禁用状态。处于禁用状态时确定按钮也将进入禁用状态，无法点击。 |
+| ``ok-label`` | `string=` | - | “确定”按钮的文字内容。 |
+| ``cancel-label`` | `string=` | - | “取消”按钮的文字内容。 |
+| ``priority`` | `number=` | - | 对话框浮层层叠权重，参考 [`Overlay`](./overlay) 组件的 [`priority`](./overlay#props-priority) 属性。 |
+| ``before-close`` | `function(string): boolean=|Promise<boolean=>` | - | [^before-close] |
+| ``overlay-class`` | `string | Object=` | - | 对话框浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
+| ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 
 ^^^ui
 预设样式。
@@ -112,9 +113,9 @@ methods: {
 
 | 名称 | 描述 |
 | -- | -- |
-| `default` | 内容区。 |
-| `title` | 标题区。若同时指定了 `title` 属性和 `title` 插槽，以后者为准。 |
-| `foot` | [^slot-foot] |
+| ``default`` | 内容区。 |
+| ``title`` | 标题区。若同时指定了 [`title`](#props-title) 属性和 [`title`](#slots-title) 插槽，以后者为准。 |
+| ``foot`` | [^slot-foot] |
 
 ^^^slot-foot
 底部区域，默认会展示“确定”、“取消”按钮。
@@ -131,13 +132,13 @@ methods: {
 
 | 名称 | 描述 |
 | -- | -- |
-| `ok` | 点击“确定”按钮时或通过调用作用域函数 `close('ok')` 时触发。 |
-| `cancel` | 点击“取消”按钮、关闭按钮、通过 <kbd>esc</kbd> 关闭对话框时，或者通过调用作用域函数 `close('cancel')` 时触发。 |
+| ``ok`` | 点击“确定”按钮时或通过调用作用域函数 `close('ok')` 时触发。 |
+| ``cancel`` | 点击“取消”按钮、关闭按钮、通过 <kbd>esc</kbd> 关闭对话框时，或者通过调用作用域函数 `close('cancel')` 时触发。 |
 | <var>&lt;value&gt;</var> | 通过调用作用域函数 `close(value)` 时触发。 |
-| `afterclose` | 浮层关闭后触发。如果样式主题提供了退出动画，将在退出动画完毕后触发。 |
+| ``afterclose`` | 浮层关闭后触发。如果样式主题提供了退出动画，将在退出动画完毕后触发。 |
 
 ### 图标
 
 | 名称 | 描述 |
 | -- | -- |
-| `close` | 关闭。 |
+| ``close`` | 关闭。 |

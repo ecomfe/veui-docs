@@ -16,7 +16,7 @@
 
 ### 绑定值
 
-类型：`function|Object`。
+类型：`function | Object`。
 
 使用 `function` 类型则绑定值表示 resize 时触发的回调函数。例如：
 
@@ -59,7 +59,7 @@
 
 ### 修饰符
 
-对应 `Object` 类型绑定值中的 `mode`/`leading`/`wait`。`leading` 可以与 `debounce`/`throttle` 其中之一同时使用。例如：
+对应 `Object` 类型绑定值中的 `mode` / `leading` / `wait`。`leading` 可以与 `debounce` / `throttle` 其中之一同时使用。例如：
 
 ```html
 <div v-resize.throttle.leading.500="handler"></div>

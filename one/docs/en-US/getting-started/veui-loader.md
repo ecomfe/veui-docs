@@ -43,11 +43,11 @@ As we know, in popular component libraries like Ant Design and Element, theme pa
   | `package` | `string` | - | The name of the injected package. It's generally the name of the theme package, like `'veui-theme-dls'`. |
   | `path` | `string` | `'components'` | The path of the directory containing the injected module. |
   | `fileName` | `string` | `'{module}.css'` | The file name template corresponds to the component name. Must include the placeholder `{module}`. |
-  | `transform` | `string|boolean` | `'kebab-case'` | Transformation applied for component names. The `{module}` part within `fileName` will be replaced with the transformed name. Provide `false` to prevent transformation. All possible values are `'kebab-case'`, `'camleCase'` and `'PascalCase'`. |
+  | `transform` | `string | boolean` | `'kebab-case'` | Transformation applied for component names. The `{module}` part within `fileName` will be replaced with the transformed name. Provide `false` to prevent transformation. All possible values are `'kebab-case'`, `'camleCase'` and `'PascalCase'`. |
 
 * `locale`
 
-  Type: `boolean|string=|Array<string>=`
+  Type: `boolean | string=|Array<string>=`
 
   The ID of the locale modules to be injected. Array values indicate to inject multiple locale packages. Defaults to `zh-Hans`. Current available values are `zh-Hans` and `en-US`.
 
