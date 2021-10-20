@@ -1,33 +1,37 @@
 <template>
-<main
-  :class="{
-    'post-layout': true,
-    'no-links': !hasFooterLinks
-  }"
->
-  <one-menu :nav="nav"/>
-  <nuxt/>
-  <one-footer
-    class="footer"
-    :nav="nav"
-    @update="updateLayout"
-  />
-  <one-back-to-top/>
-</main>
+<config-provider :value="config">
+  <main
+    :class="{
+      'post-layout': true,
+      'no-links': !hasFooterLinks
+    }"
+  >
+    <one-menu :nav="nav"/>
+    <nuxt/>
+    <one-footer
+      class="footer"
+      :nav="nav"
+      @update="updateLayout"
+    />
+    <one-back-to-top/>
+  </main>
+</config-provider>
 </template>
 
 <script>
 import 'focus-visible'
+import { ConfigProvider } from 'veui'
+import i18nMgr from 'veui/managers/i18n'
 import OneMenu from '../components/OneMenu'
 import OneFooter from '../components/OneFooter'
 import OneBackToTop from '../components/OneBackToTop'
 import nav from '../common/nav'
 import i18n from '../common/i18n'
-import i18nMgr from 'veui/managers/i18n'
 
 export default {
   name: 'main-doc',
   components: {
+    ConfigProvider,
     OneMenu,
     OneFooter,
     OneBackToTop
@@ -35,7 +39,10 @@ export default {
   mixins: [i18n],
   data () {
     return {
-      hasFooterLinks: true
+      hasFooterLinks: true,
+      config: {
+        'link.routerLink': 'nuxt-link'
+      }
     }
   },
   computed: {
