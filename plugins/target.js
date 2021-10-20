@@ -1,15 +1,19 @@
+let target
+
+function clearTarget () {
+  if (!target) {
+    return
+  }
+
+  delete target.dataset.target
+}
+
 export default ({ app }) => {
-  let target
-
-  document.documentElement.addEventListener('click', () => {
-    if (!target) {
-      return
-    }
-
-    delete target.dataset.target
-  })
+  document.documentElement.addEventListener('click', clearTarget)
 
   app.router.afterEach(to => {
+    clearTarget()
+
     if (!to.hash) {
       return
     }
