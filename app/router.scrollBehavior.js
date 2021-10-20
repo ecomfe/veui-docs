@@ -11,7 +11,7 @@ export default async function scrollBehavior (to) {
     return {
       selector: decodeURIComponent(to.hash),
       offset: {
-        y: 32
+        y: 120
       }
     }
   }
