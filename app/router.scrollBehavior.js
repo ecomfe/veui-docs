@@ -1,6 +1,13 @@
-export default function scrollBehavior (to) {
+function timeout (t) {
+  return new Promise(resolve => {
+    setTimeout(resolve, t)
+  })
+}
+
+export default async function scrollBehavior (to) {
   if (to.hash) {
     // scroll to anchor by returning the selector
+    await timeout(0)
     return {
       selector: decodeURIComponent(to.hash),
       offset: {
