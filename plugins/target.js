@@ -21,6 +21,9 @@ export default ({ app, route }) => {
     setTimeout(() => {
       const selector = decodeURIComponent(to.hash)
       const anchor = document.querySelector(selector)
+      if (!anchor) {
+        return
+      }
 
       if (anchor.tagName === 'CODE') {
         target = anchor.closest('tr')
