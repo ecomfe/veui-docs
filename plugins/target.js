@@ -8,7 +8,7 @@ function clearTarget () {
   delete target.dataset.target
 }
 
-export default ({ app, route }) => {
+export default ({ app }) => {
   document.documentElement.addEventListener('click', clearTarget)
 
   app.router.afterEach(to => {
@@ -27,7 +27,7 @@ export default ({ app, route }) => {
 
       if (anchor.tagName === 'CODE') {
         target = anchor.closest('tr')
-      } else if (route.name === 'changelog' && anchor.tagName === 'H2') {
+      } else if (app.router.currentRoute.name === 'changelog' && anchor.tagName === 'H2') {
         target = anchor.closest('.version-item')
       }
 
