@@ -269,16 +269,13 @@ export default {
     bottom -2px
     left -12px
     width 3px
-    background-color #e1edff
+    background-color #0052cc
     border-radius 1px
     opacity 0
     transform-origin 50% 0
-    transform scaleY(0)
-    transition opacity 0.3s, transform 0.3s
 
   &[data-target]::before
-    opacity 1
-    transform none
+    animation line-enter 6s ease 1 both
 
 h2
   display flex
@@ -342,4 +339,15 @@ h2
 
   p
     margin 0 -0.75em 0 0
+
+@keyframes line-enter
+  0%
+  100%
+    transform scaleY(0)
+    opacity 0
+
+  5%
+  95%
+    transform none
+    opacity 1
 </style>
