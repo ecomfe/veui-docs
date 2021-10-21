@@ -131,8 +131,24 @@ margin-y($top, $bottom = $top)
     width 100%
     border-collapse collapse
     border 1px solid #f1f1f1
-    border-style none solid
+    border-radius 4px
     margin-y(1.5em)
+
+    thead
+      position sticky
+      top -1px
+      background #f3f6f988
+      backdrop-filter blur(4px)
+
+      th
+        &::after
+          content ""
+          position absolute
+          bottom 0
+          width 100%
+          height 1px
+          left 0
+          background #f1f1f1
 
     pre
     table
@@ -319,23 +335,21 @@ margin-y($top, $bottom = $top)
     a
       margin-right 10px
 
-  [data-target]
-    outline 2px solid transparent
-    outline-offset -1px
-    animation target-blink 5s ease 1 both
-
   .hljs-attr
     color #c5e478
 
+  [data-target]
+    animation target-blink 5s ease 1 both
+
 @keyframes target-blink
   0%
-    outline-color #8fbcff
+    background-color #f2f7ff
 
   3%
   9%
-    outline-color #0052cc
+    background-color #fff
 
   6%
   12%
   80%
-    outline-color #8fbcff
+    background-color #f2f7ff
