@@ -77,15 +77,21 @@
   <section
     v-for="{ version, codeName, changeset } of filteredChangelog"
     :key="version"
+    class="version-item"
     data-markdown
   >
     <h2
+      :id="getHash(version)"
       :class="{
         major: isMajor(version),
         minor: isMinor(version),
       }"
     >
-      {{ version }}<small v-if="codeName">{{ codeName }}</small>
+      <nuxt-link
+        :to="`#${getHash(version)}`"
+      >
+        {{ version }}<small v-if="codeName">{{ codeName }}</small>
+      </nuxt-link>
     </h2>
     <ul class="changeset">
       <li
@@ -97,7 +103,9 @@
         <span
           class="emoji"
           :title="getTypeLabel(type)"
-        >{{ getTypeEmoji(type) }}</span>
+        >{{
+          getTypeEmoji(type)
+        }}</span>
         <div v-html="content"/>
       </li>
     </ul>
@@ -222,6 +230,9 @@ export default {
     },
     updateShrugger () {
       this.shrugger = getShrugger()
+    },
+    getHash (version) {
+      return `v${version.replace(/\./g, '-')}`
     }
   }
 }
@@ -248,6 +259,27 @@ export default {
   & >>> .veui-field .veui-field-no-label
     margin-bottom 0
 
+.version-item
+  position relative
+
+  &::before
+    content ""
+    position absolute
+    top -2px
+    bottom -2px
+    left -12px
+    width 3px
+    background-color #e1edff
+    border-radius 1px
+    opacity 0
+    transform-origin 50% 0
+    transform scaleY(0)
+    transition opacity 0.3s, transform 0.3s
+
+  &[data-target]::before
+    opacity 1
+    transform none
+
 h2
   display flex
   align-items center
@@ -264,6 +296,9 @@ h2
   &.major
     &::before
       content "§"
+
+  a
+    color #333 !important
 
   small
     font-size 14px
