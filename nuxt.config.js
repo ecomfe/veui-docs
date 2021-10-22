@@ -24,6 +24,9 @@ module.exports = {
         hid: 'description',
         name: 'description',
         content: 'Website for VEUI: an enterprise component library for Vue.js.'
+      },
+      {
+        name: 'theme-color', content: '#0052cc'
       }
     ],
     link: [

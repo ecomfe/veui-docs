@@ -6,7 +6,11 @@
       'no-links': !hasFooterLinks
     }"
   >
-    <one-menu :nav="nav"/>
+    <one-menu
+      :nav="nav"
+      :expanded="expanded"
+      @toggle="handleToggle"
+    />
     <nuxt/>
     <one-footer
       class="footer"
@@ -42,7 +46,8 @@ export default {
       hasFooterLinks: true,
       config: {
         'link.routerLink': 'nuxt-link'
-      }
+      },
+      expanded: false
     }
   },
   computed: {
@@ -79,6 +84,9 @@ export default {
   methods: {
     updateLayout ({ hasLinks }) {
       this.hasFooterLinks = hasLinks
+    },
+    handleToggle (expanded) {
+      this.expanded = expanded
     }
   }
 }
@@ -95,6 +103,11 @@ main
   max-width 1346px - $sidebar-width
   min-width 560px
   transition margin-left 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86)
+
+@media (max-width 480px)
+  .content
+  .footer
+    min-width 0
 </style>
 
 <style lang="stylus" src="@/assets/styles/post.styl"></style>

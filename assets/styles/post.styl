@@ -141,6 +141,8 @@ margin-y($top, $bottom = $top)
       backdrop-filter blur(4px)
 
       th
+        position relative
+
         &::after
           content ""
           position absolute
@@ -353,3 +355,33 @@ margin-y($top, $bottom = $top)
   12%
   80%
     background-color #f2f7ff
+
+@media (max-width 480px)
+  .post
+    padding 30px
+
+  [data-markdown]
+    h1
+    h1&
+      font-size 24px
+
+    h2
+    h2&
+      font-size 20px
+
+    h3
+    h3&
+      font-size 18px
+
+    h4
+    h4&
+      font-size 16px
+    h5
+    h5&
+      font-size 14px
+
+    table&
+      display block
+      max-width 100%
+      width fit-content
+      overflow-x auto

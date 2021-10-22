@@ -35,11 +35,18 @@ input
   font inherit
   color inherit
 
-a:focus
-  outline none
+a
+  -webkit-tap-highlight-color transparent
+
+  &:focus
+    outline none
 
 main
   line-height 1.5
 
 .DocSearch-Container
   backdrop-filter blur(4px)
+
+@media (max-width 480px)
+  body
+    margin 0

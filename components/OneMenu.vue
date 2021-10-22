@@ -1,9 +1,13 @@
 <template>
-<aside class="one-nav">
+<aside
+  v-outside="collapseMenu"
+  class="one-nav"
+  :class="{ expanded }"
+>
   <veui-menu
     class="one-menu"
     :items="menuItems"
-    :expanded.sync="expanded"
+    :expanded.sync="menuExpanded"
   >
     <template #before>
       <header>
@@ -29,6 +33,12 @@
         <section class="search">
           <one-search/>
         </section>
+        <button
+          class="toggle"
+          @click="toggleMenu"
+        >
+          <veui-icon name="hamburger"/>
+        </button>
       </header>
     </template>
     <template #item-label="{ label, sub }">
@@ -41,16 +51,23 @@
 <script>
 import i18n from '../common/i18n'
 import OneSearch from './OneSearch'
-import { Menu } from 'veui'
+import { Menu, Icon } from 'veui'
+import outside from 'veui/directives/outside'
+import 'veui-theme-dls-icons/hamburger'
 
 export default {
   name: 'one-menu',
+  directives: {
+    outside
+  },
   components: {
     'one-search': OneSearch,
-    'veui-menu': Menu
+    'veui-menu': Menu,
+    'veui-icon': Icon
   },
   mixins: [i18n],
   props: {
+    expanded: Boolean,
     nav: {
       type: Array,
       default () {
@@ -60,7 +77,7 @@ export default {
   },
   data () {
     return {
-      expanded: []
+      menuExpanded: []
     }
   },
   computed: {
@@ -80,7 +97,7 @@ export default {
     }
   },
   created () {
-    this.expanded = this.menuItems.map(({ name }) => name)
+    this.menuExpanded = this.menuItems.map(({ name }) => name)
   },
   methods: {
     getTitleDetail (title) {
@@ -105,6 +122,12 @@ export default {
         disabled,
         children: children ? children.map(child => this.normalizeItem(child, fullSlug)) : []
       }
+    },
+    toggleMenu () {
+      this.$emit('toggle', !this.expanded)
+    },
+    collapseMenu () {
+      this.$emit('toggle', false)
     }
   }
 }
@@ -122,6 +145,7 @@ export default {
 .one-menu
   width 100%
   height 100%
+  background-color #fff
 
   & >>> .veui-menu-tree-wrapper
     display flex
@@ -184,11 +208,47 @@ export default {
     flex-shrink 0
 
 .toggle
-  margin-right 16px
-  font-size 13px
-  vertical-align middle
+  display none
 
 .disabled
   opacity 0.3
   pointer-events none
+
+@media (max-width 480px)
+  .one-nav
+    z-index 20
+    transition transform 0.3s
+    transform translateX(-100%)
+
+    &.expanded
+      transform translateX(0)
+      box-shadow 0 0 12px rgba(0, 0, 0, 0.2)
+
+  header
+    position relative
+
+  .toggle
+    display flex
+    align-items center
+    justify-content center
+    width 36px
+    height 36px
+    position absolute
+    top 80px
+    left 100%
+    border 1px solid #e2e6f0
+    border-top-right-radius 4px
+    border-bottom-right-radius 4px
+    background-color #fff
+    box-shadow 0 0 12px rgba(0, 0, 0, 0.1)
+    font-size 20px
+
+    &::before
+      content ""
+      position absolute
+      top 0
+      bottom 0
+      left -19px
+      width 20px
+      background-color #fff
 </style>
