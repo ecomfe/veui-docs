@@ -33,12 +33,19 @@
         <section class="search">
           <one-search/>
         </section>
-        <button
+        <div
           class="toggle"
           @click="toggleMenu"
         >
-          <veui-icon name="hamburger"/>
-        </button>
+          <veui-icon
+            class="expanded-icon"
+            name="chevron-left"
+          />
+          <veui-icon
+            class="collapsed-icon"
+            name="hamburger"
+          />
+        </div>
       </header>
     </template>
     <template #item-label="{ label, sub }">
@@ -54,6 +61,7 @@ import OneSearch from './OneSearch'
 import { Menu, Icon } from 'veui'
 import outside from 'veui/directives/outside'
 import 'veui-theme-dls-icons/hamburger'
+import 'veui-theme-dls-icons/chevron-left'
 
 export default {
   name: 'one-menu',
@@ -217,12 +225,12 @@ export default {
 @media (max-width 480px)
   .one-nav
     z-index 20
-    transition transform 0.3s
+    transition transform 0.3s, box-shadow 0.3s
     transform translateX(-100%)
 
     &.expanded
       transform translateX(0)
-      box-shadow 0 0 12px rgba(0, 0, 0, 0.2)
+      box-shadow 0 0 48px rgba(0, 0, 0, 0.2)
 
   header
     position relative
@@ -251,4 +259,23 @@ export default {
       left -19px
       width 20px
       background-color #fff
+
+.expanded-icon
+.collapsed-icon
+  position absolute
+  transition transform 0.3s, opacity 0.3s
+
+.expanded-icon
+  margin-left -4px
+  opacity 0
+  transform translateX(-10px)
+
+  .expanded &
+    opacity 1
+    transform none
+
+.collapsed-icon
+  .expanded &
+    opacity 0
+    transform translateX(10px)
 </style>
