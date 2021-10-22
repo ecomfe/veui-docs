@@ -1,7 +1,7 @@
 # InputGroup <small>输入组件组</small>
 
 :::tip
-`Input` 组件需要内联 [`Input`](./input)、[`NumberInput`](./number-input)、[`Autocomplete`](autocomplete)、[`SearchBox`](./search-box)、[`Select`](./select)、[DatePicker](./date-picker)、[TimePicker](./time-picker)、[`Dropdown`](./dropdown)、[`Button`](./button)、[`ButtonGroup`](./button-group)、[`Label`](./label)、[`Span`](./span) 等组件配合使用。
+`Input` 组件需要内联 [`Input`](./input)、[`NumberInput`](./number-input)、[`Autocomplete`](autocomplete)、[`SearchBox`](./search-box)、[`Select`](./select)、[`DatePicker`](./date-picker)、[`TimePicker`](./time-picker)、[`Dropdown`](./dropdown)、[`Button`](./button)、[`ButtonGroup`](./button-group)、[`Label`](./label)、[`Span`](./span) 等组件配合使用。
 :::
 
 ## 示例

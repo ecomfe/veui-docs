@@ -27,6 +27,15 @@ function isSpecialClick (event) {
     event.shiftKey
   )
 }
+
+function normalizeURL (url) {
+  if (url.endsWith('/')) {
+    return url.slice(0, -1)
+  }
+
+  return url.replace(/\/([#?])/, '$1')
+}
+
 export default {
   name: 'one-search',
   components: {
@@ -90,10 +99,11 @@ export default {
             })
           },
           hitComponent: ({ hit, children }) => {
+            const url = normalizeURL(hit.url)
             return createElement(
               'a',
               {
-                href: hit.url,
+                href: url,
                 onClick: event => {
                   if (isSpecialClick(event)) {
                     return
@@ -112,7 +122,7 @@ export default {
                   if (this.$router.history.current.path !== hitPathname) {
                     event.preventDefault()
                   }
-                  this.$router.push(hit.url)
+                  this.$router.push(url)
                 },
                 children
               }
