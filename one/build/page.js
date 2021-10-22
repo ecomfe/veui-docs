@@ -74,7 +74,7 @@ export function renderDocToPage (file) {
     add({ [dep]: { [src]: true } })
   })
 
-  let { layout, style } = meta
+  let { layout, style = 'post' } = meta
   let componentList = Object.keys(components)
   let demoList = Object.keys(demos)
   let result = renderPage({
@@ -92,9 +92,10 @@ export function renderDocToPage (file) {
     }),
     components: componentList,
     alert: hasAlert,
-    boilerplate: demoList.length || componentList.length || hasAlert,
+    boilerplate: demoList.length || componentList.length || hasAlert || style === 'post',
     layout,
-    style: style || 'post'
+    style,
+    path: file
   })
 
   writeFileSync(dest, result)

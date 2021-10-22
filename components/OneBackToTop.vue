@@ -9,7 +9,7 @@
 >
   <veui-icon
     class="icon"
-    name="arrow-up"
+    name="chevron-up"
     :label="t('toTop')"
   />
 </button>
@@ -18,7 +18,7 @@
 <script>
 import { Icon } from 'veui'
 import i18n from 'veui/mixins/i18n'
-import 'veui-theme-dls-icons/arrow-up'
+import 'veui-theme-dls-icons/chevron-up'
 import { debounce } from 'lodash'
 
 export default {

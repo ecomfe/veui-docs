@@ -45,3 +45,23 @@ i18n.register(
     ns: 'onebacktotop'
   }
 )
+
+i18n.register(
+  'zh-Hans',
+  {
+    editOnGitHub: '在 GitHub 上编辑此页'
+  },
+  {
+    ns: 'oneeditlink'
+  }
+)
+
+i18n.register(
+  'en-US',
+  {
+    editOnGitHub: 'Edit this page on GitHub'
+  },
+  {
+    ns: 'oneeditlink'
+  }
+)

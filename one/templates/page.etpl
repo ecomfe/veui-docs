@@ -1,22 +1,28 @@
 <template>
 <article class="content ${style}">
-${content | raw}</article>
+${content | raw}
+<section class="meta">
+  <one-edit-link path="${path}"/>
+</section>
+</article>
 </template><!-- if: ${boilerplate} -->
 <script>
 import { htmlAttrs } from '~/common/i18n'<!-- for: ${components} as ${component} -->
 import ${component} from '~/components/${component}'<!-- /for --><!-- for: ${demos} as ${demo}, ${index} -->
 import Demo${index} from '${demo.src}'<!-- /for --><!-- if: ${demos.length} -->
-import OneDemo from '~/components/OneDemo'<!-- /if --><!-- if: ${alert} -->
+import OneDemo from '~/components/OneDemo'<!-- /if --><!-- if: ${path} -->
+import OneEditLink from '~/components/OneEditLink'<!-- /if --><!-- if: ${alert} -->
 import { VeuiAlert } from 'veui'<!-- /if -->
 
 export default {
-  mixins: [htmlAttrs],
   components: {
     <!-- for: ${components} as ${component}, ${index} -->${component}<!-- if: (${index} < ${component.length} - 1) && ${demos.length} -->,
     <!-- /if--><!-- /for --><!-- for: ${demos} as ${demo}, ${index} -->'${demo.name}': Demo${index},
     <!-- /for --><!-- if: ${demos.length} -->OneDemo<!-- /if --><!-- if: (${components.length} || ${demos.length}) && ${alert} -->,<!-- /if --><!-- if: ${alert} -->
-    VeuiAlert<!-- /if -->
-  }
+    VeuiAlert<!-- /if --><!-- if: (${components.length} || ${demos.length}) || ${alert} && ${path} -->,<!-- /if --><!-- if: ${path} -->
+    OneEditLink<!-- /if -->
+  },
+  mixins: [htmlAttrs]
 }
 </script><!-- else -->
 <script>
