@@ -9,12 +9,14 @@ import raw from 'rehype-raw'
 import html from 'rehype-stringify'
 import highlight from 'rehype-highlight'
 import etpl from 'etpl'
+import stringifyObject from 'stringify-object'
 import { readFileSync, writeFileSync, replaceExtSync } from './util'
 import demo from './remark-demo'
 import ref from './remark-ref'
 import anchor from './remark-anchor'
 import details from './remark-details'
 import custom from './remark-custom'
+import toc from './remark-extract-toc'
 import extractFrontmatter from './remark-extract-frontmatter'
 import rehypePreviewImg from './rehype-preview-img'
 import rehypeLink from './rehype-link'
@@ -40,6 +42,7 @@ const md = remark()
   .use(demo)
   .use(extractFrontmatter)
   .use(slug)
+  .use(toc)
   .use(remarkToRehype, { allowDangerousHTML: true })
   .use(raw)
   .use(rehypePreviewImg)
@@ -67,14 +70,15 @@ export function renderDocToPage (file) {
     components = {},
     meta = {},
     deps = {},
-    hasAlert = false
+    hasAlert = false,
+    toc
   } = data
 
   Object.keys(deps || {}).forEach(dep => {
     add({ [dep]: { [src]: true } })
   })
 
-  let { layout, style = 'post' } = meta
+  let { layout, style = 'post', toc: showToc } = meta
   let componentList = Object.keys(components)
   let demoList = Object.keys(demos)
   let result = renderPage({
@@ -87,7 +91,7 @@ export function renderDocToPage (file) {
     demos: demoList.map(name => {
       return {
         name,
-        src: join('@/components/demos', relative(DOCS_DIR, demos[name].path))
+        src: join('@/components/demos', relative(DOCS_DIR, demos[name].filePath))
       }
     }),
     components: componentList,
@@ -95,7 +99,8 @@ export function renderDocToPage (file) {
     boilerplate: demoList.length || componentList.length || hasAlert || style === 'post',
     layout,
     style,
-    path: file
+    path: file,
+    toc: showToc !== false ? stringifyObject(toc[0].children) : null
   })
 
   writeFileSync(dest, result)

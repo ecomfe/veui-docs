@@ -1,5 +1,6 @@
 <template>
-<article class="content ${style}">
+<article ref="article" class="content ${style}"><!-- if: ${toc} -->
+<one-toc :items="toc"/><!-- /if -->
 ${content | raw}
 <section class="meta">
   <one-edit-link path="${path}"/>
@@ -11,18 +12,25 @@ import { htmlAttrs } from '~/common/i18n'<!-- for: ${components} as ${component}
 import ${component} from '~/components/${component}'<!-- /for --><!-- for: ${demos} as ${demo}, ${index} -->
 import Demo${index} from '${demo.src}'<!-- /for --><!-- if: ${demos.length} -->
 import OneDemo from '~/components/OneDemo'<!-- /if --><!-- if: ${path} -->
-import OneEditLink from '~/components/OneEditLink'<!-- /if --><!-- if: ${alert} -->
+import OneEditLink from '~/components/OneEditLink'<!-- /if --><!-- if: ${toc} -->
+import OneToc from '~/components/OneToc'<!-- /if --><!-- if: ${alert} -->
 import { VeuiAlert } from 'veui'<!-- /if -->
 
 export default {
   components: {
-    <!-- for: ${components} as ${component}, ${index} -->${component}<!-- if: (${index} < ${component.length} - 1) && ${demos.length} -->,
-    <!-- /if--><!-- /for --><!-- for: ${demos} as ${demo}, ${index} -->'${demo.name}': Demo${index},
-    <!-- /for --><!-- if: ${demos.length} -->OneDemo<!-- /if --><!-- if: (${components.length} || ${demos.length}) && ${alert} -->,<!-- /if --><!-- if: ${alert} -->
-    VeuiAlert<!-- /if --><!-- if: (${components.length} || ${demos.length}) || ${alert} && ${path} -->,<!-- /if --><!-- if: ${path} -->
-    OneEditLink<!-- /if -->
+    <!-- for: ${components} as ${component}, ${index} -->${component},
+    <!-- /for --><!-- for: ${demos} as ${demo}, ${index} -->'${demo.name}': Demo${index},
+    <!-- /for --><!-- if: ${demos.length} -->OneDemo,<!-- /if --><!-- if: ${alert} -->
+    VeuiAlert,<!-- /if --><!-- if: ${toc} -->
+    OneToc,<!-- /if --><!-- if: ${path} -->
+    OneEditLink,<!-- /if -->
   },
-  mixins: [htmlAttrs]
+  mixins: [htmlAttrs]<!-- if: ${toc} -->,
+  data () {
+    return {
+      toc: ${toc | raw}
+    }
+  }<!-- /if -->
 }
 </script><!-- else -->
 <script>

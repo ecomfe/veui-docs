@@ -1,3 +1,6 @@
+---
+toc: false
+---
 # VEUI
 
 :::oss-badges

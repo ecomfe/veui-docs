@@ -1,5 +1,5 @@
 <template>
-<aside
+<nav
   v-outside="collapseMenu"
   class="one-nav"
   :class="{ expanded }"
@@ -52,7 +52,7 @@
       {{ label }}<small>{{ sub }}</small>
     </template>
   </veui-menu>
-</aside>
+</nav>
 </template>
 
 <script>

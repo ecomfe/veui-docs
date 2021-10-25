@@ -20,6 +20,7 @@ const KNOWN_SCOPES = Object.entries(KNOWN_SCOPES_CONFIG).reduce(
 export default function attacher () {
   return tree => {
     let scope = null
+
     visit(tree, (node, index, parent) => {
       const { type, depth, children, value, position } = node
       if (type === 'heading') {
