@@ -22,7 +22,7 @@
 
 ### 最小宽度
 
-设置 `ui` 属性值：`simple` 来指定简单样式。
+设置 [`ui`](#props-ui) 属性值：`simple` 来指定简单样式。
 
 [[ demo src="/demo/radio-button-group/stable.vue" ]]
 
@@ -74,7 +74,7 @@
 | 名称 | 描述 |
 | -- | -- |
 | ``item`` | [^slot-item] |
-| ``desc`` | 按钮的额外描述信息，作用域参数同 `item` 插槽。 |
+| ``desc`` | 按钮的额外描述信息，作用域参数同 [`item`](#slots-item) 插槽。 |
 
 ^^^slot-item
 按钮内文本区域。

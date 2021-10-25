@@ -33,9 +33,9 @@
 
 ### 自定义已选项展示
 
-使用 `label` 插槽来自定义**下拉关闭时**已选项如何展示。
+使用 [`label`](#slots-label) 插槽来自定义**下拉关闭时**已选项如何展示。
 
-使用 `select` 插槽来自定义已选项如何展示，和下拉是否关闭无关。
+使用 [`selected`](#slots-selected) 插槽来自定义已选项如何展示，和下拉是否关闭无关。
 
 [[ demo src="/demo/select/selected.vue" ]]
 

@@ -16,9 +16,9 @@
 
 ### 指定偏移
 
-[`target-offset`](#props-target-offset) 用来控制锚点滚动到容器何处开始处于激活状态。
+用 [`target-offset`](#props-target-offset) 属性来控制锚点滚动到容器何处开始处于激活状态。
 
-[`sticky-offset`](#props-sticky-offset) 用来控制 `Anchor` 处于容器何处时开始吸附。
+用 [`sticky-offset`](#props-sticky-offset) 属性来控制 `Anchor` 处于容器何处时开始吸附。
 
 [[ demo src="/demo/anchor/offset.vue" ]]
 
