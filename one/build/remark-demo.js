@@ -40,6 +40,8 @@ export default function attacher () {
           ? resolve(DOCS_DIR, src.slice(1))
           : resolve(dirname(path), src)
 
+      let demoRelativePath = relative(DOCS_DIR, demoPath)
+
       if (!existsSync(demoPath)) {
         console.warn(`Demo not found at '${demoPath}'`)
         return
@@ -55,7 +57,8 @@ export default function attacher () {
 
       let { content, doc } = extractDoc(demoPath, { locale })
       fileData.demos[name] = {
-        path: demoPath,
+        filePath: demoPath,
+        path: demoRelativePath,
         browser,
         code: render('```vue\n' + content + '\n```', demoPath).contents,
         desc: render(doc, demoPath).contents

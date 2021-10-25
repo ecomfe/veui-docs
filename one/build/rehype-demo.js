@@ -8,14 +8,15 @@ export default function attacher () {
       let { tagName } = node
       let [name] = tagName.match(RE_DEMO) || []
       if (name) {
-        let { code, desc, browser } = data.demos[name] || {}
+        let { code, desc, browser, path } = data.demos[name] || {}
         if (!code) {
           return
         }
 
         let demo = h('one-demo',
           {
-            browser
+            browser,
+            path
           },
           [
             node,

@@ -49,6 +49,11 @@
         :name="localExpanded ? 'one-demo-code-off' : 'one-demo-code'"
       />
     </veui-button>
+    <one-edit-link
+      class="edit"
+      variant="quiet"
+      :path="path"
+    />
   </section>
   <section
     v-if="$slots.source"
@@ -68,6 +73,7 @@ import i18n from 'veui/mixins/i18n'
 import { BrowserWindow } from 'vue-windows'
 import { getLocale } from '../common/i18n'
 import { play } from '../common/play'
+import OneEditLink from './OneEditLink'
 
 export default {
   name: 'one-demo',
@@ -77,12 +83,14 @@ export default {
   components: {
     'veui-button': Button,
     'veui-icon': Icon,
-    BrowserWindow
+    BrowserWindow,
+    OneEditLink
   },
   mixins: [i18n],
   props: {
     expanded: Boolean,
-    browser: String
+    browser: String,
+    path: String
   },
   data () {
     return {
@@ -193,4 +201,11 @@ Icon.register({
 
   .veui-button + .veui-button
     margin-left 12px
+
+.edit
+  position absolute
+  right 30px
+  top 50%
+  transform translateY(-50%)
+  font-size 12px
 </style>

@@ -1,15 +1,24 @@
 <template>
 <a
   class="one-edit-link"
+  :class="
+    variant
+      ? {
+        [`one-edit-link-${variant}`]: true,
+      }
+      : {}
+  "
   :href="href"
   target="_blank"
   rel="noopener"
 >
-  {{ t('editOnGitHub') }}
-  <veui-icon
-    class="icon"
-    name="external-link"
-  />
+  <slot :label="t('editOnGitHub')">
+    {{ t("editOnGitHub") }}
+    <veui-icon
+      class="icon"
+      name="external-link"
+    />
+  </slot>
 </a>
 </template>
 
@@ -27,6 +36,10 @@ export default {
   },
   mixins: [i18n],
   props: {
+    variant: {
+      type: String,
+      default: 'default'
+    },
     path: String
   },
   computed: {
@@ -39,27 +52,39 @@ export default {
 
 <style lang="stylus" scoped>
 .one-edit-link
-  display inline-flex
-  align-items center
-  padding 4px 6px
-  border-radius 4px
-  background-color #fff
-  color #848b99
-  border 1px solid #e2e6f0
-  transition background 0.2s, color 0.2s, border-color 0.2s
   text-decoration none
+  transition background 0.2s, color 0.2s, border-color 0.2s
 
-  &:hover
-  &[data-focus-visible-added]
-    background-color #f6f7fa
+  &-default
+    display inline-flex
+    align-items center
+    padding 4px 6px
+    border-radius 4px
+    background-color #fff
+    color #848b99
+    border 1px solid #e2e6f0
+
+    &:hover
+    &[data-focus-visible-added]
+      background-color #f6f7fa
+      color #282c33
+      border-color #d3d9e6
+
+    &:active
+      background-color #e2e6f0
+      color #000
+      border-color #d3d9e6
+
+    .icon
+      margin-left 4px
+
+  &-quiet
     color #282c33
-    border-color #d3d9e6
 
-  &:active
-    background-color #e2e6f0
-    color #000
-    border-color #d3d9e6
+    &:hover
+    &[data-focus-visible-added]
+      color #545b66
 
-.icon
-  margin-left 4px
+    &:active
+      color #000
 </style>
