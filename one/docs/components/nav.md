@@ -31,10 +31,10 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `ui` | `string=` | - | [^ui] |
-| `items` | `Array<Object>=` | `[]` | [^items] |
-| `active` | `string` | - | [^active] |
-| `matches` | `function(Object, string): boolean` | - | [^matches] |
+| ``ui`` | `string=` | - | [^ui] |
+| ``items`` | `Array<Object>=` | `[]` | [^items] |
+| ``active`` | `string` | - | [^active] |
+| ``matches`` | `function(Object, string): boolean` | - | [^matches] |
 
 ^^^ui
 预设样式。
@@ -77,19 +77,19 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `item` | [^item] |
-| `item-label` | [^item-label] |
+| ``item`` | [^item] |
+| ``item-label`` | [^item-label] |
 
 
 ^^^item
 每个节点的渲染插槽。
 
-默认内容：渲染了 `icon` 插槽和 `item-label` 插槽。
+默认内容：渲染了节点的图标和文字描述。
 
 +++作用域参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `label` | `string` | 图标名称。 |
+| `label` | `string` | 节点的文字描述。 |
 | `to` | `string | Object` | 节点的导航目的地。参考 [`Link`](./link) 组件的 [`to`](./link#props) 属性。 |
 | `name` | `string` | 节点的唯一标识，`name` 和 `to` 二者至少有一个存在。 |
 | `disabled` | `boolean=` | 节点是否被禁用。 |
@@ -109,11 +109,11 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| `activate` | 用户点击有 `to` 的节点触发，参数是激活节点在 [`items`](#props-items) 属性中对应的数据项。 |
-| `click` | 用户点击节点时触发，参数是激活节点整个 `item` 数据。 |
+| ``activate`` | 用户点击有 `to` 的节点触发，参数是激活节点在 [`items`](#props-items) 属性中对应的数据项。 |
+| ``click`` | 用户点击节点时触发，参数是激活节点在 [`items`](#props-items) 属性中对应的数据项。 |
 
 ### 图标
 | 名称 | 描述 |
 | -- | -- |
-| `expand` | 展开。 |
-| `more` | 更多。 |
+| ``expand`` | 展开。 |
+| ``more`` | 更多。 |
