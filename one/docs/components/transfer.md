@@ -22,7 +22,7 @@
 
 ### 选中值的合并模式
 
-设置 `merge-checked` 来指定选中值的合并模式。
+设置 [`merge-checked`](#props-merge-checked) 来指定选中值的合并模式。
 
 [[ demo src="/demo/transfer/merge-checked.vue" ]]
 

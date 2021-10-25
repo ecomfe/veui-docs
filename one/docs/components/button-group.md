@@ -22,7 +22,7 @@
 
 ### 禁用状态
 
-设置 `disabled` 来使按钮处于禁用状态。
+设置 [`disabled`](#props-disabled)  来使按钮处于禁用状态。
 
 [[ demo src="/demo/button-group/disabled.vue" ]]
 

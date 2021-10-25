@@ -10,25 +10,25 @@
 
 ### 只读状态
 
-设置 `readonly` 来使输入框处于只读状态。
+设置 [`readonly`](#props-readonly) 来使输入框处于只读状态。
 
 [[ demo src="/demo/input/readonly.vue" ]]
 
 ### 禁用状态
 
-设置 `disabled` 来使输入框处于禁用状态。
+设置 [`disabled`](#props-disabled) 来使输入框处于禁用状态。
 
 [[ demo src="/demo/input/disabled.vue" ]]
 
 ### 感知输入法
 
-设置 `composition` 来感知输入法输入过程中的值。
+设置 [`composition`](#props-composition) 来感知输入法输入过程中的值。
 
 [[ demo src="/demo/input/composition.vue" ]]
 
 ### 过滤首尾空白字符
 
-设置 `trim` 来自动过滤用户输入的首尾空白字符。
+设置 [`trim`](#props-trim) 来自动过滤用户输入的首尾空白字符。
 
 [[ demo src="/demo/input/trim.vue" ]]
 

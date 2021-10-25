@@ -10,19 +10,19 @@
 
 ### 只读状态
 
-设置 `readonly` 来使文本域处于只读状态。
+设置 [`readonly`](#props-readonly) 来使文本域处于只读状态。
 
 [[ demo src="/demo/textarea/readonly.vue" ]]
 
 ### 禁用状态
 
-设置 `disabled` 来使文本域处于禁用状态。
+设置 [`disabled`](#props-disabled) 来使文本域处于禁用状态。
 
 [[ demo src="/demo/textarea/disabled.vue" ]]
 
 ### 自动扩展
 
-设置 `autoresize` 来使文本域处于自动扩展状态。
+设置 [`autoresize`](#props-autoresize) 来使文本域处于自动扩展状态。
 
 [[ demo src="/demo/textarea/autoresize.vue" ]]
 

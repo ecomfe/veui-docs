@@ -10,7 +10,7 @@
 
 ### 步骤状态
 
-可以通过设置 `steps` 的 `status` 属性值定义步骤状态，若步骤出错，可设置为 `error`。
+可以通过设置 [`steps`](#props-steps) 的 `status` 属性值定义步骤状态，若步骤出错，可设置为 `error`。
 
 [[ demo src="/demo/steps/status.vue" ]]
 

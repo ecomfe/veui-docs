@@ -10,21 +10,21 @@
 
 ### 只读状态
 
-设置 `readonly` 来使数字输入框处于只读状态。
+设置 [`readonly`](#props-readonly) 来使数字输入框处于只读状态。
 
 [[ demo src="/demo/number-input/readonly.vue" ]]
 
 ### 禁用状态
 
-设置 `disabled` 来使数字输入框处于禁用状态。
+设置 [`disabled`](#props-disabled) 来使数字输入框处于禁用状态。
 
 [[ demo src="/demo/number-input/disabled.vue" ]]
 
 ### 精度位数和递增/递减
 
-设置 `decimal-place` 来指定数值的小数精度位数。
+设置 [`decimal-place`](#props-decimal-place) 来指定数值的小数精度位数。
 
-设置 `step` 来指定每次递增/减的数值。
+设置 [`step`](#props-step) 来指定每次递增/减的数值。
 
 [[ demo src="/demo/number-input/decimal.vue" ]]
 

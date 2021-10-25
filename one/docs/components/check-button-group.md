@@ -10,25 +10,25 @@
 
 ### 简单样式
 
-设置 `ui` 属性值：`simple` 来指定简单样式。
+设置 [`ui`](#props-ui) 属性值：`simple` 来指定简单样式。
 
 [[ demo src="/demo/check-button-group/simple.vue" ]]
 
 ### 单复选共存
 
-可以使用 `exclusive` 选项与 `empty-value` 实现一些单复选共存的场景。
+可以使用 [`exclusive`](#props-exclusive) 选项与 [`empty-value`](#props-empty-value) 实现一些单复选共存的场景。
 
 [[ demo src="/demo/check-button-group/exclusive.vue" ]]
 
 ### 额外描述
 
-在数据源的项目中设置 `desc` 字段或者通过 `desc` 插槽来指定额外描述。额外描述会在悬浮时显示。
+在数据源的项目中设置 `desc` 字段或者通过 [`desc`](#slots-desc) 插槽来指定额外描述。额外描述会在悬浮时显示。
 
 [[ demo src="/demo/check-button-group/desc.vue" ]]
 
 ### 最小宽度
 
-通过设置 `ui` 属性值 `stable` 来开启项目的最小宽度。
+通过设置 [`ui`](#props-ui) 属性值 `stable` 来开启项目的最小宽度。
 
 [[ demo src="/demo/check-button-group/stable.vue" ]]
 

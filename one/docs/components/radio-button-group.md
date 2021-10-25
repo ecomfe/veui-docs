@@ -10,13 +10,13 @@
 
 ### 简单样式
 
-设置 `ui` 属性值：`simple` 来指定简单样式。
+设置 [`ui`](#props-ui) 属性值：`simple` 来指定简单样式。
 
 [[ demo src="/demo/radio-button-group/simple.vue" ]]
 
 ### 额外描述
 
-在数据源的项目中设置 `desc` 字段或者通过 `desc` 插槽来指定额外描述。额外描述会在悬浮时显示。
+在数据源的项目中设置 `desc` 字段或者通过 [`desc`](#slots-desc) 插槽来指定额外描述。额外描述会在悬浮时显示。
 
 [[ demo src="/demo/radio-button-group/desc.vue" ]]
 

@@ -10,7 +10,7 @@
 
 ### 值设定
 
-可以通过设置 `true-value` 和 `false-value` 来修改打开、关闭状态下 `v-model` 的值。
+可以通过设置 [`true-value`](#props-true-value) 和 [`false-value`](#props-false-value)  来修改打开、关闭状态下 `v-model` 的值。
 
 [[ demo src="/demo/switch/value.vue" ]]
 

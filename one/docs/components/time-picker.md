@@ -10,13 +10,13 @@
 
 ### 定制时间选项
 
-支持定制时间选项，分别可以通过 `hours`、`minutes` 和 `seconds` 来定制对应的时间选项。
+支持定制时间选项，分别可以通过 [`hours`](#props-hours)、[`minutes`](#props-minutes) 和 [`seconds`](#props-seconds) 来定制对应的时间选项。
 
 [[ demo src="/demo/time-picker/datasource.vue" ]]
 
 ### 范围限制
 
-支持范围限制，可以通过 `min` 和 `max` 来分别设置最小值和最大值。
+支持范围限制，可以通过 [`min`](#props-min) 和 [`max`](#props-max) 来分别设置最小值和最大值。
 
 [[ demo src="/demo/time-picker/range.vue" ]]
 

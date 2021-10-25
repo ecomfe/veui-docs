@@ -15,9 +15,9 @@
 
 ### 每页个数
 
-使用 `page-size` 属性来指定当前每页的个数。
+使用 [`page-size`](#props-page-size) 属性来指定当前每页的个数。
 
-使用 `page-sizes` 属性来指定每页个数候选项。
+使用 [`page-sizes`](#props-page-sizes) 属性来指定每页个数候选项。
 
 [[ demo src="/demo/pagination/pages.vue" ]]
 

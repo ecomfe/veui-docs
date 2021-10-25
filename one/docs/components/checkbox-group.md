@@ -10,13 +10,13 @@
 
 ### 单复选共存
 
-可以使用 `exclusive` 选项与 `empty-value` 实现一些单复选共存的场景。
+可以使用 [`exclusive`](#props-exclusive) 选项与 [`empty-value`](#props-empty-value) 实现一些单复选共存的场景。
 
 [[ demo src="/demo/checkbox-group/exclusive.vue" ]]
 
 ### 额外描述
 
-在数据源的项目中设置 `desc` 字段或者通过 `desc` 插槽来指定额外描述。额外描述会在悬浮时显示。
+在数据源的项目中设置 `desc` 字段或者通过 [`desc`](#slots-desc) 插槽来指定额外描述。额外描述会在悬浮时显示。
 
 [[ demo src="/demo/checkbox-group/desc.vue" ]]
 
