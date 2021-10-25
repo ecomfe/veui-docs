@@ -14,13 +14,13 @@
 
 ### 只读状态
 
-设置 `readonly` 来使内部表单项处于只读状态。
+设置 [`readonly`](#slots-readonly) 来使内部表单项处于只读状态。
 
 [[ demo src="/demo/form/readonly.vue" ]]
 
 ### 禁用状态
 
-设置 `disabled` 来使内部表单项处于禁用状态。
+设置 [`disabled`](#slots-disabled) 来使内部表单项处于禁用状态。
 
 [[ demo src="/demo/form/disabled.vue" ]]
 

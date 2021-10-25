@@ -4,49 +4,49 @@
 
 ### 文件上传
 
-设置 `type` 的值为 `file` 进入文件上传模式。
+设置 [`type`](#props-type) 的值为 `file` 进入文件上传模式。
 
 [[ demo src="/demo/uploader/file.vue" ]]
 
 ### 图片上传
 
-设置 `type` 的值为 `image` 进入图片上传模式。
+设置 [`type`](#props-type) 的值为 `image` 进入图片上传模式。
 
 [[ demo src="/demo/uploader/image.vue" ]]
 
 ### 媒体上传
 
-设置 `type` 的值为 `media` 进入媒体上传模式。
+设置 [`type`](#props-type) 的值为 `media` 进入媒体上传模式。
 
 [[ demo src="/demo/uploader/media.vue" ]]
 
 ### 前端校验
 
-图片格式、大小、数量校验以及使用 `validator` 自定义校验。
+图片格式、大小、数量校验以及使用 [`validator`](#props-validator) 自定义校验。
 
 [[ demo src="/demo/uploader/validate.vue" ]]
 
 ### 自定义配置
 
-使用 `upload` 自定义上传过程，使用 `controls` 配置浮层操作项。
+使用 [`upload`](#props-upload) 自定义上传过程，使用 [`controls`](#props-controls) 配置浮层操作项。
 
 [[ demo src="/demo/uploader/custom.vue" ]]
 
 ### 拖拽排序
 
-设置 `sortable` 属性来指定上传项目之间可以拖拽排序。
+设置 [`sortable`](#props-sortable) 属性来指定上传项目之间可以拖拽排序。
 
 [[ demo src="/demo/uploader/sortable.vue" ]]
 
 ### 已上传项自定义操作
 
-设置 `controls` 属性来指定悬浮到每个上传项时的操作选项。
+设置 [`controls`](#props-controls) 属性来指定悬浮到每个上传项时的操作选项。
 
 [[ demo src="/demo/uploader/controls.vue" ]]
 
 ### 上传入口自定义操作
 
-设置 `entries` 属性来指定悬浮到继续上传项目时的操作选项。
+设置 [`entries`](#props-entries) 属性来指定悬浮到继续上传项目时的操作选项。
 
 [[ demo src="/demo/uploader/entries.vue" ]]
 

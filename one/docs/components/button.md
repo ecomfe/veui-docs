@@ -16,13 +16,13 @@
 
 ### 禁用状态
 
-设置 `disabled` 来使按钮处于禁用状态。
+设置 [`disabled`](#props-disabled) 来使按钮处于禁用状态。
 
 [[ demo src="/demo/button/disabled.vue" ]]
 
 ### 加载状态
 
-设置 `loading` 来使按钮处于加载状态，无法点击。
+设置 [`loading`](#props-loading) 来使按钮处于加载状态，无法点击。
 
 [[ demo src="/demo/button/loading.vue" ]]
 

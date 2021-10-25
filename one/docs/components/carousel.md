@@ -4,7 +4,7 @@
 
 ### 切换
 
-使用 `index` 来控制当前显示的项目。
+使用 [`index`](#props-index) 来控制当前显示的项目。
 
 [[ demo src="/demo/carousel/switch.vue" ]]
 
@@ -45,7 +45,7 @@
 
 ### 轮播项纵横比
 
-设置 `slide-aspect-ratio` 属性来指定每个轮播项的纵横比。
+设置 [`slide-aspect-ratio`](#props-slide-aspect-ratio) 属性来指定每个轮播项的纵横比。
 
 [[ demo src="/demo/carousel/ratio.vue" ]]
 

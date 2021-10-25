@@ -22,25 +22,25 @@
 
 ### 日历类型
 
-设置 `type` 来指定日历的类型：年、月、日。
+设置 [`type`](#props-type) 来指定日历的类型：年、月、日。
 
 [[ demo src="/demo/calendar/type.vue" ]]
 
 ### 显示非本月日期
 
-设置 `fill-month` 来控制是否显示非本月日期。
+设置 [`fill-month`](#props-fill-month) 来控制是否显示非本月日期。
 
 [[ demo src="/demo/calendar/fill-month.vue" ]]
 
 ### 禁用日期
 
-设置 `disabled-date` 来自定义指定日期是否禁用。
+设置 [`disabled-date`](#props-disabled-date) 来自定义指定日期是否禁用。
 
 [[ demo src="/demo/calendar/disabled-date.vue" ]]
 
 ### 自定义日期的样式
 
-设置 `date-class` 来自定义指定日期的 `class`。
+设置 [`date-class`](#props-date-class) 来自定义指定日期的 `class`。
 
 [[ demo src="/demo/calendar/date-class.vue" ]]
 

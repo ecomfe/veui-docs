@@ -4,21 +4,21 @@
 
 ### 普通锚点
 
-使用 [`container`](#props-container) 属性设置发生滚动的容器，当 `Anchor` 组件不在容器中（也就不随容器滚动），此时可以不用设置 `sticky` 属性。
+使用 [`container`](#props-container) 属性设置发生滚动的容器，当 `Anchor` 组件不在容器中（也就不随容器滚动），此时可以不用设置 [`sticky`](#props-sticky) 属性。
 
 [[ demo src="/demo/anchor/normal.vue" ]]
 
 ### 吸附锚点
 
-当 `Anchor` 组件在容器中（随容器滚动），此时可设置 `sticky` 属性来控制组件在滚动出容器时进行吸附。
+当 `Anchor` 组件在容器中（随容器滚动），此时可设置 [`sticky`](#props-sticky) 属性来控制组件在滚动出容器时进行吸附。
 
 [[ demo src="/demo/anchor/sticky.vue" ]]
 
 ### 指定偏移
 
-`target-offset` 用来控制锚点滚动到容器何处开始处于激活状态。
+[`target-offset`](#props-target-offset) 用来控制锚点滚动到容器何处开始处于激活状态。
 
-`sticky-offset` 用来控制 `Anchor` 处于容器何处时开始吸附。
+[`sticky-offset`](#props-sticky-offset) 用来控制 `Anchor` 处于容器何处时开始吸附。
 
 [[ demo src="/demo/anchor/offset.vue" ]]
 

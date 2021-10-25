@@ -29,19 +29,19 @@
 
 ### 选择模式
 
-使用 `select-mode` 属性来控制在单选模式下哪些项目可以被选中。
+使用 [`select-mode`](#props-select-mode) 属性来控制在单选模式下哪些项目可以被选中。
 
 [[ demo src="/demo/cascader/select-mode.vue" ]]
 
 ### 子项展开时机
 
-使用 `column-trigger` 属性来控制下拉面板中下级的展开时机。
+使用 [`column-trigger`](#props-column-trigger) 属性来控制下拉面板中下级的展开时机。
 
 [[ demo src="/demo/cascader/column-trigger.vue" ]]
 
 ### 渲染选中值
 
-使用 `value-display` 属性来控制选中值如何展示。
+使用 [`value-display`](#props-value-display) 属性来控制选中值如何展示。
 
 [[ demo src="/demo/cascader/value-display.vue" ]]
 
