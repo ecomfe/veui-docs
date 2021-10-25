@@ -93,7 +93,7 @@
 | `to` | `string | Object` | 节点的导航目的地。参考 [`Link`](./link) 组件的 [`to`](./link#props) 属性。 |
 | `name` | `string` | 节点的唯一标识，`name` 和 `to` 二者至少有一个存在。 |
 | `disabled` | `boolean=` | 节点是否被禁用。 |
-| `children` | `Array<Object>=` | 节点的子节点数组，数组项类型同 `items` 数组项。 |
+| `children` | `Array<Object>=` | 节点的子节点数组，数组项类型同 [`items`](#props-items) 属性数组项。 |
 +++
 ^^^
 
@@ -102,14 +102,14 @@
 
 默认内容：渲染节点对应的 `Link`。
 
-作用域参数参考 `item` 插槽。
+作用域参数参考 [`item`](#slots-item) 插槽。
 ^^^
 
 ### 事件
 
 | 名称 | 描述 |
 | -- | -- |
-| `activate` | 用户点击有 `to` 的节点触发，参数是激活节点的整个 `item` 数据。 |
+| `activate` | 用户点击有 `to` 的节点触发，参数是激活节点在 [`items`](#props-items) 属性中对应的数据项。 |
 | `click` | 用户点击节点时触发，参数是激活节点整个 `item` 数据。 |
 
 ### 图标

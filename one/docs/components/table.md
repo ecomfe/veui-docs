@@ -50,17 +50,17 @@
 
 ### 排序
 
-使用 `order` 属性和 `order-by` 属性来指定表头上的排序状态。
+使用 [`order`](#props-order) 属性和 [`order-by`](#props-order-by) 属性来指定表头上的排序状态。
 
-监听 `sort` 事件来处理排序状态的变化。
+监听 [`sort`](#events-sort) 事件来处理排序状态的变化。
 
-设置 `allowed-orders` 属性来自定义允许的排序状态。
+设置 [`allowed-orders`](#props-allowed-orders) 属性来自定义允许的排序状态。
 
 [[ demo src="/demo/table/order.vue" ]]
 
 ### 加载状态
 
-使用 `loading` 属性来指定表格处于加载状态。
+使用 [`loading`](#props-loading) 属性来指定表格处于加载状态。
 
 [[ demo src="/demo/table/loading.vue" ]]
 
