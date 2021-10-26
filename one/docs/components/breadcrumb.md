@@ -18,7 +18,7 @@
 
 [[ demo src="/demo/breadcrumb/size.vue" ]]
 
-### 使用内联 `BreadcrumbItem`
+### 内联模式
 
 直接内联 `BreadcrumbItem` 使用。
 

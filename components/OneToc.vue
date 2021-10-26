@@ -1,7 +1,7 @@
 <template>
 <nav class="one-toc">
   <veui-anchor
-    :items="items"
+    :items="flattenItems"
     sticky
   />
 </nav>
@@ -17,6 +17,11 @@ export default {
   },
   props: {
     items: Array
+  },
+  computed: {
+    flattenItems () {
+      return this.items.flatMap(({ children }) => children || [])
+    }
   }
 }
 </script>

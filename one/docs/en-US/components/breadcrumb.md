@@ -18,7 +18,7 @@ Available size variants for the [`ui`](#props-ui) prop: `s` / `m`.
 
 [[ demo src="/demo/breadcrumb/size.vue" ]]
 
-### Using inline `BreadcrumbItem`s
+### Inline usage
 
 Can be used with embedded `BreadcrumbItem`s.
 
