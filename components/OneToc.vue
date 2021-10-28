@@ -1,8 +1,9 @@
 <template>
 <nav class="one-toc">
   <veui-anchor
-    :items="flattenItems"
+    ui="s"
     sticky
+    :items="flattenItems"
   />
 </nav>
 </template>
@@ -25,8 +26,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus" scoped>
-.one-toc
-  float right
-</style>

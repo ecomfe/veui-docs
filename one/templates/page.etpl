@@ -1,5 +1,6 @@
 <template>
-<article ref="article" class="content ${style}">
+<article ref="article" class="content ${style}"><!-- if: ${toc} -->
+<one-toc :items="toc"/><!-- /if -->
 ${content | raw}
 <section class="meta">
   <one-edit-link path="${path}"/>

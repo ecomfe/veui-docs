@@ -110,4 +110,11 @@ main
     min-width 0
 </style>
 
+<style lang="stylus">
+.one-toc
+  position absolute
+  left 100%
+  top 120px
+</style>
+
 <style lang="stylus" src="@/assets/styles/post.styl"></style>
