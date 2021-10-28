@@ -28,6 +28,8 @@ Style variants.
 | -- | -- |
 | `s` | Small. |
 | `m` | Medium. |
+| `simple` | Simple style. |
+| `stable` | Stable width layout. Every button will have a minimal width so that it'll be easier to align buttons across multiple rows. |
 ^^^
 
 ^^^items

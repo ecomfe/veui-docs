@@ -41,7 +41,7 @@
 | ``expanded`` | `boolean=` | `false` | [^expanded] |
 | ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
 | ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
-| ``match`` | `(item, keyword, { ancestors }) => boolean | Array<[number, number]>` | - | 支持自定义高亮逻辑， 默认大小写不敏感，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
+| ``match`` | `(item, keyword, { ancestors }) => boolean | [number, number] | Array<[number, number]>` | - | 支持自定义高亮逻辑， 默认大小写不敏感，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
 | ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | 支持自定义搜索命中逻辑，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
 
 ^^^ui

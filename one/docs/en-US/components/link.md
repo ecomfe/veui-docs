@@ -49,3 +49,9 @@ When `target` has a value of `_blank`, a `noopener` token will be automatically 
 | Name | Description |
 | -- | -- |
 | ``click`` | Triggered upon clicks when the [`to`](#props-to) prop is falsy or the [`native`](#props-native) prop is `true`. The callback parameter list is `(event)`, where the type of `event` is HTML's native [`Event`](https://developer.mozilla.org/en-US/docs/Web/Events/click). |
+
+### Configs
+
+| Key | Type | Default | Description |
+| -- | -- | -- | -- |
+| ``link.routerLink`` | `string` | `router-link` | The name of the link component used in route mode so that you can replace the default one with a Vue Router-compatible implementation in environments such as Nuxt.js. |

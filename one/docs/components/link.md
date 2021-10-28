@@ -49,3 +49,9 @@
 | 名称 | 描述 |
 | -- | -- |
 | ``click`` | 在 [`to`](#props-to) 属性为空或指定了 `native` 为 `true` 的情况下，点击时触发。回调参数为 `(event)`，`event` 类型为原生 [`Event`](https://developer.mozilla.org/zh-CN/docs/Web/Events/click)。 |
+
+### 全局配置
+
+| 名称 | 类型 | 默认值 | 描述 |
+| -- | -- | -- | -- |
+| ``link.routerLink`` | `string` | `router-link` | 在路由模式下使用的链接组件名称，用于在 Nuxt.js 等环境下更换为兼容 Vue Router 的实现。 |
