@@ -49,7 +49,8 @@ i18n.register(
 i18n.register(
   'zh-Hans',
   {
-    editOnGitHub: '在 GitHub 上编辑此页'
+    editOnGitHub: '在 GitHub 上编辑此页',
+    edit: '编辑'
   },
   {
     ns: 'oneeditlink'
@@ -59,7 +60,8 @@ i18n.register(
 i18n.register(
   'en-US',
   {
-    editOnGitHub: 'Edit this page on GitHub'
+    editOnGitHub: 'Edit this page on GitHub',
+    edit: 'Edit'
   },
   {
     ns: 'oneeditlink'

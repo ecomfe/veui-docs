@@ -13,7 +13,8 @@
   rel="noopener"
 >
   <slot :label="t('editOnGitHub')">
-    {{ t("editOnGitHub") }}
+    <span class="full">{{ t('editOnGitHub') }}</span>
+    <span class="short">{{ t('edit') }}</span>
     <veui-icon
       class="icon"
       name="external-link"
@@ -52,8 +53,13 @@ export default {
 
 <style lang="stylus" scoped>
 .one-edit-link
+  display inline-flex
+  align-items center
   text-decoration none
   transition background 0.2s, color 0.2s, border-color 0.2s
+
+  .icon
+    margin-left 4px
 
   &-default
     display inline-flex
@@ -75,9 +81,6 @@ export default {
       color #000
       border-color #d3d9e6
 
-    .icon
-      margin-left 4px
-
   &-quiet
     color #282c33
 
@@ -87,4 +90,16 @@ export default {
 
     &:active
       color #000
+
+    &.full
+      display inline
+    &.short
+      display none
+
+@media (max-width 480px)
+  .one-edit-link-quiet
+    .full
+      display none
+    .short
+      display inline
 </style>
