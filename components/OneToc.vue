@@ -3,6 +3,8 @@
   <veui-anchor
     ui="s"
     sticky
+    target-offset="120px"
+    sticky-offset="20px"
     :items="flattenItems"
   />
 </nav>
