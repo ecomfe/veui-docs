@@ -91,9 +91,9 @@ export default {
     &:active
       color #000
 
-    &.full
+    .full
       display inline
-    &.short
+    .short
       display none
 
 @media (max-width 480px)
