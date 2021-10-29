@@ -172,7 +172,7 @@ The entire drop-down trigger area. Displays the dropdown button by default.
 +++
 ^^^
 
-^^^^handlers-desc
+^^^handlers-desc
 Event listeners that need to be bound to the trigger element, can be output using `v-on="handlers"`.
 
 :::tip

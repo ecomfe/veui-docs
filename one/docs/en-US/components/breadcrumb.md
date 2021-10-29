@@ -94,7 +94,7 @@ Separator between adjacent breadcrumb items. Displays a globally configured icon
 :::warning
 When using Vue.js version `2.5.17` and below, it's required to bind a `slot-scope`.
 :::
-^^^^
+^^^
 
 ### Events
 

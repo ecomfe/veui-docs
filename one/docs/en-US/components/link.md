@@ -54,4 +54,4 @@ When `target` has a value of `_blank`, a `noopener` token will be automatically 
 
 | Key | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``link.routerLink`` | `string` | `router-link` | The name of the link component used in route mode so that you can replace the default one with a Vue Router-compatible implementation in environments such as Nuxt.js. |
+| ``link.routerLink`` | `string` | `'router-link'` | The name of the link component used in route mode so that you can replace the default one with a Vue Router-compatible implementation in environments such as Nuxt.js. |

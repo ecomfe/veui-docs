@@ -181,13 +181,13 @@ In image upload mode, it is used to customize the actions on the floating toolba
 | ``uploading`` | The area of a single image being uploaded in image upload mode. The scope argument is the same as the [`file`](#slots-file) slot. |
 | ``failure`` | The area of a single image that failed to upload in image upload mode. The scope argument is the same as the [`file`](#slots-file) slot. |
 
-^^^^button-label
+^^^button-label
 The content in the upload button.
 
 Default content: file upload for prompt to select a file, and image upload for upload image icon.
 ^^^
 
-^^^^file
+^^^file
 Single file area to customize the file content.
 
 +++ scope parameters

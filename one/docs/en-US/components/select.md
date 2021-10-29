@@ -176,7 +176,7 @@ The entire content area of each option (option without child `options`). Display
 Additionally, custom properties in current option, apart from the listed ones, will also be passes into the scope object via `v-bind`.
 ^^^
 
-^^^slot-trigger
+^^^^slot-trigger
 The entire drop-down trigger area. Displays the select input by default.
 
 +++Scope properties
@@ -189,15 +189,16 @@ The entire drop-down trigger area. Displays the select input by default.
 | `expanded` | `boolean` | Whether the dropdown menu is expanded or not. |
 | `toggle` | `function(force?: boolean): void` | Used to toggle the expanded state of the dropdown menu. |
 +++
-^^^
 
-^^^^handlers-desc
+^^^handlers-desc
 Event listeners that need to be bound to the trigger element, can be output using `v-on="handlers"`.
 
 :::tip
 The element used to bind `handlers` needs to support focus acquisition so that various keyboard interactions can still be triggered properly.
 :::
 ^^^
+^^^^
+
 
 ### Events
 
