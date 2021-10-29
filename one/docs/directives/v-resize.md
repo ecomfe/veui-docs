@@ -37,10 +37,10 @@
 
 | 参数 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `wait` | `number` | `150` | 传递给 `mode` 函数的毫秒数。 |
-| `mode` | `string` | - | [^mode] |
-| `handler` | `function` | - | resize 时触发的回调函数。 |
-| `leading` | `boolean` | `false` | 防抖、节流模式是否在 resize 最初就将执行一次。 |
+| ``wait`` | `number` | `150` | 传递给 `mode` 函数的毫秒数。 |
+| ``mode`` | `string` | - | [^mode] |
+| ``handler`` | `function` | - | resize 时触发的回调函数。 |
+| ``leading`` | `boolean` | `false` | 防抖、节流模式是否在 resize 最初就将执行一次。 |
 
 :::warning
  `Object` 类型提供的参数会覆盖通过指令参数、修饰符指定的参数。
@@ -67,9 +67,9 @@
 
 | 值 | 描述 |
 | -- | -- |
-| `debounce` | 使用防抖模式，不能与 `throttle` 一同使用。 |
-| `throttle` | 使用节流模式，不能与 `debounce` 一同使用。 |
-| `leading` | 使用后，防抖、节流模式在第一次触发 resize 时就将执行一次。 |
+| ``debounce`` | 使用防抖模式，不能与 `throttle` 一同使用。 |
+| ``throttle`` | 使用节流模式，不能与 `debounce` 一同使用。 |
+| ``leading`` | 使用后，防抖、节流模式在第一次触发 resize 时就将执行一次。 |
 | <var>wait</var> | 传递给 `mode` 函数的毫秒数，注意这里 <var>wait</var> 是一个变量。 |
 
 :::warning

@@ -6,7 +6,10 @@ const KNOWN_SCOPES_CONFIG = {
   methods: '方法',
   slots: '插槽',
   icons: '图标',
-  configs: '全局配置'
+  configs: '全局配置',
+  options: '绑定值',
+  modifiers: '修饰符',
+  arguments: '参数'
 }
 const KNOWN_SCOPES = Object.entries(KNOWN_SCOPES_CONFIG).reduce(
   (acc, [key, value]) => {

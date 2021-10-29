@@ -10,7 +10,7 @@
 
 [[ demo src="/demo/directives/drag/base.vue" ]]
 
-### 在指定元素区域内拖动
+### 限制拖动范围
 
 [[ demo src="/demo/directives/drag/containment.vue" ]]
 
@@ -42,19 +42,34 @@
 
 | 参数 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| `targets` | `Array<string | Vue | HTMLElement>` | `[]` | [^targets] |
-| `type` | `string` | - | 该参数指定变化的类型，目前内置了 `translate` 类型（变换目标元素位置），可以进行[扩展](#扩展)。 |
-| `containment` | `string | Vue | HTMLElement | Object` | - | [^containment] |
-| `axis` | `string` | - | 限制所有目标元素只能在水平或者垂直方向上做变换。取值为：`x`、`y`。 |
-| `dragstart` | `function(): Object` | `function() {}` | [^dragstart] |
-| `drag` | `function(): Object` | `function() {}` | [^drag] |
-| `disabled` | `boolean` | `false` | 该指令是否被禁用。 |
-| `dragend` | `function(): Object` | `function() {}` | 鼠标拖拽结束事件的回调函数。回调参数同 `drag`。 |
-| `ready` | `function` | `function() {}` | 指令初始化完成的回调函数，会传出一个句柄对象参数，该对象上有一个 `reset()` 方法，用于将所有目标元素重置为变换之前的样子。 |
+| ``type`` | `string` | - | 该参数指定拖动行为的类型，目前内置了 `translate` / `sort` 两种模式，可以进行[扩展](#扩展)。 |
+| ``disabled`` | `boolean` | `false` | 该指令是否被禁用。 |
+| ``containment`` | `string | Vue | HTMLElement | Object` | - | [^containment] |
+| ``handle`` | `string | Vue | HTMLElement` | - | 指定拖拽操作的“把手”元素，只有拖动对应元素才会触发拖拽。类型同 [`containment`](#bindings-containment) 参数（不支持普通 `Object` 类型）。 |
+| ``targets`` | `Array<string | Vue | HTMLElement>` | `[]` | [^targets] |
+| ``axis`` | `string` | - | 限制所有目标元素只能在水平或者垂直方向上做变换或指定拖拽排序元素排列方向。可选值类型：`'x' | 'y'`。 |
+| ``dragstart`` | `function(): Object` | `function() {}` | [^dragstart] |
+| ``drag`` | `function(): Object` | `function() {}` | [^drag] |
+| ``dragend`` | `function(): Object` | `function() {}` | 鼠标拖拽结束事件的回调函数。回调参数同 `drag`。 |
+| ``ready`` | `function` | `function() {}` | 指令初始化完成的回调函数，会传出一个句柄对象参数，该对象上有一个 `reset()` 方法，用于将所有目标元素重置为变换之前的样子。 |
+| ``name`` | `string` | - | [^name] |
+| ``sort`` | `function(fromIndex: number, toIndex: number): void` | - | [^sort-callback] |
 
-:::warning
- `Object` 类型提供的参数会覆盖通过指令参数、修饰符指定的参数。
+^^^targets
+:::badges
+`translate`
 :::
+
+该参数指定了目标元素集合，在指令所在元素上拖拽鼠标的时候，会按照指定的方式变换所有目标元素。
+
++++类型详情
+| 类型 | 描述 |
+| -- | -- |
+| `string` | 在指令所在组件上下文中，根据 `ref` 查找指定的 DOM 元素集合。 |
+| `Vue` | 组件实例，直接使用 `vm.$el` 元素。 |
+| `HTMLElement` | DOM 元素，直接使用。 |
++++
+^^^
 
 ^^^dragstart
 鼠标拖拽开始事件的回调函数。回调参数为 `({ event: DragEvent })`。
@@ -72,19 +87,27 @@
 +++
 ^^^
 
-^^^targets
-该参数指定了目标元素集合，在指令所在元素上拖拽鼠标的时候，会按照指定的方式变换所有目标元素。
+^^^name
+:::badges
+`sort`
+:::
 
-+++类型详情
-| 类型 | 描述 |
-| -- | -- |
-| `string` | 在指令所在组件上下文中，根据 `ref` 查找指定的 DOM 元素集合。 |
-| `Vue` | 组件实例，直接使用 `vm.$el` 元素。 |
-| `HTMLElement` | DOM 元素，直接使用。 |
-+++
+用来标记拖动排序分组名称，排序将在分组名称相同的元素间进行。
 ^^^
 
-^^^containment
+^^^sort-callback
+:::badges
+`sort`
+:::
+
+排序指令仅仅通过该回调告诉用户排序的情况，即：从原来位置（`fromIndex`）移动到新位置（`toIndex`），需要自行据此对数据源进行更新。
+^^^
+
+:::warning
+ `Object` 类型提供的参数会覆盖通过指令参数、修饰符指定的参数。
+:::
+
+^^^^containment
 目标元素在变换的时候，应当始终位于 `containment` 所指定的区域内。
 
 如果通过 `containment` 解析出来是一个 DOM 元素，那么所有目标元素就应当在该元素内变换；如果解析出来是一个矩形区域描述（相对于视口的 top、left、width、height），那么所有目标元素就应当在该矩形区域内变换。
@@ -92,16 +115,24 @@
 +++类型详情
 | 类型 | 描述 |
 | -- | -- |
-| `string` | 如果以 `@` 开头，就被认为是特殊逻辑，会透传给具体的 Handler 处理；否则，在指令所在组件上下文中，根据 `ref` 查找指定的 DOM 元素。 |
+| `string` | 在指令所在组件上下文中，根据 `ref` 查找指定的 DOM 元素。传入 `@window` 则计算视口位置。 |
 | `Vue` | 根据组件实例找到 DOM 元素。 |
 | `HTMLElement` | 直接接收 DOM 元素。 |
-| `Object` | 接受任意包含 `{ top, left, width, height }` 字段的普通对象，表示相对于视口的矩形区域的坐标和尺寸，四个字段均为 `number` 类型。 |
+| `Object` | [^containment-object] |
 +++
+
+^^^containment-object
+:::badges
+`translate`
+:::
+
+接受任意包含 `{ top, left, width, height }` 字段的普通对象，表示相对于视口的矩形区域的坐标和尺寸，四个字段均为 `number` 类型。
 ^^^
+^^^^
 
 ### 修饰符
 
-对应 `Object` 绑定值中的 `type` / `axis`。例如：
+对应 `Object` 绑定值中的 `type` / `axis` 的值。例如：
 
 ```html
 <!-- 沿着垂直方向做位移变换 -->
@@ -120,23 +151,6 @@
 ## 拖拽排序（v-drag.sort）
 
 可以通过 `v-drag.sort` 或 `v-drag="{ type: 'sort', ... }"` 来实现拖拽排序。
-
-### 绑定值
-
-类型：`Object`。
-
-| 参数 | 类型 | 默认值 | 描述 |
-| -- | -- | -- | -- |
-| `name` | `string` | - | 用来标记一组项目，在这组项目中进行排序。 |
-| `type` | `string` | - | 该参数指定变化的类型，拖拽排序是 `sort` 。 |
-| `containment` | `string | Vue | HTMLElement` | - | 参见指令基础描述，对于拖拽排序功能不支持 `Object` 类型的值。 |
-| `axis` | `string` | - | 限制所有目标元素只能在水平或者垂直方向上做排序。取值为：`x`、`y`。 |
-| `sort` | `function(fromIndex: number, toIndex: number): void` | - | [^sort_callback] |
-| `handle` | `string | Vue | HTMLElement` | - | 指定拖拽排序的拖拽操作的“把手”元素，只有拖动对应元素才会触发排序。类型同 `containment` 参数。 |
-
-^^^sort_callback
-排序指令仅仅通过该回调告诉用户排序的情况，即：从原来位置（`fromIndex`）移动到新位置（`toIndex`），需要自行据此对数据源进行更新。
-^^^
 
 ## 扩展
 
