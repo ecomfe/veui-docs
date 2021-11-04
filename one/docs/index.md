@@ -4,7 +4,7 @@ toc: false
 # VEUI
 
 :::oss-badges
-[<img alt="VEUI build status" src="https://img.shields.io/github/checks-status/ecomfe/veui/d20" height="20">](https://github.com/ecomfe/veui/actions/workflows/test.yml) [<img alt="VEUI on npm" src="https://img.shields.io/npm/v/veui" height="20">](https://www.npmjs.com/package/veui) [<img alt="MIT License" src="https://img.shields.io/github/license/ecomfe/veui">](https://github.com/ecomfe/veui/blob/d20/LICENSE)
+[<img alt="VEUI build status" src="https://img.shields.io/github/workflow/status/ecomfe/veui/test/d20" height="20">](https://github.com/ecomfe/veui/actions/workflows/test.yml) [<img alt="VEUI on npm" src="https://img.shields.io/npm/v/veui" height="20">](https://www.npmjs.com/package/veui) [<img alt="MIT License" src="https://img.shields.io/github/license/ecomfe/veui">](https://github.com/ecomfe/veui/blob/d20/LICENSE)
 :::
 
 > VEUI 是一套基于 [Vue.js](https://vuejs.org) 的企业级应用组件库。
