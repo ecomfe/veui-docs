@@ -19,7 +19,10 @@ export default {
     'veui-anchor': Anchor
   },
   props: {
-    items: Array
+    items: {
+      type: Array,
+      default: () => []
+    }
   },
   computed: {
     flattenItems () {
