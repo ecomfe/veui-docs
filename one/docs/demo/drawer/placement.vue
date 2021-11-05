@@ -5,7 +5,7 @@
       Modal
     </veui-checkbox>
     <veui-checkbox v-model="outsideClosable">
-      outside Closable
+      Outside Closable
     </veui-checkbox>
   </section>
 

@@ -14,7 +14,7 @@ Available size variants for the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l` /
 
 [[ demo src="/demo/button-group/size.vue" ]]
 
-### Use datasource via `items`
+### Using datasource
 
 Use the [`items`](#props-items) prop to provide content with a datasource.
 

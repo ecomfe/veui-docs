@@ -28,7 +28,7 @@
 
 [[ demo src="/demo/dialog/stack.vue" ]]
 
-### Loading or Disabled
+### 加载与禁用态
 
 [[ demo src="/demo/dialog/status.vue" ]]
 

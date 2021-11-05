@@ -2,7 +2,7 @@
 
 ## 示例
 
-### 配置 `Select` 的 `placeholder`
+### 配置占位符
 
 [[ demo src="/demo/config-provider/select.vue" ]]
 

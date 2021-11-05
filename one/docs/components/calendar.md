@@ -8,7 +8,7 @@
 
 [[ demo src="/demo/calendar/default.vue" ]]
 
-### 多日选择、日期范围选择
+### 多日、日期范围选择
 
 配置 [`multiple`](#props-multiple) 属性时，可以选择多个日期。配置 [`range`](#props-range) 属性时，可以选择一个日期范围。
 
@@ -38,7 +38,7 @@
 
 [[ demo src="/demo/calendar/disabled-date.vue" ]]
 
-### 自定义日期的样式
+### 自定义日期样式
 
 设置 [`date-class`](#props-date-class) 来自定义指定日期的 `class`。
 

@@ -2,7 +2,7 @@
 
 ## 示例
 
-### 触发建议的时机
+### 建议触发时机
 
 设置 [`suggest-trigger`](#props-suggest-trigger) 来指定触发建议的时机。
 

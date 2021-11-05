@@ -112,8 +112,8 @@ main
 
 <style lang="stylus">
 .one-toc
-  position absolute
-  left 100%
+  position fixed
+  left calc(max(840px, min(1346px, 100vw)) - 20px)
   top 120px
 </style>
 

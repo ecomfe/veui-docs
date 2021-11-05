@@ -14,7 +14,7 @@
 
 [[ demo src="/demo/button-group/size.vue" ]]
 
-### 使用 `items` 数据源
+### 使用数据源
 
 可以使用 [`items`](#props-items) 属性通过数据源指定按钮内容。
 
