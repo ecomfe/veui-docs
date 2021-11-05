@@ -67,6 +67,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.toggle
+  display none
+
 @media (max-width 480px)
   .one-toc
     background-color #fff
