@@ -20,6 +20,14 @@
 
 [[ demo src="/demo/popover/trigger.vue" ]]
 
+### 标题区域和操作区域
+
+使用 [`title`](#props-title) 属性或[`title`](#slots-title) 插槽来指定气泡的标题。
+
+使用 [`foot`](#props-foot) 属性开启底部操作区，使用 [`ok-label`](#props-ok-label)属性 和 [`cancel-label`](#props-cancel-label)属性来设置气泡的按钮内容。使用[`foot`](#slots-foot) 插槽来自定义底部操作区。
+
+[[ demo src="/demo/popover/foot.vue" ]]
+
 ## API
 
 ### 属性
@@ -34,6 +42,10 @@
 | ``hide-delay`` | `number` | `tooltip.hideDelays` | 触发关闭条件满足后延迟关闭等待时间的毫秒数。可以用来防止光标移出 `target` 后移入气泡进行交互前已经自动关闭。 |
 | ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
 | ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
+| ``title`` | `string=` | - | 用于自定义标题内容。 |
+| ``foot`` | `boolean` | `false` | 用于开启底部操作区。 |
+| ``ok-label`` | `string=` | - | “确定”按钮的文字内容。 |
+| ``cancel-label`` | `string=` | - | “取消”按钮的文字内容。 |
 
 ^^^ui
 预设样式。
@@ -69,3 +81,5 @@
 | 名称 | 描述 |
 | -- | -- |
 | ``default`` | 气泡提示内容。 |
+| ``title`` | 用于自定义标题内容。 |
+| ``foot`` | 用于自定义底部操作区。 |
