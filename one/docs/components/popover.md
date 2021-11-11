@@ -24,7 +24,7 @@
 
 使用 [`title`](#props-title) 属性或[`title`](#slots-title) 插槽来指定气泡的标题。
 
-使用 [`foot`](#props-foot) 属性开启底部操作区，使用 [`ok-label`](#props-ok-label)属性 和 [`cancel-label`](#props-cancel-label)属性来设置气泡的按钮内容。使用[`foot`](#slots-foot) 插槽来自定义底部操作区。
+使用 [`foot`](#props-foot) 属性开启底部操作区，使用 [`ok-label`](#props-ok-label) 属性和 [`cancel-label`](#props-cancel-label) 属性来设置气泡的按钮内容。使用 [`foot`](#slots-foot) 插槽来自定义底部操作区。
 
 [[ demo src="/demo/popover/foot.vue" ]]
 
