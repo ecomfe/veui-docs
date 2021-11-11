@@ -47,10 +47,10 @@ export default {
   data () {
     return {
       variants: [
-        { label: '默认', value: '' },
-        { label: '简洁', value: 'simple' },
-        { label: '白底', value: 'basic' },
-        { label: '灰底', value: 'strong' }
+        { label: 'default', value: '' },
+        { label: 'simple', value: 'simple' },
+        { label: 'basic', value: 'basic' },
+        { label: 'strong', value: 'strong' }
       ],
       variant: '',
       bordered: '',
