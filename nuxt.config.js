@@ -58,7 +58,7 @@ module.exports = {
     transpile: ['veui', 'vue-awesome', 'resize-detector', 'less-plugin-dls', 'dls-graphics'],
 
     babel: {
-      plugins: ['veui', 'lodash']
+      plugins: ['veui']
     },
 
     loaders: {
@@ -104,6 +104,34 @@ module.exports = {
           expr: "process.env.VUE_ENV === 'server'"
         }
       })
+
+      config.resolve.alias.vue$ = 'vue/dist/vue.esm.js'
+      config.resolve.alias['vue-inbrowser-compiler-utils'] = '@justfork/vue-inbrowser-compiler-utils'
+    },
+
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          veui: {
+            test: /node_modules[\\/]veui/,
+            chunks: 'all',
+            priority: 20,
+            name: true
+          },
+          'veui-theme-dls-icons': {
+            test: /node_modules[\\/]veui-theme-dls-icons/,
+            chunks: 'all',
+            priority: 20,
+            name: true
+          },
+          'vue-live': {
+            test: /node_modules[\\/]vue-live/,
+            chunks: 'all',
+            priority: 20,
+            name: true
+          }
+        }
+      }
     }
   }
 }

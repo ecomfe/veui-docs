@@ -6,9 +6,13 @@
     message="恭喜你，你的请求已成功处理"
     closable
   >
-    <template slot="title">恭喜你</template>
+    <template slot="title">
+      恭喜你
+    </template>
     <template slot="extra">
-      <veui-button ui="text">查看详情</veui-button>
+      <veui-button ui="text">
+        查看详情
+      </veui-button>
     </template>
     恭喜你，你的请求已成功处理
   </veui-alert>

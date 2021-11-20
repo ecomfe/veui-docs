@@ -1,7 +1,7 @@
 <template>
 <article>
   <section>
-    <p>loading：<veui-switch v-model="loading"/></p>
+    <div>loading：<veui-switch v-model="loading"/></div>
     <veui-table
       :data="data"
       :loading="loading"

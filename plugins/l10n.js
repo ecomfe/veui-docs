@@ -5,6 +5,7 @@ i18n.register(
   {
     showCode: '显示代码',
     hideCode: '隐藏代码',
+    expandEditor: '展开实时编辑',
     playInCodeSandbox: '在 CodeSandbox 中打开',
     playInStackBlitz: '在 StackBlitz 中打开'
   },
@@ -18,11 +19,62 @@ i18n.register(
   {
     showCode: 'Show code',
     hideCode: 'Hide code',
+    expandEditor: 'Expand Live Editor',
     playInCodeSandbox: 'Open in CodeSandbox',
     playInStackBlitz: 'Open in StackBlitz'
   },
   {
     ns: 'onedemo'
+  }
+)
+
+i18n.register(
+  'zh-Hans',
+  {
+    copyCode: '复制代码',
+    copySuccess: '复制成功！',
+    copyFailed: '复制失败！',
+    reset: '重置',
+    dismiss: '关闭'
+  },
+  {
+    ns: 'onelive'
+  }
+)
+
+i18n.register(
+  'en-US',
+  {
+    copyCode: 'Copy code',
+    copySuccess: 'Copy success!',
+    copyFailed: 'Copy failed!',
+    reset: 'Reset',
+    dismiss: 'Dismiss'
+  },
+  {
+    ns: 'onelive'
+  }
+)
+
+i18n.register(
+  'zh-Hans',
+  {
+    exit: '退出',
+    liveEdit: '实时编辑'
+  },
+  {
+    ns: 'onerepl'
+  }
+)
+
+i18n.register(
+  'en-US',
+  {
+    exit: 'Exit',
+    liveEdit: 'Live Edit'
+  },
+  {
+    ns: 'onerepl'
   }
 )
 

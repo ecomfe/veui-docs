@@ -1,22 +1,28 @@
 <template>
 <article>
-  <veui-pagination
-    :page="page"
-    :total="total"
-    :to="to"
-  />
-  <veui-pagination
-    :page="page"
-    :total="total"
-    :to="to"
-    ui="s"
-  />
-  <veui-pagination
-    :page="page"
-    :total="total"
-    :to="to"
-    ui="xs"
-  />
+  <section>
+    <veui-pagination
+      :page="page"
+      :total="total"
+      :to="to"
+    />
+  </section>
+  <section>
+    <veui-pagination
+      :page="page"
+      :total="total"
+      :to="to"
+      ui="s"
+    />
+  </section>
+  <section>
+    <veui-pagination
+      :page="page"
+      :total="total"
+      :to="to"
+      ui="xs"
+    />
+  </section>
 </article>
 </template>
 

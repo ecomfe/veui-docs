@@ -132,7 +132,6 @@ export default {
     top: 50px;
   }
 }
-
 </style>
 
 <docs>

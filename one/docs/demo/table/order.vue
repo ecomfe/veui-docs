@@ -1,12 +1,12 @@
 <template>
 <article>
   <section>
-    <p>
+    <div>
       允许不排序：<veui-switch
         v-model="allowFalse"
         @change="handleChange"
       />
-    </p>
+    </div>
     <veui-table
       :data="sorted"
       key-field="id"

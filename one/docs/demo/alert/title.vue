@@ -10,7 +10,9 @@
     type="success"
   >
     Your profile has been updated.
-    <template slot="title">消息标题</template>
+    <template slot="title">
+      消息标题
+    </template>
   </veui-alert>
 </article>
 </template>
