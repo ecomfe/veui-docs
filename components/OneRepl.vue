@@ -19,15 +19,28 @@
 </template>
 
 <script>
-import { Button } from 'veui'
+import { Button, Loading } from 'veui'
 import i18n from 'veui/mixins/i18n'
-import OneLive from './OneLive.vue'
 
 export default {
   name: 'one-repl',
   components: {
     'veui-button': Button,
-    'one-live': OneLive
+    'one-live': () => ({
+      component: import('./OneLive'),
+      loading: {
+        inheritAttrs: false,
+        render (h) {
+          return h(Loading, {
+            props: {
+              loading: true,
+              ui: 'strong'
+            },
+            class: 'loading'
+          })
+        }
+      }
+    })
   },
   mixins: [i18n],
   props: {
@@ -46,6 +59,7 @@ export default {
 
 <style lang="stylus" scoped>
 .repl
+  position relative
   display flex
   flex-direction column
 
@@ -68,7 +82,8 @@ export default {
     justify-content flex-end
     flex 1 1 auto
 
-.editor
+.editor:not(.loading)
+  position relative
   flex 1 1 auto
   height calc(100vh - 48px)
 
@@ -101,4 +116,11 @@ export default {
 
   & >>> .VueLive-error
     display none
+
+.loading
+  position absolute
+  top 40vh
+  left 50%
+  transform translateX(-50%)
+  font-size 40px
 </style>

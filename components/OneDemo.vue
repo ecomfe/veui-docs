@@ -91,6 +91,7 @@ import { BrowserWindow } from 'vue-windows'
 import { getLocale } from '../common/i18n'
 import { play } from '../common/play'
 import OneEditLink from './OneEditLink'
+import OneRepl from './OneRepl'
 
 export default {
   name: 'one-demo',
@@ -102,7 +103,7 @@ export default {
     'veui-icon': Icon,
     BrowserWindow,
     OneEditLink,
-    OneRepl: () => import('./OneRepl')
+    OneRepl
   },
   mixins: [i18n],
   props: {
