@@ -36,7 +36,6 @@
 </template>
 
 <script>
-import moment from 'moment'
 import { Form, Field, Button, Select, DatePicker, SearchBox } from 'veui'
 
 export default {
@@ -49,6 +48,9 @@ export default {
     'veui-search-box': SearchBox
   },
   data () {
+    const start = new Date()
+    const end = new Date(start.getFullYear(), start.getMonth() + 1, 0)
+
     return {
       statusOptions: [
         {
@@ -71,12 +73,7 @@ export default {
       formData: {
         statusSelected: 1,
         query: '',
-        range: [
-          moment().toDate(),
-          moment()
-            .add(3, 'month')
-            .toDate()
-        ]
+        range: [start, end]
       }
     }
   }

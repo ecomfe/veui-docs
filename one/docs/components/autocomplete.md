@@ -16,9 +16,7 @@
 
 ### 自定义搜索逻辑
 
-设置 [`match`](#props-match) 属性来自定义自定义高亮逻辑。
-
-设置 [`filter`](#props-filter) 属性来自定义搜索命中逻辑。
+设置 [`match`](#props-match) 属性来自定义高亮逻辑；设置 [`filter`](#props-filter) 属性来自定义搜索命中逻辑。
 
 :::tip
 `match` 用于高亮显示匹配文本的逻辑；而 `filter` 是控制是否命中。默认情况下 `filter` 会过滤掉未被 `match` 匹配的节点，且将包含非叶子节点。如希望搜索结果中都是叶子节点，可通过重写 `filter` 过滤掉非叶子节点。
