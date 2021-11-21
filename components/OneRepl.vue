@@ -59,7 +59,6 @@ export default {
 
 <style lang="stylus" scoped>
 .repl
-  position relative
   display flex
   flex-direction column
 
