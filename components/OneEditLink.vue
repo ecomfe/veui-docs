@@ -93,8 +93,9 @@ export default {
 
     .full
       display inline
-    .short
-      display none
+
+  .short
+    display none
 
 @media (max-width 480px)
   .one-edit-link-quiet
