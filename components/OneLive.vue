@@ -6,7 +6,9 @@
   >
     <v-live-editor
       :code="localCode"
-      line-numbers
+      :editor-props="{
+        lineNumbers: true
+      }"
       @change="handleChange"
     />
     <div class="editor-toolbar">
