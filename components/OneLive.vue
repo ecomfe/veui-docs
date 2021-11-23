@@ -94,6 +94,10 @@ import { transformLessCode } from '../common/transform'
 
 Vue.use(toast)
 
+const iconPackage = 'veui-theme-dls-icons'
+const iconNames = Object.keys(Icon.icons).filter(name => !name.startsWith('one-demo-') && Icon.icons[name])
+const iconModules = [iconPackage].concat(iconNames.map(name => `${iconPackage}/${name}`))
+
 export default {
   name: 'one-live',
   components: {
@@ -124,7 +128,10 @@ export default {
       imports: {
         veui,
         lodash,
-        'veui-theme-dls-icons': {}
+        ...iconModules.reduce((mocks, module) => {
+          mocks[module] = true
+          return mocks
+        }, {})
       }
     }
   },
