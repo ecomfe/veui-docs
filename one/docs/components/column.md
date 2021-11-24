@@ -26,6 +26,7 @@
 | ``filter-options`` | `Array<Object>` | - | 筛选选项列表，项目的类型为 `{label, value, options, disabled, ...}`，可参考 [`Select`](./select) 组件的 [`options`](./select#props-options) 属性。 |
 | ``filter-title`` | `string=` | - | 筛选下拉的标题。 |
 | ``allowed-orders`` | `Array` | `[false, 'desc', 'asc']` | [^allowed-orders] |
+| ``tooltip`` | `boolean | ((item: Object) => string)` | - | 是否当内容溢出时自动显示悬浮提示。默认显示所属 `Table` 组件 [`data`](./table#props-data) 属性数据项中 [`field`](#props-field) 属性对应的字段值。传入函数时，`item` 参数为整个 data 数据项，返回的字符串将作为提示内容展示。 |
 
 ^^^sortable
 本列是否支持排序。

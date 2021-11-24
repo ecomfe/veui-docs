@@ -87,7 +87,7 @@
     "veui-theme-dls-icons": "^2.3.0",
     "vue-awesome": "^4.1.0",
     "vue-i18n": "^8.16.0",
-    "vue-live": "^1.17.1",
+    "vue-live": "^1.17.2",
     "vue-windows": "^0.2.4"
   },
   "dependencies": {

@@ -147,11 +147,6 @@
 <div v-drag:box1,box2></div>
 ```
 
-
-## 拖拽排序（v-drag.sort）
-
-可以通过 `v-drag.sort` 或 `v-drag="{ type: 'sort', ... }"` 来实现拖拽排序。
-
 ## 扩展
 
 可以通过继承 `BaseHandler` 扩展 `v-drag` 指令：

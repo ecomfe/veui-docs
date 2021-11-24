@@ -25,6 +25,8 @@ See [the demos of `Table`](./table#demos).
 | ``filter-multiple`` | `boolean=` | `false` | Whether the built-in filter is multi-select or not. |
 | ``filter-options`` | `Array<Object>` | - | The list of filter options, with items of type `{label, value, options, disabled, ...}`, see the [`options`](./select#options) prop of the [`Select`](./select) component. |
 | ``filter-title`` | `string=` | - | The title of the filter dropdown. |
+| ``allowed-orders`` | `Array` | `[false, 'desc', 'asc']` | [^allowed-orders] |
+| ``tooltip`` | `boolean | ((item: Object) => string)` | - | Whether to automatically show tooltips when content overflows. The tooltip displays the field corresponding to the [`field`](#props-field) prop of the [`data`](. /table#props-data) prop of `Table` component the current column belongs to. When being a function, the `item` argument is the entire data item and the returned string will be displayed as tooltip content. |
 
 ^^^sortable
 Whether current column is sortable.

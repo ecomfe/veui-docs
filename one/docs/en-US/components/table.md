@@ -12,7 +12,7 @@ Available density variants for the [`ui`](#props-ui) prop: `compact` / `loose`.
 
 [[ demo src="/demo/table/basic.vue" ]]
 
-### Advanced
+### Selection and sorting
 
 Supports specifying row keys, mode of selection, and sorting by values of specific column.
 
@@ -47,6 +47,12 @@ Rows can be expanded into sub-rows.
 Use the [`desc`](./column#props-desc) prop or the [`desc`](./column#slots-desc) slot to provide description for the column header.
 
 [[ demo src="/demo/table/desc.vue" ]]
+
+### Truncation tooltips
+
+Use the [`tooltip`](./column#props-tooltip) attribute of the `Column` component to specify that a hover tooltip is displayed when the content is truncated.
+
+[[ demo src="/demo/table/tooltip.vue" ]]]
 
 ## API
 

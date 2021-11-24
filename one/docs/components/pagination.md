@@ -6,13 +6,6 @@
 
 [[ demo src="/demo/pagination/size.vue" ]]
 
-### 跳转到指定页
-
-使用 [`goto`](#props-goto) 属性开启跳转到指定页的功能。
-
-[[ demo src="/demo/pagination/goto.vue" ]]
-
-
 ### 每页个数
 
 使用 [`page-size`](#props-page-size) 属性来指定当前每页的个数。
@@ -20,6 +13,12 @@
 使用 [`page-sizes`](#props-page-sizes) 属性来指定每页个数候选项。
 
 [[ demo src="/demo/pagination/pages.vue" ]]
+
+### 可选部分
+
+使用 [`show-total`](#props-show-total) / [`show-page-size`](#props-show-page-size) / [`show-goto`](#props-show-goto) 属性来分别控制是否显示项目总数/每页项目数选择器/跳转到指定页。
+
+[[ demo src="/demo/pagination/parts.vue" ]]
 
 ## API
 
@@ -29,12 +28,14 @@
 | -- | -- | -- | -- |
 | ``ui`` | `string=` | - | [^ui] |
 | ``page`` | `number` | `1` | 当前页码（从 `1` 开始）。 |
-| ``total`` | `number` | - | 总页数。 |
+| ``total`` | `number` | - | 项目总数。 |
 | ``to`` | `string | Object` | `''` | [^to] |
 | ``native`` | `boolean` | `false` | 原生链接跳转。 |
 | ``page-size`` | `number` | `pagination.pageSize` | [^page-size] |
-| ``page-sizes`` | `Array` | `pagination.pageSizes` | 每页个数候选项。 |
-| ``goto`` | `boolean` | `false` | 是否显示直接跳转到页码。 |
+| ``page-sizes`` | `Array<number>` | `pagination.pageSizes` | 每页个数候选项。 |
+| ``show-goto`` | `boolean=` | `false` | 是否显示直接跳转到页码。 |
+| ``show-total`` | `boolean=` | `false` | 是否显示项目总数。 |
+| ``show-page-size`` | `boolean=` | `false` | 是否显示每页项目数选择器。 |
 
 ^^^ui
 预设样式。
@@ -64,7 +65,7 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| ``pagesizechange`` | `page-size` 改变时触发，回调参数为 `(size: number)`。`size` 为新的 `page-size` 值。 |
+| ``pagesizechange`` | 每页显示项目被切换时触发，回调参数为 `(size: number)`。`size` 为新的每页显示项目数。 |
 | ``redirect`` | 链接跳转时触发，回调参数为 `(page: number, event: Object)`。`page` 为要跳转的目标页码。`event` 为原生的事件对象，在 `native` 为 `true` 时，调用 `event.preventDefault` 可阻止跳转。 |
 
 ### 全局配置

@@ -19,7 +19,6 @@
       {{ item }}
     </div>
   </transition-group>
-  </section>
 </article>
 </template>
 
@@ -67,3 +66,7 @@ export default {
   transition: transform 200ms ease;
 }
 </style>
+
+<docs>
+可以通过 `v-drag.sort` 或 `v-drag="{ type: 'sort', ... }"` 来实现拖拽排序。
+</docs>

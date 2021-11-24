@@ -1,34 +1,36 @@
 <template>
 <article>
   <section>
-    <div>loading：<veui-switch v-model="loading"/></div>
-    <veui-table
-      :data="data"
-      :loading="loading"
-      key-field="id"
-    >
-      <veui-table-column
-        field="id"
-        title="ID"
-        sortable
-      />
-      <veui-table-column
-        field="name"
-        title="Name"
-      />
-      <veui-table-column
-        field="bid"
-        title="Bid"
-        width="160"
-        align="right"
-        sortable
-      >
-        <template slot-scope="{ bid }">
-          {{ bid | currency }}
-        </template>
-      </veui-table-column>
-    </veui-table>
+    <veui-switch v-model="loading">
+      Loading
+    </veui-switch>
   </section>
+  <veui-table
+    :data="data"
+    :loading="loading"
+    key-field="id"
+  >
+    <veui-table-column
+      field="id"
+      title="ID"
+      sortable
+    />
+    <veui-table-column
+      field="name"
+      title="Name"
+    />
+    <veui-table-column
+      field="bid"
+      title="Bid"
+      width="160"
+      align="right"
+      sortable
+    >
+      <template slot-scope="{ bid }">
+        {{ bid | currency }}
+      </template>
+    </veui-table-column>
+  </veui-table>
 </article>
 </template>
 

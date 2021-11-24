@@ -12,7 +12,7 @@
 
 [[ demo src="/demo/table/basic.vue" ]]
 
-### 高级
+### 选择模式与排序
 
 允许自定义唯一键、设定选择模式以及进行排序。
 
@@ -24,7 +24,7 @@
 
 [[ demo src="/demo/table/filter.vue" ]]
 
-### 内部滚动模式
+### 内部滚动
 
 允许启用内部滚动模式，以达到固定表头表底的效果。
 
@@ -44,7 +44,7 @@
 
 ### 表头描述
 
-使用 [`desc`](./column#props-desc) 属性或 [`desc`](./column#slots-desc) 插槽来为表头增加描述信息。
+使用 `Column` 组件的 [`desc`](./column#props-desc) 属性或 [`desc`](./column#slots-desc) 插槽来为表头增加描述信息。
 
 [[ demo src="/demo/table/desc.vue" ]]
 
@@ -63,6 +63,12 @@
 使用 [`loading`](#props-loading) 属性来指定表格处于加载状态。
 
 [[ demo src="/demo/table/loading.vue" ]]
+
+### 截断提示
+
+使用 `Column` 组件的 [`tooltip`](./column#props-tooltip) 属性来指定在内容截断时显示悬浮提示。
+
+[[ demo src="/demo/table/tooltip.vue" ]]
 
 ## API
 

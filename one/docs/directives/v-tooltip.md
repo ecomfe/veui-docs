@@ -10,7 +10,13 @@ VEUI 对通过 `v-tooltip` 定义的全局浮层提示进行了统一的体验�
 
 ## 示例
 
-[[ demo src="/demo/directives/tooltip.vue" ]]
+### 基本用法
+
+[[ demo src="/demo/directives/tooltip/default.vue" ]]
+
+### 溢出时显示
+
+[[ demo src="/demo/directives/tooltip/overflow.vue" ]]
 
 ## API
 
@@ -42,14 +48,15 @@ VEUI 对通过 `v-tooltip` 定义的全局浮层提示进行了统一的体验�
 | -- | -- | -- | -- |
 | ``content`` | `string | VNode | Array<VNode>` | - | 提示信息字符串或通过渲染函数返回的虚拟节点（数组）。 |
 | ``position`` | `string` | - | 浮层提示的展示位置。参考 [`Tooltip`](../components/tooltip) 组件的 [`position`](../components/tooltip#props-position) 属性。 |
+| ``overflow`` | `boolean` | `false` | 是否仅在目标元素内容溢出容器时显示悬浮提示。 |
 | ``disabled`` | `boolean` | `false` | 是否禁用浮层提示。 |
 
 ### 修饰符
 
-对应 `Object` 类型绑定值中的 `position`。例如：
+对应 `Object` 类型绑定值中的 `position` / `overflow`。例如：
 
 ```html
-<button v-tooltip.bottom-end="添加">+</button>
+<span v-tooltip.bottom-end.overflow="添加">A paragraph of very long text...</span>
 ```
 
 ### 全局配置
