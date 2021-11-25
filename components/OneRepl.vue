@@ -70,6 +70,7 @@ export default {
   padding 0 24px
   box-shadow 0 0 4px #0006
   position relative
+  z-index 1
 
   h1
     flex none
@@ -85,30 +86,6 @@ export default {
   position relative
   flex 1 1 auto
   height calc(100vh - 48px)
-
-  & >>> .prism-editor-wrapper
-    padding 8px 12px
-    font-size 12px
-    color #eee
-    background-color #0a0b0d
-    line-height 1.5
-    font-family Menlo, consolas, monospace
-    -webkit-font-smoothing auto
-
-    &::-webkit-scrollbar
-      width 8px
-      background transparent
-      transition all 0.3s
-
-      &-thumb
-        border-radius 4px
-        background-color #282c33
-
-    &:hover::-webkit-scrollbar-thumb
-      background-color #545b66
-
-    textarea
-      outline none
 
   & >>> .live-preview
     padding 24px 36px

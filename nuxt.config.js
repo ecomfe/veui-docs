@@ -1,4 +1,5 @@
 const path = require('path')
+const MonacoEditorPlugin = require('monaco-editor-webpack-plugin')
 
 function resolve (p) {
   return path.resolve(__dirname, p)
@@ -75,6 +76,12 @@ module.exports = {
       }
     },
 
+    plugins: [
+      new MonacoEditorPlugin({
+        languages: ['javascript', 'css', 'html', 'typescript']
+      })
+    ],
+
     extend (config) {
       /**
        * veui-loader
@@ -107,6 +114,7 @@ module.exports = {
 
       config.resolve.alias.vue$ = 'vue/dist/vue.esm.js'
       config.resolve.alias['vue-inbrowser-compiler-utils'] = '@justfork/vue-inbrowser-compiler-utils'
+      config.resolve.alias['vue-monaco'] = '@justfork/vue-monaco'
     },
 
     optimization: {

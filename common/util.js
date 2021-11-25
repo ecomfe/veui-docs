@@ -36,3 +36,20 @@ export function getLink ({ slug, link, children }) {
   }
   return `/${slug}`
 }
+
+const PREF_KEY = 'veui.preferences'
+
+export function loadPref (key) {
+  try {
+    const pref = JSON.parse(localStorage.getItem(PREF_KEY))
+    return pref[key]
+  } catch (e) {
+    return null
+  }
+}
+
+export function savePref (key, value) {
+  const pref = JSON.parse(localStorage.getItem(PREF_KEY)) || {}
+  pref[key] = value
+  localStorage.setItem(PREF_KEY, JSON.stringify(pref))
+}

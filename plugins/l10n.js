@@ -35,7 +35,10 @@ i18n.register(
     copySuccess: '复制成功！',
     copyFailed: '复制失败！',
     reset: '重置',
-    dismiss: '关闭'
+    dismiss: '关闭',
+    darkMode: '暗色模式',
+    lightMode: '亮色模式',
+    followSystem: '跟随系统设置'
   },
   {
     ns: 'onelive'
@@ -49,7 +52,10 @@ i18n.register(
     copySuccess: 'Copy success!',
     copyFailed: 'Copy failed!',
     reset: 'Reset',
-    dismiss: 'Dismiss'
+    dismiss: 'Dismiss',
+    darkMode: 'Dark mode',
+    lightMode: 'Light mode',
+    followSystem: 'Follow system preferences'
   },
   {
     ns: 'onelive'
