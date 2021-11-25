@@ -194,7 +194,7 @@ export default {
       return error.name ? `${error.name}: ${error.message}` : error.message
     },
     colorScheme () {
-      if (!this.colorSchemeOption || !this.mql) {
+      if (!this.colorSchemeOption) {
         return 'dark'
       }
 
@@ -253,6 +253,7 @@ export default {
   mounted () {
     this.mql = window.matchMedia('(prefers-color-scheme: dark)')
     this.mql.addEventListener('change', this.handleColorSchemeChange)
+    this.colorSchemeSystemPref = this.mql.matches ? 'dark' : 'light'
   },
   beforeDestroy () {
     this.mql.removeEventListener('change', this.handleColorSchemeChange)

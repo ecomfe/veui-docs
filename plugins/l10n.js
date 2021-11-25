@@ -19,7 +19,7 @@ i18n.register(
   {
     showCode: 'Show code',
     hideCode: 'Hide code',
-    expandEditor: 'Expand Live Editor',
+    expandEditor: 'Expand Live editor',
     playInCodeSandbox: 'Open in CodeSandbox',
     playInStackBlitz: 'Open in StackBlitz'
   },
