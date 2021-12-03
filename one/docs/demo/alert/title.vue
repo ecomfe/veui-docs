@@ -10,7 +10,7 @@
     type="success"
   >
     Your profile has been updated.
-    <template slot="title">
+    <template #title>
       消息标题
     </template>
   </veui-alert>
@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped docs>
+<style lang="less" scoped>
 .veui-alert {
   margin-bottom: 20px;
 }

@@ -72,7 +72,8 @@ export default {
       ]).then(([docsearch]) => {
         docsearch = docsearch.default
         docsearch({
-          apiKey: '21cdc123c620ec4bb81259c32e90c08f',
+          appId: 'WW5G10K3KO',
+          apiKey: '3dc7f443d11e6712da7f98b2720bb8fc',
           indexName: 'veui',
           container: this.$refs.docsearch,
           searchParameters: {

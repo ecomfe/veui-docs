@@ -31,7 +31,7 @@
         align="right"
         sortable
       >
-        <template slot-scope="{ bid }">
+        <template #default="{ bid }">
           {{ bid | currency }}
         </template>
       </veui-table-column>

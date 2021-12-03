@@ -6,10 +6,10 @@
     message="恭喜你，你的请求已成功处理"
     closable
   >
-    <template slot="title">
+    <template #title>
       恭喜你
     </template>
-    <template slot="extra">
+    <template #extra>
       <veui-button ui="text">
         查看详情
       </veui-button>
