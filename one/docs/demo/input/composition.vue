@@ -1,10 +1,12 @@
 <template>
 <article>
   <section>
-    <p>
-      composition: <veui-switch v-model="composition"/>
-    </p>
-    <p>Input value: {{ value }}</p>
+    <veui-checkbox v-model="composition">
+      Composition
+    </veui-checkbox>
+  </section>
+  <section>Input value: {{ value }}</section>
+  <section>
     <veui-input
       v-model="value"
       :composition="composition"
@@ -14,12 +16,12 @@
 </template>
 
 <script>
-import { Input, Switch } from 'veui'
+import { Input, Checkbox } from 'veui'
 
 export default {
   components: {
     'veui-input': Input,
-    'veui-switch': Switch
+    'veui-checkbox': Checkbox
   },
   data () {
     return {
@@ -29,3 +31,9 @@ export default {
   }
 }
 </script>
+
+<style lang="less" scoped>
+section {
+  margin-bottom: 20px;
+}
+</style>

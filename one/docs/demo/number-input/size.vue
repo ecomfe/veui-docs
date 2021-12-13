@@ -1,20 +1,20 @@
 <template>
 <article>
-  <p>
+  <section>
     <veui-number-input v-model="value"/>
-  </p>
-  <p>
+  </section>
+  <section>
     <veui-number-input
       v-model="value"
       ui="s"
     />
-  </p>
-  <p>
+  </section>
+  <section>
     <veui-number-input
       v-model="value"
       ui="xs"
     />
-  </p>
+  </section>
 </article>
 </template>
 
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-p {
-  margin-bottom: 1em;
+section {
+  margin-bottom: 20px;
 }
 </style>

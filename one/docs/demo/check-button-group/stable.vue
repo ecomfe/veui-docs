@@ -1,25 +1,25 @@
 <template>
 <article>
   <section>
-    <p>
-      最小宽度：<veui-switch v-model="isStable"/>
-    </p>
-    <veui-check-button-group
-      v-model="flavor"
-      :items="flavors"
-      :ui="isStable ? 'stable' : ''"
-    />
+    <veui-checkbox v-model="isStable">
+      Stable layout
+    </veui-checkbox>
   </section>
+  <veui-check-button-group
+    v-model="flavor"
+    :items="flavors"
+    :ui="isStable ? 'stable' : ''"
+  />
 </article>
 </template>
 
 <script>
-import { CheckButtonGroup, Switch } from 'veui'
+import { CheckButtonGroup, Checkbox } from 'veui'
 
 export default {
   components: {
     'veui-check-button-group': CheckButtonGroup,
-    'veui-switch': Switch
+    'veui-checkbox': Checkbox
   },
   data () {
     return {
@@ -38,9 +38,5 @@ export default {
 <style lang="less" scoped>
 section {
   margin-bottom: 20px;
-}
-
-h4 {
-  margin-top: 0;
 }
 </style>

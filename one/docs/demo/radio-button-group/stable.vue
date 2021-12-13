@@ -1,25 +1,26 @@
 <template>
 <article>
   <section>
-    <p>
-      最小宽度：<veui-switch v-model="isStable"/>
-    </p>
-    <veui-radio-button-group
-      v-model="flavor"
-      :items="flavors"
-      :ui="isStable ? 'stable' : ''"
-    />
+    <veui-checkbox v-model="isStable">
+      Stable layout
+    </veui-checkbox>
+  </section>
+  <veui-radio-button-group
+    v-model="flavor"
+    :items="flavors"
+    :ui="isStable ? 'stable' : ''"
+  />
   </section>
 </article>
 </template>
 
 <script>
-import { RadioButtonGroup, Switch } from 'veui'
+import { RadioButtonGroup, Checkbox } from 'veui'
 
 export default {
   components: {
     'veui-radio-button-group': RadioButtonGroup,
-    'veui-switch': Switch
+    'veui-checkbox': Checkbox
   },
   data () {
     return {

@@ -26,11 +26,11 @@
     :ui="ui"
     :open.sync="open"
   >
-    <p>Current UI: "{{ ui }}"</p>
-    <p v-if="ui === 's' || ui === 'm'">
+    <section>Current UI: "{{ ui }}"</section>
+    <section v-if="ui === 's' || ui === 'm'">
       <veui-button>Button size: {{ ui }}</veui-button>
       <veui-switch>{{ ui }}</veui-switch>
-    </p>
+    </section>
   </veui-dialog>
 </article>
 </template>

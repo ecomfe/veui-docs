@@ -2,10 +2,12 @@
 <article>
   <section>
     <div>
-      允许不排序：<veui-switch
+      <veui-checkbox
         v-model="allowFalse"
         @change="handleChange"
-      />
+      >
+        Allow unordered
+      </veui-checkbox>
     </div>
     <veui-table
       :data="sorted"
@@ -41,7 +43,7 @@
 </template>
 
 <script>
-import { Table, Column, Switch } from 'veui'
+import { Table, Column, Checkbox } from 'veui'
 
 let data = [
   {
@@ -76,7 +78,7 @@ export default {
   components: {
     'veui-table': Table,
     'veui-table-column': Column,
-    'veui-switch': Switch
+    'veui-checkbox': Checkbox
   },
   filters: {
     currency (value) {

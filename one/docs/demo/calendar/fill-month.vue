@@ -1,19 +1,21 @@
 <template>
 <article>
-  <p>
-    fill-month: <veui-switch v-model="isFill"/>
-  </p>
+  <section>
+    <veui-checkbox v-model="isFill">
+      Fill month
+    </veui-checkbox>
+  </section>
   <veui-calendar :fill-month="isFill"/>
 </article>
 </template>
 
 <script>
-import { Calendar, Switch } from 'veui'
+import { Calendar, Checkbox } from 'veui'
 
 export default {
   components: {
     'veui-calendar': Calendar,
-    'veui-switch': Switch
+    'veui-checkbox': Checkbox
   },
   data () {
     return {
@@ -25,7 +27,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-radio-group {
+section {
   margin-bottom: 20px;
 }
 </style>
