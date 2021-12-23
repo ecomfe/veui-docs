@@ -56,6 +56,10 @@ module.exports = {
    * Build configuration
    */
   build: {
+    cache: true,
+
+    parallel: true,
+
     transpile: ['veui', 'vue-awesome', 'resize-detector', 'less-plugin-dls', 'dls-graphics'],
 
     babel: {
