@@ -40,7 +40,7 @@ Whether current column is sortable.
 A function that defines how cells should span across rows/columns. The type is `function(index: number): { row: number, col: number }`, where `index` being the index of current row inside the [`data`](./table#props-data) prop of the parent `Table`. The `row` / `col` of the return value correspond to table cell's `rowspan` / `colspan` attribut, with a default value of `1`.
 
 :::tip
-You can learn more abut how to use this in `Table` component's [Demos › Advanced](./table#advanced).
+You can learn more abut how to use this in `Table` component's [Demos › Selection and sorting](./table#selection-and-sorting).
 :::
 ^^^
 

@@ -40,7 +40,7 @@
 单元格合并配置。类型为 `function(index: number): { row: number, col: number }`。`index` 为当前行在所属 `Table` 组件的 [`data`](./table#props-data) 属性中的索引。返回值的 `row` / `col` 字段对应于单元格的 `rowspan` / `colspan`，默认值均为 `1`。
 
 :::tip
-可以参考 `Table` 组件中的[示例 › 高级](./table#高级)来了解如何使用。
+可以参考 `Table` 组件中的[示例 › 选择模式与排序](./table#选择模式与排序)来了解如何使用。
 :::
 ^^^
 
