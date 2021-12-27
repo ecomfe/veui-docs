@@ -1,6 +1,7 @@
 <template>
 <div class="one-search">
   <veui-search-box
+    ref="search"
     v-model="query"
     class="input"
     :placeholder="searchPlaceholder"
@@ -36,6 +37,12 @@ function normalizeURL (url) {
   return url.replace(/\/([#?])/, '$1')
 }
 
+function wait (time) {
+  return new Promise(resolve => {
+    setTimeout(resolve, time)
+  })
+}
+
 export default {
   name: 'one-search',
   components: {
@@ -44,6 +51,7 @@ export default {
   mixins: [i18n],
   data () {
     return {
+      preparing: true,
       query: ''
     }
   },
@@ -65,11 +73,20 @@ export default {
       const { pathname, hash } = new URL(absoluteUrl)
       return `${pathname}/${hash}`
     },
+    triggerFocus (e) {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+        this.$refs.search.focus()
+      }
+    },
     initialize (locale) {
+      document.addEventListener('keydown', this.triggerFocus)
+
       Promise.all([
         import(/* webpackChunkName: "docsearch" */ '@docsearch/js'),
         import(/* webpackChunkName: "docsearch" */ '@docsearch/css')
       ]).then(([docsearch]) => {
+        document.removeEventListener('keydown', this.triggerFocus)
+
         docsearch = docsearch.default
         docsearch({
           appId: 'WW5G10K3KO',
@@ -130,6 +147,12 @@ export default {
             )
           }
         })
+
+        this.preparing = false
+
+        if (this.query) {
+          this.teleportQuery(this.query)
+        }
       })
     },
     update (locale) {
@@ -137,7 +160,7 @@ export default {
       this.initialize(locale)
     },
     handleInput (value) {
-      if (!value) {
+      if (!value || this.preparing) {
         return
       }
 

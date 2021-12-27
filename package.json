@@ -21,7 +21,6 @@
   "devDependencies": {
     "@docsearch/css": "^3.0.0-alpha.39",
     "@docsearch/js": "^3.0.0-alpha.39",
-    "@justfork/vue-inbrowser-compiler-utils": "^4.42.0",
     "@justfork/vue-monaco": "^0.3.1",
     "@stackblitz/sdk": "^1.5.2",
     "babel-eslint": "^10.1.0",
@@ -88,7 +87,7 @@
     "veui-loader": "^2.3.4",
     "veui-theme-dls": "^2.3.4",
     "veui-theme-dls-icons": "^2.3.4",
-    "vue-awesome": "^4.1.0",
+    "vue-awesome": "^4.5.0",
     "vue-i18n": "^8.16.0",
     "vue-live": "^1.17.2",
     "vue-windows": "^0.2.4"

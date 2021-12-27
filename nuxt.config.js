@@ -117,7 +117,6 @@ module.exports = {
       })
 
       config.resolve.alias.vue$ = 'vue/dist/vue.esm.js'
-      config.resolve.alias['vue-inbrowser-compiler-utils'] = '@justfork/vue-inbrowser-compiler-utils'
       config.resolve.alias['vue-monaco'] = '@justfork/vue-monaco'
     },
 
