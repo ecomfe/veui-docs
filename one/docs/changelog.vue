@@ -295,9 +295,13 @@ h2
       content "§"
 
   a
+    display inline-flex
+    align-items center
     color #333 !important
 
   small
+    display inline-flex
+    align-items center
     font-size 14px
 
     &::before
