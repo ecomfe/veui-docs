@@ -1,4 +1,4 @@
-# Layout <small>Layout</small>
+# Layout <small>布局</small>
 
 :::tip
 `Layout` 组件需要配合 [`Header`](./header) / [`Sidebar`](./sidebar) / [`Footer`](./footer) / [`Content`](./content) 组件使用。
