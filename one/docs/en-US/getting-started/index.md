@@ -33,11 +33,13 @@ module.exports = {
 
 Read more about `babel-plugin-veui` [here](/getting-started/babel-plugin-veui).
 
-### webpack Loader
+### Vue CLI configs
 
-In general, you need to configure `vue.config.js` in the root directory as follows:
+For projects that need to import the default theme package `veui-theme-dls`, we need to configure the `vue.config.js` as follows:
 
 ```js
+const veuiLoaderOptions = require('veui-theme-dls/veui-loader-options')
+
 module.exports = {
   css: {
     loaderOptions: {
@@ -56,21 +58,7 @@ module.exports = {
       .pre()
       .use('veui-loader')
       .loader('veui-loader')
-      .tap(() => {
-        return {
-          modules: [
-            {
-              package: 'veui-theme-dls',
-              fileName: '{module}.less'
-            },
-            {
-              package: 'veui-theme-dls',
-              fileName: '{module}.js',
-              transform: false
-            }
-          ]
-        }
-      })
+      .tap(() => veuiLoaderOptions)
   }
 }
 ```
@@ -78,9 +66,9 @@ module.exports = {
 To learn more details of configuring `veui-loader`, read its documentation [here](/getting-started/veui-loader).
 
 +++Why all these configs?
-VEUI's style code is separate from its components. The component code doesn't explicitly depend on style code so `veui-loader` is needed to specify and inject style package into the components.
+VEUI takes an approach to develop and ship component logic and themes separatedly. The component code has no explicit depency on style code so you need to use `veui-loader` to configure the theme package you want to use.
 
-If you want to use `veui-theme-dls`, the default style package, you need import and configure `veui-loader` for webpack. As Less 3+ no longer enable JavaScript evaluation by default, which `veui-theme-dls` relies on, you need to manually enable this option.
+As Less 3+ does not enable inline JavaScript evaluation by default - which `veui-theme-dls` relies on, we need to enable it manually.
 
 We intend to transpile and build VEUI and its dependencies along with the application code itself so you need to add the related packages into the transpilation process.
 +++
@@ -93,5 +81,4 @@ Import from JavaScript:
 
 ```js
 import 'veui-theme-dls/common.less'
-import 'focus-visible'
 ```
