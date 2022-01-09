@@ -697,8 +697,7 @@
         },
         {
           "title": "Accordion",
-          "slug": "accordion",
-          "disabled": true
+          "slug": "accordion"
         },
         {
           "title": "Lightbox",
