@@ -9,3 +9,4 @@ components/demos
 dist
 logs
 assets/data
+yarn.lock
