@@ -20,7 +20,7 @@ Use [`target-offset`](#props-target-offset) property to control where the anchor
 
 Use [`sticky-offset`](#props-sticky-offset) property to control where the `Anchor` is in the container to start the adsorption.
 
-[[ demo src="/demo/anchor/offset-en.vue" ]]
+[[ demo src="/demo/anchor/offset.vue" ]]
 
 ## API
 
