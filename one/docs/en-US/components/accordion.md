@@ -32,7 +32,7 @@ You can use the [`toggle-position`](#props-toggle-position) property to set the 
 
 ## API
 
-### Accordion Props
+### Props
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
@@ -80,13 +80,13 @@ Position of the expansion icon.
 +++
 ^^^
 
-### Accordion Slots
+### Slots
 
 | Name | Description |
 | -- | -- |
 | ``default`` | The content area is used to inline the `Collapse` component. |
 
-### Accordion Events
+### Events
 
 | Name | Description |
 | -- | -- |

@@ -24,7 +24,7 @@ Use [`sticky-offset`](#props-sticky-offset) property to control where the `Ancho
 
 ## API
 
-### Anchor Props
+### Props
 
 | Name | Types | Default | Description |
 | -- | -- | -- | -- |
@@ -46,7 +46,7 @@ Data source array, item type is `{label, value, children, ...}`.
 +++
 ^^^
 
-### Anchor Slots
+### Slots
 
 | Name | Description |
 | -- | -- |
