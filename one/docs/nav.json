@@ -678,7 +678,7 @@
         {
           "title": "Anchor",
           "slug": "anchor",
-          "disabled": true
+          "disabled": false
         },
         {
           "title": "Drawer",
