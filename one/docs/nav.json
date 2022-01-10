@@ -673,7 +673,7 @@
         {
           "title": "Autocomplete",
           "slug": "autocomplete",
-          "disabled": true
+          "disabled": false
         },
         {
           "title": "Anchor",
