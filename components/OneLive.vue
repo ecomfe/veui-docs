@@ -65,6 +65,7 @@
     class="live-preview"
   >
     <v-live-preview
+      class="editor-preview"
       :code="transformedCode"
       :requires="imports"
       :check-variable-availability="false"
@@ -346,6 +347,9 @@ export default {
     background-color #fff
     box-shadow 0 0 0 0 rgba(255, 255, 255, 1)
     animation pulse 2s infinite
+
+.editor-preview
+  overflow auto
 
 .editor-error
   position absolute

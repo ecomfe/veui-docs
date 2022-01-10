@@ -5,7 +5,8 @@ i18n.register(
   {
     showCode: '显示代码',
     hideCode: '隐藏代码',
-    expandEditor: '展开实时编辑',
+    openEditor: '打开实时编辑',
+    closeEditor: '关闭实时编辑',
     playInCodeSandbox: '在 CodeSandbox 中打开',
     playInStackBlitz: '在 StackBlitz 中打开'
   },
@@ -19,7 +20,8 @@ i18n.register(
   {
     showCode: 'Show code',
     hideCode: 'Hide code',
-    expandEditor: 'Expand Live editor',
+    openEditor: 'Open Live editor',
+    closeEditor: 'Close Live editor',
     playInCodeSandbox: 'Open in CodeSandbox',
     playInStackBlitz: 'Open in StackBlitz'
   },
@@ -65,6 +67,8 @@ i18n.register(
 i18n.register(
   'zh-Hans',
   {
+    expandEditor: '展开编辑器',
+    shrinkEditor: '收缩编辑器',
     exit: '退出',
     liveEdit: '实时编辑'
   },
@@ -76,6 +80,8 @@ i18n.register(
 i18n.register(
   'en-US',
   {
+    expandEditor: 'Expand editor',
+    shrinkEditor: 'Shrink editor',
     exit: 'Exit',
     liveEdit: 'Live Edit'
   },

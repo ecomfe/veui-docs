@@ -5,15 +5,15 @@
   "author": "guyiling <guyiling@baidu.com>",
   "private": true,
   "scripts": {
-    "dev": "npm run docs && HOST=0.0.0.0 nuxt & node -r esm ./one/build/watch.js",
+    "dev": "npm run docs && NODE_OPTIONS=--max_old_space_size=4096 HOST=0.0.0.0 nuxt & node -r esm ./one/build/watch.js",
     "build": "NODE_ENV=production npm run docs && nuxt build",
     "docs": "node -r esm ./one/build/generate.js",
     "start": "nuxt start",
     "generate": "npm run docs && nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "daemon": "NODE_ENV=production HOST=0.0.0.0 forever start -p . -a -l ./logs/forever.log -o ./logs/access.log -e ./logs/error.log app.js",
-    "serve": "NODE_ENV=production PORT=80 HOST=0.0.0.0 forever -p . -a -l ./logs/forever.log -o ./logs/access.log -e ./logs/error.log app.js",
+    "daemon": "NODE_OPTIONS=--max_old_space_size=4096 NODE_ENV=production HOST=0.0.0.0 forever start -p . -a -l ./logs/forever.log -o ./logs/access.log -e ./logs/error.log app.js",
+    "serve": "NODE_OPTIONS=--max_old_space_size=4096 NODE_ENV=production PORT=80 HOST=0.0.0.0 forever -p . -a -l ./logs/forever.log -o ./logs/access.log -e ./logs/error.log app.js",
     "stop": "forever stop app.js",
     "restart": "npm run stop && npm run serve",
     "update:veui": "npm i -D {veui-loader,veui,veui-theme-dls,babel-plugin-veui,veui-theme-dls-icons}@latest"

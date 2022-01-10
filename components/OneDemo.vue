@@ -1,7 +1,7 @@
 <template>
 <article
   class="one-demo"
-  :class="{ expanded }"
+  :class="{ codeExpanded }"
 >
   <section class="demo">
     <browser-window
@@ -36,25 +36,25 @@
       <veui-icon name="one-demo-stackblitz"/>
     </veui-button>
     <veui-button
-      v-tooltip="t('expandEditor')"
+      v-tooltip="t(editing ? 'closeEditor' : 'openEditor')"
       class="toggle-editor"
       ui="icon"
-      @click="editing = true"
+      @click="editing = !editing"
     >
       <veui-icon
         scale="1.2"
-        :name="expanded ? 'one-demo-code-off' : 'one-demo-code'"
+        :name="editing ? 'one-demo-code-off' : 'one-demo-code'"
       />
     </veui-button>
     <veui-button
-      v-tooltip="t(expanded ? 'hideCode' : 'showCode')"
+      v-tooltip="t(codeExpanded ? 'hideCode' : 'showCode')"
       class="toggle-source"
       ui="icon"
-      @click="expanded = !expanded"
+      @click="codeExpanded = !codeExpanded"
     >
       <veui-icon
         scale="1.2"
-        :name="expanded ? 'one-demo-code-off' : 'one-demo-code'"
+        :name="codeExpanded ? 'one-demo-code-off' : 'one-demo-code'"
       />
     </veui-button>
     <one-edit-link
@@ -67,7 +67,7 @@
     v-if="$slots.source"
     ref="source"
     class="source"
-    :style="{ height: expanded ? `${sourceHeight || 0}px` : '0' }"
+    :style="{ height: codeExpanded ? `${sourceHeight || 0}px` : '0' }"
   >
     <slot name="source"/>
   </section>
@@ -75,8 +75,13 @@
     <one-repl
       v-if="editing"
       class="one-demo-editor"
+      :class="{
+        'one-demo-editor-shrink': !editorExpanded
+      }"
       :code="code"
-      @close="editing = false"
+      :expanded="editorExpanded"
+      @close="handleEditorClose"
+      @toggle="handleEditorToggle"
     />
   </transition>
 </article>
@@ -114,12 +119,18 @@ export default {
     return {
       code: '',
       sourceHeight: 0,
-      expanded: false,
-      editing: false
+      codeExpanded: false,
+      editing: false,
+      editorExpanded: true
+    }
+  },
+  computed: {
+    lock () {
+      return this.editing && this.editorExpanded
     }
   },
   watch: {
-    editing (value) {
+    lock (value) {
       if (value) {
         modal.open()
       } else {
@@ -141,6 +152,12 @@ export default {
     play (vendor) {
       let locale = getLocale(this.$route.path)
       play(this.$refs.source.textContent, { locale, vendor })
+    },
+    handleEditorClose () {
+      this.editing = false
+    },
+    handleEditorToggle (val) {
+      this.editorExpanded = val
     }
   }
 }
@@ -220,7 +237,7 @@ Icon.register({
   transition background-color 0.3s
   outline none
 
-  .expanded &
+  .codeExpanded &
     border-radius 0
 
   .veui-button
@@ -244,6 +261,11 @@ Icon.register({
   bottom 0
   z-index 10
   background-color #fff
+  transition bottom 0.1s, box-shadow 0.2s
+
+  &-shrink
+    bottom 50vh
+    box-shadow 0 0 4px #0006
 
 .editor-enter-active
 .editor-leave-active
