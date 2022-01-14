@@ -39,7 +39,7 @@
 ### 属性
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``direction`` | `'column' | 'row'` | `'column'` | 布局排列方向，在有 Sidebar 时，默认为 `'row'`。 |
+| ``direction`` | `'column' | 'row'` | `'column'` | 布局排列方向。在有 `Sidebar` 时，默认为 `'row'`。 |
 
 ### 插槽
 
