@@ -242,6 +242,26 @@
           "slug": "label"
         },
         {
+          "title": "Layout - 布局",
+          "slug": "layout"
+        },
+        {
+          "title": "Header - 布局头部",
+          "slug": "header"
+        },
+        {
+          "title": "Sidebar - 布局侧边栏",
+          "slug": "sidebar"
+        },
+        {
+          "title": "Content - 布局内容",
+          "slug": "content"
+        },
+        {
+          "title": "Footer - 布局底部",
+          "slug": "footer"
+        },
+        {
           "title": "Span - 行内文本",
           "slug": "span"
         },
