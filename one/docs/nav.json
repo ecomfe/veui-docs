@@ -500,7 +500,7 @@
         {
           "title": "Badge",
           "slug": "badge",
-          "disabled": true
+          "disabled": false
         },
         {
           "title": "Tag",
