@@ -29,7 +29,7 @@ Use [`sticky-offset`](#props-sticky-offset) property to control where the `Ancho
 | Name | Types | Default | Description |
 | -- | -- | -- | -- |
 | ``items`` | `Array<{value, label, children}>` | `[]` | [^items] |
-| ``sticky`` | `boolean=` | `false` | Produce adsorption effect. |
+| ``sticky`` | `boolean=` | `false` | Whether produce adsorption effect. |
 | ``container`` | `string | HTMLElement | Window=` | - | `Anchor` adsorption and determine the container referenced by the anchor point activation. |
 | ``target-offset`` | `string | number=` | `0` | When an anchor point is in the `target-offset` position to the container, then the corresponding anchor point link is active. The numeric type value is a `px`, and a string such as `'10%'` can also be passed in. The calculation will be based on the proportion of the height of the container corresponding to the `container`. |
 | ``sticky-offset`` | `string | number=` | `0` | sticky `Anchor`, when the container rolls to the position of `sticky-offset`, then the `Anchor` starts to adsorb. Different value types have the same meaning as [`target-offset`](#props-target-offset) property. |

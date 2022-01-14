@@ -8,25 +8,25 @@ The `Accordion` component needs to be used by the inline [`Collapse`](./collapse
 
 ### Size
 
-Optional size [`ui`](#props-ui) property value: `s` / `m`.
+Available size variants for the ui prop: `s` / `m`.
 
 [[ demo src="/demo/accordion/size.vue" ]]
 
 ### Style
 
-You can use the [`ui`](#props-ui) property to set multiple styles.
+Use the [`ui`](#props-ui) property to apply style variants.
 
 [[ demo src="/demo/accordion/variant.vue" ]]
 
 ### Multiple
 
-You can use the [`multiple`](#props-multiple) properties to multiple panels to expand at the same time.
+Use the [`multiple`](#props-multiple) property to allow multiple panels to be expanded at the same time.
 
 [[ demo src="/demo/accordion/multiple.vue" ]]
 
 ### Icon position
 
-You can use the [`toggle-position`](#props-toggle-position) property to set the position of the expand icon.
+Use the [`toggle-position`](#props-toggle-position) property to set the position of the toggle icon.
 
 [[ demo src="/demo/accordion/position.vue" ]]
 
@@ -37,24 +37,23 @@ You can use the [`toggle-position`](#props-toggle-position) property to set the 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``ui`` | `string=` | - | [^ui] |
-| ``multiple`` | `boolean=` | `false` | Allow multiple sub-panels to expand at the same time. |
-| ``disabled`` | `boolean=` | `false` | Disabled the accordion. |
+| ``multiple`` | `boolean=` | `false` | Whether to allow multiple panels to be expanded at the same time. |
+| ``disabled`` | `boolean=` | `false` | Whether accordion is disabled. |
 | ``expanded`` | `string | Array<string>` | - | [^expanded] |
 | ``toggle-position`` | `string` | `'start'` | [^toggle-position] |
 
 ^^^ui
-Preset styles. A combination of a set of enumeration values separated by spaces. Among them, you can only choose one of `simple` / `basic` / `strong`. If you don't set it, it will be the default normal style. Only one of `bordered` / `borderless` can be selected.
-
+Style variants. A space-separated enum list. Only one of `simple` / `basic` / `strong` can be used. The default style will be used if not set. Only one of `bordered` / `borderless` can be used.
 
 +++Enum
 | Value | Description |
 | -- | -- |
 | `simple` | Simple style. |
-| `basic` | White background style. |
-| `strong` | White background style. |
-| `bordered` | There is an outer border. |
-| `borderless` | No outer border. |
-| `dull` | The title area does not change its style in response to mouse interaction. |
+| `basic` | Basic style. |
+| `strong` | Strong style. |
+| `bordered` | Bordered style. |
+| `borderless` | Borderless style. |
+| `dull` | The title area does not change style in response to mouse interaction. |
 | `s` | Small size style. |
 | `m` | Medium size style. |
 +++
@@ -65,18 +64,18 @@ Preset styles. A combination of a set of enumeration values separated by spaces.
 `.sync`
 :::
 
-Expanded accordion panel,Corresponds to the [`name`](./collapse#props-name) property of the inline `Collapse` component. When `multiple` is `true`, it is an array of accordion panel identification.
+The identifier of the expanded accordion panels, corresponding to the [`name`](./collapse#props-name) properties of the inline `Collapse` components. When `multiple` is `true`, it is an array of accordion panel identifiers.
 ^^^
 
 ^^^toggle-position
-Position of the expansion icon.
+The position of the toggle icon.
 
 +++Enum
 | Value | Description |
 | -- | -- |
-| `start` | Expand icon is at the start position, is the default position. |
-| `end` | expand icon is at the end position. |
-| `none` | No expansion icon. |
+| `start` | The toggle icon is at the start position. Default value. |
+| `end` | The toggle icon is at the end position. |
+| `none` | Do not show the toggle icon. |
 +++
 ^^^
 
@@ -84,7 +83,7 @@ Position of the expansion icon.
 
 | Name | Description |
 | -- | -- |
-| ``default`` | The content area is used to inline the `Collapse` component. |
+| ``default`` | The content area, which is used to place inline `Collapse` components. |
 
 ### Events
 
@@ -93,13 +92,13 @@ Position of the expansion icon.
 | ``toggle`` | [^toggle] |
 
 ^^^toggle
-Triggered when the title area of the inner collapsible panel is clicked to trigger the expand/collapse. The callback parameter is `(expand: boolean, name: string, expanded)`.
+Triggered when clicking on the internal panel title to trigger expand/collapse. The callback parameters are `(expand: boolean, name: string, expanded)`.
 
 +++Props
 | Name | Type | Description |
 | -- | -- | -- |
-| `expand` | `boolean` | Expand the accordion. |
-| `name` | `string` | Switch expanded accordion panel. |
-| `expanded` | `string | Array<string>` | All currently expanded accordion panel. |
+| `expand` | `boolean` | Whether to expand the collapsible panel. |
+| `name` | `string` | The name of the collapsible panel. |
+| `expanded` | `string | Array<string>` | Identifiers of all currently expanded accordion panel. |
 +++
 ^^^

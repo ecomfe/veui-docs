@@ -32,16 +32,16 @@ Set [`match`](#props-match) property to customize the highlighting logic; Set [`
 | -- | -- | -- | -- |
 | ``datasource`` | `Array<string | Object>=` | `[]` | [^datasource] |
 | ``value`` | `*` | - | [^prop-value] |
-| ``disabled`` | `boolean=` | `false` | Disabled state. |
-| ``readonly`` | `boolean=` | `false` | Read only status. |
+| ``disabled`` | `boolean=` | `false` | Whether disabled state. |
+| ``readonly`` | `boolean=` | `false` | Whether read only status. |
 | ``match`` | `(item, keyword, { ancestors }) => boolean | [number, number] | Array<[number, number]>` | - | Supports custom highlighting logic, and matches case-insensitive substrings by default. |
 | ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | Support custom search hit logic. |
 | ``suggest-trigger`` | `string | Array<string>=` | `'input'` | Trigger the suggestion drop-down panel, the available values are: `'input'`, `'focus'`. |
 | ``expanded`` | `boolean=` | `false` | [^expanded] |
 | ``placeholder`` | `string=` | - | Placeholder. |
-| ``clearable`` | `boolean=` | `false` | Clear button is displayed. |
-| ``composition`` | `boolean=` | `false` | Perceive value of input method input process. |
-| ``select-on-focus`` | `boolean=` | `false` | The text in the input box is automatically selected. |
+| ``clearable`` | `boolean=` | `false` | Whether clear button is displayed. |
+| ``composition`` | `boolean=` | `false` | Whether perceive value of input method input process. |
+| ``select-on-focus`` | `boolean=` | `false` | Whether to automatically select the input box text when focused. |
 | ``maxlength`` | `number=` | - | The length of the input string is limited. |
 | ``strict`` | `boolean=` | `false` | Maximum input length. |
 | ``get-length`` | `function(string): number=` | Customize character length calculation function. |
@@ -82,7 +82,7 @@ Remove before and after spaces. When it is `true`, the before and after spaces w
 +++Enum
 | Value | Description |
 | -- | -- |
-| `both` | Remove spaces at both ends. It is equivalent to the behavior when `true`. |
+| `both` | Remove spaces at both ends. Equivalent to the behavior when `true`. |
 | `start` | Remove front space. |
 | `end` | Remove end spaces. |
 +++

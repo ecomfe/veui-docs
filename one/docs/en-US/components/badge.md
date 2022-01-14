@@ -33,7 +33,7 @@ No slot content is provided, the badge will be displayed in a dot style.
 | ``type`` | `string=` | `'error'` | [^type] |
 | ``value`` | `string | number` | - | Badge content value. When it is a value of type `number`, it is limited by the [`max`](#props-max) attribute. `max` is ignored when it is of type `string`. |
 | ``max`` | `number=` | `badge.max` | The maximum value of the badge value, when `value` exceeds this value, the badge content will be displayed as `{max}+`. Ignored when `value` is `string`. |
-| ``hidden`` | `boolean=` | `false` | hidden state. |
+| ``hidden`` | `boolean=` | `false` | Whether hidden state. |
 
 ^^^type
 Badge state type. The optional values for the built-in style are as follows. When using other values, you need to define the style of `.veui-badge-{type}`.
@@ -41,11 +41,11 @@ Badge state type. The optional values for the built-in style are as follows. Whe
 +++Enum
 | Value | Description |
 | -- | -- |
-| `info` | Message notification. |
-| `success` | Success. |
-| `warning` | Warning. |
-| `error` | Error |
-| `aux` | Aux |
+| `info` | Info style. |
+| `success` | Success style. |
+| `warning` | Warning style. |
+| `error` | Error style. |
+| `aux` | Aux style. |
 +++
 ^^^
 
