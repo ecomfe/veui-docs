@@ -29,7 +29,7 @@
 :::
 
 :::tip
-当吸顶的布局底部和吸顶侧边栏一起使用需要在布局底部的父组件 `Layout` 上设置 `--dls-layout-footer-height` 来指定布局底部的高度。
+当吸底的布局底部和吸顶侧边栏一起使用需要在布局底部的父组件 `Layout` 上设置 `--dls-layout-footer-height` 来指定布局底部的高度。
 :::
 
 [[ demo src="/demo/layout/sticky.vue" ]]
@@ -39,7 +39,7 @@
 ### 属性
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``direction`` | `'column' | 'row'` | `'column'` | 布局排列方向。 |
+| ``direction`` | `'column' | 'row'` | `'column'` | 布局排列方向，在有 Sidebar 时，默认为 `'row'`。 |
 
 ### 插槽
 

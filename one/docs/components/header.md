@@ -4,6 +4,10 @@
 `Header` 组件需要配合 [`Layout`](./layout) / [`Sidebar`](./sidebar) / [`Footer`](./footer) / [`Content`](./content) 组件使用。
 :::
 
+## 示例
+
+见 [`Layout` 示例](./layout#示例)。
+
 ## API
 
 ### 属性
