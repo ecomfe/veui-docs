@@ -727,7 +727,7 @@
         {
           "title": "Cascader",
           "slug": "cascader",
-          "disabled": true
+          "disabled": false
         },
         {
           "title": "ConfigProvider",
