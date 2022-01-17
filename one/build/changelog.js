@@ -1,13 +1,13 @@
 import { readFileSync } from 'fs'
 import cheerio from 'cheerio'
 import { render } from './page'
-const VERSION_RE = /^(\d+\.\d+\.\d+(?:-[a-z]+(?:\.\d+)?)?)(?:\s+"([^"]+)")?$/i
+const VERSION_RE = /^(\d+\.\d+\.\d+(?:-[a-z]+(?:\.\d+)?)?)(?:\s+"([^"]+)")?(?:\s+\((\d{4}-\d{2}-\d{2})\))?$/i
 function getVersion (title = '') {
-  const [, version, codeName] = title.trim().match(VERSION_RE) || []
+  const [, version, codeName, date] = title.trim().match(VERSION_RE) || []
   if (!version) {
     return null
   }
-  return [version, codeName]
+  return [version, codeName, date]
 }
 
 const TYPE_MAP = {
@@ -65,10 +65,11 @@ function extract (html) {
 
   $versions.each((_, el) => {
     const $version = $(el)
-    const [version, codeName] = getVersion($(el).text()) || []
+    const [version, codeName, date] = getVersion($(el).text()) || []
     const versionLog = {
       version,
       codeName,
+      date,
       changeset: []
     }
 

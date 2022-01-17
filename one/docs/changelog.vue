@@ -75,7 +75,7 @@
     </veui-fieldset>
   </veui-form>
   <section
-    v-for="{ version, codeName, changeset } of filteredChangelog"
+    v-for="{ version, codeName, date, changeset } of filteredChangelog"
     :key="version"
     class="version-item"
     data-markdown
@@ -90,7 +90,7 @@
       <nuxt-link
         :to="`#${getHash(version)}`"
       >
-        {{ version }}<small v-if="codeName">{{ codeName }}</small>
+        {{ version }}<small v-if="codeName">{{ codeName }}</small><small v-if="date">{{ date }}</small>
       </nuxt-link>
     </h2>
     <ul class="changeset">
