@@ -28,8 +28,7 @@ export default function attacher () {
     }
 
     visit(tree, NAME, ({ id, value }) => {
-      let { contents } = render(value, path, data)
-      data.refs[id] = contents
+      data.refs[id] = () => render(value, path, data).contents
     })
     remove(tree, NAME)
 
@@ -42,7 +41,7 @@ export default function attacher () {
 
       parent.children.splice(index, 1, {
         type: 'html',
-        value: data.refs[id]
+        value: data.refs[id]()
       })
     })
   }
