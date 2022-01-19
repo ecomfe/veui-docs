@@ -282,7 +282,7 @@ Icon.register({
 
 @media (max-width 480px)
   .toggle-source
-    display inline-block
+    display inline-flex
 
   .toggle-editor
     display none
