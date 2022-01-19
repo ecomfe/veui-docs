@@ -90,7 +90,10 @@
       <nuxt-link
         :to="`#${getHash(version)}`"
       >
-        {{ version }}<small v-if="codeName">{{ codeName }}</small><small v-if="date">{{ date }}</small>
+        {{ version }}<small v-if="codeName">{{ codeName }}</small><time
+          v-if="date"
+          :datetime="date"
+        >{{ date }}</time>
       </nuxt-link>
     </h2>
     <ul class="changeset">
@@ -300,14 +303,27 @@ h2
     color #333 !important
 
   small
+  time
     display inline-flex
     align-items center
+
+  small
     font-size 14px
 
     &::before
       content "·"
       font-size 20px
       margin 0 8px
+
+  time
+    font-size 12px
+    color #999
+
+    &::before
+      content "/"
+      font-size 10px
+      margin 0 8px
+      color #ccc
 
 .changeset
   list-style-type none
