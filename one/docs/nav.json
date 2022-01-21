@@ -10,6 +10,10 @@
       "slug": "changelog"
     },
     {
+      "title": "组件类型升级指南",
+      "slug": "types"
+    },
+    {
       "title": "起步",
       "slug": "getting-started",
       "children": [
