@@ -14,7 +14,7 @@ When the `Anchor` component is in the container (rolling with the container), th
 
 [[ demo src="/demo/anchor/sticky.vue" ]]
 
-### Specify Offset
+### Specify offset
 
 Use the [`target-offset`](#props-target-offset) prop to control where the anchor scrolls into the container and becomes active.
 

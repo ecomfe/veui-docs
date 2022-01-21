@@ -2,19 +2,19 @@
 
 ## Demo
 
-### Text Badge
+### Text badge
 
 Badge content can be text.
 
 [[ demo src="/demo/badge/text.vue" ]]
 
-### Digital Badge
+### Digital badge
 
 Badge content can be number, When the maximum value is exceeded, it can be displayed as *Maximum+*.
 
 [[ demo src="/demo/badge/number.vue" ]]
 
-### Round Dots Badge
+### Round Dots badge
 
 No badge content is provided, The badge will be displayed in a dot style in the upper right corner.
 

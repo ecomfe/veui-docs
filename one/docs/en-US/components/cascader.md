@@ -10,37 +10,37 @@ Available size variants for the ui prop:`xs` / `s` / `m` / `l`.
 
 ### Inline
 
-Use the [`inline`](#props-inline) property to enable inline.
+Use the [`inline`](#props-inline) prop to enable inline.
 
 [[ demo src="/demo/cascader/inline.vue" ]]
 
 ### Search
 
-Use the [`searchable`](#props-searchable) property to enable search.
+Use the [`searchable`](#props-searchable) prop to enable search.
 
 [[ demo src="/demo/cascader/searchable.vue" ]]
 
-### Multiple Choice
+### Multiple choice
 
-Use the [`multiple`](#props-multiple) property to enable multiple choice.
+Use the [`multiple`](#props-multiple) prop to enable multiple choice.
 
 [[ demo src="/demo/cascader/multiple.vue" ]]
 
 ### Select
 
-Use the [`select-mode`](#props-select-mode) property to control which items can be selected in single-select mode.
+Use the [`select-mode`](#props-select-mode) prop to control which items can be selected in single-select mode.
 
 [[ demo src="/demo/cascader/select-mode.vue" ]]
 
-### Column Trigger
+### Column trigger
 
-Use the [`column-trigger`](#props-column-trigger) property to control when the subordinates in the dropdown panel are expanded.
+Use the [`column-trigger`](#props-column-trigger) prop to control when the subordinates in the dropdown panel are expanded.
 
 [[ demo src="/demo/cascader/column-trigger.vue" ]]
 
-### Render Selected
+### Render selected
 
-Use the [`value-display`](#props-value-display) property to control how the selected value is displayed.
+Use the [`value-display`](#props-value-display) prop to control how the selected value is displayed.
 
 [[ demo src="/demo/cascader/value-display.vue" ]]
 
@@ -67,8 +67,8 @@ Use the [`value-display`](#props-value-display) property to control how the sele
 | ``value-display`` | `'complete' | 'simple'` | `simple` | [^value-display] |
 | ``disabled`` | `boolean=` | `false` | Whether is it disabled state. |
 | ``readonly`` | `boolean=` | `false` | Whether is it readonly state. |
-| ``overlay-class`` | `string | Array | Object=` | - | See the [`overlay`](./overlay) component's [`overlay-class`](./overlay#props-overlay-class) property. |
-| ``overlay-style`` | `string | Array | Object=` | - | See the [`Overlay`](./overlay) component's  [`overlay-style`](./overlay#props-overlay-style) property. |
+| ``overlay-class`` | `string | Array | Object=` | - | See the [`overlay`](./overlay) component's [`overlay-class`](./overlay#props-overlay-class) prop. |
+| ``overlay-style`` | `string | Array | Object=` | - | See the [`Overlay`](./overlay) component's  [`overlay-style`](./overlay#props-overlay-style) prop. |
 | ``match`` | `(item, keyword, { ancestors }) => boolean | Array<[number, number]>` | - | Support custom highlighting logic, default case insensitive, refer to [`Autocomplete`](./Autocomplete#custom-search). |
 | ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | Support custom search hit logic, refer to [`Autocomplete`](./Autocomplete#custom-search). |
 
@@ -94,7 +94,7 @@ Options list, items of type `{label, value, options, disabled, position, ...}`.
 | `label` | `string` | Textual description of the option. |
 | `value` | `*` | The value corresponding to the option. |
 | `position` | `string` | How to display subordinate nodes, pop up by default, set `inline` to display inline. |
-| `options` | `Array<Object>=` | An array of options' sub-options, the array item type is the same as the [`options`](#props-options) property array item. |
+| `options` | `Array<Object>=` | An array of options' sub-options, the array item type is the same as the [`options`](#props-options) prop array item. |
 | `disabled` | `boolean=` | Whether the option is disabled. |
 +++
 ^^^
@@ -195,14 +195,14 @@ The area in front of each column in the drop-down panel. No default content.
 +++Scopes
 | Name | Type | Description |
 | -- | -- | -- |
-| `option` | `Object` | This parent options of the column, where the `options` property can get the data of the current column. |
+| `option` | `Object` | This parent options of the column, where the `options` prop can get the data of the current column. |
 +++
 ^^^
 
 ^^^slot-label
 Drop-down button text area.
 
-Default content: the value of the `label` property corresponding to the selected option or the text content of the selected option in inline mode.
+Default content: the value of the `label` prop corresponding to the selected option or the text content of the selected option in inline mode.
 
 +++Scopes
 | Name | Type | Description |
@@ -220,7 +220,7 @@ PS. Fields other than the fields described above in the current options data are
 ^^^slot-option-label
 Text area for dropdown options (without `options`).
 
-Default content: The value of the option `label` property.
+Default content: The value of the option `label` prop.
 
 +++Scopes
 | Name | Type | Description |
