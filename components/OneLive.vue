@@ -62,7 +62,6 @@
   </v-pane>
   <v-pane
     min-size="40"
-    class="live-preview"
   >
     <v-live-preview
       class="editor-preview"
@@ -317,6 +316,9 @@ export default {
       background #ccc
       transform scaleX(2)
 
+  & >>> .live-preview
+    overflow auto
+
 .editor-toolbar
   position absolute
   top 12px
@@ -347,9 +349,6 @@ export default {
     background-color #fff
     box-shadow 0 0 0 0 rgba(255, 255, 255, 1)
     animation pulse 2s infinite
-
-.editor-preview
-  overflow auto
 
 .editor-error
   position absolute

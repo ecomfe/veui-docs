@@ -27,3 +27,10 @@ export function hash (path) {
   hash.update(path)
   return hash.digest('hex').substring(0, 7)
 }
+
+export function upperFirst (str) {
+  if (str.length === 0) {
+    return str
+  }
+  return str[0].toUpperCase() + str.slice(1)
+}
