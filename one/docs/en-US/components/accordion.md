@@ -6,9 +6,9 @@ The `Accordion` component needs to be used by the inline [`Collapse`](./collapse
 
 ## Demos
 
-### Size
+### Size variants
 
-Available size variants for the ui prop: `s` / `m`.
+Available size variants for the [`ui`](#props-ui) prop: `s` / `m`.
 
 [[ demo src="/demo/accordion/size.vue" ]]
 
