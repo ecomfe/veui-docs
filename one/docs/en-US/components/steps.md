@@ -55,14 +55,14 @@ The datasource of steps with item type being `{ label, desc, to, status }`.
 | Name | Description |
 | -- | -- |
 | ``default`` | [^slot-default] |
-| ``index`` | The step index. Displays an index value starts from `1`, a success icon for finished steps by default and an error icon for error steps. Resides inside the [`default`](#slots-default) slot and share the same scope properties. |
-| ``label`` | The step label. Displays the `label` property by default. Resides inside the [`default`](#slots-default) slot and share the same scope properties. |
-| ``desc`` | The step description. Displays the `desc` property by default. Resides inside the [`default`](#slots-default) slot and share the same scope properties. |
+| ``index`` | The step index. Displays an index value starts from `1`, a success icon for finished steps by default and an error icon for error steps. Resides inside the [`default`](#slots-default) slot and share the same slot props. |
+| ``label`` | The step label. Displays the `label` property by default. Resides inside the [`default`](#slots-default) slot and share the same slot props. |
+| ``desc`` | The step description. Displays the `desc` property by default. Resides inside the [`default`](#slots-default) slot and share the same slot props. |
 
 ^^^slot-default
 The content of each step. Displays the step index/completed icon, label and description by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The label of the step. Same as the `label` property from items of the [`steps`](#props-steps) prop. |
@@ -71,7 +71,7 @@ The content of each step. Displays the step index/completed icon, label and desc
 | `status` | `string` | The status of the step. Same as the `status` property from items of the [`steps`](#props-steps) prop. |
 | `index` | `number` | The index of the step. (Starts from `0`.) |
 
-Additionally, custom properties in current step, apart from the listed ones, will also be passes into the scope object via `v-bind`.
+Additionally, custom properties in current step, apart from the listed ones, will also be passes into the slot props object via `v-bind`.
 +++
 ^^^
 

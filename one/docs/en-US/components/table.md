@@ -114,7 +114,7 @@ The values of expanded rows. Each item is the value keyed by the [`key-field`](#
 ^^^slot-sub-row
 The content of the expanded sub-row. Will span across all columns and override the [`sub-row`](./column#slots-sub-row) slot of the `Column` components inside the table.
 
-The slot scope properties are the same as each item inside [`data`](#props-data), with an extra `index: number`, which denotes the index within the datasource.
+The slot props are the same as each item inside [`data`](#props-data), with an extra `index: number`, which denotes the index within the datasource.
 ^^^
 
 ### Events

@@ -49,7 +49,7 @@ The status of the progress. Available values are `success` / `alert`, denoting s
 ^^^slot-default
 The description content. Displays the percentage value of the progress by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `percent` | `number` | The percentage value of the progress. |

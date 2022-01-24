@@ -117,7 +117,7 @@ methods: {
 The foot of the dialog. Displays “OK” and “Cancel” buttons by default.
 
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `close` | `function(type: string): void` | The callback to trigger closing the dialog. `type` is the action type and will be passed into `before-close` hook as the first argument. And an event named after `type` will be triggered synchronously. |

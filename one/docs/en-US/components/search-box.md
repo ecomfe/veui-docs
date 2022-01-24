@@ -108,7 +108,7 @@ Whether the suggestion list is expanded (if there are no items in `suggestions`,
 ^^^slot-suggestions
 The content of the entire suggestion list.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `suggestions` | `Array<{value: string, label: string}>` | The normalized suggestions from the [`suggestions`](#props-suggestions) prop. |
@@ -117,13 +117,13 @@ The content of the entire suggestion list.
 ^^^slot-suggestion
 The content of each suggestion option.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The text label of the suggestion option. |
 | `value` | `string` | The value of the suggestion option. |
 
-Additionally, custom properties apart from the listed ones will also be passes into the scope object via `v-bind`.
+Additionally, custom properties apart from the listed ones will also be passes into the slot props object via `v-bind`.
 
 When `suggestions` is an `Array<string>`, the `label` and `value` of the suggestion option will share the same `string` value.
 +++

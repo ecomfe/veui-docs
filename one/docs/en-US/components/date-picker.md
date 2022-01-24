@@ -178,7 +178,7 @@ Whether the dropdown overlay is expanded.
 ^^^slot-date
 The content of each date cell in the dropdown overlay. Displays the corresponding day of month by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `year` | `number` | The full representation of year. |

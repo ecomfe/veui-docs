@@ -50,7 +50,7 @@ function (keyword, { label }) {
 ^^^default
 The content of the filter panel.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `items` | `Array<Object>` | The filtered items from the [`datasource`](#props-datasource) prop and shares the same type with `datasource`. |

@@ -96,14 +96,14 @@ Merge strategy for selected values. When all child nodes under a node are select
 | Name | Description |
 | -- | -- |
 | ``item`` | [^item] |
-| ``item-label`` | The label of each node. Shares the same scope properties with the [`item`](#slots-item) slot. |
-| ``item-before`` | The area before the label of each node. Shares the same scope properties with the [`item`](#slots-item) slot. |
-| ``item-after`` | The area after the label of each node. Shares the same scope properties with the [`item`](#slots-item) slot. |
+| ``item-label`` | The label of each node. Shares the same slot props with the [`item`](#slots-item) slot. |
+| ``item-before`` | The area before the label of each node. Shares the same slot props with the [`item`](#slots-item) slot. |
+| ``item-after`` | The area after the label of each node. Shares the same slot props with the [`item`](#slots-item) slot. |
 
 ^^^item
 The content of each entire node.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of current node. |
@@ -113,7 +113,7 @@ The content of each entire node.
 | `depth` | `number` | The depth of current node. |
 +++
 
-Additionally, custom properties apart from the listed ones will also be passes into the scope object via `v-bind`.
+Additionally, custom properties apart from the listed ones will also be passes into the slot props object via `v-bind`.
 ^^^
 
 ### Events

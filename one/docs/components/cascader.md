@@ -55,17 +55,17 @@
 | ``options`` | `Array<Object>` | - | [^options] |
 | ``value`` | `Array<*>|*` | - | [^value] |
 | ``multiple`` | `boolean` | `false` | 是否允许多选。 |
-| ``inline`` | `boolean` | `false` | 下拉面板是否内联展示。 |
+| ``inline`` | `boolean` | `false` | 下拉面板是否以内联模式展示（展开选项将拆分面板而非向外扩展）。 |
 | ``max`` | `number` | - | 多选时允许选择的项目上限。 |
 | ``placeholder`` | `string` | `cascader.placeholder` | 未选择时的占位文本。 |
 | ``clearable`` | `boolean` | `false` | 是否可以清除已选内容。 |
 | ``searchable`` | `boolean` | `false` | 是否允许搜索选项。 |
 | ``expanded`` | `boolean=` | `false` | [^expanded] |
-| ``column-trigger`` | `hover | click` | `click` | [^column-trigger] |
-| ``select-mode`` | `'leaf-only' | 'any'` | `any` | [^select-mode] |
+| ``column-trigger`` | `'hover' | 'click'` | `'click'` | [^column-trigger] |
+| ``select-mode`` | `'leaf-only' | 'any'` | `'any'` | [^select-mode] |
 | ``column-width`` | `number | string` | - | [^column-width] |
 | ``show-select-all`` | `boolean` | `false` | 在多选模式下是否有全选按钮。 |
-| ``value-display`` | `'complete' | 'simple'` | `simple` | [^value-display] |
+| ``value-display`` | `'complete' | 'simple'` | `'simple'` | [^value-display] |
 | ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
 | ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
 | ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
@@ -160,7 +160,7 @@
 | 名称 | 描述 |
 | -- | -- |
 | ``trigger`` | [^slot-trigger] |
-| ``pane`` | 下拉面板中的内容插槽。用域参数同 [`trigger`](#slots-trigger) 插槽。 |
+| ``pane`` | 下拉面板中的内容插槽。作用域参数同 [`trigger`](#slots-trigger) 插槽。 |
 | ``before`` | 选项列表前的内容。无默认内容。作用域参数同 [`trigger`](#slots-trigger) 插槽。 |
 | ``after`` | 选项列表后的内容。无默认内容。作用域参数同 [`trigger`](#slots-trigger) 插槽。 |
 | ``column-before`` | [^slot-column-before] |
@@ -244,7 +244,7 @@
 ^^^slot-selected
 选中值渲染区域。
 
-默认内容：单选时渲染选中项目的标签；多选时将每个选中项目的标签渲染成`Tag`。
+默认内容：单选时渲染选中项目的文本；多选时将每个选中项目的标签渲染成`Tag`。
 
 +++单选时的作用域参数
 | 名称 | 类型 | 描述 |

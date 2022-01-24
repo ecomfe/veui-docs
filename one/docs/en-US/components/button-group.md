@@ -76,7 +76,7 @@ The content of each button.
 
 Shows the text specified by the `label` property by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The label text of the button. |
@@ -85,7 +85,7 @@ Shows the text specified by the `label` property by default.
 | `disabled` | `boolean=` | Whether the button is disabled. |
 +++
 
-Additionally, custom properties apart from the listed ones will also be passes into the scope object via `v-bind`.
+Additionally, custom properties apart from the listed ones will also be passes into the slot props object via `v-bind`.
 ^^^
 
 ### Events

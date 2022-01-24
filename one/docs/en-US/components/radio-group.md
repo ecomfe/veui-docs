@@ -59,7 +59,7 @@ The `value` of the selected item.
 ^^^slot-item
 The label content of each radio. Displays the value of the `label` property by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the item. |
@@ -68,7 +68,7 @@ The label content of each radio. Displays the value of the `label` property by d
 | `disabled` | `boolean=` | Whether the item is disabled. |
 +++
 
-Additionally, custom properties apart from the listed ones will also be passes into the scope object via `v-bind`.
+Additionally, custom properties apart from the listed ones will also be passes into the slot props object via `v-bind`.
 ^^^
 
 ### Events

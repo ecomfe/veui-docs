@@ -190,7 +190,7 @@ Default content: file upload for prompt to select a file, and image upload for u
 ^^^file
 Single file area to customize the file content.
 
-+++ scope parameters
++++Slot props
 | name | type | description |
 | --- | --- | --- |
 | `name` | `string` | The name of the file. |

@@ -56,7 +56,7 @@ The way to display child options.
 ^^^slot-label
 The label of the option group. Displays the [`label`](#props-label) prop by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the option group. |
@@ -67,20 +67,20 @@ The label of the option group. Displays the [`label`](#props-label) prop by defa
 ^^^slot-group-label
 The label text of each option group (option with child `options`). Displays the `label` of the option by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the option group. |
 | `disabled` | `boolean=` | Whether the option group is disabled. |
 +++
 
-Additionally, custom properties in current option, apart from the listed ones, will also be passes into the scope object via `v-bind`.
+Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.
 ^^^
 
 ^^^slot-option-label
 The label text of each option (option without child `options`). Displays the `label` of the option by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the option. |
@@ -89,13 +89,13 @@ The label text of each option (option without child `options`). Displays the `la
 | `disabled` | `boolean=` | Whether the option is disabled. |
 +++
 
-Additionally, custom properties in current option, apart from the listed ones, will also be passes into the scope object via `v-bind`.
+Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.
 ^^^
 
 ^^^slot-option
 The entire content area of each option (option without child `options`). Displays the default content of `Options` component by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the option. |
@@ -104,7 +104,7 @@ The entire content area of each option (option without child `options`). Display
 | `disabled` | `boolean=` | Whether the option is disabled. |
 +++
 
-Additionally, custom properties in current option, apart from the listed ones, will also be passes into the scope object via `v-bind`.
+Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.
 ^^^
 
 ### Icons

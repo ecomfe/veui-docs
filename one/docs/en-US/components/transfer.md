@@ -125,19 +125,19 @@ Merge strategy for selected values. When all child nodes under a node are select
 | ``candidate`` | The candidate panel. |
 | ``candidate-head`` | [^candidate-head] |
 | ``selected-head`` | [^selected-head] |
-| ``candidate-title`` | The title text of the candidate panel. Shares the same scope properties with slot `candidate-head`. |
-| ``selected-title`` | The title text of the selected panel. Shares the same scope properties with slot `selected-head`. |
+| ``candidate-title`` | The title text of the candidate panel. Shares the same slot props with slot `candidate-head`. |
+| ``selected-title`` | The title text of the selected panel. Shares the same slot props with slot `selected-head`. |
 | ``candidate-no-data`` | The content displayed when there's no data inside the candidate panel. |
 | ``selected-no-data`` | The content displayed when there's no data inside the selected panel. |
 | ``candidate-item`` | [^candidate-item] |
 | ``selected-item`` | [^selected-item] |
-| ``candidate-item-label`` | Label text of each item inside the candidate panel. Shares the same scope properties with slot `candidate-item`. |
-| ``selected-item-label`` | Label text of each item inside the selected panel. Shares the same scope properties with slot `selected-item` when `selected-show-mode` is `'tree'`. Otherwise this slot specifies custom content for any item along the path for all selected leaf item and shares the same scope properties with slot `candidate-item`. |
+| ``candidate-item-label`` | Label text of each item inside the candidate panel. Shares the same slot props with slot `candidate-item`. |
+| ``selected-item-label`` | Label text of each item inside the selected panel. Shares the same slot props with slot `selected-item` when `selected-show-mode` is `'tree'`. Otherwise this slot specifies custom content for any item along the path for all selected leaf item and shares the same slot props with slot `candidate-item`. |
 
 ^^^candidate-head
 The head area of the candidate panel.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `count` | `number` | The number of candidate items. |
@@ -146,7 +146,7 @@ The head area of the candidate panel.
 ^^^selected-head
 The head area of the selected panel.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `count` | `number` | The number of selected items. |
@@ -155,7 +155,7 @@ The head area of the selected panel.
 ^^^candidate-item
 The content of each item inside the candidate panel.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of current item. |
@@ -169,8 +169,8 @@ The content of each item inside the candidate panel.
 ^^^selected-item
 The content of each item inside the selected panel.
 
-+++Scope properties
-The scope properties will be the same as slot `candidate-item` when `selected-show-mode` is `'tree'`. They'll be as follows when `selected-show-mode` is `'flat'`.
++++Slot props
+The slot props will be the same as slot `candidate-item` when `selected-show-mode` is `'tree'`. They'll be as follows when `selected-show-mode` is `'flat'`.
 
 | Name | Type | Description |
 | -- | -- | -- |

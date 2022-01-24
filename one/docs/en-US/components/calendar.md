@@ -67,7 +67,7 @@ Selected date(s) or date range(s). Data type differs according to `multiple` and
 ^^^slot-date
 The content of each date cell. Displays the corresponding day of month by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `year` | `number` | The full representation of year. |

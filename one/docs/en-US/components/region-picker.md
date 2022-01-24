@@ -46,7 +46,7 @@ The array of selected `value`s.
 ^^^slot-label
 The label content of each node. Displays the `label` property of each item by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the node. |
@@ -57,7 +57,7 @@ The label content of each node. Displays the `label` property of each item by de
 | `overlay` | `boolean=` | Whether the node is displayed inside the overlay. |
 +++
 
-Additionally, custom properties apart from the listed ones will also be passes into the scope object via `v-bind`.
+Additionally, custom properties apart from the listed ones will also be passes into the slot props object via `v-bind`.
 
 :::tip
 When `level` is `2` and `overlay` is `true`, the information of selected node count vs total node count will be displayed after the node label.

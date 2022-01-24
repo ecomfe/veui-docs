@@ -74,7 +74,7 @@ The table foot.
 ^^^slot-default
 The content of the table cell. Displays the property value corresponds to the [`field`](#props-field) prop in table's [`data`](./table#props-data) prop.
 
-The slot scope properties are the same as each item inside `data`, with an extra `index: number`, which denotes the index within the row data.
+The slot props are the same as each item inside `data`, with an extra `index: number`, which denotes the index within the row data.
 ^^^
 
 ^^^slot-sub-row
@@ -82,7 +82,7 @@ The content of cells in a sub row. Sub row data comes from the `children` array 
 
 Displays the value keyed by the [`field`](#props-field) prop inside the sub row data, which is `data[i].children[j]` of the parent table.
 
-The slot scope properties are the same as each item inside `children`, with an extra `index: number`, which denotes the index within the row data.
+The slot props are the same as each item inside `children`, with an extra `index: number`, which denotes the index within the row data.
 
 :::warning
 The `sub-row` slot of `Column` will be ignored when content is provided for `Table`'s [`sub-row`](./table#slots-sub-row) slot.
@@ -92,7 +92,7 @@ The `sub-row` slot of `Column` will be ignored when content is provided for `Tab
 ^^^slot-desc
 The content of the description overlay. Will override the [`desc`](#props-desc) prop when set.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `close` | `function(): void` | Used to close the description overlay. |
@@ -102,7 +102,7 @@ The content of the description overlay. Will override the [`desc`](#props-desc) 
 ^^^slot-filter
 The content of the filter dropdown.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `close` | `function(): void` | Used to close the filter dropdown. |

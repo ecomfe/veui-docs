@@ -12,7 +12,7 @@ Available size variants for the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l`.
 
 [[ demo src="/demo/select/size.vue" ]]
 
-### Using embedded `OptionGroup`s & `Option`s
+### Embedded options
 
 Can be used with embedded `OptionGroup`s & `Option`s.
 
@@ -108,7 +108,7 @@ Whether the dropdown menu is expanded.
 ^^^slot-before
 The content before the options in the dropdown layer. No default content.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `value` | `*` | The value of the selected option. |
@@ -121,7 +121,7 @@ The content before the options in the dropdown layer. No default content.
 ^^^slot-label
 The content of the select button. Displays the `label` of selected option or the text content of the selected embedded option by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the selected option. |
@@ -130,26 +130,26 @@ The content of the select button. Displays the `label` of selected option or the
 | `disabled` | `boolean=` | Whether the option is disabled. |
 +++
 
-Additionally, custom properties apart from the listed ones will also be passes into the scope object via `v-bind`.
+Additionally, custom properties apart from the listed ones will also be passes into the slot props object via `v-bind`.
 ^^^
 
 ^^^slot-group-label
 The label text of each option group (option with child `options`). Displays the `label` of the option by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the option group. |
 | `disabled` | `boolean=` | Whether the option group is disabled. |
 +++
 
-Additionally, custom properties in current option, apart from the listed ones, will also be passes into the scope object via `v-bind`.
+Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.
 ^^^
 
 ^^^slot-option-label
 The label text of each option (option without child `options`). Displays the `label` of the option by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the option. |
@@ -158,13 +158,13 @@ The label text of each option (option without child `options`). Displays the `la
 | `disabled` | `boolean=` | Whether the option is disabled. |
 +++
 
-Additionally, custom properties in current option, apart from the listed ones, will also be passes into the scope object via `v-bind`.
+Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.
 ^^^
 
 ^^^slot-option
 The entire content area of each option (option without child `options`). Displays the default content of `Options` component by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the option. |
@@ -173,13 +173,13 @@ The entire content area of each option (option without child `options`). Display
 | `disabled` | `boolean=` | Whether the option is disabled. |
 +++
 
-Additionally, custom properties in current option, apart from the listed ones, will also be passes into the scope object via `v-bind`.
+Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.
 ^^^
 
 ^^^^slot-trigger
 The entire drop-down trigger area. Displays the select input by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | --- | --- | --- |
 | `attrs` | `Object` | Attributes that need to be output to the trigger element, including `aria-*` / `disabled`, etc., can be output using `v-bind="attrs"`. |
@@ -229,5 +229,5 @@ Triggers when the selected option changed. The callback parameter list is `(valu
 
 | Name | Description |
 | -- | -- |
-| ``expand`` | Expand the dropdown layer. |
-| ``collapse`` | Collapse the dropdown layer. |
+| ``expand`` | Expand the dropdown panel. |
+| ``collapse`` | Collapse the dropdown panel. |

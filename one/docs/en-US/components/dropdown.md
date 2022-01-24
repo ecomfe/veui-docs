@@ -18,7 +18,7 @@ Available size values for the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l`.
 
 [[ demo src="/demo/dropdown/size.vue" ]]
 
-### Using embedded `OptionGroup`s & `Option`s
+### Embedded options
 
 Can be used with embedded `OptionGroup`s & `Option`s.
 
@@ -109,7 +109,7 @@ Whether the dropdown menu is expanded.
 ^^^slot-label
 The content of the select button. Displays the [`label`](#props-label) prop by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the dropdown option. |
@@ -119,20 +119,20 @@ The content of the select button. Displays the [`label`](#props-label) prop by d
 ^^^slot-group-label
 The label text of each option group (option with child `options`). Displays the `label` of the option by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the option group. |
 | `disabled` | `boolean=` | Whether the option group is disabled. |
 +++
 
-Additionally, custom properties in current option, apart from the listed ones, will also be passes into the scope object via `v-bind`.
+Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.
 ^^^
 
 ^^^slot-option-label
 The label text of each option (option without child `options`). Displays the `label` of the option by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the option. |
@@ -141,13 +141,13 @@ The label text of each option (option without child `options`). Displays the `la
 | `disabled` | `boolean=` | Whether the option is disabled. |
 +++
 
-Additionally, custom properties in current option, apart from the listed ones, will also be passes into the scope object via `v-bind`.
+Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.
 ^^^
 
 ^^^slot-option
 The entire content area of each option (option without child `options`). Displays the default content of `Options` component by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the option. |
@@ -156,13 +156,13 @@ The entire content area of each option (option without child `options`). Display
 | `disabled` | `boolean=` | Whether the option is disabled. |
 +++
 
-Additionally, custom properties in current option, apart from the listed ones, will also be passes into the scope object via `v-bind`.
+Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.
 ^^^
 
 ^^^slot-trigger
 The entire drop-down trigger area. Displays the dropdown button by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | --- | --- | --- |
 | `attrs` | `Object` | Attributes that need to be output to the trigger element, including `aria-*` / `disabled`, etc., can be output using `v-bind="attrs"`. |

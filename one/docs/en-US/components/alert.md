@@ -70,7 +70,7 @@ The content of the message.
 
 Default: message text.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `message` | `string` | Message text. |

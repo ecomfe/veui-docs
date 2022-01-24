@@ -81,10 +81,10 @@ The last item will always be displayed as plain text by default.
 ^^^slot-item
 The content of each breadcrumb item. Default to the `label` properties of each item within `routes`, or the default slot content of [`BreadcrumbItem`]('./breadcrumb-item) components.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `route` | `Object` | The item in `routes`. Custom properties will also be passes into the scope object. |
+| `route` | `Object` | The item in `routes`. Custom properties will also be passes into the slot props object. |
 +++
 ^^^
 

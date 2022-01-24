@@ -67,20 +67,20 @@ Shortcut selection list. The type is `{label: string, selected: boolean | Array}
 ^^^slot-legend-label
 The text label of each legend. Displays the `label` property of each legend by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The text label of the legend. |
 | `value` | `string` | The value of the legend. |
 +++
 
-Additionally, custom properties inside `statuses` apart from the listed ones will also be passes into the scope object via `v-bind`.
+Additionally, custom properties inside `statuses` apart from the listed ones will also be passes into the slot props object via `v-bind`.
 ^^^
 
 ^^^slot-hour
 The content of each hour cell.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `day` | `number` | The day of week. `0` denotes Sunday. |
@@ -91,7 +91,7 @@ The content of each hour cell.
 ^^^slot-label
 The content of the selected label. By default, displays the time range in the form of <code>&#0096;${from}:00–${to + 1}:00&#0096;</code> when it's more than 3 hours, displays “Entire Day” when every hour of a day are selected; displays nothing for less than 3 hours.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `from` | `number` | The first hour of the time range. |
@@ -102,7 +102,7 @@ The content of the selected label. By default, displays the time range in the fo
 ^^^slot-tooltip
 The tooltip for each hour cell. Displays <code>&#0096;${hour}:00–${hour + 1}:00&#0096;</code> for current hour by default.
 
-+++Scope properties
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `day` | `number` | The day of week. `0` denotes Sunday. |

@@ -12,7 +12,7 @@
 
 [[ demo src="/demo/select/size.vue" ]]
 
-### 内联模式
+### 内联选项
 
 `Select` 组件内支持内联使用 `OptionGroup` 及 `Option` 组件来代替 [`options`](#props-options) 属性。
 
