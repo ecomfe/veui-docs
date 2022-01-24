@@ -62,6 +62,7 @@
   </v-pane>
   <v-pane
     min-size="40"
+    class="live-preview"
   >
     <v-live-preview
       class="editor-preview"
