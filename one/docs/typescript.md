@@ -17,6 +17,7 @@ npm i -D @vue/runtime-dom
 请参考 `Volar` 文档中的 [`Setup for Vue2`](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar#:~:text=Usage-,Setup%20for%20Vue%202,-Define%20Global%20Components)。
 
 ### 本地配置
+
 在 `tsconfig.json` 中添加如下配置来支持 `Vue 2` 的模板语法。
 
 ```json
@@ -24,7 +25,7 @@ npm i -D @vue/runtime-dom
   "vueCompilerOptions": {
     "experimentalCompatMode": 2,
     "experimentalTemplateCompilerOptions": {
-      "compatConfig": { "MODE": 2 } // optional
+      "compatConfig": { "MODE": 2 }
     }
   }
 }
@@ -38,27 +39,24 @@ npm i -D @vue/runtime-dom
 
 ```vue
 <template>
-<!-- ... -->
 <veui-button>OK</veui-button>
 </template>
 
 <script lang="ts">
-import CompositionAPI, { defineComponent } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 import { Button } from 'veui'
-
-// Vue.use(CompositionAPI)
 
 export default defineComponent({
   components: {
     'veui-button': Button
-    // ...
   }
 })
 </script>
 ```
 
 :::tip
-如果您没有注册组件，而是使用了类似 `unplugin-vue-components` 插件，那么请引入文件 `veui/types/global.d.ts` 或者在 `tsconfig.json` 中引入该文件：
+如果您没有手动引入并注册组件，而是使用了类似 `unplugin-vue-components` 的自动注册方案，那么请引入文件 `veui/types/global.d.ts` 或者在 `tsconfig.json` 中引入该文件：
+
 ```json
 {
   "include": [
