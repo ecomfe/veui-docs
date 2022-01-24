@@ -10,6 +10,10 @@
       "slug": "changelog"
     },
     {
+      "title": "TypeScript 支持",
+      "slug": "typescript"
+    },
+    {
       "title": "起步",
       "slug": "getting-started",
       "children": [
