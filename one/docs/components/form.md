@@ -76,7 +76,7 @@
 | 名称 | 描述 |
 | -- | -- |
 | ``default`` | [^slot-default] |
-| ``actions`` | 表单操作内容，如“提交”、“取消”按钮等。无默认内容。作用域参数和 `default` 插槽一样。 |
+| ``actions`` | 表单操作内容，如“提交”、“取消”按钮等。无默认内容。作用域参数与 [`default`](#slots-default) 插槽相同。 |
 
 ^^^slot-default
 可直接内联 `Fieldset` 或 `Field` 组件。无默认内容。
