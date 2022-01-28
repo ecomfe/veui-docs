@@ -1,6 +1,6 @@
 # Badge
 
-## Demo
+## Demos
 
 ### Text badge
 
@@ -8,19 +8,21 @@ Badge content can be text.
 
 [[ demo src="/demo/badge/text.vue" ]]
 
-### Digital badge
+### Numeric badge
 
-Badge content can be number, When the maximum value is exceeded, it can be displayed as *Maximum+*.
+The content can also be a number and can be can be displayed as “<var>max</var>+” when exceeding the maximum value.
 
 [[ demo src="/demo/badge/number.vue" ]]
 
-### Round Dots badge
+### Corner badge
 
-No badge content is provided, The badge will be displayed in a dot style in the upper right corner.
+When no badge content is provided, the badge will be displayed in the upper right corner in a dot style.
 
 [[ demo src="/demo/badge/corner-dot.vue" ]]
 
-No slot content is provided, the badge will be displayed in a dot style.
+### Dot badge
+
+When no slot content is provided, the badge will be displayed in a dot style.
 
 [[ demo src="/demo/badge/dot.vue" ]]
 
@@ -31,12 +33,12 @@ No slot content is provided, the badge will be displayed in a dot style.
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``type`` | `string=` | `'error'` | [^type] |
-| ``value`` | `string | number` | - | Badge content value. When it is a value of type `number`, it is limited by the [`max`](#props-max) attribute. `max` is ignored when it is of type `string`. |
-| ``max`` | `number=` | `badge.max` | The maximum value of the badge value, when `value` exceeds this value, the badge content will be displayed as `{max}+`. Ignored when `value` is `string`. |
-| ``hidden`` | `boolean=` | `false` | Whether hidden state. |
+| ``value`` | `string | number` | - | The badge content value. When it is of type `number`, it is limited by the [`max`](#props-max) prop. `max` is ignored when it is of type `string`. |
+| ``max`` | `number=` | `badge.max` | The maximum value of the badge, when `value` exceeds this value, the badge content will be displayed as “<var>max</var>+”. Ignored when `value` is `string`. |
+| ``hidden`` | `boolean=` | `false` | Whether the badge is hidden. |
 
 ^^^type
-Badge state type. The optional values for the built-in style are as follows. When using other values, you need to define the style of `.veui-badge-{type}`.
+The status type of the badge. The optional values for built-in styles are as follows. When using other values, you need to define the styles for `.veui-badge-{type}`.
 
 +++Enum
 | Value | Description |
@@ -53,6 +55,4 @@ Badge state type. The optional values for the built-in style are as follows. Whe
 
 | Name | Description |
 | -- | -- |
-| ``default`` | The target content that the badge needs to display. |
-
-
+| ``default`` | The target content that the badge needs to display upon. |

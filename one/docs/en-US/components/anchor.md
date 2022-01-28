@@ -1,6 +1,6 @@
 # Anchor
 
-## Demo
+## Demos
 
 ### Basic anchor
 

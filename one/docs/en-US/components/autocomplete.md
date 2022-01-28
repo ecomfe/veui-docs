@@ -1,6 +1,6 @@
 # Autocomplete
 
-## Demo
+## Demos
 
 ### Basic Trigger
 
