@@ -262,7 +262,7 @@ export default {
   methods: {
     play (vendor) {
       let locale = getLocale(this.$route.path)
-      play(this.code, { locale, vendor })
+      play(this.localCode, { locale, vendor })
     },
     async copy () {
       try {
