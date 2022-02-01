@@ -96,7 +96,7 @@ The style expression applied to the root element of the overlay. Supports all va
 | Name | Description |
 | -- | -- |
 | ``locate`` | Triggered when the overlay updated its location. |
-| ``afteropen`` | Triggered after the overlay is opened. If leave transition is provided by theme, then `afteropen` will be triggered when the transition finishes. |
+| ``afteropen`` | Triggered after the overlay is opened. The overlay content won't be rendered until after the overlay is opened, so if there is logic that depends on content rendering, please execute it after this event is triggered. |
 | ``afterclose`` | Triggered after the overlay is closed. If leave transition is provided by theme, then `afterclose` will be triggered when the transition finishes. |
 
 ### Configs

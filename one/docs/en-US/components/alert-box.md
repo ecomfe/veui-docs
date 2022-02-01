@@ -63,6 +63,7 @@ The contextual type of the alert box.
 | Name | Description |
 | -- | -- |
 | ``ok`` | Triggered when the “OK” button is clicked. |
+| ``afteropen`` | Triggered after the box overlay is opened. The box content won't be rendered until after the overlay is opened, so if there is logic that depends on content rendering, please execute it after this event is triggered. |
 | ``afterclose`` | Triggered after the box overlay is closed. If leaving transition is provided by the theme, the event will be triggered after the transition completes. |
 
 ### Icons

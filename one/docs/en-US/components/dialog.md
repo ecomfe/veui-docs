@@ -109,9 +109,9 @@ methods: {
 
 | Name | Description |
 | -- | -- |
-| `default` | The content of the dialog. |
-| `title` | The title of the dialog. Will ignore the [`title`](#props-title) prop if this slot is specified. |
-| `foot` | [^slot-foot] |
+| ``default`` | The content of the dialog. |
+| ``title`` | The title of the dialog. Will ignore the [`title`](#props-title) prop if this slot is specified. |
+| ``foot`` | [^slot-foot] |
 
 ^^^slot-foot
 The foot of the dialog. Displays “OK” and “Cancel” buttons by default.
@@ -128,10 +128,11 @@ The foot of the dialog. Displays “OK” and “Cancel” buttons by default.
 
 | Name | Description |
 | -- | -- |
-| `ok` | Triggered after the “OK” button is clicked or the dialog is closed with the slot scope function call `close('ok')`. |
-| `cancel` | Triggered after the “Cancel” button or the close button is clicked, or <kbd>esc</kbd> is pressed, or the dialog is closed with the slot scope function call `close('cancel')`. |
+| ``ok`` | Triggered after the “OK” button is clicked or the dialog is closed with the slot scope function call `close('ok')`. |
+| ``cancel`` | Triggered after the “Cancel” button or the close button is clicked, or <kbd>esc</kbd> is pressed, or the dialog is closed with the slot scope function call `close('cancel')`. |
 | <var>&lt;value&gt;</var> | Triggered when the dialog is closed with the slot scope function call `close(value)`. |
-| `afterclose` | Triggered after the dialog is closed. If leave transition is provided by theme, then `afterclose` will be triggered when the transition finishes. |
+| ``afteropen`` | Triggered after the dialog is opened. The dialog content won't be rendered until after the dialog is opened, so if there is logic that depends on content rendering, please execute it after this event is triggered. |
+| ``afterclose`` | Triggered after the dialog is closed. If leave transition is provided by theme, then `afterclose` will be triggered when the transition finishes. |
 
 ### Icons
 
