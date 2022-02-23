@@ -13,7 +13,7 @@
   rel="noopener"
 >
   <slot :label="t('editOnGitHub')">
-    <span class="full">{{ t('editOnGitHub') }}</span>
+    <span class="full">{{ t('editOnGitHub', { item: t(type) }) }}</span>
     <span class="short">{{ t('edit') }}</span>
     <veui-icon
       class="icon"
@@ -41,7 +41,11 @@ export default {
       type: String,
       default: 'default'
     },
-    path: String
+    path: String,
+    type: {
+      type: String,
+      default: 'page'
+    }
   },
   computed: {
     href () {

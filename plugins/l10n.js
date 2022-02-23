@@ -113,7 +113,9 @@ i18n.register(
 i18n.register(
   'zh-Hans',
   {
-    editOnGitHub: '在 GitHub 上编辑此页',
+    editOnGitHub: '在 GitHub 上编辑此{item}',
+    page: '页面',
+    demo: '示例',
     edit: '编辑'
   },
   {
@@ -124,7 +126,9 @@ i18n.register(
 i18n.register(
   'en-US',
   {
-    editOnGitHub: 'Edit this page on GitHub',
+    editOnGitHub: 'Edit this {item} on GitHub',
+    page: 'page',
+    demo: 'demo',
     edit: 'Edit'
   },
   {

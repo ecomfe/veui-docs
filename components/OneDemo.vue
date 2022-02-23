@@ -36,19 +36,7 @@
       <veui-icon name="one-demo-stackblitz"/>
     </veui-button>
     <veui-button
-      v-tooltip="t(editing ? 'closeEditor' : 'openEditor')"
-      class="toggle-editor"
-      ui="icon"
-      @click="editing = !editing"
-    >
-      <veui-icon
-        scale="1.2"
-        :name="editing ? 'one-demo-code-off' : 'one-demo-code'"
-      />
-    </veui-button>
-    <veui-button
       v-tooltip="t(codeExpanded ? 'hideCode' : 'showCode')"
-      class="toggle-source"
       ui="icon"
       @click="codeExpanded = !codeExpanded"
     >
@@ -57,9 +45,18 @@
         :name="codeExpanded ? 'one-demo-code-off' : 'one-demo-code'"
       />
     </veui-button>
+    <veui-button
+      v-tooltip="t(editing ? 'closeEditor' : 'openEditor')"
+      class="toggle-editor"
+      ui="text"
+      @click="editing = !editing"
+    >
+      Live
+    </veui-button>
     <one-edit-link
       class="edit"
       variant="quiet"
+      type="demo"
       :path="path"
     />
   </section>
@@ -240,7 +237,7 @@ Icon.register({
   .codeExpanded &
     border-radius 0
 
-  .veui-button
+  .veui-button:not(.toggle-editor)
     font-size 18px
 
   .veui-button + .veui-button
@@ -277,13 +274,25 @@ Icon.register({
   opacity 0
   transform scale(0.99) translateY(3px)
 
-.toggle-source
-  display none
+.toggle-editor
+  height 20px
+  padding 0 3px
+  font-weight 600
+
+  &::after
+    content none !important
+
+  &
+  &:hover
+  &[data-focus-visible-added]
+  &:active
+    border 1.5px solid currentColor !important
+
+  &[data-focus-visible-added]
+    border-color #0052cc !important
+    box-shadow 0 0 0 2px rgba(0, 102, 255, 0.2) !important
 
 @media (max-width 480px)
-  .toggle-source
-    display inline-flex
-
   .toggle-editor
     display none
 </style>
