@@ -46,10 +46,11 @@ module.exports = {
   css: ['veui-theme-dls/common.less', '@/assets/styles/global.styl', 'veui-theme-dls/'],
 
   plugins: [
+    { src: '~plugins/hm.js', ssr: false },
     { src: '~plugins/i18n.js' },
     { src: '~plugins/l10n.js' },
     { src: '~plugins/target.js', ssr: false },
-    { src: '~plugins/hm.js', ssr: false }
+    { src: '~plugins/prism.js', ssr: false }
   ],
 
   /**
