@@ -66,6 +66,15 @@
     class="source"
     :style="{ height: codeExpanded ? `${sourceHeight || 0}px` : '0' }"
   >
+    <div class="source-toolbar">
+      <veui-button
+        v-tooltip="t('@onelive.copyCode')"
+        ui="icon reverse"
+        @click="copy"
+      >
+        <veui-icon name="copy"/>
+      </veui-button>
+    </div>
     <slot name="source"/>
   </section>
   <transition name="editor">
@@ -85,15 +94,20 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import { Button, Icon } from 'veui'
 import tooltip from 'veui/directives/tooltip'
 import modal from 'veui/managers/modal'
 import i18n from 'veui/mixins/i18n'
+import toast from 'veui/plugins/toast'
 import { BrowserWindow } from 'vue-windows'
 import { getLocale } from '../common/i18n'
 import { play } from '../common/play'
 import OneEditLink from './OneEditLink'
 import OneRepl from './OneRepl'
+import 'veui-theme-dls-icons/copy'
+
+Vue.use(toast)
 
 export default {
   name: 'one-demo',
@@ -143,12 +157,20 @@ export default {
     this.sourceHeight = source.offsetHeight
     style.height = '0'
 
-    this.code = this.$refs.source?.textContent
+    this.code = this.$refs.source?.querySelector('pre')?.textContent || ''
   },
   methods: {
     play (vendor) {
       let locale = getLocale(this.$route.path)
       play(this.$refs.source.textContent, { locale, vendor })
+    },
+    async copy () {
+      try {
+        await navigator.clipboard.writeText(this.code)
+        this.$toast.success(this.t('@onelive.copySuccess'))
+      } catch (e) {
+        this.$toast.error(this.t('@onelive.copyFailed'))
+      }
     },
     handleEditorClose () {
       this.editing = false
@@ -205,6 +227,7 @@ Icon.register({
   background-color #fcfcfc
 
 .source
+  position relative
   overflow hidden
   transition height 0.3s
 
@@ -291,6 +314,23 @@ Icon.register({
   &[data-focus-visible-added]
     border-color #0052cc !important
     box-shadow 0 0 0 2px rgba(0, 102, 255, 0.2) !important
+
+.source-toolbar
+  position absolute
+  top 12px
+  right 28px
+  display flex
+  align-items center
+
+.veui-button[ui~="icon"][ui~="reverse"]
+  color #ebedf5
+
+  &:hover
+  &[data-focus-visible-added]
+    color #f6f7fa
+
+  &:active
+    color #fff
 
 @media (max-width 480px)
   .toggle-editor
