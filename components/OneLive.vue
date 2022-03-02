@@ -14,6 +14,7 @@
         minimap: {
           enabled: false,
         },
+        scrollBeyondLastLine: false
       }"
     />
     <div class="editor-toolbar">
@@ -278,7 +279,7 @@ export default {
       } else {
         this.colorSchemeOption = colorSchemeOptions[
           (colorSchemeOptions.indexOf(this.colorSchemeOption) + 1) %
-            colorSchemeOptions.length
+          colorSchemeOptions.length
         ]
       }
 
