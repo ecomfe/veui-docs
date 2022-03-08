@@ -44,6 +44,12 @@
 
 [[ demo src="/demo/calendar/date-class.vue" ]]
 
+### 自定义日期内容
+
+通过 [`before`](#slots-before) 插槽来自定义前置内容。
+
+[[ demo src="/demo/calendar/slots.vue" ]]
+
 ## API
 
 ### 属性
