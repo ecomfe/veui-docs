@@ -64,7 +64,7 @@
 ^^^
 
 ^^^before-close
-在将触发浮层关闭的操作发生后执行，类型为 `function(type: string): boolean=|Promise<boolean=>`。`type` 为触发关闭的类型，默认情况下可选值为 `'ok'|'cancel'`。返回值可以是一个 `boolean`，也可以是一个 resolve `boolean` 的 `Promise`，用来处理可能需要异步决定浮层关闭状态的情况。返回值或 resolve 值非 `false` 时才会关闭浮层。
+在将触发浮层关闭的操作发生后执行，类型为 `function(): boolean=|Promise<boolean=>`。返回值可以是一个 `boolean`，也可以是一个 resolve `boolean` 的 `Promise`，用来处理可能需要异步决定浮层关闭状态的情况。返回值或 resolve 值非 `false` 时才会关闭浮层。
 
 +++调用示例
 ```html
@@ -99,7 +99,7 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| ``cancel`` | 灯箱关闭后触发。 |
+| ``close`` | 进行触发关闭操作的动作时触发。 |
 
 ### 图标
 

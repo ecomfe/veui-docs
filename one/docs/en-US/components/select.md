@@ -44,12 +44,14 @@ Use the [`multiple`](#props-multiple) prop to enable multiple selections.
 | ``placeholder`` | `string` | `select.placeholder` | Placeholder text when no option is selected. |
 | ``clearable`` | `boolean` | `false` | Whether the select is clearable. |
 | ``searchable`` | `boolean` | `false` | Whether the options are searchable. |
-| ``filter`` | `function` | - | Filter function for the options. The type is `function(option: Object): boolean`. The type of `option` is the same as the [`options`](#props-options) prop. The return value denotes whether the option is shown inside the options dropdown. |
+| ``show-select-all`` | `boolean` | `false` | Whether to display the “Select All” option in multi-select mode. |
 | ``expanded`` | `boolean=` | `false` | [^expanded] |
 | ``disabled`` | `boolean=` | `false` | Whether the select is disabled. |
 | ``readonly`` | `boolean=` | `false` | Whether the select is read-only. |
 | ``overlay-class`` | `string | Array | Object=` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
 | ``overlay-style`` | `string | Array | Object=` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
+| ``match`` | `(item, keyword, { ancestors }) => boolean | [number, number] | Array<[number, number]>` | - | Custom highlighting logic, case insensitive by default. See [`Autocomplete`](./Autocomplete#customizing-search). |
+| ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | Custom hit logic, case insensitive by default. See [`Autocomplete`](./Autocomplete#customizing-search). |
 
 ^^^ui
 Style variants.

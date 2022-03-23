@@ -53,7 +53,7 @@
 | ``placeholder`` | `string` | `select.placeholder` | 未选择时的占位文本。 |
 | ``clearable`` | `boolean` | `false` | 是否可以清除已选内容。 |
 | ``searchable`` | `boolean` | `false` | 是否允许搜索选项。 |
-| ``filter`` | `function` | - | 选项过滤函数，签名为 `function(option: Object): boolean`。`option` 类型与 [`options`](#props-options) 属性中的项相同。返回值表示是否将结果保留在下拉选项列表中。 |
+| ``show-select-all`` | `boolean` | `false` | 多选模式下是否显示“全选”选项。 |
 | ``expanded`` | `boolean=` | `false` | [^expanded] |
 | ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
 | ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
