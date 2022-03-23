@@ -101,8 +101,6 @@
 | 名称 | 描述 |
 | -- | -- |
 | ``default`` | 选项列表的内容。在没有指定 [`options`](#props-options) 属性时，可以用来直接内联 `Option` 或 `OptionGroup`。 |
-| ``before`` | 选项列表前的内容。无默认内容。 |
-| ``after`` | 选项列表后的内容。无默认内容。 |
 | ``label`` | [^slot-label] |
 | ``group-label`` | [^slot-group-label] |
 | ``option-label`` | [^slot-option-label] |

@@ -21,6 +21,7 @@
 | ``align`` | `string=` | - | 内容对齐方式，支持 `left` / `center` / `right`。 |
 | ``span`` | `function(number): Object=` | | [^span] |
 | ``desc`` | `string` | - | 表头描述。 |
+| ``fixed`` | `boolean | 'left' | 'right'` | `false` | 该列是否固定，`'left'` 表示固定在左侧，`'right'` 表示在右侧。 |
 | ``filter-value`` | `*` | - | [^filter-value] |
 | ``filter-multiple`` | `boolean=` | `false` | 内置筛选是否为多选。 |
 | ``filter-options`` | `Array<Object>` | - | 筛选选项列表，项目的类型为 `{label, value, options, disabled, ...}`，可参考 [`Select`](./select) 组件的 [`options`](./select#props-options) 属性。 |
@@ -122,3 +123,9 @@
 | `close` | `function(): void` | 关闭筛选浮层。 |
 +++
 ^^^
+
+### 事件
+
+| 名称 | 描述 |
+| -- | -- |
+| ``filterchange`` | 修改该列过滤器时触发。回调参数为 `(value)`。`value` 为过滤器的当前值。 |

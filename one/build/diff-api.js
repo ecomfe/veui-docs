@@ -14,16 +14,35 @@ import {
   SyntaxKind,
   forEachChild
 } from 'typescript'
+import ignore from './diff-ignore'
 
 const docPath = join(__dirname, '../docs/components')
 const typesDir = join(resolveLib('veui'), 'types')
 const Ls = createLs()
 
+function getIgnoreComponents () {
+  return Object.keys(ignore)
+    .filter(key => ignore[key] === '*')
+}
+
+function isIgnore (componentName, apiType, apiName) {
+  let container = ignore['*'][apiType]
+  if (container && container.includes(apiName)) {
+    return true
+  }
+
+  container = ignore[componentName]
+  return container
+    ? container === '*' || (container[apiType] || []).includes(apiName)
+    : false
+}
+
 function getApiFromDocs () {
+  const ignoreComponents = getIgnoreComponents()
   return readdirSync(docPath)
     .reduce((acc, name) => {
       const match = name.match(/(.+)\.md$/)
-      if (match) {
+      if (match && !ignoreComponents.includes(match[1])) {
         const absPath = join(docPath, name)
         acc[match[1]] = getComponentApiFromDoc(absPath)
       }
@@ -68,7 +87,10 @@ function getComponentApiFromDoc (docFile) {
     })
     .toArray()
     .reduce((acc, name) => {
-      acc[name] = null
+      // 过滤掉 <value> 这种事件
+      if (!name.match(/^<[-\w]+>$/)) {
+        acc[name] = null
+      }
       return acc
     }, {})
 
@@ -96,24 +118,24 @@ function getApiFromVeuiTypes () {
 
 function visit (saveApi, node) {
   if (node.kind === SyntaxKind.ExportAssignment) {
-    const ck = Ls.getProgram().getTypeChecker()
-    const sym = ck.getSymbolAtLocation(node.expression) // node.expression: id to Autocomplete
-    const type = ck.getTypeAtLocation(sym.declarations[0].name)
+    const checker = Ls.getProgram().getTypeChecker()
+    const sym = checker.getSymbolAtLocation(node.expression) // node.expression: id to Autocomplete
+    const type = checker.getTypeAtLocation(sym.declarations[0].name)
     const rt = type.getConstructSignatures()[0].getReturnType()
     const all = rt.getProperties()
     const props = all.find(sy => sy.escapedName === '$props')
     let result = {}
 
-    result.props = ck
+    result.props = checker
       .getTypeOfSymbolAtLocation(props, node)
       .getProperties()
       .reduce((acc, sy) => {
-        acc[sy.escapedName] = ck.typeToString(ck.getTypeOfSymbolAtLocation(sy, node))
+        acc[sy.escapedName] = checker.typeToString(checker.getTypeOfSymbolAtLocation(sy, node))
         return acc
       }, {})
 
     const emits = all.find(sy => sy.escapedName === '$emit')
-    const emitsType = ck.getTypeOfSymbolAtLocation(emits, node)
+    const emitsType = checker.getTypeOfSymbolAtLocation(emits, node)
     const emitsCollection = emitsType.isIntersection()
       ? emitsType.types
       : [emitsType]
@@ -123,25 +145,27 @@ function visit (saveApi, node) {
         return ty.getCallSignatures()[0]
           .getParameters()
           .reduce((acc, argSy) => {
-            const argType = ck.getTypeOfSymbolAtLocation(argSy, node)
+            const argType = checker.getTypeOfSymbolAtLocation(argSy, node)
 
-            const tstr = ck.typeToString(argType)
+            const tstr = checker.typeToString(argType)
             const matched = /^"([^"]+)"$/.exec(tstr)
             acc[argSy.escapedName] = matched ? matched[1] : tstr
             return acc
           }, {})
       })
       .reduce((acc, { event, args }) => {
-        acc[event] = args
+        if (event !== 'string') {
+          acc[event] = args
+        }
         return acc
       }, {})
 
     const slots = all.find(sy => sy.escapedName === '$scopedSlots')
-    const slotsType = ck
+    const slotsType = checker
       .getTypeOfSymbolAtLocation(slots, node)
       .getProperties()
       .reduce((acc, symbol) => {
-        acc[symbol.escapedName] = getScope(symbol, node, ck)
+        acc[symbol.escapedName] = getScope(symbol, node, checker)
         return acc
       }, {})
 
@@ -305,6 +329,16 @@ function writeDiffFile () {
   const tsApi = getApiFromVeuiTypes()
   const docApi = getApiFromDocs()
   const diff = diffApi(tsApi, docApi)
+    .map(item => {
+      item.props = item.props.filter(({ key }) => !isIgnore(item.component, 'props', key))
+      item.emits = item.emits.filter(({ key }) => !isIgnore(item.component, 'emits', key))
+      item.slots = item.slots.filter(({ key }) => !isIgnore(item.component, 'slots', key))
+      return item
+    })
+    .filter(({ props, slots, emits }) => {
+      return !!props.length || !!slots.length || !!emits.length
+    })
+
   writeFileSync(join(__dirname, 'diff.json'), JSON.stringify(diff, null, '  '), 'utf8')
 }
 
