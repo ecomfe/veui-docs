@@ -67,11 +67,13 @@
 | ``vertical`` | `boolean=` | `false` | 是否是纵向布局的轮播。 |
 | ``indicator-align`` | `'start' | 'end'` | `start` | 用于支持指示器的相对于布局方向的位置。 |
 | ``indicator-position`` | `'outside' | 'inside'` | `inside` | 用于支持指示器显示在轮播容器的内部/外部。 |
+| ``controls`` | `boolean` | `false` | 是否显示切换按钮。 |
 | ``controls-position`` | `'outside' | 'inside'` | `inside` | 用于支持切换按钮相对于布局方向的位置。 |
 | ``slide-aspect-ratio`` | `number= | '${number}/${number}'` | - | 指定不同轮播项类型的默认配置。 |
 | ``options`` | `Object=` | `{ video: { muted: true, autoplay: true, controls: true, loop: true } }` | 用于指定每个轮播项的纵横比。 |
 | ``slides-per-view`` | `number=` | `1` | 指定同时显示多少个轮播项。 |
 | ``slides-per-group`` | `number=` | `1` | 指定每次前后切换的一组包含多少个轮播项。 |
+| ``lazy`` | `boolean= | { preload: number }` | `false` | [^lazy] |
 
 ^^^datasource
 轮播图数据源，项目类型为：`{src, alt, label, type}`。
@@ -114,6 +116,18 @@
 | -- | -- |
 | `click` | 点击时切换。 |
 | `hover` | 鼠标悬浮时切换。 |
++++
+^^^
+
+^^^lazy
+指定是否懒加载轮播资源。
+
++++详情
+| 名称 | 描述 |
+| -- | -- | -- |
+| `false` | 不懒加载资源。 |
+| `true` | 预加载当前展示项目的前后 1 个资源。 |
+| `{ preload: number }` | 预加载当前展示项目的前后指定数量个资源。 |
 +++
 ^^^
 

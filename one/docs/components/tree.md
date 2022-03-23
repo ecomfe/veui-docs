@@ -30,6 +30,7 @@
 | ``selectable`` | `boolean` | `false` | 点击整个节点区域时是否选中该节点。 |
 | ``selected`` | `string` | - | [^selected] |
 | ``merge-checked`` | `string` | `keep-all` | [^merge-checked] |
+| ``include-indeterminate`` | `boolean` | `false` | 是否将半选状态的节点加入已选项。[`datasource`](#props-datasource) 节点中的非叶子节点若有部分子孙节点被选中，则为半选状态。 |
 
 ^^^ui
 预设样式。

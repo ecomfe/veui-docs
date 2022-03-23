@@ -66,6 +66,8 @@
 | ``column-width`` | `number | string` | - | [^column-width] |
 | ``show-select-all`` | `boolean` | `false` | 在多选模式下是否有全选按钮。 |
 | ``value-display`` | `'complete' | 'simple'` | `'simple'` | [^value-display] |
+| ``merge-checked`` | `string=` | `keep-all` | [^merge-checked] |
+| ``include-indeterminate`` | `boolean` | `false` | 是否将半选状态的节点加入已选项。[`datasource`](#props-datasource) 节点中的非叶子节点若有部分子孙节点被选中，则为半选状态。 |
 | ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
 | ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
 | ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
@@ -152,6 +154,19 @@
 | -- | -- |
 | `complete` | 完整展示选中值的路径，如“中国 > 上海”。 |
 | `simple` | 仅仅展示选中值文本。 |
++++
+^^^
+
+^^^merge-checked
+
+选中值的合并策略。当某个节点下的所有子节点都被选中时，可以选择只保留父节点、只保留子节点或都保留。
+
++++枚举值
+| 值 | 描述 |
+| -- | -- |
+| `keep-all` | 父子节点都会在选中值中。 |
+| `upwards` | 尽可能往祖先方向合并选中值。 |
+| `downwards` | 尽可能往后代方向合并选中值。 |
 +++
 ^^^
 
