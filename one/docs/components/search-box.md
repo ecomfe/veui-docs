@@ -105,6 +105,9 @@
 | ``suggestions-before`` | 插入推荐列表前的内容。 |
 | ``suggestions-after`` | 插入推荐列表后的内容。 |
 | ``suggestion`` | [^slot-suggestion] |
+| ``clear`` | 点击清除按钮时触发。 |
+| ``group-label`` | 可以参考 [`Select`](./select) 组件的 [`group-label`](./select#props-group-label) 属性。 |
+| ``option-label`` | 可以参考 [`Select`](./select) 组件的 [`option-label`](./select#props-option-label) 属性。 |
 
 ^^^slot-suggestions
 推荐列表内容。

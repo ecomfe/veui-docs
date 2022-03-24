@@ -23,6 +23,7 @@
 | ``overlay-class`` | `string | Array | Object=` | - | 浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
 | ``indicator`` | `string=` | `'number'` | [^indicator] |
 | ``options`` | `Object=` | `{ video: { muted: true, autoplay: true, controls: true } }` | 额外配置。 |
+| ``lazy`` | `boolean= | { preload: number }` | `false` | [^lazy] |
 
 ^^^open
 :::badges
@@ -70,6 +71,18 @@
 ```html
 <veui-lightbox :open.sync="dialogOpen" :before-close="submit">...</veui-lightbox>
 ```
+^^^
+
+^^^lazy
+指定是否懒加载轮播资源。
+
++++详情
+| 名称 | 描述 |
+| -- | -- | -- |
+| `false` | 不懒加载资源。 |
+| `true` | 预加载当前展示项目的前后 1 个资源。 |
+| `{ preload: number }` | 预加载当前展示项目的前后指定数量个资源。 |
++++
 ^^^
 
 ### 插槽

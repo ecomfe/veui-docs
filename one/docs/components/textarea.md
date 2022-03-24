@@ -43,6 +43,9 @@
 | ``select-on-focus`` | `boolean` | `false` | 聚焦时是否自动选中文本域文本。 |
 | ``autoresize`` | `boolean` | `false` | 高度是否会被内容撑开。 |
 | ``get-length`` | `function(string): number=` | 自定义的字符长度计算函数。 |
+| ``resizable`` | `boolean=` | 指定是否可以调节长宽。 |
+| ``maxlength`` | `number=` | - | 最大可输入的字符长度。 |
+| ``strict`` | `boolean=` | `false` | 是否超出最大字符长度后不允许继续输入。 |
 
 ^^^ui
 预设样式。

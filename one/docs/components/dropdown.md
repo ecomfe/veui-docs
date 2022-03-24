@@ -55,6 +55,8 @@
 | ``split`` | `boolean=` | `false` | 是否将下拉按钮分离为指令按钮和切换下拉按钮两部分。 |
 | ``expanded`` | `boolean=` | `false` | [^expanded] |
 | ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
+| ``searchable`` | `boolean=` | `false` | 是否可搜索。 |
+| ``placeholder`` | `string=` | - | 搜索框的输入占位符。 |
 | ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
 | ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 | ``match`` | `(item, keyword, { ancestors }) => boolean | Array<[number, number]>` | - | 支持自定义高亮逻辑， 默认大小写不敏感，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
@@ -106,6 +108,7 @@
 | ``option-label`` | [^slot-option-label] |
 | ``option`` | [^slot-option] |
 | ``trigger`` | [^slot-trigger] |
+| ``no-data`` | 用于定义当搜索无数据时要展现的内容。 |
 
 ^^^slot-label
 下拉按钮文本区域。

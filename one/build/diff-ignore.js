@@ -7,6 +7,8 @@ export default {
       'ui',
       'name',
       'invalid',
+      'disabled',
+      'readonly',
       'overlayClass',
       'overlayStyle',
       'overlayPriority',
@@ -36,5 +38,20 @@ export default {
   },
   link: {
     props: ['replace']
+  },
+  pagination: {
+    props: ['goto']
+  },
+  option: {
+    props: ['tag']
+  },
+  nav: {
+    slots: ['more']
+  },
+  input: {
+    emits: ['autofill']
+  },
+  progress: {
+    props: ['radius', 'strokeWidth']
   }
 }

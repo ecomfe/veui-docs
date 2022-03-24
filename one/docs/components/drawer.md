@@ -32,6 +32,7 @@
 | ``closable`` | `boolean` | `true` | 是否显示关闭按钮。 |
 | ``outside-closable`` | `boolean` | `false` | 点击抽屉外部时是否关闭抽屉。 |
 | ``escapable`` | `boolean` | `false` | 按下 <kbd>esc</kbd> 键是否可以关闭抽屉。仅在 `closable` 为 `true` 时生效。 |
+| ``priority`` | `number=` | - | 抽屉浮层层叠权重，参考 [`Overlay`](./overlay) 组件的 [`priority`](./overlay#props-priority) 属性。 |
 | ``footless`` | `boolean` | `false` | 是否不显示默认的底部操作栏。 |
 | ``loading`` | `boolean=` | `false` | 是否处于加载状态。处于加载状态时确定按钮也将进入加载状态，无法点击。 |
 | ``disabled`` | `boolean=` | `false` | 是否处于禁用状态。处于禁用状态时确定按钮也将进入禁用状态，无法点击。 |
