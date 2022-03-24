@@ -57,6 +57,7 @@
 | ``expanded`` | `boolean=` | `false` | [^expanded] |
 | ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
 | ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
+| ``composition`` | `boolean=` | `false` | 是否感知搜索框输入法输入过程的值。 |
 | ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
 | ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 | ``match`` | `(item, keyword, { ancestors }) => boolean | [number, number] | Array<[number, number]>` | - | 支持自定义高亮逻辑， 默认大小写不敏感，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
@@ -117,6 +118,7 @@
 | ``option`` | [^slot-option] |
 | ``trigger`` | [^slot-trigger] |
 | ``selected`` | [^slot-selected] |
+| ``no-data`` | 用于定义当搜索无数据时要展现的内容。 |
 
 ^^^slot-before
 选项列表前的内容。无默认内容。
@@ -250,6 +252,8 @@
 | ``input`` | 输入搜索关键词时触发。回调参数为 `(value: string)`，`value` 为输入框的 `value` 值。 |
 | ``change`` | [^event-change] |
 | ``toggle`` | 下拉菜单展开状态切换时触发，回调参数为 `(expanded: boolean)`。`expanded` 表示操作将触发下拉菜单展开还是收起。 |
+| ``clear`` | 点击清除按钮时触发。 |
+| ``afteropen`` | 下拉打开完成之后触发。 |
 
 ^^^event-change
 :::badges

@@ -33,6 +33,7 @@
 | ``aim-center`` | `boolean` | `false` | 指定浮层提示箭头是否始终指向目标元素中心。 |
 | ``trigger`` | `string` | `'hover'` | [^trigger] |
 | ``interactive`` | `boolean` | `true` | 浮层内容是否允许交互。如果为 `false` 则在 `target` 外满足 `trigger` 指定的条件浮层即自动关闭。 |
+| ``autofocus`` | `boolean` | - | 是否自动抢占焦点到浮层内的第一个可聚焦元素。 |
 | ``hide-delay`` | `number` | `tooltip.hideDelays` | 触发关闭条件满足后延迟关闭等待时间的毫秒数。可以用来防止光标移出 `target` 后移入浮层进行交互前已经自动关闭。 |
 | ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
 | ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
@@ -72,6 +73,20 @@
 | 名称 | 描述 |
 | -- | -- |
 | ``default`` | 浮层提示内容。 |
+
+### 事件
+
+| 名称 | 描述 |
+| -- | -- |
+| ``toggle`` | [^event-toggle] |
+
+^^^event-toggle
+:::badges
+`v-model`
+:::
+
+浮层提示展开状态切换时触发，回调参数为 `(open: boolean)`。
+^^^
 
 ### 全局配置
 

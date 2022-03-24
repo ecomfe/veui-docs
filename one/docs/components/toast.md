@@ -22,8 +22,10 @@
 | -- | -- | -- | -- |
 | ``open`` | `boolean` | `false` | [^open] |
 | ``type`` | `string` | `'success'` | [^type] |
+| ``title`` | `string` | - | 消息标题。 |
 | ``message`` | `string` | - | 消息内容。 |
 | ``duration`` | `number` | `toast.duration` | 消息展示时间毫秒数，超过此事件则消息提示自动关闭。 |
+| ``closable`` | `boolean` | - | 是否有关闭按钮。 |
 
 ^^^open
 :::badges
@@ -51,12 +53,14 @@
 | 名称 | 描述 |
 | -- | -- |
 | ``default`` | 内容区。默认显示 [`message`](#props-message) 属性的内容。 |
+| ``title`` | 标题区。默认显示 [`title`](#props-title) 属性的内容。 |
 
 ### 事件
 
 | 名称 | 描述 |
 | -- | -- |
 | ``close`` | 消息自动关闭后触发。 |
+| ``ready`` | 组件挂载之后会触发该事件。 |
 
 ### 全局配置
 

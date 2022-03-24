@@ -89,6 +89,8 @@
 | ``scroll`` | `number` | - | 指定滚动区域的最大高度，当超出此高度时，表格将进入固定表头和底部只允许数据区域滚动的模式。 |
 | ``loading`` | `boolean` | `false` | 指定表格是否处于加载状态。 |
 | ``allowed-orders`` | `Array` | `[false, 'desc', 'asc']` | [^allowed-orders] |
+| ``bordered`` | `boolean` | `false` | 指定表格是否有边框。 |
+| ``column-filter`` | `Array<string>` | - | 用于过滤表格的列，元素的值应该是列的 `key-field`，默认全部列都显示出来。 |
 
 ^^^ui
 预设样式。

@@ -49,6 +49,8 @@
 | ``select-on-focus`` | `boolean=` | `false` | 聚焦时是否自动选中输入框文本。 |
 | ``get-length`` | `function(string): number=` | 自定义的字符长度计算函数。 |
 | ``trim`` | `boolean | string=` | `false` | [^trim] |
+| ``maxlength`` | `number=` | - | 最大可输入的字符长度。 |
+| ``strict`` | `boolean=` | `false` | 是否超出最大字符长度后不允许继续输入。 |
 
 ^^^ui
 预设样式。
@@ -113,6 +115,7 @@
 | -- | -- |
 | ``change`` | [^event-change] |
 | ``input`` | [^event-input] |
+| ``clear`` | 点击清除按钮时触发。 |
 
 ^^^event-change
 输入框内容变化时触发，即原生 `change` 事件触发时。回调参数为 `(value, event)`。

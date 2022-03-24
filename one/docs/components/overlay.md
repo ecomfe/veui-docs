@@ -45,6 +45,8 @@
 | ``overlay-class`` | `string | Array | Object=` | - | [^overlay-class] |
 | ``overlay-style`` | `string | Array | Object=` | - | [^overlay-style] |
 | ``options`` | `Object` | - | 透传给底层 Popper.js 实现的 `modifiers` 配置项，具体内容参见[这里](https://popper.js.org/docs/v1/#modifiers)。 |
+| ``position`` | `string` | 'auto' | 透传给底层 Popper.js 实现的 `placement` 配置项，具体内容参见[这里](https://popper.js.org/docs/v1/#popperplacements--codeenumcode)。 |
+| ``match-width`` | `boolean` | `false` | 当浮层宽度较窄时，是否自动匹配目标元素的宽度。 |
 
 ^^^open
 :::badges
@@ -98,6 +100,7 @@
 | ``locate`` | 浮层定位发生变化时触发。 |
 | ``afteropen`` | 浮层打开后触发。浮层内容在打开后才会进行渲染，所以如果有依赖内容渲染的逻辑，请在此事件触发后再执行。 |
 | ``afterclose`` | 浮层关闭后触发。如果样式主题提供了退出动画，将在退出动画完毕后触发。 |
+| ``orderchange`` | 浮层的 `z-index` 发生变化时触发，参数是 `(order: number)`, `order` 就是新的 `z-index`。 |
 
 ### 全局配置
 
