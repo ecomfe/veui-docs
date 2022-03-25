@@ -28,13 +28,17 @@ export default {
     props: ['model']
   },
   switch: {
-    props: ['model']
+    props: ['model', 'offLabel', 'onLabel'],
+    slots: ['content']
   },
   drawer: {
     props: ['inline']
   },
   select: {
     props: ['max'] // 脚本没识别出来，先忽略
+  },
+  'option-group': {
+    props: ['optionTag']
   },
   link: {
     props: ['replace']

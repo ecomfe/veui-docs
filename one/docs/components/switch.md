@@ -26,6 +26,7 @@
 | ``false-value`` | `*` | `false` | 关闭状态对应的值。 |
 | ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
 | ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
+| ``loading`` | `boolean=` | `false` | 是否为加载中状态。 |
 
 ^^^ui
 预设样式。

@@ -44,6 +44,8 @@
 | ``min`` | `number` | - | 允许的最小值。 |
 | ``decimal-place`` | `number` | 0 | 数值的小数精度位数，默认精确到整数位，`-1` 表示不处理精度。 |
 | ``step`` | `number` | 1 | 每次递增/递减的数值。 |
+| ``format`` | `(val: number, defaultFormattedValue: string) => string` | - | 自定义数字格式化。 |
+| ``parse`` | `(val: string) => number` | - | 自定义将输入的值解析成数字。 |
 
 ^^^ui
 预设样式。

@@ -15,6 +15,8 @@
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
 | ``label`` | `string` | - | 选项组的标题。 |
+| ``expanded`` | `boolean=` | `false` | 选项列表是否展开。 |
+| ``trigger`` | `'click' | 'hover'` | `'click'` | 选项列表展开的时机。 |
 | ``options`` | `Array<Object>` | `[]` | [^options] |
 | ``position`` | `string` | `inline` | [^position] |
 | ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
@@ -52,6 +54,8 @@
 | ``group-label`` | [^slot-group-label] |
 | ``option-label`` | [^slot-option-label] |
 | ``option`` | [^slot-option] |
+| ``before`` | 选项列表的前置区域。 |
+| ``after`` | 选项列表的后置区域。 |
 
 ^^^slot-label
 选项组标题文本区域。
@@ -114,6 +118,13 @@
 
 另外，当前选项数据中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。
 ^^^
+
+### 事件
+
+| 名称 | 描述 |
+| -- | -- |
+| ``toggle`` | 选项列表展开状态切换时触发，回调参数为 `(expanded: boolean)`。`expanded` 表示操作将触发选项列表展开还是收起。 |
+| ``afteropen`` | 选项列表打开完成之后触发。 |
 
 ### 图标
 
