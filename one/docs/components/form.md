@@ -24,9 +24,21 @@
 
 [[ demo src="/demo/form/disabled.vue" ]]
 
+### 提示与辅助文本
+
+[[ demo src="/demo/form/help.vue" ]]
+
 ### 校验
 
 [[ demo src="/demo/form/validate.vue" ]]
+
+### 抽象表单项
+
+[[ demo src="/demo/form/abstract.vue" ]]
+
+### 原生输入框与表单项整合
+
+[[ demo src="/demo/form/withhold.vue" ]]
 
 ## API
 

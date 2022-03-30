@@ -22,6 +22,11 @@
 | ``name`` | `string` | - | 表单项名称，可用于指定数据字段名或展示错误消息的定位。 |
 | ``field`` | `string` | - | [^field] |
 | ``rules`` | `string | Array<Object>` | - | [^rules] |
+| ``help`` | `string` | - | 表单项辅助文案。 |
+| ``help-position`` | `'bottom' | 'side'` | `'side'` | [^help-position] |
+| ``abstract`` | `boolean=` | `false` | 抽象表单项，抽象的项目没有标题，也不会展示校验信息。 |
+| ``withhold-validity`` | `boolean=` | `false` | 当设置为 `true` 时，该表单项内容中的输入组件（如 `veui-input` ）不会自动绑定校验事件，也不会自动进入 `invalid` 状态，使用方可以通过 `default` 插槽来自行定制。 |
+| ``validity-display`` | `'normal' | 'simple'` | `'simple'` | [^validity-display] |
 
 ^^^ui
 预设样式。
@@ -116,16 +121,45 @@ let minLengthRule = {
 +++
 ^^^
 
+^^^help-position
+表单项辅助文案的展示位置。
+
++++辅助文案位置
+| 值 | 描述 |
+| -- | -- |
+| `side` | 辅助文案展示在表单项内的侧边。 |
+| `bottom` | 辅助文案展示在表单项内的下方，在校验信息之前。 |
++++
+^^^
+
+^^^validity-display
+表单项的校验信息是否展示图标。
+
++++详情说明
+| 值 | 描述 |
+| -- | -- |
+| `normal` | 校验信息展示图标。 |
+| `simple` | 校验信息不展示图标。 |
++++
+^^^
+
 ### 插槽
 
 | 名称 | 描述 |
 | -- | -- |
-| ``default`` | 用于内联输入组件。无默认内容。 |
+| ``default`` | 用于内联输入组件。作用域参数为 `(listeners: object, invalid: boolean, validities: object, readonly: boolean, disabled: boolean)`，其中 `invalid` 是当前表单项是否校验出错误，`listeners` 是校验时机的事件绑定，`validities` 是校验信息。 |
 | ``label`` | 填充表单项描述的内容。默认为 [`label`](#props-label) 属性的文本值。 |
 | ``tip`` | 填充表单项提示的内容。默认为 [`tip`](#props-tip) 属性的文本值。 |
+| ``help`` | 表单项辅助文本内容。默认为 [`help`](#props-help) 属性的文本值。 |
 
 ### 图标
 
 | 名称 | 描述 |
 | -- | -- |
 | ``alert`` | 警示图标。 |
+
+### 全局配置
+
+| 配置项 | 类型 | 默认值 | 描述 |
+| -- | -- | -- | -- |
+| ``field.validityDisplay`` | `'normal' | 'simple'` | `'simple'` | 见 [`validity-display`](#props-validity-display) 属性。 |
