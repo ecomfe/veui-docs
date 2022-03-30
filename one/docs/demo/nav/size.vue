@@ -2,12 +2,6 @@
 <article>
   <section>
     <veui-nav
-      ui="s"
-      :items="items"
-    />
-  </section>
-  <section>
-    <veui-nav
       ui="m"
       :items="items"
     />

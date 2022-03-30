@@ -312,6 +312,10 @@
           "slug": "menu"
         },
         {
+          "title": "Message - 消息",
+          "slug": "message"
+        },
+        {
           "title": "Nav - 导航菜单",
           "slug": "nav"
         },
