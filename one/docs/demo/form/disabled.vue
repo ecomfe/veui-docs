@@ -9,7 +9,7 @@
     :data="formData"
     :disabled="disabled"
   >
-    <veui-field label="姓名：">
+    <veui-field label="姓名">
       <veui-input v-model="formData.name"/>
     </veui-field>
   </veui-form>

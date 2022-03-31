@@ -1,27 +1,20 @@
 <template>
 <article>
-  <veui-form :data="formData">
-    <veui-field label="状态：">
+  <veui-form
+    :data="formData"
+    @submit="handleSubmit"
+  >
+    <veui-field label="型号">
       <veui-select
-        v-model="formData.statusSelected"
-        :options="statusOptions"
+        v-model="formData.model"
+        :options="models"
       />
     </veui-field>
-
-    <veui-field label="时间：">
-      <veui-datepicker
-        v-model="formData.range"
-        range
+    <veui-field label="日期">
+      <veui-date-picker
+        v-model="formData.date"
       />
     </veui-field>
-
-    <veui-field>
-      <veui-search-box
-        v-model="formData.query"
-        placeholder="请输入搜索内容"
-      />
-    </veui-field>
-
     <template #actions>
       <veui-button
         ui="primary"
@@ -36,7 +29,7 @@
 </template>
 
 <script>
-import { Form, Field, Button, Select, DatePicker, SearchBox } from 'veui'
+import { Form, Field, Button, Select, DatePicker } from 'veui'
 
 export default {
   components: {
@@ -44,37 +37,37 @@ export default {
     'veui-field': Field,
     'veui-button': Button,
     'veui-select': Select,
-    'veui-datepicker': DatePicker,
-    'veui-search-box': SearchBox
+    'veui-date-picker': DatePicker
   },
   data () {
-    const start = new Date()
-    const end = new Date(start.getFullYear(), start.getMonth() + 1, 0)
-
     return {
-      statusOptions: [
+      models: [
         {
-          label: '状态1',
-          value: 1
+          label: 'APTX-4867',
+          value: 'aptx-4867'
         },
         {
-          label: '状态2',
-          value: 2
+          label: 'APTX-4868',
+          value: 'aptx-4868'
         },
         {
-          label: '状态3',
-          value: 3
+          label: 'APTX-4869',
+          value: 'aptx-4869'
         },
         {
-          label: '状态4',
-          value: 4
+          label: 'APTX-4870',
+          value: 'aptx-4870'
         }
       ],
       formData: {
-        statusSelected: 1,
-        query: '',
-        range: [start, end]
+        model: null,
+        date: null
       }
+    }
+  },
+  methods: {
+    handleSubmit (data) {
+      this.$toast(JSON.stringify(data, null, 2))
     }
   }
 }

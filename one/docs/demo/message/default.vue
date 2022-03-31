@@ -1,28 +1,62 @@
 <template>
 <article>
-  <section>
-    <div class="control-wrapper">
-      <veui-radio-button-group
-        v-model="ui"
-        :items="uiValues"
-      />
+  <section class="options">
+    <veui-radio-button-group
+      v-model="ui"
+      ui="s"
+      :items="uiValues"
+    />
 
-      <veui-radio-button-group
-        v-model="display"
-        :items="displayValues"
-      />
-    </div>
-    <div
-      v-for="(status, index) in statuses"
-      :key="index"
+    <veui-radio-button-group
+      v-model="display"
+      ui="s"
+      :items="displayValues"
+    />
+  </section>
+  <section>
+    <veui-message
+      :display="display"
+      :ui="ui"
+      status="info"
     >
-      <span class="message-label">{{ status }}:</span>
-      <veui-message
-        :display="display"
-        :ui="ui"
-        :status="status"
-      >消息</veui-message>
-    </div>
+      请在一小时内容完成付款，否则订单将自动取消
+    </veui-message>
+  </section>
+  <section>
+    <veui-message
+      :display="display"
+      :ui="ui"
+      status="success"
+    >
+      订单创建成功
+    </veui-message>
+  </section>
+  <section>
+    <veui-message
+      :display="display"
+      :ui="ui"
+      status="error"
+    >
+      网络连接失败
+    </veui-message>
+  </section>
+  <section>
+    <veui-message
+      :display="display"
+      :ui="ui"
+      status="warning"
+    >
+      余额较低，请及时续费
+    </veui-message>
+  </section>
+  <section>
+    <veui-message
+      :display="display"
+      :ui="ui"
+      status="aux"
+    >
+      允许上传的文件类型为：JPG、PNG
+    </veui-message>
   </section>
 </article>
 </template>
@@ -56,23 +90,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
-section {
-  margin-bottom: 10px;
-
-  & > div {
-    display: flex;
-    height: 32px;
-    align-items: center;
-  }
-
-  .message-label {
-    min-width: 120px;
-  }
+section + section {
+  margin-top: 20px;
 }
 
-.veui-radio-button-group {
-  & + & {
-    margin-left: 26px;
-  }
+.options {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 </style>

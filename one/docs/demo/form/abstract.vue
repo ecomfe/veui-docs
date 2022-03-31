@@ -4,15 +4,15 @@
     :data="formData"
   >
     <veui-field
-      label="门店："
+      label="门店"
       name="store"
       :rules="[{
-        name: 'required', message: `请选择门店`, triggers: 'select'
+        name: 'required', message: '请选择门店', triggers: 'select'
       }]"
     >
       <veui-transfer
-        :datasource="storeList"
         v-model="formData.store"
+        :datasource="storeList"
       >
         <template #selected-item-label="{ label, value }">
           <div class="selected-store">
