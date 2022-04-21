@@ -1,21 +1,36 @@
 <template>
 <article>
-  <div class="mock-window">
-    <veui-layout style="--dls-layout-header-height: 64px;">
-      <veui-header sticky>Header</veui-header>
+  <veui-layout style="--dls-layout-header-height: 64px;">
+    <veui-header sticky>
+      Header
+    </veui-header>
+    <veui-layout>
+      <veui-sidebar
+        sticky
+        style="max-height: 320px;"
+      >
+        <div class="center full">
+          Sidebar
+        </div>
+      </veui-sidebar>
       <veui-layout>
-        <veui-sidebar sticky style="max-height: 320px;">
-          <div class="center full">Sidebar</div>
-        </veui-sidebar>
-        <veui-layout>
-          <veui-content>
-            <div class="center" style="height: 800px;">Sidebar</div>
-          </veui-content>
-          <veui-footer sticky style="background: #ccc;">Footer（背景仅为演示）</veui-footer>
-        </veui-layout>
+        <veui-content>
+          <div
+            class="center"
+            style="height: 800px;"
+          >
+            Sidebar
+          </div>
+        </veui-content>
+        <veui-footer
+          sticky
+          style="background: #ccc;"
+        >
+          Footer（背景仅为演示）
+        </veui-footer>
       </veui-layout>
     </veui-layout>
-  </div>
+  </veui-layout>
 </article>
 </template>
 
@@ -43,14 +58,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.mock-window {
-  height: 384px;
-  transform: translate(0, 0); // bfc for fixed
-  overflow: auto;
-  border: 1px solid #eee;
+article {
+  height: 100%;
 
   & > .veui-layout {
-    min-width: 860px;
+    min-width: 720px;
   }
 }
 

@@ -7,7 +7,7 @@
     <browser-window
       v-if="browser"
       :url="browser"
-      width="80%"
+      width="calc(100% - 40px)"
       height="400px"
     >
       <slot/>
@@ -86,6 +86,7 @@
       }"
       :code="code"
       :expanded="editorExpanded"
+      :browser="!!browser"
       @close="handleEditorClose"
       @toggle="handleEditorToggle"
     />
@@ -220,6 +221,10 @@ Icon.register({
   border-top-left-radius 4px
   border-top-right-radius 4px
   padding 30px
+
+  & >>> .style-module_body__14MV-
+    transform translate(0, 0)
+    padding 0
 
 .desc
   border 1px solid #eee

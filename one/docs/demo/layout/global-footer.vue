@@ -1,19 +1,21 @@
 <template>
 <article>
-  <div class="mock-window">
+  <veui-layout>
+    <veui-header>Header</veui-header>
     <veui-layout>
-      <veui-header>Header</veui-header>
+      <veui-sidebar>
+        <div class="center full">
+          Sidebar
+        </div>
+      </veui-sidebar>
       <veui-layout>
-        <veui-sidebar>
-          <div class="center full">Sidebar</div>
-        </veui-sidebar>
-        <veui-layout>
-          <veui-content>Content</veui-content>
-        </veui-layout>
+        <veui-content>Content</veui-content>
       </veui-layout>
-      <veui-footer style="background: #ccc;">Footer（背景仅为演示）</veui-footer>
     </veui-layout>
-  </div>
+    <veui-footer style="background: #ccc;">
+      Footer（背景仅为演示）
+    </veui-footer>
+  </veui-layout>
 </article>
 </template>
 
@@ -36,12 +38,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.mock-window {
-  height: 384px;
-  transform: translate(0, 0); // bfc for fixed
+article {
+  height: 100%;
 
   & > .veui-layout {
-    min-width: 860px;
+    min-width: 720px;
   }
 }
 

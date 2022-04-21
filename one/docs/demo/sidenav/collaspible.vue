@@ -1,33 +1,48 @@
 <template>
 <article>
-  <section>
-    <veui-menu
-      :items="items"
-      collapsible
-    >
-      <template #icon>
-        <veui-icon name="calendar"/>
-      </template>
-    </veui-menu>
-  </section>
+  <veui-layout>
+    <veui-header>Header</veui-header>
+    <veui-layout>
+      <veui-sidebar collapsible>
+        <veui-sidenav
+          :items="items"
+          collapsible
+        />
+      </veui-sidebar>
+      <veui-layout>
+        <veui-content>Content</veui-content>
+        <veui-footer style="background: #ccc;">
+          Footer（背景仅为演示）
+        </veui-footer>
+      </veui-layout>
+    </veui-layout>
+  </veui-layout>
 </article>
 </template>
 
 <script>
-import { Menu, Icon } from 'veui'
+import { Layout, Header, Footer, Sidebar, Content, Sidenav } from 'veui'
 import 'veui-theme-dls-icons/calendar'
+import 'veui-theme-dls-icons/bullseye'
+import 'veui-theme-dls-icons/clock'
+import 'veui-theme-dls-icons/eye'
 
 export default {
-  name: 'veui-menu-demo',
+  name: 'veui-sidenav-demo',
   components: {
-    'veui-menu': Menu,
-    'veui-icon': Icon
+    'veui-layout': Layout,
+    'veui-header': Header,
+    'veui-footer': Footer,
+    'veui-sidebar': Sidebar,
+    'veui-content': Content,
+    'veui-sidenav': Sidenav
   },
   data () {
     let items = [
       {
         label: 'Group One',
         name: 'group-one',
+        icon: 'calendar',
         children: [
           {
             label: 'Sub One',
@@ -46,7 +61,7 @@ export default {
             children: [
               {
                 label: 'Switch',
-                to: '/switch'
+                to: '/components/switch'
               }
             ]
           }
@@ -56,6 +71,7 @@ export default {
         label: 'Button',
         name: 'Button',
         to: '/components/button',
+        icon: 'bullseye',
         children: [
           {
             label: 'Disabled',
@@ -65,7 +81,7 @@ export default {
               {
                 label: 'Link',
                 name: 'Link',
-                to: '/link'
+                to: '/components/link'
               }
             ]
           }
@@ -74,11 +90,13 @@ export default {
       {
         label: 'Navigation Three',
         name: 'nav-three',
+        icon: 'eye',
         disabled: true
       },
       {
         label: 'Navigation Four',
         name: 'nav-four',
+        icon: 'clock',
         children: [
           {
             label: 'Progress',
@@ -93,3 +111,21 @@ export default {
   }
 }
 </script>
+
+<style lang="less" scoped>
+article {
+  height: 100%;
+
+  & > .veui-layout {
+    min-width: 720px;
+  }
+}
+
+.veui-layout-header,
+.veui-layout-footer,
+.veui-layout-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>

@@ -64,6 +64,9 @@
   <v-pane
     min-size="40"
     class="live-preview"
+    :class="{
+      'live-preview-browser': browser
+    }"
   >
     <v-live-preview
       class="editor-preview"
@@ -166,7 +169,8 @@ export default {
     code: {
       type: String,
       default: ''
-    }
+    },
+    browser: Boolean
   },
   data () {
     return {
@@ -320,6 +324,10 @@ export default {
 
   & >>> .live-preview
     overflow auto
+
+.live-preview-browser
+  transform translate(0, 0)
+  padding 0 !important
 
 .editor-toolbar
   position absolute

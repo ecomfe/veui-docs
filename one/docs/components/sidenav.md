@@ -1,4 +1,4 @@
-# Menu <small>边栏菜单</small>
+# Sidenav <small>边栏菜单</small>
 
 ## 示例
 
@@ -6,17 +6,17 @@
 
 结合 Vue Router 使用边栏菜单。
 
-[[ demo src="/demo/menu/normal.vue" ]]
+[[ demo src="/demo/sidenav/normal.vue" ]]
 
 ### 可折叠
 
-使用 [`collapsible`](#props-collapsible) 属性控制菜单是否可以折叠。
+配合 `Sidebar` 的 [`collapsible`](./sidebar#props-collapsible) 属性可以控制菜单的展开/收起。
 
-[[ demo src="/demo/menu/collaspible.vue" ]]
+[[ demo src="/demo/sidenav/collaspible.vue" browser="/demo/sidenav/collaspible.vue" ]]
 
 ### 自定义插槽
 
-[[ demo src="/demo/menu/slot.vue" ]]
+[[ demo src="/demo/sidenav/slot.vue" ]]
 
 ## API
 
@@ -28,7 +28,6 @@
 | ``items`` | `Array<Object>=` | `[]` | [^items] |
 | ``active`` | `string` | - | [^active] |
 | ``matches`` | `function(Object, string): boolean` | - | [^matches] |
-| ``collapsible`` | `boolean` | `false` | 整个导航菜单是否可折叠。 |
 | ``collapsed`` | `boolean` | `false` | [^collapsed] |
 | ``expanded`` | `Array<string>=` | `[]` | [^expanded] |
 
@@ -139,9 +138,3 @@
 | -- | -- |
 | ``activate`` | 用户点击有 `to` 的节点触发，参数是激活节点的整个 `item` 数据。 |
 | ``click`` | 用户点击节点时触发，参数是激活节点整个 `item` 数据。 |
-
-### 图标
-| 名称 | 描述 |
-| -- | -- |
-| ``expand`` | 展开。 |
-| ``collapse`` | 折叠。 |

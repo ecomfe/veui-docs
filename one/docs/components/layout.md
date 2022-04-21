@@ -10,15 +10,15 @@
 
 `Layout` 组件支持多种典型布局。
 
-[[ demo src="/demo/layout/basic.vue" ]]
+[[ demo src="/demo/layout/basic.vue" browser="/demos/layout/basic.vue" ]]
 
 ### 通顶侧边栏
 
-[[ demo src="/demo/layout/global-sidebar.vue" ]]
+[[ demo src="/demo/layout/global-sidebar.vue" browser="/demos/layout/global-sidebar.vue" ]]
 
 ### 通栏底部
 
-[[ demo src="/demo/layout/global-footer.vue" ]]
+[[ demo src="/demo/layout/global-footer.vue" browser="/demos/layout/global-footer.vue" ]]
 
 ### 吸顶/吸底布局
 
@@ -32,7 +32,7 @@
 当吸底的布局底部和吸顶侧边栏一起使用需要在布局底部的父组件 `Layout` 上设置 `--dls-layout-footer-height` 来指定布局底部的高度。
 :::
 
-[[ demo src="/demo/layout/sticky.vue" ]]
+[[ demo src="/demo/layout/sticky.vue" browser="/demos/layout/sticky.vue" ]]
 
 ## API
 

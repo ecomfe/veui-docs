@@ -1,18 +1,25 @@
 <template>
 <article>
-  <section>
-    <veui-menu :items="items"/>
-  </section>
+  <veui-sidenav
+    :items="items"
+    collapsible
+  >
+    <template #icon>
+      <veui-icon name="calendar"/>
+    </template>
+  </veui-sidenav>
 </article>
 </template>
 
 <script>
-import { Menu } from 'veui'
+import { Sidenav, Icon } from 'veui'
+import 'veui-theme-dls-icons/calendar'
 
 export default {
-  name: 'veui-menu-demo',
+  name: 'veui-sidenav-demo',
   components: {
-    'veui-menu': Menu
+    'veui-sidenav': Sidenav,
+    'veui-icon': Icon
   },
   data () {
     let items = [
@@ -37,7 +44,7 @@ export default {
             children: [
               {
                 label: 'Switch',
-                to: '/components/switch'
+                to: '/switch'
               }
             ]
           }
@@ -56,7 +63,7 @@ export default {
               {
                 label: 'Link',
                 name: 'Link',
-                to: '/components/link'
+                to: '/link'
               }
             ]
           }

@@ -1,32 +1,22 @@
 <template>
 <article>
-  <section>
-    <veui-menu
-      :items="items"
-      collapsible
-    />
-  </section>
+  <veui-sidenav :items="items"/>
 </article>
 </template>
 
 <script>
-import { Menu } from 'veui'
-import 'veui-theme-dls-icons/calendar'
-import 'veui-theme-dls-icons/bullseye'
-import 'veui-theme-dls-icons/clock'
-import 'veui-theme-dls-icons/eye'
+import { Sidenav } from 'veui'
 
 export default {
-  name: 'veui-menu-demo',
+  name: 'veui-sidenav-demo',
   components: {
-    'veui-menu': Menu
+    'veui-sidenav': Sidenav
   },
   data () {
     let items = [
       {
         label: 'Group One',
         name: 'group-one',
-        icon: 'calendar',
         children: [
           {
             label: 'Sub One',
@@ -55,7 +45,6 @@ export default {
         label: 'Button',
         name: 'Button',
         to: '/components/button',
-        icon: 'bullseye',
         children: [
           {
             label: 'Disabled',
@@ -74,13 +63,11 @@ export default {
       {
         label: 'Navigation Three',
         name: 'nav-three',
-        icon: 'eye',
         disabled: true
       },
       {
         label: 'Navigation Four',
         name: 'nav-four',
-        icon: 'clock',
         children: [
           {
             label: 'Progress',

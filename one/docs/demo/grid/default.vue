@@ -64,6 +64,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
+article {
+  padding: 10px 12px;
+}
+
 .veui-grid-row {
   & + & {
     margin: 2px 0; /* Just for showcase */

@@ -21,6 +21,7 @@
   <one-live
     class="editor"
     :code="code"
+    :browser="browser"
   />
 </article>
 </template>
@@ -60,7 +61,8 @@ export default {
       type: String,
       default: ''
     },
-    expanded: Boolean
+    expanded: Boolean,
+    browser: Boolean
   },
   methods: {
     handleClose () {

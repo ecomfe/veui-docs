@@ -308,8 +308,8 @@
           "slug": "drawer"
         },
         {
-          "title": "Menu - 边栏菜单",
-          "slug": "menu"
+          "title": "Sidenav - 边栏菜单",
+          "slug": "sidenav"
         },
         {
           "title": "Message - 消息",
@@ -714,8 +714,8 @@
           "disabled": true
         },
         {
-          "title": "Menu",
-          "slug": "menu",
+          "title": "Sidenav",
+          "slug": "sidenav",
           "disabled": true
         },
         {

@@ -53,6 +53,7 @@ export default {
 <style lang="less" scoped>
 article {
   width: 400px; /* Fixed-width container */
+  padding: 10px 12px;
 }
 
 .veui-grid-row {

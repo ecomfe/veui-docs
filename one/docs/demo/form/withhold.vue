@@ -10,10 +10,10 @@
     >
       <template #default="{ invalid, listeners }">
         <input
+          v-model="formData.name"
           :class="{
             'demo-invalid': invalid
           }"
-          v-model="formData.name"
           v-on="listeners"
         >
       </template>
