@@ -1,24 +1,30 @@
 <template>
-<article>
-  <div class="mock-window">
+<veui-layout>
+  <veui-header>Header</veui-header>
+  <veui-layout>
+    <veui-sidebar :collapsible="collapsible">
+      <div class="center full">
+        Sidebar
+      </div>
+    </veui-sidebar>
     <veui-layout>
-      <veui-header>Header</veui-header>
-      <veui-layout>
-        <veui-sidebar :collapsible="false">
-          <div class="center full">Sidebar</div>
-        </veui-sidebar>
-        <veui-layout>
-          <veui-content>Content</veui-content>
-          <veui-footer style="background: #ccc;">Footer（背景仅为演示</veui-footer>
-        </veui-layout>
-      </veui-layout>
+      <veui-content>
+        <veui-switch
+          v-model="collapsible"
+        >
+          Collapsible
+        </veui-switch>
+      </veui-content>
+      <veui-footer style="background: #ccc;">
+        Footer（背景仅为演示
+      </veui-footer>
     </veui-layout>
-  </div>
-</article>
+  </veui-layout>
+</veui-layout>
 </template>
 
 <script>
-import { Layout, Header, Footer, Sidebar, Content } from 'veui'
+import { Layout, Header, Footer, Sidebar, Content, Switch } from 'veui'
 
 export default {
   components: {
@@ -26,21 +32,18 @@ export default {
     'veui-header': Header,
     'veui-footer': Footer,
     'veui-sidebar': Sidebar,
-    'veui-content': Content
+    'veui-content': Content,
+    'veui-switch': Switch
+  },
+  data () {
+    return {
+      collapsible: true
+    }
   }
 }
 </script>
 
 <style lang="less" scoped>
-.mock-window {
-  height: 384px;
-  transform: translate(0, 0); // bfc for fixed
-
-  & > .veui-layout {
-    min-width: 860px;
-  }
-}
-
 .center,
 .veui-layout-header,
 .veui-layout-footer,

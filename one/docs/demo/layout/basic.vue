@@ -1,22 +1,20 @@
 <template>
-<article>
+<veui-layout>
+  <veui-header>Header</veui-header>
   <veui-layout>
-    <veui-header>Header</veui-header>
+    <veui-sidebar>
+      <div class="center full">
+        Sidebar
+      </div>
+    </veui-sidebar>
     <veui-layout>
-      <veui-sidebar>
-        <div class="center full">
-          Sidebar
-        </div>
-      </veui-sidebar>
-      <veui-layout>
-        <veui-content>Content</veui-content>
-        <veui-footer style="background: #ccc;">
-          Footer（背景仅为演示）
-        </veui-footer>
-      </veui-layout>
+      <veui-content>Content</veui-content>
+      <veui-footer style="background: #ccc;">
+        Footer（背景仅为演示）
+      </veui-footer>
     </veui-layout>
   </veui-layout>
-</article>
+</veui-layout>
 </template>
 
 <script>
@@ -34,14 +32,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-article {
-  height: 100%;
-
-  & > .veui-layout {
-    min-width: 720px;
-  }
-}
-
 .center,
 .veui-layout-header,
 .veui-layout-footer,

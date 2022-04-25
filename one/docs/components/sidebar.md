@@ -10,13 +10,13 @@
 
 通过 [`collapse-mode`](#props-collapse-mode) 属性指定收起模式，分别是 `slim`（部分收起） / `hidden`（完全收起）。
 
-[[ demo src="/demo/sidebar/collapse-mode.vue" ]]
+[[ demo src="/demo/sidebar/collapse-mode.vue" browser="/demo/sidebar/collapse-mode.vue" ]]
 
 ### 展示/隐藏切换按钮
 
 使用 `collapsible` 属性设置是否显示侧边栏展开/收起按钮。
 
-[[ demo src="/demo/sidebar/collapsible.vue" ]]
+[[ demo src="/demo/sidebar/collapsible.vue" browser="/demo/sidebar/collapsible.vue"  ]]
 
 ## API
 
@@ -27,7 +27,7 @@
 | ``collapsible`` | `boolean` | `false` | 是否显示收起/展开按钮。 |
 | ``collapsed`` | `boolean` | `false` | [^collapsed] |
 | ``autocollapse`` | `boolean` | `false` | 是否拉伸窗口到一定阈值时自动收起。 |
-| ``collapse-mode`` | `'slim' | 'hidden'` | `'slim'` | 收起模式，分别是 `slim`（部分收起）/`hidden`（完全收起）。 
+| ``collapse-mode`` | `'slim' | 'hidden'` | `'slim'` | 收起模式，分别是 `slim`（部分收起）/`hidden`（完全收起）。
 
 ^^^collapsed
 :::badges

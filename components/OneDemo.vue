@@ -226,6 +226,9 @@ Icon.register({
     transform translate(0, 0)
     padding 0
 
+  & >>> .veui-layout
+    min-width auto
+
 .desc
   border 1px solid #eee
   padding 18px 20px

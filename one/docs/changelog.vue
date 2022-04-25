@@ -75,7 +75,7 @@
     </veui-fieldset>
   </veui-form>
   <section
-    v-for="{ version, codeName, date, changeset } of filteredChangelog"
+    v-for="{ version, codeName, date, changeset } of pagedChangelog"
     :key="version"
     class="version-item"
     data-markdown
@@ -114,19 +114,27 @@
     </ul>
   </section>
   <section
-    v-if="filteredChangelog.length === 0"
+    v-if="pagedChangelog.length === 0"
     class="not-found"
     @click="updateShrugger"
   >
     <span class="emoji">{{ shrugger }} </span>
     <p>没有符合条件的变更记录。</p>
   </section>
+  <section class="pagination">
+    <veui-pagination
+      :page="page"
+      :page-size="pageSize"
+      :total="filteredChangelog.length"
+      @redirect="val => page = val"
+    />
+  </section>
 </article>
 </template>
 
 <script>
 import { cloneDeep } from 'lodash'
-import { Form, Field, Fieldset, CheckboxGroup, Select, Checkbox } from 'veui'
+import { Form, Field, Fieldset, CheckboxGroup, Select, Checkbox, Pagination } from 'veui'
 import changelog from '../assets/data/changelog.json'
 
 const allTypes = [
@@ -169,7 +177,8 @@ export default {
     'veui-fieldset': Fieldset,
     'veui-checkbox-group': CheckboxGroup,
     'veui-select': Select,
-    'veui-checkbox': Checkbox
+    'veui-checkbox': Checkbox,
+    'veui-pagination': Pagination
   },
   data () {
     return {
@@ -182,7 +191,9 @@ export default {
       tag: null,
       from: null,
       to: allVersions[0].value,
-      shrugger: getShrugger()
+      shrugger: getShrugger(),
+      page: 1,
+      pageSize: 10
     }
   },
   computed: {
@@ -207,6 +218,10 @@ export default {
       })
 
       return result.filter(({ changeset }) => changeset.length !== 0)
+    },
+    pagedChangelog () {
+      const { page, pageSize, filteredChangelog } = this
+      return filteredChangelog.slice((page - 1) * pageSize, page * pageSize)
     }
   },
   watch: {
@@ -258,6 +273,9 @@ export default {
 .form
   & >>> .veui-field
     margin-bottom 12px
+
+    & .veui-field
+      margin-bottom 0
 
   & >>> .veui-field .veui-field-no-label
     margin-bottom 0
@@ -359,6 +377,9 @@ h2
 
   p
     margin 0 -0.75em 0 0
+
+.pagination
+  margin-top 36px
 
 @keyframes line-enter
   0%
