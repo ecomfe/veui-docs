@@ -4,50 +4,48 @@
   class="one-nav"
   :class="{ expanded }"
 >
+  <header>
+    <h2>VEUI</h2>
+    <section class="desc">
+      <a href="https://github.com/ecomfe/veui">
+        <img
+          alt="VEUI on GitHub"
+          src="https://img.shields.io/github/stars/ecomfe/veui?label=stars&logo=github"
+          height="20"
+        >
+      </a>
+      <nuxt-link
+        :class="{
+          'locale-swith': true,
+          disabled: altLocale.disabled,
+        }"
+        :to="altLocale.disabled ? '' : altLocale.to"
+      >
+        {{ altLocale.label }}
+      </nuxt-link>
+    </section>
+    <section class="search">
+      <one-search/>
+    </section>
+    <div
+      class="toggle"
+      @click="toggleMenu"
+    >
+      <veui-icon
+        class="expanded-icon"
+        name="chevron-left"
+      />
+      <veui-icon
+        class="collapsed-icon"
+        name="hamburger"
+      />
+    </div>
+  </header>
   <veui-menu
     class="one-menu"
     :items="menuItems"
     :expanded.sync="menuExpanded"
   >
-    <template #before>
-      <header>
-        <h2>VEUI</h2>
-        <section class="desc">
-          <a href="https://github.com/ecomfe/veui">
-            <img
-              alt="VEUI on GitHub"
-              src="https://img.shields.io/github/stars/ecomfe/veui?label=stars&logo=github"
-              height="20"
-            >
-          </a>
-          <nuxt-link
-            :class="{
-              'locale-swith': true,
-              disabled: altLocale.disabled,
-            }"
-            :to="altLocale.disabled ? '' : altLocale.to"
-          >
-            {{ altLocale.label }}
-          </nuxt-link>
-        </section>
-        <section class="search">
-          <one-search/>
-        </section>
-        <div
-          class="toggle"
-          @click="toggleMenu"
-        >
-          <veui-icon
-            class="expanded-icon"
-            name="chevron-left"
-          />
-          <veui-icon
-            class="collapsed-icon"
-            name="hamburger"
-          />
-        </div>
-      </header>
-    </template>
     <template #item-label="{ label, sub }">
       {{ label }}<small>{{ sub }}</small>
     </template>
@@ -147,31 +145,14 @@ export default {
   top 0
   bottom 0
   left 0
+  display flex
+  flex-direction column
   width 280px
   z-index 1
 
-.one-menu
-  width 100%
-  height 100%
-  background-color #fff
-
-  & >>> .veui-menu-tree-wrapper
-    display flex
-    flex-direction column
-    flex-grow 1
-    height 100%
-    overflow visible
-
-    .veui-menu-tree
-      overflow auto
-
-  & >>> .DocSearch
-    margin 0
-    border-radius 6px
-    font inherit
-
   header
     padding 32px 20px 20px
+    flex none
 
   h2
     display flex
@@ -190,10 +171,6 @@ export default {
 
       img
         display block
-
-  small
-    margin-left 8px
-    opacity 0.7
 
   .locale-swith
     display block
@@ -214,6 +191,21 @@ export default {
     margin-top 16px
     margin-right 12px
     flex-shrink 0
+
+.one-menu
+  flex 1 1 auto
+  width 100%
+  overflow auto
+  background-color #fff
+
+  & >>> .DocSearch
+    margin 0
+    border-radius 6px
+    font inherit
+
+  small
+    margin-left 8px
+    opacity 0.7
 
 .toggle
   display none

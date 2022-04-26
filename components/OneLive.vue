@@ -68,14 +68,16 @@
       'live-preview-browser': browser
     }"
   >
-    <v-live-preview
-      class="editor-preview"
-      :code="transformedCode"
-      :requires="imports"
-      :check-variable-availability="false"
-      @success="dismissError"
-      @error="handleError"
-    />
+    <one-iframe global-style="body { margin: 0 !important; } body > article { margin: 24px 36px; } .veui-layout { min-width: auto !important; }">
+      <v-live-preview
+        class="editor-preview"
+        :code="transformedCode"
+        :requires="imports"
+        :check-variable-availability="false"
+        @success="dismissError"
+        @error="handleError"
+      />
+    </one-iframe>
     <transition name="editor-error">
       <veui-alert
         v-if="error"
@@ -113,6 +115,7 @@ import { getLocale } from '../common/i18n'
 import { play } from '../common/play'
 import { transformLessCode } from '../common/transform'
 import { loadPref, savePref } from '../common/util'
+import OneIframe from './OneIframe'
 
 Vue.use(toast)
 
@@ -158,7 +161,8 @@ export default {
     'v-splitpanes': Splitpanes,
     'v-pane': Pane,
     'v-monaco-editor': MonacoEditor,
-    'v-live-preview': VueLivePreview
+    'v-live-preview': VueLivePreview,
+    OneIframe
   },
   directives: {
     tooltip

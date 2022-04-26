@@ -10,7 +10,9 @@
       width="calc(100% - 40px)"
       height="400px"
     >
-      <slot/>
+      <one-iframe global-style="body { margin: 0 !important; } .veui-layout { min-width: auto !important; }">
+        <slot/>
+      </one-iframe>
     </browser-window>
     <slot v-else/>
   </section>
@@ -104,6 +106,7 @@ import toast from 'veui/plugins/toast'
 import { BrowserWindow } from 'vue-windows'
 import { getLocale } from '../common/i18n'
 import { play } from '../common/play'
+import OneIframe from './OneIframe'
 import OneEditLink from './OneEditLink'
 import OneRepl from './OneRepl'
 import 'veui-theme-dls-icons/copy'
@@ -119,6 +122,7 @@ export default {
     'veui-button': Button,
     'veui-icon': Icon,
     BrowserWindow,
+    OneIframe,
     OneEditLink,
     OneRepl
   },
@@ -223,11 +227,9 @@ Icon.register({
   padding 30px
 
   & >>> .style-module_body__14MV-
+    overflow hidden
     transform translate(0, 0)
     padding 0
-
-  & >>> .veui-layout
-    min-width auto
 
 .desc
   border 1px solid #eee

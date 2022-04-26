@@ -121,9 +121,6 @@ Icon.register({
   flex 1 1 auto
   height calc(100% - 48px)
 
-  & >>> .live-preview
-    padding 24px 36px
-
   & >>> .VueLive-error
     display none
 

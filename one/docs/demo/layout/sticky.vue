@@ -4,10 +4,7 @@
     Header
   </veui-header>
   <veui-layout>
-    <veui-sidebar
-      sticky
-      style="max-height: 320px;"
-    >
+    <veui-sidebar sticky>
       <div class="center full">
         Sidebar
       </div>
