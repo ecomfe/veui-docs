@@ -7,5 +7,5 @@ Vue.use(VueI18n)
 
 export default ({ app, route }) => {
   app.i18n = new VueI18n()
-  i18nMgr.locale = getLocale(route.path)
+  i18nMgr.locale = app.i18n.locale = getLocale(route.path)
 }
