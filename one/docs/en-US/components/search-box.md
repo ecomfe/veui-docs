@@ -40,7 +40,7 @@ Available size values for the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l`.
 | ``suggestions`` | `Array<string>|Array<Object>` | - | [^suggestions] |
 | ``replace-on-select`` | `boolean` | `true` | Whether to replace the content with suggestion item value when it's selected. |
 | ``maxlength`` | `number=` | - | The maximum length of characters that can be entered. |
-| ``get-length`` | `function(string): number=` | Used to customize length calculation of the input. |
+| ``get-length`` | `function(string): number=` | - | Used to customize length calculation of the input. |
 | ``strict`` | `boolean=` | `false` | Whether to disallow further input after reaching the maximum character length. |
 | ``trim`` | `boolean | string=` | `false` | [^trim] |
 | ``suggest-trigger`` | `Array<string>|string` | `input` | [^suggest-trigger] |
