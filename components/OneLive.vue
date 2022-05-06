@@ -68,7 +68,10 @@
       'live-preview-browser': browser
     }"
   >
-    <one-iframe global-style="body { margin: 0 !important; } body > article { margin: 24px 36px; } .veui-layout { min-width: auto !important; }">
+    <one-iframe
+      v-if="browser"
+      global-style="body { margin: 0 !important; } body > article { margin: 24px 36px; } .veui-layout { min-width: auto !important; }"
+    >
       <v-live-preview
         class="editor-preview"
         :code="transformedCode"
@@ -78,6 +81,15 @@
         @error="handleError"
       />
     </one-iframe>
+    <v-live-preview
+      v-else
+      class="editor-preview"
+      :code="transformedCode"
+      :requires="imports"
+      :check-variable-availability="false"
+      @success="dismissError"
+      @error="handleError"
+    />
     <transition name="editor-error">
       <veui-alert
         v-if="error"
