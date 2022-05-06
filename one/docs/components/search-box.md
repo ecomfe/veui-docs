@@ -40,7 +40,7 @@
 | ``suggestions`` | `Array<string>|Array<Object>` | - | [^suggestions] |
 | ``replace-on-select`` | `boolean` | `true` | 选择推荐项时是否自动使用其内容填充文本框。 |
 | ``maxlength`` | `number=` | - | 最大可输入的字符长度。 |
-| ``get-length`` | `function(string): number=` | 自定义的字符长度计算函数。 |
+| ``get-length`` | `function(string): number=` | - | 自定义的字符长度计算函数。 |
 | ``strict`` | `boolean=` | `false` | 是否超出最大字符长度后不允许继续输入。 |
 | ``trim`` | `boolean | string=` | `false` | [^trim] |
 | ``suggest-trigger`` | `Array<string>|string` | `input` | [^suggest-trigger] |
