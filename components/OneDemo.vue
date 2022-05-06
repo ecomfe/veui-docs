@@ -164,6 +164,9 @@ export default {
 
     this.code = this.$refs.source?.querySelector('pre')?.textContent || ''
   },
+  destroyed () {
+    modal.close()
+  },
   methods: {
     play (vendor) {
       let locale = getLocale(this.$route.path)
