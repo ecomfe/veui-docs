@@ -47,10 +47,10 @@
 | ``clearable`` | `boolean=` | `false` | 是否显示清除按钮。 |
 | ``composition`` | `boolean=` | `false` | 是否感知输入法输入过程的值。 |
 | ``select-on-focus`` | `boolean=` | `false` | 聚焦时是否自动选中输入框文本。 |
-| ``get-length`` | `function(string): number=` | 自定义的字符长度计算函数。 |
-| ``trim`` | `boolean | string=` | `false` | [^trim] |
 | ``maxlength`` | `number=` | - | 最大可输入的字符长度。 |
+| ``get-length`` | `function(string): number=` | 自定义的字符长度计算函数。 |
 | ``strict`` | `boolean=` | `false` | 是否超出最大字符长度后不允许继续输入。 |
+| ``trim`` | `boolean | string=` | `false` | [^trim] |
 
 ^^^ui
 预设样式。

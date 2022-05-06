@@ -29,18 +29,22 @@
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
 | ``ui`` | `string=` | - | [^ui] |
-| ``placeholder`` | `string` | - | 搜索框占位符。 |
 | ``value`` | `string` | - | [^value] |
+| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
+| ``placeholder`` | `string` | - | 搜索框占位符。 |
 | ``autofocus`` | `boolean` | `false` | 是否自动聚焦。 |
 | ``clearable`` | `boolean` | `false` | 是否显示清除按钮。 |
 | ``select-on-focus`` | `boolean` | `false` | 聚焦时是否自动选择文本。 |
 | ``composition`` | `boolean` | `false` | 是否感知输入法状态。 |
 | ``suggestions`` | `Array<string>|Array<Object>` | - | [^suggestions] |
 | ``replace-on-select`` | `boolean` | `true` | 选择推荐项时是否自动使用其内容填充文本框。 |
+| ``maxlength`` | `number=` | - | 最大可输入的字符长度。 |
+| ``get-length`` | `function(string): number=` | 自定义的字符长度计算函数。 |
+| ``strict`` | `boolean=` | `false` | 是否超出最大字符长度后不允许继续输入。 |
+| ``trim`` | `boolean | string=` | `false` | [^trim] |
 | ``suggest-trigger`` | `Array<string>|string` | `input` | [^suggest-trigger] |
 | ``expanded`` | `boolean=` | `false` | [^expanded] |
-| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
-| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
 | ``match`` | `(item, keyword, { ancestors }) => boolean | Array<[number, number]>` | - | 支持自定义高亮逻辑， 默认大小写不敏感，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
 | ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | 支持自定义搜索命中逻辑，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
 
@@ -95,6 +99,18 @@
 :::
 
 建议面板是否展开（如果 `suggestions` 中没有待选项，则即使为 `true` 时面板也会关闭）。
+^^^
+
+^^^trim
+是否移除前后空格。当为 `true` 时，会移除前后空格，当为 `false` 时，不移除前后空格。设置为字符串时，按指定方式进行移除。
+
++++枚举值
+| 值 | 描述 |
+| -- | -- |
+| `both` | 移除两端空格。等同于 `true` 时的行为。 |
+| `start` | 移除开始空格。 |
+| `end` | 移除末尾空格。 |
++++
 ^^^
 
 ### 插槽

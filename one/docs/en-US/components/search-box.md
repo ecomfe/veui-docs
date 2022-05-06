@@ -29,18 +29,24 @@ Available size values for the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l`.
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``ui`` | `string=` | - | [^ui] |
-| ``placeholder`` | `string` | - | The placeholder text of the search box. |
 | ``value`` | `string` | - | [^value] |
+| ``disabled`` | `boolean=` | `false` | Whether the search box is disabled. |
+| ``readonly`` | `boolean=` | `false` | Whether the search box is read-only. |
+| ``placeholder`` | `string` | - | The placeholder text of the search box. |
 | ``autofocus`` | `boolean` | `false` | Whether the search box gains focus automatically. |
 | ``clearable`` | `boolean` | `false` | Whether the clear button is displayed. |
 | ``select-on-focus`` | `boolean` | `false` | Whether to select all content upon focus. |
 | ``composition`` | `boolean` | `false` | Whether the search box triggers value change upon composition of IME. |
 | ``suggestions`` | `Array<string>|Array<Object>` | - | [^suggestions] |
 | ``replace-on-select`` | `boolean` | `true` | Whether to replace the content with suggestion item value when it's selected. |
+| ``maxlength`` | `number=` | - | The maximum length of characters that can be entered. |
+| ``get-length`` | `function(string): number=` | Used to customize length calculation of the input. |
+| ``strict`` | `boolean=` | `false` | Whether to disallow further input after reaching the maximum character length. |
+| ``trim`` | `boolean | string=` | `false` | [^trim] |
 | ``suggest-trigger`` | `Array<string>|string` | `input` | [^suggest-trigger] |
 | ``expanded`` | `boolean=` | `false` | [^expanded] |
-| ``disabled`` | `boolean=` | `false` | Whether the search box is disabled. |
-| ``readonly`` | `boolean=` | `false` | Whether the search box is read-only. |
+| ``match`` | `(item, keyword, { ancestors }) => boolean | Array<[number, number]>` | - | Used to customize search highlighting logic. See [`Autocomplete`](./Autocomplete#customizing-search). |
+| ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | Used to customize search hitting logic. See [`Autocomplete`](./Autocomplete#customizing-search). |
 
 ^^^ui
 Style variants.
@@ -95,6 +101,17 @@ Specifies when the suggestion list is displayed. Can be either an event name or 
 
 Whether the suggestion list is expanded (if there are no items in `suggestions`, the list won't be expanded even the value is `false`).
 ^^^
+
+^^^trim
+Wether to trim the input value. If set to `true`, the input value will be trimmed from both ends. If set to `false`, the input value will not be trimmed. If set to a string, the input value will be trimmed from the specified side.
+
++++Enum
+| Value | Description |
+| -- | -- |
+| `both` | Trim from both ends. Equivalent to `true`. |
+| `start` | Trim from the start. |
+| `end` | Trim from the end. |
++++
 
 ### Slots
 
