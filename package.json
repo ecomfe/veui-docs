@@ -30,7 +30,7 @@
     "babel-plugin-veui": "^2.6.4",
     "cheerio": "^1.0.0-rc.10",
     "dls-graphics": "^1.0.0-alpha.3",
-    "dls-icons-vue": "^0.14.0",
+    "dls-icons-vue": "^2.6.0",
     "eslint": "^5.15.1",
     "eslint-config-prettier": "^4.1.0",
     "eslint-config-standard": "^12.0.0",
