@@ -150,6 +150,7 @@
 
 ^^^method-submit
 手动提交表单。
+
 ```ts
 function submit(): void
 ```
@@ -157,12 +158,14 @@ function submit(): void
 
 ^^^method-validate
 手动校验表单。
+
 ```ts
-function validate(fieldNames?: Array<string> | null): Promise<boolean | Record<string, Object>>
+function validate(fieldNames?: Array<string> | null): Promise<true | Record<string, Object>>
 ```
+
 可选参数 `fieldNames` 可以指定进行校验的字段。
 
-返回值是 `Promise`, 校验成功解析为 `true`，校验失败则解析为 `Record<string, Object>`，其中 key 是错误字段名称。
+返回值是 `Promise`，校验成功解析为 `true`，校验失败则解析为 `Record<string, Object>`，其中 key 是错误字段名称。
 ^^^
 
 ^^^method-clearvalidities
@@ -170,14 +173,17 @@ function validate(fieldNames?: Array<string> | null): Promise<boolean | Record<s
 ```ts
 function clearValidities(fieldNames?: Array<string> | null): void
 ```
+
 可选参数 `fieldNames` 可以指定清除的字段。
 ^^^
 
 ^^^method-setvalidities
 手动设置表单校验信息。
+
 :::warning
 该方法并不能覆盖 `rules` 和 `validators` 产生的校验信息。
 :::
+
 ```ts
 type InputValidity = {
   status: 'success' | 'warning' | 'error'
@@ -192,7 +198,6 @@ this.$refs.form.setValidities({
 })
 ```
 ^^^
-
 
 ### 表单提交流程
 

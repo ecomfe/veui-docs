@@ -88,7 +88,6 @@ export default {
       ]
     }
   },
-
   methods: {
     beforeValidate () {
       return new Promise((resolve) => {
