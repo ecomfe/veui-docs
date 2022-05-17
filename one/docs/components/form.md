@@ -32,6 +32,22 @@
 
 [[ demo src="/demo/form/validate.vue" ]]
 
+### 规则校验
+
+[[ demo src="/demo/form/rule.vue" ]]
+
+### 异步联合校验
+
+[[ demo src="/demo/form/validator.vue" ]]
+
+### 前置、后置校验
+
+[[ demo src="/demo/form/before-after.vue" ]]
+
+### 警告信息
+
+[[ demo src="/demo/form/warn.vue" ]]
+
 ### 抽象表单项
 
 [[ demo src="/demo/form/abstract.vue" ]]
@@ -124,6 +140,60 @@
 `beforeValidate`、`validate`、`afterValidate` 流程中某一项返回中断时触发，回调参数为流程 function 的返回值，参数为 `(result)`，表示流程中断的信息，具体返回值类型由流程返回决定。具体提交流程请参考[表单 › 表单提交流程](#表单提交流程)，`validate` 逻辑见[表单 › 表单校验逻辑](#表单校验逻辑)。
 ^^^
 
+### 方法
+| 方法 | 描述 |
+| -- | -- |
+| ``submit`` | [^method-submit] |
+| ``validate`` | [^method-validate] |
+| ``clearValidities`` | [^method-clearvalidities] |
+| ``setValidities`` | [^method-setvalidities] |
+
+^^^method-submit
+手动提交表单。
+```ts
+function submit(): void
+```
+^^^
+
+^^^method-validate
+手动校验表单。
+```ts
+function validate(fieldNames?: Array<string> | null): Promise<boolean | Record<string, Object>>
+```
+可选参数 `fieldNames` 可以指定进行校验的字段。
+
+返回值是 `Promise`, 校验成功解析为 `true`，校验失败则解析为 `Record<string, Object>`，其中 key 是错误字段名称。
+^^^
+
+^^^method-clearvalidities
+手动清除表单校验信息。
+```ts
+function clearValidities(fieldNames?: Array<string> | null): void
+```
+可选参数 `fieldNames` 可以指定清除的字段。
+^^^
+
+^^^method-setvalidities
+手动设置表单校验信息。
+:::warning
+该方法并不能覆盖 `rules` 和 `validators` 产生的校验信息。
+:::
+```ts
+type InputValidity = {
+  status: 'success' | 'warning' | 'error'
+  message: string
+}
+function setValidities(validities: Record<string, string | InputValidity>): void
+
+// 示例：将表单提交返回错误添加到表单中
+this.$refs.form.setValidities({
+  name: 'name error',
+  email: 'email error'
+})
+```
+^^^
+
+
 ### 表单提交流程
 
 <img class="preview hero" src="/images/development/form/flow.png">
@@ -178,10 +248,6 @@ validators: [
 ]
 ```
 +++
-
-#### `Field` 的 `rule` 和 `validators` 的优先级
-
-校验失败的信息会添加到对应的 `Field` 的 `validities` 信息中。由于同个操作触发的校验，`validators` 的校验结果优先级大于 `Field` 的 `rule`，不同操作触发的校验，展现最后一个结果。`Field` 的 `rule` 内部的优先级，请参考其 [`rules`](./field#props-rules) 属性。
 
 #### 交互过程的校验
 
