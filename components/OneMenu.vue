@@ -149,6 +149,7 @@ export default {
   flex-direction column
   width 280px
   z-index 1
+  background-color #fff
 
   header
     padding 32px 20px 20px
