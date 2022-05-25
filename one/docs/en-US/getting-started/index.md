@@ -82,3 +82,27 @@ Import from JavaScript:
 ```js
 import 'veui-theme-dls/common.less'
 ```
+
+
+#### The number font
+
+[[ demo src="/demo/style/number.vue" ]]
+
+The default theme `veui-theme-dls` comes with a display type number font “Baidu Number”, but it is not included in the global style by default because the web font will be loaded automatically. If you need to use it, please import it manually in your project:
+
+```js
+import 'veui-theme-dls/typography.less'
+```
+
+Once imported, you can use a font named `"Baidu Number"` in your CSS. For scenarios envolving dynamic numbers, we may want fixed width numbers to ensure layout stability. You can set `font-variant-numeric: tabular-nums` to enable the corresponding Open Type feature which comes with this font.
+
+```css
+.heading-numbers {
+  font-family: "Baidu Number", sans-serif;
+  font-variant-numeric: tabular-nums; /* Fixed-width numbers */
+}
+```
+
+:::warning
+Please make sure that `veui-theme-dls/common.less` and `veui-theme-dls/typography.less` are only introduced once, importing them in multiple components' `<style>` blocks will result in duplicate content output.
+:::

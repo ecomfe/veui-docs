@@ -30,12 +30,11 @@ module.exports = {
         content: 'Website for VEUI: an enterprise component library for Vue.js.'
       },
       {
-        name: 'theme-color', content: '#0052cc'
+        name: 'theme-color',
+        content: '#0052cc'
       }
     ],
-    link: [
-      { rel: 'shortcut icon', href: 'https://www.baidu.com/favicon.ico' }
-    ]
+    link: [{ rel: 'shortcut icon', href: 'https://www.baidu.com/favicon.ico' }]
   },
   /**
    * Customize the progress bar color
@@ -46,7 +45,12 @@ module.exports = {
     css: false
   },
 
-  css: ['veui-theme-dls/common.less', '@/assets/styles/global.styl', 'veui-theme-dls/'],
+  css: [
+    'veui-theme-dls/common.less',
+    'veui-theme-dls/typography.less',
+    '@/assets/styles/global.styl',
+    'veui-theme-dls/'
+  ],
 
   plugins: [
     { src: '~plugins/hm.js', ssr: false },
@@ -64,7 +68,13 @@ module.exports = {
 
     parallel: true,
 
-    transpile: ['veui', 'vue-awesome', 'resize-detector', 'less-plugin-dls', 'dls-graphics'],
+    transpile: [
+      'veui',
+      'vue-awesome',
+      'resize-detector',
+      'less-plugin-dls',
+      'dls-graphics'
+    ],
 
     babel: {
       plugins: ['veui']

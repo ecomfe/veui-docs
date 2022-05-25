@@ -76,10 +76,33 @@ VEUI 采取了样式主题与组件代码分离的开发、发布方式。组件
 
 ### 全局样式
 
-在使用 `veui-theme-dls` 时，需要先全局引入基础样式以及，包括样式的 normalize 及一些基本元素的样式。
+在使用默认主题 `veui-theme-dls` 时，需要先全局引入基础样式以及，包括样式的 normalize 及一些基本元素的样式。
 
 从 JavaScript 引入：
 
 ```js
 import 'veui-theme-dls/common.less'
 ```
+
+#### 数字字体
+
+[[ demo src="/demo/style/number.vue" ]]
+
+默认主题 `veui-theme-dls` 自带一款展示型的数字字体“Baidu Number”，但由于启用后会自动加载 Web 字体，故默认未包含在全局样式中。需要使用时请在项目中手动引入：
+
+```js
+import 'veui-theme-dls/typography.less'
+```
+
+引入后可在 CSS 中使用名为 `"Baidu Number"` 的字体。同时在动态数字场景下，往往需要数字等宽以保证布局的相对稳定，此时可以设置 `font-variant-numeric: tabular-nums` 以开启字体中的对应 Open Type 功能。
+
+```css
+.heading-numbers {
+  font-family: "Baidu Number", sans-serif;
+  font-variant-numeric: tabular-nums; /* 等宽场景 */
+}
+```
+
+:::warning
+请确保 `veui-theme-dls/common.less` 及 `veui-theme-dls/typography.less` 只被引入一次，在多个组件中重复引入将导致内容重复输出。
+:::
