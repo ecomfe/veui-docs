@@ -2,7 +2,7 @@
 <article class="veui-form-demo">
   <veui-form
     ref="form"
-    :data="storeData4"
+    :data="data"
     :validators="validators"
   >
     <veui-fieldset
@@ -17,11 +17,11 @@
         :rules="numRequiredRule"
         class="start-field"
       >
-        <veui-input v-model="storeData4.start"/>
+        <veui-input v-model="data.start"/>
       </veui-field>
       <veui-span style="margin: 0 4px">-</veui-span>
       <veui-field field="end" name="end" :rules="numRequiredRule">
-        <veui-input v-model="storeData4.end"/>
+        <veui-input v-model="data.end"/>
       </veui-field>
       <veui-span>万</veui-span>
     </veui-fieldset>
@@ -42,15 +42,8 @@ import {
   Form,
   Fieldset,
   Field,
-  Span,
   Input,
-  Button,
-  Select,
-  Checkbox,
-  CheckboxGroup,
-  NumberInput,
-  Transfer,
-  ConfigProvider
+  Button
 } from 'veui'
 
 export default {
@@ -64,7 +57,7 @@ export default {
   },
   data () {
     return {
-      storeData4: {
+      data: {
         start: 20000,
         end: 10000
       },
@@ -90,12 +83,17 @@ export default {
 
             return new Promise(function (resolve) {
               setTimeout(function () {
-                if (parseInt(start, 10) >= parseInt(end, 10)) {
-                  return resolve({
-                    start: '下限必须小于上限'
-                  })
+                let res = {}
+                if (parseInt(start, 10) < 4000) {
+                  res.start = {
+                    status: 'warning',
+                    message: '请提高下限'
+                  }
                 }
-                return resolve(true)
+                if (parseInt(start, 10) >= parseInt(end, 10)) {
+                  res.end = '上限必须大于下限'
+                }
+                resolve(Object.keys(res).length ? res : true)
               }, 2000)
             })
           },
@@ -114,19 +112,6 @@ export default {
   .salary {
   .veui-input {
       width: 80px;
-    }
-  }
-
-  .operation {
-    margin-top: 60px;
-    margin-left: 120px;
-
-    [class*="veui"] {
-      margin-left: 10px;
-    }
-
-    [class*="veui"]:first-child {
-      margin-left: 0;
     }
   }
 }

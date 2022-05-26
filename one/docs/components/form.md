@@ -44,10 +44,6 @@
 
 [[ demo src="/demo/form/before-after.vue" ]]
 
-### 警告信息
-
-[[ demo src="/demo/form/warn.vue" ]]
-
 ### 抽象表单项
 
 [[ demo src="/demo/form/abstract.vue" ]]

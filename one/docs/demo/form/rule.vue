@@ -2,17 +2,8 @@
 <article class="veui-form-demo">
   <veui-form
     ref="form"
-    :data="storeData4"
+    :data="data"
   >
-    <veui-field
-      field="name"
-      name="name"
-      label="姓名"
-      :rules="requiredRule"
-    >
-      <veui-input v-model="storeData4.name"/>
-    </veui-field>
-
     <veui-field
       field="phone"
       name="phone"
@@ -20,16 +11,15 @@
       label="手机"
     >
       <veui-input
-        v-model="storeData4.phone"
+        v-model="data.phone"
         name="phone"
         autocomplete="off"
       />
     </veui-field>
 
-    <template #actions="{ validating }">
+    <template #actions>
       <veui-button
         ui="primary"
-        :loading="validating"
         type="submit"
       >提交</veui-button>
     </template>
@@ -40,17 +30,9 @@
 <script>
 import {
   Form,
-  Fieldset,
   Field,
-  Span,
   Input,
-  Button,
-  Select,
-  Checkbox,
-  CheckboxGroup,
-  NumberInput,
-  Transfer,
-  ConfigProvider
+  Button
 } from 'veui'
 
 export default {
@@ -63,23 +45,15 @@ export default {
   },
   data () {
     return {
-      storeData4: {
-        name: '',
+      data: {
         phone: '1888888888a'
       },
-      requiredRule: [
-        {
-          name: 'required',
-          value: true,
-          triggers: 'blur,input'
-        }
-      ],
       phoneRule: [
-        { name: 'required', triggers: 'change,input,blur' },
+        // 'required',
         {
           name: 'pattern',
           value: /^1\d{10}$/,
-          message: '请输入正确的手机号',
+          message: '{value} 不是正确的手机号',
           triggers: 'blur'
         }
       ]
@@ -87,22 +61,3 @@ export default {
   }
 }
 </script>
-
-<style lang="less" scoped>
-@import "~veui-theme-dls/lib.less";
-
-.veui-form-demo {
-  .operation {
-    margin-top: 60px;
-    margin-left: 120px;
-
-    [class*="veui"] {
-      margin-left: 10px;
-    }
-
-    [class*="veui"]:first-child {
-      margin-left: 0;
-    }
-  }
-}
-</style>

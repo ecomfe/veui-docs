@@ -6,6 +6,7 @@
     <veui-field
       label="名称："
       name="name"
+      withhold-validity
       :rules="[{ name: 'required', triggers: 'input,blur' }]"
     >
       <template #default="{ invalid, listeners }">
