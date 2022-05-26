@@ -29,7 +29,10 @@ export default function attacher () {
       const { type, depth, children, value, position } = node
       if (type === 'heading') {
         if (depth === 3) {
-          const text = children[0]
+          let text = children[0]
+          if (text && text.type === 'element' && text.tagName === 'icon-link') {
+            text = children[1]
+          }
           if (text && text.type === 'text' && KNOWN_SCOPES[text.value]) {
             scope = KNOWN_SCOPES[text.value]
             return

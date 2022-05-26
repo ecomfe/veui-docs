@@ -6,6 +6,7 @@ import frontmatter from 'remark-frontmatter'
 import shortcodes from 'remark-shortcodes'
 import remarkToRehype from 'remark-rehype'
 import raw from 'rehype-raw'
+import rehypeAutolinkHeadings from '@justfork/rehype-autolink-headings'
 import html from 'rehype-stringify'
 import highlight from 'rehype-highlight'
 import etpl from 'etpl'
@@ -45,6 +46,14 @@ const md = remark()
   .use(toc)
   .use(remarkToRehype, { allowDangerousHTML: true })
   .use(raw)
+  .use(rehypeAutolinkHeadings, {
+    content: {
+      type: 'element',
+      tagName: 'icon-link',
+      properties: { class: 'icon-link' }
+    },
+    test: ['h2', 'h3', 'h4', 'h5', 'h6']
+  })
   .use(rehypePreviewImg)
   .use(rehypeLink)
   .use(rehypeScoped)
@@ -87,16 +96,20 @@ export function renderDocToPage (file) {
       .replace(/\{/g, '&#x7B;')
       .replace(/\}/g, '&#x7D;')
       .replace(/v-pre="true"/g, 'v-pre')
-      .replace(/data-markdown="true"/g, 'data-markdown'),
+      .replace(/data-md="true"/g, 'data-md'),
     demos: demoList.map(name => {
       return {
         name,
-        src: join('@/components/demos', relative(DOCS_DIR, demos[name].filePath))
+        src: join(
+          '@/components/demos',
+          relative(DOCS_DIR, demos[name].filePath)
+        )
       }
     }),
     components: componentList,
     alert: hasAlert,
-    boilerplate: demoList.length || componentList.length || hasAlert || style === 'post',
+    boilerplate:
+      demoList.length || componentList.length || hasAlert || style === 'post',
     layout,
     style,
     path: file,

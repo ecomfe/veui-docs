@@ -10,12 +10,16 @@ export default function attacher () {
     let [, locale] = localPath.match(RE_LOCALE) || []
 
     visit(tree, 'element', node => {
-      let { tagName, properties: { href, ...props } } = node
-      if (tagName !== 'a' || href.match(/^\w+:\/\//)) {
+      let {
+        tagName,
+        properties: { href, ...props }
+      } = node
+      if (tagName !== 'a' || href.startsWith('#') || href.match(/^\w+:\/\//)) {
         return
       }
 
-      let routePath = locale && href.indexOf('/') === 0 ? `/${locale}${href}` : href
+      let routePath =
+        locale && href.indexOf('/') === 0 ? `/${locale}${href}` : href
 
       node.tagName = 'nuxt-link'
       node.properties = { ...props, to: routePath }

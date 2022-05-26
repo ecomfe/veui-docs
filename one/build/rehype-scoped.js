@@ -6,7 +6,7 @@ export default function attacher () {
   return tree => {
     visit(tree, 'element', ({ tagName, properties }, _, { type }) => {
       if (type === 'root' && !RE_DEMO.test(tagName)) {
-        properties['data-markdown'] = true
+        properties['data-md'] = true
       }
     })
   }

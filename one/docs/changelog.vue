@@ -3,7 +3,7 @@
   class="content post"
   :class="{ 'filter-version': compareValid }"
 >
-  <h1 data-markdown>
+  <h1 data-md>
     升级日志
   </h1>
   <veui-form
@@ -78,7 +78,7 @@
     v-for="{ version, codeName, date, changeset } of pagedChangelog"
     :key="version"
     class="version-item"
-    data-markdown
+    data-md
   >
     <h2
       :id="getHash(version)"

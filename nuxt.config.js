@@ -53,6 +53,7 @@ module.exports = {
   ],
 
   plugins: [
+    { src: '~plugins/global.js' },
     { src: '~plugins/hm.js', ssr: false },
     { src: '~plugins/i18n.js' },
     { src: '~plugins/l10n.js' },

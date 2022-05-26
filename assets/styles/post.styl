@@ -34,7 +34,20 @@ margin-y($top, $bottom = $top)
   .one-details
     margin-bottom 5px
 
-[data-markdown]
+  .icon-link
+    position absolute
+    transition-property transform, opacity
+    transition-duration 0.2s
+    transform translate(calc(-1px - 100%), -50%)
+    opacity 0
+    padding 0.1em
+
+[data-target]
+  .icon-link
+    opacity 1
+    transform translate(-100%, -50%)
+
+[data-md]
   h1
   h1&
     margin-y(0, 1.25em)
@@ -48,11 +61,6 @@ margin-y($top, $bottom = $top)
   h2&
     margin-y(1.3em, 1.2em)
     font-size 30px
-
-    &::before
-      content "#"
-      margin-right 5px
-      color #ccc
 
     & + h3
       margin-top 2em
@@ -98,8 +106,16 @@ margin-y($top, $bottom = $top)
   h5&
   h6
   h6&
+    position relative
+    display flex
+    align-items center
     color #333
     line-height 1
+
+    &:hover
+      .icon-link
+        opacity 1
+        transform translate(-100%, -50%)
 
   br
   br&
@@ -368,7 +384,7 @@ margin-y($top, $bottom = $top)
   .post
     padding 30px
 
-  [data-markdown]
+  [data-md]
     h1
     h1&
       font-size 24px

@@ -29,6 +29,8 @@ export default ({ app }) => {
         target = anchor.closest('tr')
       } else if (app.router.currentRoute.name === 'changelog' && anchor.tagName === 'H2') {
         target = anchor.closest('.version-item')
+      } else if (['H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(anchor.tagName)) {
+        target = anchor
       }
 
       if (target) {
