@@ -82,9 +82,16 @@
 | ``controls`` | `function(Object, Array<Object>): Array<Object>` | - | [^controls] |
 | ``multiple`` | `boolean` | `false` | 上传多个文件，当 `max-count` 是 `1`，`multiple` 是 `true`，那么 `value` 也是数组。 |
 | ``entries`` | `function(Array<Object>): Array<Object>` | - | [^entries] |
+| ``pick`` | `function(number): Promise<Object>` | - | [^pick] |
 | ``after-pick`` | `function(Array<Object>): void` | - | 选择文件之后的回调。 |
 | ``sortable`` | `boolean` | `false` | 文件列表是否可以排序。 |
 | ``preview-options`` | `object` | `{wrap: true, indicator: 'number'}` | 传递给 [`Lightbox`](./lightbox) 的预览选项。 |
+| ``preview-options`` | `object` | `{wrap: true, indicator: 'number'}` | 传递给 [`Lightbox`](./lightbox) 的预览选项。 |
+| ``validity-display`` | `'popup' | 'inline'` | `'popup'` | [^validity-display] |
+| ``help`` | `string` | - | 帮助文本。 |
+| ``help-position`` | `'side' | 'bottom'` | `'side'` | [^help-position] |
+| ``picker-label`` | `string` | - | 上传按钮的文本。 |
+| ``picker-icon`` | `string | Object` | - | 上传按钮的图标，参考 [`Icon`](./icon) 的 [`name`](./icon#props-name) 属性。 |
 
 
 ^^^ui
@@ -185,8 +192,60 @@
 | -- | -- |
 | `before` | 上传按钮始终在队列最前面。 |
 | `after` | 上传按钮始终在队列最后面。 |
+| `top` | 上传按钮始终在队列上面。 |
+| `none` | 不展示上传按钮。 |
 +++
 ^^^
+
+^^^pick
+自定义选择文件逻辑， 返回的文件会被上传。
+
+```ts
+function picker() : Promise<PickedFile | PickedFile[]>
+
+type PickedFile = {
+  name: string
+  type: string
+  src: string
+  poster?: string
+  alt?: string
+  size?: number
+}
+```
++++枚举值
+| 值 | 描述 |
+| -- | -- |
+| `name` | 文件名称。 |
+| `type` | 文件类型。 |
+| `src` | 文件地址。 |
+| `poster` | 视频文件的预览图片。 |
+| `alt` | 替换文本。 |
+| `size` | 文件大小。 |
++++
+^^^
+
+^^^validity-display
+校验信息的展示方式。
+
++++枚举值
+| 值 | 描述 |
+| -- | -- |
+| `popup` | 悬浮时浮层展示校验信息。 |
+| `inline` | 内联显示校验信息。 |
++++
+^^^
+
+^^^help-position
+帮助信息的展示位置。
+
++++枚举值
+| 值 | 描述 |
+| -- | -- |
+| `side` | 展示在上传按钮的右边。 |
+| `bottom` | 展示在上传按钮的下面。 |
++++
+^^^
+
 
 ^^^validator
 自定义校验逻辑，参数为原生 [`File`](https://developer.mozilla.org/zh-CN/docs/Web/API/File) 对象。返回结果的格式要求如下：
@@ -235,20 +294,13 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| ``button-label`` | [^button-label] |
 | ``upload`` | 图片上传模式下，上传按钮的区域。 |
-| ``desc`` | 对文件数量、格式、大小等的提示内容。 |
+| ``help`` | 对文件数量、格式、大小等的提示内容。 |
 | ``file`` | [^file] |
 | ``file-before`` | 单个文件内容之前的区域。作用域参数与 [`file`](#slots-file) 插槽相同。 |
 | ``file-after`` | 单个文件内容之后的区域。作用域参数与 [`file`](#slots-file) 插槽相同。 |
 | ``uploading`` | 图片上传模式下，上传中的单个图片的区域。作用域参数与 [`file`](#slots-file) 插槽相同。 |
 | ``failure`` | 图片上传模式下，上传失败的单个图片的区域。作用域参数与 [`file`](#slots-file) 插槽相同。 |
-
-^^^button-label
-上传按钮里的内容。
-
-默认内容：文件上传为提示选择文件，图片上传则为上传图片图标。
-^^^
 
 ^^^file
 单个文件的区域，用来定制文件内容。
