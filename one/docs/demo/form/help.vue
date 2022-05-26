@@ -1,16 +1,25 @@
 <template>
 <article>
   <section>
-    <veui-checkbox
+    <span class="label-text">辅助信息位置:</span>
+    <veui-radio-button-group
       v-model="helpPosition"
-      true-value="bottom"
+      ui="s"
+      :items="helpPositions"
+    />
+    <veui-checkbox
+      v-model="labelPosition"
+      true-value="top"
       false-value="side"
+      ui="s"
+      style="margin-left: 8px"
     >
-      辅助信息显示在底部
+      上下布局
     </veui-checkbox>
   </section>
   <veui-form
     :data="formData"
+    :label-position="labelPosition"
   >
     <veui-field
       name="name"
@@ -35,13 +44,14 @@
 </template>
 
 <script>
-import { Form, Field, Input, Checkbox } from 'veui'
+import { Form, Field, Input, Checkbox, RadioButtonGroup } from 'veui'
 
 export default {
   components: {
     'veui-form': Form,
     'veui-field': Field,
     'veui-input': Input,
+    'veui-radio-button-group': RadioButtonGroup,
     'veui-checkbox': Checkbox
   },
   data () {
@@ -50,7 +60,13 @@ export default {
         name: '',
         address: ''
       },
-      helpPosition: 'side'
+      helpPositions: [
+        { label: 'top', value: 'top' },
+        { label: 'side', value: 'side' },
+        { label: 'bottom', value: 'bottom' }
+      ],
+      helpPosition: 'side',
+      labelPosition: 'side'
     }
   }
 }
@@ -60,4 +76,9 @@ export default {
 section {
   margin-bottom: 20px;
 }
+
+.label-text {
+   font-size: 12px;
+   margin-right: 8px;
+ }
 </style>
