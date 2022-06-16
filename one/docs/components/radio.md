@@ -10,7 +10,7 @@
 
 ### 值设定
 
-可以通过设置 [`value`](props-value) 属性来修改选中状态下 `v-model` 的值。
+可以通过设置 [`value`](#props-value) 属性来修改选中状态下 `v-model` 的值。
 
 [[ demo src="/demo/radio/model.vue" ]]
 
