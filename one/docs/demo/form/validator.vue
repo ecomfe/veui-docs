@@ -108,8 +108,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import "~veui-theme-dls/lib.less";
-
 .veui-form-demo {
   .salary {
   .veui-input {

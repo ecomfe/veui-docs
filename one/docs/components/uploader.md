@@ -179,7 +179,7 @@
 | `name` | `string=` | 文件的名称。`success` 为 `true` 时必须。 |
 | `src` | `string=` | 文件的地址。`success` 为 `true` 时必须。 |
 | `message` | `string=` | 上传失败时的出错信息。`success` 为 `false` 时必须。 |
-| `preview` | `boolean` | 上传失败时，是否预览失败的上传项。 |
+| `preview` | `boolean=` | 上传失败时，是否预览失败的上传项。 |
 
 还可以给返回结果加上其它自定义的属性，这些自定义属性会被包含在 [`value`](#props-value) 以及 [`change`](#events-change)、[`success`](#events-success)、[`failure`](#events-failure)、[`remove`](#events-remove)、[`progress`](#events-progress) 事件的回调参数 `file` 中 。可进行[全局统一配置](#configs-uploader-convert-response)。
 +++
@@ -213,7 +213,7 @@
 自定义选择文件逻辑， 返回的文件会被上传。
 
 ```ts
-function picker({remainingCount: number}) : Promise<PickedFile | PickedFile[]>
+function pick({ remainingCount: number }): Promise<PickedFile | PickedFile[]>
 
 type PickedFile = {
   name: string
@@ -224,6 +224,7 @@ type PickedFile = {
   size?: number
 }
 ```
+
 +++枚举值
 | 值 | 描述 |
 | -- | -- |
@@ -253,11 +254,10 @@ type PickedFile = {
 +++枚举值
 | 值 | 描述 |
 | -- | -- |
-| `side` | 展示在上传按钮的右边。 |
+| `side` | 展示在上传按钮的侧面。 |
 | `bottom` | 展示在上传按钮的下面。 |
 +++
 ^^^
-
 
 ^^^validator
 自定义校验逻辑，参数为原生 [`File`](https://developer.mozilla.org/zh-CN/docs/Web/API/File) 对象。返回结果的格式要求如下：

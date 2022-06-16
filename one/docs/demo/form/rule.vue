@@ -49,7 +49,6 @@ export default {
         phone: '1888888888a'
       },
       phoneRule: [
-        // 'required',
         {
           name: 'pattern',
           value: /^1\d{10}$/,

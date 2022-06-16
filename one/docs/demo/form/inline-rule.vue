@@ -5,7 +5,7 @@
     :data="data"
   >
     <veui-field
-      label="密码："
+      label="密码"
       name="password"
       :rules="[
         { name: 'required', triggers: 'input,blur' },
@@ -19,7 +19,7 @@
     </veui-field>
 
     <veui-field
-      label="确认密码："
+      label="确认密码"
       name="password2"
       :rules="p2Rules"
     >

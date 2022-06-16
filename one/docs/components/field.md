@@ -82,7 +82,7 @@ let minLengthRule = {
 +++字段详情
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `triggers` | `string` | 触发校验的事件名称集合，逗号分隔，支持 `<fieldName>:<eventName>` 表示当 `fieldName` 字段发生 `eventName` 事件时触发校验，可以参考示例[`内联规则校验`](./form#内联规则校验)。 |
+| `triggers` | `string` | 触发校验的事件名称集合，逗号分隔，支持 `<fieldName>:<eventName>` 表示当 `fieldName` 字段发生 `eventName` 事件时触发校验，可以参考示例[内联规则校验](./form#内联规则校验)。 |
 | `name` | `string` | 规则名称。 |
 | `value` | `*` | 规则要匹配的值。`boolean` 类型的规则，默认为 `true`。 |
 | `message` | `string | function` | [^message] |
