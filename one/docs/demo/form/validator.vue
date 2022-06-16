@@ -43,12 +43,14 @@ import {
   Fieldset,
   Field,
   Input,
-  Button
+  Button,
+  Span
 } from 'veui'
 
 export default {
   name: 'demo-form',
   components: {
+    'veui-span': Span,
     'veui-input': Input,
     'veui-button': Button,
     'veui-form': Form,

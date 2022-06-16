@@ -27,6 +27,7 @@
 | ``abstract`` | `boolean=` | `false` | 抽象表单项，抽象的项目没有标题，也不会展示校验信息。 |
 | ``withhold-validity`` | `boolean=` | `false` | 当设置为 `true` 时，该表单项内容中的输入组件（如 `veui-input` ）不会自动绑定校验事件，也不会自动进入 `invalid` 状态，使用方可以通过 `default` 插槽来自行定制。 |
 | ``validity-display`` | `'normal' | 'simple'` | `'simple'` | [^validity-display] |
+| ``required`` | `boolean` | `false` | 用来在没有 `required` 规则时是否显示必要性星号提示。 |
 
 ^^^ui
 预设样式。
@@ -76,16 +77,17 @@ let minLengthRule = {
 ^^^
 
 ^^^rules
-表单项校验规则，同步的单值校验。对于 `Array` 类型，项目的类型为 `{triggers, name, message, value, priority}`。
+表单项校验规则，同步的单值校验。对于 `Array` 类型，项目的类型为 `{triggers, name, message, value, validate, priority}`。
 
 +++字段详情
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `triggers` | `string` | 触发校验的事件名称集合，逗号分隔。 |
+| `triggers` | `string` | 触发校验的事件名称集合，逗号分隔，支持 `<fieldName>:<eventName>` 表示当 `fieldName` 字段发生 `eventName` 事件时触发校验，可以参考示例[`内联规则校验`](./form#内联规则校验)。 |
 | `name` | `string` | 规则名称。 |
 | `value` | `*` | 规则要匹配的值。`boolean` 类型的规则，默认为 `true`。 |
 | `message` | `string | function` | [^message] |
 | `priority` | `number` | 规则优先级，可以覆盖规则默认优先级。 |
+| `validate` | `(value: unknown, ruleValue: unknown) => boolean` | 内联校验器，用来直接编写验证逻辑，可以参考示例[`内联规则校验`](./form#内联规则校验)。 |
 +++
 
 +++内置规则
