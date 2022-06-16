@@ -50,6 +50,17 @@
 
 [[ demo src="/demo/uploader/entries.vue" ]]
 
+### 自定义选择文件
+
+设置 [`pick`](#props-pick) 属性来自定义选择文件。
+
+[[ demo src="/demo/uploader/pick.vue" ]]
+
+### 帮助文案
+
+设置 [`help`](#props-help) 属性或[`help`](#slots-help) 插槽来指定帮助文案。
+
+[[ demo src="/demo/uploader/help.vue" ]]
 
 ## API
 
@@ -82,7 +93,7 @@
 | ``controls`` | `function(Object, Array<Object>): Array<Object>` | - | [^controls] |
 | ``multiple`` | `boolean` | `false` | 上传多个文件，当 `max-count` 是 `1`，`multiple` 是 `true`，那么 `value` 也是数组。 |
 | ``entries`` | `function(Array<Object>): Array<Object>` | - | [^entries] |
-| ``pick`` | `function(number): Promise<Object>` | - | [^pick] |
+| ``pick`` | `function({remainingCount: number}): Promise<Object>` | - | [^pick] |
 | ``after-pick`` | `function(Array<Object>): void` | - | 选择文件之后的回调。 |
 | ``sortable`` | `boolean` | `false` | 文件列表是否可以排序。 |
 | ``preview-options`` | `object` | `{wrap: true, indicator: 'number'}` | 传递给 [`Lightbox`](./lightbox) 的预览选项。 |
@@ -168,6 +179,7 @@
 | `name` | `string=` | 文件的名称。`success` 为 `true` 时必须。 |
 | `src` | `string=` | 文件的地址。`success` 为 `true` 时必须。 |
 | `message` | `string=` | 上传失败时的出错信息。`success` 为 `false` 时必须。 |
+| `preview` | `boolean` | 上传失败时，是否预览失败的上传项。 |
 
 还可以给返回结果加上其它自定义的属性，这些自定义属性会被包含在 [`value`](#props-value) 以及 [`change`](#events-change)、[`success`](#events-success)、[`failure`](#events-failure)、[`remove`](#events-remove)、[`progress`](#events-progress) 事件的回调参数 `file` 中 。可进行[全局统一配置](#configs-uploader-convert-response)。
 +++
@@ -201,7 +213,7 @@
 自定义选择文件逻辑， 返回的文件会被上传。
 
 ```ts
-function picker() : Promise<PickedFile | PickedFile[]>
+function picker({remainingCount: number}) : Promise<PickedFile | PickedFile[]>
 
 type PickedFile = {
   name: string
@@ -255,6 +267,7 @@ type PickedFile = {
 | -- | -- | -- |
 | `valid` | `boolean` | 是否通过校验。 |
 | `message` | `string=` | `valid` 为 `false` 时的错误提示信息。 |
+| `preview` | `boolean` | 当校验失败时，是否预览失败的上传项。 |
 
 支持异步校验，返回值可以是一个 resolve 上述返回结果的 `Promise`。
 

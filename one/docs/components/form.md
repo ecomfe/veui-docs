@@ -28,13 +28,13 @@
 
 [[ demo src="/demo/form/help.vue" ]]
 
-### 校验
-
-[[ demo src="/demo/form/validate.vue" ]]
-
 ### 规则校验
 
 [[ demo src="/demo/form/rule.vue" ]]
+
+### 内联规则校验
+
+[[ demo src="/demo/form/inline-rule.vue" ]]
 
 ### 异步联合校验
 
@@ -81,7 +81,7 @@
 | -- | -- | -- |
 | `fields` | `Array` | 对应 `Field` 的 `field` 描述的集合。事件会绑定到对应 `Field` 中的输入组件上。 |
 | `validate` | `function` | 自定义校验函数，传入参数为 `(data[fields[0]], data[fields[1]], ...)`，`data` 为表单 [`data`](#props-data) 属性值的引用。返回 `undefined` / `true` 代表校验成功，返回 `{[field]: message, ...}` 表示校验失败信息，详见[表单 › 表单校验逻辑](#表单校验逻辑)。 |
-| `triggers` | `string | Array<string>` | 事件名称集合。 |
+| `triggers` | `string | Array<string>` | 事件名称集合, 支持 `<fieldName>:<eventName>` 表示当 `fieldName` 字段发生 `eventName` 事件时触发校验。 |
 +++
 
 
@@ -92,6 +92,7 @@
 | `['a','b','c']` | `['change', 'blur,input,xxx', 'submit']` | a(change), b(blur,input,xxx), c(submit) |
 | `['a','b','c']` | `'blur'` | a(blur), b(submit), c(submit) |
 | `['a','b','c']` | `'blur,input'` | a(blur,input), b(blur,input), c(blur,input) |
+| `['a']` | `'blur,b:input'` | a(blur,b:input) |
 +++
 ^^^
 
