@@ -2,7 +2,7 @@
 <article>
   <section>
     <div>
-      helpPosition:
+      辅助信息位置：
       <veui-radio-button-group
         v-model="helpPosition"
         ui="s"
@@ -12,7 +12,7 @@
     <veui-uploader
       v-model="files"
       :help-position="helpPosition"
-      :help="'help text'"
+      help="Help text"
       action="https://app.fakejson.com/q/ELymQ7xh?token=AWFkjMICPSAB_bO_z-Lnog"
     />
     <veui-uploader

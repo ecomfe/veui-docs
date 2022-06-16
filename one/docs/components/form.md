@@ -186,6 +186,7 @@ type InputValidity = {
   status: 'success' | 'warning' | 'error'
   message: string
 }
+
 function setValidities(validities: Record<string, string | InputValidity>): void
 
 // 示例：将表单提交返回错误添加到表单中

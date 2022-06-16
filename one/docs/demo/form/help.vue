@@ -1,7 +1,7 @@
 <template>
 <article>
   <section>
-    <span class="label-text">辅助信息位置:</span>
+    <span class="label-text">辅助信息位置：</span>
     <veui-radio-button-group
       v-model="helpPosition"
       ui="s"
