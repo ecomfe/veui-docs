@@ -45,6 +45,12 @@
 
 [[ demo src="/demo/cascader/value-display.vue" ]]
 
+### 数据项懒加载
+
+配合使用 [`load`](#props-load) 属性和数据项中 `lazy` 属性来实现数据懒加载。
+
+[[ demo src="/demo/cascader/lazy.vue" ]]
+
 ## API
 
 ### 属性
@@ -74,6 +80,7 @@
 | ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 | ``match`` | `(item, keyword, { ancestors }) => boolean | Array<[number, number]>` | - | 支持自定义高亮逻辑， 默认大小写不敏感，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
 | ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | 支持自定义搜索命中逻辑，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
+| ``load`` | `Function` | - | [^load] |
 
 ^^^ui
 预设样式。
@@ -168,6 +175,26 @@
 | `upwards` | 尽可能往祖先方向合并选中值。 |
 | `downwards` | 尽可能往后代方向合并选中值。 |
 +++
+^^^
+
+^^^load
+
+数据项懒加载，配合数据项上 `lazy` 属性使用。
+
+```ts
+type Item {
+  label: string,
+  value: unknown,
+  options?: Array<Item>,
+  disabled?: boolean
+  lazy?: boolean
+}
+
+function load({
+  parent?: Item,
+  scope: 'descendants' | 'children'
+}): Item[] | void | Promise<Item[] | void>
+```
 ^^^
 
 ### 插槽
