@@ -18,35 +18,35 @@ const options = [
     value: '浙江',
     options: [
       {
-        label: '威海',
-        value: '威海'
+        label: '杭州',
+        value: '杭州'
       },
       {
-        label: '滨州',
-        value: '滨州'
+        label: '宁波',
+        value: '宁波'
       },
       {
-        label: '临沂',
-        value: '临沂'
+        label: '温州',
+        value: '温州'
       },
       {
-        label: '东营',
-        value: '东营'
+        label: '舟山',
+        value: '舟山'
       },
       {
-        label: '济南',
-        value: '济南'
+        label: '绍兴',
+        value: '绍兴'
       }
     ]
   },
   {
-    label: '山东',
-    value: '山东',
+    label: '上海',
+    value: '上海',
     lazy: true
   },
   {
-    label: '上海',
-    value: '上海',
+    label: '重庆',
+    value: '重庆',
     disabled: true
   },
   {
@@ -66,47 +66,47 @@ const options = [
   }
 ]
 
-const hzChildren = [
+const pudongChildren = [
   {
-    label: '菏',
-    value: '菏'
+    label: '张江',
+    value: '张江'
   },
   {
-    label: '泽',
-    value: '泽'
+    label: '北蔡',
+    value: '北蔡'
   }
 ]
 
-const getSdChildren = (full) => [
+const loadShanghai = (descendants) => [
   {
-    label: '菏泽',
-    value: '菏泽',
+    label: '浦东新区',
+    value: '浦东新区',
     lazy: true,
-    ...(full ? { options: hzChildren } : null)
+    ...(descendants ? { options: pudongChildren } : null)
   },
   {
-    label: '潍坊',
-    value: '潍坊',
+    label: '闵行',
+    value: '闵行',
     options: [
       {
-        label: '潍',
-        value: '潍'
+        label: '莘庄',
+        value: '莘庄'
       },
       {
-        label: '坊',
-        value: '坊'
+        label: '颛桥',
+        value: '颛桥'
       }
     ]
   },
   {
-    label: '泰山',
-    value: '泰山',
+    label: '宝山',
+    value: '宝山',
     // load no data
-    ...(full ? null : { lazy: true })
+    ...(descendants ? null : { lazy: true })
   },
   {
-    label: '烟台',
-    value: '烟台',
+    label: '徐汇',
+    value: '徐汇',
     disabled: true
   }
 ]
@@ -125,13 +125,13 @@ export default {
     load: ({ parent, scope }) => {
       return new Promise((resolve) => {
         setTimeout(() => {
-          let isFull
+          let descendants
           switch (scope) {
             case 'children':
-              isFull = false
+              descendants = false
               break
             case 'descendants':
-              isFull = true
+              descendants = true
               break
             default:
               console.warn('Not supported.')
@@ -142,8 +142,8 @@ export default {
           resolve(
             parent
               ? {
-                菏泽: hzChildren,
-                山东: getSdChildren(isFull)
+                浦东新区: pudongChildren,
+                上海: loadShanghai(descendants)
               }[parent.value]
               : undefined
           )

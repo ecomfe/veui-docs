@@ -195,6 +195,17 @@ function load({
   scope: 'descendants' | 'children'
 }): Item[] | void | Promise<Item[] | void>
 ```
+
+`parent` 参数表示当前需要为该项加载更多数据。
+
+`scope` 参数表示加载的数据范围。
+
++++枚举值
+| 值 | 描述 |
+| -- | -- |
+| `descendants` | 加载所有后代数据。 |
+| `children` | 加载子项数据。 |
++++
 ^^^
 
 ### 插槽
