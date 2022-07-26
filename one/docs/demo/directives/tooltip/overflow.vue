@@ -2,7 +2,7 @@
 <article>
   <section>
     <div
-      v-tooltip.overflow="loremIpsum"
+      v-tooltip.overflow
       class="item"
     >
       {{ loremIpsum }}
@@ -45,3 +45,7 @@ export default {
   text-overflow: ellipsis;
 }
 </style>
+
+<docs>
+当无绑定值或不提供 `content` 参数时，将自动展示被绑定元素的 `textContent` 内容。
+</docs>

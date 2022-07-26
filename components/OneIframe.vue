@@ -1,23 +1,11 @@
-<template>
-<fragment>
-  <iframe
-    ref="iframe"
-    class="one-iframe"
-  />
-  <slot/>
-</fragment>
-</template>
-
 <script>
-import { Fragment } from 'vue-frag'
+import Vue from 'vue'
 
 export default {
   name: 'one-iframe',
-  components: {
-    Fragment
-  },
   props: {
-    globalStyle: String
+    globalStyle: String,
+    live: Boolean
   },
   watch: {
     globalStyle (value) {
@@ -27,12 +15,6 @@ export default {
     }
   },
   beforeDestroy () {
-    if (this.contents) {
-      this.contents.forEach(node => {
-        this.$refs.iframe.parentNode.appendChild(node)
-      })
-    }
-
     if (this.mo) {
       this.mo.disconnect()
     }
@@ -40,16 +22,11 @@ export default {
   mounted () {
     const links = document.querySelectorAll('link[rel=stylesheet]')
     const styles = document.querySelectorAll('style')
-    const { iframe } = this.$refs
-    const { body, head } = iframe.contentDocument
-    this.contents = this.$el.frag.filter(node => node !== iframe);
-    [...links, ...styles].forEach(node => {
+    const { head } = this.$el.contentDocument
+
+    ;[...links, ...styles].forEach(node => {
       const clone = node.cloneNode(true)
       head.appendChild(clone)
-    })
-
-    this.contents.forEach(node => {
-      body.appendChild(node)
     })
 
     if (this.globalStyle) {
@@ -59,9 +36,34 @@ export default {
       this.style = style
     }
 
-    this.watchLiveStyle(head)
+    this.renderContents()
+
+    if (this.live) {
+      this.watchLiveStyle(head)
+    }
+  },
+  beforeUpdate () {
+    this.app.contents = Object.freeze(this.$slots.default)
   },
   methods: {
+    renderContents () {
+      const contents = this.$slots.default
+      const body = this.$el.contentDocument.body
+      const el = document.createElement('div')
+      body.appendChild(el)
+
+      this.app = new Vue({
+        el,
+        data () {
+          return {
+            contents: Object.freeze(contents)
+          }
+        },
+        render (h) {
+          return h('div', this.contents)
+        }
+      })
+    },
     watchLiveStyle (head) {
       this.liveStyle = document.createComment('')
       head.appendChild(this.liveStyle)
@@ -84,6 +86,13 @@ export default {
       })
       this.mo.observe(document.head, { childList: true })
     }
+  },
+  render (h) {
+    return h('iframe', {
+      class: {
+        'one-iframe': true
+      }
+    })
   }
 }
 </script>

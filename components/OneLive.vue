@@ -70,6 +70,7 @@
   >
     <one-iframe
       v-if="browser"
+      live
       global-style="body { margin: 0 !important; } body > article { margin: 24px 36px; } .veui-layout { min-width: auto !important; }"
     >
       <v-live-preview

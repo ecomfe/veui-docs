@@ -46,7 +46,7 @@ VEUI 对通过 `v-tooltip` 定义的全局浮层提示进行了统一的体验�
 
 | 参数 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``content`` | `string | VNode | Array<VNode>` | - | 提示信息字符串或通过渲染函数返回的虚拟节点（数组）。 |
+| ``content`` | `string | VNode | Array<VNode>=` | - | 提示信息字符串或通过渲染函数返回的虚拟节点（数组）。如果不传，将默认使用对应元素的 `textContent`。 |
 | ``position`` | `string` | - | 浮层提示的展示位置。参考 [`Tooltip`](../components/tooltip) 组件的 [`position`](../components/tooltip#props-position) 属性。 |
 | ``overflow`` | `boolean` | `false` | 是否仅在目标元素内容溢出容器时显示悬浮提示。 |
 | ``disabled`` | `boolean` | `false` | 是否禁用浮层提示。 |
