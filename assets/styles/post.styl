@@ -151,27 +151,8 @@ margin-y($top, $bottom = $top)
     border-radius 4px
     margin-y(1.5em)
 
-    thead
-      position sticky
-      top -1px
-      background #f3f6f988
-      backdrop-filter blur(4px)
-
-      th
-        position relative
-
-        &::after
-          content ""
-          position absolute
-          bottom 0
-          width 100%
-          height 1px
-          left 0
-          background #f1f1f1
-
-  // pre
-  // table
-  //   max-width 480px
+  th
+    background #f3f6f988
 
   th
   td
@@ -359,6 +340,43 @@ margin-y($top, $bottom = $top)
 
   [data-target]
     animation target-blink 6s ease 1 both
+
+table[data-scope]
+  display grid
+  grid-auto-rows auto
+
+  & > thead
+  & > thead > tr
+  & > tbody
+  & > tbody > tr
+    display contents
+
+  & > thead > tr > th
+    position sticky
+    top 0
+    z-index 1
+    border-top none
+    backdrop-filter blur(4px)
+
+  & > tbody > tr > td
+    border-top none
+    word-break break-word
+
+  &[data-scope="props"]
+    grid-template-columns max-content fit-content(20%) fit-content(20%) auto
+
+  &[data-scope="configs"]
+    grid-template-columns max-content fit-content(30%) fit-content(30%) auto
+
+  &[data-scope="events"]
+  &[data-scope="methods"]
+  &[data-scope="slots"]
+  &[data-scope="icons"]
+    grid-template-columns minmax(max-content, 30%) auto
+
+  &[data-scope="options"]
+  &[data-scope="modifiers"]
+    grid-template-columns max-content fit-content(30%) fit-content(30%) auto
 
 .meta
   display flex

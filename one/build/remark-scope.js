@@ -26,8 +26,10 @@ export default function attacher () {
     let scope = null
 
     visit(tree, (node, index, parent) => {
-      const { type, depth, children, value, position } = node
+      const { type, children, value, position } = node
       if (type === 'heading') {
+        let { depth } = node
+
         if (depth === 3) {
           let text = children[0]
           if (text && text.type === 'element' && text.tagName === 'icon-link') {
@@ -46,14 +48,19 @@ export default function attacher () {
         return
       }
 
+      if (type === 'table' && scope) {
+        node.data = node.data || {}
+        node.data.hProperties = { ...node.data.hProperties, 'data-scope': scope }
+      }
+
       if (
         type === 'inlineCode' &&
-        position.end.offset - position.start.offset - value.length === 4
+        position.end.offset - position.start.offset - value.length === 4 // ``value`` has 4 backticks
       ) {
         const id = `${scope || 'doc'}-${value.replace(/\./g, '-')}`
 
         node.data = node.data || {}
-        node.data.hProperties = { id }
+        node.data.hProperties = { ...node.data.hProperties, id }
 
         parent.children[index] = {
           type: 'link',

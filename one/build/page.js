@@ -14,7 +14,7 @@ import stringifyObject from 'stringify-object'
 import { readFileSync, writeFileSync, replaceExtSync } from './util'
 import demo from './remark-demo'
 import ref from './remark-ref'
-import anchor from './remark-anchor'
+import scope from './remark-scope'
 import details from './remark-details'
 import custom from './remark-custom'
 import toc from './remark-extract-toc'
@@ -34,7 +34,7 @@ const PAGE_TPL = readFileSync(resolve(__dirname, '../templates/page.etpl'))
 const renderPage = etpl.compile(PAGE_TPL)
 
 const md = remark()
-  .use(anchor)
+  .use(scope)
   .use(custom)
   .use(ref)
   .use(details)
