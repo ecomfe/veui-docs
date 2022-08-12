@@ -6,7 +6,6 @@
     </veui-checkbox>
   </section>
   <section>
-    section
     <veui-number-input
       v-model="value"
       :disabled="disabled"

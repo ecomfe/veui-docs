@@ -2,6 +2,7 @@
   "dependencies": {
     "veui": "latest",
     "veui-theme-dls": "latest",
+    "veui-theme-dls-icons": "latest",
     "vue": "^2.6.14"
   }
 }
