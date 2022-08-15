@@ -13,6 +13,10 @@ module.exports = {
   target: 'static',
   telemetry: false,
 
+  router: {
+    prefetchPayloads: true
+  },
+
   /**
    * Headers of the page
    */

@@ -57,11 +57,16 @@ const observer =
       })
     : null
 
-export function createComponent ({ isOffline, router, route }) {
+export function createComponent ({ isOffline, router, route, fetchPayload }) {
   return class Hit extends Component {
     handleId = null;
     observed = false;
     link = createRef();
+
+    constructor ({ hit }) {
+      super()
+      this.url = normalizeURL(hit.url)
+    }
 
     canPrefetch () {
       const conn = navigator.connection
@@ -73,8 +78,7 @@ export function createComponent ({ isOffline, router, route }) {
     }
 
     getPrefetchComponents () {
-      const { hit } = this.props
-      const ref = router.resolve(normalizeURL(hit.url), route)
+      const ref = router.resolve(this.url, route)
       const Components = ref.resolved.matched.map(r => r.components.default)
 
       return Components.filter(
@@ -99,6 +103,11 @@ export function createComponent ({ isOffline, router, route }) {
           componentOrPromise.catch(() => {})
         }
         Component.__prefetched = true
+      }
+
+      if (fetchPayload) {
+        const { href } = router.resolve(this.url, route)
+        fetchPayload(href, true).catch(() => {})
       }
     }
 
@@ -134,9 +143,8 @@ export function createComponent ({ isOffline, router, route }) {
     }
 
     render ({ hit, children }) {
-      const url = normalizeURL(hit.url)
       return createElement('a', {
-        href: url,
+        href: this.url,
         ref: this.link,
         onClick: event => {
           if (isSpecialClick(event)) {
@@ -156,7 +164,7 @@ export function createComponent ({ isOffline, router, route }) {
           if (router.history.current.path !== hitPathname) {
             event.preventDefault()
           }
-          router.push(url)
+          router.push(this.url)
         },
         children
       })

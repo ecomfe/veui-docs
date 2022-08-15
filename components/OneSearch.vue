@@ -95,7 +95,8 @@ export default {
           hitComponent: createComponent({
             router: this.$router,
             route: this.$route,
-            isOffline: this.$nuxt.isOffline
+            isOffline: this.$nuxt.isOffline,
+            fetchPayload: this.$nuxt.fetchPayload
           })
         })
 
