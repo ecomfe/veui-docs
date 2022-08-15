@@ -63,7 +63,7 @@
     "monaco-themes": "^0.4.0",
     "nuxt": "^2.15.7",
     "object-deep-search": "0.0.7",
-    "preact": "^10.5.14",
+    "preact": "^10.10.2",
     "prettier": "^1.16.4",
     "prettier-eslint": "^8.8.2",
     "raw-loader": "^4.0.2",

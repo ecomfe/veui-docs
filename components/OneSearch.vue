@@ -16,32 +16,8 @@
 
 <script>
 import { SearchBox } from 'veui'
-import { createElement } from 'preact'
 import i18n from '../common/i18n'
-
-function isSpecialClick (event) {
-  return (
-    event.button === 1 ||
-    event.altKey ||
-    event.ctrlKey ||
-    event.metaKey ||
-    event.shiftKey
-  )
-}
-
-function normalizeURL (url) {
-  if (url.endsWith('/')) {
-    return url.slice(0, -1)
-  }
-
-  return url.replace(/\/([#?])/, '$1')
-}
-
-function wait (time) {
-  return new Promise(resolve => {
-    setTimeout(resolve, time)
-  })
-}
+import { createComponent } from './Hit'
 
 export default {
   name: 'one-search',
@@ -116,36 +92,11 @@ export default {
               }
             })
           },
-          hitComponent: ({ hit, children }) => {
-            const url = normalizeURL(hit.url)
-            return createElement(
-              'a',
-              {
-                href: url,
-                onClick: event => {
-                  if (isSpecialClick(event)) {
-                    return
-                  }
-                  // We rely on the native link scrolling when user is
-                  // already on the right anchor because Vue Router doesn't
-                  // support duplicated history entries.
-                  if (this.$router.history.current.fullPath === hit.url) {
-                    return
-                  }
-                  const { pathname: hitPathname } = new URL(
-                    window.location.origin + hit.url
-                  )
-                  // If the hits goes to another page, we prevent the native link behavior
-                  // to leverage the Vue Router loading feature.
-                  if (this.$router.history.current.path !== hitPathname) {
-                    event.preventDefault()
-                  }
-                  this.$router.push(url)
-                },
-                children
-              }
-            )
-          }
+          hitComponent: createComponent({
+            router: this.$router,
+            route: this.$route,
+            isOffline: this.$nuxt.isOffline
+          })
         })
 
         this.preparing = false
