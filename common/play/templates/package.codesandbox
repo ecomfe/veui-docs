@@ -3,6 +3,7 @@
     "veui": "latest",
     "veui-theme-dls": "latest",
     "veui-theme-dls-icons": "latest",
-    "vue": "^2.6.14"
+    "vue": "^2.6.14",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3"
   }
 }

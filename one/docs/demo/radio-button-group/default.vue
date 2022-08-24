@@ -14,7 +14,7 @@
       ui="s"
       :items="actions"
     >
-      <template #item="{ value, label }">
+      <template #item="{ value }">
         <veui-icon :name="value"/>
       </template>
     </veui-radio-button-group>
