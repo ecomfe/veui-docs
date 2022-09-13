@@ -144,6 +144,7 @@ arrow()
   transition background-color 0.3s
 
 .one-footer
+  position relative
   clear both
   padding 0 60px
 

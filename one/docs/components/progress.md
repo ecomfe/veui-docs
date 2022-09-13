@@ -1,8 +1,20 @@
-# Progress <small>进度条</small>
+# Progress <small>进度</small>
 
 ## 示例
 
-[[ demo src="/demo/progress/default.vue" ]]
+### 进度条
+
+[[ demo src="/demo/progress/bar.vue" ]]
+
+### 进度环
+
+[[ demo src="/demo/progress/circular.vue" ]]
+
+### 尺寸
+
+可选的尺寸 [`ui`](#props-ui) 属性值：`xs` / `s` / `m`。
+
+[[ demo src="/demo/progress/size.vue" ]]
 
 ## API
 
@@ -29,6 +41,7 @@
 | 值 | 描述 |
 | -- | -- |
 | `fluid` | 柱状进度条自适应宽度样式。 |
+| `xs` | 超小尺寸样式。 |
 | `s` | 小尺寸样式。 |
 | `m` | 中尺寸样式。 |
 ^^^
@@ -38,7 +51,7 @@
 `.sync`
 :::
 
-进度状态。可选值为 `success` / `alert`，分别表示成功及危险警告状态。
+进度状态。可选值为 `success` / `error`，分别表示成功及错误状态。
 ^^^
 
 ### 插槽

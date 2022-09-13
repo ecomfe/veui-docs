@@ -300,6 +300,10 @@
           "slug": "loading"
         },
         {
+          "title": "LoadingBar - 加载条",
+          "slug": "loading-bar"
+        },
+        {
           "title": "TimePicker - 时间选择",
           "slug": "time-picker"
         },
@@ -699,6 +703,11 @@
         {
           "title": "Loading",
           "slug": "loading",
+          "disabled": true
+        },
+        {
+          "title": "LoadingBar",
+          "slug": "loading-bar",
           "disabled": true
         },
         {

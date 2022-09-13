@@ -1,13 +1,36 @@
 <template>
 <article>
-  <section>
-    <veui-switch v-model="loading">
+  <section class="settings">
+    <veui-switch
+      v-model="loading"
+      ui="s"
+    >
       Loading
+    </veui-switch>
+    <veui-switch
+      v-model="noData"
+      ui="s"
+      :disabled="spinner"
+    >
+      No data
+    </veui-switch>
+    <veui-switch
+      v-model="modal"
+      ui="s"
+    >
+      Modal
+    </veui-switch>
+    <veui-switch
+      v-model="spinner"
+      ui="s"
+    >
+      Use spinner
     </veui-switch>
   </section>
   <veui-table
-    :data="data"
+    :data="noData ? [] : data"
     :loading="loading"
+    :loading-options="{ type: spinner ? 'spinner' : 'bar', modal }"
     key-field="id"
   >
     <veui-table-column
@@ -78,14 +101,19 @@ export default {
   data () {
     return {
       data,
-      loading: true
+      noData: false,
+      loading: true,
+      modal: true,
+      spinner: false
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
-section {
+.settings {
+  display: flex;
+  gap: 20px;
   margin-bottom: 20px;
 }
 

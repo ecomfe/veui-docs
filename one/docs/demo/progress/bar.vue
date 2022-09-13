@@ -1,29 +1,23 @@
 <template>
 <article>
-  <section>
-    <veui-number-input
+  <section class="settings">
+    Progress
+    <veui-slider
       v-model="value"
       :min="0"
-      :decimal-place="1"
+      :step="0.1"
       :max="100"
     />
   </section>
-  <section>
+  <section class="settings">
     <veui-checkbox v-model="desc">
-      Description
+      Show description
     </veui-checkbox>
     <veui-checkbox
-      v-model="autoSucceed"
+      v-model="autosucceed"
       :true-value="200"
     >
       Autosucceed
-    </veui-checkbox>
-    <veui-checkbox
-      v-model="type"
-      true-value="circular"
-      false-value="bar"
-    >
-      Circular
     </veui-checkbox>
     <veui-checkbox
       v-model="indeterminate"
@@ -33,10 +27,9 @@
   </section>
   <section>
     <veui-progress
-      :type="type"
       :value="value"
       :desc="desc"
-      :autosucceed="autoSucceed"
+      :autosucceed="autosucceed"
       :indeterminate="indeterminate"
       :decimal-place="1"
       :min="0"
@@ -47,12 +40,12 @@
 </template>
 
 <script>
-import { Progress, NumberInput, Checkbox } from 'veui'
+import { Progress, Slider, Checkbox } from 'veui'
 
 export default {
   components: {
     'veui-progress': Progress,
-    'veui-number-input': NumberInput,
+    'veui-slider': Slider,
     'veui-checkbox': Checkbox
   },
   data () {
@@ -60,7 +53,7 @@ export default {
       type: 'bar',
       value: 66.6,
       desc: true,
-      autoSucceed: 200,
+      autosucceed: 200,
       indeterminate: false
     }
   }
@@ -68,15 +61,19 @@ export default {
 </script>
 
 <style lang="less" scoped>
-section + section {
-  margin-top: 20px;
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-section:last-child {
-  height: 140px;
+.settings {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.veui-checkbox {
-  margin-right: 15px;
+.veui-slider {
+  width: 200px;
 }
 </style>

@@ -60,7 +60,7 @@
 
 ### 加载状态
 
-使用 [`loading`](#props-loading) 属性来指定表格处于加载状态。
+使用 [`loading`](#props-loading) 属性来指定表格处于加载状态。使用 [`loading-options`](#props-loading-options) 来指定加载态的样式。
 
 [[ demo src="/demo/table/loading.vue" ]]
 
@@ -88,6 +88,7 @@
 | ``order-by`` | `string` | - | 用于指定当前基于哪一列进行了排序，值必须来自内部某个 `Column` 组件的 [`field`](./column#props-field) 属性。 |
 | ``scroll`` | `number` | - | 指定滚动区域的最大高度，当超出此高度时，表格将进入固定表头和底部只允许数据区域滚动的模式。 |
 | ``loading`` | `boolean` | `false` | 指定表格是否处于加载状态。 |
+| ``loading-options`` | `Object` | `{}` | [^loading-options] |
 | ``allowed-orders`` | `Array` | `[false, 'desc', 'asc']` | [^allowed-orders] |
 | ``bordered`` | `boolean` | `false` | 指定表格是否有边框。 |
 | ``column-filter`` | `Array<string>` | - | 用于过滤表格的列，元素的值应该是列的 `key-field`，默认全部列都显示出来。 |
@@ -119,6 +120,16 @@
 :::
 
 已展开行。为已展开行 [`key-field`](#props-key-field) 对应字段值的数组。
+^^^
+
+^^^loading-options
+加载中状态的配置，类型为 `{type, modal}`。
+
++++字段详情
+| 名称 | 类型 | 描述 |
+| -- | -- | -- |
+| `type` | `'bar' \| 'spinner` | 加载类型，默认为 `'bar'`，即加载条样式。 |
+| `modal` | `boolean` | 加载遮罩，仅在 `type` 为 `bar` 时允许配置 `false` 进行关闭。 |
 ^^^
 
 ^^^allowed-orders

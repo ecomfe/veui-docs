@@ -1,8 +1,20 @@
-# Progress
+# Progress <small>进度</small>
 
 ## Demos
 
-[[ demo src="/demo/progress/default.vue" ]]
+### Progress bar
+
+[[ demo src="/demo/progress/bar.vue" ]]
+
+### Progress circles
+
+[[ demo src="/demo/progress/circular.vue" ]]
+
+### Size variants
+
+Available size variants for the [`ui`](#props-ui) prop: `xs` / `s` / `m`.
+
+[[ demo src="/demo/progress/size.vue" ]]
 
 ## API
 
@@ -28,6 +40,7 @@ Style variants.
 | Value | Description |
 | -- | -- |
 | `fluid` | Fluid layout for progress bar. |
+| `xs` | Extra small. |
 | `s` | Small. |
 | `m` | Medium. |
 ^^^
@@ -37,7 +50,7 @@ Style variants.
 `.sync`
 :::
 
-The status of the progress. Available values are `success` / `alert`, denoting success and alert status respectively.
+The status of the progress. Available values are `success` / `error`, denoting success and error status respectively.
 ^^^
 
 ### Slots
