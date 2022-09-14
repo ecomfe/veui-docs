@@ -53,7 +53,7 @@
         <veui-field>
           <veui-select
             v-model="from"
-            class="version"
+            class="version-select"
             :options="allVersions"
             searchable
             clearable
@@ -64,7 +64,7 @@
         <veui-field>
           <veui-select
             v-model="to"
-            class="version"
+            class="version-select"
             :options="allVersions"
             searchable
             clearable
@@ -75,7 +75,7 @@
     </veui-fieldset>
   </veui-form>
   <section
-    v-for="{ version, codeName, date, changeset } of pagedChangelog"
+    v-for="({ version, codeName, date, changeset }, i) of pagedChangelog"
     :key="version"
     class="version-item"
     data-md
@@ -84,21 +84,36 @@
       :id="getHash(version)"
       :class="{
         major: isMajor(version),
-        minor: isMinor(version),
+        minor: isMinor(version)
       }"
     >
       <nuxt-link
+        class="version"
         :to="`#${getHash(version)}`"
       >
-        {{ version }}<small v-if="codeName">{{ codeName }}</small><time
+        {{ version }}
+        <small v-if="codeName">{{ codeName }}</small>
+        <time
           v-if="date"
           :datetime="date"
         >{{ date }}</time>
       </nuxt-link>
+      <veui-link
+        v-if="getCompareLink((page - 1) * pageSize + i)"
+        v-tooltip="'代码变更'"
+        class="compare-link"
+        target="_blank"
+        :to="getCompareLink((page - 1) * pageSize + i)"
+      >
+        <veui-icon
+          label="比较"
+          name="one-compare"
+        />
+      </veui-link>
     </h2>
     <ul class="changeset">
       <li
-        v-for="({ type, tags, content }, index) of changeset"
+        v-for="({ type, content }, index) of changeset"
         :key="index"
         class="change"
         :class="type"
@@ -126,7 +141,7 @@
       :page="page"
       :page-size="pageSize"
       :total="filteredChangelog.length"
-      @redirect="val => page = val"
+      @redirect="val => (page = val)"
     />
   </section>
 </article>
@@ -134,8 +149,28 @@
 
 <script>
 import { cloneDeep } from 'lodash'
-import { Form, Field, Fieldset, CheckboxGroup, Select, Checkbox, Pagination } from 'veui'
+import {
+  Form,
+  Field,
+  Fieldset,
+  CheckboxGroup,
+  Select,
+  Checkbox,
+  Pagination,
+  Link,
+  Icon
+} from 'veui'
+import tooltip from 'veui/directives/tooltip'
 import changelog from '../assets/data/changelog.json'
+
+Icon.register({
+  'one-compare': {
+    width: 16,
+    height: 16,
+    d:
+      'M5 12H4c-.27-.02-.48-.11-.69-.31c-.21-.2-.3-.42-.31-.69V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V11c.03.78.34 1.47.94 2.06c.6.59 1.28.91 2.06.94h1v2l3-3l-3-3v2zM2 1.8c.66 0 1.2.55 1.2 1.2c0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm11 9.48V5c-.03-.78-.34-1.47-.94-2.06c-.6-.59-1.28-.91-2.06-.94H9V0L6 3l3 3V4h1c.27.02.48.11.69.31c.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 12 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2c0-.65.55-1.2 1.2-1.2c.65 0 1.2.55 1.2 1.2c0 .65-.55 1.2-1.2 1.2z'
+  }
+})
 
 const allTypes = [
   { label: '非兼容性变更', value: 'breaking', emoji: '⚠️' },
@@ -148,9 +183,16 @@ const typeMap = allTypes.reduce((map, { label, value, emoji }) => {
   return map
 }, {})
 
-const allVersions = changelog.map(({ version }) => ({ label: version, value: version }))
+const allVersions = changelog.map(({ version }) => ({
+  label: version,
+  value: version
+}))
 const allTags = [
-  ...new Set(changelog.map(({ changeset }) => changeset.map(({ tags }) => tags).flat()).flat())
+  ...new Set(
+    changelog
+      .map(({ changeset }) => changeset.map(({ tags }) => tags).flat())
+      .flat()
+  )
 ]
   .sort()
   .map(tag => ({ label: tag, value: tag }))
@@ -164,7 +206,18 @@ function isMinor (version) {
 }
 
 function getShrugger () {
-  const candidates = ['🤷🏻‍♀️', '🤷🏼‍♀️', '🤷🏽‍♀️', '🤷🏾‍♀️', '🤷🏿‍♀️', '🤷🏻‍♂️', '🤷🏼‍♂️', '🤷🏽‍♂️', '🤷🏾‍♂️', '🤷🏿‍♂️']
+  const candidates = [
+    '🤷🏻‍♀️',
+    '🤷🏼‍♀️',
+    '🤷🏽‍♀️',
+    '🤷🏾‍♀️',
+    '🤷🏿‍♀️',
+    '🤷🏻‍♂️',
+    '🤷🏼‍♂️',
+    '🤷🏽‍♂️',
+    '🤷🏾‍♂️',
+    '🤷🏿‍♂️'
+  ]
   return candidates[Math.floor(Math.random() * candidates.length)]
 }
 
@@ -178,7 +231,12 @@ export default {
     'veui-checkbox-group': CheckboxGroup,
     'veui-select': Select,
     'veui-checkbox': Checkbox,
-    'veui-pagination': Pagination
+    'veui-pagination': Pagination,
+    'veui-link': Link,
+    'veui-icon': Icon
+  },
+  directives: {
+    tooltip
   },
   data () {
     return {
@@ -211,10 +269,12 @@ export default {
         result = result.slice(toIndex, fromIndex)
       }
 
-      result.forEach((versionLog) => {
+      result.forEach(versionLog => {
         const { changeset } = versionLog
-        versionLog.changeset = changeset
-          .filter(({ type, tags }) => this.types.includes(type) && (!tag || tags.includes(tag)))
+        versionLog.changeset = changeset.filter(
+          ({ type, tags }) =>
+            this.types.includes(type) && (!tag || tags.includes(tag))
+        )
       })
 
       return result.filter(({ changeset }) => changeset.length !== 0)
@@ -233,7 +293,7 @@ export default {
     }
   },
   mounted () {
-    ['from', 'to', 'compare', 'tag', 'types'].forEach((key) => {
+    ['from', 'to', 'compare', 'tag', 'types'].forEach(key => {
       this.$watch(key, this.updateShrugger)
     })
   },
@@ -251,6 +311,17 @@ export default {
     },
     getHash (version) {
       return `v${version.replace(/\./g, '-')}`
+    },
+    getCompareLink (index) {
+      const { changelog } = this
+      if (index === changelog.length - 1) {
+        return null
+      }
+
+      const from = changelog[index + 1].version
+      const to = changelog[index].version
+
+      return `https://github.com/ecomfe/veui/compare/v${from}...v${to}`
     }
   }
 }
@@ -263,7 +334,7 @@ export default {
 .compare-toggle
   margin-right 8px
 
-.version
+.version-select
   width 160px
   margin 0 8px
 
@@ -315,10 +386,13 @@ h2
     &::before
       content "§"
 
-  a
+  .version
     display inline-flex
     align-items center
-    color #333 !important
+    color #282c33 !important
+
+    & + .compare-link
+      margin-left 8px
 
   small
   time
@@ -338,6 +412,7 @@ h2
     color #999
 
     &::before
+    &::after
       content "/"
       font-size 10px
       margin 0 8px
