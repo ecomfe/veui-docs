@@ -17,7 +17,7 @@
 | ``for`` | `string=` | - | [^for] |
 
 ^^^for
-允许通过 [`ref`](https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E8%AE%BF%E9%97%AE%E5%AD%90%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B%E6%88%96%E5%AD%90%E5%85%83%E7%B4%A0)、[Vue 组件实例](https://cn.vuejs.org/v2/guide/instance.html)、[`HTMLElement`](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement) 的方式指定目标组件或元素。如果指定的是组件，点击标签后会调用对应组件的 `activate` 方法（如果存在）；如果指定的是元素，点击标签后会调用对应元素的 [`click` 方法](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/click)。
+允许通过 [`ref`](https://v2.cn.vuejs.org/v2/guide/components-edge-cases.html#%E8%AE%BF%E9%97%AE%E5%AD%90%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B%E6%88%96%E5%AD%90%E5%85%83%E7%B4%A0)、[Vue 组件实例](https://v2.cn.vuejs.org/v2/guide/instance.html)、[`HTMLElement`](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement) 的方式指定目标组件或元素。如果指定的是组件，点击标签后会调用对应组件的 `activate` 方法（如果存在）；如果指定的是元素，点击标签后会调用对应元素的 [`click` 方法](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/click)。
 
 +++类型详情
 | 类型 | 描述 |

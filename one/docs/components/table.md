@@ -78,7 +78,7 @@
 | -- | -- | -- | -- |
 | ``ui`` | `string=` | - | [^ui] |
 | ``data`` | `Array<Object>` | - | 表格数据。 |
-| ``key-field`` | `string` | - | 用于指定充当表格数据的键的列标志符。值对应 [`data`](#props-data) 属性中数据项的某个字段名称。对应字段的值则会作为行元素的 [`key` 属性](https://cn.vuejs.org/v2/guide/list.html#key)输出。当 [`selectable`](#props-selectable) 属性为 `true` 时，也可以用来指定在存在纵向合并单元格的情况下以哪一列的不同行作为选择项，此时值必须来自内部某个 `Column` 组件的 [`field`](./column#props-field) 属性。 |
+| ``key-field`` | `string` | - | 用于指定充当表格数据的键的列标志符。值对应 [`data`](#props-data) 属性中数据项的某个字段名称。对应字段的值则会作为行元素的 [`key` 属性](https://v2.cn.vuejs.org/v2/guide/list.html#key)输出。当 [`selectable`](#props-selectable) 属性为 `true` 时，也可以用来指定在存在纵向合并单元格的情况下以哪一列的不同行作为选择项，此时值必须来自内部某个 `Column` 组件的 [`field`](./column#props-field) 属性。 |
 | ``selectable`` | `boolean` | `false` | 是否支持表格行的选择。 |
 | ``select-mode`` | `string` | `'multiple'` | 选择模式，支持的值为 `single` / `multiple`，分别对应于单选/多选模式。 |
 | ``selected`` | `Array<*>|*` | `[]` | [^selected] |
@@ -88,7 +88,7 @@
 | ``order-by`` | `string` | - | 用于指定当前基于哪一列进行了排序，值必须来自内部某个 `Column` 组件的 [`field`](./column#props-field) 属性。 |
 | ``scroll`` | `number` | - | 指定滚动区域的最大高度，当超出此高度时，表格将进入固定表头和底部只允许数据区域滚动的模式。 |
 | ``loading`` | `boolean` | `false` | 指定表格是否处于加载状态。 |
-| ``loading-options`` | `Object` | `{}` | [^loading-options] |
+| ``loading-options`` | `Object` | `table.loadingOptions` | [^loading-options] |
 | ``allowed-orders`` | `Array` | `[false, 'desc', 'asc']` | [^allowed-orders] |
 | ``bordered`` | `boolean` | `false` | 指定表格是否有边框。 |
 | ``column-filter`` | `Array<string>` | - | 用于过滤表格的列，元素的值应该是列的 `key-field`，默认全部列都显示出来。 |
@@ -189,3 +189,9 @@
 | `order` | `string | boolean` | 同 [`order`](#props-order) 属性。 |
 +++
 ^^^
+
+### 全局配置
+
+| 名称 | 类型 | 默认值 | 描述 |
+| -- | -- | -- | -- |
+| ``table.loadingOptions`` | `Object` | `{ type: 'bar', modal: true }` | 加载样式配置，字段详情见 [`loading-options`](#props-loading-options) 属性。 |

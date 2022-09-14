@@ -57,7 +57,7 @@
 ^^^
 
 ^^^target
-允许通过 [`ref`](https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E8%AE%BF%E9%97%AE%E5%AD%90%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B%E6%88%96%E5%AD%90%E5%85%83%E7%B4%A0)、[Vue 组件实例](https://cn.vuejs.org/v2/guide/instance.html)、[`Element`](https://developer.mozilla.org/zh-CN/docs/Web/API/Element) 的方式指定目标元素。如果目标元素存在，浮层会相对于该元素进行定位，具体定位参数由 [`options`](#props-options) 属性指定。
+允许通过 [`ref`](https://v2.cn.vuejs.org/v2/guide/components-edge-cases.html#%E8%AE%BF%E9%97%AE%E5%AD%90%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B%E6%88%96%E5%AD%90%E5%85%83%E7%B4%A0)、[Vue 组件实例](https://v2.cn.vuejs.org/v2/guide/instance.html)、[`Element`](https://developer.mozilla.org/zh-CN/docs/Web/API/Element) 的方式指定目标元素。如果目标元素存在，浮层会相对于该元素进行定位，具体定位参数由 [`options`](#props-options) 属性指定。
 
 +++类型详情
 | 类型 | 描述 |
@@ -77,7 +77,7 @@
 ^^^
 
 ^^^overlay-class
-浮层根元素类名，数据格式为所有 [Vue 支持的 `class` 表达式](https://cn.vuejs.org/v2/guide/class-and-style.html#%E7%BB%91%E5%AE%9A-HTML-Class)。
+浮层根元素类名，数据格式为所有 [Vue 支持的 `class` 表达式](https://v2.cn.vuejs.org/v2/guide/class-and-style.html#%E7%BB%91%E5%AE%9A-HTML-Class)。
 
 :::tip
 由于浮层根元素会放置在 `<body>` 元素下，可以通过这个属性给浮层根元素设置类名以自定义样式。
@@ -85,7 +85,7 @@
 ^^^
 
 ^^^overlay-style
-浮层根元素的样式，数据格式为所有 [Vue 支持的 `style` 表达式](https://cn.vuejs.org/v2/guide/class-and-style.html#%E7%BB%91%E5%AE%9A%E5%86%85%E8%81%94%E6%A0%B7%E5%BC%8F)。
+浮层根元素的样式，数据格式为所有 [Vue 支持的 `style` 表达式](https://v2.cn.vuejs.org/v2/guide/class-and-style.html#%E7%BB%91%E5%AE%9A%E5%86%85%E8%81%94%E6%A0%B7%E5%BC%8F)。
 ^^^
 ### 插槽
 
@@ -106,4 +106,4 @@
 
 | 配置项 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``overlay.overlayClass`` | `string | Array | Object=` | `[]` | 全局配置需要添加到浮层容器上的类名，数据格式为所有 [Vue 支持的 `class` 表达式](https://cn.vuejs.org/v2/guide/class-and-style.html#%E7%BB%91%E5%AE%9A-HTML-Class)。 |
+| ``overlay.overlayClass`` | `string | Array | Object=` | `[]` | 全局配置需要添加到浮层容器上的类名，数据格式为所有 [Vue 支持的 `class` 表达式](https://v2.cn.vuejs.org/v2/guide/class-and-style.html#%E7%BB%91%E5%AE%9A-HTML-Class)。 |

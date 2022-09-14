@@ -21,7 +21,7 @@ VEUI 对通过 `v-tooltip` 定义的全局浮层提示进行了统一的体验�
 ## API
 
 :::tip
-指令的具体用法请参考[官方文档](https://cn.vuejs.org/v2/guide/syntax.html#%E6%8C%87%E4%BB%A4)。更多详细参数请参考[自定义指令](https://cn.vuejs.org/v2/guide/custom-directive.html#%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0)。
+指令的具体用法请参考[官方文档](https://v2.cn.vuejs.org/v2/guide/syntax.html#%E6%8C%87%E4%BB%A4)。更多详细参数请参考[自定义指令](https://v2.cn.vuejs.org/v2/guide/custom-directive.html#%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0)。
 :::
 
 ### 绑定值
