@@ -17,7 +17,7 @@
 | ``wrap`` | `boolean=` | `false` | 是否可以循环播放。 |
 | ``closable`` | `boolean=` | `true` | 是否显示关闭按钮。 |
 | ``escapable`` | `boolean=` | `true` | 按下 <kbd>esc</kbd> 键是否可以关闭浮层。仅在 `closable` 为 `true` 时生效。 |
-| ``outside-closable`` | `boolean=` | `false` | 点击内容区域外部时是否关闭对话框。 |
+| ``outside-closable`` | `boolean=` | `true` | 点击内容区域外部时是否关闭对话框。 |
 | ``priority`` | `number=` | - | 浮层层叠权重，参考 [`Overlay`](./overlay) 组件的 [`priority`](./overlay#props-priority) 属性。 |
 | ``before-close`` | `function(string): boolean=|Promise<boolean=>` | - | [^before-close] |
 | ``overlay-class`` | `string | Array | Object=` | - | 浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |

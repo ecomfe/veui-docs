@@ -75,7 +75,7 @@
     </veui-fieldset>
   </veui-form>
   <section
-    v-for="({ version, codeName, date, changeset }, i) of pagedChangelog"
+    v-for="{ version, diffLink, codeName, date, changeset } of pagedChangelog"
     :key="version"
     class="version-item"
     data-md
@@ -99,11 +99,11 @@
         >{{ date }}</time>
       </nuxt-link>
       <veui-link
-        v-if="getCompareLink((page - 1) * pageSize + i)"
+        v-if="diffLink"
         v-tooltip="'代码变更'"
         class="compare-link"
         target="_blank"
-        :to="getCompareLink((page - 1) * pageSize + i)"
+        :to="diffLink"
       >
         <veui-icon
           label="比较"
@@ -221,6 +221,21 @@ function getShrugger () {
   return candidates[Math.floor(Math.random() * candidates.length)]
 }
 
+function fillDiffLink (changelog) {
+  return changelog.map((change, i) => {
+    if (!changelog[i + 1]) {
+      return change
+    }
+
+    return {
+      ...change,
+      diffLink: `https://github.com/ecomfe/veui/compare/v${
+        changelog[i + 1].version
+      }...v${change.version}#files_bucket`
+    }
+  })
+}
+
 export default {
   name: 'one-changelog',
   layout: 'default',
@@ -240,7 +255,7 @@ export default {
   },
   data () {
     return {
-      changelog,
+      changelog: fillDiffLink(changelog),
       allTypes,
       types: allTypes.map(({ value }) => value),
       allVersions,
@@ -311,17 +326,6 @@ export default {
     },
     getHash (version) {
       return `v${version.replace(/\./g, '-')}`
-    },
-    getCompareLink (index) {
-      const { changelog } = this
-      if (index === changelog.length - 1) {
-        return null
-      }
-
-      const from = changelog[index + 1].version
-      const to = changelog[index].version
-
-      return `https://github.com/ecomfe/veui/compare/v${from}...v${to}`
     }
   }
 }
@@ -390,9 +394,7 @@ h2
     display inline-flex
     align-items center
     color #282c33 !important
-
-    & + .compare-link
-      margin-left 8px
+    margin-right 8px
 
   small
   time
