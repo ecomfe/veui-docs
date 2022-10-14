@@ -22,7 +22,7 @@
 
 ### 最小宽度
 
-设置 [`ui`](#props-ui) 属性值：`simple` 来指定简单样式。
+设置 [`ui`](#props-ui) 属性值：`stable` 来为选项启用最小宽度，使多行场景下布局更为稳定。
 
 [[ demo src="/demo/radio-button-group/stable.vue" ]]
 

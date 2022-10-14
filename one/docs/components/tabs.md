@@ -14,7 +14,7 @@
 
 ### 样式
 
-设置 `ui` 为 `simple` / `strong` 来分别启用简单样式、加强样式。
+设置 `ui` 为 `borderless` / `simple` / `strong` 来分别启用默认样式的无分隔线样式、简单样式、加强样式。
 
 [[ demo src="/demo/tabs/style.vue" ]]
 
@@ -54,6 +54,7 @@
 | `s` | 小尺寸样式。 |
 | `m` | 中尺寸样式。 |
 | `l` | 大尺寸样式。 |
+| `borderless` | 无底部分隔线样式。 |
 | `simple` | 简单样式。 |
 | `strong` | 加强样式。 |
 +++

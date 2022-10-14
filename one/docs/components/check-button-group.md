@@ -28,7 +28,7 @@
 
 ### 最小宽度
 
-通过设置 [`ui`](#props-ui) 属性值 `stable` 来开启项目的最小宽度。
+设置 [`ui`](#props-ui) 属性值：`stable` 来为选项启用最小宽度，使多行场景下布局更为稳定。
 
 [[ demo src="/demo/check-button-group/stable.vue" ]]
 

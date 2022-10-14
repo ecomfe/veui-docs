@@ -1,6 +1,27 @@
 <template>
 <article>
   <section>
+    <h4>Borderless style</h4>
+    <veui-tabs
+      ui="borderless"
+      :active.sync="active"
+    >
+      <veui-tab
+        label="回答问题"
+        name="answers"
+      />
+      <veui-tab
+        label="文章评论"
+        name="articles"
+      />
+      <veui-tab
+        label="分享朋友圈"
+        name="shares"
+        status="success"
+      />
+    </veui-tabs>
+  </section>
+  <section>
     <h4>Simple style</h4>
     <veui-tabs
       ui="simple"

@@ -2,9 +2,11 @@
 
 ## 示例
 
-### 尺寸及方向
+### 样式
 
-可选的 [`ui`](#props-ui) 属性值：`s` / `m` / `vertical` / `label-vertical`。
+可选的 [`ui`](#props-ui) 属性值：`s` / `m` / `dot` / `vertical` / `label-vertical`。
+
+`stateless` 属性可用于切换到纯展示的无状态样式。
 
 [[ demo src="/demo/steps/default.vue" ]]
 
@@ -23,6 +25,7 @@
 | ``ui`` | `string=` | - | [^ui] |
 | ``steps`` | `Array` | - | [^steps] |
 | ``current`` | `number` | - | 当前步骤的索引值。 |
+| ``stateless`` | `boolean=` | `false` | 是否启用无状态纯展示样式。 |
 
 ^^^ui
 预设样式。
@@ -32,6 +35,7 @@
 | -- | -- |
 | `s` | 小尺寸样式。 |
 | `m` | 中尺寸样式。 |
+| `dot` | 圆点样式。 |
 | `vertical` | 纵向样式。 |
 | `label-vertical` | 文案纵向样式。 |
 +++

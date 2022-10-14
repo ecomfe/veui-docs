@@ -1,18 +1,20 @@
 <template>
 <article>
   <section>
+    <h4><code>desc</code> field</h4>
     <veui-radio-button-group
       v-model="flavor"
       :items="flavors"
     />
   </section>
   <section>
+    <h4><code>desc</code> slot</h4>
     <veui-radio-button-group
       v-model="flavor"
       :items="flavors"
     >
       <template #desc="{ desc, label }">
-        {{ desc || `a description for ${label}` }}
+        {{ desc || `A description for ${label}` }}
       </template>
     </veui-radio-button-group>
   </section>
@@ -30,8 +32,8 @@ export default {
     return {
       flavor: null,
       flavors: [
-        { value: 'LATTE', label: 'Latte', desc: 'a description for latte.' },
-        { value: 'MOCHA', label: 'Mocha', desc: 'a description for mocha.' },
+        { value: 'LATTE', label: 'Latte', desc: 'A description for latte.' },
+        { value: 'MOCHA', label: 'Mocha', desc: 'A description for mocha.' },
         { value: 'AMERICANO', label: 'Americano' }
       ]
     }

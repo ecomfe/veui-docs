@@ -10,7 +10,6 @@
     :items="flavors"
     :ui="isStable ? 'stable' : ''"
   />
-  </section>
 </article>
 </template>
 
