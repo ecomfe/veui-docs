@@ -20,8 +20,8 @@
     "update:veui": "npm i -D {veui-loader,veui,veui-theme-dls,babel-plugin-veui,veui-theme-dls-icons}@latest"
   },
   "devDependencies": {
-    "@docsearch/css": "^3.0.0-alpha.39",
-    "@docsearch/js": "^3.0.0-alpha.39",
+    "@docsearch/css": "^3.3.0",
+    "@docsearch/js": "^3.3.0",
     "@justfork/rehype-autolink-headings": "^5.1.1",
     "@justfork/vue-monaco": "^0.3.1",
     "@stackblitz/sdk": "^1.5.2",
