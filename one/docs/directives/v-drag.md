@@ -45,7 +45,8 @@
 | ``type`` | `string` | - | 该参数指定拖动行为的类型，目前内置了 `translate` / `sort` 两种模式，可以进行[扩展](#扩展)。 |
 | ``disabled`` | `boolean` | `false` | 该指令是否被禁用。 |
 | ``containment`` | `string | Vue | HTMLElement | Object` | - | [^containment] |
-| ``handle`` | `string | Vue | HTMLElement` | - | 指定拖拽操作的“把手”元素，只有拖动对应元素才会触发拖拽。类型同 [`containment`](#bindings-containment) 参数（不支持普通 `Object` 类型）。 |
+| ``handle`` | `string | Vue | HTMLElement` | - | 指定拖拽操作的“把手”元素，只有拖动对应元素才会触发拖拽。类型同 [`containment`](#bindings-containment) 参数（不支持普通 `Object` 类型），若字符串类型没找到 `ref`，那么会再尝试当成 CSS 选择器来使用。 |
+| ``exclude`` | `string` | - | 用于指定不作为“把手”的元素，一般用来从“把手”中剔除一部分元素不触发拖拽。字符串类型当成 CSS 选择器使用。 |
 | ``targets`` | `Array<string | Vue | HTMLElement>` | `[]` | [^targets] |
 | ``axis`` | `string` | - | 限制所有目标元素只能在水平或者垂直方向上做变换或指定拖拽排序元素排列方向。可选值类型：`'x' | 'y'`。 |
 | ``dragstart`` | `function(): Object` | `function() {}` | [^dragstart] |
