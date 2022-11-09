@@ -26,13 +26,13 @@
 
 ### 使用数据源
 
-除了使用 [`Tab`](./tab) 组件，还可以设置 `items` 属性来设置标签页的数据源。
+除了使用 [`Tab`](./tab) 组件，还可以设置 [`items`](#props-items) 属性来设置标签页的数据源。
 
 [[ demo src="/demo/tabs/items.vue" ]]
 
 ### 可排序标签页
 
-设置 `sortable` 属性来启用标签页排序功能，推荐和 items 属性一起使用。
+设置 [`sortable`](#props-sortable) 属性来启用标签页排序功能，推荐和 [`items`](#props-items) 属性一起使用。
 
 [[ demo src="/demo/tabs/sortable.vue" ]]
 
@@ -57,7 +57,7 @@
 | ``tip`` | `string` | - | 提示文本。 |
 | ``add-label`` | `string=` | - | “添加”按钮的文字内容。 |
 | ``eager`` | `boolean` | `false` | 是否立即渲染所有非当前激活项的标签面板内容（并隐藏）。 |
-| ``sortable`` | `boolean` | `false` | 是否可以拖拽标签项目来排序，推荐和 `items` 属性一起使用。 |
+| ``sortable`` | `boolean` | `false` | 是否可以拖拽标签项目来排序，推荐和 [`items`](#props-items) 属性一起使用。 |
 
 ^^^ui
 预设样式。
