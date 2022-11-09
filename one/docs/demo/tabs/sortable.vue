@@ -49,10 +49,10 @@ export default {
         this.tabs.splice(index, 1)
       }
     },
-    handleSort (items) {
-      this.tabs = items.map(({ name }) => {
-        return this.tabs.find((item) => name === item.name)
-      })
+    handleSort (fromIndex, toIndex) {
+      const item = this.tabs[fromIndex]
+      this.tabs.splice(fromIndex, 1)
+      this.tabs.splice(toIndex, 0, item)
     }
   }
 }

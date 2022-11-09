@@ -75,10 +75,6 @@
 ^^^
 
 ^^^items
-:::badges
-`.sync`
-:::
-
 标签页数据源，项目类型为 `{ label, name, disabled, status, removable, to, native ... }`。
 
 +++字段详情
@@ -147,7 +143,7 @@
 | ``change`` | 切换时触发。回调参数为 `(tab: Object)`，`tab` 与 [`tab-label`](#slots-tab-label) 插槽中的作用域参数一致。 |
 | ``add`` | 点击添加按钮触发的事件，无回调参数。 |
 | ``remove`` | 删除标签时触发的事件。回调参数为 `(tab: Object)`，`tab` 与 [`tab-label`](#slots-tab-label) 插槽中的作用域参数一致。 |
-| ``sort`` | 排序时触发的事件。回调参数为 `(tabs: Array<Object>)`，`tabs` 与 [`items`](#props-items) 属性一致。 |
+| ``sort`` | 排序时触发的事件。回调参数为 `(fromIndex: number, toIndex: number)`，表示从原来位置（`fromIndex`）移动到新位置（`toIndex`）。 |
 
 ### 全局配置
 
