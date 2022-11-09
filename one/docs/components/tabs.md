@@ -75,7 +75,11 @@
 ^^^
 
 ^^^items
-标签页数据源，项目类型为 `{ label, name, disabled, status, removable, ... }`。
+:::badges
+`.sync`
+:::
+
+标签页数据源，项目类型为 `{ label, name, disabled, status, removable, to, native ... }`。
 
 +++字段详情
 | 名称 | 类型 | 描述 |
@@ -85,6 +89,8 @@
 | `status` | `'success' | 'warning' | 'info' | 'error'` | 标签页的状态。 |
 | `disabled` | `boolean=` | 标签页是否为禁用。 |
 | `removable` | `boolean=` | 标签页是否可删除。 |
+| ``to`` | `string | Object` | - | 参考 [`Tab`](./tab) 组件 [`to`](./tab#props-to) 属性 |
+| ``native`` | `boolean` | `false` | 路由模式是否强制使用原生的 `<a>` 元素。 |
 +++
 ^^^
 
