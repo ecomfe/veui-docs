@@ -24,6 +24,18 @@
 
 [[ demo src="/demo/tabs/route.vue" ]]
 
+### 使用数据源
+
+除了使用 [`Tab`](./tab) 组件，还可以设置 [`items`](#props-items) 属性来设置标签页的数据源。
+
+[[ demo src="/demo/tabs/items.vue" ]]
+
+### 可排序标签页
+
+设置 [`sortable`](#props-sortable) 属性来启用标签页排序功能，推荐和 [`items`](#props-items) 属性一起使用。
+
+[[ demo src="/demo/tabs/sortable.vue" ]]
+
 ### 禁用状态
 
 设置 [`Tab`](./tab) 组件 [`disabled`](./tab#props-disabled) 属性来使选项卡处于禁用状态。
@@ -37,6 +49,7 @@
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
 | ``ui`` | `string=` | - | [^ui] |
+| ``items`` | `Array<Object>` | `[]` | [^items] |
 | ``active`` | `string` | - | [^active] |
 | ``matches`` | `function(Route, Route): boolean` | `tabs.matches` | [^matches] |
 | ``addable`` | `boolean` | `false` | 是否可以增加标签。 |
@@ -44,6 +57,7 @@
 | ``tip`` | `string` | - | 提示文本。 |
 | ``add-label`` | `string=` | - | “添加”按钮的文字内容。 |
 | ``eager`` | `boolean` | `false` | 是否立即渲染所有非当前激活项的标签面板内容（并隐藏）。 |
+| ``sortable`` | `boolean` | `false` | 是否可以拖拽标签项目来排序，推荐和 [`items`](#props-items) 属性一起使用。 |
 
 ^^^ui
 预设样式。
@@ -57,6 +71,22 @@
 | `borderless` | 无底部分隔线样式。 |
 | `simple` | 简单样式。 |
 | `strong` | 加强样式。 |
++++
+^^^
+
+^^^items
+标签页数据源，项目类型为 `{ label, name, disabled, status, removable, to, native ... }`。
+
++++字段详情
+| 名称 | 类型 | 描述 |
+| -- | -- | -- |
+| `label` | `string` | 标签页的标题。 |
+| `name` | `string` | 标签页的名称。 |
+| `status` | `'success' | 'warning' | 'info' | 'error'` | 标签页的状态。 |
+| `disabled` | `boolean=` | 标签页是否为禁用。 |
+| `removable` | `boolean=` | 标签页是否可删除。 |
+| ``to`` | `string | Object` | - | 参考 [`Tab`](./tab) 组件 [`to`](./tab#props-to) 属性 |
+| ``native`` | `boolean` | `false` | 路由模式是否强制使用原生的 `<a>` 元素。 |
 +++
 ^^^
 
@@ -113,6 +143,7 @@
 | ``change`` | 切换时触发。回调参数为 `(tab: Object)`，`tab` 与 [`tab-label`](#slots-tab-label) 插槽中的作用域参数一致。 |
 | ``add`` | 点击添加按钮触发的事件，无回调参数。 |
 | ``remove`` | 删除标签时触发的事件。回调参数为 `(tab: Object)`，`tab` 与 [`tab-label`](#slots-tab-label) 插槽中的作用域参数一致。 |
+| ``sort`` | 排序时触发的事件。回调参数为 `(fromIndex: number, toIndex: number)`，表示从原来位置（`fromIndex`）移动到新位置（`toIndex`）。 |
 
 ### 全局配置
 
