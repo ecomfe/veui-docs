@@ -1,15 +1,12 @@
 <template>
 <article>
   <section>
-    <veui-tabs
-      addable
-      :items="tabs"
-      @add="addTab"
-      @remove="removeTab"
-    >
+    <veui-tabs :items="tabs">
       <template
         #panel="{ activeTab }"
-      ><p>{{ activeTab.label }}</p></template>
+      >
+        <p>{{ activeTab.label }}</p>
+      </template>
     </veui-tabs>
   </section>
 </article>
@@ -17,7 +14,6 @@
 
 <script>
 import { Tabs } from 'veui'
-import { findIndex, uniqueId } from 'lodash'
 
 export default {
   components: {
@@ -26,25 +22,10 @@ export default {
   data () {
     return {
       tabs: [
-        { label: '默认1', name: '默认1', removable: true },
-        { label: '默认2', name: '默认2', status: 'success', removable: true },
-        { label: '默认3', name: '默认3', removable: true }
+        { label: '默认1', name: '默认1' },
+        { label: '默认2', name: '默认2' },
+        { label: '默认3', name: '默认3' }
       ]
-    }
-  },
-  methods: {
-    addTab () {
-      let label = uniqueId('默认')
-      this.tabs.push({
-        label,
-        name: label
-      })
-    },
-    removeTab ({ name }) {
-      let index = findIndex(this.tabs, (tab) => tab.name === name)
-      if (index !== -1) {
-        this.tabs.splice(index, 1)
-      }
     }
   }
 }

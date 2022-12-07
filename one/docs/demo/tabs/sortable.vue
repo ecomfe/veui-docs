@@ -2,17 +2,13 @@
 <article>
   <section>
     <veui-tabs
-      ui="strong"
       sortable
-      addable
       :items="tabs"
-      @add="addTab"
-      @remove="removeTab"
       @sort="handleSort"
     >
-      <template
-        #panel="{ activeTab }"
-      ><p>{{ activeTab.label }}</p></template>
+      <template #panel="{ activeTab }">
+        <p>{{ activeTab.label }}</p>
+      </template>
     </veui-tabs>
   </section>
 </article>
@@ -20,7 +16,6 @@
 
 <script>
 import { Tabs } from 'veui'
-import { findIndex, uniqueId } from 'lodash'
 
 export default {
   components: {
@@ -29,26 +24,13 @@ export default {
   data () {
     return {
       tabs: [
-        { label: '默认1', name: '默认1', removable: true },
-        { label: '默认2', name: '默认2', status: 'success', removable: true },
-        { label: '默认3', name: '默认3', removable: true }
+        { label: 'Tab 1', name: 't1' },
+        { label: 'Tab 2', name: 't2' },
+        { label: 'Tab 3', name: 't3' }
       ]
     }
   },
   methods: {
-    addTab () {
-      let label = uniqueId('默认')
-      this.tabs.push({
-        label,
-        name: label
-      })
-    },
-    removeTab ({ name }) {
-      let index = findIndex(this.tabs, (tab) => tab.name === name)
-      if (index !== -1) {
-        this.tabs.splice(index, 1)
-      }
-    },
     handleSort (fromIndex, toIndex) {
       const item = this.tabs[fromIndex]
       this.tabs.splice(fromIndex, 1)

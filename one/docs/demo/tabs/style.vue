@@ -2,65 +2,26 @@
 <article>
   <section>
     <h4>Borderless style</h4>
-    <veui-tabs
-      ui="borderless"
-      :active.sync="active"
-    >
-      <veui-tab
-        label="回答问题"
-        name="answers"
-      />
-      <veui-tab
-        label="文章评论"
-        name="articles"
-      />
-      <veui-tab
-        label="分享朋友圈"
-        name="shares"
-        status="success"
-      />
+    <veui-tabs ui="borderless">
+      <veui-tab label="Tab 1"/>
+      <veui-tab label="Tab 2"/>
+      <veui-tab label="Tab 3"/>
     </veui-tabs>
   </section>
   <section>
     <h4>Simple style</h4>
-    <veui-tabs
-      ui="simple"
-      :active.sync="active"
-    >
-      <veui-tab
-        label="回答问题"
-        name="answers"
-      />
-      <veui-tab
-        label="文章评论"
-        name="articles"
-        status="error"
-      />
-      <veui-tab
-        label="分享朋友圈"
-        name="shares"
-      />
+    <veui-tabs ui="simple">
+      <veui-tab label="Tab 1"/>
+      <veui-tab label="Tab 2"/>
+      <veui-tab label="Tab 3"/>
     </veui-tabs>
   </section>
   <section>
     <h4>Strong style</h4>
-    <veui-tabs
-      ui="strong"
-      :active.sync="active"
-    >
-      <veui-tab
-        label="回答问题"
-        name="answers"
-        status="warning"
-      />
-      <veui-tab
-        label="文章评论"
-        name="articles"
-      />
-      <veui-tab
-        label="分享朋友圈"
-        name="shares"
-      />
+    <veui-tabs ui="strong">
+      <veui-tab label="Tab 1"/>
+      <veui-tab label="Tab 2"/>
+      <veui-tab label="Tab 3"/>
     </veui-tabs>
   </section>
 </article>
@@ -73,11 +34,6 @@ export default {
   components: {
     'veui-tabs': Tabs,
     'veui-tab': Tab
-  },
-  data () {
-    return {
-      active: 'answers'
-    }
   }
 }
 </script>

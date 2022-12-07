@@ -20,7 +20,7 @@
 
 [[ demo src="/demo/popover/trigger.vue" ]]
 
-### 标题区域和操作区域
+### 标题和操作
 
 使用 [`title`](#props-title) 属性或[`title`](#slots-title) 插槽来指定气泡的标题。
 

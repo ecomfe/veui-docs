@@ -18,9 +18,7 @@
     />
   </veui-tabs>
 
-  <veui-tabs
-    :active.sync="active"
-  >
+  <veui-tabs :active.sync="active">
     <veui-tab
       label="回答问题"
       name="answers"
@@ -50,7 +48,6 @@
     <veui-tab
       label="分享朋友圈"
       name="shares"
-      status="success"
     />
   </veui-tabs>
 </article>

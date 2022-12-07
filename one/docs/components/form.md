@@ -138,7 +138,8 @@
 ^^^
 
 ### 方法
-| 方法 | 描述 |
+
+| 名称 | 描述 |
 | -- | -- |
 | ``submit`` | [^method-submit] |
 | ``validate`` | [^method-validate] |
@@ -167,6 +168,7 @@ function validate(fieldNames?: Array<string> | null): Promise<true | Record<stri
 
 ^^^method-clearvalidities
 手动清除表单校验信息。
+
 ```ts
 function clearValidities(fieldNames?: Array<string> | null): void
 ```
