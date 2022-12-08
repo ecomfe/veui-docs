@@ -36,12 +36,6 @@
 
 为 [`Tab`](./tab) 组件添加 [`removable`](./tab#props-removable) 或为 `Tabs` 的 [`items`](#props-items) 项目添加 `removable` 字段来将单个标签页设置为可以被删除。
 
-:::tip
-在添加新标签后，应当调用 [`scrollTabIntoView`](#methods-scrollTabIntoView) 方法将其在有必要的情况下滚动到可视区域，以避免在横向滚动的情况下用户无法感知添加结果。同时，可以按需将其设置为当前页。
-
-如果当前被激活的标签被删除，应当激活临近的前一个标签。
-:::
-
 [[ demo src="/demo/tabs/addable.vue" ]]
 
 ### 标签状态
