@@ -243,6 +243,8 @@ Icon.register({
 <style lang="stylus" scoped>
 .one-demo
   overflow hidden
+
+.demo
   position relative
   border 1px solid #eee
   border-top-left-radius 4px
