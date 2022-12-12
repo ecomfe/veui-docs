@@ -11,10 +11,14 @@
       height="400px"
     >
       <one-iframe global-style="body { margin: 0 !important; } .veui-layout { min-width: auto !important; }">
+        <one-focus ref="focuser"/>
         <slot/>
       </one-iframe>
     </browser-window>
-    <slot v-else/>
+    <template v-else>
+      <one-focus ref="focuser"/>
+      <slot/>
+    </template>
   </section>
   <section
     v-if="$slots.desc"
@@ -36,6 +40,13 @@
       @click="play('StackBlitz')"
     >
       <veui-icon name="one-demo-stackblitz"/>
+    </veui-button>
+    <veui-button
+      v-tooltip="t('resetFocus')"
+      ui="icon"
+      @click="resetFocus"
+    >
+      <veui-icon name="one-demo-focus"/>
     </veui-button>
     <veui-button
       v-tooltip="t(codeExpanded ? 'hideCode' : 'showCode')"
@@ -109,6 +120,7 @@ import { play } from '../common/play'
 import OneIframe from './OneIframe'
 import OneEditLink from './OneEditLink'
 import OneRepl from './OneRepl'
+import OneFocus from './OneFocus'
 import 'veui-theme-dls-icons/copy'
 
 Vue.use(toast)
@@ -124,7 +136,8 @@ export default {
     BrowserWindow,
     OneIframe,
     OneEditLink,
-    OneRepl
+    OneRepl,
+    OneFocus
   },
   mixins: [i18n],
   props: {
@@ -185,6 +198,9 @@ export default {
     },
     handleEditorToggle (val) {
       this.editorExpanded = val
+    },
+    resetFocus () {
+      this.$refs.focuser.focus()
     }
   }
 }
@@ -213,6 +229,11 @@ Icon.register({
     height: 28,
     d:
       'M12.747 16.273h-7.46L18.925 1.5l-3.671 10.227h7.46L9.075 26.5l3.671-10.227z'
+  },
+  'one-demo-focus': {
+    width: 24,
+    height: 24,
+    d: 'M12 17q-2.075 0-3.537-1.463Q7 14.075 7 12t1.463-3.538Q9.925 7 12 7t3.538 1.462Q17 9.925 17 12q0 2.075-1.462 3.537Q14.075 17 12 17Zm0-2q1.25 0 2.125-.875T15 12q0-1.25-.875-2.125T12 9q-1.25 0-2.125.875T9 12q0 1.25.875 2.125T12 15Zm-7 6q-.825 0-1.413-.587Q3 19.825 3 19v-4h2v4h4v2Zm10 0v-2h4v-4h2v4q0 .825-.587 1.413Q19.825 21 19 21ZM3 9V5q0-.825.587-1.413Q4.175 3 5 3h4v2H5v4Zm16 0V5h-4V3h4q.825 0 1.413.587Q21 4.175 21 5v4Zm-7 3Z'
   }
 })
 </script>
@@ -222,8 +243,7 @@ Icon.register({
 <style lang="stylus" scoped>
 .one-demo
   overflow hidden
-
-.demo
+  position relative
   border 1px solid #eee
   border-top-left-radius 4px
   border-top-right-radius 4px

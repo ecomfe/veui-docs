@@ -8,7 +8,8 @@ i18n.register(
     openEditor: '打开实时编辑',
     closeEditor: '关闭实时编辑',
     playInCodeSandbox: '在 CodeSandbox 中打开',
-    playInStackBlitz: '在 StackBlitz 中打开'
+    playInStackBlitz: '在 StackBlitz 中打开',
+    resetFocus: '重置焦点以测试键盘访问'
   },
   {
     ns: 'onedemo'
@@ -23,7 +24,8 @@ i18n.register(
     openEditor: 'Open Live editor',
     closeEditor: 'Close Live editor',
     playInCodeSandbox: 'Open in CodeSandbox',
-    playInStackBlitz: 'Open in StackBlitz'
+    playInStackBlitz: 'Open in StackBlitz',
+    resetFocus: 'Reset focus to test keyboard navigation'
   },
   {
     ns: 'onedemo'
@@ -133,5 +135,26 @@ i18n.register(
   },
   {
     ns: 'oneeditlink'
+  }
+)
+
+i18n.register(
+  'zh-Hans',
+  {
+    focusDesc: '以编程方式聚焦的通用容器，用来测试组件的键盘导航。'
+  },
+  {
+    ns: 'onefocus'
+  }
+)
+
+i18n.register(
+  'en-US',
+  {
+    focusDesc:
+      'A generic container that is programmatically focused to test keyboard navigation of our components.'
+  },
+  {
+    ns: 'onefocus'
   }
 )
