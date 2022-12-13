@@ -43,6 +43,7 @@
     </veui-button>
     <veui-button
       v-tooltip="t('resetFocus')"
+      class="reset-focus"
       ui="icon"
       @click="resetFocus"
     >
@@ -369,5 +370,6 @@ Icon.register({
 
 @media (max-width 480px)
   .toggle-editor
+  .reset-focus
     display none
 </style>

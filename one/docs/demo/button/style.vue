@@ -16,6 +16,22 @@
     </veui-button>
   </section>
   <section>
+    <veui-button ui="ghost">
+      Ghost
+    </veui-button>
+    <veui-button ui="ghost strong">
+      Strong Ghost
+    </veui-button>
+    <veui-button ui="ghost aux">
+      Aux Ghost
+    </veui-button>
+    <div class="reverse">
+      <veui-button ui="ghost reverse">
+        Reverse Ghost
+      </veui-button>
+    </div>
+  </section>
+  <section>
     <veui-button ui="text">
       Text
     </veui-button>
@@ -48,11 +64,19 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-button {
-  margin-right: 1em;
+section {
+  display: flex;
+  gap: 12px;
+
+  & + & {
+    margin-top: 20px;
+  }
 }
 
-section {
-  margin-top: 20px;
+.reverse {
+  margin: -8px;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #0052cc;
 }
 </style>
