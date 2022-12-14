@@ -21,7 +21,9 @@
       {{ altLocale.label }}
     </nuxt-link>
     <one-search/>
-    <veui-icon name="one-header-github"/>
+    <a href="https://github.com/ecomfe/veui">
+      <veui-icon name="one-header-github"/>
+    </a>
   </section>
 </header>
 </template>
