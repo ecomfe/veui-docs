@@ -6,27 +6,12 @@ margin-y($top, $bottom = $top)
 
 .post
   position relative
-  padding 30px 60px
+  padding 30px 60px 60px
   font-size 14px
   line-height 1.8
   color #282c33
   font-weight 400
   hyphens auto
-
-  .post-layout &
-    min-height 100%
-    margin-bottom -192px
-
-    &::after
-      content ""
-      display block
-      height 192px
-
-  .post-layout.no-links &
-    margin-bottom -58px
-
-  .no-links &::after
-    height 58px
 
   .one-demo
     margin 1em 0 1.25em

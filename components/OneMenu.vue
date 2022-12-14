@@ -4,50 +4,26 @@
   class="one-nav"
   :class="{ expanded }"
 >
-  <header>
-    <h2>VEUI</h2>
-    <section class="desc">
-      <a href="https://github.com/ecomfe/veui">
-        <img
-          alt="VEUI on GitHub"
-          src="https://img.shields.io/github/stars/ecomfe/veui?label=stars&logo=github"
-          height="20"
-        >
-      </a>
-      <nuxt-link
-        :class="{
-          'locale-swith': true,
-          disabled: altLocale.disabled,
-        }"
-        :to="altLocale.disabled ? '' : altLocale.to"
-      >
-        {{ altLocale.label }}
-      </nuxt-link>
-    </section>
-    <section class="search">
-      <one-search/>
-    </section>
-    <div
-      class="toggle"
-      @click="toggleMenu"
-    >
-      <veui-icon
-        class="expanded-icon"
-        name="chevron-left"
-      />
-      <veui-icon
-        class="collapsed-icon"
-        name="hamburger"
-      />
-    </div>
-  </header>
+  <div
+    class="toggle"
+    @click="toggleMenu"
+  >
+    <veui-icon
+      class="expanded-icon"
+      name="chevron-left"
+    />
+    <veui-icon
+      class="collapsed-icon"
+      name="hamburger"
+    />
+  </div>
   <veui-menu
     class="one-menu"
     :items="menuItems"
     :expanded.sync="menuExpanded"
   >
     <template #item-label="{ label, sub }">
-      {{ label }}<small>{{ sub }}</small>
+      {{ label }}<small v-if="sub">{{ sub }}</small>
     </template>
   </veui-menu>
 </nav>
@@ -55,7 +31,6 @@
 
 <script>
 import i18n from '../common/i18n'
-import OneSearch from './OneSearch'
 import { Menu, Icon } from 'veui'
 import outside from 'veui/directives/outside'
 import 'veui-theme-dls-icons/hamburger'
@@ -67,7 +42,6 @@ export default {
     outside
   },
   components: {
-    'one-search': OneSearch,
     'veui-menu': Menu,
     'veui-icon': Icon
   },
@@ -87,17 +61,6 @@ export default {
     }
   },
   computed: {
-    altLocale () {
-      let { canonicalPath, locale, getLocalePath, isPathDisabled } = this
-      let altLocale = locale === 'zh-Hans' ? 'en-US' : 'zh-Hans'
-      let label = locale === 'zh-Hans' ? 'English' : '中文'
-      let disabled = isPathDisabled(canonicalPath, altLocale)
-      return {
-        to: disabled ? '' : getLocalePath(canonicalPath, altLocale),
-        disabled,
-        label
-      }
-    },
     menuItems () {
       return this.nav.map(item => this.normalizeItem(item))
     }
@@ -141,63 +104,15 @@ export default {
 
 <style lang="stylus" scoped>
 .one-nav
-  position fixed
-  top 0
-  bottom 0
-  left 0
   display flex
   flex-direction column
-  width 280px
-  z-index 1
   background-color #fff
-
-  header
-    padding 32px 20px 20px
-    flex none
-
-  h2
-    display flex
-    align-items center
-    margin 0 0 16px
-    font-size 20px
-    font-weight 500
-
-    a
-      display block
-
-    & + .desc
-      display flex
-      align-items center
-      margin-bottom 20px
-
-      img
-        display block
-
-  .locale-swith
-    display block
-    margin-left 12px
-    padding 0 6px
-    border 1px solid #dbdbdb
-    border-radius 3px
-    line-height 18px
-    font-size 12px
-    text-align center
-    text-decoration none
-    transition all 0.2s
-
-    &:hover
-      border-color #999
-
-  .search
-    margin-top 16px
-    margin-right 12px
-    flex-shrink 0
+  padding-top 24px
 
 .one-menu
   flex 1 1 auto
   width 100%
   overflow auto
-  background-color #fff
 
   & >>> .DocSearch
     margin 0
@@ -217,6 +132,7 @@ export default {
 
 @media (max-width 480px)
   .one-nav
+    position absolute
     z-index 20
     transition transform 0.3s, box-shadow 0.3s
     transform translateX(-100%)

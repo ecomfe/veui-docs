@@ -3,6 +3,7 @@
   <veui-search-box
     ref="search"
     v-model="query"
+    ui="s"
     class="input"
     :placeholder="searchPlaceholder"
     @input="handleInput"
@@ -33,7 +34,7 @@ export default {
   },
   computed: {
     searchPlaceholder () {
-      return this.locale === 'zh-Hans' ? '⌘ K | 搜索…' : '⌘ K | Search...'
+      return this.locale === 'zh-Hans' ? '⌘ K | 全文搜索…' : '⌘ K | Full-text search...'
     }
   },
   watch: {
