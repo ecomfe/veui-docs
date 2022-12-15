@@ -95,6 +95,7 @@ h1
     list-style none
     padding 12px
     border-radius 4px
+    white-space nowrap
     width 30%
 
 .quick-nav

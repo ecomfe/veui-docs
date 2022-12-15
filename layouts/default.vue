@@ -159,7 +159,6 @@ $sidebar-width = 280px
 main
   min-height 100vh
   max-width 100vw
-  overflow auto
 
 .header
   position relative
@@ -207,6 +206,7 @@ main
 
 @media (max-width 480px)
   main
+    overflow auto
     padding-left 0
 
   .content

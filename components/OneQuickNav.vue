@@ -163,6 +163,7 @@ export default {
     },
     handleEnter () {
       if (this.matchedLink) {
+        this.value = this.candidate
         this.$router.push(this.matchedLink)
         this.value = ''
       }
