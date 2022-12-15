@@ -135,7 +135,7 @@ export default {
       this.quickNavOpen = false
     },
     handleGlobalKeydown (e) {
-      if (e.key === 'v' && !isEditingContent(e)) {
+      if (e.key === 'g' && !isEditingContent(e)) {
         if (this.$route.path !== '/') {
           this.quickNavOpen = true
           e.preventDefault()
@@ -159,6 +159,7 @@ $sidebar-width = 280px
 main
   min-height 100vh
   max-width 100vw
+  overflow auto
 
 .header
   position relative

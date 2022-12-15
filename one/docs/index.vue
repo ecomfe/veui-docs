@@ -40,7 +40,7 @@
       autofocus
     />
     <p class="help">
-      可在任意页面通过 <kbd>V</kbd> 键唤起
+      可在任意页面通过 <kbd>G</kbd> 键唤起
     </p>
   </section>
 </section>
