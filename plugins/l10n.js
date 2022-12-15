@@ -158,3 +158,23 @@ i18n.register(
     ns: 'onefocus'
   }
 )
+
+i18n.register(
+  'zh-Hans',
+  {
+    placeholder: '快速跳转到组件……'
+  },
+  {
+    ns: 'onequicknav'
+  }
+)
+
+i18n.register(
+  'en-US',
+  {
+    placeholder: 'Go to component...'
+  },
+  {
+    ns: 'onequicknav'
+  }
+)

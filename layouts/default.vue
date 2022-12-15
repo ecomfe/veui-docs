@@ -158,7 +158,7 @@ $sidebar-width = 280px
 
 main
   min-height 100vh
-  min-width min-content
+  max-width 100vw
 
 .header
   position relative

@@ -5,7 +5,7 @@
     :value="value"
     class="input"
     :autofocus="autofocus"
-    placeholder="快速跳转到组件 💡"
+    :placeholder="t('placeholder')"
     @input="value = $event.target.value"
     @keydown.up.prevent="handleSpin(true)"
     @keydown.down.prevent="handleSpin(false)"
@@ -52,6 +52,7 @@
 <script>
 import nav from '../common/nav'
 import i18n from '../common/i18n'
+import t from 'veui/mixins/i18n'
 
 function findComponents (routes) {
   for (let i = 0; i < routes.length; i++) {
@@ -70,7 +71,7 @@ function findComponents (routes) {
 
 export default {
   name: 'one-quick-nav',
-  mixins: [i18n],
+  mixins: [i18n, t],
   props: {
     autofocus: Boolean
   },

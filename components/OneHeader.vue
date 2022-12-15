@@ -91,6 +91,9 @@ export default {
   flex-grow 1
   justify-content flex-end
 
+.veui-icon
+  font-size 24px
+
 .locale-swith
   display flex
   align-items center

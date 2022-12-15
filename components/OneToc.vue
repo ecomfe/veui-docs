@@ -72,6 +72,7 @@ export default {
 
 @media (max-width 480px)
   .one-toc
+    position fixed
     background-color #fff
     z-index 20
     top 0
@@ -83,7 +84,7 @@ export default {
     transform translateX(100%)
 
     &::before
-      content ''
+      content ""
       position absolute
       top 0
       bottom 0
