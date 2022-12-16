@@ -5,7 +5,7 @@
     <a href="https://github.com/ecomfe/veui/actions/workflows/test.yml">
       <img
         alt="VEUI build status"
-        src="https://img.shields.io/github/workflow/status/ecomfe/veui/test/d20"
+        src="https://img.shields.io/github/actions/workflow/status/ecomfe/veui/test.yml?branch=d20"
         height="20"
       >
     </a>

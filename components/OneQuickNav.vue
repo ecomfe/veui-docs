@@ -162,9 +162,9 @@ export default {
       }
     },
     handleEnter () {
-      if (this.matchedLink) {
-        this.value = this.candidate
-        this.$router.push(this.matchedLink)
+      const link = this.matchedLink
+      if (link) {
+        this.$router.push(link)
         this.value = ''
       }
     },
