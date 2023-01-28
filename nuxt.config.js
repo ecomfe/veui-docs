@@ -137,6 +137,8 @@ module.exports = {
 
       config.resolve.alias.vue$ = 'vue/dist/vue.esm.js'
       config.resolve.alias['vue-monaco'] = '@justfork/vue-monaco'
+
+      config.devtool = false
     },
 
     optimization: {
