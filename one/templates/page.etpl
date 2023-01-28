@@ -4,6 +4,7 @@
 ${content | raw}
 <section class="meta">
   <one-edit-link path="${path}"/>
+  <one-comments/>
 </section>
 </article>
 </template><!-- if: ${boilerplate} -->
@@ -12,7 +13,8 @@ import { htmlAttrs } from '~/common/i18n'<!-- for: ${components} as ${component}
 import ${component} from '~/components/${component}'<!-- /for --><!-- for: ${demos} as ${demo}, ${index} -->
 import Demo${index} from '${demo.src}'<!-- /for --><!-- if: ${demos.length} -->
 import OneDemo from '~/components/OneDemo'<!-- /if --><!-- if: ${path} -->
-import OneEditLink from '~/components/OneEditLink'<!-- /if --><!-- if: ${toc} -->
+import OneEditLink from '~/components/OneEditLink'
+import OneComments from '~/components/OneComments'<!-- /if --><!-- if: ${toc} -->
 import OneToc from '~/components/OneToc'<!-- /if --><!-- if: ${alert} -->
 import { VeuiAlert } from 'veui'<!-- /if -->
 
@@ -23,7 +25,8 @@ export default {
     <!-- /for --><!-- if: ${demos.length} -->OneDemo,<!-- /if --><!-- if: ${alert} -->
     VeuiAlert,<!-- /if --><!-- if: ${toc} -->
     OneToc,<!-- /if --><!-- if: ${path} -->
-    OneEditLink,<!-- /if -->
+    OneEditLink,
+    OneComments<!-- /if -->
   },
   mixins: [htmlAttrs]<!-- if: ${toc} -->,
   data () {

@@ -37,6 +37,7 @@ export default {
   transition transform 0.2s, box-shadow 0.2s
   transform-origin center center
   transform scale(0)
+  z-index 2147483647
 
   &:focus
     transform scale(1)
