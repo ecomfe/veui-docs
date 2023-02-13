@@ -348,6 +348,10 @@
           "slug": "cascader"
         },
         {
+          "title": "Stack - 堆叠容器",
+          "slug": "stack"
+        },
+        {
           "title": "ConfigProvider - 配置器",
           "slug": "config-provider"
         }
@@ -753,6 +757,11 @@
         {
           "title": "Cascader",
           "slug": "cascader",
+          "disabled": true
+        },
+        {
+          "title": "Stack",
+          "slug": "stack",
           "disabled": true
         },
         {
