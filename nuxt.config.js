@@ -58,11 +58,12 @@ module.exports = {
 
   plugins: [
     { src: '~plugins/global.js' },
-    { src: '~plugins/hm.js', ssr: false },
+    { src: '~plugins/hm.js', mode: 'client' },
     { src: '~plugins/i18n.js' },
     { src: '~plugins/l10n.js' },
-    { src: '~plugins/target.js', ssr: false },
-    { src: '~plugins/prism.js', ssr: false }
+    { src: '~plugins/target.js', mode: 'client' },
+    { src: '~plugins/prism.js', mode: 'client' },
+    { src: '~plugins/vercel.js', mode: 'client' }
   ],
 
   /**

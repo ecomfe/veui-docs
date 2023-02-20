@@ -25,6 +25,7 @@
     "@justfork/rehype-autolink-headings": "^5.1.1",
     "@justfork/vue-monaco": "^0.3.1",
     "@stackblitz/sdk": "^1.5.2",
+    "@vercel/analytics": "^0.1.10",
     "@vue/runtime-dom": "^3.2.31",
     "babel-eslint": "^10.1.0",
     "babel-plugin-lodash": "^3.3.4",
