@@ -1,5 +1,5 @@
-import { readFileSync } from 'fs'
-import cheerio from 'cheerio'
+import { load } from 'cheerio'
+import fetch from 'node-fetch'
 import { render } from './page'
 const VERSION_RE = /^(\d+\.\d+\.\d+(?:-[a-z]+(?:\.\d+)?)?)(?:\s+"([^"]+)")?(?:\s+\((\d{4}-\d{2}-\d{2})\))?$/i
 function getVersion (title = '') {
@@ -60,7 +60,7 @@ function trim (text) {
 function extract (html) {
   const changelog = []
 
-  const $ = cheerio.load(html)
+  const $ = load(html)
   const $versions = $('h2')
 
   $versions.each((_, el) => {
@@ -128,9 +128,9 @@ function extract (html) {
   return changelog
 }
 
-export function getChangelogData () {
-  const changelogPath = require.resolve('veui/CHANGELOG.md')
-  const raw = readFileSync(changelogPath, 'utf8')
-  const { contents } = render(raw, changelogPath)
+export async function getChangelogData () {
+  const res = await fetch('https://raw.githubusercontent.com/ecomfe/veui/master/CHANGELOG.md')
+  const raw = await res.text()
+  const { contents } = render(raw, 'veui/CHANGELOG.md')
   return extract(contents)
 }

@@ -311,6 +311,17 @@ export default {
     ['from', 'to', 'compare', 'tag', 'types'].forEach(key => {
       this.$watch(key, this.updateShrugger)
     })
+
+    const { hash } = window.location
+    const version = hash.slice(2).replace(/-/g, '.')
+    if (version) {
+      const index = this.changelog.findIndex(
+        ({ version: v }) => v === version
+      )
+      if (index !== -1 && index !== 0) {
+        this.page = Math.floor(index / this.pageSize) + 1
+      }
+    }
   },
   methods: {
     isMajor,

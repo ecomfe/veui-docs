@@ -12,22 +12,22 @@ const PAGES_DIR = resolve(__dirname, '../../pages')
 const DEMOS_DIR = resolve(__dirname, '../../components/demos')
 const ASSETS_DIR = resolve(__dirname, '../../assets')
 
-export function generatePages (file, stats) {
+export async function generatePages (file, stats) {
   if (!file) {
     rimraf.sync(PAGES_DIR)
     rimraf.sync(DEMOS_DIR)
     rimraf.sync(resolve(__dirname, './deps.json'))
     console.log('Regenerating all files...')
     handleFile(DOCS_DIR)
-    handleChangelog()
+    await handleChangelog()
     console.log('...done.')
   } else {
     handleFile(file, stats)
   }
 }
 
-function handleChangelog () {
-  const changelogData = getChangelogData()
+async function handleChangelog () {
+  const changelogData = await getChangelogData()
   writeFileSync(
     resolve(ASSETS_DIR, 'data', 'changelog.json'),
     JSON.stringify(changelogData, null, 2)
