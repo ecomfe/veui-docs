@@ -46,3 +46,10 @@
 | 名称 | 描述 |
 | -- | -- |
 | ``default`` | 布局内容，可以是 [`Header`](./header) / [`Sidebar`](./sidebar) / [`Footer`](./footer) / [`Content`](./content) 组件或嵌套使用 `Layout` 组件。 |
+
+### 自定义样式
+
+| 名称 | 类型 | 默认值 | 描述 |
+| -- | -- | -- | -- |
+| ``--dls-layout-header-height`` | `<length>` | - | 布局头部的高度。 |
+| ``--dls-layout-footer-height`` | `<length>` | - | 布局底部的高度。 |

@@ -165,3 +165,9 @@ let minLengthRule = {
 | 配置项 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
 | ``field.validityDisplay`` | `'normal' | 'simple'` | `'simple'` | 见 [`validity-display`](#props-validity-display) 属性。 |
+
+### 自定义样式
+
+| 名称 | 类型 | 默认值 | 描述 |
+| -- | -- | -- | -- |
+| ``--dls-field-label-width`` | `<length>` | - | 表单项标签的宽度。 |

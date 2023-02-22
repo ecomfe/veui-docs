@@ -10,7 +10,8 @@ const KNOWN_SCOPES_CONFIG = {
   configs: '全局配置',
   options: '绑定值',
   modifiers: '修饰符',
-  arguments: '参数'
+  arguments: '参数',
+  css: '自定义样式'
 }
 const KNOWN_SCOPES = Object.entries(KNOWN_SCOPES_CONFIG).reduce(
   (acc, [key, value]) => {

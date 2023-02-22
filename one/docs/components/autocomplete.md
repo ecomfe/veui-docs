@@ -47,6 +47,8 @@
 | ``get-length`` | `function(string): number=` | 自定义的字符长度计算函数。 |
 | ``trim`` | `boolean | string=` | `false` | [^trim] |
 | ``autofocus`` | `boolean=` | `false` | 是否自动获取焦点。 |
+| ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
+| ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 
 ^^^datasource
 数据源数组，项目为 `Object` 时字段为 `{label, value, children, ...}`。
@@ -135,4 +137,18 @@
 :::
 
 当在 `input` 中输入或下拉面板中选值会触发该事件，参数是当前输入值或选中时的选中项目的 `value`。
+^^^
+
+### 自定义样式
+
+| 名称 | 类型 | 默认值 | 描述 |
+| -- | -- | -- | -- |
+| ``--dls-dropdown-max-display-items`` | `<integer>` | `8` | [^css-max-display-items] |
+
+^^^css-max-display-items
+下拉选项同时显示的最大项目数，下拉框的最大高度将由此计算得出。
+
+:::tip
+需要通过 [`overlay-style`](#props-overlay-style) 属性来设置。
+:::
 ^^^

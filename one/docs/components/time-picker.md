@@ -40,6 +40,8 @@
 | ``expanded`` | `boolean=` | `false` | [^expanded] |
 | ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
 | ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
+| ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
+| ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 
 ^^^ui
 预设样式。为空格分隔的一组枚举值的组合。
@@ -122,3 +124,16 @@
 | ``clock`` | 时钟。 |
 | ``clear`` | 清除内容。 |
 
+### 自定义样式
+
+| 名称 | 类型 | 默认值 | 描述 |
+| -- | -- | -- | -- |
+| ``--dls-dropdown-max-display-items`` | `<integer>` | `8` | [^css-max-display-items] |
+
+^^^css-max-display-items
+下拉选项同时显示的最大项目数，下拉框的最大高度将由此计算得出。
+
+:::tip
+需要通过 [`overlay-style`](#props-overlay-style) 属性来设置。
+:::
+^^^

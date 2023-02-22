@@ -47,6 +47,8 @@
 | ``expanded`` | `boolean=` | `false` | [^expanded] |
 | ``match`` | `(item, keyword, { ancestors }) => boolean | Array<[number, number]>` | - | 支持自定义高亮逻辑， 默认大小写不敏感，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
 | ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | 支持自定义搜索命中逻辑，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
+| ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
+| ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 
 ^^^ui
 按钮预设样式。
@@ -205,3 +207,17 @@
 | 名称 | 描述 |
 | -- | -- |
 | ``search`` | 搜索。 |
+
+### 自定义样式
+
+| 名称 | 类型 | 默认值 | 描述 |
+| -- | -- | -- | -- |
+| ``--dls-dropdown-max-display-items`` | `<integer>` | `8` | [^css-max-display-items] |
+
+^^^css-max-display-items
+下拉选项同时显示的最大项目数，下拉框的最大高度将由此计算得出。
+
+:::tip
+需要通过 [`overlay-style`](#props-overlay-style) 属性来设置。
+:::
+^^^

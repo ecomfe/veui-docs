@@ -143,3 +143,27 @@ methods: {
 | 名称 | 描述 |
 | -- | -- |
 | ``close`` | 关闭。 |
+
+### 自定义样式
+
+| 名称 | 类型 | 默认值 | 描述 |
+| -- | -- | -- | -- |
+| ``--dls-dialog-content-width`` | `<length>` | - | [^css-width] |
+| ``--dls-dialog-content-width`` | `<length>` | - | [^css-content-width] |
+
+
+^^^css-width
+整个对话框的宽度。不能与 [`--dls-dialog-content-width`](#css---dls-dialog-content-width) 同时设置。
+
+:::tip
+需要通过 [`overlay-style`](#props-overlay-style) 属性来设置。
+:::
+^^^
+
+^^^css-content-width
+对话框内容区域的宽度。不能与 [`--dls-dialog-width`](#css---dls-dialog-content-width) 同时设置。
+
+:::tip
+需要通过 [`overlay-style`](#props-overlay-style) 属性来设置。
+:::
+^^^

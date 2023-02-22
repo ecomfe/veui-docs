@@ -131,3 +131,17 @@
 | 名称 | 描述 |
 | -- | -- |
 | ``expandable`` | 可展开的项目。 |
+
+### 自定义样式
+
+| 名称 | 类型 | 默认值 | 描述 |
+| -- | -- | -- | -- |
+| ``--dls-dropdown-max-display-items`` | `<integer>` | `8` | [^css-max-display-items] |
+
+^^^css-max-display-items
+当 [`position`](#props-position) 属性设置为 `popup` 时，下拉选项同时显示的最大项目数，下拉框的最大高度将由此计算得出。
+
+:::tip
+需要通过 [`overlay-style`](#props-overlay-style) 属性来设置。
+:::
+^^^

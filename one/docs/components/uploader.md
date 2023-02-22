@@ -448,3 +448,9 @@ type PickedFile = {
 | ``file`` | 已上传文件。 |
 | ``alert`` | 校验失败警告。 |
 | ``preview`` | 预览图片。 |
+
+### 自定义样式
+
+| 名称 | 类型 | 默认值 | 描述 |
+| -- | -- | -- | -- |
+| ``--dls-uploader-file-item-width`` | `<length>` | - | 当 [`type`](#props-type) 属性设置为 `file` 时，文件列表项目的宽度。 |

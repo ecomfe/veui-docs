@@ -195,3 +195,10 @@
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
 | ``table.loadingOptions`` | `Object` | `{ type: 'bar', modal: true }` | 加载样式配置，字段详情见 [`loading-options`](#props-loading-options) 属性。 |
+
+### 自定义样式
+
+| 名称 | 类型 | 默认值 | 描述 |
+| -- | -- | -- | -- |
+| ``--dls-table-head-cell-lines`` | `1 | 2 | auto` | `1` | 表头单元格显示的行数。 |
+| ``--dls-table-cell-lines`` | `1 | 2 | auto` | `1` | 表格内容单元格显示的行数。 |
