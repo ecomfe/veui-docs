@@ -1,7 +1,11 @@
 <template>
 <header class="one-header">
   <section class="brand">
-    <h2>VEUI</h2>
+    <h2>
+      <nuxt-link to="/">
+        VEUI
+      </nuxt-link>
+    </h2>
     <a
       class="stars"
       href="https://github.com/ecomfe/veui"

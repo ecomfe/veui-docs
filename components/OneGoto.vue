@@ -1,16 +1,12 @@
 <template>
 <button
-  class="one-back-to-top"
-  :class="{
-    scrolled: !top
-  }"
-  aria-hidden="true"
-  @click="scrollToTop"
+  class="one-goto"
+  @click="goto"
 >
   <veui-icon
     class="icon"
-    name="chevron-up"
-    :label="t('toTop')"
+    name="bullseye-hit"
+    :label="t('goto')"
   />
 </button>
 </template>
@@ -18,8 +14,7 @@
 <script>
 import { Icon } from 'veui'
 import i18n from 'veui/mixins/i18n'
-import 'veui-theme-dls-icons/chevron-up'
-import { debounce } from 'lodash'
+import 'veui-theme-dls-icons/bullseye-hit'
 
 export default {
   name: 'one-back-to-top',
@@ -27,32 +22,17 @@ export default {
     'veui-icon': Icon
   },
   mixins: [i18n],
-  data () {
-    return {
-      top: true
-    }
-  },
-  mounted () {
-    this.check = debounce(() => {
-      this.top = window.scrollY === 0
-    }, 300)
-    window.addEventListener('scroll', this.check)
-    this.check()
-  },
-  beforeDestroy () {
-    this.check.cancel()
-    window.removeEventListener('scroll', this.check)
-  },
   methods: {
-    scrollToTop () {
-      window.scrollTo(0, 0)
+    goto () {
+      this.$emit('goto')
     }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-.one-back-to-top
+.one-goto
+  display none
   position fixed
   right 35px
   bottom 35px
@@ -60,7 +40,6 @@ export default {
   height 43px
   border 1px solid #dbdbdb
   border-radius 50%
-  opacity 0
   outline none
   box-shadow 0 0 2px #dbdbdb
   cursor pointer
@@ -79,10 +58,7 @@ export default {
     left 50%
     transform translate(-50%, -50%)
 
-.scrolled
-  opacity 1
-
 @media (max-width 480px)
-  .one-back-to-top
-    bottom 94px
+  .one-goto
+    display block
 </style>

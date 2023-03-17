@@ -233,6 +233,7 @@ export default {
 .indicator
   font-size 14px
   font-variant-numeric tabular-nums
+  white-space nowrap
 
   .help
     margin-right 8px
@@ -256,4 +257,11 @@ kbd
   border solid 1px #e2e6f0
   border-radius 6px
   box-shadow inset 0 -1px 0 #e2e6f0
+
+@media (max-width: 480px)
+  .one-quick-nav
+    width 100%
+
+  .indicator
+    display none
 </style>

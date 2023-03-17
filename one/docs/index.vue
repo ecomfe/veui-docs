@@ -36,7 +36,7 @@
   </ul>
   <section class="quick-nav">
     <one-quick-nav
-      class="quick-nav"
+      class="qnav"
       autofocus
     />
     <p class="help">
@@ -85,6 +85,7 @@ h1
   width 750px
   flex-wrap wrap
   margin auto
+  padding 0
   justify-content center
   align-items center
   gap 24px
@@ -99,7 +100,10 @@ h1
     width 30%
 
 .quick-nav
-  margin 90px auto 30px
+  margin 90px auto 0
+
+  .qnav
+    margin-bottom 30px
 
 .help
   color #a8b0bf
@@ -115,4 +119,20 @@ kbd
   border solid 1px #e2e6f0
   border-radius 6px
   box-shadow inset 0 -1px 0 #e2e6f0
+
+@media (max-width 480px)
+  .intro
+    min-width 0
+
+  .features
+    display block
+    padding-left 32px
+    width auto
+
+    li
+      background none
+      border none
+      padding 4px 8px
+      list-style disc
+      width 100%
 </style>

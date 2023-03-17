@@ -115,6 +115,26 @@ i18n.register(
 i18n.register(
   'zh-Hans',
   {
+    goto: '快速跳转到组件'
+  },
+  {
+    ns: 'onegoto'
+  }
+)
+
+i18n.register(
+  'en-US',
+  {
+    goto: 'Go to component'
+  },
+  {
+    ns: 'onegoto'
+  }
+)
+
+i18n.register(
+  'zh-Hans',
+  {
     editOnGitHub: '在 GitHub 上编辑此{item}',
     page: '页面',
     demo: '示例',

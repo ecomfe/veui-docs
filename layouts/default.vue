@@ -18,6 +18,10 @@
       </div>
     </div>
     <one-back-to-top/>
+    <one-goto
+      v-if="!isIndex"
+      @goto="quickNavOpen = true"
+    />
     <div
       v-if="$route.path !== '/'"
       v-outside="closeQuickNav"
@@ -40,6 +44,7 @@ import OneMenu from '../components/OneMenu'
 import OneHeader from '../components/OneHeader'
 import OneFooter from '../components/OneFooter'
 import OneBackToTop from '../components/OneBackToTop'
+import OneGoto from '../components/OneGoto'
 import OneQuickNav from '../components/OneQuickNav'
 import nav from '../common/nav'
 import i18n from '../common/i18n'
@@ -66,6 +71,7 @@ export default {
     OneHeader,
     OneFooter,
     OneBackToTop,
+    OneGoto,
     OneQuickNav,
     'veui-config-provider': ConfigProvider
   },
@@ -82,6 +88,9 @@ export default {
   computed: {
     nav () {
       return nav[this.locale]
+    },
+    isIndex () {
+      return this.$route.path === '/'
     }
   },
   watch: {
@@ -136,7 +145,7 @@ export default {
     },
     handleGlobalKeydown (e) {
       if (e.key === 'g' && !isEditingContent(e)) {
-        if (this.$route.path !== '/') {
+        if (!this.isIndex) {
           this.quickNavOpen = true
           e.preventDefault()
         } else {
@@ -188,6 +197,7 @@ main
   position fixed
   left 50%
   bottom 0
+  width max-content
   z-index 10
   display flex
   align-items center
