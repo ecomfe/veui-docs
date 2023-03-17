@@ -209,6 +209,9 @@ main
     overflow auto
     padding-left 0
 
+  .main
+    max-width 100vw
+
   .content
   .footer
     min-width 0

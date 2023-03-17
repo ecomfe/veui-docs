@@ -31,6 +31,7 @@
     >
       <veui-select
         v-model="tag"
+        class="feature-filter"
         searchable
         clearable
         :options="allTags"
@@ -360,6 +361,9 @@ export default {
   & >>> .veui-field
     margin-bottom 12px
 
+    &-main
+      flex-grow 1
+
     & .veui-field
       margin-bottom 0
 
@@ -468,6 +472,22 @@ h2
 
 .pagination
   margin-top 36px
+
+@media (max-width 480px)
+  .types >>> .veui-checkbox-group-items
+    display flex
+    flex-direction column
+    margin 0
+    gap 8px
+    align-items flex-start
+    margin-top 5px
+
+    .veui-checkbox
+      margin 0
+
+  .feature-filter
+    width -webkit-fill-available
+    width -moz-available
 
 @keyframes line-enter
   0%

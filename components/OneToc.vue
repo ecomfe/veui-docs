@@ -1,5 +1,6 @@
 <template>
 <nav
+  v-if="flattenItems.length"
   v-outside="collapseToc"
   class="one-toc"
   :class="{ expanded }"

@@ -2,7 +2,10 @@
 <header class="one-header">
   <section class="brand">
     <h2>VEUI</h2>
-    <a href="https://github.com/ecomfe/veui">
+    <a
+      class="stars"
+      href="https://github.com/ecomfe/veui"
+    >
       <img
         alt="VEUI on GitHub"
         src="https://img.shields.io/github/stars/ecomfe/veui?label=stars&logo=github"
@@ -18,7 +21,7 @@
       }"
       :to="altLocale.disabled ? '' : altLocale.to"
     >
-      {{ altLocale.label }}
+      <span class="locale-full">{{ altLocale.label }}</span><span class="locale-short">{{ altLocale.shortLabel }}</span>
     </nuxt-link>
     <one-search/>
     <a href="https://github.com/ecomfe/veui">
@@ -54,11 +57,13 @@ export default {
       let { canonicalPath, locale, getLocalePath, isPathDisabled } = this
       let altLocale = locale === 'zh-Hans' ? 'en-US' : 'zh-Hans'
       let label = locale === 'zh-Hans' ? 'English' : '中文'
+      let shortLabel = locale === 'zh-Hans' ? 'EN' : '中'
       let disabled = isPathDisabled(canonicalPath, altLocale)
       return {
         to: disabled ? '' : getLocalePath(canonicalPath, altLocale),
         disabled,
-        label
+        label,
+        shortLabel
       }
     }
   }
@@ -107,4 +112,15 @@ export default {
 
   &:hover
     border-color #999
+
+.locale-short
+  display none
+
+@media (max-width 480px)
+  .locale-short
+    display inline
+
+  .stars,
+  .locale-full
+    display none
 </style>
