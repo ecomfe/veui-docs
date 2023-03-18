@@ -27,7 +27,7 @@ module.exports = {
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
       {
         hid: 'description',
         name: 'description',
@@ -38,7 +38,12 @@ module.exports = {
         content: '#0052cc'
       }
     ],
-    link: [{ rel: 'shortcut icon', href: 'https://www.baidu.com/favicon.ico' }]
+    link: [
+      { rel: 'shortcut icon', href: 'https://www.baidu.com/favicon.ico' },
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Alata&display=swap' }
+    ]
   },
   /**
    * Customize the progress bar color

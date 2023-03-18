@@ -1,7 +1,7 @@
 <template>
 <header class="one-header">
   <section class="brand">
-    <h2>
+    <h2 class="veui">
       <nuxt-link to="/">
         VEUI
       </nuxt-link>
@@ -20,7 +20,7 @@
   <section class="desc">
     <nuxt-link
       :class="{
-        'locale-swith': true,
+        'locale-switch': true,
         disabled: altLocale.disabled
       }"
       :to="altLocale.disabled ? '' : altLocale.to"
@@ -90,6 +90,9 @@ export default {
   img
     display block
 
+.veui
+  font-family: 'Alata', sans-serif
+
 .brand,
 .desc
   display flex
@@ -103,7 +106,7 @@ export default {
 .veui-icon
   font-size 24px
 
-.locale-swith
+.locale-switch
   display flex
   align-items center
   padding 0 6px

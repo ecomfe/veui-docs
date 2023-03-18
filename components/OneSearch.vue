@@ -1,5 +1,11 @@
 <template>
 <div class="one-search">
+  <button
+    class="button"
+    @click="focusDocsearch"
+  >
+    <veui-icon name="search"/>
+  </button>
   <veui-search-box
     ref="search"
     v-model="query"
@@ -16,13 +22,15 @@
 </template>
 
 <script>
-import { SearchBox } from 'veui'
+import { Icon, SearchBox } from 'veui'
+import 'veui-theme-dls-icons/search'
 import i18n from '../common/i18n'
 import { createComponent } from './Hit'
 
 export default {
   name: 'one-search',
   components: {
+    'veui-icon': Icon,
     'veui-search-box': SearchBox
   },
   mixins: [i18n],
@@ -119,10 +127,12 @@ export default {
 
       this.teleportQuery(value)
     },
+    focusDocsearch () {
+      this.$refs.docsearch.querySelector('.DocSearch').click()
+    },
     teleportQuery (value) {
       this.query = ''
-      const docsearchButton = this.$refs.docsearch.querySelector('.DocSearch')
-      docsearchButton.click()
+      this.focusDocsearch()
 
       setTimeout(() => {
         const docsearchInput = document.getElementById('docsearch-input')
@@ -135,9 +145,28 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.button
+  display none
+
 .input
   width auto
 
 .docsearch
   display none
+
+@media (max-width 480px)
+  .button
+    display flex
+    align-items center
+    padding 0 6px
+    border 1px solid #dbdbdb
+    border-radius 3px
+    background none
+    height 28px
+    font-size 14px
+    text-decoration none
+    transition all 0.2s
+
+  .input
+    display none
 </style>

@@ -251,6 +251,7 @@ Icon.register({
   border-top-left-radius 4px
   border-top-right-radius 4px
   padding 30px
+  overflow-x auto
 
   & >>> .style-module_body__14MV-
     overflow hidden

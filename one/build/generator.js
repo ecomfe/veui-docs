@@ -27,11 +27,15 @@ export async function generatePages (file, stats) {
 }
 
 async function handleChangelog () {
-  const changelogData = await getChangelogData()
-  writeFileSync(
-    resolve(ASSETS_DIR, 'data', 'changelog.json'),
-    JSON.stringify(changelogData, null, 2)
-  )
+  try {
+    const changelogData = await getChangelogData()
+    writeFileSync(
+      resolve(ASSETS_DIR, 'data', 'changelog.json'),
+      JSON.stringify(changelogData, null, 2)
+    )
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 function handleFile (file, stats) {
