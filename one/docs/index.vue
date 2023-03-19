@@ -1,6 +1,8 @@
 <template>
 <section class="intro">
-  <h1>VEUI</h1>
+  <h1 class="veui">
+    VEUI
+  </h1>
   <p class="badges">
     <a href="https://github.com/ecomfe/veui/actions/workflows/test.yml">
       <img
@@ -63,16 +65,17 @@ export default {
   min-width 560px
   padding 30px 60px 60px
 
-h1,
+.veui,
 .badges
   display flex
   align-items center
   justify-content center
   gap 16px
 
-h1
+.veui
   margin 30px 0 40px
   font-size 32px
+  font-family 'Alata', sans-serif
 
 .desc
   margin 32px
@@ -100,10 +103,10 @@ h1
     width 30%
 
 .quick-nav
-  margin 90px auto 0
+  margin-top 90px
 
   .qnav
-    margin-bottom 30px
+    margin 0 auto 30px
 
 .help
   color #a8b0bf
@@ -135,4 +138,7 @@ kbd
       padding 4px 8px
       list-style disc
       width 100%
+
+  .help
+    display none
 </style>

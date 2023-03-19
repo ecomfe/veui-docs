@@ -91,7 +91,7 @@ export default {
     display block
 
 .veui
-  font-family: 'Alata', sans-serif
+  font-family 'Alata', sans-serif
 
 .brand,
 .desc
