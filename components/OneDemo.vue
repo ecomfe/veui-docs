@@ -7,7 +7,7 @@
     <browser-window
       v-if="browser"
       :url="browser"
-      width="calc(100% - 40px)"
+      class="browser"
       height="400px"
     >
       <one-iframe global-style="body { margin: 0 !important; } .veui-layout { min-width: auto !important; }">
@@ -15,10 +15,13 @@
         <slot/>
       </one-iframe>
     </browser-window>
-    <template v-else>
+    <div
+      v-else
+      class="content"
+    >
       <one-focus ref="focuser"/>
       <slot/>
-    </template>
+    </div>
   </section>
   <section
     v-if="$slots.desc"
@@ -257,6 +260,12 @@ Icon.register({
     overflow hidden
     transform translate(0, 0)
     padding 0
+
+.browser
+  min-width calc(100% - 40px)
+
+.content
+  width max-content
 
 .desc
   border 1px solid #eee

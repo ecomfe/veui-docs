@@ -681,6 +681,11 @@
           "disabled": true
         },
         {
+          "title": "Layout",
+          "slug": "layout",
+          "disabled": true
+        },
+        {
           "title": "Span",
           "slug": "span",
           "disabled": true

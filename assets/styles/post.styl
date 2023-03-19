@@ -23,14 +23,14 @@ margin-y($top, $bottom = $top)
     position absolute
     transition-property transform, opacity
     transition-duration 0.2s
-    transform translate(calc(-1px - 100%), -50%)
+    transform translateX(calc(-1px - 100%))
     opacity 0
     padding 0.1em
 
 [data-target]
   .icon-link
     opacity 1
-    transform translate(-100%, -50%)
+    transform translateX(-100%)
 
 [data-md]
   h1
@@ -41,6 +41,12 @@ margin-y($top, $bottom = $top)
     small
       margin-left 0.25em
       color #999
+      font-size 14px
+      vertical-align middle
+
+      &::before
+        content "/ "
+        font-size 80%
 
   h2
   h2&
@@ -91,16 +97,13 @@ margin-y($top, $bottom = $top)
   h5&
   h6
   h6&
-    position relative
-    display flex
-    align-items center
     color #333
     line-height 1
 
     &:hover
       .icon-link
         opacity 1
-        transform translate(-100%, -50%)
+        transform translateX(-100%)
 
   br
   br&
@@ -400,6 +403,7 @@ table[data-scope]
     h1
     h1&
       font-size 24px
+      text-align center
 
     h2
     h2&

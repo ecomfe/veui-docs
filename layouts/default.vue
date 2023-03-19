@@ -227,7 +227,7 @@ main
     min-width 0
 
   .one-nav
-    position absolute
+    position fixed
 </style>
 
 <style lang="stylus">
