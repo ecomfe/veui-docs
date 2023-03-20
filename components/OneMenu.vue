@@ -132,7 +132,7 @@ export default {
 
 @media (max-width 480px)
   .one-nav
-    position absolute
+    position fixed
     z-index 20
     transition transform 0.3s, box-shadow 0.3s
     transform translateX(-100%)
