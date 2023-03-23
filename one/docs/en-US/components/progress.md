@@ -1,4 +1,4 @@
-# Progress <small>进度</small>
+# Progress
 
 ## Demos
 

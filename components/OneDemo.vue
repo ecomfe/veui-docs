@@ -265,7 +265,8 @@ Icon.register({
   min-width calc(100% - 40px)
 
 .content
-  width max-content
+  width calc(100% - 40px)
+  min-width max-content
 
 .desc
   border 1px solid #eee

@@ -1,4 +1,4 @@
-# OptionGroup <small>选择组</small>
+# OptionGroup
 
 :::tip
 `Option` is required to be used within [`Select`](./select), [`Dropdown`](./dropdown) or other `OptionGroup`, and can be used with [`Option`](./option).

@@ -118,6 +118,10 @@
           "slug": "tag"
         },
         {
+          "title": "TagInput - 标签输入",
+          "slug": "tag"
+        },
+        {
           "title": "Select - 下拉选择",
           "slug": "select"
         },
@@ -548,6 +552,11 @@
         },
         {
           "title": "Tag",
+          "slug": "tag",
+          "disabled": true
+        },
+        {
+          "title": "TagInput",
           "slug": "tag",
           "disabled": true
         },
