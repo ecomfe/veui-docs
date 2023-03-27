@@ -27,13 +27,13 @@ Use the [`autoplay`](#props-autoplay) prop to enable autoplay.
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``datasource`` | `Array<Object>` | `[]` | [^datasource] |
-| ``index`` | `number=` | `0` | [^index] |
-| ``indicator`` | `string=` | `'radio'` | [^indicator] |
-| ``switch-trigger`` | `string=` | `'click'` | [^switch-trigger] |
-| ``autoplay`` | `boolean=` | `false` | Whether to autoplay the carousel. |
-| ``pause-on-hover`` | `boolean=` | `false` | Whether to pause the cycling on hover when autoplaying. |
-| ``interval`` | `number=` | `3000` | The amount of time to delay between automatically cycling an item. |
-| ``wrap`` | `boolean=` | `false` | Whether the carousel should cycle continuously or have hard stops. |
+| ``index`` | `number` | `0` | [^index] |
+| ``indicator`` | `string` | `'radio'` | [^indicator] |
+| ``switch-trigger`` | `string` | `'click'` | [^switch-trigger] |
+| ``autoplay`` | `boolean` | `false` | Whether to autoplay the carousel. |
+| ``pause-on-hover`` | `boolean` | `false` | Whether to pause the cycling on hover when autoplaying. |
+| ``interval`` | `number` | `3000` | The amount of time to delay between automatically cycling an item. |
+| ``wrap`` | `boolean` | `false` | Whether the carousel should cycle continuously or have hard stops. |
 
 ^^^datasource
 The media datasource for the carousel, with the item type being `{src, alt, label}`.

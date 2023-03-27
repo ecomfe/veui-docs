@@ -28,10 +28,10 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``value`` | `string` | - | [^value] |
-| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
-| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
+| ``disabled`` | `boolean` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean` | `false` | 是否为只读状态。 |
 | ``placeholder`` | `string` | - | 搜索框占位符。 |
 | ``autofocus`` | `boolean` | `false` | 是否自动聚焦。 |
 | ``clearable`` | `boolean` | `false` | 是否显示清除按钮。 |
@@ -39,16 +39,16 @@
 | ``composition`` | `boolean` | `false` | 是否感知输入法状态。 |
 | ``suggestions`` | `Array<string>|Array<Object>` | - | [^suggestions] |
 | ``replace-on-select`` | `boolean` | `true` | 选择推荐项时是否自动使用其内容填充文本框。 |
-| ``maxlength`` | `number=` | - | 最大可输入的字符长度。 |
-| ``get-length`` | `function(string): number=` | - | 自定义的字符长度计算函数。 |
-| ``strict`` | `boolean=` | `false` | 是否超出最大字符长度后不允许继续输入。 |
-| ``trim`` | `boolean | string=` | `false` | [^trim] |
+| ``maxlength`` | `number` | - | 最大可输入的字符长度。 |
+| ``get-length`` | `function(string): number` | - | 自定义的字符长度计算函数。 |
+| ``strict`` | `boolean` | `false` | 是否超出最大字符长度后不允许继续输入。 |
+| ``trim`` | `boolean | string` | `false` | [^trim] |
 | ``suggest-trigger`` | `Array<string>|string` | `input` | [^suggest-trigger] |
-| ``expanded`` | `boolean=` | `false` | [^expanded] |
+| ``expanded`` | `boolean` | `false` | [^expanded] |
 | ``match`` | `(item, keyword, { ancestors }) => boolean | Array<[number, number]>` | - | 支持自定义高亮逻辑， 默认大小写不敏感，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
 | ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | 支持自定义搜索命中逻辑，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
-| ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
-| ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
+| ``overlay-class`` | `string | Array | Object` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
+| ``overlay-style`` | `string | Array | Object` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 
 ^^^ui
 按钮预设样式。

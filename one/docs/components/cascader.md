@@ -57,7 +57,7 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``options`` | `Array<Object>` | - | [^options] |
 | ``value`` | `Array<*>|*` | - | [^value] |
 | ``multiple`` | `boolean` | `false` | 是否允许多选。 |
@@ -66,18 +66,18 @@
 | ``placeholder`` | `string` | `cascader.placeholder` | 未选择时的占位文本。 |
 | ``clearable`` | `boolean` | `false` | 是否可以清除已选内容。 |
 | ``searchable`` | `boolean` | `false` | 是否允许搜索选项。 |
-| ``expanded`` | `boolean=` | `false` | [^expanded] |
+| ``expanded`` | `boolean` | `false` | [^expanded] |
 | ``column-trigger`` | `'hover' | 'click'` | `'click'` | [^column-trigger] |
 | ``select-mode`` | `'leaf-only' | 'any'` | `'any'` | [^select-mode] |
 | ``column-width`` | `number | string` | - | [^column-width] |
 | ``show-select-all`` | `boolean` | `false` | 在多选模式下是否有全选按钮。 |
 | ``value-display`` | `'complete' | 'simple'` | `'simple'` | [^value-display] |
-| ``merge-checked`` | `string=` | `keep-all` | [^merge-checked] |
+| ``merge-checked`` | `string` | `keep-all` | [^merge-checked] |
 | ``include-indeterminate`` | `boolean` | `false` | 是否将半选状态的节点加入已选项。[`datasource`](#props-datasource) 节点中的非叶子节点若有部分子孙节点被选中，则为半选状态。 |
-| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
-| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
-| ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
-| ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
+| ``disabled`` | `boolean` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean` | `false` | 是否为只读状态。 |
+| ``overlay-class`` | `string | Array | Object` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
+| ``overlay-style`` | `string | Array | Object` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 | ``match`` | `(item, keyword, { ancestors }) => boolean | Array<[number, number]>` | - | 支持自定义高亮逻辑， 默认大小写不敏感，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
 | ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | 支持自定义搜索命中逻辑，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
 | ``load`` | `Function` | - | [^load] |
@@ -104,8 +104,8 @@
 | `label` | `string` | 选项的文字说明。 |
 | `value` | `*` | 选项对应的值。 |
 | `position` | `string` | 下级节点如何展示，默认弹出，可以设置 `inline` 来内联显示。 |
-| `options` | `Array<Object>=` | 选项的子选项数组，数组项类型同 [`options`](#props-options) 属性数组项。 |
-| `disabled` | `boolean=` | 选项是否为禁用。 |
+| `options` | `Array<Object>` | 选项的子选项数组，数组项类型同 [`options`](#props-options) 属性数组项。 |
+| `disabled` | `boolean` | 选项是否为禁用。 |
 +++
 ^^^
 
@@ -264,7 +264,7 @@ function load({
 | `label` | `string` | 已选项文本。 |
 | `value` | `*` | 已选项值。 |
 | `checked` | `boolean` | 是否已选择某个值。 |
-| `disabled` | `boolean=` | 选项是否禁用。 |
+| `disabled` | `boolean` | 选项是否禁用。 |
 +++
 
 另外，当前选项数据中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。
@@ -305,7 +305,7 @@ function load({
 | `label` | `string` | 选项文本。 |
 | `value` | `*` | 选项值。 |
 | `checked` | `boolean` | 是否已选择。 |
-| `disabled` | `boolean=` | 选项是否禁用。 |
+| `disabled` | `boolean` | 选项是否禁用。 |
 +++
 
 +++多选时的作用域参数

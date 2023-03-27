@@ -20,10 +20,10 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``columns`` | `number=` | `gridcontainer.columns` | 栅格列数。 |
-| ``margin`` | `number=` | `gridcontainer.margin` | 栅格两侧边距 `px` 数值。 |
-| ``gutter`` | `number=` | `gridcontainer.gutter` | 栅格列间距 `px` 数值。 |
-| ``width`` | `number=` | - | 当需要创建定宽布局时，用来传入容器宽度 `px` 数值。 |
+| ``columns`` | `number` | `gridcontainer.columns` | 栅格列数。 |
+| ``margin`` | `number` | `gridcontainer.margin` | 栅格两侧边距 `px` 数值。 |
+| ``gutter`` | `number` | `gridcontainer.gutter` | 栅格列间距 `px` 数值。 |
+| ``width`` | `number` | - | 当需要创建定宽布局时，用来传入容器宽度 `px` 数值。 |
 
 ### 插槽
 

@@ -22,7 +22,7 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``datasource`` | `Array<Object>` | `[]` | [^datasource] |
 | ``expanded`` | `Array` | `[]` | [^expanded] |
 | ``checkable`` | `boolean` | `false` | 子节点是否可勾选。 |
@@ -51,8 +51,8 @@
 | -- | -- | -- |
 | `label` | `string` | 节点的文字描述。 |
 | `value` | `string` | 节点对应的值。 |
-| `disabled` | `boolean=` | 节点是否被禁用。 |
-| `children` | `Array<Object>=` | 节点的子节点数组，数组项类型同 `datasource` 数组项。 |
+| `disabled` | `boolean` | 节点是否被禁用。 |
+| `children` | `Array<Object>` | 节点的子节点数组，数组项类型同 `datasource` 数组项。 |
 +++
 ^^^
 
@@ -110,8 +110,8 @@
 | -- | -- | -- |
 | `label` | `string` | 节点的文本描述。 |
 | `value` | `string` | 节点的值。 |
-| `disabled` | `boolean=` | 节点是否被禁用。 |
-| `children` | `Array<Object>=` | 节点的子节点数组，数组项类型同 `datasource` 数组项。 |
+| `disabled` | `boolean` | 节点是否被禁用。 |
+| `children` | `Array<Object>` | 节点的子节点数组，数组项类型同 `datasource` 数组项。 |
 | `index` | `number` | 当前数据节点在共父节点层级的索引。 |
 | `depth` | `number` | 当前数据节点在树种的深度。 |
 +++

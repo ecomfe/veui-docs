@@ -30,11 +30,11 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``label`` | `string` | - | 折叠面板标题。 |
-| ``expanded`` | `boolean=` | `false` | [^expanded] |
-| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
-| ``name`` | `string | number=` | - | 当内联在 [`Accordion`](./accordion) 组件中使用时，用来提供已展开面板的唯一标识。 |
+| ``expanded`` | `boolean` | `false` | [^expanded] |
+| ``disabled`` | `boolean` | `false` | 是否为禁用状态。 |
+| ``name`` | `string | number` | - | 当内联在 [`Accordion`](./accordion) 组件中使用时，用来提供已展开面板的唯一标识。 |
 | ``toggle-position`` | `string` | `'start'` | [^toggle-position] |
 
 ^^^ui

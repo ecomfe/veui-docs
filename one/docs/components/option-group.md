@@ -15,12 +15,12 @@
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
 | ``label`` | `string` | - | 选项组的标题。 |
-| ``expanded`` | `boolean=` | `false` | 选项列表是否展开。 |
+| ``expanded`` | `boolean` | `false` | 选项列表是否展开。 |
 | ``trigger`` | `'click' | 'hover'` | `'click'` | 选项列表展开的时机。 |
 | ``options`` | `Array<Object>` | `[]` | [^options] |
 | ``position`` | `string` | `inline` | [^position] |
-| ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
-| ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
+| ``overlay-class`` | `string | Array | Object` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
+| ``overlay-style`` | `string | Array | Object` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 
 ^^^options
 选项列表，项目的类型为 `{label, value, disabled, ...}`。
@@ -30,7 +30,7 @@
 | -- | -- | -- |
 | `label` | `string` | 选项的文字说明。 |
 | `value` | `*` | 选项对应的值。 |
-| `disabled` | `boolean=` | 选项是否为禁用。 |
+| `disabled` | `boolean` | 选项是否为禁用。 |
 +++
 ^^^
 
@@ -66,7 +66,7 @@
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `label` | `string` | 选项组标题文本。 |
-| `disabled` | `boolean=` | 选项组是否禁用。 |
+| `disabled` | `boolean` | 选项组是否禁用。 |
 +++
 ^^^
 
@@ -79,7 +79,7 @@
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `label` | `string` | 选项组文本。 |
-| `disabled` | `boolean=` | 选项组是否禁用。 |
+| `disabled` | `boolean` | 选项组是否禁用。 |
 +++
 
 另外，当前选项组数据中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。
@@ -96,7 +96,7 @@
 | `label` | `string` | 选项文本。 |
 | `value` | `string` | 选项值。 |
 | `selected` | `boolean` | 是否已选择。 |
-| `disabled` | `boolean=` | 选项是否禁用。 |
+| `disabled` | `boolean` | 选项是否禁用。 |
 +++
 
 另外，当前选项数据中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。
@@ -113,7 +113,7 @@
 | `label` | `string` | 选项文本。 |
 | `value` | `string` | 选项值。 |
 | `selected` | `boolean` | 是否已选择。 |
-| `disabled` | `boolean=` | 选项是否禁用。 |
+| `disabled` | `boolean` | 选项是否禁用。 |
 +++
 
 另外，当前选项数据中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。

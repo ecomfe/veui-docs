@@ -22,7 +22,7 @@ Available size variants for the [`ui`](#props-ui) prop: `xs` / `s` / `m`.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``type`` | `string` | `'bar'` | The type of the progress. Available values are `bar` / `circular`, denoting progress bar and progress circle respectively. |
 | ``desc`` | `boolean` | `false` | The description of the progress. |
 | ``value`` | `number` | `0` | Progress value. |

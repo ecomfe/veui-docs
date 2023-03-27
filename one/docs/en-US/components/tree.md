@@ -22,7 +22,7 @@ Available size variants for the [`ui`](#props-ui) prop: `s` / `m`.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``datasource`` | `Array<Object>` | `[]` | [^datasource] |
 | ``expanded`` | `Array` | `[]` | [^expanded] |
 | ``checkable`` | `boolean` | `false` | Whether the rows are checkable. |
@@ -50,7 +50,7 @@ The datasource of the tree. The type of node item is `{label, value, children, .
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of each node. |
 | `value` | `string` | The value of each node. |
-| `children` | `Array<Object>=` | The child nodes of each node. The item type is the same as `datasource` items. |
+| `children` | `Array<Object>` | The child nodes of each node. The item type is the same as `datasource` items. |
 +++
 ^^^
 
@@ -108,7 +108,7 @@ The content of each entire node.
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of current node. |
 | `value` | `string` | The value of current node. |
-| `children` | `Array<Object>=` | The array of the child nodes of each node. Shares the same type with `datasource` items. |
+| `children` | `Array<Object>` | The array of the child nodes of each node. Shares the same type with `datasource` items. |
 | `index` | `number` | The index value of current node among its siblings. |
 | `depth` | `number` | The depth of current node. |
 +++

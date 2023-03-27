@@ -13,8 +13,8 @@
 | ``datasource`` | `Array<Object>` | `[]` | [^datasource] |
 | ``selected`` | `Array<string>` | - | [^selected] |
 | ``include-indeterminate`` | `boolean` | `false` | 是否将半选状态的节点加入已选项。`datasource` 节点中的非叶子节点若有部分子孙节点被选中，则为半选状态。 |
-| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
-| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
+| ``disabled`` | `boolean` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean` | `false` | 是否为只读状态。 |
 
 ^^^datasource
 数据源，项目类型为 `{label, value, disabled, children, ...}`。
@@ -23,9 +23,9 @@
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `label` | `string` | 节点的文字说明。 |
-| `value` | `string=` | 节点对应的值。 |
-| `disabled` | `boolean=` | 节点是否为禁用。 |
-| `children` | `Array<Object>=` | 子节点列表，列表项类型与本节点相同。 |
+| `value` | `string` | 节点对应的值。 |
+| `disabled` | `boolean` | 节点是否为禁用。 |
+| `children` | `Array<Object>` | 子节点列表，列表项类型与本节点相同。 |
 +++
 ^^^
 
@@ -53,10 +53,10 @@
 | -- | -- | -- |
 | `label` | `string` | 节点的文字说明。 |
 | `value` | `string` | 节点对应的值。 |
-| `disabled` | `boolean=` | 节点是否为禁用。 |
-| `children` | `Array<Object>=` | 子节点列表，列表项类型与本节点相同。 |
+| `disabled` | `boolean` | 节点是否为禁用。 |
+| `children` | `Array<Object>` | 子节点列表，列表项类型与本节点相同。 |
 | `level` | `number` | 节点所在的层级。顶层节点层级为 `0`。 |
-| `overlay` | `boolean=` | 是否在浮层中。 |
+| `overlay` | `boolean` | 是否在浮层中。 |
 +++
 
 另外，`datasource` 内节点中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。

@@ -30,7 +30,7 @@ Using [`spinner`](#slots-spinner) slot to replace default loading icon.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``loading`` | `boolean` | `false` | Whether the component is in loading state. |
 
 ^^^ui

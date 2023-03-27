@@ -26,18 +26,18 @@ When `multiple` and `range` are both set to `true`, you can select multiple date
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| `type` | `string=` | `'date'` | The type of the calendar. Available values include `'date'` / `'month'` / `'year'`, denoting date/month/year view respectively. When the value is not `'date'`, `multiple` and `range` will be ignored. |
-| `multiple` | `boolean=` | `false` | Whether users can select multiple dates (date ranges). |
-| `range` | `boolean=` | `false` | Whether users can select a date range (date ranges). |
-| `selected` | `Date | Array=` | - | [^selected] |
-| `panel` | `number=` | `1` | The number of month panel displayed. |
-| `today` | `Date=` | `new Date()` | The date of “today”. |
-| `week-start` | `number=` | `calendar.weekStart` | The start of a week. Can be [globally configured](#configs-calendar-weekStart). |
-| `fill-month` | `boolean=` | `true` | Whether to show dates of previous and next month in current panel when there's only one month panel. |
-| `date-class` | `string | Array | Object | function=` | `{}` | Custom HTML `class` for specified date. All [`class` expressions supported by Vue](https://vuejs.org/v2/guide/class-and-style.html#Binding-HTML-Classes) are available for non-function values. When specified as a function, whose signature is `function(Date): string | Array<string>|Object<string, boolean>`, the return value is also `class` expressions suppported by Vue. |
-| `disabled-date` | `function(Date, Date=): boolean=` | `() => false` | Used to customize whether the specified date is disabled or not. The first parameter is the date to be used to determine if the date is disabled. When in the range selection process and a date is already selected, it is passed as the second parameter. |
-| `disabled` | `boolean=` | `false` | Whether the calendar is disabled. |
-| `readonly` | `boolean=` | `false` | Whether the calendar is read-only. |
+| `type` | `string` | `'date'` | The type of the calendar. Available values include `'date'` / `'month'` / `'year'`, denoting date/month/year view respectively. When the value is not `'date'`, `multiple` and `range` will be ignored. |
+| `multiple` | `boolean` | `false` | Whether users can select multiple dates (date ranges). |
+| `range` | `boolean` | `false` | Whether users can select a date range (date ranges). |
+| `selected` | `Date | Array` | - | [^selected] |
+| `panel` | `number` | `1` | The number of month panel displayed. |
+| `today` | `Date` | `new Date()` | The date of “today”. |
+| `week-start` | `number` | `calendar.weekStart` | The start of a week. Can be [globally configured](#configs-calendar-weekStart). |
+| `fill-month` | `boolean` | `true` | Whether to show dates of previous and next month in current panel when there's only one month panel. |
+| `date-class` | `string | Array | Object | function` | `{}` | Custom HTML `class` for specified date. All [`class` expressions supported by Vue](https://vuejs.org/v2/guide/class-and-style.html#Binding-HTML-Classes) are available for non-function values. When specified as a function, whose signature is `function(Date): string | Array<string>|Object<string, boolean>`, the return value is also `class` expressions suppported by Vue. |
+| `disabled-date` | `function(Date, Date=): boolean` | `() => false` | Used to customize whether the specified date is disabled or not. The first parameter is the date to be used to determine if the date is disabled. When in the range selection process and a date is already selected, it is passed as the second parameter. |
+| `disabled` | `boolean` | `false` | Whether the calendar is disabled. |
+| `readonly` | `boolean` | `false` | Whether the calendar is read-only. |
 
 ^^^selected
 :::badges

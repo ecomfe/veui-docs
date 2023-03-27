@@ -36,9 +36,9 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
-| ``multiple`` | `boolean=` | `false` | 是否允许多个子面板同时展开。 |
-| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
+| ``ui`` | `string` | - | [^ui] |
+| ``multiple`` | `boolean` | `false` | 是否允许多个子面板同时展开。 |
+| ``disabled`` | `boolean` | `false` | 是否为禁用状态。 |
 | ``expanded`` | `string | Array<string>` | - | [^expanded] |
 | ``toggle-position`` | `string` | `'start'` | [^toggle-position] |
 

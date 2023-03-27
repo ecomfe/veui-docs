@@ -58,12 +58,12 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``readonly`` | `boolean=` | `false` | 内部输入组件是否为只读状态。 |
-| ``disabled`` | `boolean=` | `false` | 内部输入组件是否为禁用状态。 |
+| ``readonly`` | `boolean` | `false` | 内部输入组件是否为只读状态。 |
+| ``disabled`` | `boolean` | `false` | 内部输入组件是否为禁用状态。 |
 | ``data`` | `Object` | - | [^data] |
-| ``validators`` | `Array<Object>=` | - | [^validators] |
-| ``before-validate`` | `function=` | - | 表单进入提交流程后，进行校验之前的 hook，传入参数为 `(data)`，`data` 为表单 [`data`](#props-data) 属性值的副本。支持返回 `Promise`，返回值或 `Promise.resolve` 的值为 `true` 或 `undefined` 表示流程继续，其它返回值表示中断流程并触发 [`invalid`](#events-invalid) 事件。|
-| ``after-validate`` | `function=` | - | 表单校验成功后，触发 [`submit`](#events-submit) 事件之前的 hook，传入参数为 `(data)`，与 `beforeValidate` 的入参是同一个引用。支持返回 `Promise`，返回值或 `Promise.resolve` 的值为 `true` 或 `undefined` 表示流程继续，其它返回值表示中断流程并触发 [`invalid`](#events-invalid) 事件。|
+| ``validators`` | `Array<Object>` | - | [^validators] |
+| ``before-validate`` | `function` | - | 表单进入提交流程后，进行校验之前的 hook，传入参数为 `(data)`，`data` 为表单 [`data`](#props-data) 属性值的副本。支持返回 `Promise`，返回值或 `Promise.resolve` 的值为 `true` 或 `undefined` 表示流程继续，其它返回值表示中断流程并触发 [`invalid`](#events-invalid) 事件。|
+| ``after-validate`` | `function` | - | 表单校验成功后，触发 [`submit`](#events-submit) 事件之前的 hook，传入参数为 `(data)`，与 `beforeValidate` 的入参是同一个引用。支持返回 `Promise`，返回值或 `Promise.resolve` 的值为 `true` 或 `undefined` 表示流程继续，其它返回值表示中断流程并触发 [`invalid`](#events-invalid) 事件。|
 
 ^^^data
 表单绑定的数据，和表单中的输入组件通过 `v-model` 绑定，也是表单校验时的数据源。

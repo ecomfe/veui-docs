@@ -44,7 +44,7 @@ Use the [`thumb`](#slots-thumb) / [`tip`](#slots-tip) slots to customize the con
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``value`` | `*|Array<*>` | - | [^value] |
 | ``secondary-progress`` | `number | Array<number>` | `0` | Secondary progress value. |
 | ``min`` | `number` | `0` | The minimun value after `value` is processed by the `parse` function. |

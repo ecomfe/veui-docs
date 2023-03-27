@@ -48,7 +48,7 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``routes`` | `Array<Object>` | `[]` | [^routes] |
 
 ^^^ui

@@ -16,16 +16,16 @@
 | -- | -- | -- | -- |
 | ``title`` | `string` | - | 列标题。 |
 | ``field`` | `string` | - | 列的键名，对应所属的 `Table` 组件 [`data`](./table#props-data) 属性数据项的某个字段。 |
-| ``width`` | `string=|number=` | - | 列宽，值为像素值。 |
-| ``sortable`` | `boolean=` | `false` | [^sortable] |
-| ``align`` | `string=` | - | 内容对齐方式，支持 `left` / `center` / `right`。 |
-| ``span`` | `function(number): Object=` | | [^span] |
+| ``width`` | `string=|number` | - | 列宽，值为像素值。 |
+| ``sortable`` | `boolean` | `false` | [^sortable] |
+| ``align`` | `string` | - | 内容对齐方式，支持 `left` / `center` / `right`。 |
+| ``span`` | `function(number): Object` | | [^span] |
 | ``desc`` | `string` | - | 表头描述。 |
 | ``fixed`` | `boolean | 'left' | 'right'` | `false` | 该列是否固定，`'left'` 表示固定在左侧，`'right'` 表示在右侧。 |
 | ``filter-value`` | `*` | - | [^filter-value] |
-| ``filter-multiple`` | `boolean=` | `false` | 内置筛选是否为多选。 |
+| ``filter-multiple`` | `boolean` | `false` | 内置筛选是否为多选。 |
 | ``filter-options`` | `Array<Object>` | - | 筛选选项列表，项目的类型为 `{label, value, options, disabled, ...}`，可参考 [`Select`](./select) 组件的 [`options`](./select#props-options) 属性。 |
-| ``filter-title`` | `string=` | - | 筛选下拉的标题。 |
+| ``filter-title`` | `string` | - | 筛选下拉的标题。 |
 | ``allowed-orders`` | `Array` | `[false, 'desc', 'asc']` | [^allowed-orders] |
 | ``tooltip`` | `boolean | ((item: Object) => string)` | - | 是否当内容溢出时自动显示悬浮提示。默认显示当前单元格的 `textContent`。传入函数时，`item` 参数为整个 data 数据项，返回的字符串将作为提示内容展示。 |
 

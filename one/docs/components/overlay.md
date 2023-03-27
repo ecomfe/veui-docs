@@ -34,7 +34,7 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | 预设样式。`veui-theme-dls` 未提供，可自定义。 |
+| ``ui`` | `string` | - | 预设样式。`veui-theme-dls` 未提供，可自定义。 |
 | ``open`` | `boolean` | `false` | [^open] |
 | ``target`` | `string | Vue | Element` | - | [^target] |
 | ``priority`` | `number` | - | [^priority] |
@@ -42,8 +42,8 @@
 | ``modal`` | `boolean` | `false` | 是否是模态浮层。模态浮层会抢占焦点且限制键盘导航处于浮层内部（关闭后焦点会回归）。 |
 | ``inline`` | `boolean` | `false` | 是否将浮层渲染为内联内容。 |
 | ``local`` | `boolean` | `false` | 是否将浮层保留在原来的 DOM 位置，而非移动到全局位置并参与[全局浮层管理](../advanced/overlay)。 |
-| ``overlay-class`` | `string | Array | Object=` | - | [^overlay-class] |
-| ``overlay-style`` | `string | Array | Object=` | - | [^overlay-style] |
+| ``overlay-class`` | `string | Array | Object` | - | [^overlay-class] |
+| ``overlay-style`` | `string | Array | Object` | - | [^overlay-style] |
 | ``options`` | `Object` | - | 透传给底层 Popper.js 实现的 `modifiers` 配置项，具体内容参见[这里](https://popper.js.org/docs/v1/#modifiers)。 |
 | ``position`` | `string` | 'auto' | 透传给底层 Popper.js 实现的 `placement` 配置项，具体内容参见[这里](https://popper.js.org/docs/v1/#popperplacements--codeenumcode)。 |
 | ``match-width`` | `boolean` | `false` | 当浮层宽度较窄时，是否自动匹配目标元素的宽度。 |
@@ -106,4 +106,4 @@
 
 | 配置项 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``overlay.overlayClass`` | `string | Array | Object=` | `[]` | 全局配置需要添加到浮层容器上的类名，数据格式为所有 [Vue 支持的 `class` 表达式](https://v2.cn.vuejs.org/v2/guide/class-and-style.html#%E7%BB%91%E5%AE%9A-HTML-Class)。 |
+| ``overlay.overlayClass`` | `string | Array | Object` | `[]` | 全局配置需要添加到浮层容器上的类名，数据格式为所有 [Vue 支持的 `class` 表达式](https://v2.cn.vuejs.org/v2/guide/class-and-style.html#%E7%BB%91%E5%AE%9A-HTML-Class)。 |

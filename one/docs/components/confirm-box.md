@@ -13,14 +13,14 @@
 | 名称 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
 | ``open`` | `boolean` | `false` | [^open] |
-| ``title`` | `string=` | - | 标题。 |
-| ``loading`` | `boolean=` | `false` | 是否处于加载状态。处于加载状态时确定按钮也将进入加载状态，无法点击。 |
-| ``disabled`` | `boolean=` | `false` | 是否处于禁用状态。处于禁用状态时确定按钮也将进入禁用状态，无法点击。 |
-| ``ok-label`` | `string=` | - | “确定”按钮的文字内容。 |
-| ``cancel-label`` | `string=` | - | “取消”按钮的文字内容。 |
+| ``title`` | `string` | - | 标题。 |
+| ``loading`` | `boolean` | `false` | 是否处于加载状态。处于加载状态时确定按钮也将进入加载状态，无法点击。 |
+| ``disabled`` | `boolean` | `false` | 是否处于禁用状态。处于禁用状态时确定按钮也将进入禁用状态，无法点击。 |
+| ``ok-label`` | `string` | - | “确定”按钮的文字内容。 |
+| ``cancel-label`` | `string` | - | “取消”按钮的文字内容。 |
 | ``before-close`` | `function(string): boolean=|Promise<boolean=>` | - | 在将触发关闭的操作发生后执行，参考 [`Dialog`](./dialog) 组件的 [`before-close`](./dialog#props-before-close) 属性。 |
-| ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
-| ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
+| ``overlay-class`` | `string | Array | Object` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
+| ``overlay-style`` | `string | Array | Object` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 
 ^^^open
 :::badges

@@ -28,10 +28,10 @@ Available size values for the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l`.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``value`` | `string` | - | [^value] |
-| ``disabled`` | `boolean=` | `false` | Whether the search box is disabled. |
-| ``readonly`` | `boolean=` | `false` | Whether the search box is read-only. |
+| ``disabled`` | `boolean` | `false` | Whether the search box is disabled. |
+| ``readonly`` | `boolean` | `false` | Whether the search box is read-only. |
 | ``placeholder`` | `string` | - | The placeholder text of the search box. |
 | ``autofocus`` | `boolean` | `false` | Whether the search box gains focus automatically. |
 | ``clearable`` | `boolean` | `false` | Whether the clear button is displayed. |
@@ -39,12 +39,12 @@ Available size values for the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l`.
 | ``composition`` | `boolean` | `false` | Whether the search box triggers value change upon composition of IME. |
 | ``suggestions`` | `Array<string>|Array<Object>` | - | [^suggestions] |
 | ``replace-on-select`` | `boolean` | `true` | Whether to replace the content with suggestion item value when it's selected. |
-| ``maxlength`` | `number=` | - | The maximum length of characters that can be entered. |
-| ``get-length`` | `function(string): number=` | - | Used to customize length calculation of the input. |
-| ``strict`` | `boolean=` | `false` | Whether to disallow further input after reaching the maximum character length. |
-| ``trim`` | `boolean | string=` | `false` | [^trim] |
+| ``maxlength`` | `number` | - | The maximum length of characters that can be entered. |
+| ``get-length`` | `function(string): number` | - | Used to customize length calculation of the input. |
+| ``strict`` | `boolean` | `false` | Whether to disallow further input after reaching the maximum character length. |
+| ``trim`` | `boolean | string` | `false` | [^trim] |
 | ``suggest-trigger`` | `Array<string>|string` | `input` | [^suggest-trigger] |
-| ``expanded`` | `boolean=` | `false` | [^expanded] |
+| ``expanded`` | `boolean` | `false` | [^expanded] |
 | ``match`` | `(item, keyword, { ancestors }) => boolean | Array<[number, number]>` | - | Used to customize search highlighting logic. See [`Autocomplete`](./Autocomplete#customizing-search). |
 | ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | Used to customize search hitting logic. See [`Autocomplete`](./Autocomplete#customizing-search). |
 

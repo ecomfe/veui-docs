@@ -15,7 +15,7 @@ Vue.use(toast)
 | 参数名 | 类型 | 说明 |
 | -- | -- | -- |
 | `message` | `string` | 显示在消息弹层中的文本内容。 |
-| `options` | `Object=` | [^options] |
+| `options` | `Object` | [^options] |
 
 ^^^options
 | 名称 | 类型 | 默认值 | 描述 |

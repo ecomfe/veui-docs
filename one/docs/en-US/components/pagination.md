@@ -26,16 +26,16 @@ Use the [`show-total`](#props-show-total) / [`show-page-size`](#props-show-page-
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``page`` | `number` | `1` | Current page index (starts from `1`). |
 | ``total`` | `number` | - | Total items count. |
 | ``to`` | `string | Object` | `''` | [^to] |
 | ``native`` | `boolean` | `false` | Use native links for navigation. |
 | ``page-size`` | `number` | `pagination.pageSize` | [^page-size] |
 | ``page-sizes`` | `Array` | `pagination.pageSizes` | The predefined available page sizes for users to select. |
-| ``show-goto`` | `boolean=` | `false` | Whether to show the go to page section. |
-| ``show-total`` | `boolean=` | `false` | Whether to show the total page count. |
-| ``show-page-size`` | `boolean=` | `false` | Whether to show the page size selection section. |
+| ``show-goto`` | `boolean` | `false` | Whether to show the go to page section. |
+| ``show-total`` | `boolean` | `false` | Whether to show the total page count. |
+| ``show-page-size`` | `boolean` | `false` | Whether to show the page size selection section. |
 
 ^^^ui
 Style variants.

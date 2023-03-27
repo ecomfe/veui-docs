@@ -56,23 +56,23 @@
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
 | ``datasource`` | `Array<Object>` | `[]` | [^datasource] |
-| ``index`` | `number=` | `0` | [^index] |
-| ``indicator`` | `string=` | `'radio'` | [^indicator] |
-| ``switch-trigger`` | `string=` | `'click'` | [^switch-trigger] |
-| ``autoplay`` | `boolean=` | `false` | 是否自动轮播。 |
-| ``pause-on-hover`` | `boolean=` | `false` | 在自动轮播时，鼠标悬浮后是否暂停。 |
-| ``interval`` | `number=` | `3000` | 在自动轮播时，切换间隔的毫秒数。 |
-| ``wrap`` | `boolean=` | `false` | 是否可以循环播放。 |
+| ``index`` | `number` | `0` | [^index] |
+| ``indicator`` | `string` | `'radio'` | [^indicator] |
+| ``switch-trigger`` | `string` | `'click'` | [^switch-trigger] |
+| ``autoplay`` | `boolean` | `false` | 是否自动轮播。 |
+| ``pause-on-hover`` | `boolean` | `false` | 在自动轮播时，鼠标悬浮后是否暂停。 |
+| ``interval`` | `number` | `3000` | 在自动轮播时，切换间隔的毫秒数。 |
+| ``wrap`` | `boolean` | `false` | 是否可以循环播放。 |
 | ``effect`` | `'fade' | 'slide'` | `'fade'` | 指定轮播切换效果，其中 `fade` 仅在切换组个数与同时显示个数相同时生效。 |
-| ``vertical`` | `boolean=` | `false` | 是否是纵向布局的轮播。 |
+| ``vertical`` | `boolean` | `false` | 是否是纵向布局的轮播。 |
 | ``indicator-align`` | `'start' | 'end'` | `start` | 用于支持指示器的相对于布局方向的位置。 |
 | ``indicator-position`` | `'outside' | 'inside'` | `inside` | 用于支持指示器显示在轮播容器的内部/外部。 |
 | ``controls`` | `boolean` | `false` | 是否显示切换按钮。 |
 | ``controls-position`` | `'outside' | 'inside'` | `inside` | 用于支持切换按钮相对于布局方向的位置。 |
 | ``slide-aspect-ratio`` | `number= | '${number}/${number}'` | - | 指定不同轮播项类型的默认配置。 |
-| ``options`` | `Object=` | `{ video: { muted: true, autoplay: true, controls: true, loop: true } }` | 用于指定每个轮播项的纵横比。 |
-| ``slides-per-view`` | `number=` | `1` | 指定同时显示多少个轮播项。 |
-| ``slides-per-group`` | `number=` | `1` | 指定每次前后切换的一组包含多少个轮播项。 |
+| ``options`` | `Object` | `{ video: { muted: true, autoplay: true, controls: true, loop: true } }` | 用于指定每个轮播项的纵横比。 |
+| ``slides-per-view`` | `number` | `1` | 指定同时显示多少个轮播项。 |
+| ``slides-per-group`` | `number` | `1` | 指定每次前后切换的一组包含多少个轮播项。 |
 | ``lazy`` | `boolean= | { preload: number }` | `false` | [^lazy] |
 
 ^^^datasource

@@ -46,7 +46,7 @@ modules: [
 
 * `locale`
 
-  类型：`boolean | string=|Array<string>=`
+  类型：`boolean | string=|Array<string>`
 
   需要注入的语言包标识。当传入 `Array` 类型值时，将自动引入多个语言包。默认值为 `zh-Hans`。目前支持的值有 `zh-Hans` 与 `en-US`。
 
@@ -55,7 +55,7 @@ modules: [
 
 * `global`
 
-  类型：`Array<string>=`
+  类型：`Array<string>`
 
   需要在所有组件中引入的模块。数组项为需要引入的模块的完整路径。
 

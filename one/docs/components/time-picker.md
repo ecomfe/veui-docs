@@ -26,7 +26,7 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``mode`` | `string` | `'second'` | 指定选择的粒度，分别精确到时（`hour`）、分（`minute`）、秒（`second`）。 |
 | ``value`` | `string` |  | [^prop-value] |
 | ``placeholder`` | `string` | `timepicker.placeholder` | 未选择时的占位文本。 |
@@ -37,11 +37,11 @@
 | ``max`` | `string` | - | 最大值限制。 |
 | ``autofocus`` | `boolean` | `false` | 是否自动获得焦点。 |
 | ``clearable`` | `boolean` | `false` | 已选值是否可以清除。 |
-| ``expanded`` | `boolean=` | `false` | [^expanded] |
-| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
-| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
-| ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
-| ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
+| ``expanded`` | `boolean` | `false` | [^expanded] |
+| ``disabled`` | `boolean` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean` | `false` | 是否为只读状态。 |
+| ``overlay-class`` | `string | Array | Object` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
+| ``overlay-style`` | `string | Array | Object` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 
 ^^^ui
 预设样式。为空格分隔的一组枚举值的组合。
@@ -85,7 +85,7 @@
 | -- | -- | -- |
 | `label` | `string` | 用来显示的文字描述。 |
 | `value` | `string` | 实际对应的值。 |
-| `disabled` | `boolean=` | 是否禁用。 |
+| `disabled` | `boolean` | 是否禁用。 |
 | `part` | `string` | 该选项是哪个部分，分别是 `hour` / `minute` / `second`。 |
 +++
 ^^^

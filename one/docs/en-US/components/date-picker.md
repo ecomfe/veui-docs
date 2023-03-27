@@ -26,23 +26,23 @@ When selecting a date range, the [`shortcuts`](#props-shortcuts) prop can be use
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``range`` | `boolean=` | `false` | Whether users can select a date range. When the value is not `'date'`, `range` will be ignored. |
-| ``selected`` | `Date | Array=` | - | [^selected] |
-| ``panel`` | `number=` | `1` | The number of month panel displayed in the dropdown overlay. |
-| ``today`` | `Date=` | `new Date()` | The date of “today”. |
-| ``week-start`` | `number=` | `calendar.weekStart` | The start of a week. Can be [globally configured](./calendar#configs-calendar-weekStart). |
-| ``fill-month`` | `boolean=` | `true` | Whether to show dates of previous and next month in current panel when there's only one month panel. |
-| ``date-class`` | `string | Array | Object | function=` | `{}` | Custom HTML `class` for specified date. All [`class` expressions supported by Vue](https://vuejs.org/v2/guide/class-and-style.html#Binding-HTML-Classes) are available for non-function values. When specified as a function, whose signature is `function(Date): string | Array<string>|Object<string, boolean>`, the return value is also `class` expressions suppported by Vue. |
-| ``disabled-date`` | `function(Date, Date=): boolean=` | `() => false` | Used to customize whether the specified date is disabled or not. The first parameter is the date to be used to determine if the date is disabled. When in the range selection process and a date is already selected, it is passed as the second parameter. |
-| ``clearable`` | `boolean=` | `false` | Whether selected date (ranges) can be cleared. |
-| ``placeholder`` | `string=` | `range ? datepicker.rangePlaceholder : datepicker.placeholder` | The placeholder text displayed when nothing is selected. Can be globally configured respectively for both [range](#configs-datepicker-rangePlaceholder) and [single date](#configs-datepicker-placeholder). |
-| ``format`` | `string | function(Date): string=` | `'YYYY-MM-DD'` | When being string type, denotes the format expression for displaying final selected date (ranges). See details at [the documentation of date-fns](https://date-fns.org/v1.29.0/docs/format). Can also be a function to customize the formatting logic. |
-| ``parse`` | `function(string): Date=` | Custom function to parse the input string expressions into `Date` objects. |
-| ``shortcuts`` | `Array<Object>=` | `datepicker.shortcuts` | [^shortcuts] |
+| ``range`` | `boolean` | `false` | Whether users can select a date range. When the value is not `'date'`, `range` will be ignored. |
+| ``selected`` | `Date | Array` | - | [^selected] |
+| ``panel`` | `number` | `1` | The number of month panel displayed in the dropdown overlay. |
+| ``today`` | `Date` | `new Date()` | The date of “today”. |
+| ``week-start`` | `number` | `calendar.weekStart` | The start of a week. Can be [globally configured](./calendar#configs-calendar-weekStart). |
+| ``fill-month`` | `boolean` | `true` | Whether to show dates of previous and next month in current panel when there's only one month panel. |
+| ``date-class`` | `string | Array | Object | function` | `{}` | Custom HTML `class` for specified date. All [`class` expressions supported by Vue](https://vuejs.org/v2/guide/class-and-style.html#Binding-HTML-Classes) are available for non-function values. When specified as a function, whose signature is `function(Date): string | Array<string>|Object<string, boolean>`, the return value is also `class` expressions suppported by Vue. |
+| ``disabled-date`` | `function(Date, Date=): boolean` | `() => false` | Used to customize whether the specified date is disabled or not. The first parameter is the date to be used to determine if the date is disabled. When in the range selection process and a date is already selected, it is passed as the second parameter. |
+| ``clearable`` | `boolean` | `false` | Whether selected date (ranges) can be cleared. |
+| ``placeholder`` | `string` | `range ? datepicker.rangePlaceholder : datepicker.placeholder` | The placeholder text displayed when nothing is selected. Can be globally configured respectively for both [range](#configs-datepicker-rangePlaceholder) and [single date](#configs-datepicker-placeholder). |
+| ``format`` | `string | function(Date): string` | `'YYYY-MM-DD'` | When being string type, denotes the format expression for displaying final selected date (ranges). See details at [the documentation of date-fns](https://date-fns.org/v1.29.0/docs/format). Can also be a function to customize the formatting logic. |
+| ``parse`` | `function(string): Date` | Custom function to parse the input string expressions into `Date` objects. |
+| ``shortcuts`` | `Array<Object>` | `datepicker.shortcuts` | [^shortcuts] |
 (#configs-datepicker-shortcutsPosition). |
-| ``expanded`` | `boolean=` | `false` | [^expanded] |
-| ``disabled`` | `boolean=` | `false` | Whether the date picker is disabled. |
-| ``readonly`` | `boolean=` | `false` | Whether the date picker is read-only. |
+| ``expanded`` | `boolean` | `false` | [^expanded] |
+| ``disabled`` | `boolean` | `false` | Whether the date picker is disabled. |
+| ``readonly`` | `boolean` | `false` | Whether the date picker is read-only. |
 
 ^^^selected
 :::badges
@@ -100,12 +100,12 @@ The `from` and `to` property in `shortcuts` options, which are used to calculate
   +++Properties
   | Name | Type | Default | Description |
   | -- | -- | -- | -- |
-  | `startOf` | `string=` | `'day'` | The base date. Supported values include `'day'` / `'week'` / `'month'` / `'quarter'` / `'year'`. |
-  | `day` | `number=` | - | Offset in days. |
-  | `week` | `number=` | - | Offset in weeks. |
-  | `month` | `number=` | - | Offset in months. |
-  | `quarter` | `number=` | - | Offset in quarters. |
-  | `year` | `number=` | - | Offset in years. |
+  | `startOf` | `string` | `'day'` | The base date. Supported values include `'day'` / `'week'` / `'month'` / `'quarter'` / `'year'`. |
+  | `day` | `number` | - | Offset in days. |
+  | `week` | `number` | - | Offset in weeks. |
+  | `month` | `number` | - | Offset in months. |
+  | `quarter` | `number` | - | Offset in quarters. |
+  | `year` | `number` | - | Offset in years. |
 
 The final date is calculated by accumulating the offset onto the base date.
 

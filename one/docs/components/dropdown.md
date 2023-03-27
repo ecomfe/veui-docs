@@ -48,17 +48,17 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
-| ``options`` | `Array<Object>=` | `[]` | [^options] |
+| ``ui`` | `string` | - | [^ui] |
+| ``options`` | `Array<Object>` | `[]` | [^options] |
 | ``label`` | `string` | - | 下拉按钮的描述文本。 |
-| ``trigger`` | `string=` | `'click'` | 触发下拉框展开的时机，可选值为 `'click'` / `'hover'`。 |
-| ``split`` | `boolean=` | `false` | 是否将下拉按钮分离为指令按钮和切换下拉按钮两部分。 |
-| ``expanded`` | `boolean=` | `false` | [^expanded] |
-| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
-| ``searchable`` | `boolean=` | `false` | 是否可搜索。 |
-| ``placeholder`` | `string=` | - | 搜索框的输入占位符。 |
-| ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
-| ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
+| ``trigger`` | `string` | `'click'` | 触发下拉框展开的时机，可选值为 `'click'` / `'hover'`。 |
+| ``split`` | `boolean` | `false` | 是否将下拉按钮分离为指令按钮和切换下拉按钮两部分。 |
+| ``expanded`` | `boolean` | `false` | [^expanded] |
+| ``disabled`` | `boolean` | `false` | 是否为禁用状态。 |
+| ``searchable`` | `boolean` | `false` | 是否可搜索。 |
+| ``placeholder`` | `string` | - | 搜索框的输入占位符。 |
+| ``overlay-class`` | `string | Array | Object` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
+| ``overlay-style`` | `string | Array | Object` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 | ``match`` | `(item, keyword, { ancestors }) => boolean | Array<[number, number]>` | - | 支持自定义高亮逻辑， 默认大小写不敏感，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
 | ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | 支持自定义搜索命中逻辑，参考 [`Autocomplete`](./Autocomplete#自定义搜索逻辑)。 |
 
@@ -85,8 +85,8 @@
 | -- | -- | -- |
 | `label` | `string` | 选项的文字说明。 |
 | `value` | `*` | 选项对应的值。 |
-| `options` | `Array<Object>=` | 选项的子选项数组，数组项类型同 [`options`](#props-options) 属性数组项。 |
-| `disabled` | `boolean=` | 选项是否为禁用。 |
+| `options` | `Array<Object>` | 选项的子选项数组，数组项类型同 [`options`](#props-options) 属性数组项。 |
+| `disabled` | `boolean` | 选项是否为禁用。 |
 +++
 ^^^
 
@@ -131,7 +131,7 @@
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `label` | `string` | 选项组标题文本。 |
-| `disabled` | `boolean=` | 选项组是否禁用。 |
+| `disabled` | `boolean` | 选项组是否禁用。 |
 +++
 
 另外，当前选项数据中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。
@@ -147,7 +147,7 @@
 | -- | -- | -- |
 | `label` | `string` | 选项文本。 |
 | `value` | `*` | 选项值。 |
-| `disabled` | `boolean=` | 选项是否禁用。 |
+| `disabled` | `boolean` | 选项是否禁用。 |
 +++
 
 另外，当前选项数据中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。
@@ -163,7 +163,7 @@
 | -- | -- | -- |
 | `label` | `string` | 选项文本。 |
 | `value` | `*` | 选项值。 |
-| `disabled` | `boolean=` | 选项是否禁用。 |
+| `disabled` | `boolean` | 选项是否禁用。 |
 +++
 
 另外，当前选项数据中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。

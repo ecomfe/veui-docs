@@ -14,8 +14,8 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``readonly`` | `boolean=` | `false` | 内部输入组件是否为只读状态。 |
-| ``disabled`` | `boolean=` | `false` | 内部输入组件是否为禁用状态。 |
+| ``readonly`` | `boolean` | `false` | 内部输入组件是否为只读状态。 |
+| ``disabled`` | `boolean` | `false` | 内部输入组件是否为禁用状态。 |
 | ``label`` | `string` | - | 表单项集合描述。 |
 | ``tip`` | `string` | - | 表单项集合提示。 |
 | ``name`` | `string` | - | 表单项集合名称，用于展示错误消息的定位。 |

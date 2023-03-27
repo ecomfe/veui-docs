@@ -76,7 +76,7 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``data`` | `Array<Object>` | - | 表格数据。 |
 | ``key-field`` | `string` | - | 用于指定充当表格数据的键的列标志符。值对应 [`data`](#props-data) 属性中数据项的某个字段名称。对应字段的值则会作为行元素的 [`key` 属性](https://v2.cn.vuejs.org/v2/guide/list.html#key)输出。当 [`selectable`](#props-selectable) 属性为 `true` 时，也可以用来指定在存在纵向合并单元格的情况下以哪一列的不同行作为选择项，此时值必须来自内部某个 `Column` 组件的 [`field`](./column#props-field) 属性。 |
 | ``selectable`` | `boolean` | `false` | 是否支持表格行的选择。 |

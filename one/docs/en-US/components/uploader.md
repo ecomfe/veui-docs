@@ -20,7 +20,7 @@ Set the [`type`](#props-type) prop to `image` to use the image upload mode.
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``type`` | `string` | `'file'` | [^type] |
 | ``value`` | `Object | Array<Object>` | - | [^value] |
 | ``key-field`` | `string` | `'key'` | Used to specify a unique key for the file object, as a basis for correctly handling the order of the file list when the data changes. |
@@ -112,9 +112,9 @@ Converts response data to standard format that can be consumed by the uploader, 
 | Property | Type | Description |
 | -- | -- | -- |
 | `success` | `boolean` | Whether the upload succeeded. |
-| `name` | `string=` | The name of the file. Required when `success` is `true`. |
-| `src` | `string=` | The location of the file. Required when `success` is `true`. |
-| `message` | `string=` | Error message when upload fails. Required when `success` is `false`. |
+| `name` | `string` | The name of the file. Required when `success` is `true`. |
+| `src` | `string` | The location of the file. Required when `success` is `true`. |
+| `message` | `string` | Error message when upload fails. Required when `success` is `false`. |
 
 Additional fields can be added to the response data. These data fields will be included in the [`value`](#props-value) prop and parameter of callbacks [`change`](#events-change), [`success`](#events-success), [`failure`](#events-failure), [`remove`](#events-remove) and [`progress`](#events-progress) events. Can be [globally configured](#configs-uploader-convert-response).
 +++
@@ -165,7 +165,7 @@ In image upload mode, it is used to customize the actions on the floating toolba
 | -- | -- | -- |
 | `name` | `string` | The name of the action item. When the button is clicked, an event with the same name will be emitted, with `(file: Object, index: number)` as the callback parameter, `file` is the file object that triggered the event, and `index` is the number of the file in the list. |
 | `icon` | `string` | The icon of the action item. |
-| `disabled` | `boolean=` | Whether the action item is disabled. If this property is undefined, the disabled state of the action item follows the disabled state of the component. |
+| `disabled` | `boolean` | Whether the action item is disabled. If this property is undefined, the disabled state of the action item follows the disabled state of the component. |
 ^^^
 
 ### Slots

@@ -20,7 +20,7 @@ Set `status` property of the `step` to `error`, if the step fails.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``steps`` | `Array` | - | [^steps] |
 | ``current`` | `number` | - | The index of current step. |
 

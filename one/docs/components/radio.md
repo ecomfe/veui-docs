@@ -20,11 +20,11 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``checked`` | `boolean` | `false` | [^checked] |
 | ``value`` | `*` | `true` | 选中状态对应的值。 |
-| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
-| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
+| ``disabled`` | `boolean` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean` | `false` | 是否为只读状态。 |
 
 ^^^ui
 预设样式。

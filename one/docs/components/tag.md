@@ -26,13 +26,13 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
-| ``type`` | `string=` | `'default'` | [^type] |
-| ``selectable`` | `boolean=` | `false` | 是否允许选择。 |
-| ``selected`` | `boolean=` | `false` | [^selected] |
-| ``removable`` | `boolean=` | `false` | 是否允许删除。 |
-| ``removed`` | `boolean=` | `false` | [^removed] |
-| ``disabled`` | `boolean=` | `false` | 是否禁用。 |
+| ``ui`` | `string` | - | [^ui] |
+| ``type`` | `string` | `'default'` | [^type] |
+| ``selectable`` | `boolean` | `false` | 是否允许选择。 |
+| ``selected`` | `boolean` | `false` | [^selected] |
+| ``removable`` | `boolean` | `false` | 是否允许删除。 |
+| ``removed`` | `boolean` | `false` | [^removed] |
+| ``disabled`` | `boolean` | `false` | 是否禁用。 |
 
 :::warning
 [`selectable`](#props-selectable) 和 [`removable`](#props-removable) 属性不允许同时为 `true`。

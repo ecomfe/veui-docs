@@ -47,7 +47,7 @@ As we know, in popular component libraries like Ant Design and Element, theme pa
 
 * `locale`
 
-  Type: `boolean | string=|Array<string>=`
+  Type: `boolean | string=|Array<string>`
 
   The ID of the locale modules to be injected. Array values indicate to inject multiple locale packages. Defaults to `zh-Hans`. Current available values are `zh-Hans` and `en-US`.
 
@@ -55,7 +55,7 @@ As we know, in popular component libraries like Ant Design and Element, theme pa
 
 * `global`
 
-  Type: `Array<string>=`
+  Type: `Array<string>`
 
   The array of module paths to be injected int every component.
 

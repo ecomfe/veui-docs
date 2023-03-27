@@ -12,7 +12,7 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | `'m'` | [^ui] |
+| ``ui`` | `string` | `'m'` | [^ui] |
 | ``status`` | `'success' | 'error' | 'info' | 'warning' | 'aux'` | `'info'` | [^status] |
 | ``display`` | `'normal' | 'popup' | 'simple' | 'standalone'` | `'normal'` | [^display] |
 

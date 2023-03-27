@@ -30,25 +30,25 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``datasource`` | `Array<string | Object>=` | `[]` | [^datasource] |
+| ``datasource`` | `Array<string | Object>` | `[]` | [^datasource] |
 | ``value`` | `*` | - | [^prop-value] |
-| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
-| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
+| ``disabled`` | `boolean` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean` | `false` | 是否为只读状态。 |
 | ``match`` | `(item, keyword, { ancestors }) => boolean | [number, number] | Array<[number, number]>` | - | 支持自定义高亮逻辑，默认进行大小写不敏感的子串匹配。 |
 | ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | 支持自定义搜索命中逻辑。 |
-| ``suggest-trigger`` | `string | Array<string>=` | `'input'` | 触发建议下拉面板的时机，可用值有：`'input'`、`'focus'`。 |
-| ``expanded`` | `boolean=` | `false` | [^expanded] |
-| ``placeholder`` | `string=` | - | 输入占位符。 |
-| ``clearable`` | `boolean=` | `false` | 是否显示清除按钮。 |
-| ``composition`` | `boolean=` | `false` | 是否感知输入法输入过程的值。 |
-| ``select-on-focus`` | `boolean=` | `false` | 聚焦时是否自动选中输入框文本。 |
-| ``maxlength`` | `number=` | - | 输入字符串的长度限制。 |
-| ``strict`` | `boolean=` | `false` | 输入字符串到达长度限制以后是否禁止继续输入。 |
-| ``get-length`` | `function(string): number=` | 自定义的字符长度计算函数。 |
-| ``trim`` | `boolean | string=` | `false` | [^trim] |
-| ``autofocus`` | `boolean=` | `false` | 是否自动获取焦点。 |
-| ``overlay-class`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
-| ``overlay-style`` | `string | Array | Object=` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
+| ``suggest-trigger`` | `string | Array<string>` | `'input'` | 触发建议下拉面板的时机，可用值有：`'input'`、`'focus'`。 |
+| ``expanded`` | `boolean` | `false` | [^expanded] |
+| ``placeholder`` | `string` | - | 输入占位符。 |
+| ``clearable`` | `boolean` | `false` | 是否显示清除按钮。 |
+| ``composition`` | `boolean` | `false` | 是否感知输入法输入过程的值。 |
+| ``select-on-focus`` | `boolean` | `false` | 聚焦时是否自动选中输入框文本。 |
+| ``maxlength`` | `number` | - | 输入字符串的长度限制。 |
+| ``strict`` | `boolean` | `false` | 输入字符串到达长度限制以后是否禁止继续输入。 |
+| ``get-length`` | `function(string): number` | 自定义的字符长度计算函数。 |
+| ``trim`` | `boolean | string` | `false` | [^trim] |
+| ``autofocus`` | `boolean` | `false` | 是否自动获取焦点。 |
+| ``overlay-class`` | `string | Array | Object` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
+| ``overlay-style`` | `string | Array | Object` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 
 ^^^datasource
 数据源数组，项目为 `Object` 时字段为 `{label, value, children, ...}`。
@@ -58,7 +58,7 @@
 | -- | -- | -- |
 | `label` | `string` | 节点的文字描述。 |
 | `value` | `string` | 节点对应的值，一般是页内 hash， 如 `#button` 。 |
-| `children` | `Array<Object>=` | 节点的子节点数组，数组项类型同 [`items`](#props-items) 数组项。 |
+| `children` | `Array<Object>` | 节点的子节点数组，数组项类型同 [`items`](#props-items) 数组项。 |
 +++
 ^^^
 

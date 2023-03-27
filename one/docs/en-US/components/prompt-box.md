@@ -14,13 +14,13 @@
 | ``title`` | `string` | - | The title of the prompt box. |
 | ``content`` | `string` | - | The description text above the text input. |
 | ``value`` | `string` | `''` | [^value] |
-| ``loading`` | `boolean=` | `false` | Wehter the prompt box is in loading state. When loading, the OK button will enter loading state as well and become unclickable. |
-| ``disabled`` | `boolean=` | `false` | Wehter the prompt box is disabled. When disabled, the OK button will be disabled as well and become unclickable. |
-| ``ok-label`` | `string=` | - | The text content of the “OK” button. |
-| ``cancel-label`` | `string=` | - | The text content of the “Cancel” button. |
+| ``loading`` | `boolean` | `false` | Wehter the prompt box is in loading state. When loading, the OK button will enter loading state as well and become unclickable. |
+| ``disabled`` | `boolean` | `false` | Wehter the prompt box is disabled. When disabled, the OK button will be disabled as well and become unclickable. |
+| ``ok-label`` | `string` | - | The text content of the “OK” button. |
+| ``cancel-label`` | `string` | - | The text content of the “Cancel” button. |
 | ``before-close`` | `function(string): boolean=|Promise<boolean=>` | - | Executed when user interaction is about to trigger closing the prompt box. See the [`before-close`](./dialog#props-before-close) prop of the [`Dialog`](./dialog) component. |
-| ``overlay-class`` | `string | Array | Object=` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
-| ``overlay-style`` | `string | Array | Object=` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
+| ``overlay-class`` | `string | Array | Object` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
+| ``overlay-style`` | `string | Array | Object` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
 
 ^^^open
 :::badges

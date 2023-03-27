@@ -16,11 +16,11 @@ Vue.use(prompt)
 
 | 参数名 | 类型 | 说明 |
 | -- | -- | -- |
-| `content` | `string=` | 显示在输入弹框中的文本内容。 |
-| `title` | `string=` | 输入弹框的标题。 |
-| `options` | `Object=` | [^options] |
-| `okLabel` | `string=` | “确定”按钮的文字内容。 |
-| `cancelLabel` | `string=` | “取消”按钮的文字内容。 |
+| `content` | `string` | 显示在输入弹框中的文本内容。 |
+| `title` | `string` | 输入弹框的标题。 |
+| `options` | `Object` | [^options] |
+| `okLabel` | `string` | “确定”按钮的文字内容。 |
+| `cancelLabel` | `string` | “取消”按钮的文字内容。 |
 
 ^^^options
 | 名称 | 类型 | 描述 |

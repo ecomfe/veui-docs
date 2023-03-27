@@ -38,11 +38,11 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``items`` | `Array<Object>` | `[]` | [^items] |
 | ``value`` | `Array` | `[]` | [^value] |
-| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
-| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
+| ``disabled`` | `boolean` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean` | `false` | 是否为只读状态。 |
 | ``empty-value`` | `*` | - | 当取消所有选择时组件需要默认选中的值，通常用于存在 `exclusive` 选项的场景。 |
 
 ^^^ui
@@ -65,8 +65,8 @@
 | -- | -- | -- |
 | `label` | `string` | 选项的文字说明。 |
 | `value` | `*` | 选项对应的值。 |
-| `disabled` | `boolean=` | 选项是否为禁用。 |
-| `exclusive` | `boolean=` | 选项是否为排它项。当选项为排它项时，选中该项将取消选中其它所有选项。 |
+| `disabled` | `boolean` | 选项是否为禁用。 |
+| `exclusive` | `boolean` | 选项是否为排它项。当选项为排它项时，选中该项将取消选中其它所有选项。 |
 | `desc` | `string` | 选项的额外描述信息。 |
 +++
 ^^^
@@ -97,7 +97,7 @@
 | `label` | `string` | 选项文本。 |
 | `value` | `*` | 选项值。 |
 | `index` | `number` | 选项在 `items` 中的序号。 |
-| `disabled` | `boolean=` | 选项是否禁用。 |
+| `disabled` | `boolean` | 选项是否禁用。 |
 +++
 
 另外，`items` 内数据项中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。

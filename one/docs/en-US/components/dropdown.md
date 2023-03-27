@@ -48,15 +48,15 @@ Use the [`trigger`](#props-trigger) prop to specify when to open the dropdown me
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
-| ``options`` | `Array<Object>=` | `[]` | [^options] |
+| ``ui`` | `string` | - | [^ui] |
+| ``options`` | `Array<Object>` | `[]` | [^options] |
 | ``label`` | `string` | - | The descriptive label of the dropdown button. |
-| ``trigger`` | `string=` | `'click'` | When to trigger the dropdown to open. Available values are `'click'` / `'hover'`. |
-| ``split`` | `boolean=` | `false` | Whether to split the dropdown button into a command button and a toggle button for the dropdown layer. |
-| ``expanded`` | `boolean=` | `false` | [^expanded] |
-| ``disabled`` | `boolean=` | `false` | Whether the dropdown is disabled. |
-| ``overlay-class`` | `string | Array | Object=` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
-| ``overlay-style`` | `string | Array | Object=` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
+| ``trigger`` | `string` | `'click'` | When to trigger the dropdown to open. Available values are `'click'` / `'hover'`. |
+| ``split`` | `boolean` | `false` | Whether to split the dropdown button into a command button and a toggle button for the dropdown layer. |
+| ``expanded`` | `boolean` | `false` | [^expanded] |
+| ``disabled`` | `boolean` | `false` | Whether the dropdown is disabled. |
+| ``overlay-class`` | `string | Array | Object` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
+| ``overlay-style`` | `string | Array | Object` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
 
 ^^^ui
 Style variants.
@@ -80,8 +80,8 @@ The list of options with the option type being `{label, value, dropdown, disable
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the option. |
 | `value` | `*` | The value of the option. |
-| `options` | `Array<Object>=` | The child options of current option. The item type is the same as the items of the [`options`](#props-options) prop. |
-| `disabled` | `boolean=` | Whether the option is disabled. |
+| `options` | `Array<Object>` | The child options of current option. The item type is the same as the items of the [`options`](#props-options) prop. |
+| `disabled` | `boolean` | Whether the option is disabled. |
 +++
 ^^^
 
@@ -123,7 +123,7 @@ The label text of each option group (option with child `options`). Displays the 
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the option group. |
-| `disabled` | `boolean=` | Whether the option group is disabled. |
+| `disabled` | `boolean` | Whether the option group is disabled. |
 +++
 
 Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.
@@ -138,7 +138,7 @@ The label text of each option (option without child `options`). Displays the `la
 | `label` | `string` | The descriptive label of the option. |
 | `value` | `*` | The value of the option. |
 | `selected` | `boolean` | Whether the the option is selected. |
-| `disabled` | `boolean=` | Whether the option is disabled. |
+| `disabled` | `boolean` | Whether the option is disabled. |
 +++
 
 Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.
@@ -153,7 +153,7 @@ The entire content area of each option (option without child `options`). Display
 | `label` | `string` | The descriptive label of the option. |
 | `value` | `*` | The value of the option. |
 | `selected` | `boolean` | Whether the the option is selected. |
-| `disabled` | `boolean=` | Whether the option is disabled. |
+| `disabled` | `boolean` | Whether the option is disabled. |
 +++
 
 Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.

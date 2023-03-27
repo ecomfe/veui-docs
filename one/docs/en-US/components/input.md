@@ -26,19 +26,19 @@ Use the [`disabled`](#props-disabled) prop to set an input to disabled state.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``value`` | `string` | '' | [^value] |
-| ``disabled`` | `boolean=` | `false` | Whether the input is disabled. |
-| ``readonly`` | `boolean=` | `false` | Whether the input is read-only. |
-| ``type`` | `string=` | `'text'` | [^type] |
-| ``placeholder`` | `string=` | - | The placeholder text of the input. |
-| ``clearable`` | `boolean=` | `false` | Whether to show a clear button. |
-| ``composition`` | `boolean=` | `false` | Whether the input process should be aware of composition. |
-| ``select-on-focus`` | `boolean=` | `false` | Whether to select text content when focused. |
-| ``maxlength`` | `number=` | - | The maximum length of characters that can be entered. |
-| ``get-length`` | `function(string): number=` | - | Used to customize length calculation of the input. |
-| ``strict`` | `boolean=` | `false` | Whether to disallow further input after reaching the maximum character length. |
-| ``trim`` | `boolean | string=` | `false` | [^trim] |
+| ``disabled`` | `boolean` | `false` | Whether the input is disabled. |
+| ``readonly`` | `boolean` | `false` | Whether the input is read-only. |
+| ``type`` | `string` | `'text'` | [^type] |
+| ``placeholder`` | `string` | - | The placeholder text of the input. |
+| ``clearable`` | `boolean` | `false` | Whether to show a clear button. |
+| ``composition`` | `boolean` | `false` | Whether the input process should be aware of composition. |
+| ``select-on-focus`` | `boolean` | `false` | Whether to select text content when focused. |
+| ``maxlength`` | `number` | - | The maximum length of characters that can be entered. |
+| ``get-length`` | `function(string): number` | - | Used to customize length calculation of the input. |
+| ``strict`` | `boolean` | `false` | Whether to disallow further input after reaching the maximum character length. |
+| ``trim`` | `boolean | string` | `false` | [^trim] |
 
 ^^^ui
 Style variants.

@@ -24,7 +24,7 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``placement`` | `string` | `'right'` | [^placement] |
 | ``modal`` | `boolean` | `true` | 是否是模态抽屉。模态抽屉默认遮挡底层（无法点击）且抢占焦点（关闭后焦点会回归）。 |
 | ``title`` | `string` | - | 抽屉标题文本。如果指定了 [`title`](#slots-title) 插槽，则优先使用 [`title`](#slots-title) 插槽。 |
@@ -32,12 +32,12 @@
 | ``closable`` | `boolean` | `true` | 是否显示关闭按钮。 |
 | ``outside-closable`` | `boolean` | `false` | 点击抽屉外部时是否关闭抽屉。 |
 | ``escapable`` | `boolean` | `false` | 按下 <kbd>esc</kbd> 键是否可以关闭抽屉。仅在 `closable` 为 `true` 时生效。 |
-| ``priority`` | `number=` | - | 抽屉浮层层叠权重，参考 [`Overlay`](./overlay) 组件的 [`priority`](./overlay#props-priority) 属性。 |
+| ``priority`` | `number` | - | 抽屉浮层层叠权重，参考 [`Overlay`](./overlay) 组件的 [`priority`](./overlay#props-priority) 属性。 |
 | ``footless`` | `boolean` | `false` | 是否不显示默认的底部操作栏。 |
-| ``loading`` | `boolean=` | `false` | 是否处于加载状态。处于加载状态时确定按钮也将进入加载状态，无法点击。 |
-| ``disabled`` | `boolean=` | `false` | 是否处于禁用状态。处于禁用状态时确定按钮也将进入禁用状态，无法点击。 |
-| ``ok-label`` | `string=` | - | “确定”按钮的文字内容。 |
-| ``cancel-label`` | `string=` | - | “取消”按钮的文字内容。 |
+| ``loading`` | `boolean` | `false` | 是否处于加载状态。处于加载状态时确定按钮也将进入加载状态，无法点击。 |
+| ``disabled`` | `boolean` | `false` | 是否处于禁用状态。处于禁用状态时确定按钮也将进入禁用状态，无法点击。 |
+| ``ok-label`` | `string` | - | “确定”按钮的文字内容。 |
+| ``cancel-label`` | `string` | - | “取消”按钮的文字内容。 |
 | ``before-close`` | `function(string): boolean=|Promise<boolean=>` | - | 在将触发关闭的操作发生后执行，参考 [`Dialog`](./dialog) 组件的 [`before-close`](./dialog#props-before-close) 属性。 |
 | ``overlay-class`` | `string | Object` | - | 抽屉浮层根元素类名，参考 [`Overlay`](./overlay) 组件的 [`overlay-class`](./overlay#props-overlay-class) 属性。 |
 

@@ -32,18 +32,18 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``datasource`` | `Array<Object>` | `[]` | [^datasource] |
-| ``searchable`` | `boolean=` | `true` | 是否允许搜索。 |
-| ``filter`` | `function=` | 见描述 | [^filter] |
-| ``selected`` | `Array=` | `[]` | [^selected] |
-| ``candidate-placeholder`` | `string=` | - | 待选区内搜索框的占位文本。 |
-| ``selected-placeholder`` | `string=` | - | 已选区内搜索框的占位文本。 |
-| ``candidate-title`` | `string=` | - | “待选项”标题的文字内容。 |
-| ``selected-title`` | `string=` | - | “已选项”标题的文字内容。 |
-| ``selected-show-mode`` | `string=` | `'tree'` | [^selected-show-mode] |
+| ``searchable`` | `boolean` | `true` | 是否允许搜索。 |
+| ``filter`` | `function` | 见描述 | [^filter] |
+| ``selected`` | `Array` | `[]` | [^selected] |
+| ``candidate-placeholder`` | `string` | - | 待选区内搜索框的占位文本。 |
+| ``selected-placeholder`` | `string` | - | 已选区内搜索框的占位文本。 |
+| ``candidate-title`` | `string` | - | “待选项”标题的文字内容。 |
+| ``selected-title`` | `string` | - | “已选项”标题的文字内容。 |
+| ``selected-show-mode`` | `string` | `'tree'` | [^selected-show-mode] |
 | ``keys`` | `string | function` | `'value'` | [^keys] |
-| ``merge-checked`` | `string=` | `keep-all` | [^merge-checked] |
+| ``merge-checked`` | `string` | `keep-all` | [^merge-checked] |
 
 ^^^ui
 预设样式。
@@ -64,8 +64,8 @@
 | -- | -- | -- |
 | `label` | `string` | 项目的文字描述。 |
 | `value` | `string` | 项目对应的值。 |
-| `disabled` | `boolean=` | 项目是否被禁用。 |
-| `children` | `Array<Object>=` | 项目的子项目数组，数组项类型同 `datasource` 数组项。 |
+| `disabled` | `boolean` | 项目是否被禁用。 |
+| `children` | `Array<Object>` | 项目的子项目数组，数组项类型同 `datasource` 数组项。 |
 +++
 ^^^
 
@@ -175,8 +175,8 @@ function (keyword, { label }) {
 | -- | -- | -- |
 | `label` | `string` | 项目的文本描述。 |
 | `value` | `string` | 项目的值。 |
-| `disabled` | `boolean=` | 项目是否被禁用。 |
-| `children` | `Array<Object>=` | 项目的子项目数组，数组项类型同 `datasource` 数组项。 |
+| `disabled` | `boolean` | 项目是否被禁用。 |
+| `children` | `Array<Object>` | 项目的子项目数组，数组项类型同 `datasource` 数组项。 |
 | `index` | `number` | 当前项目在同层级兄弟项中的索引。 |
 | `depth` | `number` | 当前项目在树结构中的深度。 |
 +++

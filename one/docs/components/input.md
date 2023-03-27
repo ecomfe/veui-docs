@@ -38,19 +38,19 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``value`` | `string` | '' | [^value] |
-| ``disabled`` | `boolean=` | `false` | 输入框是否为禁用状态。 |
-| ``readonly`` | `boolean=` | `false` | 输入框是否为只读状态。 |
-| ``type`` | `string=` | `'text'` | [^type] |
-| ``placeholder`` | `string=` | - | 输入占位符。 |
-| ``clearable`` | `boolean=` | `false` | 是否显示清除按钮。 |
-| ``composition`` | `boolean=` | `false` | 是否感知输入法输入过程的值。 |
-| ``select-on-focus`` | `boolean=` | `false` | 聚焦时是否自动选中输入框文本。 |
-| ``maxlength`` | `number=` | - | 最大可输入的字符长度。 |
-| ``get-length`` | `function(string): number=` | - | 自定义的字符长度计算函数。 |
-| ``strict`` | `boolean=` | `false` | 是否超出最大字符长度后不允许继续输入。 |
-| ``trim`` | `boolean | string=` | `false` | [^trim] |
+| ``disabled`` | `boolean` | `false` | 输入框是否为禁用状态。 |
+| ``readonly`` | `boolean` | `false` | 输入框是否为只读状态。 |
+| ``type`` | `string` | `'text'` | [^type] |
+| ``placeholder`` | `string` | - | 输入占位符。 |
+| ``clearable`` | `boolean` | `false` | 是否显示清除按钮。 |
+| ``composition`` | `boolean` | `false` | 是否感知输入法输入过程的值。 |
+| ``select-on-focus`` | `boolean` | `false` | 聚焦时是否自动选中输入框文本。 |
+| ``maxlength`` | `number` | - | 最大可输入的字符长度。 |
+| ``get-length`` | `function(string): number` | - | 自定义的字符长度计算函数。 |
+| ``strict`` | `boolean` | `false` | 是否超出最大字符长度后不允许继续输入。 |
+| ``trim`` | `boolean | string` | `false` | [^trim] |
 
 ^^^ui
 预设样式。

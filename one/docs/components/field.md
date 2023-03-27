@@ -14,9 +14,9 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
-| ``readonly`` | `boolean=` | `false` | 内部输入组件是否为只读状态。 |
-| ``disabled`` | `boolean=` | `false` | 内部输入组件是否为禁用状态。 |
+| ``ui`` | `string` | - | [^ui] |
+| ``readonly`` | `boolean` | `false` | 内部输入组件是否为只读状态。 |
+| ``disabled`` | `boolean` | `false` | 内部输入组件是否为禁用状态。 |
 | ``label`` | `string` | - | 表单项描述。 |
 | ``tip`` | `string` | - | 表单项提示。 |
 | ``name`` | `string` | - | 表单项名称，可用于指定数据字段名或展示错误消息的定位。 |
@@ -24,8 +24,8 @@
 | ``rules`` | `string | Array<Object>` | - | [^rules] |
 | ``help`` | `string` | - | 表单项辅助文案。 |
 | ``help-position`` | `'bottom' | 'side'` | `'side'` | [^help-position] |
-| ``abstract`` | `boolean=` | `false` | 抽象表单项，抽象的项目没有标题，也不会展示校验信息。 |
-| ``withhold-validity`` | `boolean=` | `false` | 当设置为 `true` 时，该表单项内容中的输入组件（如 `veui-input` ）不会自动绑定校验事件，也不会自动进入 `invalid` 状态，使用方可以通过 `default` 插槽来自行定制。 |
+| ``abstract`` | `boolean` | `false` | 抽象表单项，抽象的项目没有标题，也不会展示校验信息。 |
+| ``withhold-validity`` | `boolean` | `false` | 当设置为 `true` 时，该表单项内容中的输入组件（如 `veui-input` ）不会自动绑定校验事件，也不会自动进入 `invalid` 状态，使用方可以通过 `default` 插槽来自行定制。 |
 | ``validity-display`` | `'normal' | 'simple'` | `'simple'` | [^validity-display] |
 | ``required`` | `boolean` | `false` | 用来在没有 `required` 规则时是否显示必要性星号提示。 |
 

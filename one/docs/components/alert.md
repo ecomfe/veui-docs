@@ -32,12 +32,12 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``type`` | `string=` | `'success'` | [^type] |
+| ``type`` | `string` | `'success'` | [^type] |
 | ``title`` | `string` | - | 消息标题。 |
 | ``message`` | `string | Array<string>` | - | 消息内容，当类型为数组时会显示多条数据并支持切换上一条/下一条。 |
-| ``closable`` | `boolean=` | `false` | 是否允许关闭。 |
-| ``open`` | `boolean=` | `true` | [^open] |
-| ``index`` | `number=` | `0` | [^index] |
+| ``closable`` | `boolean` | `false` | 是否允许关闭。 |
+| ``open`` | `boolean` | `true` | [^open] |
+| ``index`` | `number` | `0` | [^index] |
 
 ^^^type
 警告框类型。
@@ -86,7 +86,7 @@
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `message` | `string` | 消息文本。 |
-| `index` | `number=` | 当有多条消息时，当前消息的索引值。 |
+| `index` | `number` | 当有多条消息时，当前消息的索引值。 |
 | `close` | `function` | 用于关闭提示。 |
 +++
 ^^^

@@ -17,8 +17,8 @@ See [the demos of `Select`](./select#demos) or [the demos of `Dropdown`](./dropd
 | ``label`` | `string` | The descriptive label of the option group. |
 | ``options`` | `Array<Object>` | `[]` | [^options] |
 | ``position`` | `string` | `inline` | [^position] |
-| ``overlay-class`` | `string | Array | Object=` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
-| ``overlay-style`` | `string | Array | Object=` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
+| ``overlay-class`` | `string | Array | Object` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
+| ``overlay-style`` | `string | Array | Object` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
 
 ^^^options
 The list of options with the option type being `{label, value, disabled, ...}`.
@@ -28,7 +28,7 @@ The list of options with the option type being `{label, value, disabled, ...}`.
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the option. |
 | `value` | `*` | The value of the option. |
-| `disabled` | `boolean=` | Whether the option is disabled. |
+| `disabled` | `boolean` | Whether the option is disabled. |
 +++
 ^^^
 
@@ -60,7 +60,7 @@ The label of the option group. Displays the [`label`](#props-label) prop by defa
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the option group. |
-| `disabled` | `boolean=` | Whether the option group is disabled. |
+| `disabled` | `boolean` | Whether the option group is disabled. |
 +++
 ^^^
 
@@ -71,7 +71,7 @@ The label text of each option group (option with child `options`). Displays the 
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the option group. |
-| `disabled` | `boolean=` | Whether the option group is disabled. |
+| `disabled` | `boolean` | Whether the option group is disabled. |
 +++
 
 Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.
@@ -86,7 +86,7 @@ The label text of each option (option without child `options`). Displays the `la
 | `label` | `string` | The descriptive label of the option. |
 | `value` | `*` | The value of the option. |
 | `selected` | `boolean` | Whether the the option is selected. |
-| `disabled` | `boolean=` | Whether the option is disabled. |
+| `disabled` | `boolean` | Whether the option is disabled. |
 +++
 
 Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.
@@ -101,7 +101,7 @@ The entire content area of each option (option without child `options`). Display
 | `label` | `string` | The descriptive label of the option. |
 | `value` | `*` | The value of the option. |
 | `selected` | `boolean` | Whether the the option is selected. |
-| `disabled` | `boolean=` | Whether the option is disabled. |
+| `disabled` | `boolean` | Whether the option is disabled. |
 +++
 
 Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.

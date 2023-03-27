@@ -48,7 +48,7 @@ Handling [`redirect`](#events-redirect) event instead of redirect with router.
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``routes`` | `Array<Object>` | `[]` | [^routes] |
 
 ^^^ui

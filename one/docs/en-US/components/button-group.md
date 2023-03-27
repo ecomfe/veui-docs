@@ -32,9 +32,9 @@ Use the [`disabled`](#props-disabled) prop to set the button group to disabled s
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``items`` | `Array<Object>` | - | [^items] |
-| ``disabled`` | `boolean=` | `false` | Whether the button is disabled. |
+| ``disabled`` | `boolean` | `false` | Whether the button is disabled. |
 
 ^^^ui
 Style variants. A space-separated list of enum values.
@@ -60,7 +60,7 @@ The datasource array for buttons in the group. The type of each item is `{label,
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The label text of the button. |
-| `value` | `*=` | Will emit an event with the same name when given a string value. |
+| `value` | `*` | Will emit an event with the same name when given a string value. |
 +++
 ^^^
 
@@ -80,9 +80,9 @@ Shows the text specified by the `label` property by default.
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The label text of the button. |
-| `value` | `*=` | The value of button item. |
+| `value` | `*` | The value of button item. |
 | `index` | `number` | The index of the button within `items`. |
-| `disabled` | `boolean=` | Whether the button is disabled. |
+| `disabled` | `boolean` | Whether the button is disabled. |
 +++
 
 Additionally, custom properties apart from the listed ones will also be passes into the slot props object via `v-bind`.

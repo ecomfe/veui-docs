@@ -32,10 +32,10 @@ Use the [`loading`](#props-loading) prop to set a button to loading state (which
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
-| ``disabled`` | `boolean=` | `false` | Whether the button is disabled. |
-| ``type`` | `string=` | `'button'` | [^type] |
-| ``loading`` | `boolean=` | `false` | Whether the button is in loading state. Loading buttons won't respond to user interactions. |
+| ``ui`` | `string` | - | [^ui] |
+| ``disabled`` | `boolean` | `false` | Whether the button is disabled. |
+| ``type`` | `string` | `'button'` | [^type] |
+| ``loading`` | `boolean` | `false` | Whether the button is in loading state. Loading buttons won't respond to user interactions. |
 
 ^^^ui
 Style variants. A space-separated list of enum values.

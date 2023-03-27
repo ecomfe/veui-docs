@@ -32,20 +32,20 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``value`` | `string` | '' | [^value] |
-| ``disabled`` | `boolean=` | `false` | 文本域是否为禁用状态。 |
-| ``readonly`` | `boolean=` | `false` | 文本域是否为只读状态。 |
+| ``disabled`` | `boolean` | `false` | 文本域是否为禁用状态。 |
+| ``readonly`` | `boolean` | `false` | 文本域是否为只读状态。 |
 | ``line-number`` | `boolean` | `false` | 是否显示行号。 |
 | ``rows`` | `number | string` | - | 默认情况下文本域可视行数。 |
 | ``placeholder`` | `string` | - | 输入占位符。 |
 | ``composition`` | `boolean` | `false` | 是否感知输入法输入过程的值。 |
 | ``select-on-focus`` | `boolean` | `false` | 聚焦时是否自动选中文本域文本。 |
 | ``autoresize`` | `boolean` | `false` | 高度是否会被内容撑开。 |
-| ``get-length`` | `function(string): number=` | 自定义的字符长度计算函数。 |
-| ``resizable`` | `boolean=` | 指定是否可以调节长宽。 |
-| ``maxlength`` | `number=` | - | 最大可输入的字符长度。 |
-| ``strict`` | `boolean=` | `false` | 是否超出最大字符长度后不允许继续输入。 |
+| ``get-length`` | `function(string): number` | 自定义的字符长度计算函数。 |
+| ``resizable`` | `boolean` | 指定是否可以调节长宽。 |
+| ``maxlength`` | `number` | - | 最大可输入的字符长度。 |
+| ``strict`` | `boolean` | `false` | 是否超出最大字符长度后不允许继续输入。 |
 
 ^^^ui
 预设样式。

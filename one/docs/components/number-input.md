@@ -34,10 +34,10 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``value`` | `number` | - | [^value] |
-| ``readonly`` | `boolean=` | `false` | 数字输入框是否为只读状态。 |
-| ``disabled`` | `boolean=` | `false` | 数字输入框是否为禁用状态。 |
+| ``readonly`` | `boolean` | `false` | 数字输入框是否为只读状态。 |
+| ``disabled`` | `boolean` | `false` | 数字输入框是否为禁用状态。 |
 | ``placeholder`` | `string` | - | 输入占位符。 |
 | ``select-on-focus`` | `boolean` | `false` | 聚焦时是否自动选中数字输入框文本。 |
 | ``max`` | `number` | - | 允许的最大值。 |

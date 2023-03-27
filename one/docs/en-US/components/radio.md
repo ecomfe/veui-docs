@@ -20,11 +20,11 @@ Use the [`value`](#props-value) prop to specify the value bound to `v-model`.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``checked`` | `boolean` | `false` | [^checked] |
 | ``value`` | `*` | `true` | The value of the radio. |
-| ``disabled`` | `boolean=` | `false` | Whether the radio is disabled. |
-| ``readonly`` | `boolean=` | `false` | Whether the radio is read-only. |
+| ``disabled`` | `boolean` | `false` | Whether the radio is disabled. |
+| ``readonly`` | `boolean` | `false` | Whether the radio is read-only. |
 
 ^^^ui
 Style variants.

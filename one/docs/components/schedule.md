@@ -16,8 +16,8 @@
 | ``shortcuts`` | `Array` | `schedule.shortcuts` | [^shortcuts] |
 | ``shortcuts-display`` | `string` | `'inline'` | 快捷选择项的显示方式，支持 `inline` / `popup`，分别对应内联按钮组与下拉选择。 |
 | ``statuses`` | `Array<{label: string, value: string}>` | `schedule.statuses` | 图例数据源。会为图例项目添加 `class` 值 <code>&#0096;veui-schedule-legend-${value}&#0096;</code>，`label` 则会显示为图例文本。 |
-| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
-| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
+| ``disabled`` | `boolean` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean` | `false` | 是否为只读状态。 |
 
 ^^^selected
 :::badges

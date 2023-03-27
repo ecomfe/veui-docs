@@ -26,18 +26,18 @@ Available size variants for the [`ui`](#props-ui) prop: `s` / `m`.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``datasource`` | `Array<Object>` | `[]` | [^datasource] |
-| ``searchable`` | `boolean=` | `true` | Whether to allow search. |
-| ``filter`` | `function=` | See description | [^filter] |
-| ``selected`` | `Array=` | `[]` | [^selected] |
-| ``candidate-placeholder`` | `string=` | - | The placeholder text in the search input of the candidate panel. |
-| ``selected-placeholder`` | `string=` | - | The placeholder text in the search input of the selected panel. |
-| ``candidate-label`` | `string=` | - | The title of the candidates panel. |
-| ``selected-label`` | `string=` | - | The title of the selected panel. |
-| ``selected-show-mode`` | `string=` | `'tree'` | [^selected-show-mode] |
-| ``keys`` | `string | function=` | `'value'` | The customized unique key for `datasource` items. String values can be used to specify which field value is used. Also a function can bu used to specify a customized key value. |
-| ``merge-checked`` | `string=` | `keep-all` | [^merge-checked] |
+| ``searchable`` | `boolean` | `true` | Whether to allow search. |
+| ``filter`` | `function` | See description | [^filter] |
+| ``selected`` | `Array` | `[]` | [^selected] |
+| ``candidate-placeholder`` | `string` | - | The placeholder text in the search input of the candidate panel. |
+| ``selected-placeholder`` | `string` | - | The placeholder text in the search input of the selected panel. |
+| ``candidate-label`` | `string` | - | The title of the candidates panel. |
+| ``selected-label`` | `string` | - | The title of the selected panel. |
+| ``selected-show-mode`` | `string` | `'tree'` | [^selected-show-mode] |
+| ``keys`` | `string | function` | `'value'` | The customized unique key for `datasource` items. String values can be used to specify which field value is used. Also a function can bu used to specify a customized key value. |
+| ``merge-checked`` | `string` | `keep-all` | [^merge-checked] |
 
 ^^^ui
 Style variants.
@@ -58,7 +58,7 @@ The datasource of the transfer. The type of node item is `{label, value, childre
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of each item. |
 | `value` | `string` | The value of each item. |
-| `children` | `Array<Object>=` | The child items of each item. The item type is the same as `datasource` items. |
+| `children` | `Array<Object>` | The child items of each item. The item type is the same as `datasource` items. |
 +++
 ^^^
 
@@ -160,7 +160,7 @@ The content of each item inside the candidate panel.
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of current item. |
 | `value` | `string` | The value of current item. |
-| `children` | `Array<Object>=` | The array of the child items of each item. Shares the same type with `datasource` items. |
+| `children` | `Array<Object>` | The array of the child items of each item. Shares the same type with `datasource` items. |
 | `index` | `number` | The index of current item among its siblings. |
 | `depth` | `number` | The depth of current item in the tree structure. |
 +++

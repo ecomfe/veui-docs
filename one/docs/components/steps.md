@@ -22,10 +22,10 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``steps`` | `Array` | - | [^steps] |
 | ``current`` | `number` | - | 当前步骤的索引值。 |
-| ``stateless`` | `boolean=` | `false` | 是否启用无状态纯展示样式。 |
+| ``stateless`` | `boolean` | `false` | 是否启用无状态纯展示样式。 |
 
 ^^^ui
 预设样式。

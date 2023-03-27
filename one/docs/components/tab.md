@@ -16,7 +16,7 @@
 | -- | -- | -- | -- |
 | ``label`` | `string` | - | 选项卡文本。 |
 | ``name`` | `string` | - | 选项卡名称。 |
-| ``disabled`` | `boolean=` | `false` | 选项卡是否禁用。 |
+| ``disabled`` | `boolean` | `false` | 选项卡是否禁用。 |
 | ``to`` | `string | Object` | - | [^to] |
 | ``matches`` | `function(Route, Route): boolean` | - | [^matches] |
 | ``native`` | `boolean` | `false` | 路由模式是否强制使用原生的 `<a>` 元素。 |

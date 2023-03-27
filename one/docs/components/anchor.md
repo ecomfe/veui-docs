@@ -29,10 +29,10 @@
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
 | ``items`` | `Array<{value, label, children}>` | `[]` | [^items] |
-| ``sticky`` | `boolean=` | `false` | 是否有吸附效果。 |
-| ``container`` | `string | HTMLElement | Window=` | - | `Anchor` 吸附与判断锚点激活所参考的容器。 |
-| ``target-offset`` | `string | number=` | `0` | 当某个锚点处于到容器的 `target-offset` 位置，那么对应的锚点链接处于激活状态。数值类型值为 `px` 值，也可以传入如 `'10%'` 的百分比字符串，将基于 `container` 对应容器的高度比例进行计算。 |
-| ``sticky-offset`` | `string | number=` | `0` | 对于 sticky `Anchor` 而言，当容器滚动到 `sticky-offset` 位置，那么该 `Anchor` 开始吸附。不同值类型含义同 [`target-offset`](#props-target-offset) 属性。 |
+| ``sticky`` | `boolean` | `false` | 是否有吸附效果。 |
+| ``container`` | `string | HTMLElement | Window` | - | `Anchor` 吸附与判断锚点激活所参考的容器。 |
+| ``target-offset`` | `string | number` | `0` | 当某个锚点处于到容器的 `target-offset` 位置，那么对应的锚点链接处于激活状态。数值类型值为 `px` 值，也可以传入如 `'10%'` 的百分比字符串，将基于 `container` 对应容器的高度比例进行计算。 |
+| ``sticky-offset`` | `string | number` | `0` | 对于 sticky `Anchor` 而言，当容器滚动到 `sticky-offset` 位置，那么该 `Anchor` 开始吸附。不同值类型含义同 [`target-offset`](#props-target-offset) 属性。 |
 
 ^^^items
 数据源数组，每个项目类型为 `{label, value, children, ...}`。
@@ -42,7 +42,7 @@
 | -- | -- | -- |
 | `label` | `string` | 节点的文字描述。 |
 | `value` | `string` | 节点对应的值，一般是页内 hash， 如 `#button` 。 |
-| `children` | `Array<Object>=` | 节点的子节点数组，数组项类型同 [`items`](#props-items) 数组项。 |
+| `children` | `Array<Object>` | 节点的子节点数组，数组项类型同 [`items`](#props-items) 数组项。 |
 +++
 ^^^
 

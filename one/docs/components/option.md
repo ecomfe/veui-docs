@@ -16,8 +16,8 @@
 | -- | -- | -- | -- |
 | ``label`` | `string` | - | 选项的文本。 |
 | ``value`` | `*` | - | 选项对应的值。 |
-| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
-| ``hidden`` | `boolean=` | `false` | 是否为隐藏状态。 |
+| ``disabled`` | `boolean` | `false` | 是否为禁用状态。 |
+| ``hidden`` | `boolean` | `false` | 是否为隐藏状态。 |
 
 ### 插槽
 

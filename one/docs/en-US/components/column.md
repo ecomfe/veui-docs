@@ -16,15 +16,15 @@ See [the demos of `Table`](./table#demos).
 | -- | -- | -- | -- |
 | ``title`` | `string` | - | The column title. |
 | ``field`` | `string` | - | The field name as a key of items in the [`data`](./table#props-data) prop of the parent `Table` component. |
-| ``width`` | `string=|number=` | - | The column width in `px` value. |
-| ``sortable`` | `boolean=` | `false` | [^sortable] |
-| ``align`` | `string=` | - | The alignment of cell content in the column. Supports `left` / `center` / `right`. |
-| ``span`` | `function(number): Object=` | | [^span] |
+| ``width`` | `string=|number` | - | The column width in `px` value. |
+| ``sortable`` | `boolean` | `false` | [^sortable] |
+| ``align`` | `string` | - | The alignment of cell content in the column. Supports `left` / `center` / `right`. |
+| ``span`` | `function(number): Object` | | [^span] |
 | ``desc`` | `string` | - | The description of the column head. |
 | ``filter-value`` | `*` | - | [^filter-value] |
-| ``filter-multiple`` | `boolean=` | `false` | Whether the built-in filter is multi-select or not. |
+| ``filter-multiple`` | `boolean` | `false` | Whether the built-in filter is multi-select or not. |
 | ``filter-options`` | `Array<Object>` | - | The list of filter options, with items of type `{label, value, options, disabled, ...}`, see the [`options`](./select#options) prop of the [`Select`](./select) component. |
-| ``filter-title`` | `string=` | - | The title of the filter dropdown. |
+| ``filter-title`` | `string` | - | The title of the filter dropdown. |
 | ``allowed-orders`` | `Array` | `[false, 'desc', 'asc']` | [^allowed-orders] |
 | ``tooltip`` | `boolean | ((item: Object) => string)` | - | Whether to automatically show tooltips when content overflows. The tooltip displays the `textContent` of each cell by default. When being a function, the `item` argument is the entire data item and the returned string will be displayed as tooltip content. |
 

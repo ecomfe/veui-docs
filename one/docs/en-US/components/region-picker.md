@@ -13,8 +13,8 @@
 | ``datasource`` | `Array<Object>` | `[]` | [^datasource] |
 | ``selected`` | `Array<string>` | - | [^selected] |
 | ``include-indeterminate`` | `boolean` | `false` | Whether to include indeterminate node into selected nodes. Non-leaf nodes inside `datasource` will be in indeterminate state if their descendant nodes are partially selected. |
-| ``disabled`` | `boolean=` | `false` | Whether the region picker is disabled. |
-| ``readonly`` | `boolean=` | `false` | Whether the region picker is read-only. |
+| ``disabled`` | `boolean` | `false` | Whether the region picker is disabled. |
+| ``readonly`` | `boolean` | `false` | Whether the region picker is read-only. |
 
 ^^^datasource
 The datasource of the region picker. The type of node item is `{label, value, disabled, children, ...}`.
@@ -24,8 +24,8 @@ The datasource of the region picker. The type of node item is `{label, value, di
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the node. |
 | `value` | `string` | The value of the node. |
-| `disabled` | `boolean=` | Whether the node is disabled. |
-| `children` | `Array<Object>=` | The child nodes of the node. The node type is the same as `datasource` items. |
+| `disabled` | `boolean` | Whether the node is disabled. |
+| `children` | `Array<Object>` | The child nodes of the node. The node type is the same as `datasource` items. |
 +++
 ^^^
 
@@ -51,10 +51,10 @@ The label content of each node. Displays the `label` property of each item by de
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the node. |
 | `value` | `string` | The value of the node. |
-| `disabled` | `boolean=` | Whether the node is disabled. |
-| `children` | `Array<Object>=` | The child nodes of the node. The node type is the same as `datasource` items. |
+| `disabled` | `boolean` | Whether the node is disabled. |
+| `children` | `Array<Object>` | The child nodes of the node. The node type is the same as `datasource` items. |
 | `level` | `number` | The depth of the node within the tree structure. `0` stands for the top level. |
-| `overlay` | `boolean=` | Whether the node is displayed inside the overlay. |
+| `overlay` | `boolean` | Whether the node is displayed inside the overlay. |
 +++
 
 Additionally, custom properties apart from the listed ones will also be passes into the slot props object via `v-bind`.

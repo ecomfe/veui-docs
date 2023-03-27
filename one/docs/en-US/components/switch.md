@@ -20,12 +20,12 @@ Use the [`true-value`](#props-true-value) and [`false-value`](#props-false-value
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``checked`` | `boolean` | `false` | [^checked] |
 | ``true-value`` | `*` | `true` | The value for checked state. |
 | ``false-value`` | `*` | `false` | The value for unchecked state. |
-| ``disabled`` | `boolean=` | `false` | Whether the switch is disabled. |
-| ``readonly`` | `boolean=` | `false` | Whether the switch is read-only. |
+| ``disabled`` | `boolean` | `false` | Whether the switch is disabled. |
+| ``readonly`` | `boolean` | `false` | Whether the switch is read-only. |
 
 ^^^ui
 Style variants.

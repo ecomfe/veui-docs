@@ -68,7 +68,7 @@
 
 | 属性 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``type`` | `string` | `'file'` | [^type] |
 | ``value`` | `Object | Array<Object>` | - | [^value] |
 | ``key-field`` | `string` | `'key'` | 用于指定文件对象的唯一 key，作为数据变化时正确处理文件列表顺序的依据。 |
@@ -176,10 +176,10 @@
 | 字段 | 类型 | 描述 |
 | -- | -- | -- |
 | `success` | `boolean` | 表示上传是否成功。 |
-| `name` | `string=` | 文件的名称。`success` 为 `true` 时必须。 |
-| `src` | `string=` | 文件的地址。`success` 为 `true` 时必须。 |
-| `message` | `string=` | 上传失败时的出错信息。`success` 为 `false` 时必须。 |
-| `preview` | `boolean=` | 上传失败时，是否预览失败的上传项。 |
+| `name` | `string` | 文件的名称。`success` 为 `true` 时必须。 |
+| `src` | `string` | 文件的地址。`success` 为 `true` 时必须。 |
+| `message` | `string` | 上传失败时的出错信息。`success` 为 `false` 时必须。 |
+| `preview` | `boolean` | 上传失败时，是否预览失败的上传项。 |
 
 还可以给返回结果加上其它自定义的属性，这些自定义属性会被包含在 [`value`](#props-value) 以及 [`change`](#events-change)、[`success`](#events-success)、[`failure`](#events-failure)、[`remove`](#events-remove)、[`progress`](#events-progress) 事件的回调参数 `file` 中 。可进行[全局统一配置](#configs-uploader-convert-response)。
 +++
@@ -266,7 +266,7 @@ type PickedFile = {
 | 字段 | 类型 | 描述 |
 | -- | -- | -- |
 | `valid` | `boolean` | 是否通过校验。 |
-| `message` | `string=` | `valid` 为 `false` 时的错误提示信息。 |
+| `message` | `string` | `valid` 为 `false` 时的错误提示信息。 |
 | `preview` | `boolean` | 当校验失败时，是否预览失败的上传项。 |
 
 支持异步校验，返回值可以是一个 resolve 上述返回结果的 `Promise`。
@@ -296,7 +296,7 @@ type PickedFile = {
 | `name` | `string` | 操作项的名称，点击该按钮后会抛出同名的事件，事件的回调参数为 `(file: Object, index: number)`， `file` 为触发事件的文件对象，`index` 为文件在列表中的序号。 |
 | `label` | `string` | 操作项的文字描述。 |
 | `icon` | `string` | 操作项使用的图标。 |
-| `disabled` | `boolean=` | 操作项是否被禁用。如果该字段为空，则该操作项的禁用状态跟随组件整体的禁用状态。 |
+| `disabled` | `boolean` | 操作项是否被禁用。如果该字段为空，则该操作项的禁用状态跟随组件整体的禁用状态。 |
 ^^^
 
 ^^^entries

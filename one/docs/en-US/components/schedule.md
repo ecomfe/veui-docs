@@ -16,8 +16,8 @@
 | ``shortcuts`` | `Array` | `schedule.shortcuts` | [^shortcuts] |
 | ``shortcuts-display`` | `string` | `'inline'` | The display mode of the shortcuts. Supported values are `inline` / `popup`, which denote inline button groups and dropdown select, respectively. |
 | ``statuses`` | `Array<{label: string, value: string}>` | `schedule.statuses` | The datasource of the legends. Legend items will have a `class` value of <code>&#0096;veui-schedule-legend-${value}&#0096;</code> and the `label` property will be the text label of each status. |
-| ``disabled`` | `boolean=` | `false` | Whether the schedule component is disabled. |
-| ``readonly`` | `boolean=` | `false` | Whether the schedule component is read-only. |
+| ``disabled`` | `boolean` | `false` | Whether the schedule component is disabled. |
+| ``readonly`` | `boolean` | `false` | Whether the schedule component is read-only. |
 
 ^^^selected
 :::badges

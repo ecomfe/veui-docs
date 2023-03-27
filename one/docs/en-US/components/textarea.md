@@ -26,17 +26,17 @@ Use the [`disabled`](#props-disabled) prop to set a textarea to disabled state.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``value`` | `string` | '' | [^value] |
-| ``disabled`` | `boolean=` | `false` | Whether the textarea is disabled. |
-| ``readonly`` | `boolean=` | `false` | Whether the textarea is read-only. |
+| ``disabled`` | `boolean` | `false` | Whether the textarea is disabled. |
+| ``readonly`` | `boolean` | `false` | Whether the textarea is read-only. |
 | ``line-number`` | `boolean` | `false` | Whether to show line numbers. |
 | ``rows`` | `number | string` | - | The default visible rows of the textarea. |
 | ``placeholder`` | `string` | - | The placeholder text of the textarea. |
 | ``composition`` | `boolean` | `false` | Whether the input process should be aware of composition. |
 | ``select-on-focus`` | `boolean` | `false` | Whether to select text content when focused. |
 | ``autoresize`` | `boolean` | `false` | Whether the textarea should automatically expand when the content exceeds default height. |
-| ``get-length`` | `function(string): number=` | Used to customize length calculation of the input. |
+| ``get-length`` | `function(string): number` | Used to customize length calculation of the input. |
 
 ^^^ui
 预设样式。

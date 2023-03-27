@@ -20,14 +20,14 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
-| ``checked`` | `boolean=` | `false` | [^checked] |
+| ``ui`` | `string` | - | [^ui] |
+| ``checked`` | `boolean` | `false` | [^checked] |
 | ``value`` | `*` | - | 当 `v-model` 绑定到数组时，代表当前复选框的值。 |
-| ``true-value`` | `*=` | `true` | 选中状态对应的值。 |
-| ``false-value`` | `*=` | `false` | 未选状态对应的值。 |
-| ``indeterminate`` | `boolean=` | `false` | 是否处于半选状态。 |
-| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
-| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
+| ``true-value`` | `*` | `true` | 选中状态对应的值。 |
+| ``false-value`` | `*` | `false` | 未选状态对应的值。 |
+| ``indeterminate`` | `boolean` | `false` | 是否处于半选状态。 |
+| ``disabled`` | `boolean` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean` | `false` | 是否为只读状态。 |
 
 ^^^ui
 预设样式。

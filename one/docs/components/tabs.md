@@ -74,14 +74,14 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``items`` | `Array<Object>` | `[]` | [^items] |
 | ``active`` | `string` | - | [^active] |
 | ``matches`` | `function(Route, Route): boolean` | `tabs.matches` | [^matches] |
 | ``addable`` | `boolean` | `false` | 是否可以增加标签。 |
 | ``max`` | `number` | - | 可增加标签的上限值。 |
 | ``tip`` | `string` | - | 提示文本。 |
-| ``add-label`` | `string=` | - | “添加”按钮的文字内容。 |
+| ``add-label`` | `string` | - | “添加”按钮的文字内容。 |
 | ``eager`` | `boolean` | `false` | 是否立即渲染所有非当前激活项的标签面板内容（并隐藏）。 |
 | ``sortable`` | `boolean` | `false` | 是否可以拖拽标签项目来排序，推荐和 [`items`](#props-items) 属性一起使用。 |
 
@@ -109,8 +109,8 @@
 | `label` | `string` | 标签页页签的标题。 |
 | `name` | `string` | 标签页的名称。 |
 | `status` | `'success' | 'warning' | 'info' | 'error'` | 标签页的状态。 |
-| `disabled` | `boolean=` | 标签页是否为禁用。 |
-| `removable` | `boolean=` | 标签页是否可删除。 |
+| `disabled` | `boolean` | 标签页是否为禁用。 |
+| `removable` | `boolean` | 标签页是否可删除。 |
 | ``to`` | `string | Object` | - | 参考 [`Tab`](./tab) 组件 [`to`](./tab#props-to) 属性 |
 | ``native`` | `boolean` | `false` | 路由模式是否强制使用原生的 `<a>` 元素。 |
 +++
@@ -150,7 +150,7 @@
 | -- | -- | -- |
 | `label` | `string` | 标签页页签文本。 |
 | `name` | `string` | 标签页名称。 |
-| `disabled` | `boolean=` | 标签页是否禁用。 |
+| `disabled` | `boolean` | 标签页是否禁用。 |
 | `to` | `string` | 标签页路由信息。 |
 | `active` | `boolean` | 标签页是否是激活项。 |
 | `index` | `number` | 标签页位于列表中的索引值。 |

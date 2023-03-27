@@ -34,7 +34,7 @@ The stacking order of child overlays a affected by their parent overlays.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | Style variants. Not defined by `veui-theme-dls` but can be customized. |
+| ``ui`` | `string` | - | Style variants. Not defined by `veui-theme-dls` but can be customized. |
 | ``open`` | `boolean` | `false` | [^open] |
 | ``target`` | `string | Vue | HTMLElement` | - | [^target] |
 | ``priority`` | `number` | - | [^priority] |
@@ -42,8 +42,8 @@ The stacking order of child overlays a affected by their parent overlays.
 | ``modal`` | `boolean` | `false` | Whether the overlay will preempt focus and trap focus upon keyboard navigation (will return focus when closed). |
 | ``inline`` | `boolean` | `false` | Whether to render the overlay as inline content. |
 | ``local`` | `boolean` | `false` | Whether to keep the overlay in it's original DOM location, instead of moving it to the global scope and participates in the [global overlay management](../advanced/overlay). |
-| ``overlay-class`` | `string | Array | Object=` | - | [^overlay-class] |
-| ``overlay-style`` | `string | Array | Object=` | - | [^overlay-style] |
+| ``overlay-class`` | `string | Array | Object` | - | [^overlay-class] |
+| ``overlay-style`` | `string | Array | Object` | - | [^overlay-style] |
 | ``options`` | `Object` | - | Configuration object passed to the `modifiers` option of the underlying Popper.js implementation. See [here](https://popper.js.org/docs/v1/#modifiers) for more details. |
 
 ^^^open
@@ -103,4 +103,4 @@ The style expression applied to the root element of the overlay. Supports all va
 
 | Key | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``overlay.overlayClass`` | `string | Array | Object=` | `[]` | The class name to be applied to every overlay. Supports all values defined by [Vue's `class` expressions](https://vuejs.org/v2/guide/class-and-style.html#Binding-HTML-Classes). |
+| ``overlay.overlayClass`` | `string | Array | Object` | `[]` | The class name to be applied to every overlay. Supports all values defined by [Vue's `class` expressions](https://vuejs.org/v2/guide/class-and-style.html#Binding-HTML-Classes). |

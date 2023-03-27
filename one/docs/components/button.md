@@ -32,10 +32,10 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
-| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
-| ``type`` | `string=` | `'button'` | [^type] |
-| ``loading`` | `boolean=` | `false` | 是否处于加载状态。加载状态下按钮不响应用户交互。 |
+| ``ui`` | `string` | - | [^ui] |
+| ``disabled`` | `boolean` | `false` | 是否为禁用状态。 |
+| ``type`` | `string` | `'button'` | [^type] |
+| ``loading`` | `boolean` | `false` | 是否处于加载状态。加载状态下按钮不响应用户交互。 |
 
 ^^^ui
 预设样式。为空格分隔的一组枚举值的组合。

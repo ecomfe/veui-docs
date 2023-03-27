@@ -26,14 +26,14 @@ Use the [`trigger`](#props-trigger) prop to specify when to show/hide the popove
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``open`` | `boolean` | `false` | [^open] |
 | ``target`` | `string | Vue | Node` | - | See the [`target`](./overlay#props-target) prop of thh [`Overlay`](./overlay) component. |
 | ``position`` | `string` | `'top'` | [^position] |
 | ``trigger`` | `string` | `'hover'` | [^trigger] |
 | ``hide-delay`` | `number` | `tooltip.hideDelays` | Time (in milliseconds) to wait before hiding the popover after the close trigger is triggered. Can be used to prevent the popover being immediately closed after pointer leaves the `target` element and before it enters the popover itself. |
-| ``overlay-class`` | `string | Array | Object=` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
-| ``overlay-style`` | `string | Array | Object=` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
+| ``overlay-class`` | `string | Array | Object` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
+| ``overlay-style`` | `string | Array | Object` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
 
 ^^^ui
 Style variants.

@@ -44,7 +44,7 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``value`` | `*|Array<*>` | - | [^value] |
 | ``secondary-progress`` | `number | Array<number>` | `0` | 次要条。 |
 | ``min`` | `number` | `0` | `value` 经过 `parse` 函数处理后允许的最小值。 |

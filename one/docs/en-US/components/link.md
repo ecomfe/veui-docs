@@ -10,13 +10,13 @@
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``to`` | `string | Object` | - | Denotes the target route of the link. When used with Vue Router, the value will be passed to a [`<router-link>`](https://router.vuejs.org/api/#router-link)'s [`to`](https://router.vuejs.org/api/#to) prop. Otherwise only `string` type is supported, and the value will output to the `href` attribute of an `<a>` element. |
 | ``rel`` | `string` | - | Specifies the relationship of the target object to the link object. Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types) for more details. |
 | ``target`` | `string` | - | [^target] |
 | ``native`` | `boolean` | `false` | Whether to enforce the use of native `<a>` element (instead of `<router-link>`). |
 | ``fallback`` | `string` | `'span'` | Specifies the fallback element type when no [`to`](#props-to) prop is specified. |
-| ``disabled`` | `boolean=` | `false` | Whether the link is disabled. |
+| ``disabled`` | `boolean` | `false` | Whether the link is disabled. |
 
 ^^^ui
 Style variants.

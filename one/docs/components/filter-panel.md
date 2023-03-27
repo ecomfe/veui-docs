@@ -11,11 +11,11 @@
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
 | ``datasource`` | `Array<Object>` | `[]` | 数据源，项目类型为 `{label: string, ...}`。 |
-| ``searchable`` | `boolean=` | `true` | 是否允许搜索。 |
-| ``filter`` | `function=` | 见描述 | [^filter] |
-| ``search-on-input`` | `boolean=` | `true` | 是否在输入的时候触发搜索。 |
-| ``placeholder`` | `string=` | - | 搜索框的占位符。 |
-| ``title`` | `string=` | - | 过滤面板的标题。 |
+| ``searchable`` | `boolean` | `true` | 是否允许搜索。 |
+| ``filter`` | `function` | 见描述 | [^filter] |
+| ``search-on-input`` | `boolean` | `true` | 是否在输入的时候触发搜索。 |
+| ``placeholder`` | `string` | - | 搜索框的占位符。 |
+| ``title`` | `string` | - | 过滤面板的标题。 |
 
 ^^^filter
 搜索过滤函数，签名为 `function(keyword, item, index, datasource): boolean`。返回值为 `false` 的项目将被从结果中过滤掉。

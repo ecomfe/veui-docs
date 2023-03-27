@@ -31,8 +31,8 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
-| ``items`` | `Array<Object>=` | `[]` | [^items] |
+| ``ui`` | `string` | - | [^ui] |
+| ``items`` | `Array<Object>` | `[]` | [^items] |
 | ``active`` | `string` | - | [^active] |
 | ``matches`` | `function(Object, string): boolean` | - | [^matches] |
 
@@ -59,9 +59,9 @@
 | `label` | `string` | 节点的文字描述。 |
 | `to` | `string | Object` | 节点的导航目的地。参考 [`Link`](./link) 组件的 [`to`](./link#props) 属性。 |
 | `name` | `string` | 节点的唯一标识，`name` 和 `to` 二者至少有一个存在。 |
-| `disabled` | `boolean=` | 节点是否被禁用。 |
-| `position` | `string=` | 首层节点的下拉面板样式，设置成 `card` 则展示成大卡样式。 |
-| `children` | `Array<Object>=` | 节点的子节点数组，数组项类型同 `items` 数组项。 |
+| `disabled` | `boolean` | 节点是否被禁用。 |
+| `position` | `string` | 首层节点的下拉面板样式，设置成 `card` 则展示成大卡样式。 |
+| `children` | `Array<Object>` | 节点的子节点数组，数组项类型同 `items` 数组项。 |
 +++
 ^^^
 
@@ -91,8 +91,8 @@
 | `label` | `string` | 节点的文字描述。 |
 | `to` | `string | Object` | 节点的导航目的地。参考 [`Link`](./link) 组件的 [`to`](./link#props) 属性。 |
 | `name` | `string` | 节点的唯一标识，`name` 和 `to` 二者至少有一个存在。 |
-| `disabled` | `boolean=` | 节点是否被禁用。 |
-| `children` | `Array<Object>=` | 节点的子节点数组，数组项类型同 [`items`](#props-items) 属性数组项。 |
+| `disabled` | `boolean` | 节点是否被禁用。 |
+| `children` | `Array<Object>` | 节点的子节点数组，数组项类型同 [`items`](#props-items) 属性数组项。 |
 +++
 ^^^
 

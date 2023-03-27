@@ -32,11 +32,11 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``items`` | `Array<Object>` | `[]` | [^items] |
 | ``value`` | `*` | - | [^value] |
-| ``disabled`` | `boolean=` | `false` | 是否为禁用状态。 |
-| ``readonly`` | `boolean=` | `false` | 是否为只读状态。 |
+| ``disabled`` | `boolean` | `false` | 是否为禁用状态。 |
+| ``readonly`` | `boolean` | `false` | 是否为只读状态。 |
 
 ^^^ui
 预设样式。
@@ -58,7 +58,7 @@
 | -- | -- | -- |
 | `label` | `string` | 选项的文字说明。 |
 | `value` | `*` | 选项对应的值。 |
-| `disabled` | `boolean=` | 选项是否为禁用。 |
+| `disabled` | `boolean` | 选项是否为禁用。 |
 | `desc` | `string` | 选项的额外描述信息。 |
 +++
 ^^^
@@ -89,7 +89,7 @@
 | `label` | `string` | 选项文本。 |
 | `value` | `string` | 选项值。 |
 | `index` | `number` | 选项在 `items` 中的序号。 |
-| `disabled` | `boolean=` | 选项是否禁用。 |
+| `disabled` | `boolean` | 选项是否禁用。 |
 | `desc` | `string` | 选项的额外描述信息。 |
 +++
 

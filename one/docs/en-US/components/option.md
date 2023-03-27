@@ -16,8 +16,8 @@ See [the demos of `Select`](./select#demos) or [the demos of `Dropdown`](./dropd
 | -- | -- | -- | -- |
 | ``label`` | `string` | The descriptive label of the option. |
 | ``value`` | `*` | The value of the option. |
-| ``disabled`` | `boolean=` | Whether the option is disabled. |
-| ``hidden`` | `boolean=` | `false` | Whether the option is hidden. |
+| ``disabled`` | `boolean` | Whether the option is disabled. |
+| ``hidden`` | `boolean` | `false` | Whether the option is hidden. |
 
 ### Slots
 

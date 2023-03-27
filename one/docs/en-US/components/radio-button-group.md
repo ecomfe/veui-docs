@@ -14,11 +14,11 @@ Available values for the [`ui`](#props-ui) prop: `s` / `m`.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``items`` | `Array<Object>` | `[]` | [^items] |
 | ``value`` | `*` | - | [^value] |
-| ``disabled`` | `boolean=` | `false` | Whether the radio button group is disabled. |
-| ``readonly`` | `boolean=` | `false` | Whether the radio button group is read-only. |
+| ``disabled`` | `boolean` | `false` | Whether the radio button group is disabled. |
+| ``readonly`` | `boolean` | `false` | Whether the radio button group is read-only. |
 
 ^^^ui
 Style variants.
@@ -40,7 +40,7 @@ The datasource of items with the item type being `{label, value, disabled, ...}`
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the item. |
 | `value` | `*` | The value of the item. |
-| `disabled` | `boolean=` | Whether the item is disabled. |
+| `disabled` | `boolean` | Whether the item is disabled. |
 +++
 ^^^
 
@@ -67,7 +67,7 @@ The label content of each button. Displays the value of the `label` property by 
 | `label` | `string` | The descriptive label of the item. |
 | `value` | `*` | The value of the item. |
 | `index` | `number` | The index of the item within `items`. |
-| `disabled` | `boolean=` | Whether the item is disabled. |
+| `disabled` | `boolean` | Whether the item is disabled. |
 +++
 
 Additionally, custom properties apart from the listed ones will also be passes into the slot props object via `v-bind`.

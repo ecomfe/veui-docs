@@ -60,7 +60,7 @@ Use the [`tooltip`](./column#props-tooltip) attribute of the `Column` component 
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``data`` | `Array<Object>` | - | Table data in rows. |
 | ``key-field`` | `string` | - | Denotes the unique key of the table data. The value should be a key defined in the data object of each row. The corresponding field will be regarded as the [`key` attribute](https://vuejs.org/v2/guide/list.html#key) for each row element. When `selectable` is `true`, it also indicates the rows of which column should be selected from (and in this occasion the value should be defined as the [`field`](./column#props-field) prop for one of the children `Column` components). |
 | ``selectable`` | `boolean` | `false` | Whether the rows are selectable. |

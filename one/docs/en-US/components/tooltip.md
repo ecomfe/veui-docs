@@ -26,7 +26,7 @@ Use the [`trigger`](#props-trigger) prop to specify when to show/hide the toolti
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``open`` | `boolean` | `false` | [^open] |
 | ``target`` | `string | Vue | Node` | - | See the [`target`](./overlay#props-to) prop of thh [`Overlay`](./overlay) component. |
 | ``position`` | `string` | `'top'` | [^position] |
@@ -34,8 +34,8 @@ Use the [`trigger`](#props-trigger) prop to specify when to show/hide the toolti
 | ``trigger`` | `string` | `'hover'` | [^trigger] |
 | ``interactive`` | `boolean` | `true` | Whether the tooltip content is interactive. When set to `false`, the tooltip will be automatically hidden after the event specified by `trigger` is triggered outside the `target`. |
 | ``hide-delay`` | `number` | `tooltip.hideDelays` | Time (in milliseconds) to wait before hiding the tooltip after the close trigger is triggered. Can be used to prevent the tooltip being immediately closed after pointer leaves the `target` element and before it enters the tooltip itself. |
-| ``overlay-class`` | `string | Array | Object=` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
-| ``overlay-style`` | `string | Array | Object=` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
+| ``overlay-class`` | `string | Array | Object` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
+| ``overlay-style`` | `string | Array | Object` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
 
 ^^^ui
 Style variants.

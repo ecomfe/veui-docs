@@ -22,7 +22,7 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``type`` | `string` | `'bar'` | 进度条类型。可选值为 `bar` / `circular`，分别是柱状和环形。 |
 | ``desc`` | `boolean` | `false` | 是否显示文字提示。 |
 | ``value`` | `number` | `0` | 进度值。 |

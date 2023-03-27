@@ -26,16 +26,16 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``page`` | `number` | `1` | 当前页码（从 `1` 开始）。 |
 | ``total`` | `number` | - | 项目总数。 |
 | ``to`` | `string | Object` | `''` | [^to] |
 | ``native`` | `boolean` | `false` | 原生链接跳转。 |
 | ``page-size`` | `number` | `pagination.pageSize` | [^page-size] |
 | ``page-sizes`` | `Array<number>` | `pagination.pageSizes` | 每页个数候选项。 |
-| ``show-goto`` | `boolean=` | `false` | 是否显示直接跳转到页码。 |
-| ``show-total`` | `boolean=` | `false` | 是否显示项目总数。 |
-| ``show-page-size`` | `boolean=` | `false` | 是否显示每页项目数选择器。 |
+| ``show-goto`` | `boolean` | `false` | 是否显示直接跳转到页码。 |
+| ``show-total`` | `boolean` | `false` | 是否显示项目总数。 |
+| ``show-page-size`` | `boolean` | `false` | 是否显示每页项目数选择器。 |
 
 ^^^ui
 预设样式。

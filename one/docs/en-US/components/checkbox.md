@@ -20,14 +20,14 @@ Use the [`true-value`](#props-true-value) and [`false-value`](#props-false-value
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``checked`` | `boolean` | `false` | [^checked] |
 | ``value`` | `*` | - | Denotes the value of current checkbox when `v-model` is bound to an array. |
-| ``true-value`` | `*=` | `true` | The value for checked state. |
-| ``false-value`` | `*=` | `false` | The value for unchecked state. |
-| ``indeterminate`` | `boolean=` | `false` | Whether the checkbox is in an indeterminate state. |
-| ``disabled`` | `boolean=` | `false` | Whether the checkbox is disabled. |
-| ``readonly`` | `boolean=` | `false` | Whether the checkbox is read-only. |
+| ``true-value`` | `*` | `true` | The value for checked state. |
+| ``false-value`` | `*` | `false` | The value for unchecked state. |
+| ``indeterminate`` | `boolean` | `false` | Whether the checkbox is in an indeterminate state. |
+| ``disabled`` | `boolean` | `false` | Whether the checkbox is disabled. |
+| ``readonly`` | `boolean` | `false` | Whether the checkbox is read-only. |
 
 ^^^ui
 Style variants.

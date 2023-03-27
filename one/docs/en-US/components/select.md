@@ -36,7 +36,7 @@ Use the [`multiple`](#props-multiple) prop to enable multiple selections.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string=` | - | [^ui] |
+| ``ui`` | `string` | - | [^ui] |
 | ``options`` | `Array<Object>` | `-` | [^options] |
 | ``value`` | `Array<*>|*` | - | [^value] |
 | ``multiple`` | `boolean` | `false` | Whether users can select multiple items. |
@@ -45,11 +45,11 @@ Use the [`multiple`](#props-multiple) prop to enable multiple selections.
 | ``clearable`` | `boolean` | `false` | Whether the select is clearable. |
 | ``searchable`` | `boolean` | `false` | Whether the options are searchable. |
 | ``show-select-all`` | `boolean` | `false` | Whether to display the “Select All” option in multi-select mode. |
-| ``expanded`` | `boolean=` | `false` | [^expanded] |
-| ``disabled`` | `boolean=` | `false` | Whether the select is disabled. |
-| ``readonly`` | `boolean=` | `false` | Whether the select is read-only. |
-| ``overlay-class`` | `string | Array | Object=` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
-| ``overlay-style`` | `string | Array | Object=` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
+| ``expanded`` | `boolean` | `false` | [^expanded] |
+| ``disabled`` | `boolean` | `false` | Whether the select is disabled. |
+| ``readonly`` | `boolean` | `false` | Whether the select is read-only. |
+| ``overlay-class`` | `string | Array | Object` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
+| ``overlay-style`` | `string | Array | Object` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
 | ``match`` | `(item, keyword, { ancestors }) => boolean | [number, number] | Array<[number, number]>` | - | Custom highlighting logic, case insensitive by default. See [`Autocomplete`](./Autocomplete#customizing-search). |
 | ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | Custom hit logic, case insensitive by default. See [`Autocomplete`](./Autocomplete#customizing-search). |
 
@@ -73,8 +73,8 @@ The list of options with the option type being `{label, value, options, disabled
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the option. |
 | `value` | `*` | The value of the option. |
-| `options` | `Array<Object>=` | The child options of current option. The item type is the same as the items of the [`options`](#props-options) prop. |
-| `disabled` | `boolean=` | Whether the option is disabled. |
+| `options` | `Array<Object>` | The child options of current option. The item type is the same as the items of the [`options`](#props-options) prop. |
+| `disabled` | `boolean` | Whether the option is disabled. |
 +++
 ^^^
 
@@ -129,7 +129,7 @@ The content of the select button. Displays the `label` of selected option or the
 | `label` | `string` | The descriptive label of the selected option. |
 | `value` | `*` | The value of the selected option. |
 | `selected` | `boolean` | Whether the select has a selected value. |
-| `disabled` | `boolean=` | Whether the option is disabled. |
+| `disabled` | `boolean` | Whether the option is disabled. |
 +++
 
 Additionally, custom properties apart from the listed ones will also be passes into the slot props object via `v-bind`.
@@ -142,7 +142,7 @@ The label text of each option group (option with child `options`). Displays the 
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | The descriptive label of the option group. |
-| `disabled` | `boolean=` | Whether the option group is disabled. |
+| `disabled` | `boolean` | Whether the option group is disabled. |
 +++
 
 Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.
@@ -157,7 +157,7 @@ The label text of each option (option without child `options`). Displays the `la
 | `label` | `string` | The descriptive label of the option. |
 | `value` | `*` | The value of the option. |
 | `selected` | `boolean` | Whether the the option is selected. |
-| `disabled` | `boolean=` | Whether the option is disabled. |
+| `disabled` | `boolean` | Whether the option is disabled. |
 +++
 
 Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.
@@ -172,7 +172,7 @@ The entire content area of each option (option without child `options`). Display
 | `label` | `string` | The descriptive label of the option. |
 | `value` | `*` | The value of the option. |
 | `selected` | `boolean` | Whether the the option is selected. |
-| `disabled` | `boolean=` | Whether the option is disabled. |
+| `disabled` | `boolean` | Whether the option is disabled. |
 +++
 
 Additionally, custom properties in current option, apart from the listed ones, will also be passes into the slot props object via `v-bind`.

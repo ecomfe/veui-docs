@@ -116,6 +116,7 @@ import NightOwl from 'monaco-themes/themes/Night Owl.json'
 import { Button, Icon, Alert } from 'veui'
 import * as veui from 'veui'
 import lodash from 'lodash'
+import * as icons from 'dls-icons-vue'
 import 'veui-theme-dls-icons'
 import tooltip from 'veui/directives/tooltip'
 import i18n from 'veui/mixins/i18n'
@@ -197,6 +198,7 @@ export default {
       imports: {
         veui,
         lodash,
+        'dls-icons-vue': icons,
         ...iconModules.reduce((mocks, module) => {
           mocks[module] = true
           return mocks

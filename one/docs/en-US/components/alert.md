@@ -20,12 +20,12 @@ The [`message`](#props-message) prop can be an array to display multiple switcha
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``type`` | `string=` | `'success'` | [^type] |
+| ``type`` | `string` | `'success'` | [^type] |
 | ``title`` | `string` | - | The alert title. |
 | ``message`` | `string | Array<string>` | - | The alert message. When specified as an array, multiple messages will be displayed with previous/next navigation. |
-| ``closable`` | `boolean=` | `false` | Whether the alert is allowed to be closed by users. |
-| ``open`` | `boolean=` | `true` | [^open] |
-| ``index`` | `number=` | `0` | [^index] |
+| ``closable`` | `boolean` | `false` | Whether the alert is allowed to be closed by users. |
+| ``open`` | `boolean` | `true` | [^open] |
+| ``index`` | `number` | `0` | [^index] |
 
 ^^^type
 The contextual type of the alert message.
@@ -74,7 +74,7 @@ Default: message text.
 | Name | Type | Description |
 | -- | -- | -- |
 | `message` | `string` | Message text. |
-| `index` | `number=` | The index of current message displayed when having multiple messages. |
+| `index` | `number` | The index of current message displayed when having multiple messages. |
 +++
 ^^^
 
