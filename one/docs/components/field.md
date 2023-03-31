@@ -17,8 +17,8 @@
 | ``ui`` | `string` | - | [^ui] |
 | ``readonly`` | `boolean` | `false` | 内部输入组件是否为只读状态。 |
 | ``disabled`` | `boolean` | `false` | 内部输入组件是否为禁用状态。 |
-| ``label`` | `string` | - | 表单项描述。 |
-| ``tip`` | `string` | - | 表单项提示。 |
+| ``label`` | `string` | - | 表单项标题。 |
+| ``tip`` | `string` | - | 表单项浮层提示内容。 |
 | ``name`` | `string` | - | 表单项名称，可用于指定数据字段名或展示错误消息的定位。 |
 | ``field`` | `string` | - | [^field] |
 | ``rules`` | `string | Array<Object>` | - | [^rules] |
@@ -151,14 +151,14 @@ let minLengthRule = {
 | -- | -- |
 | ``default`` | 用于内联输入组件。作用域参数为 `(listeners: object, invalid: boolean, validities: object, readonly: boolean, disabled: boolean)`，其中 `invalid` 是当前表单项是否校验出错误，`listeners` 是校验时机的事件绑定，`validities` 是校验信息。 |
 | ``label`` | 填充表单项描述的内容。默认为 [`label`](#props-label) 属性的文本值。 |
-| ``tip`` | 填充表单项提示的内容。默认为 [`tip`](#props-tip) 属性的文本值。 |
+| ``tip`` | 填充表单项浮层提示的内容。默认为 [`tip`](#props-tip) 属性的文本值。 |
 | ``help`` | 表单项辅助文本内容。默认为 [`help`](#props-help) 属性的文本值。 |
 
 ### 图标
 
 | 名称 | 描述 |
 | -- | -- |
-| ``alert`` | 警示图标。 |
+| ``tip`` | 浮层提示的触发图标。 |
 
 ### 全局配置
 

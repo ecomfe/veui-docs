@@ -10,7 +10,7 @@
 
 ### 严格模式
 
-设置 [`strict`](#props-strict) 属性来指定严格模式，若输入值没有完全匹配建议值，那么在失焦时会清空输入值。
+设置 [`strict`](#props-strict) 属性来指定严格模式。`{ maxlength?: boolean }` 用来指定是否严格输入长度，超出自动截断；`{ select?: boolean }` 用来指定输入项是否必须完整匹配搜索建议的某项，若不匹配则失焦后自动清空。
 
 [[ demo src="/demo/autocomplete/strict.vue" ]]
 
@@ -43,7 +43,7 @@
 | ``composition`` | `boolean` | `false` | 是否感知输入法输入过程的值。 |
 | ``select-on-focus`` | `boolean` | `false` | 聚焦时是否自动选中输入框文本。 |
 | ``maxlength`` | `number` | - | 输入字符串的长度限制。 |
-| ``strict`` | `boolean` | `false` | 输入字符串到达长度限制以后是否禁止继续输入。 |
+| ``strict`` | `boolean | Object` | `false` | [^strict] |
 | ``get-length`` | `function(string): number` | 自定义的字符长度计算函数。 |
 | ``trim`` | `boolean | string` | `false` | [^trim] |
 | ``autofocus`` | `boolean` | `false` | 是否自动获取焦点。 |
@@ -51,14 +51,14 @@
 | ``overlay-style`` | `string | Array | Object` | - | 参考 [`Overlay`](./overlay) 组件的 [`overlay-style`](./overlay#props-overlay-style) 属性。 |
 
 ^^^datasource
-数据源数组，项目为 `Object` 时字段为 `{label, value, children, ...}`。
+数据源数组，项目为 `Object` 时字段为 `{label, value, options, ...}`。
 
 +++字段详情
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `label` | `string` | 节点的文字描述。 |
 | `value` | `string` | 节点对应的值，一般是页内 hash， 如 `#button` 。 |
-| `children` | `Array<Object>` | 节点的子节点数组，数组项类型同 [`items`](#props-items) 数组项。 |
+| `options` | `Array<Object>` | 节点的子节点数组，数组项类型同 [`datasource`](#props-datasource) 数组项。 |
 +++
 ^^^
 
@@ -76,6 +76,17 @@
 :::
 
 建议面板是否展开（如果 `suggestions` 中没有待选项，则即使为 `true` 时面板也会关闭）。
+^^^
+
+^^^strict
+当为 `boolean` 时，将同时配置 `maxlength` 和是否必须完全匹配建议值两种行为的严格模式；当为 `Object` 时，可进行分别配置。
+
++++字段详情：
+| 名称 | 类型 | 描述 |
+| -- | -- | -- |
+| `maxlength` | `boolean` | 是否严格输入长度，超出禁止输入。 |
+| `select` | `boolean` | 输入项是否必须完整匹配搜索建议的某项，若不匹配则失焦后自动清空。 |
++++
 ^^^
 
 ^^^trim

@@ -1,25 +1,39 @@
 <template>
 <article class="autocomplete-normal-demo">
   <section>
+    <veui-checkbox v-model="strict.maxlength">
+      Strict maxlength
+    </veui-checkbox>
+    <veui-checkbox v-model="strict.select">
+      Strict select
+    </veui-checkbox>
+  </section>
+  <section>
     <veui-autocomplete
       :datasource="suggestions"
       placeholder="请输入"
       suggest-trigger="focus"
-      strict
+      :maxlength="6"
+      :strict="strict"
     />
   </section>
 </article>
 </template>
 
 <script>
-import { Autocomplete } from 'veui'
+import { Autocomplete, Checkbox } from 'veui'
 
 export default {
   components: {
-    'veui-autocomplete': Autocomplete
+    'veui-autocomplete': Autocomplete,
+    'veui-checkbox': Checkbox
   },
   data () {
     return {
+      strict: {
+        maxlength: false,
+        select: true
+      },
       suggestions: [
         {
           value: 'Moka'
@@ -28,10 +42,10 @@ export default {
           value: 'Turkish'
         },
         {
-          value: 'latte'
+          value: 'Latte'
         },
         {
-          value: 'cappuccino'
+          value: 'Cappuccino'
         }
       ]
     }
@@ -40,11 +54,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.autocomplete-normal-demo {
+section {
   display: flex;
+  align-items: center;
+  gap: 12px;
 
-  section + section {
-    margin-left: 60px;
+  & + & {
+    margin-top: 20px;
   }
 }
 </style>

@@ -53,6 +53,7 @@
 | ``clearable`` | `boolean` | `false` | 是否显示清除按钮。 |
 | ``maxlength`` | `number` | - | 最大可输入的字符长度。 |
 | ``max`` | `number` | - | 允许输入的标签数上限。 |
+| ``strict`` | `boolean | Object` | `false` | [^strict] |
 | ``get-length`` | `function(string): number` | - | 自定义的字符长度计算函数。 |
 | ``allow-duplicate`` | `boolean` | `false` | 是否允许输入重复的标签。 |
 
@@ -83,6 +84,17 @@
 :::
 
 文本输入框的值。
+^^^
+
+^^^strict
+当为 `boolean` 时，将同时配置 `maxlength` 和 `max` 两种限制的严格模式；当为 `Object` 时，可进行分别配置。
+
++++字段详情：
+| 名称 | 类型 | 描述 |
+| -- | -- | -- |
+| `maxlength` | `boolean` | 是否严格输入长度，超出禁止输入。 |
+| `max` | `boolean` | 是否严格限制输入的标签数，超出后新增的不生效。 |
++++
 ^^^
 
 ### 事件

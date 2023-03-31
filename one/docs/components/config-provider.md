@@ -2,10 +2,13 @@
 
 ## 示例
 
-### 配置占位符
+### 普通配置
 
-[[ demo src="/demo/config-provider/select.vue" ]]
+[[ demo src="/demo/config-provider/config.vue" ]]
 
+### `ui` 配置
+
+[[ demo src="/demo/config-provider/ui.vue" ]]
 
 ## API
 

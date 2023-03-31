@@ -7,7 +7,7 @@
     <browser-window
       v-if="browser"
       :url="browser"
-      class="browser"
+      width="auto"
       height="400px"
     >
       <one-iframe global-style="body { margin: 0 !important; } .veui-layout { min-width: auto !important; }">
@@ -261,7 +261,7 @@ Icon.register({
     transform translate(0, 0)
     padding 0
 
-.browser
+.demo > :not(.content):first-child // as vue-windows do not output class or style
   min-width calc(100% - 40px)
 
 .content
