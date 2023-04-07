@@ -245,16 +245,12 @@ Icon.register({
 <style src="vue-windows/dist/vue-windows.css"></style>
 
 <style lang="stylus" scoped>
-.one-demo
-  overflow hidden
-
 .demo
   position relative
   border 1px solid #eee
   border-top-left-radius 4px
   border-top-right-radius 4px
   padding 30px
-  overflow-x auto
 
   & >>> .style-module_body__14MV-
     overflow hidden
@@ -266,7 +262,6 @@ Icon.register({
 
 .content
   width calc(100% - 40px)
-  min-width max-content
 
 .desc
   border 1px solid #eee
@@ -380,6 +375,9 @@ Icon.register({
     color #fff
 
 @media (max-width 480px)
+  .demo
+    overflow-x auto
+
   .toggle-editor
   .reset-focus
     display none
