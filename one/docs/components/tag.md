@@ -20,6 +20,12 @@
 
 [[ demo src="/demo/tag/removable.vue" ]]
 
+### 预设颜色
+
+使用 [`color`](#props-color) 属性来设置需要使用的预设颜色的名称。
+
+[[ demo src="/demo/tag/colors.vue" ]]
+
 ## API
 
 ### 属性
@@ -28,15 +34,12 @@
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
 | ``type`` | `string` | `'default'` | [^type] |
+| ``color`` | `string` | - | 预设的彩色标签颜色名。目前支持的有 `'turquoise' | 'violet' | 'green'`。 |
 | ``selectable`` | `boolean` | `false` | 是否允许选择。 |
 | ``selected`` | `boolean` | `false` | [^selected] |
 | ``removable`` | `boolean` | `false` | 是否允许删除。 |
 | ``removed`` | `boolean` | `false` | [^removed] |
 | ``disabled`` | `boolean` | `false` | 是否禁用。 |
-
-:::warning
-[`selectable`](#props-selectable) 和 [`removable`](#props-removable) 属性不允许同时为 `true`。
-:::
 
 ^^^ui
 预设样式。

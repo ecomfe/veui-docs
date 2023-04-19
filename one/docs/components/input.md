@@ -39,7 +39,7 @@
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
-| ``value`` | `string` | '' | [^value] |
+| ``value`` | `string` | `''` | [^value] |
 | ``disabled`` | `boolean` | `false` | 输入框是否为禁用状态。 |
 | ``readonly`` | `boolean` | `false` | 输入框是否为只读状态。 |
 | ``type`` | `string` | `'text'` | [^type] |

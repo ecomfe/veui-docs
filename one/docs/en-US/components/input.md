@@ -27,7 +27,7 @@ Use the [`disabled`](#props-disabled) prop to set an input to disabled state.
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
-| ``value`` | `string` | '' | [^value] |
+| ``value`` | `string` | `''` | [^value] |
 | ``disabled`` | `boolean` | `false` | Whether the input is disabled. |
 | ``readonly`` | `boolean` | `false` | Whether the input is read-only. |
 | ``type`` | `string` | `'text'` | [^type] |

@@ -38,6 +38,12 @@
 
 [[ demo src="/demo/tag-input/maxlength.vue" ]]
 
+### 自定义标签
+
+通过 [`tag` 插槽](#slots-tag) 来自定义标签的展示。
+
+[[ demo src="/demo/tag-input/custom-tag.vue" ]]
+
 ## API
 
 ### 属性
@@ -45,8 +51,8 @@
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
-| ``value`` | `string` | '' | [^value] |
-| ``input-value`` | `string` | '' | [^input-value] |
+| ``value`` | `string` | - | [^value] |
+| ``input-value`` | `string` | `''` | [^input-value] |
 | ``disabled`` | `boolean` | `false` | 标签输入框是否为禁用状态。 |
 | ``readonly`` | `boolean` | `false` | 标签输入框是否为只读状态。 |
 | ``placeholder`` | `string` | - | 输入占位符。 |
@@ -94,6 +100,33 @@
 | -- | -- | -- |
 | `maxlength` | `boolean` | 是否严格输入长度，超出禁止输入。 |
 | `max` | `boolean` | 是否严格限制输入的标签数，超出后新增的不生效。 |
++++
+^^^
+
+### 插槽
+
+| 名称 | 描述 |
+| -- | -- |
+| ``tag`` | [^slot-tag] |
+
+^^^slot-tag
+已添加的标签项。
+
+默认内容：[`Tag` 组件](./tag)渲染的标签项。
+
++++作用域参数
+| 名称 | 类型 | 描述 |
+| -- | -- | -- |
+| `attrs` | `Object` | 需要输出到标准 [`Tag` 组件](./tag)上的属性，可以使用 `v-bind="attrs"` 统一进行输出。 |
+| `listeners` | `Object` | 需要输出到标准 [`Tag` 组件](./tag)上的事件监听器，可以使用 `v-on="listeners"` 统一进行输出。 |
+| `tag` | `string` | 标签项文本值。 |
+| `index` | `function(value: *): void` | 用于切换已选项。 |
+| `key` | `string` | 标签项的 `key`，必须绑定到单个项目上。 |
+| `invalid` | `boolean` | 是否为校验不合法状态。 |
+| `readonly` | `boolean` | 是否为只读状态。 |
+| `disabled` | `boolean` | 是否为禁用状态。 |
+| `edit` | `function(): void` | 编辑当前标签项。 |
+| `remove` | `function(): void` | 移除当前标签项。 |
 +++
 ^^^
 
