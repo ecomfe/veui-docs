@@ -1,10 +1,9 @@
 <template>
 <article>
   <section>
-    <veui-tag-input>
+    <veui-tag-input v-model="value">
       <template #tag="{ tag, attrs, listeners }">
         <veui-tag
-          v-model="value"
           ui="bordered"
           color="violet"
           v-bind="attrs"
