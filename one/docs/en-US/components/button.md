@@ -51,6 +51,7 @@ Style variants. A space-separated list of enum values.
 | `text` | Text button. |
 | `icon` | Icon button. |
 | `aux` | Auxilary button. Need to be used with `text` / `icon` styles. |
+| `subtle` | Subtle button. Need to be used with `text` / `icon` styles. |
 | `square` | Square button. Can be used with other styles. |
 | `xs` | Extra small. |
 | `s` | Small. |

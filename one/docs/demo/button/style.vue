@@ -35,6 +35,17 @@
     <veui-button ui="text">
       Text
     </veui-button>
+    <veui-button ui="text strong">
+      Text
+    </veui-button>
+    <veui-button ui="text aux">
+      Text
+    </veui-button>
+    <veui-button ui="text subtle">
+      Text
+    </veui-button>
+  </section>
+  <section>
     <veui-button ui="icon">
       <veui-icon name="home"/>
     </veui-button>
@@ -42,6 +53,9 @@
       <veui-icon name="home"/>
     </veui-button>
     <veui-button ui="icon aux">
+      <veui-icon name="home"/>
+    </veui-button>
+    <veui-button ui="icon subtle">
       <veui-icon name="home"/>
     </veui-button>
     <veui-button ui="primary square">
