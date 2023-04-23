@@ -4,7 +4,7 @@
 
 ### 尺寸
 
-可选的 [`ui`](#props-ui) 属性值：`s` / `m`。
+可供选用的 [`ui`](#props-ui) 属性值：`s` / `m`。
 
 [[ demo src="/demo/radio/size.vue" ]]
 

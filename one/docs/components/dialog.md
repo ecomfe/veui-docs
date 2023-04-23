@@ -4,7 +4,7 @@
 
 ### 尺寸与全屏
 
-可选的 [`ui`](#props-ui) 属性值：`s` / `m` / `narrow` / `medium` / `wide` / `auto`。
+可供选用的 [`ui`](#props-ui) 属性值：`s` / `m` / `narrow` / `medium` / `wide` / `auto`。
 
 [[ demo src="/demo/dialog/size.vue" ]]
 

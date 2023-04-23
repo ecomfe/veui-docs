@@ -4,7 +4,7 @@
 
 ### 尺寸
 
-可选的尺寸 [`ui`](#props-ui) 属性值：`m`。
+可供选用的尺寸 [`ui`](#props-ui) 属性值：`m`。
 
 [[ demo src="/demo/nav/size.vue" ]]
 

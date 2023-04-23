@@ -4,13 +4,13 @@
 
 ### 风格
 
-可选的风格 [`ui`](#props-ui) 属性值：`primary` / `strong` / `translucent` / `text` / `icon`。
+可选用的风格 [`ui`](#props-ui) 属性值：`primary` / `strong` / `translucent` / `text` / `icon`。
 
 [[ demo src="/demo/button/style.vue" ]]
 
 ### 尺寸
 
-可选的尺寸 [`ui`](#props-ui) 属性值：`xs` / `s` / `m` / `l` / `xl`。
+可选用的尺寸 [`ui`](#props-ui) 属性值：`xs` / `s` / `m` / `l` / `xl`。
 
 [[ demo src="/demo/button/size.vue" ]]
 

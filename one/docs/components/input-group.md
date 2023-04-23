@@ -8,7 +8,7 @@
 
 ### 任意组合
 
-可选的尺寸 [`ui`](#props-ui) 属性值：`xs` / `s` / `m` / `l`。
+可供选用的尺寸 [`ui`](#props-ui) 属性值：`xs` / `s` / `m` / `l`。
 
 [[ demo src="/demo/input-group/default.vue" ]]
 

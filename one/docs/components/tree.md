@@ -4,7 +4,7 @@
 
 ### 尺寸
 
-可选的尺寸 [`ui`](#props-ui) 属性值：`m` / `s`。
+可供选用的尺寸 [`ui`](#props-ui) 属性值：`m` / `s`。
 
 [[ demo src="/demo/tree/size.vue" ]]
 

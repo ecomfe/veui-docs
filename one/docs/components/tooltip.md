@@ -4,7 +4,7 @@
 
 ### 风格
 
-可选的风格 [`ui`](#props-ui) 属性值：`alt`。
+可供选用的风格 [`ui`](#props-ui) 属性值：`alt`。
 
 [[ demo src="/demo/tooltip/style.vue" ]]
 

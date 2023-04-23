@@ -4,7 +4,7 @@
 
 ### 尺寸
 
-可选的尺寸 [`ui`](#props-ui) 属性值：`xs` / `s` / `m` / `l` / `xl`。
+可供选用的尺寸 [`ui`](#props-ui) 属性值：`xs` / `s` / `m` / `l` / `xl`。
 
 [[ demo src="/demo/embedded/size.vue" ]]
 

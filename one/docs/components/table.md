@@ -8,7 +8,7 @@
 
 ### 内容密度
 
-可选的 [`ui`](#props-ui) 尺寸属性值：`compact` / `loose`。
+可供选用的 [`ui`](#props-ui) 尺寸属性值：`compact` / `loose`。
 
 [[ demo src="/demo/table/basic.vue" ]]
 

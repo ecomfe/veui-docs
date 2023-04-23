@@ -42,7 +42,7 @@ modules: [
   | `package` | `string` | - | 需要额外加载模块所属包的名字。一般来说会是主题包的包名，如 `'veui-theme-dls'`。 |
   | `path` | `string` | `'components'` | 需要加载的模块在对应包内的目录名。 |
   | `fileName` | `string` | `'{module}.css'` | 组件对应模块的文件名模板，必须包含占位符 `{module}`。 |
-  | `transform` | `string | boolean` | `'kebab-case'` | 组件名的转换规则。转换完毕后将替换 `fileName` 中的 `{module}` 占位符。如果值为 `false` 则不进行转换。可选的转换规则有 `'kebab-case'`、`'camleCase'` 与 `'PascalCase'` 三种。 |
+  | `transform` | `string | boolean` | `'kebab-case'` | 组件名的转换规则。转换完毕后将替换 `fileName` 中的 `{module}` 占位符。如果值为 `false` 则不进行转换。可供选用的转换规则有 `'kebab-case'`、`'camleCase'` 与 `'PascalCase'` 三种。 |
 
 * `locale`
 

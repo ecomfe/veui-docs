@@ -4,13 +4,13 @@
 
 ### 风格
 
-可选的 [`ui`](#props-ui) 属性值：`strong`。
+可供选用的 [`ui`](#props-ui) 属性值：`strong`。
 
 [[ demo src="/demo/search-box/style.vue" ]]
 
 ### 尺寸
 
-可选的 [`ui`](#props-ui) 属性值：`xs` / `s` / `m` / `l`。
+可供选用的 [`ui`](#props-ui) 属性值：`xs` / `s` / `m` / `l`。
 
 [[ demo src="/demo/search-box/size.vue" ]]
 

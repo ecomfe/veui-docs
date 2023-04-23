@@ -8,13 +8,13 @@
 
 ### 样式
 
-可选的样式 [`ui`](#props-ui) 属性值： `primary` / `text`。
+可供选用的样式 [`ui`](#props-ui) 属性值： `primary` / `text`。
 
 [[ demo src="/demo/dropdown/style.vue" ]]
 
 ### 尺寸
 
-可选的尺寸 [`ui`](#props-ui) 属性值：`xs` / `s` / `m` / `l`。
+可供选用的尺寸 [`ui`](#props-ui) 属性值：`xs` / `s` / `m` / `l`。
 
 [[ demo src="/demo/dropdown/size.vue" ]]
 

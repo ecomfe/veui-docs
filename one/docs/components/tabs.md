@@ -8,7 +8,7 @@
 
 ### 尺寸
 
-可选的 [`ui`](#props-ui) 尺寸属性值：`s` / `m` / `l`。
+可供选用的 [`ui`](#props-ui) 尺寸属性值：`s` / `m` / `l`。
 
 [[ demo src="/demo/tabs/size.vue" ]]
 

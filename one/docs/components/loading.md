@@ -4,19 +4,19 @@
 
 ### 风格
 
-可选的风格 [`ui`](#props-ui) 属性值：`normal` / `strong` / `reverse`。
+可供选用的风格 [`ui`](#props-ui) 属性值：`normal` / `strong` / `reverse`。
 
 [[demo src="/demo/loading/style.vue"]]
 
 ### 尺寸
 
-可选的尺寸 [`ui`](#props-ui) 属性值：`s` / `m` / `l`。
+可供选用的尺寸 [`ui`](#props-ui) 属性值：`s` / `m` / `l`。
 
 [[demo src="/demo/loading/size.vue"]]
 
 ### 排列方式
 
-可选的排列方式 [`ui`](#props-ui) 属性值：`vertical`。
+可供选用的排列方式 [`ui`](#props-ui) 属性值：`vertical`。
 
 [[demo src="/demo/loading/layout.vue"]]
 

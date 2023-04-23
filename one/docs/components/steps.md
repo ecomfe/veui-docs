@@ -4,7 +4,7 @@
 
 ### 样式
 
-可选的 [`ui`](#props-ui) 属性值：`s` / `m` / `dot` / `vertical` / `label-vertical`。
+可供选用的 [`ui`](#props-ui) 属性值：`s` / `m` / `dot` / `vertical` / `label-vertical`。
 
 `stateless` 属性可用于切换到纯展示的无状态样式。
 
