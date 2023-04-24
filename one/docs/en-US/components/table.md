@@ -4,7 +4,7 @@
 `Table` is required to be used within [`Column`](./column).
 :::
 
-## Demos
+## Examples
 
 ### Content density
 

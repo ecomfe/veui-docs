@@ -310,15 +310,15 @@ type PickedFile = {
 | ``upload`` | 图片上传模式下，上传按钮的区域。 |
 | ``help`` | 对文件数量、格式、大小等的提示内容。 |
 | ``file`` | [^file] |
-| ``file-before`` | 单个文件内容之前的区域。作用域参数与 [`file`](#slots-file) 插槽相同。 |
-| ``file-after`` | 单个文件内容之后的区域。作用域参数与 [`file`](#slots-file) 插槽相同。 |
-| ``uploading`` | 图片上传模式下，上传中的单个图片的区域。作用域参数与 [`file`](#slots-file) 插槽相同。 |
-| ``failure`` | 图片上传模式下，上传失败的单个图片的区域。作用域参数与 [`file`](#slots-file) 插槽相同。 |
+| ``file-before`` | 单个文件内容之前的区域。插槽参数与 [`file`](#slots-file) 插槽相同。 |
+| ``file-after`` | 单个文件内容之后的区域。插槽参数与 [`file`](#slots-file) 插槽相同。 |
+| ``uploading`` | 图片上传模式下，上传中的单个图片的区域。插槽参数与 [`file`](#slots-file) 插槽相同。 |
+| ``failure`` | 图片上传模式下，上传失败的单个图片的区域。插槽参数与 [`file`](#slots-file) 插槽相同。 |
 
 ^^^file
 单个文件的区域，用来定制文件内容。
 
-+++作用域参数
++++插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `name` | `string` | 文件的名称。 |

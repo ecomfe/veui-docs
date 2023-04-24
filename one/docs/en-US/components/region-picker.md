@@ -1,6 +1,6 @@
 # RegionPicker
 
-## Demos
+## Examples
 
 [[ demo src="/demo/region-picker/default.vue" ]]
 

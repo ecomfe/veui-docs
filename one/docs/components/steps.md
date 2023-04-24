@@ -59,16 +59,16 @@
 | 名称 | 描述 |
 | -- | -- |
 | ``default`` | [^slot-default] |
-| ``index`` | 序号部分内容，默认显示从 `1` 开始的序号，已完成的步骤显示完成图标，出错的步骤显示出错图标。位于 [`default`](#slots-default) 插槽内部，作用域参数同 [`default`](#slots-default) 插槽。 |
-| ``label`` | 步骤标题部分内容，默认显示 `steps` 中项目的 `label` 字段。位于 [`default`](#slots-default) 插槽内部，作用域参数同 [`default`](#slots-default) 插槽。 |
-| ``desc`` | 步骤描述部分内容，默认显示 `steps` 中项目的 `desc` 字段。位于 [`default`](#slots-default) 插槽内部，作用域参数同 [`default`](#slots-default) 插槽。 |
+| ``index`` | 序号部分内容，默认显示从 `1` 开始的序号，已完成的步骤显示完成图标，出错的步骤显示出错图标。位于 [`default`](#slots-default) 插槽内部，插槽参数同 [`default`](#slots-default) 插槽。 |
+| ``label`` | 步骤标题部分内容，默认显示 `steps` 中项目的 `label` 字段。位于 [`default`](#slots-default) 插槽内部，插槽参数同 [`default`](#slots-default) 插槽。 |
+| ``desc`` | 步骤描述部分内容，默认显示 `steps` 中项目的 `desc` 字段。位于 [`default`](#slots-default) 插槽内部，插槽参数同 [`default`](#slots-default) 插槽。 |
 
 ^^^slot-default
 整个步骤项内容。
 
 默认内容：序号/完成图标、步骤标题、描述等内容。
 
-+++作用域参数
++++插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `label` | `string` | 步骤标题。同 [`steps`](#props-steps) 属性中项目的 `label` 字段。 |
@@ -77,7 +77,7 @@
 | `status` | `string` | 步骤状态。同 [`steps`](#props-steps) 属性中项目的 `status` 字段。 |
 | `index` | `number` | 步骤索引值。 |
 
-另外，`steps` 内数据项中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。
+另外，`steps` 内数据项中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到插槽参数上。
 +++
 ^^^
 

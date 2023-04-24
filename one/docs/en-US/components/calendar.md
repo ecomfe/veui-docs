@@ -1,24 +1,54 @@
 # Calendar
 
-## Demos
+## Examples
 
-### Selecting a single date
+### Single date
 
-Click to select a single date by default.
+By default, clicking on a date selects a single date.
 
 [[ demo src="/demo/calendar/default.vue" ]]
 
-### Selecting multiple dates or a date range
+### Multiple dates and date ranges
 
-You can select multiple date with the [`multiple`](#props-multiple) prop set to `true` and can select a date range with the [`range`](#props-range) prop set to `true`.
+When the [`multiple`](#props-multiple) property is set, multiple dates can be selected. When the [`range`](#props-range) property is set, a date range can be selected.
 
 [[ demo src="/demo/calendar/range-multiple.vue" ]]
 
-### Selecting multiple date ranges
+### Multiple date ranges
 
-When `multiple` and `range` are both set to `true`, you can select multiple date ranges. You can configure the number of month panels with the [`panel`](#props-panel) prop. The way we merge newly selected ranges into those are already select are that, if you start select on a unselected date, the range will be selected and if start on a selected one, the range will be unselected.
+When the [`multiple`](#props-multiple) and [`range`](#props-range) properties are set simultaneously, multiple date ranges can be selected. When the [`panel`](#props-panel) property is set, the number of calendar panels can be specified. The strategy for merging the two selected time periods is to select the time period if no date has been selected, otherwise the time period is deselected.
 
 [[ demo src="/demo/calendar/multiple-ranges.vue" ]]
+
+### Calendar types
+
+Set the [`type`](#props-type) property to specify the type of calendar: year, month, or day.
+
+[[ demo src="/demo/calendar/type.vue" ]]
+
+### Show Dates from Other Months
+
+Set the [`fill-month`](#props-fill-month) property to control whether to display dates from other months.
+
+[[ demo src="/demo/calendar/fill-month.vue" ]]
+
+### Disabled Dates
+
+Set the [`disabled-date`](#props-disabled-date) property to customize whether a specific date is disabled.
+
+[[ demo src="/demo/calendar/disabled-date.vue" ]]
+
+### Custom date style
+
+Set [`date-class`](#props-date-class) to customize the `class` of specified dates.
+
+[[ demo src="/demo/calendar/date-class.vue" ]]
+
+### Custom date content
+
+Use the [`before`](#slots-before) slot to customize the content before the calendar.
+
+[[ demo src="/demo/calendar/slots.vue" ]]
 
 ## API
 
@@ -26,25 +56,25 @@ When `multiple` and `range` are both set to `true`, you can select multiple date
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| `type` | `string` | `'date'` | The type of the calendar. Available values include `'date'` / `'month'` / `'year'`, denoting date/month/year view respectively. When the value is not `'date'`, `multiple` and `range` will be ignored. |
-| `multiple` | `boolean` | `false` | Whether users can select multiple dates (date ranges). |
-| `range` | `boolean` | `false` | Whether users can select a date range (date ranges). |
-| `selected` | `Date | Array` | - | [^selected] |
-| `panel` | `number` | `1` | The number of month panel displayed. |
-| `today` | `Date` | `new Date()` | The date of “today”. |
-| `week-start` | `number` | `calendar.weekStart` | The start of a week. Can be [globally configured](#configs-calendar-weekStart). |
-| `fill-month` | `boolean` | `true` | Whether to show dates of previous and next month in current panel when there's only one month panel. |
-| `date-class` | `string | Array | Object | function` | `{}` | Custom HTML `class` for specified date. All [`class` expressions supported by Vue](https://vuejs.org/v2/guide/class-and-style.html#Binding-HTML-Classes) are available for non-function values. When specified as a function, whose signature is `function(Date): string | Array<string>|Object<string, boolean>`, the return value is also `class` expressions suppported by Vue. |
-| `disabled-date` | `function(Date, Date=): boolean` | `() => false` | Used to customize whether the specified date is disabled or not. The first parameter is the date to be used to determine if the date is disabled. When in the range selection process and a date is already selected, it is passed as the second parameter. |
-| `disabled` | `boolean` | `false` | Whether the calendar is disabled. |
-| `readonly` | `boolean` | `false` | Whether the calendar is read-only. |
+| ``type`` | `string` | `'date'` | The type of the calendar, available values are `'date'`, `'month'`, and `'year'`, corresponding to the date/month/year view. |
+| ``multiple`` | `boolean` | `false` | Whether multiple dates (ranges) can be selected. |
+| ``range`` | `boolean` | `false` | Whether to select a date range. |
+| ``selected`` | `Date | Array` | - | [^selected] |
+| ``panel`` | `number` | `1` | The number of calendar panels. |
+| ``today`` | `Date` | `new Date()` | The date of "today". |
+| ``week-start`` | `number` | `calendar.weekStart` | The start of the week. Can be configured globally [here](#configs-calendar-weekStart). |
+| ``fill-month`` | `boolean` | `true` | Whether to display dates outside of the current month in the current month panel when there is only one panel. |
+| ``date-class`` | `string | Array | Object | function` | `{}` | Custom HTML `class` for specific dates. When passed a non-function value, the data format is all [Vue-supported `class` expressions](https://v2.vuejs.org/v2/guide/class-and-style.html#Binding-HTML-Classes); when passed a function, the signature is `function(Date): string | Array<string>|Object<string, boolean>`, and the return value format is also all Vue-supported `class` expressions. |
+| ``disabled-date`` | `function(Date, Date=): boolean` | `() => false` | Used to customize whether specified dates are disabled. The first parameter is the date that needs to be checked for disablement. If in the process of selecting a range and a date has already been selected, it will be passed in as the second parameter. |
+| ``disabled`` | `boolean` | `false` | Whether the calendar is disabled. |
+| ``readonly`` | `boolean` | `false` | Whether the calendar is read-only. |
 
 ^^^selected
 :::badges
 `v-model`
 :::
 
-Selected date(s) or date range(s). Data type differs according to `multiple` and `range`.
+The value of the selected date (range), depending on the values of the [`multiple`](#props-multiple) and [`range`](#props-range) properties, has a different data format.
 
 +++Value types
 | `multiple` | `range` | Type |
@@ -60,19 +90,21 @@ Selected date(s) or date range(s). Data type differs according to `multiple` and
 
 | Name | Description |
 | -- | -- |
-| `before` | Customizable area before the content of the month panel(s). |
-| `after` | Customizable area after the content of the month panel(s). |
-| `date` | [^slot-date] |
+| ``before`` | An area above the panel that can be customized. |
+| ``after`` | An area below the panel that can be customized. |
+| ``date`` | [^slot-date] |
 
 ^^^slot-date
-The content of each date cell. Displays the corresponding day of month by default.
+An area within a single day cell that can be used to customize the content for each day.
+
+Default content: the `date` of the corresponding date.
 
 +++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `year` | `number` | The full representation of year. |
-| `month` | `number` | Month of a year, starting from `0` as January. |
-| `date` | `number` | The day of month. |
+| `year` | `number` | The full year. |
+| `month` | `number` | The month number, `0` means January. |
+| `date` | `number` | The date within the month. |
 +++
 ^^^
 
@@ -80,23 +112,23 @@ The content of each date cell. Displays the corresponding day of month by defaul
 
 | Name | Description |
 | -- | -- |
-| `select` | [^event-select] |
-| `selectstart` | Triggered when selecting a date range and a start date is selected. The callback parameter list is `(picking: Date)`, being the selected start date. |
-| `selectprogress` | [^event-selectprogress] |
-| `viewchange` | Triggered when the month of the month panel changes. The callback parameter list is `(month: Object<{year: number, month: number}>)`, representing the current year and month of the first month panel. |
+| ``select`` | [^event-select] |
+| ``selectstart`` | Triggered when selecting a date range, called back with `(picking: Date)`, representing the selected start date. |
+| ``selectprogress`` | [^event-selectprogress] |
+| ``viewchange`` | Triggered when the displayed month of the panel changes. Called back with `(month: Object<{year: number, month: number, index: number}>)`, representing the current year and month (`month` is `0` for January). |
 
 ^^^event-select
 :::badges
 `v-model`
 :::
 
-Triggered when selection change. The callback parameter list is `(selected)`. The type of `selected` is the same as the [`selected`](#props-selected) prop.
+Triggered after selection changes, called back with `(selected)`. The data type is the same as the [`selected`](#props-selected) prop.
 ^^^
 
 ^^^event-selectprogress
-Triggered when selecting a date range and an end date is marked with pointer/keyboard interaction, and for each time the end date changes. The callback parameter list is `(picking)`, with `picking` being the marked date range. The type of `picking` depends on the value of the [`multiple`](#props-multiple) prop.
+Triggered when selecting a date range, and the end date marked by mouse or keyboard interaction changes after selecting the start date. Called back with `(picking)`, representing the current marked date range, the type depends on the value of the [`multiple`](#props-multiple) prop.
 
-+++Parameters types
++++Parameter types
 | `multiple` | Type |
 | -- | -- |
 | `false` | `[Date, Date]` |
@@ -106,14 +138,16 @@ Triggered when selecting a date range and an end date is marked with pointer/key
 
 ### Configs
 
-| Key | Type | Default | Description |
+| Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| `calendar.weekStart` | `number` | `1` | The start of a week, with Monday being `1` and Sunday being `7`. |
+| ``calendar.weekStart`` | `number` | `1` | The day of the week when the week starts. Monday to Sunday corresponds to `1` to `7`. |
 
 ### Icons
 
 | Name | Description |
 | -- | -- |
-| `prev` | Previous page. |
-| `next` | Next page. |
-| `expand` | Expand dropdowns. |
+| ``backward`` | Previous year. |
+| ``prev`` | Previous page. |
+| ``next`` | Next page. |
+| ``forward`` | Next year. |
+| ``expand`` | Expand the drop-down menu. |

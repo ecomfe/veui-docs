@@ -1,6 +1,6 @@
 # Dialog
 
-## Demos
+## Examples
 
 ### Sizes and fullscreen
 

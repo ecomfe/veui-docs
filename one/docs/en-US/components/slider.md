@@ -1,6 +1,6 @@
 # Slider
 
-## Demos
+## Examples
 
 ### Size variants
 

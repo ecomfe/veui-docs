@@ -1,6 +1,6 @@
 # Radio
 
-## Demos
+## Examples
 
 ### Sizes
 

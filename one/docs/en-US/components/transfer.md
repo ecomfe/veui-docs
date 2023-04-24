@@ -1,6 +1,6 @@
 # Transfer
 
-## Demos
+## Examples
 
 ### Size variants
 
@@ -109,7 +109,7 @@ To specify how should items inside selected panel be displayed.
 
 Merge strategy for selected values. When all child nodes under a node are selected, you can choose to keep only the parent node, only the child nodes, or both.
 
-+++Enumerated values
++++Enum values
 | Value | Description |
 | --- | --- |
 | `keep-all` | The parent and child nodes will both be in the selected value. |

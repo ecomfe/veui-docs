@@ -98,9 +98,9 @@
 | 名称 | 描述 |
 | -- | -- |
 | ``item`` | [^item] |
-| ``item-label`` | 每个节点的文本区域。作用域参数与 [`item`](#slots-item) 插槽一致。 |
-| ``item-before`` | 每个节点的文本之前的区域。作用域参数与 [`item`](#slots-item) 插槽一致。 |
-| ``item-after`` | 每个节点的文本之后的区域。作用域参数与 [`item`](#slots-item) 插槽一致。 |
+| ``item-label`` | 每个节点的文本区域。插槽参数与 [`item`](#slots-item) 插槽一致。 |
+| ``item-before`` | 每个节点的文本之前的区域。插槽参数与 [`item`](#slots-item) 插槽一致。 |
+| ``item-after`` | 每个节点的文本之后的区域。插槽参数与 [`item`](#slots-item) 插槽一致。 |
 
 ^^^item
 每个节点的整个内容区域。
@@ -116,7 +116,7 @@
 | `depth` | `number` | 当前数据节点在树种的深度。 |
 +++
 
-另外，`datasource` 内数据项中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。
+另外，`datasource` 内数据项中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到插槽参数上。
 ^^^
 
 ### 事件

@@ -1,6 +1,6 @@
 # FilterPanel
 
-## Demos
+## Examples
 
 [[ demo src="/demo/filter-panel/default.vue"]]
 

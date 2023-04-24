@@ -547,8 +547,7 @@
         },
         {
           "title": "Badge",
-          "slug": "badge",
-          "disabled": true
+          "slug": "badge"
         },
         {
           "title": "Tag",
@@ -735,13 +734,11 @@
         },
         {
           "title": "Autocomplete",
-          "slug": "autocomplete",
-          "disabled": true
+          "slug": "autocomplete"
         },
         {
           "title": "Anchor",
-          "slug": "anchor",
-          "disabled": true
+          "slug": "anchor"
         },
         {
           "title": "Drawer",
@@ -760,8 +757,7 @@
         },
         {
           "title": "Accordion",
-          "slug": "accordion",
-          "disabled": true
+          "slug": "accordion"
         },
         {
           "title": "Lightbox",
@@ -770,8 +766,7 @@
         },
         {
           "title": "Cascader",
-          "slug": "cascader",
-          "disabled": true
+          "slug": "cascader"
         },
         {
           "title": "Stack",

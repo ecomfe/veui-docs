@@ -1,6 +1,6 @@
 # Uploader
 
-## Demos
+## Examples
 
 ### File upload
 

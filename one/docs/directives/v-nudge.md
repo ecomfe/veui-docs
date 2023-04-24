@@ -5,7 +5,7 @@
 `v-nudge` 指令用于使用键盘方向键对值进行调整。
 
 :::warning
-应用 `v-nudge` 的元素或组件根元素必须可以接收焦点。可以使用本身就会接收焦点的元素如 `<button>`、`<input>` 或者使用 [`tabindex` 属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/tabindex)。
+应用 `v-nudge` 的元素或组件根元素必须可以接收焦点。可以使用本身就会接收焦点的元素如 `<button>`、`<input>` 或者使用 [`tabindex`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/tabindex) 属性。
 :::
 
 ## 示例

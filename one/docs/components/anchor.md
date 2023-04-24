@@ -58,7 +58,7 @@
 
 默认内容：锚点链接。
 
-作用域参数参见 [`items`](#props-items) 属性详情。
+插槽参数参见 [`items`](#props-items) 属性详情。
 ^^^
 
 ^^^slot-item-label
@@ -66,5 +66,5 @@
 
 默认内容：锚点链接的描述文本 `label`。
 
-作用域参数参见 [`item`](#slots-item) 插槽。
+插槽参数参见 [`item`](#slots-item) 插槽。
 ^^^

@@ -4,7 +4,7 @@
 `Dropdown` can be used with embedded [`Option`](./option) or [`OptionGroup`](./option-group).
 :::
 
-## Demos
+## Examples
 
 ### Style variants
 

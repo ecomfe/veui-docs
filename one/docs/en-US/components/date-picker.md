@@ -1,6 +1,6 @@
 # DatePicker
 
-## Demos
+## Examples
 
 ### Selecting a single date
 

@@ -1,6 +1,6 @@
 # Switch
 
-## Demos
+## Examples
 
 ### Size variants
 

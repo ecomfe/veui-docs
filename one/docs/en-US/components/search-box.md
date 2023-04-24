@@ -1,6 +1,6 @@
 # SearchBox
 
-## Demos
+## Examples
 
 ### Stylistic variants
 

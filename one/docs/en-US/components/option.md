@@ -4,9 +4,9 @@
 `Option` is required to be used within [`Select`](./select), [`Dropdown`](./dropdown) or [`OptionGroup`](./option-group).
 :::
 
-## Demos
+## Examples
 
-See [the demos of `Select`](./select#demos) or [the demos of `Dropdown`](./dropdown#demos).
+See [the demos of `Select`](./select#examples) or [the demos of `Dropdown`](./dropdown#examples).
 
 ## API
 

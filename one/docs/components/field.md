@@ -149,7 +149,7 @@ let minLengthRule = {
 
 | 名称 | 描述 |
 | -- | -- |
-| ``default`` | 用于内联输入组件。作用域参数为 `(listeners: object, invalid: boolean, validities: object, readonly: boolean, disabled: boolean)`，其中 `invalid` 是当前表单项是否校验出错误，`listeners` 是校验时机的事件绑定，`validities` 是校验信息。 |
+| ``default`` | 用于内联输入组件。插槽参数为 `(listeners: object, invalid: boolean, validities: object, readonly: boolean, disabled: boolean)`，其中 `invalid` 是当前表单项是否校验出错误，`listeners` 是校验时机的事件绑定，`validities` 是校验信息。 |
 | ``label`` | 填充表单项描述的内容。默认为 [`label`](#props-label) 属性的文本值。 |
 | ``tip`` | 填充表单项浮层提示的内容。默认为 [`tip`](#props-tip) 属性的文本值。 |
 | ``help`` | 表单项辅助文本内容。默认为 [`help`](#props-help) 属性的文本值。 |

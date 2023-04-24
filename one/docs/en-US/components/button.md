@@ -1,28 +1,28 @@
 # Button
 
-## Demos
+## Examples
 
-### Stylistic variants
+### Style variants
 
-Available style variants for the [`ui`](#props-ui) prop: `primary` / `strong` / `translucent` / `text` / `icon`.
+Available style variants of the [`ui`](#props-ui) prop: `primary` / `strong` / `translucent` / `text` / `icon`.
 
 [[ demo src="/demo/button/style.vue" ]]
 
 ### Size variants
 
-Available size variants for the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l` / `xl`.
+Available size variants of the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l` / `xl`.
 
 [[ demo src="/demo/button/size.vue" ]]
 
 ### Disabled state
 
-Use the [`disabled`](#props-disabled) prop to set a button to disabled state.
+Set the [`disabled`](#props-disabled) prop to disable the button.
 
 [[ demo src="/demo/button/disabled.vue" ]]
 
 ### Loading state
 
-Use the [`loading`](#props-loading) prop to set a button to loading state (which will not respond upon clicks).
+Set the [`loading`](#props-loading) prop to make the button enter the loading state and disable user interaction.
 
 [[ demo src="/demo/button/loading.vue" ]]
 
@@ -35,45 +35,45 @@ Use the [`loading`](#props-loading) prop to set a button to loading state (which
 | ``ui`` | `string` | - | [^ui] |
 | ``disabled`` | `boolean` | `false` | Whether the button is disabled. |
 | ``type`` | `string` | `'button'` | [^type] |
-| ``loading`` | `boolean` | `false` | Whether the button is in loading state. Loading buttons won't respond to user interactions. |
+| ``loading`` | `boolean` | `false` | Whether the button is in the loading state. The button does not respond to user interaction in the loading state. |
 
 ^^^ui
-Style variants. A space-separated list of enum values.
+A combination of enumeration values separated by spaces for preset styles.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `normal` | Normal button. Default style. |
-| `primary` | Primary button. |
-| `basic` | Basic button. |
-| `strong` | Strong button. Can be used alone or together with `text` / `icon`. |
-| `translucent` | Translucent button, typically used on dark background. |
-| `text` | Text button. |
-| `icon` | Icon button. |
-| `aux` | Auxilary button. Need to be used with `text` / `icon` styles. |
-| `subtle` | Subtle button. Need to be used with `text` / `icon` styles. |
-| `square` | Square button. Can be used with other styles. |
-| `xs` | Extra small. |
-| `s` | Small. |
-| `m` | Medium. |
-| `l` | Large. |
-| `xl` | Extra large. |
+| `normal` | Default style. |
+| `primary` | Primary button style with a background color of the theme. |
+| `basic` | Basic button style. |
+| `strong` | Strong style, can be used alone or in combination with `text` / `icon` styles. |
+| `translucent` | Semi-transparent style for use on dark backgrounds. |
+| `text` | Pure text style without background color and border. |
+| `icon` | Pure icon style without background color and border. |
+| `aux` | Auxiliary button for use with `text` / `icon` styles. |
+| `subtle` | Subtle button for use with `text` / `icon` styles. |
+| `square` | Square button that can be used together with other styles. |
+| `xs` | Extra small size style. |
+| `s` | Small size style. |
+| `m` | Medium size style. |
+| `l` | Large size style. |
+| `xl` | Extra large size style. |
 +++
 ^^^
 
 ^^^type
-The type of the button. See the [`type`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-type) attribute of HTML's native `<button>` element.
+Button type. See the [`type`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-type) attribute of the original `<button>` element.
 
-+++Enum
++++Enum values
 | Value | Description |
 | -- | -- |
 | `button` | Normal button. |
-| `submit` | Submit button. Will cause an ancestor form to be submitted upon clicks. |
-| `reset` | Reset button. Will reset all fields to initial value upon clicks. |
+| `submit` | Submit button that triggers an external form submission when clicked. |
+| `reset` | Reset button that resets an external form to its initial values when clicked. |
 +++
 
 :::warning
-Note that the default value is different from the native `<button>` element. You need to explicitly set `type` to `submit` if you want to trigger a form submit.
+Note that the default value is different from that of the original `<button>` element. If you need to trigger a form submission, please set it explicitly to `submit`.
 :::
 ^^^
 
@@ -81,14 +81,14 @@ Note that the default value is different from the native `<button>` element. You
 
 | Name | Description |
 | -- | -- |
-| ``default`` | Content of the button. |
+| ``default`` | Content displayed on the button. |
 
 ### Events
 
-Additionally, `Button` exposes all native events available for native `<button>` element. The callback parameter is the corresponding native event object for all events.
+The `Button` component supports all native events supported by the original `<button>` element, and the callback functions receive the corresponding native event objects.
 
 ### Icons
 
 | Name | Description |
 | -- | -- |
-| ``loading`` | The loading spinner. |
+| ``loading`` | The loading state indicator, which displays a loading icon animation by default. |

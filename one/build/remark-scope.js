@@ -15,6 +15,7 @@ const KNOWN_SCOPES_CONFIG = {
 }
 const KNOWN_SCOPES = Object.entries(KNOWN_SCOPES_CONFIG).reduce(
   (acc, [key, value]) => {
+    acc[key.toUpperCase()] = key
     acc[upperFirst(key)] = key
     acc[value] = key
     return acc

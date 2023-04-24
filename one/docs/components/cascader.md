@@ -1,6 +1,5 @@
 # Cascader <small>级联器</small>
 
-
 ## 示例
 
 ### 尺寸
@@ -213,11 +212,11 @@ function load({
 | 名称 | 描述 |
 | -- | -- |
 | ``trigger`` | [^slot-trigger] |
-| ``pane`` | 下拉面板中的内容插槽。作用域参数同 [`trigger`](#slots-trigger) 插槽。 |
-| ``before`` | 选项列表前的内容。无默认内容。作用域参数同 [`trigger`](#slots-trigger) 插槽。 |
-| ``after`` | 选项列表后的内容。无默认内容。作用域参数同 [`trigger`](#slots-trigger) 插槽。 |
+| ``pane`` | 下拉面板中的内容插槽。插槽参数同 [`trigger`](#slots-trigger) 插槽。 |
+| ``before`` | 选项列表前的内容。无默认内容。插槽参数同 [`trigger`](#slots-trigger) 插槽。 |
+| ``after`` | 选项列表后的内容。无默认内容。插槽参数同 [`trigger`](#slots-trigger) 插槽。 |
 | ``column-before`` | [^slot-column-before] |
-| ``column-after`` | 下拉面板中每列后的区域。无默认内容。作用域参数同 [`column-before`](#slots-column-before) 插槽。 |
+| ``column-after`` | 下拉面板中每列后的区域。无默认内容。插槽参数同 [`column-before`](#slots-column-before) 插槽。 |
 | ``label`` | [^slot-label] |
 | ``option-label`` | [^slot-option-label] |
 | ``option`` | [^slot-option] |
@@ -228,7 +227,7 @@ function load({
 
 默认内容：下拉按钮。
 
-+++作用域参数
++++插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `value` | `*` | 已选项值。 |
@@ -246,7 +245,7 @@ function load({
 ^^^slot-column-before
 下拉面板中每列前的区域。无默认内容。
 
-+++作用域参数
++++插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `option` | `Object` | 该列的父选项，其中 `options` 属性可以拿到当前列的数据。 |
@@ -258,7 +257,7 @@ function load({
 
 默认内容：已选项对应的 `label` 属性值或内联模式下已选项的文本内容。
 
-+++作用域参数
++++插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `label` | `string` | 已选项文本。 |
@@ -267,7 +266,7 @@ function load({
 | `disabled` | `boolean` | 选项是否禁用。 |
 +++
 
-另外，当前选项数据中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。
+另外，当前选项数据中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到插槽参数上。
 ^^^
 
 
@@ -276,7 +275,7 @@ function load({
 
 默认内容：选项的 `label` 属性值。
 
-+++作用域参数
++++插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `option` | `Object` | 当前选项。 |
@@ -291,7 +290,7 @@ function load({
 
 默认内容：`Option` 内的组件默认结构。
 
-作用域参数同 [`option-label`](#slots-option-label) 插槽。
+插槽参数同 [`option-label`](#slots-option-label) 插槽。
 ^^^
 
 ^^^slot-selected
@@ -299,7 +298,7 @@ function load({
 
 默认内容：单选时渲染选中项目的文本；多选时将每个选中项目的标签渲染成`Tag`。
 
-+++单选时的作用域参数
++++单选时的插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `label` | `string` | 选项文本。 |
@@ -308,7 +307,7 @@ function load({
 | `disabled` | `boolean` | 选项是否禁用。 |
 +++
 
-+++多选时的作用域参数
++++多选时的插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `selected` | `Array<Object>` | 选中项数据的数组。 |

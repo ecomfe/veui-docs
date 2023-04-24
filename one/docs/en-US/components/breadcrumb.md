@@ -1,44 +1,44 @@
 # Breadcrumb
 
 :::tip
-`Breadcrumb` can be used with embedded [`BreadcrumbItem`](./breadcrumb-item).
+The `Breadcrumb` component can be used inline with the [`BreadcrumbItem`](./breadcrumb-item) component.
 :::
 
-## Demos
+## Examples
 
-### Stylistic variants
+### Style variants
 
-Available style variants for the [`ui`](#props-ui) prop: `strong`.
+Available `ui` prop values: `strong`.
 
 [[ demo src="/demo/breadcrumb/style.vue" ]]
 
 ### Size variants
 
-Available size variants for the [`ui`](#props-ui) prop: `s` / `m`.
+Available `ui` prop values: `s` / `m`.
 
 [[ demo src="/demo/breadcrumb/size.vue" ]]
 
-### Inline usage
+### Inline mode
 
-Can be used with embedded `BreadcrumbItem`s.
+Use `BreadcrumbItem` directly inline.
 
 [[ demo src="/demo/breadcrumb/base.vue" ]]
 
 ### Using datasource
 
-Can be used with the [`routes`](#props-routes) prop as well.
+You can also pass in a data source.
 
 [[ demo src="/demo/breadcrumb/datasource.vue" ]]
 
-### Customizable separators
+### Custom separator
 
-Separators can be customized.
+You can use a slot to customize the separator.
 
 [[ demo src="/demo/breadcrumb/separator.vue" ]]
 
-### Events mode
+### Event listener
 
-Handling [`redirect`](#events-redirect) event instead of redirect with router.
+Listen for the [`redirect`](#events-redirect) event and handle it instead of directly routing.
 
 [[ demo src="/demo/breadcrumb/redirect.vue" ]]
 
@@ -52,21 +52,20 @@ Handling [`redirect`](#events-redirect) event instead of redirect with router.
 | ``routes`` | `Array<Object>` | `[]` | [^routes] |
 
 ^^^ui
-Style variants.
+Predefined styles.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `s` | Small. |
-| `m` | Medium. |
-+++
+| `s` | Small style. |
+| `m` | Medium style. |
 ^^^
 
 ^^^routes
-The datasource for breadcrumb items. The type of items is `{label: string, type: string, to: string | Object=, native: boolean=}`. Properties apart from `label` can be referred to the props of [`BreadcrumbItem`](./breadcrumb-item) component.
+Breadcrumb configuration, project type is `{label: string, type: string, to: string | Object=, native: boolean=}`, except for the `label` field, other field details can refer to the properties of the [`BreadcrumbItem`](./breadcrumb-item) component.
 
 :::warning
-The last item will always be displayed as plain text by default.
+By default, the last item will always be displayed in plain text style.
 :::
 ^^^
 
@@ -74,26 +73,18 @@ The last item will always be displayed as plain text by default.
 
 | Name | Description |
 | -- | -- |
-| ``default`` | The items of the breadcrumb. Can only have [`BreadcrumbItem`](./breadcrumb-item) components as direct children. The [`routes`](#props-routes) prop will be ignored when this slot is specified. |
+| ``default`` | Supports inline mode, directly passing in a list of [`BreadcrumbItem`](./breadcrumb-item) components. The [`routes`](#props-routes) prop will be ignored after filling. |
 | ``item`` | [^slot-item] |
-| ``separator`` | [^slot-separator] |
+| ``separator`` | The separator between breadcrumb entries. The default is to display the globally configured separator icon. |
 
 ^^^slot-item
-The content of each breadcrumb item. Default to the `label` properties of each item within `routes`, or the default slot content of [`BreadcrumbItem`]('./breadcrumb-item) components.
+Used to customize content for each item. The default content is the `label` of the `routes` item or the default slot of the [`BreadcrumbItem`](./breadcrumb-item) component.
 
 +++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `route` | `Object` | The item in `routes`. Custom properties will also be passes into the slot props object. |
+| `route` | `Object` | A project in `routes`. Custom fields will also be bound to the scope object. |
 +++
-^^^
-
-^^^slot-separator
-Separator between adjacent breadcrumb items. Displays a globally configured icon by default.
-
-:::warning
-When using Vue.js version `2.5.17` and below, it's required to bind a `slot-scope`.
-:::
 ^^^
 
 ### Events
@@ -103,14 +94,13 @@ When using Vue.js version `2.5.17` and below, it's required to bind a `slot-scop
 | ``redirect`` | [^redirect] |
 
 ^^^redirect
-
-Triggered when clicking the item with `type` value `link`. The callback parameter list is `(event, route, index)`.
+When a project with a `type` of `link` is clicked, this event will be triggered, and the callback parameters are `(event, route, index)`.
 
 +++Parameters
 | Name | Type | Description |
 | -- | -- | -- |
-| `event` | [Event](https://developer.mozilla.org/en-US/docs/Web/Events/click) | Native click event object. |
-| `route` | `Object` | The corresponding route item in `routes`. |
-| `index` | `number` | The index of the clicked item. |
+| ``event`` | [Event](https://developer.mozilla.org/en-US/docs/Web/Events/click) | The event object. |
+| ``route`` | `Object` | Breadcrumb entry object. |
+| ``index`` | `number` | The index of the clicked entry. |
 +++
 ^^^

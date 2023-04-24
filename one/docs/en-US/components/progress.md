@@ -1,6 +1,6 @@
 # Progress
 
-## Demos
+## Examples
 
 ### Progress bar
 

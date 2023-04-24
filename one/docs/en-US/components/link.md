@@ -1,6 +1,6 @@
 # Link
 
-## Demos
+## Examples
 
 [[ demo src="/demo/link/default.vue"]]
 

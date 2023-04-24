@@ -1,12 +1,12 @@
 # BreadcrumbItem
 
 :::tip
-`BreadcrumbItem` is required to be used within [`Breadcrumb`](./breadcrumb).
+The `BreadcrumbItem` component needs to be used within the [`Breadcrumb`](./breadcrumb) component.
 :::
 
-## Demos
+## Examples
 
-See [the demos of `Breadcrumb`](./breadcrumb#demos).
+See [`Breadcrumb` example](./breadcrumb#example).
 
 ## API
 
@@ -14,18 +14,18 @@ See [the demos of `Breadcrumb`](./breadcrumb#demos).
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
-| ``to`` | `string | Object` | - | The target location. See [`Link`](./link)'s the [`to`](./link#props-to) prop. |
-| ``type`` | `string` | `'link'` | [^link] |
-| ``native`` | `boolean` | `false` | When set to `true` and `to` is specified, native `<a>` element will be used and `to` will be set as the `href` attribute to this `<a>` element. |
+| ``to`` | `string | Object` | - | The address to go to after clicking on the breadcrumb item. See the [`to`](./link#props-to) property of the [`Link`](./link) component. |
+| ``type`` | `string` | `'link'` | [^type] |
+| ``native`` | `boolean` | `false` | When `true` and `to` is specified, the native `<a>` element will be used directly, and the `to` value will be set to the `href` attribute of the `<a>` tag. |
 
-^^^link
-The type of the item.
+^^^type
+The type of breadcrumb item.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `link` | Hyperlink. |
-| `text` | Pure text. |
+| `link` | Link style. |
+| `text` | Text style. |
 +++
 ^^^
 
@@ -33,15 +33,15 @@ The type of the item.
 
 | Name | Description |
 | -- | -- |
-| ``default`` | The content of the breadcrumb item. |
+| ``default`` | The content area of the breadcrumb item. |
 
 ### Events
 
 | Name | Description |
 | -- | -- |
-| ``redirect`` | Triggered when clicking the item with `type` value `link`. The callback parameter list is `(event: Event)`. `event` is a [native click event object](https://developer.mozilla.org/en-US/docs/Web/Events/click). |
+| ``redirect`` | The event triggered when an item with `type` of `link` is clicked. The callback parameter is `(event: Event)`, which directly passes through the [native click event object](https://developer.mozilla.org/en-US/docs/Web/Events/click). |
 
-### Icons
+### Separator
 
 | Name | Description |
 | -- | -- |

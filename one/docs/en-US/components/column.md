@@ -4,9 +4,9 @@
 `Column` is required to be used within [`Table`](./breadcrumb).
 :::
 
-## Demos
+## Examples
 
-See [the demos of `Table`](./table#demos).
+See [the demos of `Table`](./table#examples).
 
 ## API
 

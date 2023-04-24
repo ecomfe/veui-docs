@@ -1,6 +1,6 @@
 # CheckboxGroup
 
-## Demos
+## Examples
 
 ### Size variants
 

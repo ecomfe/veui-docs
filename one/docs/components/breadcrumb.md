@@ -75,24 +75,17 @@
 | -- | -- |
 | ``default`` | 支持内联模式，直接传入 [`BreadcrumbItem`](./breadcrumb-item) 组件列表。填充后 [`routes`](#props-routes) 属性将被忽略。 |
 | ``item`` | [^slot-item] |
-| ``separator`` | [^slot-separator] |
+| ``separator`` | 面包屑条目之间的分隔符。默认显示全局配置的分隔图标。 |
 
 ^^^slot-item
 用于为每个项目自定义内容。默认内容为 `routes` 项目的 `label` 或 [`BreadcrumbItem`]('./breadcrumb-item) 组件的默认插槽。
 
-+++作用域参数
++++插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `route` | `Object` | `routes` 中的项目。自定义字段亦会绑定到作用域对象中。 |
 +++
 ^^^
-
-^^^slot-separator
-面包屑条目之间的分隔符。默认显示全局配置的分隔图标。
-
-:::warning
-当使用 Vue.js `2.5.17` 及以下版本时，必须绑定 `slot-scope` 使用。
-:::
 ^^^
 
 ### 事件

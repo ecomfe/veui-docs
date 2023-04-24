@@ -140,10 +140,10 @@
 | ``panel`` | 页签下方面板区域。 |
 | ``extra`` | 位于页签右侧的扩展区域。 |
 | ``tab-item`` | [^tab-item] |
-| ``tab-label`` | 页签文本区域，默认内容为页签文本。作用域参数同 [`tab-item`](#slots-tab-item) 插槽，`attrs` / `activate` 除外。 |
+| ``tab-label`` | 页签文本区域，默认内容为页签文本。插槽参数同 [`tab-item`](#slots-tab-item) 插槽，`attrs` / `activate` 除外。 |
 
 ^^^tab-item
-页签区域，默认内容为页签对应的按钮/链接。作用域参数为标签属性描述对象。
+页签区域，默认内容为页签对应的按钮/链接。插槽参数为标签属性描述对象。
 
 +++参数详情
 | 名称 | 类型 | 描述 |
@@ -166,9 +166,9 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| ``change`` | 切换时触发。回调参数为 `(tab: Object)`，`tab` 与 [`tab-label`](#slots-tab-label) 插槽中的作用域参数一致。 |
+| ``change`` | 切换时触发。回调参数为 `(tab: Object)`，`tab` 与 [`tab-label`](#slots-tab-label) 插槽中的插槽参数一致。 |
 | ``add`` | 点击添加按钮触发的事件，无回调参数。 |
-| ``remove`` | 删除标签时触发的事件。回调参数为 `(tab: Object)`，`tab` 与 [`tab-label`](#slots-tab-label) 插槽中的作用域参数一致。 |
+| ``remove`` | 删除标签时触发的事件。回调参数为 `(tab: Object)`，`tab` 与 [`tab-label`](#slots-tab-label) 插槽中的插槽参数一致。 |
 | ``sort`` | 排序时触发的事件。回调参数为 `(fromIndex: number, toIndex: number)`，表示从原来位置（`fromIndex`）移动到新位置（`toIndex`）。 |
 
 ### 方法

@@ -1,6 +1,6 @@
 # Overlay
 
-## Demos
+## Examples
 
 ### Custom positioning
 

@@ -1,6 +1,6 @@
 # Tooltip
 
-## Demos
+## Examples
 
 ### Style variants
 

@@ -45,13 +45,12 @@
 ^^^ui
 预设样式。为空格分隔的一组枚举值的组合。其中 `simple` / `basic` / `strong` 只能选择一个，不设置则为默认的普通样式。`bordered` / `borderless` 只能选择一个。
 
-
 +++枚举值
 | 值 | 描述 |
 | -- | -- |
 | `simple` | 简洁样式。 |
 | `basic` | 白底样式。 |
-| `strong` | 白底样式。 |
+| `strong` | 灰底样式。 |
 | `bordered` | 有外边框。 |
 | `borderless` | 无外边框。 |
 | `dull` | 标题区域是不否响应鼠标交互改变样式。 |
@@ -65,7 +64,7 @@
 `.sync`
 :::
 
-已展开的折叠面板标识，对应于内联 `Collapse` 组件的 [`name`](./collapse#props-name) 属性。当 `multiple` 为 `true` 时，为折叠面板标识的数组。
+已展开的折叠面板标识，对应于内联 [`Collapse`](./collapse) 组件的 [`name`](./collapse#props-name) 属性。当 `multiple` 为 `true` 时，为折叠面板标识的数组。
 ^^^
 
 ^^^toggle-position

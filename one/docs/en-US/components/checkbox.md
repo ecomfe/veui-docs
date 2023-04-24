@@ -1,6 +1,6 @@
 # Checkbox
 
-## Demos
+## Examples
 
 ### Size variants
 

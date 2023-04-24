@@ -4,7 +4,7 @@
 `GridContainer` is required to be used with [`GridRow`](./grid-row) and [`GridColumn`](./grid-row).
 :::
 
-## Demos
+## Examples
 
 ### Default grid
 

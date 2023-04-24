@@ -1,18 +1,31 @@
 # Alert
 
-## Demos
+## Examples
 
 ### Types
 
-`Alert` component has 4 contextual types, which are `success`, `info`, `warning` and `error`. Types are specified with the [`type`](#props-type) prop.
+`Alert` has four types: `success`, `info`, `warning`, and `error`. You can specify different types using the [`type`](#props-type) prop.
 
 [[ demo src="/demo/alert/type.vue" ]]
 
 ### Multiple messages
 
-The [`message`](#props-message) prop can be an array to display multiple switchable messages.
+You can specify the `message` prop as an array to display multiple switchable messages.
 
 [[ demo src="/demo/alert/multiple.vue" ]]
+
+### With title
+
+Set the `title` prop to specify the message title.
+
+[[ demo src="/demo/alert/title.vue" ]]
+
+### Extra content
+
+Use the [`extra`](#slots-extra) slot to specify additional content after the message.
+
+[[ demo src="/demo/alert/extra.vue" ]]
+
 
 ## API
 
@@ -21,9 +34,9 @@ The [`message`](#props-message) prop can be an array to display multiple switcha
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``type`` | `string` | `'success'` | [^type] |
-| ``title`` | `string` | - | The alert title. |
-| ``message`` | `string | Array<string>` | - | The alert message. When specified as an array, multiple messages will be displayed with previous/next navigation. |
-| ``closable`` | `boolean` | `false` | Whether the alert is allowed to be closed by users. |
+| ``title`` | `string` | - | Message title. |
+| ``message`` | `string | Array<string>` | - | Message content. When an array is passed, multiple messages will be displayed and switchable. |
+| ``closable`` | `boolean` | `false` | Whether to allow closing. |
 | ``open`` | `boolean` | `true` | [^open] |
 | ``index`` | `number` | `0` | [^index] |
 
@@ -33,7 +46,7 @@ The contextual type of the alert message.
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `info` | Information message. |
+| `info` | Informational message. |
 | `success` | Success message. |
 | `warning` | Warning message. |
 | `error` | Error message. |
@@ -53,7 +66,7 @@ Whether the message is displayed.
 `.sync`
 :::
 
-The index of current message displayed when having multiple messages.
+The index of the currently displayed message when there are multiple messages.
 ^^^
 
 ### Slots
@@ -61,20 +74,21 @@ The index of current message displayed when having multiple messages.
 | Name | Description |
 | -- | -- |
 | ``default`` | [^slot-default] |
-| ``title`` | The content area of the alert title. |
-| ``extra`` | The extra content after the alert message. |
-| ``content`` | The content of the whole component, including message text, status icon, previous/next navigation and close button. |
+| ``title`` | The content area of the message title. |
+| ``extra`` | The additional content area after the message. |
+| ``content`` | The entire message area, including status icons, switch buttons, close buttons, etc. |
 
 ^^^slot-default
-The content of the message.
+Message content area.
 
-Default: message text.
+Default content: message text.
 
 +++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `message` | `string` | Message text. |
-| `index` | `number` | The index of current message displayed when having multiple messages. |
+| `message` | `string` | The message text. |
+| `index` | `number` | The index value of the current message when there are multiple messages. |
+| `close` | `function` | Used to close the alert. |
 +++
 ^^^
 
@@ -84,8 +98,9 @@ Default: message text.
 | -- | -- |
 | ``success`` | Success message. |
 | ``warning`` | Warning message. |
-| ``info`` | Information message. |
+| ``info`` | Informational message. |
 | ``error`` | Error message. |
 | ``prev`` | Previous message. |
 | ``next`` | Next message. |
-| ``close`` | Close alert. |
+| ``close`` | Close the alert. |
+```

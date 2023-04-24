@@ -1,28 +1,28 @@
 # ButtonGroup
 
-## Demos
+## Examples
 
-### Stylistic variants
+### Style variants
 
-Available style variants for the [`ui`](#props-ui) prop: `primary` / `strong` / `basic`.
+Available [`ui`](#props-ui) prop values: `primary` / `strong` / `basic`.
 
 [[ demo src="/demo/button-group/style.vue" ]]
 
 ### Size variants
 
-Available size variants for the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l` / `xl`.
+Available [`ui`](#props-ui) prop values: `xs` / `s` / `m` / `l` / `xl`.
 
 [[ demo src="/demo/button-group/size.vue" ]]
 
 ### Using datasource
 
-Use the [`items`](#props-items) prop to provide content with a datasource.
+You can use the [`items`](#props-items) prop to specify button content via a data source.
 
 [[ demo src="/demo/button-group/items.vue" ]]
 
 ### Disabled state
 
-Use the [`disabled`](#props-disabled) prop to set the button group to disabled state.
+Set the [`disabled`](#props-disabled) prop to disable the button.
 
 [[ demo src="/demo/button-group/disabled.vue" ]]
 
@@ -37,30 +37,30 @@ Use the [`disabled`](#props-disabled) prop to set the button group to disabled s
 | ``disabled`` | `boolean` | `false` | Whether the button is disabled. |
 
 ^^^ui
-Style variants. A space-separated list of enum values.
+A set of enumerated values separated by spaces.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `primary` | Primary buttons. |
-| `strong` | Strong buttons. |
-| `basic` | Basic buttons. |
-| `xs` | Extra small. |
-| `s` | Small. |
-| `m` | Medium. |
-| `l` | Large. |
-| `xl` | Extra large. |
+| `primary` | Primary button, background displayed as theme color. |
+| `strong` | Enhanced style. |
+| `basic` | Basic style. |
+| `xs` | Extra small size style. |
+| `s` | Small size style. |
+| `m` | Medium size style. |
+| `l` | Large size style. |
+| `xl` | Extra large size style. |
 +++
 ^^^
 
 ^^^items
-The datasource array for buttons in the group. The type of each item is `{label, value}`.
+An array of button data items, with the format `{label, value}`.
 
 +++Properties
 | Name | Type | Description |
 | -- | -- | -- |
-| `label` | `string` | The label text of the button. |
-| `value` | `*` | Will emit an event with the same name when given a string value. |
+| `label` | `string` | Button text. |
+| `value` | `*` | If passed a `string` value, the event with the same name will be triggered when the button is clicked. |
 +++
 ^^^
 
@@ -68,24 +68,24 @@ The datasource array for buttons in the group. The type of each item is `{label,
 
 | Name | Description |
 | -- | -- |
-| ``default`` | Button group's content. |
+| ``default`` | Button group content area. |
 | ``item`` | [^slot-item] |
 
 ^^^slot-item
-The content of each button.
+Used to customize the content of each button.
 
-Shows the text specified by the `label` property by default.
+Default content: [`label`](#props-label) prop value.
 
 +++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `label` | `string` | The label text of the button. |
-| `value` | `*` | The value of button item. |
-| `index` | `number` | The index of the button within `items`. |
+| `label` | `string` | Button text. |
+| `value` | `*` | The `value` of the button item. |
+| `index` | `number` | The index of the button in `items`. |
 | `disabled` | `boolean` | Whether the button is disabled. |
 +++
 
-Additionally, custom properties apart from the listed ones will also be passes into the slot props object via `v-bind`.
+In addition, any fields in the `items` data item other than those described above will also be automatically bound to the slot props via `v-bind`.
 ^^^
 
 ### Events
@@ -93,19 +93,15 @@ Additionally, custom properties apart from the listed ones will also be passes i
 | Name | Description |
 | -- | -- |
 | ``click`` | [^click-event] |
-| <var>&lt;value&gt;</var> | [^value-var-event] |
+| <var>&lt;value&gt;</var> | If the corresponding data item has a `value` field of type `string`, an event with the name of the `value` value will be triggered after clicking, with the same parameters as the [`click`](#events-click) event. |
 
 ^^^click-event
-Triggered upon clicks. The callback parameter list is `(item, index)`.
+Triggered after clicking, with callback parameters `(item, index)`.
 
 +++Parameters
 | Name | Type | Description |
 | -- | -- | -- |
-| `item` | `{label: string, value: *=, ...}` | Datasource item. |
-| `index` | `number` | The index of the button within `items`. |
+| `item` | `{label: string, value: *=, ...}` | Data item. |
+| `index` | `number` | The index of the button in `items`. |
 +++
-^^^
-
-^^^value-var-event
-If the corresponding item has a string `value` property, an event with the name of `value` value will be emitted each time the button is clicked. It shares the same parameters with the [`click`](#events-click) event.
 ^^^

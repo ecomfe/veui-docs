@@ -142,7 +142,7 @@
 
 默认内容：轮播项图片。
 
-作用域参数为 [`datasource`](#props-datasource) 属性每个列表项的内容（可以有自定义字段）加上 `index: number` 表示轮播项的序号。即整个 `slot-scope` 绑定的值为 `{src, alt, label, index, ...}`。
+插槽参数为 [`datasource`](#props-datasource) 属性每个列表项的内容（可以有自定义字段）加上 `index: number` 表示轮播项的序号。即整个 `slot-scope` 绑定的值为 `{src, alt, label, index, ...}`。
 ^^^
 
 ### 事件

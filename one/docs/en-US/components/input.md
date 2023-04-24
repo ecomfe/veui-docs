@@ -1,6 +1,6 @@
 # Input
 
-## Demos
+## Examples
 
 ### Size variants
 

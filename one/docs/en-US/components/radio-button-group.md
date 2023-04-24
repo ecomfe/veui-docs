@@ -1,6 +1,6 @@
 # RadioButtonGroup
 
-## Demos
+## Examples
 
 ### Size variants
 

@@ -1,6 +1,6 @@
 # RadioGroup
 
-## Demos
+## Examples
 
 ### Sizes
 

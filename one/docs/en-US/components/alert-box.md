@@ -1,16 +1,16 @@
 # AlertBox
 
-## Demos
+## Examples
 
 ### Types
 
-`AlertBox` component has 3 contextual types, which are `success`, `info`, ` and `error`. Types are specified with the [`type`](#props-type) prop.
+`AlertBox` has three type variants: `info`, `success`, and `error`, which can be specified by the [`type`](#props-type) prop.
 
 [[ demo src="/demo/alert-box/type.vue" ]]
 
 ### With title
 
-You can customize the title of alert box with the [`title`](#props-title) prop.
+The title of the alert box can be customized using the [`title`](#props-title) prop or the [`title`](#slots-title) slot.
 
 [[ demo src="/demo/alert-box/title.vue" ]]
 
@@ -23,19 +23,19 @@ You can customize the title of alert box with the [`title`](#props-title) prop.
 | ``open`` | `boolean` | `false` | [^open] |
 | ``type`` | `string` | `'success'` | [^type] |
 | ``title`` | `string` | - | The title of the alert box. |
-| ``loading`` | `boolean` | `false` | Wehter the confirm box is in loading state. When loading, the OK button will enter loading state as well and become unclickable. |
-| ``disabled`` | `boolean` | `false` | Wehter the confirm box is disabled. When disabled, the OK button will be disabled as well and become unclickable. |
-| ``ok-label`` | `string` | - | The text content of the “OK” button. |
-| ``before-close`` | `function(string): boolean=|Promise<boolean=>` | - | Executed when user interaction is about to trigger closing the alert box. See the [`before-close`](./dialog#props-before-close) prop of the [`Dialog`](./dialog) component. |
-| ``overlay-class`` | `string | Array | Object` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
-| ``overlay-style`` | `string | Array | Object` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
+| ``loading`` | `boolean` | `false` | Whether the alert box is in the loading state. When in the loading state, the OK button will also enter the loading state and cannot be clicked. |
+| ``disabled`` | `boolean` | `false` | Whether the alert box is disabled. When disabled, the OK button will also be disabled and cannot be clicked. |
+| ``ok-label`` | `string` | - | The text content of the "OK" button. |
+| ``before-close`` | `function(string): boolean=|Promise<boolean>` | - | Executes after the operation that triggers the close, see [`before-close`](./dialog#props-before-close) prop of the [`Dialog`](./dialog) component for reference. |
+| ``overlay-class`` | `string | Array | Object` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component for reference. |
+| ``overlay-style`` | `string | Array | Object` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component for reference. |
 
 ^^^open
 :::badges
 `.sync`
 :::
 
-Whether the alert box is displayed.
+Whether to display the alert box.
 ^^^
 
 ^^^type
@@ -44,9 +44,9 @@ The contextual type of the alert box.
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `info` | Information alert box. |
-| `success` | Success alert box. |
-| `error` | Error alert box. |
+| `info` | Informational style. |
+| `success` | Success style. |
+| `error` | Error style. |
 +++
 ^^^
 
@@ -54,22 +54,22 @@ The contextual type of the alert box.
 
 | Name | Description |
 | -- | -- |
-| ``default`` | The content of the alert box. |
-| ``title`` | The title of the alert box. Will ignore the [`title`](#props-title) prop when specified. |
-| ``foot`` | The foot area of the alert box. Displays an “OK” button by default. |
+| ``default`` | Content area. |
+| ``title`` | Title area. If both the [`title`](#props-title) prop and the [`title`](#slots-title) slot are specified, the latter takes precedence. |
+| ``foot`` | Footer area. By default, an “OK” button is displayed. |
 
 ### Events
 
 | Name | Description |
 | -- | -- |
 | ``ok`` | Triggered when the “OK” button is clicked. |
-| ``afteropen`` | Triggered after the box overlay is opened. The box content won't be rendered until after the overlay is opened, so if there is logic that depends on content rendering, please execute it after this event is triggered. |
-| ``afterclose`` | Triggered after the box overlay is closed. If leaving transition is provided by the theme, the event will be triggered after the transition completes. |
+| ``afteropen`` | Triggered after the alert box is opened. The alert box content is only rendered after opening, so if there is logic that depends on content rendering, execute it after this event is triggered. |
+| ``afterclose`` | Triggered after the alert box is closed. If the theme provides an exit animation, it will be triggered after the exit animation is completed. |
 
 ### Icons
 
 | Name | Description |
 | -- | -- |
-| ``info`` | Information alert. |
-| ``success`` | Success alert. |
-| ``error`` | Error alert. |
+| ``info`` | Normal information. |
+| ``success`` | Success state. |
+| ``error`` | Error state. |

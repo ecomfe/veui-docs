@@ -28,19 +28,19 @@
 
 ### 最大标签数
 
-设置 [`max`](#props-max) 来限制输入的标签数上限。
+设置 [`max`](#props-max) 属性来限制输入的标签数上限。
 
 [[ demo src="/demo/tag-input/max.vue" ]]
 
 ### 最大字符数
 
-设置 [`maxlength`](#props-maxlength) 来限制输入的字符数上限。
+设置 [`maxlength`](#props-maxlength) 属性来限制输入的字符数上限。
 
 [[ demo src="/demo/tag-input/maxlength.vue" ]]
 
 ### 自定义标签
 
-通过 [`tag` 插槽](#slots-tag) 来自定义标签的展示。
+通过 [`tag`](#slots-tag) 插槽 来自定义标签的展示。
 
 [[ demo src="/demo/tag-input/custom-tag.vue" ]]
 
@@ -112,13 +112,13 @@
 ^^^slot-tag
 已添加的标签项。
 
-默认内容：[`Tag` 组件](./tag)渲染的标签项。
+默认内容：[`Tag`](./tag) 组件渲染的标签项。
 
-+++作用域参数
++++插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `attrs` | `Object` | 需要输出到标准 [`Tag` 组件](./tag)上的属性，可以使用 `v-bind="attrs"` 统一进行输出。 |
-| `listeners` | `Object` | 需要输出到标准 [`Tag` 组件](./tag)上的事件监听器，可以使用 `v-on="listeners"` 统一进行输出。 |
+| `attrs` | `Object` | 需要输出到标准 [`Tag`](./tag) 组件上的属性，可以使用 `v-bind="attrs"` 统一进行输出。 |
+| `listeners` | `Object` | 需要输出到标准 [`Tag`](./tag) 组件上的事件监听器，可以使用 `v-on="listeners"` 统一进行输出。 |
 | `tag` | `string` | 标签项文本值。 |
 | `index` | `function(value: *): void` | 用于切换已选项。 |
 | `key` | `string` | 标签项的 `key`，必须绑定到单个项目上。 |

@@ -1,6 +1,6 @@
 # Tree
 
-## Demos
+## Examples
 
 ### Size variants
 

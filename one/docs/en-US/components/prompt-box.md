@@ -1,6 +1,6 @@
 # PromptBox
 
-## Demos
+## Examples
 
 [[ demo src="/demo/prompt-box/base.vue" ]]
 

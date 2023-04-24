@@ -1,6 +1,6 @@
 # Popover
 
-## Demos
+## Examples
 
 ### Style variants
 

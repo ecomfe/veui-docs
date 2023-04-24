@@ -130,7 +130,7 @@
 ^^^slot-suggestions
 推荐列表内容。
 
-+++作用域参数
++++插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `suggestions` | `Array<{value: string, label: string}>` | 从 [`suggestions`](#props-suggestions) 属性归一化类型后的推荐列表。 |
@@ -139,7 +139,7 @@
 ^^^slot-suggestion
 推荐列表的单项插槽，用来定制选项内容。
 
-+++作用域参数
++++插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `label` | `string` | 选项文本。 |

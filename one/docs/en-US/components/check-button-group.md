@@ -1,6 +1,6 @@
 # CheckButtonGroup
 
-## Demos
+## Examples
 
 ### Size variants
 

@@ -1,6 +1,6 @@
 # ConfirmBox
 
-## Demos
+## Examples
 
 The title and content are both customizable.
 

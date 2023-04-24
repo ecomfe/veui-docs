@@ -1,6 +1,6 @@
 # Toast
 
-## Demos
+## Examples
 
 ### Types
 

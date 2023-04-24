@@ -57,7 +57,7 @@
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `label` | `string` | 节点的文字描述。 |
-| `value` | `string` | 节点对应的值，一般是页内 hash， 如 `#button` 。 |
+| `value` | `string` | 节点对应的值。 |
 | `options` | `Array<Object>` | 节点的子节点数组，数组项类型同 [`datasource`](#props-datasource) 数组项。 |
 +++
 ^^^
@@ -112,7 +112,7 @@
 
 下拉建议面板插槽。
 
-+++作用域参数
++++插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `datasource` | `Array<string | Object>` | 数据源，类型同 [`datasource`](#props-datasource) 属性。 |
@@ -124,7 +124,7 @@
 
 下拉面板中选项插槽。
 
-+++作用域参数
++++插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `label` | `string` | 用来显示的节点文案，不存在则取 `value`。 |

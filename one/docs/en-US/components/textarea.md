@@ -1,6 +1,6 @@
 # Textarea
 
-## Demos
+## Examples
 
 ### Size variants
 

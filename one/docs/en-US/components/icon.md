@@ -4,7 +4,7 @@
 VEUI's `Icon` component is compatible with [Vue-Awesome](https://github.com/Justineo/vue-awesome), including icon registration and specifying icon with a string-typed [`name`](#props-name) prop. The [`name`](#props-name) prop also accept a component definition directly.
 :::
 
-## Demos
+## Examples
 
 [[ demo src="/demo/icon/default.vue"]]
 

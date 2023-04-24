@@ -76,7 +76,7 @@
 
 默认内容：[`label`](#props-label) 属性值。
 
-+++作用域参数
++++插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `label` | `string` | 按钮文本。 |
@@ -85,7 +85,7 @@
 | `disabled` | `boolean` | 按钮是否禁用。 |
 +++
 
-另外，`items` 内数据项中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到作用域参数上。
+另外，`items` 内数据项中除了上面描述的字段之外的其它字段也会自动通过 `v-bind` 进行绑定到插槽参数上。
 ^^^
 
 ### 事件
@@ -93,7 +93,7 @@
 | 名称 | 描述 |
 | -- | -- |
 | ``click`` | [^click-event] |
-| <var>&lt;value&gt;</var> | [^value-var-event] |
+| <var>&lt;value&gt;</var> | 如果对应数据项有字符串类型的 `value` 字段，则在点击后触发名为 `value` 值的事件，参数与 [`click`](#events-click) 事件相同。 |
 
 ^^^click-event
 点击后触发，回调参数为 `(item, index)`。
@@ -104,8 +104,4 @@
 | `item` | `{label: string, value: *=, ...}` | 数据项。 |
 | `index` | `number` | 按钮在 `items` 中的序号。 |
 +++
-^^^
-
-^^^value-var-event
-如果对应数据项有字符串类型的 `value` 字段，则在点击后触发名为 `value` 值的事件，参数与 [`click`](#events-click) 事件相同。
 ^^^

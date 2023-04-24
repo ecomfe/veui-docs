@@ -1,6 +1,6 @@
 # Steps
 
-## Demos
+## Examples
 
 ### Size and direction variants
 

@@ -4,9 +4,9 @@
 `GridColumn` is required to be used with [`GridContainer`](./grid-container) and [`GridRow`](./grid-row).
 :::
 
-## Demos
+## Examples
 
-See [the demos of `GridContainer`](./grid-container#demos).
+See [the demos of `GridContainer`](./grid-container#examples).
 
 ## API
 

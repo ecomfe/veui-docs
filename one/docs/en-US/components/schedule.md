@@ -1,6 +1,6 @@
 # Schedule
 
-## Demos
+## Examples
 
 [[ demo src="/demo/schedule/default.vue" ]]
 

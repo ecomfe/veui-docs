@@ -1,6 +1,6 @@
 # Pagination
 
-## Demos
+## Examples
 
 ### Size variants
 

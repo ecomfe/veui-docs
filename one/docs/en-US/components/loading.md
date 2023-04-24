@@ -1,6 +1,6 @@
 # Loading
 
-## Demos
+## Examples
 
 ### Stylistic variants
 

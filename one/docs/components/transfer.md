@@ -138,19 +138,19 @@ function (keyword, { label }) {
 | ``candidate`` | 整个待选区。 |
 | ``candidate-head`` | [^candidate-head] |
 | ``selected-head`` | [^selected-head] |
-| ``candidate-title`` | 待选区内顶部标题文本区域。作用域参数与 `candidate-head` 一致。 |
-| ``selected-title`` | 已选区内顶部标题文本区域。作用域参数与 `selected-head` 一致。 |
+| ``candidate-title`` | 待选区内顶部标题文本区域。插槽参数与 `candidate-head` 一致。 |
+| ``selected-title`` | 已选区内顶部标题文本区域。插槽参数与 `selected-head` 一致。 |
 | ``candidate-no-data`` | 数据源没数据时显示的内容。 |
 | ``selected-no-data`` | 没有已选项时显示的内容。 |
 | ``candidate-item`` | [^candidate-item] |
 | ``selected-item`` | [^selected-item] |
-| ``candidate-item-label`` | 待选区内每一项的文本区域。作用域参数与 `candidate-item` 一致。 |
-| ``selected-item-label`` | 已选区内每一项的文本区域。当 `selected-show-mode` 为 `'tree'` 时作用域参数与 `selected-item` 一致。否则该插槽对应每个已选叶子项目的整条路径上的每个节点内容，此时作用域参数与 `candidate-item` 一致。 |
+| ``candidate-item-label`` | 待选区内每一项的文本区域。插槽参数与 `candidate-item` 一致。 |
+| ``selected-item-label`` | 已选区内每一项的文本区域。当 `selected-show-mode` 为 `'tree'` 时插槽参数与 `selected-item` 一致。否则该插槽对应每个已选叶子项目的整条路径上的每个节点内容，此时插槽参数与 `candidate-item` 一致。 |
 
 ^^^candidate-head
 待选区内顶部标题区域。
 
-+++作用域参数
++++插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `count` | `number` | 待选项的数量。 |
@@ -160,7 +160,7 @@ function (keyword, { label }) {
 ^^^selected-head
 已选区内顶部标题区域。
 
-+++作用域参数
++++插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `count` | `number` | 已选项的数量。 |
@@ -170,7 +170,7 @@ function (keyword, { label }) {
 ^^^candidate-item
 待选区内的每一项内容。
 
-+++作用域参数
++++插槽参数
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `label` | `string` | 项目的文本描述。 |
@@ -185,8 +185,8 @@ function (keyword, { label }) {
 ^^^selected-item
 已选区内的每一项内容。
 
-+++作用域参数
-如果 `Transfer` 组件的 `selected-show-mode` 为 `'tree'`，则作用域参数与 `candidate-item` 一致；如果 `selected-show-mode` 为 `'flat'`，则作用域参数为：
++++插槽参数
+如果 `Transfer` 组件的 `selected-show-mode` 为 `'tree'`，则插槽参数与 `candidate-item` 一致；如果 `selected-show-mode` 为 `'flat'`，则插槽参数为：
 
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
