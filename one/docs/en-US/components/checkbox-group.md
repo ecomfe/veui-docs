@@ -4,9 +4,21 @@
 
 ### Size variants
 
-Available size variant for the [`ui`](#props-ui) prop: `s` / `m`.
+Available [`ui`](#props-ui) prop values: `s` / `m`.
 
 [[ demo src="/demo/checkbox-group/default.vue" ]]
+
+### Mixed selection
+
+[`exclusive`](#props-exclusive) and [`empty-value`](#props-empty-value) can be used to enable coexistence of single and multiple selection scenarios.
+
+[[ demo src="/demo/checkbox-group/exclusive.vue" ]]
+
+### Additional description
+
+Set the `desc` field in the data source item or specify additional description through the [`desc`](#slots-desc) slot. The additional description will be displayed when hovering over.
+
+[[ demo src="/demo/checkbox-group/desc.vue" ]]
 
 ## API
 
@@ -17,30 +29,31 @@ Available size variant for the [`ui`](#props-ui) prop: `s` / `m`.
 | ``ui`` | `string` | - | [^ui] |
 | ``items`` | `Array<Object>` | `[]` | [^items] |
 | ``value`` | `Array` | `[]` | [^value] |
-| ``disabled`` | `boolean` | `false` | Whether the checkbox group is disabled. |
-| ``readonly`` | `boolean` | `false` | Whether the checkbox group is read-only. |
-| ``empty-value`` | `*` | - | The value to be selected when all selected values are deselected. Used when `exclusive` items are present. |
+| ``disabled`` | `boolean` | `false` | Whether the component is disabled. |
+| ``readonly`` | `boolean` | `false` | Whether the component is read-only. |
+| ``empty-value`` | `*` | - | The default value of the component when all selections are cancelled. Usually used in scenarios where `exclusive` option exists. |
 
 ^^^ui
-Style variants.
+Predefined styles.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `s` | Small. |
-| `m` | Medium. |
+| `s` | Small size style. |
+| `m` | Medium size style. |
 ^^^
 
 ^^^items
-The datasource of items with the item type being `{label, value, disabled, exclusive ...}`.
+Data source of the checkbox group. The item type is `{ label, value, disabled, exclusive, desc, ... }`.
 
 +++Properties
 | Name | Type | Description |
 | -- | -- | -- |
-| `label` | `string` | The descriptive label of the item. |
-| `value` | `*` | The value of the item. |
-| `disabled` | `boolean` | Whether the item is disabled. |
-| `exclusive` | `boolean` | Whether the item is exclusive. |
+| `label` | `string` | Text description of the option. |
+| `value` | `*` | The value corresponding to the option. |
+| `disabled` | `boolean` | Whether the option is disabled. |
+| `exclusive` | `boolean` | Whether the option is exclusive. |
+| `desc` | `string` | Additional description information of the option. |
 +++
 ^^^
 
@@ -49,7 +62,7 @@ The datasource of items with the item type being `{label, value, disabled, exclu
 `v-model`
 :::
 
-The `value`s of the selected items.
+The list of `value` of selected items in `items`.
 ^^^
 
 ### Slots
@@ -57,20 +70,23 @@ The `value`s of the selected items.
 | Name | Description |
 | -- | -- |
 | ``item`` | [^slot-item] |
+| ``desc`` | Additional description information of the button, slot props are the same as the [`item`](#slots-item) slot. |
 
 ^^^slot-item
-The label content of each checkbox. Displays the value of the `label` property by default.
+Area for option description text.
+
+Default content: `label` prop value.
 
 +++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `label` | `string` | The descriptive label of the item. |
-| `value` | `*` | The value of the item. |
-| `index` | `number` | The index of the item within `items`. |
-| `disabled` | `boolean` | Whether the item is disabled. |
+| `label` | `string` | Option text. |
+| `value` | `*` | Option value. |
+| `index` | `number` | The index of the option in `items`. |
+| `disabled` | `boolean` | Whether the option is disabled. |
 +++
 
-Additionally, custom properties apart from the listed ones will also be passes into the slot props object via `v-bind`.
+In addition, other fields in the `items` data item that are not described above will also be automatically bound to the slot props through `v-bind`.
 ^^^
 
 ### Events
@@ -84,5 +100,5 @@ Additionally, custom properties apart from the listed ones will also be passes i
 `v-model`
 :::
 
-Triggers when the selected item changed. The callback parameter list is `(value: Array)` and `value` is the value array of the selected items.
+Triggered after the selection state changes, with the callback parameter `(value: Array)`. `value` is an array composed of the `value` fields of the selected items in the current checkbox group.
 ^^^

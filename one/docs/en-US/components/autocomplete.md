@@ -47,8 +47,8 @@ Set the [`match`](#props-match) prop to customize highlight logic and the [`filt
 | ``get-length`` | `function(string): number` | A custom function to calculate the length of characters. |
 | ``trim`` | `boolean | string` | `false` | [^trim] |
 | ``autofocus`` | `boolean` | `false` | Whether to automatically focus the input. |
-| ``overlay-class`` | `string | Array | Object` | - | Refers to the [`overlay-class`](./overlay#props-overlay-class) property of the [`Overlay`](./overlay) component. |
-| ``overlay-style`` | `string | Array | Object` | - | Refers to the [`overlay-style`](./overlay#props-overlay-style) property of the [`Overlay`](./overlay) component. |
+| ``overlay-class`` | `string | Array | Object` | - | Refers to the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
+| ``overlay-style`` | `string | Array | Object` | - | Refers to the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
 
 ^^^datasource
 An array of data sources. If an item is an object, it should have the following properties: `{ label, value, options, ... }`.

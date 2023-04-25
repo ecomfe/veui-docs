@@ -10,31 +10,31 @@ By default, clicking on a date selects a single date.
 
 ### Multiple dates and date ranges
 
-When the [`multiple`](#props-multiple) property is set, multiple dates can be selected. When the [`range`](#props-range) property is set, a date range can be selected.
+When the [`multiple`](#props-multiple) prop is set, multiple dates can be selected. When the [`range`](#props-range) prop is set, a date range can be selected.
 
 [[ demo src="/demo/calendar/range-multiple.vue" ]]
 
 ### Multiple date ranges
 
-When the [`multiple`](#props-multiple) and [`range`](#props-range) properties are set simultaneously, multiple date ranges can be selected. When the [`panel`](#props-panel) property is set, the number of calendar panels can be specified. The strategy for merging the two selected time periods is to select the time period if no date has been selected, otherwise the time period is deselected.
+When the [`multiple`](#props-multiple) and [`range`](#props-range) properties are set simultaneously, multiple date ranges can be selected. When the [`panel`](#props-panel) prop is set, the number of calendar panels can be specified. The strategy for merging the two selected time periods is to select the time period if no date has been selected, otherwise the time period is deselected.
 
 [[ demo src="/demo/calendar/multiple-ranges.vue" ]]
 
 ### Calendar types
 
-Set the [`type`](#props-type) property to specify the type of calendar: year, month, or day.
+Set the [`type`](#props-type) prop to specify the type of calendar: year, month, or day.
 
 [[ demo src="/demo/calendar/type.vue" ]]
 
 ### Show Dates from Other Months
 
-Set the [`fill-month`](#props-fill-month) property to control whether to display dates from other months.
+Set the [`fill-month`](#props-fill-month) prop to control whether to display dates from other months.
 
 [[ demo src="/demo/calendar/fill-month.vue" ]]
 
 ### Disabled Dates
 
-Set the [`disabled-date`](#props-disabled-date) property to customize whether a specific date is disabled.
+Set the [`disabled-date`](#props-disabled-date) prop to customize whether a specific date is disabled.
 
 [[ demo src="/demo/calendar/disabled-date.vue" ]]
 

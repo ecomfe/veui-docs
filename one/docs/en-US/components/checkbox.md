@@ -4,13 +4,13 @@
 
 ### Size variants
 
-Available size variant for the [`ui`](#props-ui) prop: `s` / `m`.
+Available `ui` prop values: `s` / `m`.
 
 [[ demo src="/demo/checkbox/size.vue" ]]
 
 ### True/false values
 
-Use the [`true-value`](#props-true-value) and [`false-value`](#props-false-value) props to customize the `model` value (used in its `v-model`) of the checkbox in checked/unchecked state.
+You can set the `v-model` value by using the `true-value` and `false-value` props.
 
 [[ demo src="/demo/checkbox/value.vue" ]]
 
@@ -20,45 +20,45 @@ Use the [`true-value`](#props-true-value) and [`false-value`](#props-false-value
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string` | - | [^ui] |
-| ``checked`` | `boolean` | `false` | [^checked] |
-| ``value`` | `*` | - | Denotes the value of current checkbox when `v-model` is bound to an array. |
-| ``true-value`` | `*` | `true` | The value for checked state. |
-| ``false-value`` | `*` | `false` | The value for unchecked state. |
-| ``indeterminate`` | `boolean` | `false` | Whether the checkbox is in an indeterminate state. |
+| ``ui`` | `string` | - | Preset style. |
+| ``checked`` | `boolean` | `false` | Whether the checkbox is checked. |
+| ``value`` | `*` | - | When `v-model` is bound to an array, represents the value of the current checkbox. |
+| ``true-value`` | `*` | `true` | The value corresponding to the checked state. |
+| ``false-value`` | `*` | `false` | The value corresponding to the unchecked state. |
+| ``indeterminate`` | `boolean` | `false` | Whether the checkbox is in the indeterminate state. |
 | ``disabled`` | `boolean` | `false` | Whether the checkbox is disabled. |
-| ``readonly`` | `boolean` | `false` | Whether the checkbox is read-only. |
+| ``readonly`` | `boolean` | `false` | Whether the checkbox is readonly. |
 
-^^^ui
-Style variants.
+#### `ui` prop
+
+Preset styles.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `s` | Small. |
-| `m` | Medium. |
+| `s` | Small size style. |
+| `m` | Medium size style. |
 +++
-^^^
 
-^^^checked
+#### `checked` prop
+
 :::badges
 `.sync`
 :::
 
 Whether the checkbox is checked.
-^^^
 
 ### Slots
 
 | Name | Description |
 | -- | -- |
-| ``default`` | The label text of the checkbox. The checkbox is toggled when the label is clicked. Displays nothing by default. |
+| ``default`` | The descriptive text of the checkbox, which toggles the selection state when clicked. No default content. |
 
 ### Events
 
 | Name | Description |
 | -- | -- |
-| ``change`` | Triggered when user toggles the state of the checkbox. The callback parameter list is `(checked: boolean)`. `checked` denotes whether the checkbox is checked. |
+| ``change`` | Triggered when the user toggles the selection state. The callback parameter is `(checked: boolean)`. `checked` indicates whether the checkbox is currently selected. |
 | ``input`` | [^event-input] |
 
 ^^^event-input
@@ -66,14 +66,14 @@ Whether the checkbox is checked.
 `v-model`
 :::
 
-Triggered when the check state is changed. The callback parameter list is `(val: *)`, with `val` being the current value of `v-model`. Unlike the [`change`](#events-change) event, `input` is triggered even without user interaction.
-^^^
+Triggered after the selection state changes. The callback parameter is `(val: *)`. `val` is the current `v-model` value. Unlike the `change` event, the `input` event is also triggered when the state changes due to data operations.
 
-Additionally, `Checkbox` exposes the following native events:
+In addition, `Checkbox` supports the following native events:
 
 `auxclick`, `click`, `contextmenu`, `dblclick`, `mousedown`, `mouseenter`, `mouseleave`, `mousemove`, `mouseover`, `mouseout`, `mouseup`, `select`, `wheel`, `keydown`, `keypress`, `keyup`, `focus`, `blur`, `focusin`, `focusout`.
 
-The callback parameter is the corresponding native event object for all events above.
+The callback parameters are the corresponding native event objects.
+^^^
 
 ### Icons
 

@@ -74,6 +74,7 @@
 `auxclick`、`click`、`contextmenu`、`dblclick`、`mousedown`、`mouseenter`、`mouseleave`、`mousemove`、`mouseover`、`mouseout`、`mouseup`、`select`、`wheel`、`keydown`、`keypress`、`keyup`、`focus`、`blur`、`focusin`、`focusout`。
 
 回调参数均为相应的原生事件对象。
+^^^
 
 ### 图标
 

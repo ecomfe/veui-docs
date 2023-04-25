@@ -752,8 +752,7 @@
         },
         {
           "title": "Collapse",
-          "slug": "collapse",
-          "disabled": true
+          "slug": "collapse"
         },
         {
           "title": "Accordion",

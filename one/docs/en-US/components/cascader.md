@@ -103,7 +103,7 @@ Option list, with the item type being `{label, value, options, disabled, positio
 | `label` | `string` | The textual description of the option. |
 | `value` | `*` | The value corresponding to the option. |
 | `position` | `string` | How to display the sub-nodes. By default, they pop up. You can set `inline` to display them inline. |
-| `options` | `Array<Object>` | The array of sub-options for the option, with the item type being the same as that of the [`options`](#props-options) property array item. |
+| `options` | `Array<Object>` | The array of sub-options for the option, with the item type being the same as that of the [`options`](#props-options) prop array item. |
 | `disabled` | `boolean` | Whether the option is disabled. |
 +++
 ^^^

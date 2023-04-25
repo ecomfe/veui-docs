@@ -1,12 +1,12 @@
-# Column
+# Column <small>Table column</small>
 
 :::tip
-`Column` is required to be used within [`Table`](./breadcrumb).
+The `Column` component needs to be used within the [`Table`](./table) component.
 :::
 
 ## Examples
 
-See [the demos of `Table`](./table#examples).
+See [`Table` examples](./table#examples).
 
 ## API
 
@@ -15,32 +15,33 @@ See [the demos of `Table`](./table#examples).
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``title`` | `string` | - | The column title. |
-| ``field`` | `string` | - | The field name as a key of items in the [`data`](./table#props-data) prop of the parent `Table` component. |
-| ``width`` | `string=|number` | - | The column width in `px` value. |
+| ``field`` | `string` | - | The key name of the column, corresponds to a field of a data item in the [`data`](./table#props-data) prop of the `Table` component. |
+| ``width`` | `string=|number` | - | The width of the column in pixel value. |
 | ``sortable`` | `boolean` | `false` | [^sortable] |
-| ``align`` | `string` | - | The alignment of cell content in the column. Supports `left` / `center` / `right`. |
+| ``align`` | `string` | - | The alignment of the column content, supports `left` / `center` / `right`. |
 | ``span`` | `function(number): Object` | | [^span] |
-| ``desc`` | `string` | - | The description of the column head. |
+| ``desc`` | `string` | - | The description of the table header. |
+| ``fixed`` | `boolean | 'left' | 'right'` | `false` | Whether the column is fixed. `'left'` means fixed on the left side, `'right'` means fixed on the right side. |
 | ``filter-value`` | `*` | - | [^filter-value] |
-| ``filter-multiple`` | `boolean` | `false` | Whether the built-in filter is multi-select or not. |
-| ``filter-options`` | `Array<Object>` | - | The list of filter options, with items of type `{label, value, options, disabled, ...}`, see the [`options`](./select#options) prop of the [`Select`](./select) component. |
-| ``filter-title`` | `string` | - | The title of the filter dropdown. |
+| ``filter-multiple`` | `boolean` | `false` | Whether the built-in filter is multi-select. |
+| ``filter-options`` | `Array<Object>` | - | The filtering options list, the item type is `{label, value, options, disabled, ...}`, refer to the [`options`](./select#props-options) prop of the [`Select`](./select) component. |
+| ``filter-title`` | `string` | - | The title of the filter drop-down. |
 | ``allowed-orders`` | `Array` | `[false, 'desc', 'asc']` | [^allowed-orders] |
-| ``tooltip`` | `boolean | ((item: Object) => string)` | - | Whether to automatically show tooltips when content overflows. The tooltip displays the `textContent` of each cell by default. When being a function, the `item` argument is the entire data item and the returned string will be displayed as tooltip content. |
+| ``tooltip`` | `boolean | ((item: Object) => string)` | - | Whether to automatically display a hover tooltip when the content overflows. The default is to display the `textContent` of the current cell. When a function is passed in, the `item` parameter is the entire data item, and the returned string will be displayed as the tooltip content. |
 
 ^^^sortable
-Whether current column is sortable.
+Whether this column supports sorting.
 
 :::warning
-`Column` does not handle sorting itself. It only emits a [`sort`](./table#events-sort) event on `Table` when the sorter is clicked so users need handle sorting themselves.
+The component itself does not handle sorting logic, it only throws a [`sort`](./table#events-sort) event on the `Table` when the sorting button is clicked, and the user needs to handle the sorting logic themselves.
 :::
 ^^^
 
 ^^^span
-A function that defines how cells should span across rows/columns. The type is `function(index: number): { row: number, col: number }`, where `index` being the index of current row inside the [`data`](./table#props-data) prop of the parent `Table`. The `row` / `col` of the return value correspond to table cell's `rowspan` / `colspan` attribut, with a default value of `1`.
+Cell merge configuration. The type is `function(index: number): { row: number, col: number }`. `index` is the index of the current row in the [`data`](./table#props-data) prop of the `Table` component. The `row` / `col` fields of the return value correspond to the `rowspan` / `colspan` of the cell, and the default values are both `1`.
 
 :::tip
-You can learn more abut how to use this in `Table` component's [Demos › Selection and sorting](./table#selection-and-sorting).
+Refer to the [example › Selection mode and sorting](./table#selection-mode-and-sorting) in the `Table` component to learn how to use it.
 :::
 ^^^
 
@@ -49,14 +50,26 @@ You can learn more abut how to use this in `Table` component's [Demos › Select
 `.sync`
 :::
 
-The value of current filter condition. `null` means not filtered. When `filter-multiple` is `true`, the value is an array of selected values.
+The filter condition value. The value `null` means not filtered. When `filter-multiple` is `true`, the value is an array of selected item values.
+^^^
+
+^^^allowed-orders
+Specifies the sorting range of this column. When the user clicks, it will switch in the order specified.
+
++++Values
+| Value | Description |
+| --- | --- |
+| `false` | No sorting. |
+| `'asc'` | Ascending order. |
+| `'desc'` | Descending order. |
++++
 ^^^
 
 ### Slots
 
 | Name | Description |
 | -- | -- |
-| ``head`` | The table head. |
+| ``head`` | The column header area. |
 | ``foot`` | [^slot-foot] |
 | ``default`` | [^slot-default] |
 | ``sub-row`` | [^slot-sub-row] |
@@ -64,47 +77,55 @@ The value of current filter condition. `null` means not filtered. When `filter-m
 | ``filter`` | [^slot-filter] |
 
 ^^^slot-foot
-The table foot.
+The column footer area.
 
 :::warning
-`Column`'s `foot` slot will be ignored if users provide content for `Table`'s [`foot`](./table#slots-foot) slot.
+If the associated `Table` component defines a [`foot`](./table#slots-foot) slot, the individual column footer configuration will be overridden.
 :::
 ^^^
 
 ^^^slot-default
-The content of the table cell. Displays the property value corresponds to the [`field`](#props-field) prop in table's [`data`](./table#props-data) prop.
+The content of the cell.
 
-The slot props are the same as each item inside `data`, with an extra `index: number`, which denotes the index within the row data.
+Default content: The value of the field corresponding to the [`field`](#props-field) prop in the table `data` item.
+
+The slot props are all fields in the current row data in `data`.
 ^^^
 
 ^^^slot-sub-row
-The content of cells in a sub row. Sub row data comes from the `children` array inside the row data in `Table`s [`data`](./table#props-data) prop. The number of sub rows are determined by the length of the `children` array and the sub rows share the same column configuration with the table.
+The content of the sub-row after the row is expanded. When using this slot, the content will be the cell content of the corresponding column in the expanded sub-row below the row. The row data source comes from the `children` array in `data` corresponding to the main row data, and the number of expanded sub-rows is the same as the number of data items in `children`, using the same column configuration.
 
-Displays the value keyed by the [`field`](#props-field) prop inside the sub row data, which is `data[i].children[j]` of the parent table.
+Default content: The value of the field corresponding to the [`field`](#props-field) prop in the table `data[i].children[j]` item.
 
-The slot props are the same as each item inside `children`, with an extra `index: number`, which denotes the index within the row data.
+The slot props are all fields in the current sub-row data and the current main row corresponding index value `index`.
 
 :::warning
-The `sub-row` slot of `Column` will be ignored when content is provided for `Table`'s [`sub-row`](./table#slots-sub-row) slot.
+If the associated `Table` component defines a [`sub-row`](./table#slots-sub-row) slot, the individual column `sub-row` slot will be overridden.
 :::
 ^^^
 
 ^^^slot-desc
-The content of the description overlay. Will override the [`desc`](#props-desc) prop when set.
+The description of the header. When using this slot, it will override the [`desc`](#props-desc) prop of the `Column`.
 
 +++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `close` | `function(): void` | Used to close the description overlay. |
+| `close` | `function(): void` | Close the container that displays the description content. |
 +++
 ^^^
 
 ^^^slot-filter
-The content of the filter dropdown.
+The content of the filter layer.
 
 +++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `close` | `function(): void` | Used to close the filter dropdown. |
+| `close` | `function(): void` | Close the filter layer. |
 +++
 ^^^
+
+### Events
+
+| Name | Description |
+| -- | -- |
+| ``filterchange`` | Triggered when the filter of this column is modified. The callback parameter is `(value)`. `value` is the current value of the filter. |

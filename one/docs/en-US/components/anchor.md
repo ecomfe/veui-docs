@@ -60,7 +60,7 @@ Render each anchor link.
 
 Default content: Anchor link.
 
-The scope parameter refers to the [`items`](#props-items) property details.
+The scope parameter refers to the [`items`](#props-items) prop details.
 ^^^
 
 ^^^slot-item-label
