@@ -690,8 +690,27 @@
         },
         {
           "title": "Layout",
-          "slug": "layout",
-          "disabled": true
+          "slug": "layout"
+        },
+        {
+          "title": "Header",
+          "slug": "header",
+          "sub": true
+        },
+        {
+          "title": "Sidebar",
+          "slug": "sidebar",
+          "sub": true
+        },
+        {
+          "title": "Content",
+          "slug": "content",
+          "sub": true
+        },
+        {
+          "title": "Footer",
+          "slug": "footer",
+          "sub": true
         },
         {
           "title": "Span",

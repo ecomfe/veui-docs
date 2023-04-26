@@ -1,4 +1,4 @@
-#  ConfirmBox
+# ConfirmBox
 
 ## Examples
 
