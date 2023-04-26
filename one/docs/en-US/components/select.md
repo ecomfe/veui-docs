@@ -183,7 +183,7 @@ The entire drop-down trigger area. Displays the select input by default.
 
 +++Slot props
 | Name | Type | Description |
-| --- | --- | --- |
+| -- | -- | -- |
 | `attrs` | `Object` | Attributes that need to be output to the trigger element, including `aria-*` / `disabled`, etc., can be output using `v-bind="attrs"`. |
 | `value` | `*` | The value of the selected option. |
 | `select` | `function(value: *): void` | To select a specified value. |

@@ -1,12 +1,12 @@
 # GridColumn
 
 :::tip
-`GridColumn` is required to be used with [`GridContainer`](./grid-container) and [`GridRow`](./grid-row).
+The `GridColumn` component needs to be used with the [`GridContainer`](./grid-container) and [`GridRow`](./grid-row) components.
 :::
 
 ## Examples
 
-See [the demos of `GridContainer`](./grid-container#examples).
+See [`GridContainer` examples](./grid-container#examples) .
 
 ## API
 
@@ -14,10 +14,10 @@ See [the demos of `GridContainer`](./grid-container#examples).
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``span`` | `number` | - | The number of original grid columns to span. If not specified it will span across the whole row. |
-| ``offset`` | `number` | `0` | The number of original grid columns to move current column to the right. Will affect the position of following columns. |
-| ``pull`` | `number` | `0` | The number of original grid columns to move current column to the left. Will *not* affect the position of following columns. |
-| ``push`` | `number` | `0` | The number of original grid columns to move current column to the right. Will *not* affect the position of following columns. |
+| ``span`` | `number` | - | The number of columns spanned by the grid column. If not passed, it will take up the entire row by default. |
+| ``offset`` | `number` | `0` | The number of columns the grid column is offset, which affects the position of subsequent grid columns. |
+| ``pull`` | `number` | `0` | The number of columns the grid column is pulled to the left, without affecting the position of other grid columns. Cannot be used with `push` at the same time. |
+| ``push`` | `number` | `0` | The number of columns the grid column is pushed to the right, without affecting the position of other grid columns. Cannot be used with `pull` at the same time. |
 
 ### Slots
 

@@ -164,7 +164,7 @@ The entire drop-down trigger area. Displays the dropdown button by default.
 
 +++Slot props
 | Name | Type | Description |
-| --- | --- | --- |
+| -- | -- | -- |
 | `attrs` | `Object` | Attributes that need to be output to the trigger element, including `aria-*` / `disabled`, etc., can be output using `v-bind="attrs"`. |
 | `handlers` | `Object` | [^handlers-desc] |
 | `expanded` | `boolean` | Whether the dropdown menu is expanded or not. |

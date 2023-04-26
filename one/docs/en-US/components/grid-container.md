@@ -1,7 +1,7 @@
 # GridContainer
 
 :::tip
-`GridContainer` is required to be used with [`GridRow`](./grid-row) and [`GridColumn`](./grid-row).
+`GridContainer` component needs to be used with the [`GridRow`](./grid-row) and [`GridColumn`](./grid-column) components.
 :::
 
 ## Examples
@@ -10,7 +10,7 @@
 
 [[ demo src="/demo/grid/default.vue" browser="/demos/grid/default.vue" ]]
 
-### Fixed-width grid
+### Fixed grid
 
 [[ demo src="/demo/grid/fixed.vue" browser="/demos/grid/fixed.vue" ]]
 
@@ -20,29 +20,29 @@
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``columns`` | `number` | `gridcontainer.columns` | The number of columns. |
-| ``margin`` | `number` | `gridcontainer.margin` | Margin around both sides of the grid container in `px`. |
-| ``gutter`` | `number` | `gridcontainer.gutter` | Gutter between adjacent grid columns in `px`. |
-| ``width`` | `number` | - | The width of the grid container in `px` when creating fixed-width grids. |
+| ``columns`` | `number` | `gridcontainer.columns` | Number of columns in the grid. |
+| ``margin`` | `number` | `gridcontainer.margin` | Margin on both sides of the grid, in pixels. |
+| ``gutter`` | `number` | `gridcontainer.gutter` | Spacing between columns in the grid, in pixels. |
+| ``width`` | `number` | - | When creating a fixed layout, the width of the container in pixels. |
 
 ### Slots
 
 | Name | Description |
 | -- | -- |
-| ``default`` | The content of the grid. Can only have [`GridRow`](./grid-row) components as direct children. |
+| ``default`` | The layout content, only[`GridRow`](./grid-row) components can be direct children. |
 
 ### Configs
 
 | Key | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``gridcontainer.columns`` | `number` | `12` | The number of columns. |
-| ``gridcontainer.gutter`` | `number` | `30` | Gutter between adjacent grid columns in `px`. |
-| ``gridcontainer.margin`` | `number` | `0` | Margin around both sides of the grid container in `px`. |
+| ``gridcontainer.columns`` | `number` | `12` | Number of columns in the grid. |
+| ``gridcontainer.gutter`` | `number` | `30` | Spacing between columns in the grid, in pixels. |
+| ``gridcontainer.margin`` | `number` | `0` | Margin on both sides of the grid, in pixels. |
 
-#### Default config in `veui-theme-dls`
+#### Default configuration in `veui-theme-dls`
 
 | Key | Type | Default |
-| -- | -- | -- | -- |
+| -- | -- | -- |
 | `gridcontainer.columns` | `number` | `24` |
 | `gridcontainer.gutter` | `number` | `20` |
 | `gridcontainer.margin` | `number` | `20` |

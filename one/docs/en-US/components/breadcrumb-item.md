@@ -13,7 +13,7 @@ See [`Breadcrumb` examples](./breadcrumb#examples).
 ### Props
 
 | Name | Type | Default | Description |
-| --- | --- | --- | --- |
+| -- | -- | -- | -- |
 | ``to`` | `string | Object` | - | The address to go to after clicking on the breadcrumb item. See the [`to`](./link#props-to) prop of the [`Link`](./link) component. |
 | ``type`` | `string` | `'link'` | [^type] |
 | ``native`` | `boolean` | `false` | When `true` and `to` is specified, the native `<a>` element will be used directly, and the `to` value will be set to the `href` attribute of the `<a>` tag. |

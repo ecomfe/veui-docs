@@ -11,7 +11,7 @@ Custom title and content area.
 ### Props
 
 | Name | Type | Default | Description |
-| --- | --- | --- | --- |
+| -- | -- | -- | -- |
 | ``open`` | `boolean` | `false` | [^open] |
 | ``title`` | `string` | - | Title. |
 | ``loading`` | `boolean` | `false` | Whether the dialog is in loading state. When in loading state, the OK button will also be in loading state and cannot be clicked. |

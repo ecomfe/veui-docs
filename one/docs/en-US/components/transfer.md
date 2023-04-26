@@ -111,7 +111,7 @@ Merge strategy for selected values. When all child nodes under a node are select
 
 +++Enum values
 | Value | Description |
-| --- | --- |
+| -- | -- |
 | `keep-all` | The parent and child nodes will both be in the selected value. |
 | `upwards` | Merge selected values as far as possible in the ancestor direction. |
 | `downwards` | Merge selected values in the direction of descendants if possible. |

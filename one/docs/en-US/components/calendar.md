@@ -8,7 +8,7 @@ By default, clicking on a date selects a single date.
 
 [[ demo src="/demo/calendar/default.vue" ]]
 
-### Multiple dates and date ranges
+### Multiple dates and ranges
 
 When the [`multiple`](#props-multiple) prop is set, multiple dates can be selected. When the [`range`](#props-range) prop is set, a date range can be selected.
 
@@ -138,7 +138,7 @@ Triggered when selecting a date range, and the end date marked by mouse or keybo
 
 ### Configs
 
-| Name | Type | Default | Description |
+| Key | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``calendar.weekStart`` | `number` | `1` | The day of the week when the week starts. Monday to Sunday corresponds to `1` to `7`. |
 

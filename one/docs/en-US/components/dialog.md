@@ -4,7 +4,7 @@
 
 ### Sizes and fullscreen
 
-Available size/dimension variants for the [`ui`](#props-ui) prop: `s` / `m` / `narrow` / `medium` / `wide` / `auto`.
+Available size/dimensional variants for the [`ui`](#props-ui) prop: `s` / `m` / `narrow` / `medium` / `wide` / `auto`.
 
 [[ demo src="/demo/dialog/size.vue" ]]
 
@@ -12,7 +12,7 @@ Available size/dimension variants for the [`ui`](#props-ui) prop: `s` / `m` / `n
 
 [[ demo src="/demo/dialog/modal.vue" ]]
 
-### Customized content
+### Custom content
 
 [[ demo src="/demo/dialog/custom.vue" ]]
 
@@ -28,6 +28,10 @@ Available size/dimension variants for the [`ui`](#props-ui) prop: `s` / `m` / `n
 
 [[ demo src="/demo/dialog/stack.vue" ]]
 
+### Loading and disabled states
+
+[[ demo src="/demo/dialog/status.vue" ]]
+
 ## API
 
 ### Props
@@ -35,37 +39,37 @@ Available size/dimension variants for the [`ui`](#props-ui) prop: `s` / `m` / `n
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
-| ``modal`` | `boolean` | `true` | Whether to display a backdrop to block interactions with the content underneath. Modal dialogs preempt focus by default (will return focus when closed). |
-| ``title`` | `string` | - | The title of the dialog. Will be ignored if [`title`](#slots-title) slot is specified. |
+| ``modal`` | `boolean` | `true` | Whether the dialog is modal. A modal dialog blocks the underlying content (cannot be clicked) and takes focus away (focus returns after the dialog is closed). |
+| ``title`` | `string` | - | The text for the dialog title. If the [`title`](#slots-title) slot is specified, it takes precedence over this prop. |
 | ``open`` | `boolean` | `false` | [^open] |
-| ``closable`` | `boolean` | `true` | Whether to display a close button at the top right corner. |
-| ``outside-closable`` | `boolean` | `false` | Wether to close the dialog when user click outside. |
+| ``closable`` | `boolean` | `true` | Whether to show the close button. |
+| ``outside-closable`` | `boolean` | `false` | Whether to close the dialog when clicked outside. |
 | ``draggable`` | `boolean` | `false` | Whether the dialog is draggable. |
-| ``escapable`` | `boolean` | `false` | Whether to allow closing the dialog after pressing <kbd>esc</kbd>. Only works when `closable` is set to `true`. |
-| ``inline`` | `boolean` | `false` | Whether the dialog is displayed inline thus takes up space. |
-| ``footless`` | `boolean` | `false` | Whether to hide the default footer. |
-| ``loading`` | `boolean` | `false` | Wehter the dialog is in loading state. When loading, the OK button will enter loading state as well and become unclickable. |
-| ``disabled`` | `boolean` | `false` | Wehter the dialog is disabled. When disabled, the OK button will be disabled as well and become unclickable. |
-| ``ok-label`` | `string` | - | The text content of the “OK” button. |
-| ``cancel-label`` | `string` | - | The text content of the “Cancel” button. |
-| ``priority`` | `number` | - | The stacking priority of the dialog overlay. See the [`priority`](./overlay#props-priority) prop of [`Overlay`](./overlay) component. |
-| ``before-close`` | `function(string): boolean=|Promise<boolean=>` | - | [^before-close] |
-| ``overlay-class`` | `string | Object` | - | The class expression applied to the root element of the dialog overlay. See the [`overlay-class`](./overlay#props-overlay-class) prop of [`Overlay`](./overlay) component. |
-| ``overlay-style`` | `string | Array | Object` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
+| ``escapable`` | `boolean` | `false` | Whether pressing <kbd>esc</kbd> can close the dialog. This only takes effect when `closable` is `true`. |
+| ``inline`` | `boolean` | `false` | Whether to inline the dialog and occupy content space. |
+| ``footless`` | `boolean` | `false` | Whether to hide the default bottom bar. |
+| ``loading`` | `boolean` | `false` | Whether the dialog is in a loading state. When in a loading state, the OK button also enters a loading state and cannot be clicked. |
+| ``disabled`` | `boolean` | `false` | Whether the dialog is in a disabled state. When in a disabled state, the OK button also enters a disabled state and cannot be clicked. |
+| ``ok-label`` | `string` | - | The text for the "OK" button. |
+| ``cancel-label`` | `string` | - | The text for the "Cancel" button. |
+| ``priority`` | `number` | - | The stacking order of the dialog layer, refer to the [`Overlay`](./overlay) component's [`priority`](./overlay#props-priority) prop. |
+| ``before-close`` | `function(string): boolean=|Promise<boolean>` | - | [^before-close] |
+| ``overlay-class`` | `string | Object` | - | The class name of the dialog layer root element, refer to the [`Overlay`](./overlay) component's [`overlay-class`](./overlay#props-overlay-class) prop. |
+| ``overlay-style`` | `string | Array | Object` | - | Refer to the [`Overlay`](./overlay) component's [`overlay-style`](./overlay#props-overlay-style) prop. |
 
 ^^^ui
-Style variants.
+The preset style.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `s` | Small sized content (not the dimension of the dialog itself). |
-| `m` | Medium sized content (not the dimension of the dialog itself). |
-| `narrow` | Narrow width. |
-| `medium` | Medium width. |
-| `wide` | Wide width. |
-| `fullscreen` | Fullscreen dialogs. |
-| `auto` | Auto-fit dialogs. |
+| `s` | Small content size (size of content and components, not the overall size of the dialog box). |
+| `m` | Medium content size (size of content and components, not the overall size of the dialog box). |
+| `narrow` | Narrow style. |
+| `medium` | Medium style. |
+| `wide` | Wide style. |
+| `fullscreen` | Fullscreen style. |
+| `auto` | Adaptive size style. |
 +++
 ^^^
 
@@ -74,13 +78,13 @@ Style variants.
 `.sync`
 :::
 
-Whether the dialog is open.
+Whether the dialog box is displayed.
 ^^^
 
 ^^^before-close
-Executed when user interaction is about to trigger closing the dialog. The type is `function(type: string): boolean=|Promise<boolean=>`, where `type` being the action type of the closing behavior. Available values by default are `'ok'/'cancel'`. The return value can be a `boolean` or a `Promise` that resolves a `boolean` value, to handle the situation that an async process is responsible for deciding whether to close the dialog. Will keep the dialog open when returning `false` or the `Promise` resolves with `false`.
+Executed after the action that triggers the closing of the dialog box occurs, with a type of `function(type: string): boolean=|Promise<boolean=>`. By default, `type` can be `'ok'|'cancel'`. The return value can be a `boolean` or a `Promise` that resolves to a `boolean`, used to handle situations where the dialog box closing state needs to be decided asynchronously. The dialog box will only be closed when the return value or resolved value is not `false`.
 
-+++Code example
++++Example
 ```html
 <veui-dialog :open.sync="dialogOpen" :before-close="submit">...</veui-dialog>
 ```
@@ -93,11 +97,11 @@ methods: {
         .then(({ id, error }) => {
           if (error) {
             this.showError(error)
-            return false // resolving `false` will keep the dialog open
+            return false // Resolving `false` will prevent dialog box from closing.
           }
         })
     }
-    // resolving non-`false` value will close the dialog
+    // When resolved but not returning `false`, dialog box will be closed.
   },
   // ...
 }
@@ -109,18 +113,17 @@ methods: {
 
 | Name | Description |
 | -- | -- |
-| ``default`` | The content of the dialog. |
-| ``title`` | The title of the dialog. Will ignore the [`title`](#props-title) prop if this slot is specified. |
+| ``default`` | Content area. |
+| ``title`` | Title area. If both the [`title`](#props-title) prop and the [`title`](#slots-title) slot are specified, the latter takes precedence. |
 | ``foot`` | [^slot-foot] |
 
 ^^^slot-foot
-The foot of the dialog. Displays “OK” and “Cancel” buttons by default.
-
+Footer area. By default, the "OK" and "Cancel" buttons are displayed.
 
 +++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `close` | `function(type: string): void` | The callback to trigger closing the dialog. `type` is the action type and will be passed into `before-close` hook as the first argument. And an event named after `type` will be triggered synchronously. |
+| `close` | `function(type: string): void` | The callback function that triggers the closing of the dialog box. `type` is the type of closing that will be passed to the `before-close` hook as a parameter, and the event with the same name will be triggered synchronously. |
 +++
 ^^^
 
@@ -128,14 +131,37 @@ The foot of the dialog. Displays “OK” and “Cancel” buttons by default.
 
 | Name | Description |
 | -- | -- |
-| ``ok`` | Triggered after the “OK” button is clicked or the dialog is closed with the slot scope function call `close('ok')`. |
-| ``cancel`` | Triggered after the “Cancel” button or the close button is clicked, or <kbd>esc</kbd> is pressed, or the dialog is closed with the slot scope function call `close('cancel')`. |
-| <var>&lt;value&gt;</var> | Triggered when the dialog is closed with the slot scope function call `close(value)`. |
-| ``afteropen`` | Triggered after the dialog is opened. The dialog content won't be rendered until after the dialog is opened, so if there is logic that depends on content rendering, please execute it after this event is triggered. |
-| ``afterclose`` | Triggered after the dialog is closed. If leave transition is provided by theme, then `afterclose` will be triggered when the transition finishes. |
+| ``ok`` | Triggered when the "OK" button is clicked or when the scope function `close('ok')` is called. |
+| ``cancel`` | Triggered when the "Cancel" button is clicked, when the close button is clicked, when the dialog box is closed by pressing <kbd>esc</kbd>, or when the scope function `close('cancel')` is called. |
+| <var>&lt;value&gt;</var> | Triggered when the scope function `close(value)` is called. |
+| ``afteropen`` | Triggered after the dialog box is opened. The content of the dialog box is rendered only after it is opened, so if there is logic that depends on the content being rendered, it should be executed after this event is triggered. |
+| ``afterclose`` | Triggered after the dialog box is closed. If the style theme provides an exit animation, it will be triggered after the exit animation is complete. |
 
 ### Icons
 
 | Name | Description |
 | -- | -- |
-| `close` | Close. |
+| ``close`` | Close. |
+
+### CSS
+
+| Name | Type | Default | Description |
+| -- | -- | -- | -- |
+| ``--dls-dialog-content-width`` | `<length>` | - | [^css-width] |
+| ``--dls-dialog-content-width`` | `<length>` | - | [^css-content-width] |
+
+^^^css-width
+The width of the entire dialog box. Cannot be set at the same time as [`--dls-dialog-content-width`](#css---dls-dialog-content-width).
+
+:::tip
+Needs to be set via the [`overlay-style`](#props-overlay-style) prop.
+:::
+^^^
+
+^^^css-content-width
+The width of the content area of the dialog box. Cannot be set at the same time as [`--dls-dialog-width`](#css---dls-dialog-content-width).
+
+:::tip
+Needs to be set via the [`overlay-style`](#props-overlay-style) prop.
+:::
+^^^

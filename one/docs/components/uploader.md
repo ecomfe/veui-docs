@@ -67,7 +67,7 @@
 ### 属性
 
 | 属性 | 类型 | 默认值 | 描述 |
-| --- | --- | --- | --- |
+| -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
 | ``type`` | `string` | `'file'` | [^type] |
 | ``value`` | `Object | Array<Object>` | - | [^value] |

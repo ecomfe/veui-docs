@@ -10,22 +10,23 @@
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``datasource`` | `Array<Object>` | `[]` | Datasource of the filter with the type being `{label: string, ...}`. |
-| ``searchable`` | `boolean` | `true` | Whether to allow search. |
-| ``filter`` | `function` | See description. | [^filter] |
-| ``search-on-input`` | `boolean` | `true` | Whether to trigger search while typing. |
-| ``placeholder`` | `string` | - | The placeholder text of the search input. |
+| ``datasource`` | `Array<Object>` | `[]` | Data source, with item type `{label: string, ...}`. |
+| ``searchable`` | `boolean` | `true` | Whether to allow searching. |
+| ``filter`` | `function` | See description | [^filter] |
+| ``search-on-input`` | `boolean` | `true` | Whether to trigger search on input. |
+| ``placeholder`` | `string` | - | Placeholder for search box. |
+| ``title`` | `string` | - | Title of the filter panel. |
 
 ^^^filter
-The filter function. The function signature is `function(keyword, item, index, datasource): boolean`. Items that make filter function returns `false` will be hidden.
+Search filter function with signature `function(keyword, item, index, datasource): boolean`. Items with a return value of `false` will be filtered from the result.
 
-+++Parameters
++++Properties
 | Name | Type | Description |
 | -- | -- | -- |
-| `keyword` | `string` | The search keyword. |
-| `item` | `Object` | Each item in `datasource`. |
-| `index` | `number` | The index of each item among its siblings. |
-| `datasource` | `Array<{label: string, ...}>` | same as the [`datasource`](#props-datasource) prop. |
+| `keyword` | `string` | Search keyword. |
+| `item` | `Object` | Current data node in the loop. |
+| `index` | `number` | Index of the current data node in the sibling nodes. |
+| `datasource` | `Array<{label: string, ...}>` | Same as the [`datasource`](#props-datasource) prop. |
 +++
 
 +++Default value
@@ -43,16 +44,16 @@ function (keyword, { label }) {
 
 | Name | Description |
 | -- | -- |
-| ``head`` | The head area of the filter panel. Displays the [`title`](#props-title) prop by default. |
-| ``no-data`` | Content to be displayed when `datasource` is empty. |
+| ``head`` | Title area. Displays the [`title`](#props-title) prop value by default. |
+| ``no-data`` | Content displayed when there is no data in the `datasource`. |
 | ``default`` | [^default] |
 
 ^^^default
-The content of the filter panel.
+Main content area.
 
 +++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `items` | `Array<Object>` | The filtered items from the [`datasource`](#props-datasource) prop and shares the same type with `datasource`. |
+| `items` | `Array<Object>` | Filtered data from `datasource`, with the same type as `datasource`. |
 +++
 ^^^

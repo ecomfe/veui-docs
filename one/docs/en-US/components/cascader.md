@@ -330,7 +330,7 @@ Triggered when the selection state changes. The callback parameter is `(value: *
 
 ### Configs
 
-| Configuration item | Type | Default | Description |
+| Key | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``cascader.placeholder`` | `string` | `@@cascader.placeholder` | The placeholder content when nothing is selected. |
 

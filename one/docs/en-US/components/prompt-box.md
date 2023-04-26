@@ -9,7 +9,7 @@
 ### Props
 
 | Name | Type | Default | Description |
-| --- | --- | --- | --- |
+| -- | -- | -- | -- |
 | ``open`` | `boolean` | `false` | [^open] |
 | ``title`` | `string` | - | The title of the prompt box. |
 | ``content`` | `string` | - | The description text above the text input. |

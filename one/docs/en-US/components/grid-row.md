@@ -1,12 +1,12 @@
 # GridRow
 
 :::tip
-`GridRow` is required to be used with [`GridContainer`](./grid-container) and [`GridColumn`](./grid-row).
+`GridRow` component needs to be used with the [`GridContainer`](./grid-container) and [`GridColumn`](./grid-column) components.
 :::
 
 ## Examples
 
-See [the demos of `GridContainer`](./grid-container#examples).
+See [`GridContainer` examples](./grid-container#examples).
 
 ## API
 
@@ -14,4 +14,4 @@ See [the demos of `GridContainer`](./grid-container#examples).
 
 | Name | Description |
 | -- | -- |
-| ``default`` | The content of the grid row. Can only have [`GridColumn`](./grid-column) components as direct children. |
+| ``default`` | The content of the grid row, only [`GridColumn`](./grid-column) components can be direct children. |

@@ -47,7 +47,7 @@ Listen for the [`redirect`](#events-redirect) event and handle it instead of dir
 ### Props
 
 | Name | Type | Default | Description |
-| --- | --- | --- | --- |
+| -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
 | ``routes`` | `Array<Object>` | `[]` | [^routes] |
 

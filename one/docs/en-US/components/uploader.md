@@ -19,7 +19,7 @@ Set the [`type`](#props-type) prop to `image` to use the image upload mode.
 ### Props
 
 | Name | Type | Default | Description |
-| --- | --- | --- | --- |
+| -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
 | ``type`` | `string` | `'file'` | [^type] |
 | ``value`` | `Object | Array<Object>` | - | [^value] |
@@ -171,7 +171,7 @@ In image upload mode, it is used to customize the actions on the floating toolba
 ### Slots
 
 | Name | Description |
-| --- | --- |
+| -- | -- |
 | ``button-label`` | [^button-label] |
 | ``upload`` | The area of the upload button in image upload mode. |
 | ``desc`` | The content of the prompt for the number, format, size, etc. of files. |
@@ -192,7 +192,7 @@ Single file area to customize the file content.
 
 +++Slot props
 | name | type | description |
-| --- | --- | --- |
+| -- | -- | -- |
 | `name` | `string` | The name of the file. |
 | `src` | `string` | The address of the file. |
 | `status` | `string` | The status of the file. `'success'` means the upload was successful; `'uploading'` means the upload is in progress; `'failure'` means the upload failed. |

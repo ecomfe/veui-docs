@@ -58,7 +58,7 @@ Specifies the sorting range of this column. When the user clicks, it will switch
 
 +++Values
 | Value | Description |
-| --- | --- |
+| -- | -- |
 | `false` | No sorting. |
 | `'asc'` | Ascending order. |
 | `'desc'` | Descending order. |
