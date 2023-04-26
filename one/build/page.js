@@ -66,6 +66,15 @@ export function render (contents, path, data = {}) {
   return md.processSync(vfile({ contents, path, data }))
 }
 
+const rawMd = remark()
+  .use(remarkToRehype, { allowDangerousHTML: true })
+  .use(raw)
+  .use(html, { allowDangerousHTML: true })
+
+export function renderRaw (contents, path, data = {}) {
+  return rawMd.processSync(vfile({ contents, path, data }))
+}
+
 function renderFile (file) {
   return render(readFileSync(file), file)
 }

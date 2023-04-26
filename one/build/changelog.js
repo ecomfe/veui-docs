@@ -1,6 +1,6 @@
 import { load } from 'cheerio'
 import fetch from 'node-fetch'
-import { render } from './page'
+import { renderRaw } from './page'
 const VERSION_RE = /^(\d+\.\d+\.\d+(?:-[a-z]+(?:\.\d+)?)?)(?:\s+"([^"]+)")?(?:\s+\((\d{4}-\d{2}-\d{2})\))?$/i
 function getVersion (title = '') {
   const [, version, codeName, date] = title.trim().match(VERSION_RE) || []
@@ -57,6 +57,15 @@ function trim (text) {
   return text.trim().replace(/^\n+|\n+$/g, '')
 }
 
+function getAllComments (node) {
+  if (node.type === 'comment') {
+    return [node]
+  } else if (node.childNodes) {
+    return node.childNodes.reduce((all, current) => all.concat(getAllComments(current)), [])
+  }
+  return []
+}
+
 function extract (html) {
   const changelog = []
 
@@ -92,15 +101,8 @@ function extract (html) {
 
       $changeset.each((_, el) => {
         const $change = $(el)
-        const tags = $change
-          .contents()
-          .toArray()
-          .map(el => {
-            if (el.type === 'comment') {
-              return getTags(el.data)
-            }
-            return []
-          })
+        const tags = getAllComments(el)
+          .map(comment => getTags(comment.data))
           .reduce((all, current) => all.concat(current), [])
 
         $change.contents().filter((_, el) => el.type === 'comment').remove()
@@ -131,6 +133,6 @@ function extract (html) {
 export async function getChangelogData () {
   const res = await fetch('https://raw.githubusercontent.com/ecomfe/veui/master/CHANGELOG.md')
   const raw = await res.text()
-  const { contents } = render(raw, 'veui/CHANGELOG.md')
+  const { contents } = renderRaw(raw, 'veui/CHANGELOG.md')
   return extract(contents)
 }
