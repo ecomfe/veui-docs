@@ -4,21 +4,27 @@
 
 ### Size variants
 
-Available size variants for the [`ui`](#props-ui) prop: `s` / `m`.
+Available [`ui`](#props-ui) prop values: `s` / `m`.
 
 [[ demo src="/demo/textarea/size.vue" ]]
 
-### Read-only state
+### Read-only
 
-Use the [`readonly`](#props-readonly) prop to set a textarea to read-only state.
+Set the [`readonly`](#props-readonly) prop to make the textarea read-only.
 
 [[ demo src="/demo/textarea/readonly.vue" ]]
 
-### Disabled state
+### Disabled
 
-Use the [`disabled`](#props-disabled) prop to set a textarea to disabled state.
+Set the [`disabled`](#props-disabled) prop to disable the textarea.
 
 [[ demo src="/demo/textarea/disabled.vue" ]]
+
+### Auto-resize
+
+Set the [`autoresize`](#props-autoresize) prop to make the textarea automatically resize.
+
+[[ demo src="/demo/textarea/autoresize.vue" ]]
 
 ## API
 
@@ -30,22 +36,25 @@ Use the [`disabled`](#props-disabled) prop to set a textarea to disabled state.
 | ``value`` | `string` | '' | [^value] |
 | ``disabled`` | `boolean` | `false` | Whether the textarea is disabled. |
 | ``readonly`` | `boolean` | `false` | Whether the textarea is read-only. |
-| ``line-number`` | `boolean` | `false` | Whether to show line numbers. |
-| ``rows`` | `number | string` | - | The default visible rows of the textarea. |
-| ``placeholder`` | `string` | - | The placeholder text of the textarea. |
-| ``composition`` | `boolean` | `false` | Whether the input process should be aware of composition. |
-| ``select-on-focus`` | `boolean` | `false` | Whether to select text content when focused. |
-| ``autoresize`` | `boolean` | `false` | Whether the textarea should automatically expand when the content exceeds default height. |
-| ``get-length`` | `function(string): number` | Used to customize length calculation of the input. |
+| ``line-number`` | `boolean` | `false` | Whether to display line numbers. |
+| ``rows`` | `number | string` | - | The number of visible rows of the textarea. |
+| ``placeholder`` | `string` | - | The placeholder text. |
+| ``composition`` | `boolean` | `false` | Whether to take into account the value of the input method editor. |
+| ``select-on-focus`` | `boolean` | `false` | Whether to select the text in the textarea when it receives focus. |
+| ``autoresize`` | `boolean` | `false` | Whether to automatically adjust the height of the textarea based on its content. |
+| ``get-length`` | `function(string): number` | A custom function for calculating the length of characters. |
+| ``resizable`` | `boolean` | Specifies whether the textarea can be resized. |
+| ``maxlength`` | `number` | - | The maximum number of characters that can be entered. |
+| ``strict`` | `boolean` | `false` | Whether to prevent further input when the maximum number of characters has been reached. |
 
 ^^^ui
-预设样式。
+Predefined style.
 
-+++枚举值
-| 值 | 描述 |
++++Enum Values
+| Value | Description |
 | -- | -- |
-| `s` | Small. |
-| `m` | Medium. |
+| `s` | Small size style. |
+| `m` | Medium size style. |
 +++
 ^^^
 
@@ -54,24 +63,24 @@ Use the [`disabled`](#props-disabled) prop to set a textarea to disabled state.
 `v-model`
 :::
 
-文本域的值。
+The value of the textarea.
 ^^^
 
-### 事件
+### Events
 
-| 名称 | 描述 |
+| Name | Description |
 | -- | -- |
 | ``change`` | [^event-change] |
 | ``input`` | [^event-input] |
 
 ^^^event-change
-输入框内容变化时触发，即原生 `change` 事件触发时。回调参数为 `(value, event)`。
+Triggered when the content of the textarea changes, i.e. when the native `change` event is triggered. The callback function receives `(value, event)` as parameters.
 
-+++参数详情
-| 名称 | 类型 | 描述 |
++++Parameter Details
+| Name | Type | Description |
 | -- | -- | -- |
-| `value` | `string` | 文本域的值。 |
-| `event` | [`Event`](https://developer.mozilla.org/zh-CN/docs/Web/Events/change) | 原生 `change` 事件对象。 |
+| `value` | `string` | The value of the textarea. |
+| `event` | [`Event`](https://developer.mozilla.org/en-US/docs/Web/Events/change) | The native `change` event object. |
 +++
 ^^^
 
@@ -80,11 +89,11 @@ Use the [`disabled`](#props-disabled) prop to set a textarea to disabled state.
 `v-model`
 :::
 
-有效输入时触发，受 [`composition`](#props-composition) 属性影响。回调参数为 `(value: string)`，`value` 为输入框的 `value` 值。
+Triggered when valid input is entered, affected by the [`composition`](#props-composition) prop. The callback function receives `(value: string)` as a parameter, where `value` is the `value` of the input.
 ^^^
 
-此外，`Textarea` 支持如下的原生事件：
+In addition, `Textarea` supports the following native events:
 
-`auxclick`、`click`、`contextmenu`、`dblclick`、`mousedown`、`mouseenter`、`mouseleave`、`mousemove`、`mouseover`、`mouseout`、`mouseup`、`select`、`wheel`、`keydown`、`keypress`、`keyup`、`focus`、`blur`、`focusin`、`focusout`。
+`auxclick`, `click`, `contextmenu`, `dblclick`, `mousedown`, `mouseenter`, `mouseleave`, `mousemove`, `mouseover`, `mouseout`, `mouseup`, `select`, `wheel`, `keydown`, `keypress`, `keyup`, `focus`, `blur`, `focusin`, `focusout`.
 
-回调函数的参数都为原生事件对象。
+The parameters of the callback functions are all native event objects.

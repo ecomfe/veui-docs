@@ -8,13 +8,13 @@
 
 [[ demo src="/demo/textarea/size.vue" ]]
 
-### 只读状态
+### 只读
 
 设置 [`readonly`](#props-readonly) 来使文本域处于只读状态。
 
 [[ demo src="/demo/textarea/readonly.vue" ]]
 
-### 禁用状态
+### 禁用
 
 设置 [`disabled`](#props-disabled) 来使文本域处于禁用状态。
 

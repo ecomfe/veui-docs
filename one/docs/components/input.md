@@ -8,25 +8,25 @@
 
 [[ demo src="/demo/input/size.vue" ]]
 
-### 只读状态
+### 只读
 
 设置 [`readonly`](#props-readonly) 来使输入框处于只读状态。
 
 [[ demo src="/demo/input/readonly.vue" ]]
 
-### 禁用状态
+### 禁用
 
 设置 [`disabled`](#props-disabled) 来使输入框处于禁用状态。
 
 [[ demo src="/demo/input/disabled.vue" ]]
 
-### 感知输入法
+### 输入法
 
 设置 [`composition`](#props-composition) 来感知输入法输入过程中的值。
 
 [[ demo src="/demo/input/composition.vue" ]]
 
-### 过滤首尾空白字符
+### 过滤空白
 
 设置 [`trim`](#props-trim) 来自动过滤用户输入的首尾空白字符。
 
@@ -105,10 +105,6 @@
 | ``before`` | 输入框内前置内容。 |
 | ``after`` | 输入框内后置内容。 |
 | ``placeholder`` | 未输入时的占位内容。 |
-
-:::warning
-注意，插槽宽度会挤压输入框宽度。
-:::
 
 ### 事件
 

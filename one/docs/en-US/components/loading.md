@@ -2,49 +2,51 @@
 
 ## Examples
 
-### Stylistic variants
+### Style Variants
 
 Available style variants for the [`ui`](#props-ui) prop: `normal` / `strong` / `reverse`.
 
 [[demo src="/demo/loading/style.vue"]]
 
-### Size variants
+### Size Variants
 
 Available size variants for the [`ui`](#props-ui) prop: `s` / `m` / `l`.
 
 [[demo src="/demo/loading/size.vue"]]
 
-### Layout variants
+### Layout
 
-Available layout variants for the [`ui`](#props-ui) prop: `vertical`.
+Available layout variant for the [`ui`](#props-ui) prop: `vertical`.
 
 [[demo src="/demo/loading/layout.vue"]]
 
-### Custom loading icons
+### Custom Spinner
 
-Using [`spinner`](#slots-spinner) slot to replace default loading icon.
+Customize the loading spinner by using the [`spinner`](#slots-spinner) slot.
 
 [[demo src="/demo/loading/slot.vue"]]
 
 ## API
 
+### Props
+
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
-| ``loading`` | `boolean` | `false` | Whether the component is in loading state. |
+| ``loading`` | `boolean` | `false` | Whether the component is in the loading state. |
 
 ^^^ui
-Style variants. A space-separated list of enum values.
+Preset style variants. A combination of space-separated enum values.
 
-+++Enum
++++Enum values
 | Value | Description |
 | -- | -- |
-| `strong` | Strong style. |
-| `reverse` | Reverse style, typically used on dark background. |
-| `vertical` | Vertical style.|
-| `s` | Small style. |
-| `m` | Medium. |
-| `l` | Large style. |
+| `strong` | Stronger visual style. |
+| `reverse` | Reverse visual style, for use on dark backgrounds. |
+| `vertical` | Vertical layout style. |
+| `s` | Small size variant. |
+| `m` | Medium size variant. |
+| `l` | Large size variant. |
 +++
 ^^^
 
@@ -52,5 +54,5 @@ Style variants. A space-separated list of enum values.
 
 | Name | Description |
 | -- | -- |
-| ``spinner`` | Loading icon. |
-| ``default`` | Loading description. |
+| ``spinner`` | Custom loading spinner. |
+| ``default`` | Text to display while loading. |

@@ -14,13 +14,13 @@ Available size variants of the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l` / 
 
 [[ demo src="/demo/button/size.vue" ]]
 
-### Disabled state
+### Disabled
 
 Set the [`disabled`](#props-disabled) prop to disable the button.
 
 [[ demo src="/demo/button/disabled.vue" ]]
 
-### Loading state
+### Loading
 
 Set the [`loading`](#props-loading) prop to make the button enter the loading state and disable user interaction.
 

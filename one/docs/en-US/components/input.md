@@ -4,21 +4,33 @@
 
 ### Size variants
 
-Available size variants for the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l`.
+Available size variants of the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l`.
 
 [[ demo src="/demo/input/size.vue" ]]
 
-### Read-only state
+### Read-only
 
-Use the [`readonly`](#props-readonly) prop to set an input to read-only state.
+Set the [`readonly`](#props-readonly) prop to make the input field readonly.
 
 [[ demo src="/demo/input/readonly.vue" ]]
 
-### Disabled state
+### Disabled
 
-Use the [`disabled`](#props-disabled) prop to set an input to disabled state.
+Set the [`disabled`](#props-disabled) prop to disable the input field.
 
 [[ demo src="/demo/input/disabled.vue" ]]
+
+### Composition
+
+Set the [`composition`](#props-composition) prop to handle input composition.
+
+[[ demo src="/demo/input/composition.vue" ]]
+
+### Trimming white spaces
+
+Set the [`trim`](#props-trim) prop to automatically remove leading and trailing white spaces from user input.
+
+[[ demo src="/demo/input/trim.vue" ]]
 
 ## API
 
@@ -28,28 +40,29 @@ Use the [`disabled`](#props-disabled) prop to set an input to disabled state.
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
 | ``value`` | `string` | `''` | [^value] |
-| ``disabled`` | `boolean` | `false` | Whether the input is disabled. |
-| ``readonly`` | `boolean` | `false` | Whether the input is read-only. |
+| ``disabled`` | `boolean` | `false` | Whether the input field is disabled. |
+| ``readonly`` | `boolean` | `false` | Whether the input field is read-only. |
 | ``type`` | `string` | `'text'` | [^type] |
-| ``placeholder`` | `string` | - | The placeholder text of the input. |
-| ``clearable`` | `boolean` | `false` | Whether to show a clear button. |
-| ``composition`` | `boolean` | `false` | Whether the input process should be aware of composition. |
-| ``select-on-focus`` | `boolean` | `false` | Whether to select text content when focused. |
-| ``maxlength`` | `number` | - | The maximum length of characters that can be entered. |
-| ``get-length`` | `function(string): number` | - | Used to customize length calculation of the input. |
-| ``strict`` | `boolean` | `false` | Whether to disallow further input after reaching the maximum character length. |
+| ``placeholder`` | `string` | - | Placeholder text for the input field. |
+| ``clearable`` | `boolean` | `false` | Whether to show the clear button. |
+| ``composition`` | `boolean` | `false` | Whether to handle input composition. |
+| ``select-on-focus`` | `boolean` | `false` | Whether to select the input field text on focus. |
+| ``maxlength`` | `number` | - | The maximum length of input characters. |
+| ``get-length`` | `function(string): number` | - | Custom function to calculate the length of input characters. |
+| ``strict`` | `boolean` | `false` | Whether to disallow input after maximum character limit is reached. |
 | ``trim`` | `boolean | string` | `false` | [^trim] |
 
 ^^^ui
-Style variants.
+Predefined styles.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `xs` | Extra small. |
-| `s` | Small. |
-| `m` | Medium. |
-| `l` | Large. |
+| `xs` | Extra small size style. |
+| `s` | Small size style. |
+| `m` | Medium size style. |
+| `l` | Large size style. |
+| `inline` | Inline style. |
 +++
 ^^^
 
@@ -58,58 +71,57 @@ Style variants.
 `v-model`
 :::
 
-The value of the input.
+The value of the input field.
 ^^^
 
 ^^^type
-The type of the input. See the [`type`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-type) attribute of HTML's native `<input>` element.
+The type of input. See [`type`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input#attr-type) in the native `<input>` element.
 
-+++Enum
++++Enum values
 | Value | Description |
 | -- | -- |
-| `text` | Plain text input. |
-| `password` | Password input. |
-| `hidden` | Hidden input but holds a value to submit. |
+| `text` | Text input field. |
+| `password` | Password input field. |
+| `hidden` | Hidden input field, but the value can be submitted. |
 +++
 ^^^
 
 ^^^trim
-Wether to trim the input value. If set to `true`, the input value will be trimmed from both ends. If set to `false`, the input value will not be trimmed. If set to a string, the input value will be trimmed from the specified side.
+Whether to trim leading and trailing white spaces. When set to `true`, leading and trailing white spaces will be removed. When set to `false`, they won't be removed. When set to a string, trimming will follow the specified method.
 
-+++Enum
++++Enum values
 | Value | Description |
 | -- | -- |
-| `both` | Trim from both ends. Equivalent to `true`. |
-| `start` | Trim from the start. |
-| `end` | Trim from the end. |
+| `both` | Remove both leading and trailing spaces. Equivalent to `true`. |
+| `start` | Remove leading spaces. |
+| `end` | Remove trailing spaces. |
 +++
+^^^
 
 ### Slots
 
 | Name | Description |
 | -- | -- |
-| ``before`` | The content before the input area inside the component. |
-| ``after`` | The content after the input area inside the component. |
+| ``before`` | Content to be placed before the input field. |
+| ``after`` | Content to be placed after the input field. |
+| ``placeholder`` | Placeholder content when no value is entered. |
 
-:::warning
-Slots will squeeze the width of the input area.
-:::
-
-### Events
+#### Events
 
 | Name | Description |
 | -- | -- |
-| ``change`` | [^event-change] |
-| ``input`` | [^event-input] |
+| `change` | [^event-change] |
+| `input` | [^event-input] |
+| `clear` | Triggered when the clear button is clicked. |
 
 ^^^event-change
-Triggered when the input value is changed like the native `change` event. The callback parameter list is `(value, event)`.
+Triggered when the content of the input changes, i.e. when the native `change` event is triggered. The callback parameters are `(value, event)`.
 
 +++Parameters
 | Name | Type | Description |
 | -- | -- | -- |
 | `value` | `string` | The value of the input. |
-| `event` | [`Event`](https://developer.mozilla.org/en-US/docs/Web/Events/change) | Native change event object. |
+| `event` | [`Event`](https://developer.mozilla.org/en-US/docs/Web/Events/change) | The native `change` event object. |
 +++
 ^^^
 
@@ -118,17 +130,17 @@ Triggered when the input value is changed like the native `change` event. The ca
 `v-model`
 :::
 
-Triggered when inputting into the input. Affected by the [`composition`](#props-composition) prop.  The callback parameter list is `(value: string)`, where `value` is the current value of the input.
+Triggered when valid input is entered, affected by the [`composition`](#props-composition) prop. The callback parameter is `(value: string)`, where `value` is the `value` of the input.
 ^^^
 
-Additionally, `Input` exposes the following native events:
+In addition, `Input` supports the following native events:
 
 `auxclick`, `click`, `contextmenu`, `dblclick`, `mousedown`, `mouseenter`, `mouseleave`, `mousemove`, `mouseover`, `mouseout`, `mouseup`, `select`, `wheel`, `keydown`, `keypress`, `keyup`, `focus`, `blur`, `focusin`, `focusout`.
 
-The callback parameter is the corresponding native event object for all events above.
+The callback functions of these events receive the native event object as a parameter.
 
 ### Icons
 
 | Name | Description |
 | -- | -- |
-| ``remove`` | Remove button. |
+| ``remove`` | Clear button. |

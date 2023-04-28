@@ -32,7 +32,7 @@ Set the [`fill-month`](#props-fill-month) prop to control whether to display dat
 
 [[ demo src="/demo/calendar/fill-month.vue" ]]
 
-### Disabled Dates
+### Disabled dates
 
 Set the [`disabled-date`](#props-disabled-date) prop to customize whether a specific date is disabled.
 

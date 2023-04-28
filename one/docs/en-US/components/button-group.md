@@ -20,7 +20,7 @@ You can use the [`items`](#props-items) prop to specify button content via a dat
 
 [[ demo src="/demo/button-group/items.vue" ]]
 
-### Disabled state
+### Disabled
 
 Set the [`disabled`](#props-disabled) prop to disable the button.
 

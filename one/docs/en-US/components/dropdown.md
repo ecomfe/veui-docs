@@ -30,7 +30,7 @@ Using[`searchable`](#props-searchable) prop to make the component support search
 
 [[ demo src="/demo/dropdown/searchable.vue" ]]
 
-### Disabled dropdown
+### Disabled
 
 Use the `disabled` property in `options` items to disable single option.
 

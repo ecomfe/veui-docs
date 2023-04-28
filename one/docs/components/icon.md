@@ -6,6 +6,8 @@ VEUI 的 `Icon` 组件目前兼容 [Vue-Awesome](https://github.com/Justineo/vue
 
 ## 示例
 
+### 内置图标
+
 [[ demo src="/demo/icon/default.vue"]]
 
 ## API
@@ -17,9 +19,3 @@ VEUI 的 `Icon` 组件目前兼容 [Vue-Awesome](https://github.com/Justineo/vue
 | ``name`` | `string | Object` | - | 图标名称或其组件定义。 |
 | ``label`` | `string` | - | 图标的文字说明，对辅助设备可见。当不设置时，图标对辅助设备隐藏。 |
 | ``spin`` | `boolean` | `false` | 是否保持旋转状态。 |
-
-### 插槽
-
-| 名称 | 描述 |
-| -- | -- |
-| ``default`` | 用来实现图标堆叠，当内部有 `Icon` 子组件时会层叠在一起居中显示，且外部 `Icon` 组件不需要设置 [`name`](#props-name) 属性。 |
