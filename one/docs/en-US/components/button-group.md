@@ -85,7 +85,7 @@ Default content: [`label`](#props-label) prop value.
 | `disabled` | `boolean` | Whether the button is disabled. |
 +++
 
-In addition, any fields in the `items` data item other than those described above will also be automatically bound to the slot props via `v-bind`.
+In addition, any properties in the `items` data item other than those described above will also be automatically bound to the slot props via `v-bind`.
 ^^^
 
 ### Events

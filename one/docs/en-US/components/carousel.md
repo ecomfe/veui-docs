@@ -141,7 +141,7 @@ Used to customize the area of each carousel item.
 
 Default content: Carousel item image.
 
-The scope parameter is the content of each item in the [`datasource`](#props-datasource) prop (which can have custom fields) plus `index: number` representing the index of the carousel item. Therefore, the entire value bound by `slot-scope` is `{src, alt, label, index, ...}`.
+The scope parameter is the content of each item in the [`datasource`](#props-datasource) prop (which can have custom properties) plus `index: number` representing the index of the carousel item. Therefore, the entire value bound by `slot-scope` is `{src, alt, label, index, ...}`.
 ^^^
 
 ### Events

@@ -155,41 +155,11 @@
 
 | 名称 | 描述 |
 | -- | -- |
-| ``input`` | [^event-input] |
-| ``suggest`` | [^event-suggest] |
-| ``select`` | [^event-select] |
+| ``input`` | 输入框中文本发生变化时触发该事件，回调参数为 `(value: string)`，`value` 为输入框的值。 |
+| ``suggest`` | 需要展示推荐列表时触发，回调参数为 `(value: string)`，`value` 为输入框的值。 |
+| ``select`` | 选择推荐列表某个选项时触发，回调参数为 `(item: {label: string, value: string, ...})`，`item` 为单个选项对象。 |
 | ``search`` | [^event-search] |
 | ``toggle`` | 提示面板展开状态切换时触发，回调参数为 `(expanded: boolean)`。`expanded` 表示操作将触发提示面板展开还是收起。 |
-
-^^^event-input
-输入框中文本发生变化时触发该事件，回调参数为 `(value: string)`。
-
-+++参数详情
-| 名称 | 类型 | 描述 |
-| -- | -- | -- |
-| `value` | `string` | 输入框的值。 |
-+++
-^^^
-
-^^^event-suggest
-需要展示推荐列表时触发，回调参数为 `(value: string)`。
-
-+++参数详情
-| 名称 | 类型 | 描述 |
-| -- | -- | -- |
-| `value` | `string` | 输入框的值。 |
-+++
-^^^
-
-^^^event-select
-选择推荐列表某个选项时触发，回调参数为 `(item: Object)`。
-
-+++参数详情
-| 名称 | 类型 | 描述 |
-| -- | -- | -- |
-| `item` | `{label: string, value: string=, ...}` | 单个选项。 |
-+++
-^^^
 
 ^^^event-search
 输入内容被提交时触发，回调参数为 `(value: string, event: Event)`。

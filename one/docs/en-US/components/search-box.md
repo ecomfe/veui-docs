@@ -2,15 +2,15 @@
 
 ## Examples
 
-### Stylistic variants
+### Style variants
 
-Available stylistic values for the [`ui`](#props-ui) prop: `strong`.
+Available [`ui`](#props-ui) prop values: `strong`.
 
 [[ demo src="/demo/search-box/style.vue" ]]
 
 ### Size variants
 
-Available size values for the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l`.
+Available [`ui`](#props-ui) prop values: `xs` / `s` / `m` / `l`.
 
 [[ demo src="/demo/search-box/size.vue" ]]
 
@@ -18,7 +18,7 @@ Available size values for the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l`.
 
 [[ demo src="/demo/search-box/disabled.vue" ]]
 
-### Suggestion list
+### Suggestions
 
 [[ demo src="/demo/search-box/suggestion.vue" ]]
 
@@ -30,36 +30,37 @@ Available size values for the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l`.
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
 | ``value`` | `string` | - | [^value] |
-| ``disabled`` | `boolean` | `false` | Whether the search box is disabled. |
-| ``readonly`` | `boolean` | `false` | Whether the search box is read-only. |
-| ``placeholder`` | `string` | - | The placeholder text of the search box. |
-| ``autofocus`` | `boolean` | `false` | Whether the search box gains focus automatically. |
-| ``clearable`` | `boolean` | `false` | Whether the clear button is displayed. |
-| ``select-on-focus`` | `boolean` | `false` | Whether to select all content upon focus. |
-| ``composition`` | `boolean` | `false` | Whether the search box triggers value change upon composition of IME. |
+| ``disabled`` | `boolean` | `false` | Whether the input is disabled. |
+| ``readonly`` | `boolean` | `false` | Whether the input is read-only. |
+| ``placeholder`` | `string` | - | Placeholder text of the search box. |
+| ``autofocus`` | `boolean` | `false` | Whether the input is autofocus. |
+| ``clearable`` | `boolean` | `false` | Whether to show the clear button. |
+| ``select-on-focus`` | `boolean` | `false` | Whether to select text on focus. |
+| ``composition`` | `boolean` | `false` | Whether to enable composition mode. |
 | ``suggestions`` | `Array<string>|Array<Object>` | - | [^suggestions] |
-| ``replace-on-select`` | `boolean` | `true` | Whether to replace the content with suggestion item value when it's selected. |
-| ``maxlength`` | `number` | - | The maximum length of characters that can be entered. |
-| ``get-length`` | `function(string): number` | - | Used to customize length calculation of the input. |
-| ``strict`` | `boolean` | `false` | Whether to disallow further input after reaching the maximum character length. |
+| ``replace-on-select`` | `boolean` | `true` | Whether to replace input with selected suggestion. |
+| ``maxlength`` | `number` | - | Maximum length of input. |
+| ``get-length`` | `function(string): number` | - | Custom function for calculating character length. |
+| ``strict`` | `boolean` | `false` | Whether to disallow input when maximum length is reached. |
 | ``trim`` | `boolean | string` | `false` | [^trim] |
 | ``suggest-trigger`` | `Array<string>|string` | `input` | [^suggest-trigger] |
 | ``expanded`` | `boolean` | `false` | [^expanded] |
-| ``match`` | `(item, keyword, { ancestors }) => boolean | Array<[number, number]>` | - | Used to customize search highlighting logic. See [`Autocomplete`](./Autocomplete#customizing-search). |
-| ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | Used to customize search hitting logic. See [`Autocomplete`](./Autocomplete#customizing-search). |
+| ``match`` | `(item, keyword, { ancestors }) => boolean | Array<[number, number]>` | - | Custom function for highlighting matched text, case-insensitive by default. Refer to [`Autocomplete`](./Autocomplete#custom-search-logic) |
+| ``filter`` | `(item, keyword, { ancestors, offsets }) => boolean` | - | Custom function for filtering search results. Refer to [`Autocomplete`](./Autocomplete#custom-search-logic) |
+| ``overlay-class`` | `string | Array | Object` | - | The same as the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
+| ``overlay-style`` | `string | Array | Object` | - | The same as the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
 
 ^^^ui
-Style variants.
+Button preset style.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `strong` | Strong style. |
-| `xs` | Extra small. |
-| `s` | Small. |
-| `m` | Medium. |
-| `l` | Large. |
-| `xl` | Extra large. |
+| `strong` | Enhanced style. The search icon becomes a search button, and the background is the theme color. |
+| `xs` | Extra small size style. |
+| `s` | Small size style. |
+| `m` | Medium size style. |
+| `l` | Large size style. |
 +++
 ^^^
 
@@ -68,29 +69,29 @@ Style variants.
 `v-model`
 :::
 
-The value of the search box.
+The value of the input.
 ^^^
 
 ^^^suggestions
-The suggestion list. When the item type is `Object`, the properties will be `{label, value}`.
+The suggestion list. When the item is an `Object`, it should be in the format of `{label, value}`.
 
 +++Properties
 | Name | Type | Description |
 | -- | -- | -- |
-| `label` | `string` | The text of the suggestion option. |
-| `value` | `string` | The value of the suggestion option. |
+| `label` | `string` | The text of the suggestion item. |
+| `value` | `string` | The value of the suggestion item. |
 +++
 ^^^
 
 ^^^suggest-trigger
-Specifies when the suggestion list is displayed. Can be either an event name or a list of event names.
+The trigger time for displaying the suggestion list. It can be an enum value or a combination of enum values.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `focus` | When the search box is focused. |
-| `input` | When the input triggers [`input`](#events-input) event. |
-| `submit` | When the submit button is activated. |
+| `focus` | When the input is focused. |
+| `input` | When the [`input`](#events-input) event is triggered. |
+| `submit` | When the search button is clicked. |
 +++
 ^^^
 
@@ -99,50 +100,54 @@ Specifies when the suggestion list is displayed. Can be either an event name or 
 `.sync`
 :::
 
-Whether the suggestion list is expanded (if there are no items in `suggestions`, the list won't be expanded even the value is `false`).
+Whether the suggestion panel is expanded (the panel will be closed even if it is set to true when there are no suggestions to select from).
 ^^^
 
 ^^^trim
-Wether to trim the input value. If set to `true`, the input value will be trimmed from both ends. If set to `false`, the input value will not be trimmed. If set to a string, the input value will be trimmed from the specified side.
+Whether to remove leading and trailing white space. When set to `true`, leading and trailing white space is removed; when set to `false`, it is not. When set to a string, leading and/or trailing white space is removed according to the specified mode.
 
-+++Enum
++++Enum values
 | Value | Description |
 | -- | -- |
-| `both` | Trim from both ends. Equivalent to `true`. |
-| `start` | Trim from the start. |
-| `end` | Trim from the end. |
+| `both` | Remove leading and trailing white space. Equivalent to the behavior when `true` is set. |
+| `start` | Remove leading white space. |
+| `end` | Remove trailing white space. |
 +++
+^^^
 
 ### Slots
 
 | Name | Description |
 | -- | -- |
-| ``suggestions`` | [^slot-suggestions] |
-| ``suggestions-before`` | The content before the suggestion list. |
-| ``suggestions-after`` | The content after the suggestion list. |
-| ``suggestion`` | [^slot-suggestion] |
+| `suggestions` | Content of the suggestion list. |
+| `suggestions-before` | Content before the suggestion list. |
+| `suggestions-after` | Content after the suggestion list. |
+| `suggestion` | [^slot-suggestion] |
+| `clear` | Triggered when the clear button is clicked. |
+| `group-label` | Refers to the [`group-label`](./select#props-group-label) prop of the [`Select`](./select) component. |
+| `option-label` | Refers to the [`option-label`](./select#props-option-label) prop of the [`Select`](./select) component. |
 
 ^^^slot-suggestions
-The content of the entire suggestion list.
+Content of the suggestion list.
 
 +++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `suggestions` | `Array<{value: string, label: string}>` | The normalized suggestions from the [`suggestions`](#props-suggestions) prop. |
-| `select` | `function(suggestion: {value: string, label: string}): void` | Select the specified suggestion. |
+| `suggestions` | `Array<{value: string, label: string}>` | The normalized suggestion list from the [`suggestions`](#props-suggestions) prop. |
+| `select` | `function(suggestion: {value: string, label: string}): void` | Selects the specified suggestion. |
 
 ^^^slot-suggestion
-The content of each suggestion option.
+A slot for a single item in the suggestion list, used to customize the content of the option.
 
 +++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `label` | `string` | The text label of the suggestion option. |
-| `value` | `string` | The value of the suggestion option. |
+| `label` | `string` | The option text. |
+| `value` | `string` | The option value. |
 
-Additionally, custom properties apart from the listed ones will also be passes into the slot props object via `v-bind`.
+All properties of each item in `suggestions`, except for `label` and `value`, are automatically bound via `v-bind`.
 
-When `suggestions` is an `Array<string>`, the `label` and `value` of the suggestion option will share the same `string` value.
+When `suggestions` is of type `Array<string>`, both `label` and `value` are single `string` values.
 +++
 ^^^
 
@@ -150,50 +155,20 @@ When `suggestions` is an `Array<string>`, the `label` and `value` of the suggest
 
 | Name | Description |
 | -- | -- |
-| ``input`` | [^event-input] |
-| ``suggest`` | [^event-suggest] |
-| ``select`` | [^event-select] |
+| ``input`` | Triggered when the text in the input box changes. The callback parameter is `(value: string)`, where `value` is the value in the input box. |
+| ``suggest`` | Triggered when the recommendation list needs to be displayed. The callback parameter is `(value: string)`, where `value` is the value in the input box. |
+| ``select`` | Triggered when a certain option in the recommendation list is selected. The callback parameter is `(item: {label: string, value: string, ...})`, where `item` is a single option object. |
 | ``search`` | [^event-search] |
-| ``toggle`` | Triggered when the expanded state is going to change. The callback parameter list is `(expanded: boolean)`. `expanded` denotes whether the suggestion list is to be expanded or collapsed. |
-
-^^^event-input
-Triggers when the input value changes. The callback parameter list is `(value: string)`.
-
-+++Parameters
-| Name | Type | Description |
-| -- | -- | -- |
-| `value` | `string` | The value of the input. |
-+++
-^^^
-
-^^^event-suggest
-Triggers when the suggestion list is displayed. The callback parameter list is `(value: string)`.
-
-+++Parameters
-| Name | Type | Description |
-| -- | -- | -- |
-| `value` | `string` | The value of the input. |
-+++
-^^^
-
-^^^event-select
-Triggered when an suggestion option is selected. The callback parameter list is `(item: Object)`.
-
-+++Parameters
-| Name | Type | Description |
-| -- | -- | -- |
-| `item` | `{label: string, value: string=, ...}` | The suggestion option. |
-+++
-^^^
+| ``toggle`` | Triggered when the expansion state of the prompt panel is toggled. The callback parameter is `(expanded: boolean)`. `expanded` indicates whether the operation will expand or collapse the prompt panel. |
 
 ^^^event-search
-Triggered when the input value is submitted. The callback parameter list is `(value: string, event: Event)`.
+Triggered when the input content is submitted. The callback parameter is `(value: string, event: Event)`.
 
-+++Parameters
++++Parameter details
 | Name | Type | Description |
 | -- | -- | -- |
-| `value` | `string` | The value of the input. |
-| `event` | [`Event`](https://developer.mozilla.org/en-US/docs/Web/Events/click) | The native click event object. |
+| `value` | `string` | The value in the input box. |
+| `event` | [`Event`](https://developer.mozilla.org/en-US/docs/Web/Events/click) | Native click event. |
 +++
 ^^^
 
@@ -202,3 +177,17 @@ Triggered when the input value is submitted. The callback parameter list is `(va
 | Name | Description |
 | -- | -- |
 | ``search`` | Search. |
+
+### CSS
+
+| Name | Type | Default | Description |
+| -- | -- | -- | -- |
+| ``--dls-dropdown-max-display-items`` | `<integer>` | `8` | [^css-max-display-items] |
+
+^^^css-max-display-items
+The maximum number of items displayed in the drop-down list at the same time. The maximum height of the drop-down box will be calculated based on this value.
+
+:::tip
+Needs to be set through the [`overlay-style`](#props-overlay-style) prop.
+:::
+^^^

@@ -2,11 +2,17 @@
 
 ## Examples
 
-### Sizes
+### Size variants
 
-Available size variant for the [`ui`](#props-ui) prop: `s` / `m`.
+Available [`ui`](#props-ui) prop values: `s` / `m`.
 
 [[ demo src="/demo/radio-group/default.vue" ]]
+
+### Additional description
+
+Set the `desc` property in the data source project or specify additional description through the [`desc`](#slots-desc) slot. The additional description will be displayed on hover.
+
+[[ demo src="/demo/radio-group/desc.vue" ]]
 
 ## API
 
@@ -17,28 +23,29 @@ Available size variant for the [`ui`](#props-ui) prop: `s` / `m`.
 | ``ui`` | `string` | - | [^ui] |
 | ``items`` | `Array<Object>` | `[]` | [^items] |
 | ``value`` | `*` | - | [^value] |
-| ``disabled`` | `boolean` | `false` | Whether the radio group is disabled. |
-| ``readonly`` | `boolean` | `false` | Whether the radio group is read-only. |
+| ``disabled`` | `boolean` | `false` | Whether it is disabled. |
+| ``readonly`` | `boolean` | `false` | Whether it is read-only. |
 
 ^^^ui
-Style variants.
+Predefined style.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `s` | Small. |
-| `m` | Medium. |
+| `s` | Small size style. |
+| `m` | Medium size style. |
 ^^^
 
 ^^^items
-The datasource of items with the item type being `{label, value, disabled, ...}`.
+Radio group data source, with project type `{ label, value, disabled, desc, ... }`.
 
 +++Properties
 | Name | Type | Description |
 | -- | -- | -- |
-| `label` | `string` | The descriptive label of the item. |
-| `value` | `*` | The value of the item. |
-| `disabled` | `boolean` | Whether the item is disabled. |
+| `label` | `string` | The text description of the option. |
+| `value` | `*` | The value corresponding to the option. |
+| `disabled` | `boolean` | Whether the option is disabled. |
+| `desc` | `string` | Additional description information for the option. |
 +++
 ^^^
 
@@ -47,7 +54,7 @@ The datasource of items with the item type being `{label, value, disabled, ...}`
 `v-model`
 :::
 
-The `value` of the selected item.
+The `value` of the selected option in `items`.
 ^^^
 
 ### Slots
@@ -55,20 +62,23 @@ The `value` of the selected item.
 | Name | Description |
 | -- | -- |
 | ``item`` | [^slot-item] |
+| ``desc`` | Additional description information for the button, with slot props same as the [`item`](#slots-item) slot. |
 
 ^^^slot-item
-The label content of each radio. Displays the value of the `label` property by default.
+Option description text area.
+
+Default content: `label` property value.
 
 +++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `label` | `string` | The descriptive label of the item. |
-| `value` | `*` | The value of the item. |
-| `index` | `number` | The index of the item within `items`. |
-| `disabled` | `boolean` | Whether the item is disabled. |
+| `label` | `string` | Option text. |
+| `value` | `*` | Option value. |
+| `index` | `number` | The index of the option in `items`. |
+| `disabled` | `boolean` | Whether the option is disabled. |
 +++
 
-Additionally, custom properties apart from the listed ones will also be passes into the slot props object via `v-bind`.
+In addition, other properties in the data item in `items` will also be automatically bound to the slot props through `v-bind`.
 ^^^
 
 ### Events
@@ -82,5 +92,5 @@ Additionally, custom properties apart from the listed ones will also be passes i
 `v-model`
 :::
 
-Triggers when the selected item changed. The callback parameter list is `(value: *)` and `value` is the value of the selected item.
+Triggered after the selection state changes, with the callback parameter `(value: *)`. `value` is the value of the `value` property in the currently selected options of the button group.
 ^^^

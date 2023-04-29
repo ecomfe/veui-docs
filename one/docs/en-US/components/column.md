@@ -38,7 +38,7 @@ The component itself does not handle sorting logic, it only throws a [`sort`](./
 ^^^
 
 ^^^span
-Cell merge configuration. The type is `function(index: number): { row: number, col: number }`. `index` is the index of the current row in the [`data`](./table#props-data) prop of the `Table` component. The `row` / `col` fields of the return value correspond to the `rowspan` / `colspan` of the cell, and the default values are both `1`.
+Cell merge configuration. The type is `function(index: number): { row: number, col: number }`. `index` is the index of the current row in the [`data`](./table#props-data) prop of the `Table` component. The `row` / `col` properties of the return value correspond to the `rowspan` / `colspan` of the cell, and the default values are both `1`.
 
 :::tip
 Refer to the [example › Selection mode and sorting](./table#selection-mode-and-sorting) in the `Table` component to learn how to use it.
@@ -89,7 +89,7 @@ The content of the cell.
 
 Default content: The value of the field corresponding to the [`field`](#props-field) prop in the table `data` item.
 
-The slot props are all fields in the current row data in `data`.
+The slot props are all properties in the current row data in `data`.
 ^^^
 
 ^^^slot-sub-row
@@ -97,7 +97,7 @@ The content of the sub-row after the row is expanded. When using this slot, the 
 
 Default content: The value of the field corresponding to the [`field`](#props-field) prop in the table `data[i].children[j]` item.
 
-The slot props are all fields in the current sub-row data and the current main row corresponding index value `index`.
+The slot props are all properties in the current sub-row data and the current main row corresponding index value `index`.
 
 :::warning
 If the associated `Table` component defines a [`sub-row`](./table#slots-sub-row) slot, the individual column `sub-row` slot will be overridden.

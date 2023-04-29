@@ -2,15 +2,15 @@
 
 ## Examples
 
-### Sizes
+### Size variants
 
-Available size variant for the [`ui`](#props-ui) prop: `s` / `m`.
+Available values for the [`ui`](#props-ui) prop: `s` / `m`.
 
 [[ demo src="/demo/radio/size.vue" ]]
 
-### Setting value
+### Model values
 
-Use the [`value`](#props-value) prop to specify the value bound to `v-model`.
+You can modify the value of `v-model` when selected by setting the [`value`](#props-value) prop.
 
 [[ demo src="/demo/radio/model.vue" ]]
 
@@ -22,18 +22,18 @@ Use the [`value`](#props-value) prop to specify the value bound to `v-model`.
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
 | ``checked`` | `boolean` | `false` | [^checked] |
-| ``value`` | `*` | `true` | The value of the radio. |
-| ``disabled`` | `boolean` | `false` | Whether the radio is disabled. |
-| ``readonly`` | `boolean` | `false` | Whether the radio is read-only. |
+| ``value`` | `*` | `true` | The value corresponding to the selected state. |
+| ``disabled`` | `boolean` | `false` | Whether the component is disabled. |
+| ``readonly`` | `boolean` | `false` | Whether the component is read-only. |
 
 ^^^ui
-Style variants.
+Predefined styles.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `s` | Small. |
-| `m` | Medium. |
+| `s` | Small size style. |
+| `m` | Medium size style. |
 +++
 ^^^
 
@@ -42,20 +42,20 @@ Style variants.
 `.sync`
 :::
 
-Whether the checkbox is checked.
+Whether the component is in the selected state.
 ^^^
 
 ### Slots
 
 | Name | Description |
 | -- | -- |
-| ``default`` | The label text of the radio. The radio is selected when the label is clicked. Displays nothing by default. |
+| ``default`` | The description text of the radio button. It will be selected when clicked. No default content. |
 
 ### Events
 
 | Name | Description |
 | -- | -- |
-| ``change`` | Triggered when user checks the radio. The callback parameter list is `(checked: boolean)`. `checked` denotes whether the radio is checked. |
+| ``change`` | Triggered when the user switches the selected state. The callback parameter is `(checked: boolean)`. `checked` indicates whether it is currently selected. |
 | ``input`` | [^event-input] |
 
 ^^^event-input
@@ -63,11 +63,11 @@ Whether the checkbox is checked.
 `v-model`
 :::
 
-Triggered when the check state is changed. The callback parameter list is `(val: *)`, with `val` being the current value of `v-model`. Unlike the [`change`](#events-change) event, `input` is triggered even without user interaction.
+Triggered after the selection state has changed. The callback parameter is `(val: *)`. `val` is the current value of `v-model`. Unlike the [`change`](#events-change) event, the `input` event will also be triggered when the data operation causes the state to change.
 ^^^
 
-Additionally, `Radio` exposes the following native events:
+In addition, `Radio` supports the following native events:
 
 `auxclick`, `click`, `contextmenu`, `dblclick`, `mousedown`, `mouseenter`, `mouseleave`, `mousemove`, `mouseover`, `mouseout`, `mouseup`, `select`, `wheel`, `keydown`, `keypress`, `keyup`, `focus`, `blur`, `focusin`, `focusout`.
 
-The callback parameter is the corresponding native event object for all events above.
+The callback parameters are all corresponding native event objects.

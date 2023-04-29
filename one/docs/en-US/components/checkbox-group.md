@@ -86,7 +86,7 @@ Default content: `label` prop value.
 | `disabled` | `boolean` | Whether the option is disabled. |
 +++
 
-In addition, other fields in the `items` data item that are not described above will also be automatically bound to the slot props through `v-bind`.
+In addition, other properties in the `items` data item that are not described above will also be automatically bound to the slot props through `v-bind`.
 ^^^
 
 ### Events
@@ -100,5 +100,5 @@ In addition, other fields in the `items` data item that are not described above 
 `v-model`
 :::
 
-Triggered after the selection state changes, with the callback parameter `(value: Array)`. `value` is an array composed of the `value` fields of the selected items in the current checkbox group.
+Triggered after the selection state changes, with the callback parameter `(value: Array)`. `value` is an array composed of the `value` properties of the selected items in the current checkbox group.
 ^^^

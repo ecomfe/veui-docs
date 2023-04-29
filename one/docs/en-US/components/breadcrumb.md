@@ -83,7 +83,7 @@ Used to customize content for each item. The default content is the `label` of t
 +++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `route` | `Object` | A project in `routes`. Custom fields will also be bound to the scope object. |
+| `route` | `Object` | A project in `routes`. Custom properties will also be bound to the scope object. |
 +++
 ^^^
 

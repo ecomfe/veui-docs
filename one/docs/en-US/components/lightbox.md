@@ -34,7 +34,7 @@ Whether to show the dialog.
 ^^^
 
 ^^^datasource
-The data source of the lightbox, with the following fields: `{ src, alt, type, desc }`.
+The data source of the lightbox, with the following properties: `{ src, alt, type, desc }`.
 
 +++Properties
 | Name | Type | Description |
@@ -96,7 +96,7 @@ Used to customize the media display area for each lightbox item.
 
 Default content: each image or video.
 
-The slot props is the content of each list item of the [`datasource`](#props-datasource) prop (custom fields can be included) plus `index: number` to indicate the order of the carousel item. The entire `slot-scope` binding value is `{src, alt, type, desc, index, ...}`.
+The slot props is the content of each list item of the [`datasource`](#props-datasource) prop (custom properties can be included) plus `index: number` to indicate the order of the carousel item. The entire `slot-scope` binding value is `{src, alt, type, desc, index, ...}`.
 ^^^
 
 ^^^slot-desc
@@ -104,7 +104,7 @@ Used to customize the description area for each lightbox item.
 
 Default content: each item's description text.
 
-The slot props is the content of each list item of the [`datasource`](#props-datasource) prop (custom fields can be included) plus `index: number` to indicate the order of the carousel item. The entire `slot-scope` binding value is `{src, alt, type, desc, index, ...}`.
+The slot props is the content of each list item of the [`datasource`](#props-datasource) prop (custom properties can be included) plus `index: number` to indicate the order of the carousel item. The entire `slot-scope` binding value is `{src, alt, type, desc, index, ...}`.
 ^^^
 
 ### Events

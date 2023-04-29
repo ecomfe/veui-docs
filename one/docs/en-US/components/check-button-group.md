@@ -76,7 +76,7 @@ Check button group data source, item type: `{ label, value, disabled, exclusive,
 `v-model`
 :::
 
-List of `value` fields of selected items in `items`.
+List of `value` properties of selected items in `items`.
 ^^^
 
 ### Slots
@@ -100,7 +100,7 @@ Default content: `label` prop value.
 | `disabled` | `boolean` | Whether the option is disabled. |
 +++
 
-In addition, other fields in the data items of `items` besides those described above will be automatically bound to the slot props via `v-bind`.
+In addition, other properties in the data items of `items` besides those described above will be automatically bound to the slot props via `v-bind`.
 ^^^
 
 ### Events
@@ -114,7 +114,7 @@ In addition, other fields in the data items of `items` besides those described a
 `v-model`
 :::
 
-Triggered when the selection state changes, callback parameter is `(value: Array)`. `value` is an array of `value` fields of the currently selected options in the button group.
+Triggered when the selection state changes, callback parameter is `(value: Array)`. `value` is an array of `value` properties of the currently selected options in the button group.
 ^^^
 
 ### Icons

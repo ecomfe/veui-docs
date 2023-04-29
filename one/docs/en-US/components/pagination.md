@@ -8,15 +8,15 @@
 
 ### Page size
 
-Use the [`page-size`](#props-page-size) prop to specify the current page size.
+Use the [`page-size`](#props-page-size) prop to specify the number of items per page.
 
-Use the [`page-sizes`](#props-page-sizes) prop to specify the page size options.
+Use the [`page-sizes`](#props-page-sizes) prop to specify the candidate options for the number of items per page.
 
 [[ demo src="/demo/pagination/pages.vue" ]]
 
 ### Optional parts
 
-Use the [`show-total`](#props-show-total) / [`show-page-size`](#props-show-page-size) / [`show-goto`](#props-show-goto) props to control the visibility of the total items / page size selector / goto page parts.
+Use the [`show-total`](#props-show-total) / [`show-page-size`](#props-show-page-size) / [`show-goto`](#props-show-goto) props to control whether to display the item total / item count selector / jump to the specified page.
 
 [[ demo src="/demo/pagination/parts.vue" ]]
 
@@ -27,30 +27,30 @@ Use the [`show-total`](#props-show-total) / [`show-page-size`](#props-show-page-
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
-| ``page`` | `number` | `1` | Current page index (starts from `1`). |
-| ``total`` | `number` | - | Total items count. |
+| ``page`` | `number` | `1` | The current page number (starting from `1`). |
+| ``total`` | `number` | - | The total number of items. |
 | ``to`` | `string | Object` | `''` | [^to] |
-| ``native`` | `boolean` | `false` | Use native links for navigation. |
+| ``native`` | `boolean` | `false` | Whether to use native link redirection. |
 | ``page-size`` | `number` | `pagination.pageSize` | [^page-size] |
-| ``page-sizes`` | `Array` | `pagination.pageSizes` | The predefined available page sizes for users to select. |
-| ``show-goto`` | `boolean` | `false` | Whether to show the go to page section. |
-| ``show-total`` | `boolean` | `false` | Whether to show the total page count. |
-| ``show-page-size`` | `boolean` | `false` | Whether to show the page size selection section. |
+| ``page-sizes`` | `Array<number>` | `pagination.pageSizes` | The candidate options for the number of items per page. |
+| ``show-goto`` | `boolean` | `false` | Whether to display the direct jump to page. |
+| ``show-total`` | `boolean` | `false` | Whether to display the item total. |
+| ``show-page-size`` | `boolean` | `false` | Whether to display the item count selector. |
 
 ^^^ui
-Style variants.
+The preset style.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `xs` | Extra small. |
-| `s` | Small. |
-| `m` | Medium. |
+| `xs` | Extra small size style. |
+| `s` | Small size style. |
+| `m` | Medium size style. |
 +++
 ^^^
 
 ^^^to
-The page path template. The type is the same as the [`to`](./link#props-to) prop of [`Link`](./link) component. When being `string`, the `:page` placeholder will be replaced with the actual page number. When being `Object`, the value will be resolved to string first and be go through the same placeholder replacement process.
+The target link template. The type is the same as the [`to`](./link#props-to) prop of the [`Link`](./link) component. When the type is a string path, the `:page` keyword will be replaced with the actual page number. When the type is an object, it will be converted to a string and the `:page` part will be replaced.
 ^^^
 
 ^^^page-size
@@ -58,20 +58,19 @@ The page path template. The type is the same as the [`to`](./link#props-to) prop
 `.sync`
 :::
 
-The count of item in each page.
+The number of items per page.
 ^^^
 
 ### Events
 
 | Name | Description |
 | -- | -- |
-| ``pagesizechange`` | Triggered when page size is changed. The callback parameter list is `(size: number)`, with `size` being the new page size value. |
-| ``redirect`` | Triggered when page links are activated. The callback parameter list is `(page: number, event: Object)`. `page` is the number of the targe page. `event` is the native event object, calling `event.preventDefault` will stop navigation when `native` is `true`. |
+| ``pagesizechange`` | Triggered when the number of items displayed per page is changed. The callback parameter is `(size: number)`. `size` is the new number of items displayed per page. |
+| ``redirect`` | Triggered when a link is clicked. The callback parameter is `(page: number, event: Object)`. `page` is the target page number. `event` is the native event object. When `native` is `true`, calling `event.preventDefault` can prevent the redirection. |
 
 ### Configs
 
 | Key | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``pagination.pageSize`` | `number` | `30` | The count of item in each page. |
-| ``pagination.pageSizes`` | `Array<number>` | `[30, 50, 100]` | The predefined available page sizes for users to select. |
-
+| ``pagination.pageSize`` | `number` | `30` | The number of items per page. |
+| ``pagination.pageSizes`` | `Array<number>` | `[30, 50, 100]` | The candidate options for the number of items per page. |

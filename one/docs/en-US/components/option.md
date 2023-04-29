@@ -1,12 +1,12 @@
 # Option
 
 :::tip
-`Option` is required to be used within [`Select`](./select), [`Dropdown`](./dropdown) or [`OptionGroup`](./option-group).
+The `Option` component needs to be used in conjunction with the [`Select`](./select) or [`Dropdown`](./dropdown) or [`OptionGroup`](./option) component.
 :::
 
 ## Examples
 
-See [the demos of `Select`](./select#examples) or [the demos of `Dropdown`](./dropdown#examples).
+See [`Select` examples](./select#examples) or [`Dropdown` examples](./dropdown#examples).
 
 ## API
 
@@ -14,24 +14,26 @@ See [the demos of `Select`](./select#examples) or [the demos of `Dropdown`](./dr
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``label`` | `string` | The descriptive label of the option. |
-| ``value`` | `*` | The value of the option. |
-| ``disabled`` | `boolean` | Whether the option is disabled. |
-| ``hidden`` | `boolean` | `false` | Whether the option is hidden. |
+| ``label`` | `string` | - | The text of the option. |
+| ``value`` | `*` | - | The value corresponding to the option. |
+| ``disabled`` | `boolean` | `false` | Whether the option is in a disabled state. |
+| ``hidden`` | `boolean` | `false` | Whether the option is in a hidden state. |
 
 ### Slots
 
 | Name | Description |
 | -- | -- |
-| ``default`` | The entire content area of the option. Displays the label and potential check icon by default.
-| ``label`` | The content of the option label. Displays the [`label`](#props-label) prop by default. |
+| ``default`` | The entire area of the option. Displays the default text and check icon. |
+| ``label`` | The text area of the option. Displays the [`label`](#props-label) property content by default. |
 
 ### Events
 
-The `click` event is triggered upon clicks without callback parameters.
+| Name | Description |
+| -- | -- |
+| ``click`` | Triggered when the option is clicked. No parameters. |
 
 ### Icons
 
 | Name | Description |
 | -- | -- |
-| ``checked`` | Checked state. |
+| ``checked`` | The selected state. |

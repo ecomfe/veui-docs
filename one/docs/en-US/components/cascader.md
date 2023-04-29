@@ -264,7 +264,7 @@ Default content: the `label` property value of the selected option or the text c
 | `disabled` | `boolean` | Whether an option is disabled. |
 +++
 
-In addition, any other fields in the current option data will also be automatically bound to the scope parameters via `v-bind`.
+In addition, any other properties in the current option data will also be automatically bound to the scope parameters via `v-bind`.
 ^^^
 
 ^^^slot-option-label
@@ -335,7 +335,7 @@ Triggered when the selection state changes. The callback parameter is `(value: *
 | ``cascader.placeholder`` | `string` | `@@cascader.placeholder` | The placeholder content when nothing is selected. |
 
 :::tip
-Values starting with `@@` refer to the corresponding fields from the multi-language configuration.
+Values starting with `@@` refer to the corresponding properties from the multi-language configuration.
 :::
 
 ### Icons

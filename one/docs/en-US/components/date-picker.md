@@ -1,6 +1,6 @@
 # DatePicker <small>Date picker</small>
 
-## Example
+## Examples
 
 ### Single date
 
@@ -99,7 +99,7 @@ A list of shortcut selection items in the customizable overlay when selecting a 
 
 #### Shortcut options
 
-The `from` and `to` fields in the `shortcuts` list items have the same format, each used to set the calculation method for the start and end dates, respectively. The format is `number | Object` with a default value of `0`.
+The `from` and `to` properties in the `shortcuts` list items have the same format, each used to set the calculation method for the start and end dates, respectively. The format is `number | Object` with a default value of `0`.
 
 * When the type is `number`, it represents the number of days offset from "today". For example, `-1` is equivalent to `{ startOf: 'day', days: -1 }`, which means "yesterday".
 * When the type is `Object`, the supported formats are: `{startOf: string=, days: number=, weeks: number=, months: number=, }`.
@@ -114,7 +114,7 @@ The `from` and `to` fields in the `shortcuts` list items have the same format, e
   | `quarter` | `number` | - | The number of quarters offset. |
   | `year` | `number` | - | The number of years offset. |
 
-The calculation method sets the base date according to `startOf`, and then adds the offset based on the other fields.
+The calculation method sets the base date according to `startOf`, and then adds the offset based on the other properties.
 
 You can quickly set shortcut options by combining the following example with `label`.
 

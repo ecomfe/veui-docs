@@ -67,7 +67,7 @@
 ^^^
 
 ^^^position
-指定定位参数。使用 [Popper.js](https://popper.js.org/) 风格的定位语法指定，可参考 [`Popper.placements`](https://popper.js.org/popper-documentation.html#Popper.placements)。
+指定定位参数。使用 [Popper.js](https://popper.js.org/) 风格的定位语法指定，可参考 [`Popper.placements`](https://popper.js.org/docs/v1/#Popper.placements)。
 ^^^
 
 ^^^trigger

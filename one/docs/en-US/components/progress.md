@@ -6,7 +6,7 @@
 
 [[ demo src="/demo/progress/bar.vue" ]]
 
-### Progress circles
+### Progress circle
 
 [[ demo src="/demo/progress/circular.vue" ]]
 
@@ -23,26 +23,26 @@ Available size variants for the [`ui`](#props-ui) prop: `xs` / `s` / `m`.
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
-| ``type`` | `string` | `'bar'` | The type of the progress. Available values are `bar` / `circular`, denoting progress bar and progress circle respectively. |
-| ``desc`` | `boolean` | `false` | The description of the progress. |
+| ``type`` | `string` | `'bar'` | Type of progress bar. Available values are `bar` / `circular`, which are for bar and circular progress bars respectively. |
+| ``desc`` | `boolean` | `false` | Whether to display text hint. |
 | ``value`` | `number` | `0` | Progress value. |
 | ``min`` | `number` | `0` | Minimum value. |
-| ``max`` | `number` | `1` | Max value. |
-| ``decimal-place`` | `number` | `0` | Decimal place for the progress value. |
+| ``max`` | `number` | `1` | Maximum value. |
+| ``decimal-place`` | `number` | `0` | Number of decimal places to keep. |
 | ``status`` | `string` | - | [^status] |
-| ``autosucceed`` | `boolean | number` | - | Whether automatically enter the `success` status when the progress reaches the maximum value. `true` denotes entering immediately, while `number` values denotes the delay in milliseconds before entering the `success` status. |
-| ``indeterminate`` | `boolean` | `false` | Whether the progress is indeterminate. Currently only works when `type` is `bar`. |
+| ``autosucceed`` | `boolean | number` | - | Whether to automatically enter the `success` state when the progress value reaches the maximum. `true` means directly entering the success state. If it is of type `number`, it means the number of milliseconds to wait before switching to the success state after reaching the maximum value. |
+| ``indeterminate`` | `boolean` | `false` | Whether the progress is indeterminate. Currently only effective when `type` is `bar`. |
 
 ^^^ui
-Style variants.
+Predefined styles.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `fluid` | Fluid layout for progress bar. |
-| `xs` | Extra small. |
-| `s` | Small. |
-| `m` | Medium. |
+| `fluid` | Fluid style of bar progress. |
+| `xs` | Extra small size style. |
+| `s` | Small size style. |
+| `m` | Medium size style. |
 ^^^
 
 ^^^status
@@ -50,7 +50,7 @@ Style variants.
 `.sync`
 :::
 
-The status of the progress. Available values are `success` / `error`, denoting success and error status respectively.
+Progress status. Available values are `success` / `error`, which represent the success and error status respectively.
 ^^^
 
 ### Slots
@@ -58,15 +58,18 @@ The status of the progress. Available values are `success` / `error`, denoting s
 | Name | Description |
 | -- | -- |
 | ``default`` | [^slot-default] |
+| ``after`` | Can be used to customize the content after the text hint area. Slot props refer to the `default` slot. |
 
 ^^^slot-default
-The description content. Displays the percentage value of the progress by default.
+Can be used to customize the content of the text hint area.
+
+Default content: completion percentage.
 
 +++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `percent` | `number` | The percentage value of the progress. |
-| `value` | `number` | The value of the progress, same as the [`value`](#props-value) prop. |
-| `status` | `string` | The status of the progress, same as the [`status`](#props-status) prop. |
+| `percent` | `number` | Percentage of progress completion. |
+| `value` | `number` | Progress value, same as [`value`](#props-value) prop. |
+| `status` | `string` | Progress status, same as [`status`](#props-status) prop. |
 +++
 ^^^
