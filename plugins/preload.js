@@ -2,7 +2,7 @@ const queued = {
   live: false
 }
 
-const queue = requestIdleCallback || setTimeout
+const queue = window.requestIdleCallback || setTimeout
 
 let mql = window.matchMedia('(max-width: 480px)')
 
