@@ -69,6 +69,8 @@ export function render (contents, path, data = {}) {
 const rawMd = remark()
   .use(remarkToRehype, { allowDangerousHTML: true })
   .use(raw)
+  .use(highlight, { languages: { vue } })
+  .use(rehypePre)
   .use(html, { allowDangerousHTML: true })
 
 export function renderRaw (contents, path, data = {}) {
