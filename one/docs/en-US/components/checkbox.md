@@ -20,8 +20,8 @@ You can set the `v-model` value by using the `true-value` and `false-value` prop
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``ui`` | `string` | - | Preset style. |
-| ``checked`` | `boolean` | `false` | Whether the checkbox is checked. |
+| ``ui`` | `string` | - | [^ui] |
+| ``checked`` | `boolean` | `false` | [^checked] |
 | ``value`` | `*` | - | When `v-model` is bound to an array, represents the value of the current checkbox. |
 | ``true-value`` | `*` | `true` | The value corresponding to the checked state. |
 | ``false-value`` | `*` | `false` | The value corresponding to the unchecked state. |
@@ -29,8 +29,7 @@ You can set the `v-model` value by using the `true-value` and `false-value` prop
 | ``disabled`` | `boolean` | `false` | Whether the checkbox is disabled. |
 | ``readonly`` | `boolean` | `false` | Whether the checkbox is readonly. |
 
-#### `ui` prop
-
+^^^ui
 Preset styles.
 
 +++Enum values
@@ -39,14 +38,15 @@ Preset styles.
 | `s` | Small size style. |
 | `m` | Medium size style. |
 +++
+^^^
 
-#### `checked` prop
-
+^^^checked
 :::badges
 `.sync`
 :::
 
 Whether the checkbox is checked.
+^^^
 
 ### Slots
 

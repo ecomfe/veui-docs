@@ -40,7 +40,7 @@ The position of the toggle icon can be set using the [`toggle-position`](#props-
 ^^^ui
 Predefined styles. A combination of enumerated values separated by spaces. Only one of `simple`, `basic`, and `strong` can be selected, and if none is set, the default normal style is used. Only one of `bordered` and `borderless` can be selected.
 
-+++Enumerated values
++++Enum values
 | Value | Description |
 | -- | -- |
 | `simple` | Simple style. |

@@ -78,7 +78,7 @@
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
 | ``data`` | `Array<Object>` | - | 表格数据。 |
-| ``key-field`` | `string` | - | 用于指定充当表格数据的键的列标志符。值对应 [`data`](#props-data) 属性中数据项的某个字段名称。对应字段的值则会作为行元素的 [`key`](https://v2.cn.vuejs.org/v2/guide/list.html#key) 属性输出。当 [`selectable`](#props-selectable) 属性为 `true` 时，也可以用来指定在存在纵向合并单元格的情况下以哪一列的不同行作为选择项，此时值必须来自内部某个 `Column` 组件的 [`field`](./column#props-field) 属性。 |
+| ``key-field`` | `string` | - | 用于指定充当表格数据的键的列标志符。值对应 [`data`](#props-data) 属性中数据项的某个字段名称。对应字段的值则会作为行元素的 [`key`](https://v2.cn.vuejs.org/v2/guide/list.html#%E7%BB%B4%E6%8A%A4%E7%8A%B6%E6%80%81) 属性输出。当 [`selectable`](#props-selectable) 属性为 `true` 时，也可以用来指定在存在纵向合并单元格的情况下以哪一列的不同行作为选择项，此时值必须来自内部某个 `Column` 组件的 [`field`](./column#props-field) 属性。 |
 | ``selectable`` | `boolean` | `false` | 是否支持表格行的选择。 |
 | ``select-mode`` | `string` | `'multiple'` | 选择模式，支持的值为 `single` / `multiple`，分别对应于单选/多选模式。 |
 | ``selected`` | `Array<*>|*` | `[]` | [^selected] |

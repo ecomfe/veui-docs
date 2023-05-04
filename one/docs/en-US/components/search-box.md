@@ -119,13 +119,13 @@ Whether to remove leading and trailing white space. When set to `true`, leading 
 
 | Name | Description |
 | -- | -- |
-| `suggestions` | Content of the suggestion list. |
-| `suggestions-before` | Content before the suggestion list. |
-| `suggestions-after` | Content after the suggestion list. |
-| `suggestion` | [^slot-suggestion] |
-| `clear` | Triggered when the clear button is clicked. |
-| `group-label` | Refers to the [`group-label`](./select#props-group-label) prop of the [`Select`](./select) component. |
-| `option-label` | Refers to the [`option-label`](./select#props-option-label) prop of the [`Select`](./select) component. |
+| ``suggestions`` | Content of the suggestion list. |
+| ``suggestions-before`` | Content before the suggestion list. |
+| ``suggestions-after`` | Content after the suggestion list. |
+| ``suggestion`` | [^slot-suggestion] |
+| ``clear`` | Triggered when the clear button is clicked. |
+| ``group-label`` | Refers to the [`group-label`](./select#props-group-label) prop of the [`Select`](./select) component. |
+| ``option-label`` | Refers to the [`option-label`](./select#props-option-label) prop of the [`Select`](./select) component. |
 
 ^^^slot-suggestions
 Content of the suggestion list.
@@ -164,7 +164,7 @@ When `suggestions` is of type `Array<string>`, both `label` and `value` are sing
 ^^^event-search
 Triggered when the input content is submitted. The callback parameter is `(value: string, event: Event)`.
 
-+++Parameter details
++++Parameters
 | Name | Type | Description |
 | -- | -- | -- |
 | `value` | `string` | The value in the input box. |

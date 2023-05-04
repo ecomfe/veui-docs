@@ -99,8 +99,8 @@ When a project with a `type` of `link` is clicked, this event will be triggered,
 +++Parameters
 | Name | Type | Description |
 | -- | -- | -- |
-| ``event`` | [Event](https://developer.mozilla.org/en-US/docs/Web/Events/click) | The event object. |
-| ``route`` | `Object` | Breadcrumb entry object. |
-| ``index`` | `number` | The index of the clicked entry. |
+| `event` | [Event](https://developer.mozilla.org/en-US/docs/Web/Events/click) | The event object. |
+| `route` | `Object` | Breadcrumb entry object. |
+| `index` | `number` | The index of the clicked entry. |
 +++
 ^^^

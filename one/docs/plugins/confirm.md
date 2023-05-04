@@ -3,9 +3,10 @@
 ## 安装
 
 ```js
-import confirm from 'veui/plugins/confirm'
+import Vue from 'vue'
+import { $confirm } from 'veui'
 
-Vue.use(confirm)
+Vue.use($confirm)
 ```
 
 ## API

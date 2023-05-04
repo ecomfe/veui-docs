@@ -551,13 +551,11 @@
         },
         {
           "title": "Tag",
-          "slug": "tag",
-          "disabled": true
+          "slug": "tag"
         },
         {
           "title": "TagInput",
-          "slug": "tag-input",
-          "disabled": true
+          "slug": "tag-input"
         },
         {
           "title": "Select",
@@ -655,8 +653,7 @@
         },
         {
           "title": "Textarea",
-          "slug": "textarea",
-          "disabled": true
+          "slug": "textarea"
         },
         {
           "title": "NumberInput",
@@ -668,18 +665,15 @@
         },
         {
           "title": "Form",
-          "slug": "form",
-          "disabled": true
+          "slug": "form"
         },
         {
           "title": "Fieldset",
-          "slug": "fieldset",
-          "disabled": true
+          "slug": "fieldset"
         },
         {
           "title": "Field",
-          "slug": "field",
-          "disabled": true
+          "slug": "field"
         },
         {
           "title": "Label",
@@ -711,18 +705,15 @@
         },
         {
           "title": "Span",
-          "slug": "span",
-          "disabled": true
+          "slug": "span"
         },
         {
           "title": "Tabs",
-          "slug": "tabs",
-          "disabled": true
+          "slug": "tabs"
         },
         {
           "title": "Tab",
-          "slug": "tab",
-          "disabled": true
+          "slug": "tab"
         },
         {
           "title": "Table",
@@ -735,8 +726,7 @@
         },
         {
           "title": "Loading",
-          "slug": "loading",
-          "disabled": true
+          "slug": "loading"
         },
         {
           "title": "LoadingBar",
@@ -744,8 +734,7 @@
         },
         {
           "title": "TimePicker",
-          "slug": "time-picker",
-          "disabled": true
+          "slug": "time-picker"
         },
         {
           "title": "Autocomplete",
@@ -757,13 +746,11 @@
         },
         {
           "title": "Drawer",
-          "slug": "drawer",
-          "disabled": true
+          "slug": "drawer"
         },
         {
           "title": "Sidenav",
-          "slug": "sidenav",
-          "disabled": true
+          "slug": "sidenav"
         },
         {
           "title": "Nav",
@@ -791,13 +778,11 @@
         },
         {
           "title": "Stack",
-          "slug": "stack",
-          "disabled": true
+          "slug": "stack"
         },
         {
           "title": "ConfigProvider",
-          "slug": "config-provider",
-          "disabled": true
+          "slug": "config-provider"
         }
       ]
     },
@@ -808,33 +793,27 @@
       "children": [
         {
           "title": "v-outside",
-          "slug": "v-outside",
-          "disabled": true
+          "slug": "v-outside"
         },
         {
           "title": "v-drag",
-          "slug": "v-drag",
-          "disabled": true
+          "slug": "v-drag"
         },
         {
           "title": "v-resize",
-          "slug": "v-resize",
-          "disabled": true
+          "slug": "v-resize"
         },
         {
           "title": "v-nudge",
-          "slug": "v-nudge",
-          "disabled": true
+          "slug": "v-nudge"
         },
         {
           "title": "v-longpress",
-          "slug": "v-longpress",
-          "disabled": true
+          "slug": "v-longpress"
         },
         {
           "title": "v-tooltip",
-          "slug": "v-tooltip",
-          "disabled": true
+          "slug": "v-tooltip"
         }
       ]
     },
@@ -845,23 +824,19 @@
       "children": [
         {
           "title": "toast",
-          "slug": "toast",
-          "disabled": true
+          "slug": "toast"
         },
         {
           "title": "alert",
-          "slug": "alert",
-          "disabled": true
+          "slug": "alert"
         },
         {
           "title": "confirm",
-          "slug": "confirm",
-          "disabled": true
+          "slug": "confirm"
         },
         {
           "title": "prompt",
-          "slug": "prompt",
-          "disabled": true
+          "slug": "prompt"
         }
       ]
     },
@@ -872,23 +847,19 @@
       "children": [
         {
           "title": "Theming",
-          "slug": "theming",
-          "disabled": true
+          "slug": "theming"
         },
         {
           "title": "Custom rules",
-          "slug": "custom-rules",
-          "disabled": true
+          "slug": "custom-rules"
         },
         {
           "title": "Global config",
-          "slug": "global-config",
-          "disabled": true
+          "slug": "global-config"
         },
         {
           "title": "Overlay management",
-          "slug": "overlay",
-          "disabled": true
+          "slug": "overlay"
         }
       ]
     }

@@ -93,9 +93,9 @@
 ^^^
 
 ^^^strict
-当为 `boolean` 时，将同时配置 `maxlength` 和 `max` 两种限制的严格模式；当为 `Object` 时，可进行分别配置。
+当为 `boolean` 时，将同时配置 [`maxlength`](#props-maxlength) 和 [`max`](#props-max) 两种限制的严格模式；当为 `Object` 时，可进行分别配置。
 
-+++字段详情：
++++字段详情
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `maxlength` | `boolean` | 是否严格输入长度，超出禁止输入。 |

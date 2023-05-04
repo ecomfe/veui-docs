@@ -198,6 +198,7 @@ export default {
       imports: {
         veui,
         lodash,
+        vue: Vue,
         'dls-icons-vue': icons,
         ...iconModules.reduce((mocks, module) => {
           mocks[module] = true

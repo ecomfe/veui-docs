@@ -4,37 +4,37 @@
 
 ### Size variants
 
-Available size variants for the [`ui`](#props-ui) prop: `s` / `m`.
+Available size variants in the [`ui`](#props-ui) prop: `s` / `m`.
 
 [[ demo src="/demo/slider/size.vue" ]]
 
-### Read-only/disabled
+### Read-only / disabled
 
-Use the [`readonly`](#props-readonly) prop to set a slider read-only. Use the [`disabled`](#props-disabled) prop to set a slider disabled.
+Set the [`readonly`](#props-readonly) prop to make the slider read-only, and set the [`disabled`](#props-disabled) prop to disable the slider.
 
 [[ demo src="/demo/slider/editable.vue" ]]
 
-### Steps
+### Step size
 
-Use the `step` to make value change by specified step value when clicking spinner buttons, or pressing <kbd>▴</kbd> or <kbd>▾</kbd>.
+Use the [`step`](#props-step) prop to specify the step size. This adjusts the input value according to the specified step value when you click the adjustment buttons or press <kbd>←</kbd> and <kbd>→</kbd> keys.
 
 [[ demo src="/demo/slider/steps.vue" ]]
 
 ### Range
 
-Use the [`max`](#props-max) / [`min`](#props-min) props to specify the values at both ends of the slider.
+Use the [`max`](#props-max) / [`min`](#props-min) props to specify the values at both ends of the drag range.
 
 [[ demo src="/demo/slider/range.vue" ]]
 
-### Secondary bar
+### Secondary progress
 
 Use the [`secondary-progress`](#props-secondary-progress) prop to specify a secondary progress bar.
 
 [[ demo src="/demo/slider/buffer.vue" ]]
 
-### Customization
+### Custom content
 
-Use the [`thumb`](#slots-thumb) / [`tip`](#slots-tip) slots to customize the content of slider thumb and tooltip.
+Use the [`thumb`](#slots-thumb) / [`tip`](#slots-tip) slots to customize the slider button, hover tips, and other content.
 
 [[ demo src="/demo/slider/variant.vue" ]]
 
@@ -46,34 +46,33 @@ Use the [`thumb`](#slots-thumb) / [`tip`](#slots-tip) slots to customize the con
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
 | ``value`` | `*|Array<*>` | - | [^value] |
-| ``secondary-progress`` | `number | Array<number>` | `0` | Secondary progress value. |
-| ``min`` | `number` | `0` | The minimun value after `value` is processed by the `parse` function. |
-| ``max`` | `number` | `1` | The maximum value after `value` is processed by the `parse` function. |
-| ``step`` | `number` | `0` | The step value  after `value` is processed by the `parse` function. |
+| ``secondary-progress`` | `number | Array<number>` | `0` | Secondary progress bar. |
+| ``min`` | `number` | `0` | The minimum value allowed after the `parse` function processes the `value`. |
+| ``max`` | `number` | `1` | The maximum value allowed after the `parse` function processes the `value`. |
+| ``step`` | `number` | `0` | The step value after the `parse` function processes the `value`. |
 | ``mark`` | `boolean` | `false` | Whether to display step marks. |
-| ``parse`` | `function` | `val => val` | The parse function to transform input value. |
-| ``format`` | `function` | `val => val` | The format function to transform output value. |
+| ``parse`` | `function` | `val => val` | Value processing function. |
+| ``format`` | `function` | `val => val` | Output value processing function. |
 
 ^^^ui
-Style variants.
+Predefined styles.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `s` | Small. |
-| `m` | Medium. |
+| `s` | Small size style. |
+| `m` | Medium size style. |
 +++
 ^^^
 
 ^^^value
-The value of the slider.
+Value.
 
-By default the type is `number` and the value should between `min` and `max` after parsed by the `parse` function.
-
-When being the type of `Array<number>`, multiple thumbs will be rendered corresponding to each value.
+The default value type is `number`, and the value size range after the `parse` function processing should be between `min` and `max`.
+When the value is in the form of `Array<number>`, the component renders multiple sliders corresponding to each value.
 
 :::tip
-When `parse` and `format` are specified, values can be of any type, and `parse` should transform the value to `number` and `format` should transform the value to the same type as the [`value`](#props-value) prop. `parse` and `format` only need to take care of single values instead of arrays and the component itself will apply transformation on multiple values if necessary.
+When `parse` and `format` are provided, the value can be of any type, but `parse` needs to parse the incoming value into a `number` type and return it; `format` needs to format the output value into its original form. The implementation of `parse` and `format` only needs to process a single value, and the component will call these two functions for each item of multiple values.
 :::
 ^^^
 
@@ -81,33 +80,37 @@ When `parse` and `format` are specified, values can be of any type, and `parse` 
 
 | Name | Description |
 | -- | -- |
-| ``track`` | The track of the slider. Displays a bar by default. |
-| ``tip-label`` | The tooltip content. Displays the current `value` or its item by default. |
+| ``track`` | Slider track. Default content: a line. |
+| ``tip-label`` | Floating prompt text. Default content: the current `value`. |
 | ``thumb`` | [^slot-thumb] |
 | ``tip`` | [^slot-tip] |
 
 ^^^slot-thumb
-The thumb(s) of the slider. Displays a round button by default.
+Slider thumb.
+
+Default content: a round button.
 
 +++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `index` | `number` | The index of current thumb. |
-| `focus` | `boolean` | Whether current thumb is focused. |
-| `hover` | `boolean` | Whether user is pointing current thumb. |
-| `dragging` | `boolean` | Whether the current thumb is being dragged. |
+| `index` | `number` | Slider index. |
+| `focus` | `boolean` | Whether the slider is focused. |
+| `hover` | `boolean` | Whether the mouse is hovering. |
+| `dragging` | `boolean` | Whether the slider is being dragged. |
 +++
 ^^^
 
 ^^^slot-tip
-The entire tooltip for each thumb. Displays a `Tooltip` component with `value` as its content by default.
+Popup tooltip.
+
+Default content: a Tooltip component with the content being `value`.
 
 +++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `target` | `HTMLElement` | The rendered `Element` for current thumb. |
-| `open` | `boolean` | Whether there is any active thumb. |
-| `active-index` | `boolean` | The index of the current active thumb. |
+| `target` | `HTMLElement` | Slider element. |
+| `open` | `boolean` | Whether there is an active slider. |
+| `active-index` | `boolean` | The index of the active slider. |
 +++
 ^^^
 
@@ -122,5 +125,5 @@ The entire tooltip for each thumb. Displays a `Tooltip` component with `value` a
 `v-model`
 :::
 
-Triggered after the value changed. The callback parameter type is `(value: *)`, where `value` is the new value (transformed by the `format` function).
+Triggered after modification, with the callback parameter `(value: *)`. `value` is the new value processed by the `format` function after the change.
 ^^^

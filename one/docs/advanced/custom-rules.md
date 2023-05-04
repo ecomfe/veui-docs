@@ -1,6 +1,6 @@
 # 自定义校验规则
 
-对于多值校验，`Form` 组件的 [`validators`](../components/form#props-validators) 属性提供了比较完善的功能来实现自定义校验。对于单值校验，`Field` 组件内置了 7 种常见规则，具体参考其 [`rule`](../components/field#props-rule) 属性。如果无法覆盖需求，`VEUI` 校验规则模块允许你添加自定义规则。
+对于多值校验，[`Form`](../components/form) 组件的 [`validators`](../components/form#props-validators) 属性提供了比较完善的功能来实现自定义校验。对于单值校验，`Field` 组件内置了 7 种常见规则，具体参考其 [`rule`](../components/field#props-rule) 属性。如果无法覆盖需求，`VEUI` 校验规则模块允许你添加自定义规则。
 
 ## 示例
 
@@ -78,7 +78,7 @@ let minLengthRule = {
 ^^^priority
 规则优先级。数值低优先级高。
 
-+++目前内置的优先级
++++内置优先级
 | 名称 | 优先级 |
 | -- | -- | -- |
 | `required` | `0` |

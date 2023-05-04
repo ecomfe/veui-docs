@@ -1,8 +1,8 @@
 # veui-loader
 
-This webpack loader is used to inject theme/locale modules for used components only at build time.
+This webpack loader helps us to automatically inject dependencies such as themes and language packs into components during the build process.
 
-You can specify style/script module you want to inject into each VEUI component in loader options:
+In the loader options, you can configure the corresponding styles and JS modules that need to be loaded for each VEUI component.
 
 ```js
 modules: [
@@ -18,15 +18,14 @@ modules: [
 ]
 ```
 
-Options above result in importing two extra modules for each component. eg. For `Button.vue`, `veui-theme-dls/components/button.less` and `veui-theme-dls/components/Button.js` will be injected.
+The above configuration indicates that we need to additionally import two modules for each component. For example, for `Button.vue`, the code for the two modules `veui-theme-dls/components/button.less` and `veui-theme-dls/components/Button.js` will be imported.
 
 ## Why not use a Babel plugin?
 
-As we know, in popular component libraries like Ant Design and Element, theme packages are injected with Babel plugins ([babel-plugin-import](https://github.com/ant-design/babel-plugin-import)/[babel-plugin-component](https://github.com/ElementUI/babel-plugin-component)). VEUI is using webpack loader for the following reasons:
+As we know, in component libraries such as Ant Design and Element, Babel plugins ([babel-plugin-import](https://github.com/ant-design/babel-plugin-import)/[babel-plugin-component](https://github.com/ElementUI/babel-plugin-component)) are used to inject theme styles, but there are two reasons why VEUI uses webpack loaders:
 
-1. webpack's resolving logic is transparent to Babel so we cannot accurately guarantee the module exists at the path resolved by webpack, so it's hard to specify arbitrary location of the theme package. veui-loader, on the other hand, can accurately check the existence of each generated path after resolved by webpack.
-
-2. Vue Loader cannot handle styles imported from script blocks while extracting component-level critical CSS, while `veui-loader` solved the issue by preprocessing `.vue` files and inject style blocks instead of injecting import statements into script block.
+1. Because Babel is not aware of webpack's resolve logic, it cannot accurately determine whether a path corresponds to a real module after webpack resolution, and strict constraints are needed for the theme package path. `veui-loader` will automatically check whether the module corresponding to each path after webpack resolution exists, so there will be no errors caused by importing non-existent modules.
+2. When Vue automatically extracts critical CSS in SSR, it cannot inject the styles introduced in JS code into the component. `veui-loader` injects dependencies through preprocessing of `.vue` single-file components, which can solve this problem.
 
 ## Options
 
@@ -34,31 +33,31 @@ As we know, in popular component libraries like Ant Design and Element, theme pa
 
   Type: `Array<{package, path, fileName, transform}>`
 
-  The configuration of all extra modules to be injected into each component.
+  Contains information about each additional module that each component needs to load, and is an array where each array item represents the module that needs to be additionally imported for each component file.
 
-  Properties of each module:
+  The fields for each module item are as follows:
 
-  | Property | Type | Default | Description |
+  | Field | Type | Default | Description |
   | -- | -- | -- | -- |
-  | `package` | `string` | - | The name of the injected package. It's generally the name of the theme package, like `'veui-theme-dls'`. |
-  | `path` | `string` | `'components'` | The path of the directory containing the injected module. |
-  | `fileName` | `string` | `'{module}.css'` | The file name template corresponds to the component name. Must include the placeholder `{module}`. |
-  | `transform` | `string | boolean` | `'kebab-case'` | Transformation applied for component names. The `{module}` part within `fileName` will be replaced with the transformed name. Provide `false` to prevent transformation. All possible values are `'kebab-case'`, `'camleCase'` and `'PascalCase'`. |
+  | `package` | `string` | - | The name of the package to which the additional module belongs. Generally, it will be the package name of the theme package, such as `'veui-theme-dls'`. |
+  | `path` | `string` | `'components'` | The directory name of the module to be loaded within the corresponding package. |
+  | `fileName` | `string` | `'{module}.css'` | The file name template of the module corresponding to the component, which must contain the placeholder `{module}`. |
+  | `transform` | `string | boolean` | `'kebab-case'` | The conversion rule for the component name. After conversion, it will replace the `{module}` placeholder in `fileName`. If the value is `false`, no conversion will be performed. The available conversion rules are `'kebab-case'`, `'camleCase'`, and `'PascalCase'`. |
 
 * `locale`
 
   Type: `boolean | string=|Array<string>`
 
-  The ID of the locale modules to be injected. Array values indicate to inject multiple locale packages. Defaults to `zh-Hans`. Current available values are `zh-Hans` and `en-US`.
+  The language pack identifier to be injected. When an `Array` type value is passed in, multiple language packs will be automatically imported. The default value is `zh-Hans`. The supported values are `zh-Hans` and `en-US`.
 
-  Provide `false` to explicitly prevent automatically injecting locale package. You need to import locale packages manually.
+  If automatic loading of language packs is not required, you can pass in `false` to explicitly disable it, and the user needs to register the language pack manually.
 
 * `global`
 
   Type: `Array<string>`
 
-  The array of module paths to be injected int every component.
+  The modules that need to be imported in all components. The array items are the complete paths of the modules that need to be imported.
 
   :::warning
-  Do not inject style modules via the `global` option. This will repeatedly output the same style code for every component.
+  Please note that you should not inject style code through the `global` option, as this will cause the style code to be repeatedly output in each component.
   :::

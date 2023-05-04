@@ -1,10 +1,10 @@
 # v-longpress
 
-## 简介
-
 `v-longpress` 指令用于处理鼠标长按事件。
 
 ## 示例
+
+[[ demo src="/demo/directives/longpress.vue" ]]
 
 ## API
 

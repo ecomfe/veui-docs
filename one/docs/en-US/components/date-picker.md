@@ -211,7 +211,7 @@ Triggered when the end date marked by mouse or keyboard interaction is changed a
 
 +++Parameter types
 | `multiple` | Type |
-| ---------- | ---- |
+| -- | -- |
 | `false` | `[Date, Date]` |
 | `true` | `Array<[Date, Date]>` |
 +++

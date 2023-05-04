@@ -1,7 +1,5 @@
 # v-nudge
 
-## 简介
-
 `v-nudge` 指令用于使用键盘方向键对值进行调整。
 
 :::warning
@@ -49,7 +47,7 @@
 | ``update`` | `function(delta: number)` | `function() {}` | 值发生变化时触发，传入变化值。参数 `delta` 为计算后的数值变化量。 |
 
 :::warning
- `Object` 类型提供的参数会覆盖通过指令参数、修饰符指定的参数。
+`Object` 类型提供的参数会覆盖通过指令参数、修饰符指定的参数。
 :::
 
 :::warning

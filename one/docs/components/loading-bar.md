@@ -6,7 +6,7 @@
 
 可供选用的尺寸 [`ui`](#props-ui) 属性值：`xs` / `s` / `m`。
 
-[[demo src="/demo/loading-bar/size.vue"]]
+[[ demo src="/demo/loading-bar/size.vue" ]]
 
 ## API
 

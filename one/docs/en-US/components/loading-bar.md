@@ -6,7 +6,7 @@
 
 Available `ui` prop values: `xs` / `s` / `m`.
 
-[[demo src="/demo/loading-bar/size.vue"]]
+[[ demo src="/demo/loading-bar/size.vue" ]]
 
 ## API
 

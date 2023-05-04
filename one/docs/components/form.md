@@ -6,19 +6,19 @@
 
 ## 示例
 
-### 基础样式
+### 操作按钮
 
 使用 [`actions`](#slots-actions) 插槽来提供表单操作按钮。
 
 [[ demo src="/demo/form/normal.vue" ]]
 
-### 只读状态
+### 只读
 
 设置 [`readonly`](#slots-readonly) 来使内部表单项处于只读状态。
 
 [[ demo src="/demo/form/readonly.vue" ]]
 
-### 禁用状态
+### 禁用
 
 设置 [`disabled`](#slots-disabled) 来使内部表单项处于禁用状态。
 
@@ -48,7 +48,7 @@
 
 [[ demo src="/demo/form/abstract.vue" ]]
 
-### 原生输入框与表单项整合
+### 整合原生输入
 
 [[ demo src="/demo/form/withhold.vue" ]]
 
@@ -84,9 +84,8 @@
 | `triggers` | `string | Array<string>` | 事件名称集合, 支持 `<fieldName>:<eventName>` 表示当 `fieldName` 字段发生 `eventName` 事件时触发校验。 |
 +++
 
-
 +++规则详情
-| `fields` | `triggers` | 绑定事件情况 |
+| `fields` | `triggers` | 事件绑定 |
 | -- | -- | -- |
 | `['a']` | `['change', 'blur,input,xxx', 'submit']` | a(change) |
 | `['a','b','c']` | `['change', 'blur,input,xxx', 'submit']` | a(change), b(blur,input,xxx), c(submit) |
@@ -104,7 +103,7 @@
 | ``actions`` | 表单操作内容，如“提交”、“取消”按钮等。无默认内容。插槽参数与 [`default`](#slots-default) 插槽相同。 |
 
 ^^^slot-default
-可直接内联 `Fieldset` 或 `Field` 组件。无默认内容。
+可直接内联 [`Fieldset`](./fieldset) 或 [`Field`](./field) 组件。无默认内容。
 
 +++插槽参数
 | 名称 | 类型 | 描述 |
@@ -113,7 +112,6 @@
 | `validating` | `boolean` | 是否正在执行表单校验。 |
 +++
 ^^^
-
 
 ### 事件
 

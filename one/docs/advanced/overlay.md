@@ -105,7 +105,7 @@ VEUI 中，浮层支持两种定位方式：
 
 以坐标方式定位时，需要自己写 CSS 进行控制（浮层模块内部只会生成浮层根元素的 `z-index` 值）。
 
-相对元素定位时，可以通过[浮层组件](../components/overlay)的 `options` 属性描述偏移和变换规则。由于目前内部采用 [Popper.js](https://popper.js.org/docs/v1/) 实现，因此完整的配置项可以参考 [Popper.js 官网](https://popper.js.org/docs/v1/#popperdefaults--codeobjectcode)。
+相对元素定位时，可以通过[浮层组件](../components/overlay)的 `options` 属性描述偏移和变换规则。由于目前内部采用 [Popper.js](https://popper.js.org/docs/v1/) 实现，因此完整的配置项可以参考 [Popper.js 官网](https://popper.js.org/docs/v1/#Popper.placements)。
 
 ## 样式
 

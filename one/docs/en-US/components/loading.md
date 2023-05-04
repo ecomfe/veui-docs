@@ -6,25 +6,25 @@
 
 Available style variants for the [`ui`](#props-ui) prop: `normal` / `strong` / `reverse`.
 
-[[demo src="/demo/loading/style.vue"]]
+[[ demo src="/demo/loading/style.vue" ]]
 
 ### Size Variants
 
 Available size variants for the [`ui`](#props-ui) prop: `s` / `m` / `l`.
 
-[[demo src="/demo/loading/size.vue"]]
+[[ demo src="/demo/loading/size.vue" ]]
 
 ### Layout
 
 Available layout variant for the [`ui`](#props-ui) prop: `vertical`.
 
-[[demo src="/demo/loading/layout.vue"]]
+[[ demo src="/demo/loading/layout.vue" ]]
 
 ### Custom Spinner
 
 Customize the loading spinner by using the [`spinner`](#slots-spinner) slot.
 
-[[demo src="/demo/loading/slot.vue"]]
+[[ demo src="/demo/loading/slot.vue" ]]
 
 ## API
 

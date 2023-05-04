@@ -32,7 +32,7 @@
 ^^^
 
 ^^^matches
-在使用了 Vue Router 且提供了 [`to`](#props-to) 属性后，用于自定义判断路由当前激活 `Tab` 的逻辑。参数列表为 `(current: Route, to: Route)`。`current` 与 `to` 参数均为 Vue Router 的 [`Route`](https://router.vuejs.org/zh/api/#%E8%B7%AF%E7%94%B1%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7) 类型对象。默认使用上层 [`Tabs`](./tabs) 组件的 [`matches`](./tabs#props-matches) 逻辑。
+在使用了 Vue Router 且提供了 [`to`](#props-to) 属性后，用于自定义判断路由当前激活 `Tab` 的逻辑。参数列表为 `(current: Route, to: Route)`。`current` 与 `to` 参数均为 Vue Router 的 [`Route`](https://v3.router.vuejs.org/zh/api/#%E8%B7%AF%E7%94%B1%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7) 类型对象。默认使用上层 [`Tabs`](./tabs) 组件的 [`matches`](./tabs#props-matches) 逻辑。
 ^^^
 
 ^^^status

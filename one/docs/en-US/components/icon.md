@@ -4,7 +4,7 @@
 The `Icon` component of VEUI is currently compatible with the way [Vue-Awesome](https://github.com/Justineo/vue-awesome) is registered and specifies the icon through the `name` prop of string type. It also supports rendering by directly passing in component definitions.
 :::
 
-## Demos
+## Examples
 
 ### Built-in icons
 

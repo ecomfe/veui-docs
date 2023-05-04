@@ -45,7 +45,7 @@ The stacking order of child overlays is affected by the parent overlay.
 | ``overlay-class`` | `string | Array | Object` | - | Class name for the overlay root element, in the format of any [`class` expression supported by Vue](https://v3.vuejs.org/guide/class-and-style.html#binding-html-classes). |
 | ``overlay-style`` | `string | Array | Object` | - | Style for the overlay root element, in the format of any [`style` expression supported by Vue](https://v3.vuejs.org/guide/class-and-style.html#binding-inline-styles). |
 | ``options`` | `Object` | - | Pass-through `modifiers` configuration options for the underlying Popper.js implementation. See [here](https://popper.js.org/docs/v1/#modifiers) for details. |
-| ``position`` | `string` | 'auto' | Pass-through `placement` configuration option for the underlying Popper.js implementation. See [here](https://popper.js.org/docs/v1/#popperplacements--codeenumcode) for details. |
+| ``position`` | `string` | 'auto' | Pass-through `placement` configuration option for the underlying Popper.js implementation. See [here](https://popper.js.org/docs/v1/#Popper.placements) for details. |
 | ``match-width`` | `boolean` | `false` | Whether to automatically match the width of the target element when the overlay is narrower. |
 
 ^^^open

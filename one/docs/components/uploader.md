@@ -20,13 +20,13 @@
 
 [[ demo src="/demo/uploader/media.vue" ]]
 
-### 前端校验
+### 校验
 
 图片格式、大小、数量校验以及使用 [`validator`](#props-validator) 自定义校验。
 
 [[ demo src="/demo/uploader/validate.vue" ]]
 
-### 自定义配置
+### 自定义上传
 
 使用 [`upload`](#props-upload) 自定义上传过程，使用 [`controls`](#props-controls) 配置浮层操作项。
 
@@ -38,13 +38,13 @@
 
 [[ demo src="/demo/uploader/sortable.vue" ]]
 
-### 已上传项自定义操作
+### 自定义操作栏
 
 设置 [`controls`](#props-controls) 属性来指定悬浮到每个上传项时的操作选项。
 
 [[ demo src="/demo/uploader/controls.vue" ]]
 
-### 上传入口自定义操作
+### 自定义上传入口
 
 设置 [`entries`](#props-entries) 属性来指定悬浮到继续上传项目时的操作选项。
 
@@ -81,7 +81,7 @@
 | ``callback-namespace`` | `string` | `uploader.callbackNamespace` | 在 `request-mode` 的值为 `'iframe'` 并且 `iframe-mode` 的值为 `'callback'` 的模式下，指定回调函数的命名空间，放在 `window` 对象下。可进行[全局统一配置](#configs-uploader-callbackNamespace)。 |
 | ``data-type``| `string` | `'json'` | [^data-type] |
 | ``convert-response`` | `uploader.convertResponse` | - | [^convert-response] |
-| ``accept`` | `string` | - | 与原生 `<input>` 元素 的 [`accept`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/file#%E9%99%90%E5%88%B6%E5%8F%AF%E6%8E%A5%E5%8F%97%E7%9A%84%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B) 属性相同，在浏览器的文件类型筛选后再加一层校验。对于类似 `application/msword` 这样的 MIME type 与扩展名对不上的情形跳过校验。 |
+| ``accept`` | `string` | - | 与原生 `<input>` 元素 的 [`accept`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/file#accept) 属性相同，在浏览器的文件类型筛选后再加一层校验。对于类似 `application/msword` 这样的 MIME type 与扩展名对不上的情形跳过校验。 |
 | ``max-count`` | `number` | - | 最大文件数量。 |
 | ``max-size`` | `number | string` | - | 单个文件的最大大小，如果是 `number`，单位是 `byte`；如果是 `string`，支持在数字后面添加单位，单位可以是 `b` / `kb` / `mb` / `gb` / `tb`。 |
 | ``validator`` | `function(Object): Object | Promise<Object>` | - | [^validator] |
@@ -97,13 +97,11 @@
 | ``after-pick`` | `function(Array<Object>): void` | - | 选择文件之后的回调。 |
 | ``sortable`` | `boolean` | `false` | 文件列表是否可以排序。 |
 | ``preview-options`` | `object` | `{wrap: true, indicator: 'number'}` | 传递给 [`Lightbox`](./lightbox) 的预览选项。 |
-| ``preview-options`` | `object` | `{wrap: true, indicator: 'number'}` | 传递给 [`Lightbox`](./lightbox) 的预览选项。 |
 | ``validity-display`` | `'popup' | 'inline'` | `'popup'` | [^validity-display] |
 | ``help`` | `string` | - | 帮助文本。 |
 | ``help-position`` | `'side' | 'bottom'` | `'side'` | [^help-position] |
 | ``picker-label`` | `string` | - | 上传按钮的文本。 |
 | ``picker-icon`` | `string | Object` | - | 上传按钮的图标，参考 [`Icon`](./icon) 的 [`name`](./icon#props-name) 属性。 |
-
 
 ^^^ui
 预设样式。
@@ -225,7 +223,7 @@ type PickedFile = {
 }
 ```
 
-+++枚举值
++++字段详情
 | 值 | 描述 |
 | -- | -- |
 | `name` | 文件名称。 |
@@ -270,7 +268,6 @@ type PickedFile = {
 | `preview` | `boolean` | 当校验失败时，是否预览失败的上传项。 |
 
 支持异步校验，返回值可以是一个 resolve 上述返回结果的 `Promise`。
-
 ^^^
 
 ^^^upload
@@ -350,44 +347,48 @@ type PickedFile = {
 +++
 ^^^
 
-^^^event-remove
+^^^^event-remove
 删除文件时触发，回调参数为 `(file, index)`。
 
 +++参数详情
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
-| `file` | `Object` | 被删除的文件。 |
+| `file` | `Object` | [^remove-file] |
 | `index` | `number` | 被删除的文件的序号。 |
 
-`file` 字段详情
+^^^remove-file
+被删除的文件。
 
 | 字段 | 类型 | 描述 |
 | -- | -- | -- |
 | `name` | `string` | 文件名称。 |
 | `src` | `string` | 文件地址。 |
 | `status` | `string` | 上传状态。`'success'` 表示上传成功；`'uploading'` 表示正在上传；`'failure'` 表示上传失败。 |
+^^^
 
 同时也包含在 [`convert-response`](#props-convert-response) 中添加的自定义属性。
 +++
-^^^
+^^^^
 
-^^^event-invalid
+^^^^event-invalid
 文件校验失败时触发，回调参数为 `(validity: Object)`。
 
-+++参数字段详情
++++字段详情
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `file` | `Object` | 没有通过校验的文件信息，与 [`remove`](#events-remove) 事件的回调参数中的 `file` 相同。如果校验失败的原因是选择的文件数量超过最大数量 `max-count` 限制，则这个字段为空。 |
-| `errors` | `Array<Object>` | 包含该文件所有校验错误信息的数组，数组的每一项是包含校验失败信息的对象。 |
+| `errors` | `Array<Object>` | [^invalid-errors] |
 +++
 
-+++校验失败信息字段详情
+^^^invalid-errors
+包含该文件所有校验错误信息的数组，数组的每一项是包含校验失败信息的对象。
+
 | 名称 | 类型 | 描述 |
 | -- | -- | -- |
 | `type` | `string` | 校验失败的类型，类型枚举值可从 `Uploader.errors` 对象获取，如 `Uploader.errors.SIZE_INVALID`。 |
 | `value` | `number | string | Object` | 没有通过校验的值，根据 `type` 的不同有不同的类型。 |
 | `message` | `string` | 检验失败的提示信息。 |
-+++
+^^^
 
 +++校验失败类型与参数关系
 | 类型 | 描述 | `value` 类型 | `value` 描述 |
@@ -397,7 +398,7 @@ type PickedFile = {
 | `TOO_MANY_FILES` | 选择的文件数超过 `max-count` 限制。 | `number` | 已选择的文件数。 |
 | `CUSTOM_INVALID` | `validator` 自定义校验失败。 | `Object` | 文件对象，字段同 [`remove`](#events-remove) 事件回调参数。 |
 +++
-^^^
+^^^^
 
 ^^^event-statuschange
 在所有文件总的状态发生变化时触发，回调参数为组件整体的状态 `(status: string)`。

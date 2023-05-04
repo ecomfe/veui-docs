@@ -6,25 +6,25 @@
 
 可供选用的风格 [`ui`](#props-ui) 属性值：`normal` / `strong` / `reverse`。
 
-[[demo src="/demo/loading/style.vue"]]
+[[ demo src="/demo/loading/style.vue" ]]
 
 ### 尺寸
 
 可供选用的尺寸 [`ui`](#props-ui) 属性值：`s` / `m` / `l`。
 
-[[demo src="/demo/loading/size.vue"]]
+[[ demo src="/demo/loading/size.vue" ]]
 
 ### 排列方式
 
 可供选用的排列方式 [`ui`](#props-ui) 属性值：`vertical`。
 
-[[demo src="/demo/loading/layout.vue"]]
+[[ demo src="/demo/loading/layout.vue" ]]
 
 ### 自定义加载图标
 
 通过 [`spinner`](#slots-spinner) 插槽设置自定义加载图标。
 
-[[demo src="/demo/loading/slot.vue"]]
+[[ demo src="/demo/loading/slot.vue" ]]
 
 ## API
 

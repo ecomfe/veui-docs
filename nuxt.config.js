@@ -64,6 +64,7 @@ module.exports = {
   plugins: [
     { src: '~plugins/global.js' },
     { src: '~plugins/hm.js', mode: 'client' },
+    { src: '~plugins/preload.js', mode: 'client' },
     { src: '~plugins/i18n.js' },
     { src: '~plugins/l10n.js' },
     { src: '~plugins/target.js', mode: 'client' },

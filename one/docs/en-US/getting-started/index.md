@@ -1,12 +1,12 @@
 # Getting started
 
 :::tip
-To make VEUI works in your project, please install and configure according to **all** of the following steps.
+To use VEUI in your project, please follow the steps below for **all** installation and configuration.
 :::
 
 ## Installation
 
-After scaffolding the project with Vue CLI, run the following under the its root directory:
+After creating a project using Vue CLI, run the following command in the project root directory:
 
 ```sh
 npm i --save veui veui-theme-dls
@@ -17,7 +17,7 @@ npm i --save-dev less less-loader veui-loader babel-plugin-veui babel-plugin-lod
 
 ### Babel plugin
 
-You need to configure the auto-generated `babel.config.js` as follows:
+Modify the `babel.config.js` generated in the project root directory as follows:
 
 ```js
 module.exports = {
@@ -31,11 +31,11 @@ module.exports = {
 }
 ```
 
-Read more about `babel-plugin-veui` [here](/getting-started/babel-plugin-veui).
+For more detailed information about `babel-plugin-veui`, please visit [here](/getting-started/babel-plugin-veui).
 
 ### Vue CLI configs
 
-For projects that need to import the default theme package `veui-theme-dls`, we need to configure the `vue.config.js` as follows:
+For projects that need to import the default theme package `veui-theme-dls`, we need to configure the `vue.config.js` in the project root directory as follows:
 
 ```js
 const veuiLoaderOptions = require('veui-theme-dls/veui-loader-options')
@@ -63,19 +63,19 @@ module.exports = {
 }
 ```
 
-To learn more details of configuring `veui-loader`, read its documentation [here](/getting-started/veui-loader).
+For more details on configuring `veui-loader`, please visit [here](/getting-started/veui-loader).
 
-+++Why all these configs?
-VEUI takes an approach to develop and ship component logic and themes separatedly. The component code has no explicit depency on style code so you need to use `veui-loader` to configure the theme package you want to use.
++++Why do we need to configure these options?
+VEUI adopts the development and publishing method of separating the style theme from the component code. The component code does not have an explicit dependency on the style code, so we need to use `veui-loader` to configure the associated theme package.
 
-As Less 3+ does not enable inline JavaScript evaluation by default - which `veui-theme-dls` relies on, we need to enable it manually.
+At the same time, because Less 3+ no longer enables inline JavaScript parsing by default, and `veui-theme-dls` relies on this feature, we need to manually enable the configuration item.
 
-We intend to transpile and build VEUI and its dependencies along with the application code itself so you need to add the related packages into the transpilation process.
+In addition, since we adopt the strategy of packaging VEUI and its dependencies with the project, we need to manually specify the relevant dependency packages for translation.
 +++
 
 ### Global stylesheet
 
-When using `veui-theme-dls`, you need to import the base stylesheet, which includes style normalization.
+When using the default theme `veui-theme-dls`, you need to first globally import the basic styles, including the normalize style and some basic element styles.
 
 Import from JavaScript:
 
@@ -83,26 +83,25 @@ Import from JavaScript:
 import 'veui-theme-dls/common.less'
 ```
 
-
-#### The number font
+#### Numeric font
 
 [[ demo src="/demo/style/number.vue" ]]
 
-The default theme `veui-theme-dls` comes with a display type number font “Baidu Number”, but it is not included in the global style by default because the web font will be loaded automatically. If you need to use it, please import it manually in your project:
+The default theme `veui-theme-dls` comes with a display-type numeric font "Baidu Number". However, since it automatically loads web fonts when enabled, it is not included in the global styles by default. If you need to use it, please manually import it into your project:
 
 ```js
 import 'veui-theme-dls/typography.less'
 ```
 
-Once imported, you can use a font named `"Baidu Number"` in your CSS. For scenarios envolving dynamic numbers, we may want fixed width numbers to ensure layout stability. You can set `font-variant-numeric: tabular-nums` to enable the corresponding Open Type feature which comes with this font.
+After importing, you can use the font named "Baidu Number" in CSS. At the same time, in dynamic numeric scenarios, it is often necessary to ensure the relative stability of the layout by making the digits monospaced. You can set `font-variant-numeric: tabular-nums` to enable the corresponding Open Type feature in the font.
 
 ```css
 .heading-numbers {
   font-family: "Baidu Number", sans-serif;
-  font-variant-numeric: tabular-nums; /* Fixed-width numbers */
+  font-variant-numeric: tabular-nums; /* Monospaced scenario */
 }
 ```
 
 :::warning
-Please make sure that `veui-theme-dls/common.less` and `veui-theme-dls/typography.less` are only introduced once, importing them in multiple components' `<style>` blocks will result in duplicate content output.
+Please ensure that `veui-theme-dls/common.less` and `veui-theme-dls/typography.less` are only imported once. Repeatedly importing them in multiple components will cause the content to be output repeatedly.
 :::

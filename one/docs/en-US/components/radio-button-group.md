@@ -83,7 +83,7 @@ Text area inside the button.
 
 Default content: `label` attribute value.
 
-+++Slot parameters
++++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
 | `label` | `string` | Option text. |

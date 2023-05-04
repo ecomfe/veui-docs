@@ -4,19 +4,19 @@
 
 ### Style variants
 
-Available style variant for the [`ui`](#props-ui) prop: `alt`.
+Available `ui` prop values: `alt`.
 
 [[ demo src="/demo/tooltip/style.vue" ]]
 
-### Position
+### Positioning
 
-Use the [`position`](#props-position) prop to specify the placement of the tooltip.
+Use the `position` prop to specify the position of the tooltip.
 
 [[ demo src="/demo/tooltip/position.vue" ]]
 
-### Triggers
+### Trigger
 
-Use the [`trigger`](#props-trigger) prop to specify when to show/hide the tooltip.
+Use the `trigger` prop to specify when to show/hide the tooltip.
 
 [[ demo src="/demo/tooltip/trigger.vue" ]]
 
@@ -28,24 +28,25 @@ Use the [`trigger`](#props-trigger) prop to specify when to show/hide the toolti
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
 | ``open`` | `boolean` | `false` | [^open] |
-| ``target`` | `string | Vue | Node` | - | See the [`target`](./overlay#props-to) prop of thh [`Overlay`](./overlay) component. |
+| ``target`` | `string | Vue | Node` | - | Refers to the `target` prop of the [`Overlay`](./overlay) component. |
 | ``position`` | `string` | `'top'` | [^position] |
-| ``aim-center`` | `boolean` | `false` | Whether the tooltip arrow always points to the center of the target element. |
+| ``aim-center`` | `boolean` | `false` | Specifies whether the tooltip arrow should always point to the center of the target element. |
 | ``trigger`` | `string` | `'hover'` | [^trigger] |
-| ``interactive`` | `boolean` | `true` | Whether the tooltip content is interactive. When set to `false`, the tooltip will be automatically hidden after the event specified by `trigger` is triggered outside the `target`. |
-| ``hide-delay`` | `number` | `tooltip.hideDelays` | Time (in milliseconds) to wait before hiding the tooltip after the close trigger is triggered. Can be used to prevent the tooltip being immediately closed after pointer leaves the `target` element and before it enters the tooltip itself. |
-| ``overlay-class`` | `string | Array | Object` | - | See the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
-| ``overlay-style`` | `string | Array | Object` | - | See the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
+| ``interactive`` | `boolean` | `true` | Specifies whether the content of the tooltip can be interacted with. If `false`, the tooltip will automatically close when the conditions specified by `trigger` are met outside of the `target`. |
+| ``autofocus`` | `boolean` | - | Specifies whether to automatically focus on the first focusable element inside the tooltip. |
+| ``hide-delay`` | `number` | `tooltip.hideDelays` | The number of milliseconds to wait before closing the tooltip after the conditions for closing are met. This can be used to prevent the tooltip from closing automatically before interacting with it after moving the cursor out of the `target`. |
+| ``overlay-class`` | `string | Array | Object` | - | Refers to the `overlay-class` prop of the [`Overlay`](./overlay) component. |
+| ``overlay-style`` | `string | Array | Object` | - | Refers to the `overlay-style` prop of the [`Overlay`](./overlay) component. |
 
 ^^^ui
-Style variants.
+Predefined styles.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `alt` | Reverse style. |
-| `s` | Small style. |
-| `m` | Medium style. |
+| `reverse` | Reversed style. |
+| `s` | Small size style. |
+| `m` | Medium size style. |
 +++
 ^^^
 
@@ -54,17 +55,17 @@ Style variants.
 `.sync`
 :::
 
-Whether the tooltip is displayed.
+Specifies whether to show the tooltip or not.
 ^^^
 
 ^^^position
-Denotes the target element of the tooltip. Used with [Popper.js](https://popper.js.org/)-style placement syntax, see [`Popper.placements`](https://popper.js.org/popper-documentation.html#Popper.placements).
+Specifies the positioning options. Uses the positioning syntax of [Popper.js](https://popper.js.org/), see [`Popper.placements`](https://popper.js.org/docs/v1/#Popper.placements) for more information.
 ^^^
 
 ^^^trigger
-The event that triggers the toggle of the tooltip. Can take valid values for `v-outside` directive's `trigger` parameter, and can use <code>&#0096;${open}-${close}&#0096;</code> syntax to specify different trigger event for showing/hiding the tooltip. When specified as `custom`, `v-outside` will not be leveraged to automatically toggle the tooltip.
+Specifies how to trigger the tooltip. The supported values are the [`trigger`](../directives/v-outside#options-trigger) option of the [`v-outside`](../directives/v-outside) directive binding value, and the <code>&#0096;${open}-${close}&#0096;</code> syntax specifies the timing of opening/closing the tooltip respectively. In addition, when `trigger` is set to `custom`, the `v-outside` functionality will not be automatically applied.
 
-eg. `click` denotes showing the tooltip after clicking the `target` and hiding it after clicking outside. `hover-mousedown` denotes showing the tooltip after hovering the `target`, and hiding it after clicking outside.
+For example, `click` means that the tooltip opens when the `target` is clicked and closes when the blank space is clicked; `hover-mousedown` means that the tooltip opens when the cursor enters the `target` and closes when the mouse is pressed in the blank space.
 ^^^
 
 ### Slots
@@ -72,6 +73,20 @@ eg. `click` denotes showing the tooltip after clicking the `target` and hiding i
 | Name | Description |
 | -- | -- |
 | ``default`` | The content of the tooltip. |
+
+### Events
+
+| Name | Description |
+| -- | -- |
+| ``toggle`` | [^event-toggle] |
+
+^^^event-toggle
+:::badges
+`v-model`
+:::
+
+Triggered when the tooltip's open state is toggled. The callback parameter is `(open: boolean)`.
+^^^
 
 ### Configs
 

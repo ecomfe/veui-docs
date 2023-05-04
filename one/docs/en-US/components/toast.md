@@ -4,13 +4,13 @@
 
 ### Types
 
-`Toast` component has 4 contextual types, which are `success`, `info`, `warning` and `error`. Types are specified with the [`type`](#props-type) prop.
+`Toast` has four types: `info`, `success`, `warning`, and `error`. You can specify different types by using the [`type`](#props-type) prop.
 
 [[ demo src="/demo/toast/default.vue" ]]
 
-### Imperative invocation
+### Imperative call
 
-Use `veui/plugins/toast` to enable [`toast` plugin](../plugins/toast) and invoke the toast imperatively.
+You can use the `veui/plugins/toast` module to load the [`toast` plugin](../plugins/toast) for an imperative call.
 
 [[ demo src="/demo/toast/plugin.vue" ]]
 
@@ -22,27 +22,29 @@ Use `veui/plugins/toast` to enable [`toast` plugin](../plugins/toast) and invoke
 | -- | -- | -- | -- |
 | ``open`` | `boolean` | `false` | [^open] |
 | ``type`` | `string` | `'success'` | [^type] |
-| ``message`` | `string` | - | The toast message. |
-| ``duration`` | `number` | `toast.duration` | Time (in milliseconds) to wait until the toast is automatically closed. |
+| ``title`` | `string` | - | The message title. |
+| ``message`` | `string` | - | The message content. |
+| ``duration`` | `number` | `toast.duration` | The duration in milliseconds that the message is displayed. If exceeded, the toast will automatically close. |
+| ``closable`` | `boolean` | - | Whether there is a close button. |
 
 ^^^open
 :::badges
 `.sync`
 :::
 
-Whether the toast is displayed.
+Whether to display the toast.
 ^^^
 
 ^^^type
-The contextual type of the toast.
+The type of the toast.
 
-+++Enum values
++++Enumeration values
 | Value | Description |
 | -- | -- |
-| `info` | Information toast. |
-| `success` | Succuess toast. |
-| `warning` | Warning toast. |
-| `error` | Error toast. |
+| `info` | Information prompt style. |
+| `success` | Success style. |
+| `warning` | Warning style. |
+| `error` | Error style. |
 +++
 ^^^
 
@@ -50,25 +52,27 @@ The contextual type of the toast.
 
 | Name | Description |
 | -- | -- |
-| ``default`` | The content of the toast. Displays the [`message`](#props-message) prop by default. |
+| ``default`` | The content area. Displays the content of the [`message`](#props-message) prop by default. |
+| ``title`` | The title area. Displays the content of the [`title`](#props-title) prop by default. |
 
 ### Events
 
 | Name | Description |
 | -- | -- |
-| ``close`` | Triggered when the toast is closed. |
+| ``close`` | Triggered after the toast is automatically closed. |
+| ``ready`` | Triggered after the component is mounted. |
 
 ### Configs
 
 | Key | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``toast.duration`` | `number` | `3000` | The duration of the toast in milliseconds. |
+| ``toast.duration`` | `number` | `3000` | The default duration in milliseconds that the message is displayed. |
 
 ### Icons
 
 | Name | Description |
 | -- | -- |
-| ``info`` | Information toast. |
-| ``success`` | Success toast. |
-| ``warning`` | Warning toast. |
-| ``error`` | Error toast. |
+| ``info`` | Normal information. |
+| ``success`` | Success status. |
+| ``warning`` | Warning status. |
+| ``error`` | Error status. |

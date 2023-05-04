@@ -39,7 +39,7 @@
 | ``gridcontainer.gutter`` | `number` | `30` | Spacing between columns in the grid, in pixels. |
 | ``gridcontainer.margin`` | `number` | `0` | Margin on both sides of the grid, in pixels. |
 
-#### Default configuration in `veui-theme-dls`
+#### Default configs in `veui-theme-dls`
 
 | Key | Type | Default |
 | -- | -- | -- |

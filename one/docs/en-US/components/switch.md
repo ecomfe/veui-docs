@@ -4,13 +4,13 @@
 
 ### Size variants
 
-Available size variants for the [`ui`](#props-ui) prop: `xs` / `s` / `m`.
+Available `ui` prop values: `xs` / `s` / `m`.
 
 [[ demo src="/demo/switch/size.vue" ]]
 
 ### True/false values
 
-Use the [`true-value`](#props-true-value) and [`false-value`](#props-false-value) props to customize the `v-model` value of the checkbox in checked/unchecked state.
+You can modify the `v-model` value when the switch is on or off by setting the `true-value` and `false-value` props.
 
 [[ demo src="/demo/switch/value.vue" ]]
 
@@ -22,20 +22,21 @@ Use the [`true-value`](#props-true-value) and [`false-value`](#props-false-value
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
 | ``checked`` | `boolean` | `false` | [^checked] |
-| ``true-value`` | `*` | `true` | The value for checked state. |
-| ``false-value`` | `*` | `false` | The value for unchecked state. |
+| ``true-value`` | `*` | `true` | The value corresponding to the on state. |
+| ``false-value`` | `*` | `false` | The value corresponding to the off state. |
 | ``disabled`` | `boolean` | `false` | Whether the switch is disabled. |
 | ``readonly`` | `boolean` | `false` | Whether the switch is read-only. |
+| ``loading`` | `boolean` | `false` | Whether the switch is in loading state. |
 
 ^^^ui
-Style variants.
+Preset styles.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `xs` | Extra small. |
-| `s` | Small. |
-| `m` | Medium. |
+| `xs` | Extra small size. |
+| `s` | Small size. |
+| `m` | Medium size. |
 +++
 ^^^
 
@@ -44,32 +45,24 @@ Style variants.
 `.sync`
 :::
 
-Whether the checkbox is on.
+Whether the switch is on.
 ^^^
 
 ### Slots
 
 | Name | Description |
 | -- | -- |
-| ``default`` | The label text of the switch. The switch is toggled when the label is clicked. Displays nothing by default. |
+| ``default`` | The text that describes the switch. Clicking on it will toggle the switch. No default content. |
 
 ### Events
 
 | Name | Description |
 | -- | -- |
-| ``change`` | Triggered when user toggles the state of the switch. The callback parameter list is `(checked: boolean)`. `checked` denotes whether the switch is on. |
-| ``input`` | [^event-input] |
+| ``change`` | Triggered when the user toggles the switch. The callback parameter is `(checked: boolean)`, where `checked` indicates whether the switch is currently on. |
+| ``input`` | Triggered when the switch is toggled. The callback parameter is `(val: *)`, where `val` is the current `v-model` value. Unlike the `change` event, the `input` event is also triggered when the state changes due to data manipulation.
 
-^^^event-input
-:::badges
-`v-model`
-:::
+In addition, `Switch` supports the following native events:
 
-Triggered when the check state is changed. The callback parameter list is `(val: *)`, with `val` being the current value of `v-model`. Unlike the [`change`](#events-change) event, `input` is triggered even without user interaction.
-^^^
+`auxclick`, `click`, `contextmenu`, `dblclick`, `mousedown`, `mouseenter`, `mouseleave`, `mousemove`, `mouseover`, `mouseout`, `mouseup`, `select`, `wheel`, `keydown`, `keypress`, `keyup`, `focus`, `blur`, `focusin`, and `focusout`.
 
-Additionally, `Switch` exposes the following native events:
-
-`auxclick`, `click`, `contextmenu`, `dblclick`, `mousedown`, `mouseenter`, `mouseleave`, `mousemove`, `mouseover`, `mouseout`, `mouseup`, `select`, `wheel`, `keydown`, `keypress`, `keyup`, `focus`, `blur`, `focusin`, `focusout`.
-
-The callback parameter is the corresponding native event object for all events above.
+The callback parameter for all events is the corresponding native event object.

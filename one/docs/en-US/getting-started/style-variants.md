@@ -1,35 +1,35 @@
 # Style variants
 
-VEUI provide style variants via the `ui` prop. Theme packages can provide different `ui` value for each component and users can also use custom `ui` values to create extended style variants.
+VEUI components provide preset styles through the `ui` prop. Different theme packages can provide different `ui` values for each component to extend, and users can also customize `ui` values and their styles to extend the preset styles of VEUI components.
 
-### The `ui` prop
+### `ui` prop
 
-The `ui` prop takes a string consists of a list of whitespace-separated tokens, similar to HTML's native `class` attribute. Each token stands for a style variant of a component. In the following example, `primary` and `large` are both style variants of component `<veui-button>`:
+The `ui` prop is a space-separated string, similar to the native `class` attribute in HTML. Each item represents a preset style of the component. In the example below, `primary` and `large` both define a preset style of the `<veui-button>` component:
 
 ```html
 <veui-button ui="primary large">OK</veui-button>
 ```
 
 :::tip
-As we know, most component libraries provide style variants via enum props like `shape` / `size` / `type`/... .
+We know that many component libraries usually provide predefined styles through some enumerated props of components, such as `shape` / `size` / `type`, etc.
 
-While our design goal is that VEUI should not be bound to a specific design language tightly (though it's hard to completely decouple component structure/behavior and design languages). If we use enum props, once we need to create a completely new theme package but some of the new style variants cannot be described with the preserved enum props, we'll have to use something like `class` to attach style hooks to implement these style variants.
+However, according to our design intention, VEUI should try to avoid binding to specific design languages (although it is unlikely that the generated structure of the component can be completely decoupled from the design language). If a new theme needs to be added when using the method of predefined enumerated props, but some additional styles that can be selected are not reserved as enumerated props on VEUI components in this theme, only `class` can be used to add style hooks imperceptibly.
 
-Using `class` will lead to problems of naming conventions, prefixes, etc. So we decided to directly output a custom attribute `ui` to component's DOM nodes for more semantic style variants and minimize the coupling with component logic.
+Then there will be a series of problems such as naming and prefixing of `class`, so we simply provide a custom prop `ui` and output it to the DOM element of the component to achieve preset styles with clearer semantics and decoupling from component logic.
 :::
 
-### Use the DLS theme
+### Using the DLS theme
 
-You can enable `veui-theme-dls` by setting the corresponding options for [`veui-loader`](./veui-loader). The theme package provides style variants for most components. You can refer to documentation for the `ui` prop in each component to learn about the supported style variants.
+By using the corresponding configuration of [`veui-loader`](./veui-loader), you can load the `veui-theme-dls` theme package in VEUI. The theme package provides optional preset styles in different dimensions for many components. You can refer to the documentation of each component for the explanation of supported preset styles of the `ui` prop.
 
-### Custom style variants
+### Custom preset styles
 
-You don't need to register via component API to define custom `ui` tokens. Just adding style declarations for the corresponding `[ui~="..."]` selector would be sufficient.
+Adding a custom `ui` item does not require registration through the component API, just add the corresponding styles for the `[ui~="..."]` selector in the style file.
 
-eg. If you want a new `secondary` variant for `Button` component, just add styles to `.veui-button[ui~"secondary"]`:
+For example, to add a `secondary` style for `Button` component, just write the styles for `.veui-button[ui~="secondary"]`.
 
 [[ demo src="/demo/ui.vue" ]]
 
-### Custom theme package
+### Custom theme packages
 
-If you want to create a custom theme package, please read more about VEUI's theming API more the advanced ways of customizing `ui` prop at [Advanced › Theming](../advanced/theming).
+For information on developing custom theme packages, please refer to [Advanced › Theming](../advanced/theming) to learn more about the conventions and more advanced methods for customizing the `ui` prop in VEUI.

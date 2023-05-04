@@ -1,58 +1,76 @@
 # Table
 
 :::tip
-`Table` is required to be used within [`Column`](./column).
+The `Table` component needs to be used with the [`Column`](./column) component.
 :::
 
 ## Examples
 
-### Content density
+### Density variants
 
-Available density variants for the [`ui`](#props-ui) prop: `compact` / `loose`.
+Available [`ui`](#props-ui) size props: `compact` / `loose`.
 
 [[ demo src="/demo/table/basic.vue" ]]
 
-### Selection and sorting
+### Selecting and sorting
 
-Supports specifying row keys, mode of selection, and sorting by values of specific column.
+Allows customization of unique keys, selection modes, and sorting.
 
 [[ demo src="/demo/table/advanced.vue" ]]
 
-### Filter
+### Filtering
 
-Use the [`filter`](.column#slots-filter) slot of the `Column` component to enable custom column filter dropdown.
+Use the [`filter`](./column#slots-filter) slot of the `Column` component to enable custom filtering.
 
 [[ demo src="/demo/table/filter.vue" ]]
 
-### Scroll inside
+### Internal scrolling
 
-Allow table content to be scrollable inside the table body, i.e. the effect of fixed head/foot.
+Allows enabling of internal scrolling mode to achieve a fixed table header and footer effect.
 
 [[ demo src="/demo/table/scrollable.vue" ]]
 
 ### Fixed columns
 
-Use the `scroll` of `Table` and the [`fixed`](./column#props-fixed) prop of `Column` to enable fixed columns.
+Use the [`scroll`](#props-scroll) prop of the `Table` component and the [`fixed`](./column#props-fixed) prop of the `Column` component to control the position of fixed columns.
 
 [[ demo src="/demo/table/fixed.vue" ]]
 
-### Expandable row
+### Expandable rows
 
-Rows can be expanded into sub-rows.
+Supports expanding rows with child data.
 
 [[ demo src="/demo/table/expandable.vue" ]]
 
-### Header descriptions
+### Header description
 
-Use the [`desc`](./column#props-desc) prop or the [`desc`](./column#slots-desc) slot to provide description for the column header.
+Use the [`desc`](./column#props-desc) prop or [`desc`](./column#slots-desc) slot of the `Column` component to add description information to the table header.
 
 [[ demo src="/demo/table/desc.vue" ]]
 
-### Truncation tooltips
+### Sorting
 
-Use the [`tooltip`](./column#props-tooltip) attribute of the `Column` component to specify that a hover tooltip is displayed when the content is truncated.
+Use the [`order`](#props-order) prop and [`order-by`](#props-order-by) prop to specify the sorting state on the table header.
 
-[[ demo src="/demo/table/tooltip.vue" ]]]
+Listen for the [`sort`](#events-sort) event to handle changes in sorting state.
+
+Set the [`allowed-orders`](#props-allowed-orders) prop to customize the allowed sorting states.
+
+[[ demo src="/demo/table/order.vue" ]]
+
+### Loading
+
+Use the [`loading`](#props-loading) prop to specify that the table is in a loading state. Use [`loading-options`](#props-loading-options) to specify the style of the loading state.
+
+[[ demo src="/demo/table/loading.vue" ]]
+
+### Truncation tooltip
+
+Use the [`tooltip`](./column#props-tooltip) prop of the `Column` component to specify a hover tooltip when content is truncated.
+
+[[ demo src="/demo/table/tooltip.vue" ]]
+
+# Table
 
 ## API
 
@@ -61,28 +79,32 @@ Use the [`tooltip`](./column#props-tooltip) attribute of the `Column` component 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
-| ``data`` | `Array<Object>` | - | Table data in rows. |
-| ``key-field`` | `string` | - | Denotes the unique key of the table data. The value should be a key defined in the data object of each row. The corresponding field will be regarded as the [`key` attribute](https://vuejs.org/v2/guide/list.html#key) for each row element. When `selectable` is `true`, it also indicates the rows of which column should be selected from (and in this occasion the value should be defined as the [`field`](./column#props-field) prop for one of the children `Column` components). |
-| ``selectable`` | `boolean` | `false` | Whether the rows are selectable. |
-| ``select-mode`` | `string` | `'multiple'` | The mode of row selection. Available values are `single` / `multiple`, which denote single selection and multiple selection respectively. |
+| ``data`` | `Array<Object>` | - | Table data. |
+| ``key-field`` | `string` | - | Specifies the column identifier that serves as the table data. The value corresponds to the name of a field in the [`data`](#props-data) property of a data item. The value of the corresponding field will be output as the row element's [`key`](https://v2.vuejs.org/v2/guide/list.html#Maintaining-State) property. When the [`selectable`](#props-selectable) property is `true`, it can also be used to specify which column's different rows to select in the presence of vertically merged cells. In this case, the value must come from the [`field`](./column#props-field) property of an internal `Column` component. |
+| ``selectable`` | `boolean` | `false` | Whether to enable row selection. |
+| ``select-mode`` | `string` | `'multiple'` | The selection mode, with supported values of `single` / `multiple`, corresponding to single/multiple selection modes. |
 | ``selected`` | `Array<*>|*` | `[]` | [^selected] |
-| ``expandable`` | `boolean` | `false` | Whether the rows can be expanded into sub-rows. |
+| ``expandable`` | `boolean` | `false` | Whether to allow row expansion. |
 | ``expanded`` | `Array<*>` | `[]` | [^expanded] |
-| ``order`` | `string | boolean` | `false` | The order for sorting the specified column. `false` denotes no specific order, while string values of `'asc'` / `'desc'` denote ascending/descending order respectively. |
-| ``order-by`` | `string` | - | The column which is currently sorted by. The value should be defined as the [`field`](./column#props-field) prop for one of the children `Column` components. |
-| ``scroll`` | `number` | - | The maximun height of the scrollable area inside the table body. When table content exceeds the specified height, internal scroll will be enabled and the head/foot will become fixed. |
-| ``loading`` | `boolean` | `false` | Whether table data is being loaded. |
+| ``order`` | `string | boolean` | `false` | The order of sorting. When `false`, it indicates unordered, and when a string value of `'asc'` / `'desc'`, it indicates ascending / descending order respectively. |
+| ``order-by`` | `string` | - | Specifies the column that the current sorting is based on, and the value must come from the [`field`](./column#props-field) property of an internal `Column` component. |
+| ``scroll`` | `number` | - | Specifies the maximum height of the scroll area. When exceeded, the table will enter a mode where only the data area is allowed to scroll with fixed headers and footers. |
+| ``loading`` | `boolean` | `false` | Specifies whether the table is in the loading state. |
+| ``loading-options`` | `Object` | `table.loadingOptions` | [^loading-options] |
+| ``allowed-orders`` | `Array` | `[false, 'desc', 'asc']` | [^allowed-orders] |
+| ``bordered`` | `boolean` | `false` | Specifies whether the table has a border. |
+| ``column-filter`` | `Array<string>` | - | Used to filter the columns of the table. The value of each element should be the `key-field` of a column, and all columns are displayed by default. |
 
 ^^^ui
-Style variants.
+Preset style.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
 | `compact` | Compact style. |
 | `loose` | Loose style. |
-| `s` | Small. |
-| `m` | Medium. |
+| `s` | Small size style. |
+| `m` | Medium size style. |
 +++
 ^^^
 
@@ -91,7 +113,7 @@ Style variants.
 `.sync`
 :::
 
-The value(s) of selected rows. When [`select-mode`](#props-select-mode) is `'multiple'`, the value is an array of values keyed by the [`key-field` p](#props-key-field)rop from the row data . When [`select-mode`](#props-select-mode) is `'single'`, the value is such key value of the selected row.
+Selected rows. When the [`select-mode`](#props-select-mode) property is `'multiple'`, it is an array of values corresponding to the [`key-field`](#props-key-field) of the selected rows. When the [`select-mode`](#props-select-mode) property is `'single'`, it is the value of the [`key-field`](#props-key-field) of the selected row.
 ^^^
 
 ^^^expanded
@@ -99,50 +121,42 @@ The value(s) of selected rows. When [`select-mode`](#props-select-mode) is `'mul
 `.sync`
 :::
 
-The values of expanded rows. Each item is the value keyed by the [`key-field`](#props-key-field) prop from the row data.
+Expanded rows. It is an array of values corresponding to the [`key-field`](#props-key-field) of the expanded rows.
+^^^
+
+^^^loading-options
+The configuration of the loading state, with a type of `{type, modal}`.
+
++++Properties
+| Name | Type | Description |
+| -- | -- | -- |
+| `type` | `'bar' \| 'spinner` | The loading type, with a default value of `'bar'`, which indicates the loading bar style. |
+| `modal` | `boolean` | The loading mask, which can only be configured as `false` when `type` is `bar`. |
+^^^
+
+^^^allowed-orders
+Specifies the sorting range of columns at the table level.
+
++++Values
+| Value | Description |
+| -- | -- |
+| `false` | No sorting. |
+| `'asc'` | Ascending order. |
+| `'desc'` | Descending order. |
++++
 ^^^
 
 ### Slots
 
 | Name | Description |
 | -- | -- |
-| ``default`` | The columns of the table. Can only have `Column` components as children. |
-| ``no-data`` | The content to be displayed when there's no data to show. |
-| ``foot`` | The content of the table foot. Will span across all columns when defined. |
+| ``default`` | Used to define table columns and can only contain `Column` components. |
+| ``no-data`` | Used to define the content to display when there is no data. |
+| ``foot`` | The content in the table footer, and the entire area will be opened as a container without maintaining column separation. |
 | ``sub-row`` | [^slot-sub-row] |
 
 ^^^slot-sub-row
-The content of the expanded sub-row. Will span across all columns and override the [`sub-row`](./column#slots-sub-row) slot of the `Column` components inside the table.
+The content of the child row that appears after a row is expanded. When using this slot, the content will be displayed as the child row content that spans the entire bottom of the expanded row. When using this slot, it will override the [`sub-row`](./column#slots-sub-row) slot content of the `Column`.
 
-The slot props are the same as each item inside [`data`](#props-data), with an extra `index: number`, which denotes the index within the datasource.
-^^^
-
-### Events
-
-| Name | Description |
-| -- | -- |
-| ``select`` | [^event-select] |
-| ``sort`` | [^event-sort] |
-
-^^^event-select
-Triggered when the selected item(s) are changed. The callback parameter list is `(selected, item, selectedItems)`.
-
-+++Parameters
-| Name | Type | Description |
-| -- | -- | -- |
-| `selected` | `boolean` | Whether the item is selected after change. |
-| `item` | `Object` | The item in the [`data`](#props-data) prop that is being selected/unselected. When it involves row span for the `key-field` mapped column, the data of the first related row is returned. |
-| `selectedItems` | `Object<string, Object | Array>` | All selected items as an object. The key is [`key-field`](#props-key-field) mapped value for the selected row and the value is the row data. When it involves row span for the `key-field` mapped column, returns an array of row data of all related rows. |
-+++
-^^^
-
-^^^event-sort
-Triggered when users sort a specific column. The callback parameter list is `(field, order)`.
-
-+++Parameters
-| Name | Type | Description |
-| -- | -- | -- |
-| `field` | `string` | Which column to be sort by. The value should be defined as the [`field`](./column#props-field) prop for one of the children `Column` components. |
-| `order` | `string | boolean` | Same as the [`order`](#props-order) prop. |
-+++
+The slot parameters are all fields in the current row data of [`data`](#props-data) and the corresponding index value `index`.
 ^^^

@@ -50,7 +50,7 @@ Set the [`autoresize`](#props-autoresize) prop to make the textarea automaticall
 ^^^ui
 Predefined style.
 
-+++Enum Values
++++Enum values
 | Value | Description |
 | -- | -- |
 | `s` | Small size style. |
@@ -76,7 +76,7 @@ The value of the textarea.
 ^^^event-change
 Triggered when the content of the textarea changes, i.e. when the native `change` event is triggered. The callback function receives `(value, event)` as parameters.
 
-+++Parameter Details
++++Parameters
 | Name | Type | Description |
 | -- | -- | -- |
 | `value` | `string` | The value of the textarea. |

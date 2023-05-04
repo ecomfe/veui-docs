@@ -11,7 +11,7 @@
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
-| ``to`` | `string | Object` | - | 链接路径。当配合 Vue Router 使用时，会透传到 [`<router-link>`](https://router.vuejs.org/zh/api/#router-link) 的[同名属性](https://router.vuejs.org/zh/api/#to)；否则只支持 `string` 类型，输出到 `<a>` 元素的 `href` 属性中。 |
+| ``to`` | `string | Object` | - | 链接路径。当配合 Vue Router 使用时，会透传到 [`<router-link>`](https://v3.router.vuejs.org/zh/api/#router-link) 的[同名属性](https://v3.router.vuejs.org/zh/api/#to)；否则只支持 `string` 类型，输出到 `<a>` 元素的 `href` 属性中。 |
 | ``rel`` | `string` | - | HTML 原生的链接类型，可参考 [MDN 的相关介绍](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Link_types)。 |
 | ``target`` | `string` | - | [^target] |
 | ``native`` | `boolean` | `false` | 是否强制使用原生的 `<a>` 元素。 |

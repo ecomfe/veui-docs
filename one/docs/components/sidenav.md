@@ -44,7 +44,7 @@
 ^^^
 
 ^^^active
-当前激活节点，若该节点定义了 `name` 则就是该 `name` 值，否则该值是由 `to` 生成的路由路径（[route.path](https://router.vuejs.org/zh/api/#%E8%B7%AF%E7%94%B1%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7)）。
+当前激活节点，若该节点定义了 `name` 则就是该 `name` 值，否则该值是由 `to` 生成的路由路径（[route.path](https://v3.router.vuejs.org/zh/api/#%E8%B7%AF%E7%94%B1%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7)）。
 
 ^^^
 

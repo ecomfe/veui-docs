@@ -11,7 +11,7 @@
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
-| ``to`` | `string | Object` | - | The link path. When used with Vue Router, it will be passed to the same-named prop of [`<router-link>`](https://router.vuejs.org/en/api/#router-link); otherwise, only `string` type is supported, and it will be output to the `href` attribute of the `<a>` element. |
+| ``to`` | `string | Object` | - | The link path. When used with Vue Router, it will be passed to the same-named prop of [`<router-link>`](https://v3.router.vuejs.org/en/api/#router-link); otherwise, only `string` type is supported, and it will be output to the `href` attribute of the `<a>` element. |
 | ``rel`` | `string` | - | HTML native link types, see [MDN for more information](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types). |
 | ``target`` | `string` | - | [^target] |
 | ``native`` | `boolean` | `false` | Whether to force the use of native `<a>` element. |

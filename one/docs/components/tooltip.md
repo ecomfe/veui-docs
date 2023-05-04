@@ -63,7 +63,7 @@
 ^^^
 
 ^^^trigger
-触发浮层提示的方式。支持指定的值为 `v-outside` 指令绑定值的 `trigger` 参数，并支持使用 <code>&#0096;${open}-${close}&#0096;</code> 语法分别指定触发打开/关闭提示的时机。另外，当 `trigger` 指定为 `custom` 时，将不会使用 `v-outside` 功能自动进行处理。
+触发浮层提示的方式。支持指定的值为 [`v-outside`](../directives/v-outside) 指令绑定值的 [`trigger`](../directives/v-outside#options-trigger) 参数，并支持使用 <code>&#0096;${open}-${close}&#0096;</code> 语法分别指定触发打开/关闭提示的时机。另外，当 `trigger` 指定为 `custom` 时，将不会使用 `v-outside` 功能自动进行处理。
 
 例如：`click` 表示点击 `target` 后打开，在空白处点击时关闭；`hover-mousedown` 表示光标移入 `target` 后打开，在空白处按下鼠标时关闭。
 ^^^

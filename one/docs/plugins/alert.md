@@ -3,9 +3,10 @@
 ## 安装
 
 ```js
-import alert from 'veui/plugins/alert'
+import Vue from 'vue'
+import { $alert } from 'veui'
 
-Vue.use(alert)
+Vue.use($alert)
 ```
 
 ## API

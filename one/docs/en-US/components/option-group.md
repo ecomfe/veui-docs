@@ -131,7 +131,7 @@ In addition, other properties in the current option data will also be automatica
 
 | Name | Description |
 | -- | -- |
-| `expandable` | Expandable item. |
+| ``expandable`` | Expandable item. |
 
 ### CSS
 

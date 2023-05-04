@@ -45,7 +45,7 @@
 | ``overlay-class`` | `string | Array | Object` | - | [^overlay-class] |
 | ``overlay-style`` | `string | Array | Object` | - | [^overlay-style] |
 | ``options`` | `Object` | - | 透传给底层 Popper.js 实现的 `modifiers` 配置项，具体内容参见[这里](https://popper.js.org/docs/v1/#modifiers)。 |
-| ``position`` | `string` | 'auto' | 透传给底层 Popper.js 实现的 `placement` 配置项，具体内容参见[这里](https://popper.js.org/docs/v1/#popperplacements--codeenumcode)。 |
+| ``position`` | `string` | 'auto' | 透传给底层 Popper.js 实现的 `placement` 配置项，具体内容参见[这里](https://popper.js.org/docs/v1/#Popper.placements)。 |
 | ``match-width`` | `boolean` | `false` | 当浮层宽度较窄时，是否自动匹配目标元素的宽度。 |
 
 ^^^open

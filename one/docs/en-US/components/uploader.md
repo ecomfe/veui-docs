@@ -4,15 +4,63 @@
 
 ### File upload
 
-Set the [`type`](#props-type) prop to `file` to use the file upload mode.
+Set the value of [`type`](#props-type) to `file` to enter file upload mode.
 
 [[ demo src="/demo/uploader/file.vue" ]]
 
 ### Image upload
 
-Set the [`type`](#props-type) prop to `image` to use the image upload mode.
+Set the value of [`type`](#props-type) to `image` to enter image upload mode.
 
 [[ demo src="/demo/uploader/image.vue" ]]
+
+### Media upload
+
+Set the value of [`type`](#props-type) to `media` to enter media upload mode.
+
+[[ demo src="/demo/uploader/media.vue" ]]
+
+### Validation
+
+Validate image format, size, quantity, and use [`validator`](#props-validator) for custom validation.
+
+[[ demo src="/demo/uploader/validate.vue" ]]
+
+### Custom upload
+
+Customize the upload process using [`upload`](#props-upload) and configure the overlay options using [`controls`](#props-controls).
+
+[[ demo src="/demo/uploader/custom.vue" ]]
+
+### Sorting
+
+Set the [`sortable`](#props-sortable) property to specify that upload items can be sorted by drag and drop.
+
+[[ demo src="/demo/uploader/sortable.vue" ]]
+
+### Custom action bar
+
+Set the [`controls`](#props-controls) property to specify the action options that appear when hovering over each upload item.
+
+[[ demo src="/demo/uploader/controls.vue" ]]
+
+### Custom upload entry
+
+Set the [`entries`](#props-entries) property to specify the action options that appear when hovering over "continue uploading" items.
+
+[[ demo src="/demo/uploader/entries.vue" ]]
+
+### Custom pick
+
+Set the [`pick`](#props-pick) property to customize file selection.
+
+[[ demo src="/demo/uploader/pick.vue" ]]
+
+### Help text
+
+Set the [`help`](#props-help) property or [`help`](#slots-help) slot to specify help text.
+
+[[ demo src="/demo/uploader/help.vue" ]]
 
 ## API
 
@@ -23,117 +71,120 @@ Set the [`type`](#props-type) prop to `image` to use the image upload mode.
 | ``ui`` | `string` | - | [^ui] |
 | ``type`` | `string` | `'file'` | [^type] |
 | ``value`` | `Object | Array<Object>` | - | [^value] |
-| ``key-field`` | `string` | `'key'` | Used to specify a unique key for the file object, as a basis for correctly handling the order of the file list when the data changes. |
-| ``name`` | `string` | `'file'` | The `name` of native `<input>` elements. |
-| ``action`` | `string` | - | Upload URL. |
-| ``headers`` | `Object` | `uploader.headers` | Extra [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers). Can be [globally configured](#configs-uploader-headers). |
-| ``with-credentials`` | `boolean` | `true` | The same as the [`withCredentials`](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/withCredentials) option of `XMLHttpRequest`. |
+| ``key-field`` | `string` | `'key'` | Specifies the unique key of the file object, which serves as the basis for correctly handling the order of the file list when the data changes. |
+| ``name`` | `string` | `'file'` | The `name` of the native `<input>` element. |
+| ``action`` | `string` | - | The upload URL. |
+| ``headers`` | `Object` | `uploader.headers` | The content to be added to the [HTTP request headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers). Can be [globally configured](#configs-uploader-headers). |
+| ``with-credentials`` | `boolean` | `true` | Same as the [`withCredentials`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/withCredentials) property of `XMLHttpRequest`. |
 | ``request-mode`` | `string` | `uploader.requestMode` | [^request-mode] |
 | ``iframe-mode`` | `string` | `uploader.iframeMode` | [^iframe-mode] |
-| ``callback-namespace`` | `string` | `uploader.callbackNamespace` | The namespace of the callback function when [`request-mode`](#props-request-mode) is `'iframe'` and `iframe-mode` is `'callback'`, will be placed under the `window` object. Can be [globally configured](#configs-uploader-callbackNamespace). |
-| ``data-type``| `string` | `'json'` | [^data-type] |
+| ``callback-namespace`` | `string` | `uploader.callbackNamespace` | Specifies the namespace of the callback function when `request-mode` is `'iframe'` and `iframe-mode` is `'callback'`, under the `window` object. Can be [globally configured](#configs-uploader-callbackNamespace). |
+| ``data-type`` | `string` | `'json'` | [^data-type] |
 | ``convert-response`` | `uploader.convertResponse` | - | [^convert-response] |
-| ``accept`` | `string` | - | The same as the [`accept`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input/file#limiting_accepted_file_types) attribute of native `<input>` elements. Works as an extra layer of validation on top of browsers' file filter. Will skip validation when MIME type doesn't match file extension, eg. `application/msword`. |
-| ``max-count`` | `number` | - | The maximum file count. |
-| ``max-size`` | `number | string` | - | The maximun size of a single file. When being a `number`, the unit will be `byte`. When being a `string`, units can be added after numbers, including `b` / `kb` / `mb` / `gb` / `tb`. |
-| ``payload`` | `Object` | - | The extra data payload to be sent together with the file. |
-| ``progress`` | `string` | `'text'` | [^progress] |
-| ``autoupload`` | `boolean` | `true` | Whether to start upload as soon as a file is selected. |
-| ``order`` | `string` | `asc` | [^order] |
+| ``accept`` | `string` | - | Same as the [`accept`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input/file#accept) attribute of the native `<input>` element, adding another layer of validation after the browser's file type filtering. For cases where the MIME type, such as `application/msword`, does not match the extension, the validation is skipped. |
+| ``max-count`` | `number` | - | The maximum number of files. |
+| ``max-size`` | `number | string` | - | The maximum size of a single file. If it is a `number`, the unit is in `bytes`; if it is a `string`, it supports adding units after the number, and the units can be `b` / `kb` / `mb` / `gb` / `tb`. |
+| ``validator`` | `function(Object): Object | Promise<Object>` | - | [^validator] |
+| ``payload`` | `Object` | - | Additional parameters to be carried in the upload request. |
+| ``autoupload`` | `boolean` | `true` | Specifies whether to upload immediately after selecting files. |
+| ``order`` | `string` | `'asc'` | [^order] |
+| ``picker-position`` | `string` | `'after'` | [^picker-position] |
 | ``upload`` | `function(Object, Object): function` | - | [^upload] |
 | ``controls`` | `function(Object, Array<Object>): Array<Object>` | - | [^controls] |
+| ``multiple`` | `boolean` | `false` | Upload multiple files. When `max-count` is `1` and `multiple` is `true`, `value` is also an array. |
+| ``entries`` | `function(Array<Object>): Array<Object>` | - | [^entries] |
+| ``pick`` | `function({remainingCount: number}): Promise<Object>` | - | [^pick] |
+| ``after-pick`` | `function(Array<Object>): void` | - | The callback after selecting files. |
+| ``sortable`` | `boolean` | `false` | Whether the file list can be sorted. |
+| ``preview-options`` | `object` | `{wrap: true, indicator: 'number'}` | Preview options passed to [`Lightbox`](./lightbox). |
+| ``validity-display`` | `'popup' | 'inline'` | `'popup'` | [^validity-display] |
+| ``help`` | `string` | - | Help text. |
+| ``help-position`` | `'side' | 'bottom'` | `'side'` | [^help-position] |
+| ``picker-label`` | `string` | - | The text of the upload button. |
+| ``picker-icon`` | `string | Object` | - | The icon of the upload button, referring to the [`name`](./icon#props-name) prop of [`Icon`](./icon). |
 
 ^^^ui
-Style variants.
+Predefined styles.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `s` | Small. |
-| `m` | Medium. |
+| `s` | Small-sized style. |
+| `m` | Medium-sized style. |
 +++
 ^^^
 
 ^^^type
-The type of the uploader.
+The type of file to be uploaded.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `file` | File upload. |
-| `image` | Image upload. |
+| `file` | Upload files. |
+| `image` | Upload images. |
+| `media` | Upload media files (supports both video and image). |
+| `video` | Upload videos. |
 +++
 ^^^
 
 ^^^value
-Returns an array of file objects when `multiple` is `true`. When `max-count` is set to a value greater than `1`, then `multiple` treated as `true`.
+When `multiple` is set to `true`, returns an array of file objects. Additionally, if `max-count` is set to a value greater than `1`, it is regarded as having enabled `multiple`.
 
-The type of single file is `{name: string, src: string, ...}`, and fields added inside [`convert-response`](#props-convert-response).
-+++
+Each file object is of type `{name: string, src: string, ...}`, as well as custom properties added in `convert-response`.
 ^^^
 
 ^^^request-mode
-The request mode of the uploader. Can be [globally configured](#configs-uploader-request-mode).
+Specifies the asynchronous upload method. Can be [globally configured](#configs-uploader-request-mode).
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `xhr` | Upload with `XMLHttpRequest`. |
-| `iframe` | Upload with `<iframe>`. |
+| `xhr` | Upload using `XMLHttpRequest`. |
+| `iframe` | Upload using `<iframe>`. |
+| `custom` | Custom upload process, uploaded via the prop `upload` method. |
 +++
 ^^^
 
 ^^^iframe-mode
-To specify the callback mode when [`request-mode`](#props-request-mode) is `iframe`. Can be [globally configured](#configs-uploader-iframe-mode).
+When the value of [`request-mode`](#props-request-mode) is `iframe`, specifies the callback method after the upload is successful. Can be [globally configured](#configs-uploader-request-mode).
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `postmessage` | Callback with `PostMessage`. |
-| `callback` | Callback with callback functions registered according to [`callback-namespace`](#props-callback-namespace) on `window`. |
+| `postmessage` | Callback via `PostMessage`. |
+| `callback` | Callback via calling the callback function in the window's [`callback-namespace`](#props-callback-namespace). |
 +++
 ^^^
 
 ^^^data-type
-To specify the data type in order to parse the callback value if it's text content. Can be left empty if callback value is `Object`.
+Specifies the parsing method for text if the callback value is text. `data-type` can be empty if the callback data is an `Object`.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `json` | The callback text is JSON. |
-| `text` | The callback text is plain text. |
+| `json` | The text returned by the callback is JSON. |
+| `text` | The text returned by the callback is plain text. |
 +++
 ^^^
 
 ^^^convert-response
-Converts response data to standard format that can be consumed by the uploader, in order to allow the uploader to display upload result. The parameter is the callback data. The type of the return value must conform to the following:
+A function that converts callback data to the required format so that the component can determine whether the upload was successful and display the corresponding result. The parameter is the callback data. The format of the returned result is as follows:
 
 +++Properties
-| Property | Type | Description |
+| Name | Type | Description |
 | -- | -- | -- |
-| `success` | `boolean` | Whether the upload succeeded. |
+| `success` | `boolean` | Indicates whether the upload was successful. |
 | `name` | `string` | The name of the file. Required when `success` is `true`. |
-| `src` | `string` | The location of the file. Required when `success` is `true`. |
+| `src` | `string` | The address of the file. Required when `success` is `true`. |
 | `message` | `string` | Error message when upload fails. Required when `success` is `false`. |
+| `preview` | `boolean` | Whether to preview the failed upload item when upload fails. |
 
-Additional fields can be added to the response data. These data fields will be included in the [`value`](#props-value) prop and parameter of callbacks [`change`](#events-change), [`success`](#events-success), [`failure`](#events-failure), [`remove`](#events-remove) and [`progress`](#events-progress) events. Can be [globally configured](#configs-uploader-convert-response).
-+++
-^^^
-
-^^^progress
-To specify how to display progress when `request-mode` is `xhr`.
-
-+++Enum values
-| Value | Description |
-| -- | -- |
-| `text` | Displays as status text. |
-| `number` | Displays the progress as percentage. |
-| `bar` | Displays th progress as a progress bar. |
+Custom attributes can also be added to the returned result. These custom attributes will be included in the [`value`](#props-value) and [`change`](#events-change), [`success`](#events-success), [`failure`](#events-failure), [`remove`](#events-remove), and [`progress`](#events-progress) event callback parameters `file`. Can be [globally configured](#configs-uploader-convert-response).
 +++
 ^^^
 
 ^^^order
-The order of displaying uploaded files according to start time.
+The display order of uploaded files, sorted by the time of upload start.
 
 +++Enum values
 | Value | Description |
@@ -143,60 +194,134 @@ The order of displaying uploaded files according to start time.
 +++
 ^^^
 
-^^^upload
-Customizing the upload process in case the value of `request-mode` is `'custom'`, the first parameter is the native [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object and the second parameter is the object that contains callback functions associated with the upload process, with the following properties.
+^^^picker-position
+In image upload mode, the position of the upload button in the image queue.
+
++++Enum values
+| Value | Description |
+| -- | -- |
+| `before` | The upload button is always at the front of the queue. |
+| `after` | The upload button is always at the end of the queue. |
+| `top` | The upload button is always on top of the queue. |
+| `none` | Do not show the upload button. |
++++
+^^^
+
+^^^pick
+Custom logic for selecting files to be uploaded.
+
+```ts
+function pick({ remainingCount: number }): Promise<PickedFile | PickedFile[]>
+
+type PickedFile = {
+  name: string
+  type: string
+  src: string
+  poster?: string
+  alt?: string
+  size?: number
+}
+```
 
 +++Properties
-| Property | Type | Description |
-| -- | -- | -- |
-| `onload` | `function` | The upload completion callback function whose arguments is the same as the [`convert-response`](#props-convert-response) prop's return value. |
-| `onprogress` | `function` | The callback function for upload progress, the parameter type being `{ loaded: number, total: number }`, `loaded` is the number of bytes that have been uploaded, and `total` is the total number of bytes in the file. |
-| `oncancel` | `function` | The callback to the component when the custom upload is actively cancelled, no parameters. |
-| `onerror` | `function` | The callback for upload error, the parameter type is `{ message: string }` and `message` is the error message. |
+| Value | Description |
+| -- | -- |
+| `name` | File name. |
+| `type` | File type. |
+| `src` | File address. |
+| `poster` | Preview image for video files. |
+| `alt` | Replacement text. |
+| `size` | File size. |
++++
+^^^
 
-If `upload` returns a function, it will be called when the user cancelled proactively or the upload component is destroyed, to abort the custom upload process.
+^^^validity-display
+Display method for validation information.
+
++++Enum values
+| Value | Description |
+| -- | -- |
+| `popup` | Display validation information in a popup when hovering. |
+| `inline` | Display validation information inline. |
++++
+^^^
+
+^^^help-position
+Display position for help information.
+
++++Enum values
+| Value | Description |
+| -- | -- |
+| `side` | Display next to the upload button. |
+| `bottom` | Display below the upload button. |
++++
+^^^
+
+^^^validator
+Custom validation logic, with the original [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object as the parameter. The format of the returned result is as follows:
+
++++Properties
+| Name | Type | Description |
+| -- | -- | -- |
+| `valid` | `boolean` | Whether the validation passes. |
+| `message` | `string` | Error message when `valid` is `false`. |
+| `preview` | `boolean` | Whether to preview the failed upload item when validation fails. |
+
+Asynchronous validation is supported, and the return value can be a `Promise` that resolves to the above return result.
+^^^
+
+^^^upload
+Customize the upload process when the value of `request-mode` is `'custom'`. The first parameter is the original [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object, and the second parameter is the object containing the callback functions related to the upload process, with the following specific properties:
+
++++Properties
+| Name | Type | Description |
+| -- | -- | -- |
+| `onload` | `function` | Callback function when the upload is complete, with the same content as the return value of the [`convert-response`](#props-convert-response) attribute. |
+| `onprogress` | `function` | Callback function when the upload progress changes, with the parameter `{ loaded: number, total: number }`, where `loaded` is the number of bytes uploaded, and `total` is the total number of bytes in the file. |
+| `oncancel` | `function` | Callback function to be executed on the component when the custom upload is actively canceled, with no parameters. |
+| `onerror` | `function` | Callback function when an error occurs during the upload, with the parameter `{ message: string }`, where `message` is the error message. |
+
+If `upload` returns a function, that function will be called when the user cancels the operation or the upload component is destroyed, to interrupt the custom upload process.
 ^^^
 
 ^^^controls
-In image upload mode, it is used to customize the actions on the floating toolbar. The parameter types are `(file: Object, defaultControls: Array<Object>)`, where `file` is the file related information and `defaultControls` is the array containing the default actions. It can return an array of different actions depending on the file state. The specific properties for each action item are as follows.
+In image upload mode, customize the operation items on the image mask layer. The parameters are `(file: Object, defaultControls: Array<Object>)`, where `file` is the file-related information, and `defaultControls` is the array containing the default operation items. Depending on the status of the file, return an array containing different operation items. The specific properties of each operation item are as follows:
 
 +++Properties
-| Property | Type | Description |
+| Name | Type | Description |
 | -- | -- | -- |
-| `name` | `string` | The name of the action item. When the button is clicked, an event with the same name will be emitted, with `(file: Object, index: number)` as the callback parameter, `file` is the file object that triggered the event, and `index` is the number of the file in the list. |
-| `icon` | `string` | The icon of the action item. |
-| `disabled` | `boolean` | Whether the action item is disabled. If this property is undefined, the disabled state of the action item follows the disabled state of the component. |
+| `name` | `string` | The name of the operation item. Clicking this button will trigger an event with the same name. The callback parameter of the event is `(file: Object, index: number)`, where `file` is the file object that triggered the event, and `index` is the sequence number of the file in the list. |
+| `label` | `string` | The text description of the operation item. |
+| `icon` | `string` | The icon used for the operation item. |
+| `disabled` | `boolean` | Whether the operation item is disabled. If this field is empty, the disabled status of the operation item follows the overall disabled status of the component. |
+^^^
+
+^^^entries
+Control the operation items for each uploaded file, such as delete and preview. The default operation item array will be passed as a parameter, and the actual effective operation item array will be returned. The operation item object refers to the field details of the [`controls`](#props-controls) attribute.
 ^^^
 
 ### Slots
 
 | Name | Description |
 | -- | -- |
-| ``button-label`` | [^button-label] |
 | ``upload`` | The area of the upload button in image upload mode. |
-| ``desc`` | The content of the prompt for the number, format, size, etc. of files. |
+| ``help`` | Tips for file quantity, format, size, etc. |
 | ``file`` | [^file] |
-| ``file-before`` | The area before the contents of a single file. The scope argument is the same as the [`file`](#slots-file) slot. |
-| ``file-after`` | The area after the contents of a single file. The scope argument is the same as the [`file`](#slots-file) slot. |
-| ``uploading`` | The area of a single image being uploaded in image upload mode. The scope argument is the same as the [`file`](#slots-file) slot. |
-| ``failure`` | The area of a single image that failed to upload in image upload mode. The scope argument is the same as the [`file`](#slots-file) slot. |
-
-^^^button-label
-The content in the upload button.
-
-Default content: file upload for prompt to select a file, and image upload for upload image icon.
-^^^
+| ``file-before`` | The area before the content of a single file. The slot parameters are the same as those of the [`file`](#slots-file) slot. |
+| ``file-after`` | The area after the content of a single file. The slot parameters are the same as those of the [`file`](#slots-file) slot. |
+| ``uploading`` | The area of a single image being uploaded in image upload mode. The slot parameters are the same as those of the [`file`](#slots-file) slot. |
+| ``failure`` | The area of a single image that failed to upload in image upload mode. The slot parameters are the same as those of the [`file`](#slots-file) slot). |
 
 ^^^file
-Single file area to customize the file content.
+The area of a single file used to customize its content.
 
-+++Slot props
-| name | type | description |
++++Slot Parameters
+| Name | Type | Description |
 | -- | -- | -- |
 | `name` | `string` | The name of the file. |
 | `src` | `string` | The address of the file. |
-| `status` | `string` | The status of the file. `'success'` means the upload was successful; `'uploading'` means the upload is in progress; `'failure'` means the upload failed. |
-| `index` | `number` | The number of the file in the list. |
+| `status` | `string` | The status of the file. `'success'` indicates a successful upload; `'uploading'` indicates that the file is being uploaded; `'failure'` indicates a failed upload. |
+| `index` | `number` | The serial number of the file in the list. |
 +++
 ^^^
 
@@ -206,114 +331,127 @@ Single file area to customize the file content.
 | -- | -- |
 | ``change`` | [^event-change] |
 | ``remove`` | [^event-remove] |
-| ``success`` | Triggers when upload succeeded. Shares the same callback parameter list with the [`remove`](#events-remove) event. |
-| ``failure`` | Triggers when upload failed. Shares the same callback parameter list with the [`remove`](#events-remove) event. |
+| ``success`` | Triggered when uploading is successful, the callback parameter is the same as that of the `remove` event. |
+| ``failure`` | Triggered when uploading fails, the callback parameter is the same as that of the `remove` event. |
 | ``invalid`` | [^event-invalid] |
 | ``statuschange`` | [^event-statuschange] |
 | ``progress`` | [^event-progress] |
 
 ^^^event-change
-Triggers when upload succeeded or a file is removed. The callback parameter list is `(value)`.
+Triggered only when uploading or deleting files, the callback parameter is `(value)`.
 
 +++Parameters
 | Name | Type | Description |
 | -- | -- | -- |
-| `value` | `Object | Array<Object>` | The `value` of the component. |
+| `value` | `Object | Array<Object>` | The value of the component's `value` property. |
 +++
 ^^^
 
-^^^event-remove
-Triggered when a file is removed. The callback parameter list is `(file, index)`.
+^^^^event-remove
+Triggered when a file is deleted, the callback parameter is `(file, index)`.
 
 +++Parameters
 | Name | Type | Description |
 | -- | -- | -- |
-| `file` | `Object` | The removed file object. |
-| `index` | `number` | The index of the removed file. |
+| `file` | `Object` | [^remove-file] |
+| `index` | `number` | The index of the deleted file. |
 
-`file` properties
+^^^remove-file
+The file that was deleted.
 
 | Name | Type | Description |
 | -- | -- | -- |
 | `name` | `string` | The name of the file. |
-| `src` | `string` | The location of the file. |
-| `status` | `string` | The status of the upload process. Can be one of `'success'` / `'uploading'` / `'failure'`. |
-
-Fields added from `convert-response` are also available.
-+++
+| `src` | `string` | The address of the file. |
+| `status` | `string` | The upload status. `'success'` indicates that the upload was successful; `'uploading'` indicates that the upload is in progress; `'failure'` indicates that the upload failed. |
 ^^^
 
-^^^event-invalid
-Triggered when file validation fails. The callback parameter list is `(validity: Object)`.
-
-+++Parameter properties
-| Name | Type | Description |
-| -- | -- | -- |
-| `file` | `Object` | The information about the file that failed the validation, being the same type as `file` in the callback parameter of the [`remove`](#events-remove) event. This property is empty if the validation fails because the number of files selected exceeds the `max-count` limit. |
-| `errors` | `Array<Object>` | Array of all the validation error messages of the file, each item in it is an object that contains validation failure information. |
+Also contains custom properties added in [`convert-response`](#props-convert-response).
 +++
+^^^^
 
-+++Validation error properties
-| Name | Type | Description |
-| -- | -- | -- |
-| `type` | `string` | The type of validation error, whose enum value can be accessed from the `Uploader.errors` object, eg. `Uploader.errors.SIZE_INVALID`. |
-| `value` | `number | string | Object` | The value that doesn't pass validation, can be different types depending on the `type` property. |
-| `message` | `string` | The validation error message. |
-+++
-
-+++Relationship between validation failure types and parameters
-| type | description | `value` type | `value` description |
-| -- | -- | -- | -- |
-| `TYPE_INVALID` | File type validation failure. | `string` | File name. |
-| `SIZE_INVALID` | File size validation failure. | `number` | File size in bytes. |
-| `TOO_MANY_FILES` | The number of selected files exceeds the `max-count` limit. | `number` | Number of files selected. |
-| `CUSTOM_INVALID` | Custom validation failure returned by [`validator`](#props-validator) prop. | `Object` | File object, same as [`remove`](#events-remove) event callback parameter. |
-+++
-^^^
-
-^^^event-statuschange
-Triggered when the status of the entire uploader changes. The callback parameter list is `(status: string)`.
-
-+++Values
-| Value | Description |
-| -- | -- |
-| `empty` | No file is selected. |
-| `uploading` | At least one file is being uploaded. |
-| `failure` | Any file is not being successfully uploaded. |
-| `success` | All files are successfully uploaded. |
-+++
-^^^
-
-^^^event-progress
-Triggered when upload progress updated, when `request-mode` is `'xhr'`. The callback parameter list is `(file, index, event)`.
+^^^^event-invalid
+Triggered when file validation fails, the callback parameter is `(validity: Object)`.
 
 +++Parameters
 | Name | Type | Description |
 | -- | -- | -- |
-| `file` | `Object` | Same as the file parameter of the callback for the [`remove`](#events-remove) event. |
-| `index` | `number` | The index of the file being uploaded. |
-| `event` | [`Event`](https://developer.mozilla.org/en-US/docs/Web/Events/progress) | Native upload progress event object. |
+| `file` | `Object` | The file information that did not pass validation, which is the same as the `file` parameter in the `remove` event callback. If the reason for the validation failure is that the selected number of files exceeds the `max-count` limit, this field is empty. |
+| `errors` | `Array<Object>` |  |
++++
+
+^^^invalid-errors
+An array containing all the validation error information of the file, each item in the array is an object containing the failed validation information.
+
+| Name | Type | Description |
+| -- | -- | -- |
+| `type` | `string` | The type of validation failure. The enumeration values of the type can be obtained from the `Uploader.errors` object, such as `Uploader.errors.SIZE_INVALID`. |
+| `value` | `number | string | Object` | The value that did not pass validation, which has different types depending on the `type`. |
+| `message` | `string` | The error message of the validation failure. |
+^^^
+
++++Validation errors and parameters
+| Type | Description | `value` Type | `value` Description |
+| -- | -- | -- | -- |
+| `TYPE_INVALID` | File type validation failed. | `string` | The name of the file. |
+| `SIZE_INVALID` | File size validation failed. | `number` | The size of the file in bytes. |
+| `TOO_MANY_FILES` | The number of selected files exceeds the `max-count` limit. | `number` | The number of files already selected. |
+| `CUSTOM_INVALID` | `validator` custom validation failed. | `Object` | The file object, with the same fields as the `file` parameter in the `remove` event callback. |
++++
+^^^^
+
+^^^event-statuschange
+Triggered when the overall status of all files changes, the callback parameter is the overall status of the component `(status: string)`.
+
++++Values
+| Value | Description |
+| -- | -- |
+| `empty` | No files have been selected for upload. |
+| `uploading` | At least one file is currently being uploaded. |
+| `failure` | At least one file upload has failed. |
+| `success` | All files have been uploaded successfully. |
++++
+^^^
+
+^^^event-progress
+Triggered when the upload progress changes in the case where the value of `request-mode` is `'xhr'`, the callback parameter is `(file, index, event)`.
+
++++Parameters
+| Name | Type | Description |
+| -- | -- | -- |
+| `file` | `Object` | The same as the `file` parameter in the `remove` event callback. |
+| `index` | `number` | The index of the file currently being uploaded. |
+| `event` | [`Event`](https://developer.mozilla.org/en-US/docs/Web/Events/progress) | The native upload progress event. |
 +++
 ^^^
 
 ### Configs
 
 | Key | Type | Default | Description |
-| -- | -- | -- | -- |
-| ``uploader.requestMode`` | `string` | `'xhr'` | Same as the [`request-mode`](#props-request-mode) prop. |
-| ``uploader.iframeMode`` | `string` | `'xhr'` | Same as the [`iframe-mode`](#props-iframe-mode) prop. |
-| ``uploader.callbackNamespace`` | `string` | `'veuiUploadResult'` | Same as the [`callback-namespace`](#props-callback-namespace) prop. |
-| ``uploader.headers`` | `Object` | - | Same as the [`headers`](#props-headers) prop. |
-| ``uploader.convertResponse`` | `function(Object): Object` | - | Same as the [`convert-response`](#props-convert-response) prop. |
+| --- | --- | --- | --- |
+| ``uploader.requestMode`` | `string` | `'xhr'` | See [`request-mode`](#props-request-mode) prop. |
+| ``uploader.iframeMode`` | `string` | `'postmessage'` | See [`iframe-mode`](#props-iframe-mode) prop. |
+| ``uploader.callbackNamespace`` | `string` | `'veuiUploadResult'` | See [`callback-namespace`](#props-callback-namespace) prop. |
+| ``uploader.headers`` | `Object` | - | See [`headers`](#props-headers) prop. |
+| ``uploader.convertResponse`` | `function(Object): Object` | - | See [`convert-response`](#props-convert-response) prop. |
+| ``uploader.pickerPosition`` | `string` | `'after'` | See [`picker-position`](#props-picker-position) prop. |
 
 ### Icons
 
 | Name | Description |
-| -- | -- |
-| ``upload`` | Upload file. |
-| ``clear`` | Remove file. |
+| --- | --- |
+| ``upload`` | Upload files. |
+| ``add-image`` | Upload images. |
+| ``clear`` | Delete. |
 | ``success`` | Upload succeeded. |
-| ``redo`` | Retry upload. |
-| ``file`` | File. |
-| ``add`` | Add file. |
-| ``alert`` | Validation failure alert. |
+| ``failure`` | Upload failed. |
+| ``loading`` | Uploading. |
+| ``file`` | Uploaded files. |
+| ``alert`` | Validation failure warning. |
+| ``preview`` | Preview images. |
+
+### CSS
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| ``--dls-uploader-file-item-width`` | `<length>` | - | The width of file list item when [`type`](#props-type) prop is set to `file`. |

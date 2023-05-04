@@ -1,16 +1,18 @@
-# Steps
+# Step
 
 ## Examples
 
-### Size and direction variants
+### Style variants
 
-Available style variants for the [`ui`](#props-ui) prop: `s` / `m` / `vertical` / `label-vertical`.
+Available [`ui`](#props-ui) prop values: `s` / `m` / `dot` / `vertical` / `label-vertical`.
+
+The `stateless` prop can be used to switch to a pure display style without state.
 
 [[ demo src="/demo/steps/default.vue" ]]
 
 ### Step status
 
-Set `status` property of the `step` to `error`, if the step fails.
+The step status can be automatically defined by setting the `status` of the `steps` property data item. If the step is in error, it can be set to `error`.
 
 [[ demo src="/demo/steps/status.vue" ]]
 
@@ -22,31 +24,33 @@ Set `status` property of the `step` to `error`, if the step fails.
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
 | ``steps`` | `Array` | - | [^steps] |
-| ``current`` | `number` | - | The index of current step. |
+| ``current`` | `number` | - | The index value of the current step. |
+| ``stateless`` | `boolean` | `false` | Whether to use a pure display style without state. |
 
 ^^^ui
-Style variants.
+Predefined styles.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `s` | Small style. |
-| `m` | Medium. |
+| `s` | Small size style. |
+| `m` | Medium size style. |
+| `dot` | Dot style. |
 | `vertical` | Vertical style. |
-| `label-vertical` | Label vertical style. |
+| `label-vertical` | Text vertical style. |
 +++
 ^^^
 
 ^^^steps
-The datasource of steps with item type being `{ label, desc, to, status }`.
+Step data source. The type is `{ label, desc, to, status }`.
 
 +++Properties
 | Name | Type | | Description |
 | -- | -- | -- |
-| `label` | `string` | The label of the step. |
-| `desc` | `string` | The description of the step. |
-| `to` | `string | Object` | The target link of the step. The type is the same as the [`to`](./link#props-to) prop of [`Link`](./link) component. |
-| `status` | `string` | The statue of the step. Available variants are default normal and `error`. |
+| `label` | `string` | Step title. |
+| `desc` | `string` | Step description. |
+| `to` | `string | Object` | Step link. Type is the same as the [`to`](./link#props-to) property of the [`Link`](./link) component. |
+| `status` | `string` | Step status. The optional values are default and `error`. |
 +++
 ^^^
 
@@ -55,23 +59,25 @@ The datasource of steps with item type being `{ label, desc, to, status }`.
 | Name | Description |
 | -- | -- |
 | ``default`` | [^slot-default] |
-| ``index`` | The step index. Displays an index value starts from `1`, a success icon for finished steps by default and an error icon for error steps. Resides inside the [`default`](#slots-default) slot and share the same slot props. |
-| ``label`` | The step label. Displays the `label` property by default. Resides inside the [`default`](#slots-default) slot and share the same slot props. |
-| ``desc`` | The step description. Displays the `desc` property by default. Resides inside the [`default`](#slots-default) slot and share the same slot props. |
+| ``index`` | The content of the index part. By default, the index starts from `1`, completed steps display a completion icon, and error steps display an error icon. It is located inside the [`default`](#slots-default) slot, and the slot parameters are the same as those of the [`default`](#slots-default) slot. |
+| ``label`` | The content of the step title. By default, it displays the `label` field of the project in `steps`. It is located inside the [`default`](#slots-default) slot, and the slot parameters are the same as those of the [`default`](#slots-default) slot. |
+| ``desc`` | The content of the step description. By default, it displays the `desc` field of the project in `steps`. It is located inside the [`default`](#slots-default) slot, and the slot parameters are the same as those of the [`default`](#slots-default) slot. |
 
 ^^^slot-default
-The content of each step. Displays the step index/completed icon, label and description by default.
+The content of the entire step item.
+
+Default content: index/completion icon, step title, description, and other content.
 
 +++Slot props
 | Name | Type | Description |
 | -- | -- | -- |
-| `label` | `string` | The label of the step. Same as the `label` property from items of the [`steps`](#props-steps) prop. |
-| `desc` | `string` | The description of the step. Same as the `desc` property from items of the [`steps`](#props-steps) prop. |
-| `to` | `string | Object` | The target link of the step. Same as the `to` property from items of the [`steps`](#props-steps) prop. |
-| `status` | `string` | The status of the step. Same as the `status` property from items of the [`steps`](#props-steps) prop. |
-| `index` | `number` | The index of the step. (Starts from `0`.) |
+| `label` | `string` | Step title. The same as the `label` field of the project in [`steps`](#props-steps) property. |
+| `desc` | `string` | Step description. The same as the `desc` field of the project in [`steps`](#props-steps) property. |
+| `to` | `string | Object` | Step link. The same as the `to` field of the project in [`steps`](#props-steps) property. |
+| `status` | `string` | Step status. The same as the `status` field of the project in [`steps`](#props-steps) property. |
+| `index` | `number` | Step index value. |
 
-Additionally, custom properties in current step, apart from the listed ones, will also be passes into the slot props object via `v-bind`.
+In addition, properties other than those described above in the `steps` data item will also be automatically bound to the slot parameters through `v-bind`.
 +++
 ^^^
 
@@ -79,11 +85,11 @@ Additionally, custom properties in current step, apart from the listed ones, wil
 
 | Name | Description |
 | -- | -- |
-| ``click`` | Triggered when any step is clicked. The callback parameter type is `(index: number, event: Event)`, where `index` is the index of the clicked step and `event` is the corresponding native event object. |
+| ``click`` | Triggered after any step is clicked. The callback parameter is `(index: number, event: Event)`. `index` is the index value of the clicked step, and `event` is the corresponding native event object. |
 
 ### Icons
 
 | Name | Description |
 | -- | -- |
-| ``success`` | Steps finished successfully. |
-| ``error`` | Steps with error. |
+| ``success`` | Completed step. |
+| ``error`` | Error step. |

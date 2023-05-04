@@ -3,7 +3,8 @@
 ## 安装
 
 ```js
-import toast from 'veui/plugins/toast'
+import Vue from 'vue'
+import { $toast } from 'veui'
 
 Vue.use(toast)
 ```

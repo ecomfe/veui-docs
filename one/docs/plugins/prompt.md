@@ -3,9 +3,10 @@
 ## 安装
 
 ```js
-import prompt from 'veui/plugins/prompt'
+import Vue from 'vue'
+import { $prompt } from 'veui'
 
-Vue.use(prompt)
+Vue.use($prompt)
 ```
 
 ## API
