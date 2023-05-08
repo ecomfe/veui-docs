@@ -198,3 +198,23 @@ i18n.register(
     ns: 'onequicknav'
   }
 )
+
+i18n.register(
+  'zh-Hans',
+  {
+    changelog: '变更日志'
+  },
+  {
+    ns: 'onechangelogbutton'
+  }
+)
+
+i18n.register(
+  'en-US',
+  {
+    changelog: 'Changelog'
+  },
+  {
+    ns: 'onechangelogbutton'
+  }
+)

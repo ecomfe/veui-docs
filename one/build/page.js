@@ -1,4 +1,5 @@
 import { resolve, relative, join } from 'path'
+import { camelCase, upperFirst } from 'lodash'
 import vfile from 'vfile'
 import remark from 'remark'
 import slug from 'remark-slug'
@@ -124,8 +125,32 @@ export function renderDocToPage (file) {
     layout,
     style,
     path: file,
+    tag: getTag(file),
     toc: showToc !== false ? stringifyObject(toc[0].children) : null
   })
 
   writeFileSync(dest, result)
+}
+
+const COMPONENT_RE = /(?:^|\/)components\/([^/]+)(?:$|\/)/
+const DIRECTIVES_RE = /(?:^|\/)directives\/([^/]+)(?:$|\/)/
+const PLUGINS_RE = /(?:^|\/)plugins\/([^/]+)(?:$|\/)/
+function getTag (file) {
+  const path = file.replace(/\.\w+$/, '')
+  const [, component] = path.match(COMPONENT_RE) || []
+  if (component) {
+    return upperFirst(camelCase(component))
+  }
+
+  const [, directive] = path.match(DIRECTIVES_RE) || []
+  if (directive) {
+    return directive
+  }
+
+  const [, plugin] = path.match(PLUGINS_RE) || []
+  if (plugin) {
+    return `$${plugin}`
+  }
+
+  return null
 }

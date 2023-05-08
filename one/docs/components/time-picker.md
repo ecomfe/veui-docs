@@ -28,7 +28,7 @@
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
 | ``mode`` | `string` | `'second'` | 指定选择的粒度，分别精确到时（`hour`）、分（`minute`）、秒（`second`）。 |
-| ``value`` | `string` |  | [^prop-value] |
+| ``value`` | `string` | - | [^prop-value] |
 | ``placeholder`` | `string` | `timepicker.placeholder` | 未选择时的占位文本。 |
 | ``hours`` | `Array<number>` | - | 小时选项，默认 0-23。 |
 | ``minutes`` | `Array<number>` | - | 分钟选项，默认 0-59。 |

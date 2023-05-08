@@ -1,6 +1,7 @@
 <template>
 <article ref="article" class="content ${style}"><!-- if: ${toc} -->
-<one-toc :items="toc"/><!-- /if -->
+<one-toc :items="toc"/><!-- /if --><!-- if: ${tag} -->
+<one-changelog-button tag="${tag}"/><!-- /if -->
 ${content | raw}
 <section class="meta">
   <one-edit-link path="${path}"/>
@@ -15,7 +16,8 @@ import Demo${index} from '${demo.src}'<!-- /for --><!-- if: ${demos.length} -->
 import OneDemo from '~/components/OneDemo'<!-- /if --><!-- if: ${path} -->
 import OneEditLink from '~/components/OneEditLink'
 import OneComments from '~/components/OneComments'<!-- /if --><!-- if: ${toc} -->
-import OneToc from '~/components/OneToc'<!-- /if --><!-- if: ${alert} -->
+import OneToc from '~/components/OneToc'<!-- /if --><!-- if: ${tag} -->
+import OneChangelogButton from '~/components/OneChangelogButton'<!-- /if --><!-- if: ${alert} -->
 import { VeuiAlert } from 'veui'<!-- /if -->
 
 export default {
@@ -24,7 +26,8 @@ export default {
     <!-- /for --><!-- for: ${demos} as ${demo}, ${index} -->'${demo.name}': Demo${index},
     <!-- /for --><!-- if: ${demos.length} -->OneDemo,<!-- /if --><!-- if: ${alert} -->
     VeuiAlert,<!-- /if --><!-- if: ${toc} -->
-    OneToc,<!-- /if --><!-- if: ${path} -->
+    OneToc,<!-- /if --><!-- if: ${tag} -->
+    OneChangelogButton,<!-- /if --><!-- if: ${path} -->
     OneEditLink,
     OneComments<!-- /if -->
   },
