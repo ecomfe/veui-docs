@@ -1,10 +1,5 @@
 <template>
-<article
-  class="content post"
-  :class="{
-    drawer: !!tag
-  }"
->
+<article class="content post">
   <h1
     v-if="!tag"
     data-md
@@ -82,7 +77,7 @@
     </veui-fieldset>
   </veui-form>
   <section
-    v-for="{ version, diffLink, codeName, date, changeset } of pagedChangelog"
+    v-for="{ version, diffLink, emoji, name, date, changeset } of pagedChangelog"
     :key="version"
     class="version-item"
     data-md
@@ -99,7 +94,7 @@
         :to="`#${getHash(version)}`"
       >
         {{ version }}
-        <small v-if="codeName">{{ codeName }}</small>
+        <small v-if="emoji && name">{{ emoji }}<span class="codename-text"> {{ name }}</span></small>
         <time
           v-if="date"
           :datetime="date"
@@ -131,7 +126,10 @@
         >{{
           getTypeEmoji(type)
         }}</span>
-        <div v-html="content"/>
+        <div
+          class="change-content"
+          v-html="content"
+        />
       </li>
     </ul>
   </section>
@@ -462,6 +460,9 @@ h2
     &:only-child
       margin 0
 
+  &-content
+    min-width 0
+
 .not-found
   display inline-flex
   flex-direction column
@@ -497,6 +498,9 @@ h2
   .feature-filter
     width -webkit-fill-available
     width -moz-available
+
+  .codename-text
+    display none
 
 @keyframes line-enter
   0%

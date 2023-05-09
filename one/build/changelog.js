@@ -2,12 +2,16 @@ import { load } from 'cheerio'
 import fetch from 'node-fetch'
 import { renderRaw } from './page'
 const VERSION_RE = /^(\d+\.\d+\.\d+(?:-[a-z]+(?:\.\d+)?)?)(?:\s+"([^"]+)")?(?:\s+\((\d{4}-\d{2}-\d{2})\))?$/i
+const CODENAME_RE = /^([^ ]+) (.+)$/
 function getVersion (title = '') {
   const [, version, codeName, date] = title.trim().match(VERSION_RE) || []
   if (!version) {
     return null
   }
-  return [version, codeName, date]
+
+  const [, emoji, name] = codeName ? codeName.trim().match(CODENAME_RE) || [] : []
+
+  return [version, emoji, name, date]
 }
 
 const TYPE_MAP = {
@@ -74,10 +78,11 @@ function extract (html) {
 
   $versions.each((_, el) => {
     const $version = $(el)
-    const [version, codeName, date] = getVersion($(el).text()) || []
+    const [version, emoji, name, date] = getVersion($(el).text()) || []
     const versionLog = {
       version,
-      codeName,
+      emoji,
+      name,
       date,
       changeset: []
     }
