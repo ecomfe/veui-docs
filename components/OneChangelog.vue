@@ -94,7 +94,7 @@
         :to="`#${getHash(version)}`"
       >
         {{ version }}
-        <small v-if="emoji && name">{{ emoji }}<span class="codename-text"> {{ name }}</span></small>
+        <small v-if="emoji && name">{{ emoji }}<span class="codename-text">{{ ` ${name}` }}</span></small>
         <time
           v-if="date"
           :datetime="date"
@@ -482,6 +482,9 @@ h2
 
 .pagination
   margin-top 36px
+
+.codename-text
+  white-space pre
 
 @media (max-width 480px)
   .types >>> .veui-checkbox-group-items
