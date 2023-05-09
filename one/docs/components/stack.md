@@ -1,4 +1,4 @@
-# Stack <small>堆叠容器</small> 🧪
+# Stack <small>堆叠容器</small>
 
 ## 示例
 

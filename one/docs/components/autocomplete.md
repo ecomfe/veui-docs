@@ -107,9 +107,9 @@
 | -- | -- |
 | ``suggestions`` | [^slot-suggestions] |
 | ``option-label`` | [^slot-option-label] |
+| ``no-data`` | [^slot-no-data] |
 
 ^^^slot-suggestions
-
 下拉建议面板插槽。
 
 +++插槽参数
@@ -121,7 +121,6 @@
 ^^^
 
 ^^^slot-option-label
-
 下拉面板中选项插槽。
 
 +++插槽参数
@@ -130,6 +129,16 @@
 | `label` | `string` | 用来显示的节点文案，不存在则取 `value`。 |
 | `value` | `string` | 用来实际选中的值。 |
 | `matches` | `Array<{text: string, matched: boolean}>` | 匹配情况，一个节点可能被切分成多断文本，`text` 表示该段文本， `matched` 表示该段文本是否匹配。 |
++++
+^^^
+
+^^^slot-no-data
+无匹配的候选项时需要展示的内容。默认在无候选项时关闭下拉菜单。
+
++++插槽参数
+| 名称 | 类型 | 描述 |
+| -- | -- | -- |
+| `keyword` | `string` | 搜索关键词。 |
 +++
 ^^^
 

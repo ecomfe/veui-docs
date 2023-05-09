@@ -107,6 +107,7 @@ Whether to remove leading and trailing spaces. When `true`, leading and trailing
 | -- | -- |
 | ``suggestions`` | [^slot-suggestions] |
 | ``option-label`` | [^slot-option-label] |
+| ``no-data`` | [^slot-no-data] |
 
 ^^^slot-suggestions
 Slot for the dropdown suggestion panel.
@@ -128,6 +129,16 @@ Slot for each option in the dropdown panel.
 | `label` | `string` | Display text for the node, fallback to `value` if not exist. |
 | `value` | `string` | Actual selected value. |
 | `matches` | `Array<{text: string, matched: boolean}>` | Matching status, a node can be split into multiple text chunks, where `text` is the text of each chunk, `matched` indicates if each chunk is matched or not. |
++++
+^^^
+
+^^^slot-no-data
+Content to be displayed when there are no matching options. By default, the dropdown menu is closed when there are no options.
+
++++Slot props
+| Name | Type | Description |
+| -- | -- | -- |
+| `keyword` | `string` | Search keyword. |
 +++
 ^^^
 
