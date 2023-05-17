@@ -1,7 +1,7 @@
 <template>
 <div
   v-if="tag"
-  class="trigger"
+  class="one-changelog-button trigger"
 >
   <veui-button
     ui="s"
