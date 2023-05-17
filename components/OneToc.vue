@@ -95,6 +95,7 @@ export default {
 
     &.expanded
       transform translateX(0)
+      box-shadow 0 0 36px rgba(0, 0, 0, 0.1)
 
   .toggle
     z-index -1
@@ -112,7 +113,7 @@ export default {
     background-color #fff
     box-shadow 0 0 12px rgba(0, 0, 0, 0.1)
     font-size 20px
-    transition transform 0.3s, opacity 0.3s
+    z-index 1
 
     &::before
       content ""
