@@ -1,4 +1,4 @@
-# Pagination <small>翻页</small>
+# Pagination <small>分页</small>
 
 ## 示例
 

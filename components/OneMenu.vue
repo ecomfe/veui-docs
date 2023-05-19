@@ -22,8 +22,15 @@
     :items="menuItems"
     :expanded.sync="menuExpanded"
   >
-    <template #item-label="{ label, sub }">
-      {{ label }}<small v-if="sub">{{ sub }}</small>
+    <template #item-label="{ label, sub, cn }">
+      <small
+        v-if="sub"
+        class="sub"
+      >⤷</small>{{ label
+      }}<small
+        v-if="cn"
+        class="cn"
+      >{{ cn }}</small>
     </template>
   </veui-menu>
 </nav>
@@ -70,26 +77,29 @@ export default {
   },
   methods: {
     getTitleDetail (title) {
-      let [main, sub] = title.split(' - ')
-      return [main, sub]
+      let [main, cn] = title.split(' - ')
+      return [main, cn]
     },
     isActive (path) {
       let { route = {} } = this.$router.resolve(path) || {}
       return route.name === this.$route.name
     },
-    normalizeItem ({ title, children, slug, link, disabled }, base = '') {
+    normalizeItem ({ title, children, slug, sub, link, disabled }, base = '') {
       const fullSlug = `${base}/${slug}`
       const localePath = this.getLocalePath(fullSlug)
-      const to = (link !== false && fullSlug && !disabled) ? localePath : null
-      const [main, sub] = this.getTitleDetail(title)
+      const to = link !== false && fullSlug && !disabled ? localePath : null
+      const [main, cn] = this.getTitleDetail(title)
 
       return {
         label: main,
-        sub,
+        cn,
         to,
         name: fullSlug,
+        sub,
         disabled,
-        children: children ? children.map(child => this.normalizeItem(child, fullSlug)) : []
+        children: children
+          ? children.map(child => this.normalizeItem(child, fullSlug))
+          : []
       }
     },
     toggleMenu () {
@@ -119,9 +129,13 @@ export default {
     border-radius 6px
     font inherit
 
-  small
+  .cn
     margin-left 8px
     opacity 0.7
+
+  .sub
+    margin-right 8px
+    opacity 0.3
 
 .toggle
   display none
