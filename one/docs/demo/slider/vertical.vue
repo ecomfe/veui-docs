@@ -2,16 +2,10 @@
 <article>
   <veui-slider
     v-model="value"
-    :min="min"
-    :max="max"
-    :step="step"
-    mark
-  />
-  <veui-slider
-    v-model="value"
-    :min="min"
-    :max="max"
-    :step="step"
+    :min="0"
+    :max="100"
+    vertical
+    style="height: 180px"
   />
 </article>
 </template>
@@ -25,10 +19,7 @@ export default {
   },
   data () {
     return {
-      value: 55,
-      min: 0,
-      max: 100,
-      step: 8
+      value: 42
     }
   }
 }

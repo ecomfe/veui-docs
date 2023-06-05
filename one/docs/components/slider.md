@@ -30,7 +30,11 @@
 
 使用 [`secondary-progress`](#props-secondary-progress) 属性来指定一个次级进度条。
 
-[[ demo src="/demo/slider/buffer.vue" ]]
+### 纵向
+
+使用 [`vertical`](#props-vertical) 属性来指定是否使用纵向样式。
+
+[[ demo src="/demo/slider/vertical.vue" ]]
 
 ### 定制内容
 
@@ -51,6 +55,7 @@
 | ``max`` | `number` | `1` | `value` 经过 `parse` 函数处理后允许的最大值。 |
 | ``step`` | `number` | `0` | `value` 经过 `parse` 函数处理后的步进值。 |
 | ``mark`` | `boolean` | `false` | 是否显示步进标记。 |
+| ``vertical`` | `boolean` | `false` | 是否使用纵向样式。 |
 | ``parse`` | `function` | `val => val` | 传入值处理函数。 |
 | ``format`` | `function` | `val => val` | 输出值处理函数。 |
 

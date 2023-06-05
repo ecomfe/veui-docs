@@ -32,6 +32,12 @@ Use the [`secondary-progress`](#props-secondary-progress) prop to specify a seco
 
 [[ demo src="/demo/slider/buffer.vue" ]]
 
+### Vertical
+
+Use the [`vertical`](#props-vertical) prop to specify whether to use the vertical style.
+
+[[ demo src="/demo/slider/vertical.vue" ]]
+
 ### Custom content
 
 Use the [`thumb`](#slots-thumb) / [`tip`](#slots-tip) slots to customize the slider button, hover tips, and other content.
@@ -51,6 +57,7 @@ Use the [`thumb`](#slots-thumb) / [`tip`](#slots-tip) slots to customize the sli
 | ``max`` | `number` | `1` | The maximum value allowed after the `parse` function processes the `value`. |
 | ``step`` | `number` | `0` | The step value after the `parse` function processes the `value`. |
 | ``mark`` | `boolean` | `false` | Whether to display step marks. |
+| ``vertical`` | `boolean` | `false` | Whether to display vertically. |
 | ``parse`` | `function` | `val => val` | Value processing function. |
 | ``format`` | `function` | `val => val` | Output value processing function. |
 
