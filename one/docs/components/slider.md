@@ -30,6 +30,8 @@
 
 使用 [`secondary-progress`](#props-secondary-progress) 属性来指定一个次级进度条。
 
+[[ demo src="/demo/slider/buffer.vue" ]]
+
 ### 纵向
 
 使用 [`vertical`](#props-vertical) 属性来指定是否使用纵向样式。
