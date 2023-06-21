@@ -1,38 +1,40 @@
 # TypeScript 支持
 
-VEUI 提供了组件 API 的 TS 声明，需要配合 `Volar` 获得最佳的开发体验。
-
 :::tip
-VEUI 从 2.5.2 版本开始提供组件的 TS 声明。
+类型声明从 2.5.2 版本开始支持。
 :::
 
-如果您使用 npm < 7 或其他不会自动安装 peerDependencies 的包管理器，需要手动安装：
+VEUI 提供了组件 API 的 TS 声明，需要配合 Volar 获得最佳的开发体验。
+
+### 配置 Volar 扩展
+
+请参考 Volar 文档中的 [`Setup for Vue2`](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar#:~:text=Usage-,Setup%20for%20Vue%202,-Define%20Global%20Components)。
+
+对于 Vue < 2.7 的版本，需要安装 `@vue/runtime-dom`：
 
 ```sh
 npm i -D @vue/runtime-dom
 ```
 
-### 配置 Volar 扩展
-
-请参考 `Volar` 文档中的 [`Setup for Vue2`](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar#:~:text=Usage-,Setup%20for%20Vue%202,-Define%20Global%20Components)。
-
 ### 本地配置
 
-在 `tsconfig.json` 中添加如下配置来支持 `Vue 2` 的模板语法。
+在 `tsconfig.json` 中添加如下配置来支持 Vue 2 的模板语法。
 
 ```json
+// tsconfig.json
 {
+  "compilerOptions": {
+    // ...
+  },
   "vueCompilerOptions": {
-    "experimentalCompatMode": 2,
-    "experimentalTemplateCompilerOptions": {
-      "compatConfig": { "MODE": 2 }
-    }
+    "target": 2.7,
+    // "target": 2, // 对于 Vue < 2.7 的版本
   }
 }
 ```
 
 :::tip
-如果无法查看类型声明，可以尝试重启 `Volar`： 按下 <kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>P</kbd> 后选择 `Volar: Restart Vue server`。
+如果类型无法正常工作，可以尝试重启 Volar： 按下 <kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>P</kbd> 后选择“Volar: Restart Vue server”。
 :::
 
 ### 使用示例
@@ -43,7 +45,7 @@ npm i -D @vue/runtime-dom
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent } from 'vue' // < 2.7 的版本需要用 `@vue/composition-api`
 import { Button } from 'veui'
 
 export default defineComponent({
