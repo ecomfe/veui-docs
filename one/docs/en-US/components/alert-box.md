@@ -2,11 +2,11 @@
 
 ## Examples
 
-### Types
+### Statuses
 
-`AlertBox` has three type variants: `info`, `success`, and `error`, which can be specified by the [`type`](#props-type) prop.
+`AlertBox` has three statuses: `info`, `success`, and `error`, which can be specified by the [`status`](#props-status) prop.
 
-[[ demo src="/demo/alert-box/type.vue" ]]
+[[ demo src="/demo/alert-box/status.vue" ]]
 
 ### With title
 
@@ -21,7 +21,8 @@ The title of the alert box can be customized using the [`title`](#props-title) p
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``open`` | `boolean` | `false` | [^open] |
-| ``type`` | `string` | `'success'` | [^type] |
+| ``status`` | `string` | `'success'` | [^status] |
+| ``type`` | `string` | `'success'` | Deprecated. Use [`status`](#props-status) instead. |
 | ``title`` | `string` | - | The title of the alert box. |
 | ``loading`` | `boolean` | `false` | Whether the alert box is in the loading state. When in the loading state, the OK button will also enter the loading state and cannot be clicked. |
 | ``disabled`` | `boolean` | `false` | Whether the alert box is disabled. When disabled, the OK button will also be disabled and cannot be clicked. |
@@ -38,15 +39,15 @@ The title of the alert box can be customized using the [`title`](#props-title) p
 Whether to display the alert box.
 ^^^
 
-^^^type
-The contextual type of the alert box.
+^^^status
+The contextual status of the alert box.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `info` | Informational style. |
-| `success` | Success style. |
-| `error` | Error style. |
+| `info` | Informational status. |
+| `success` | Success status. |
+| `error` | Error status. |
 +++
 ^^^
 

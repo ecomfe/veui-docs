@@ -2,13 +2,13 @@
 <article>
   <veui-badge
     value="New"
-    type="success"
+    status="success"
   >
     <veui-button>View</veui-button>
   </veui-badge>
   <veui-badge
     value="New"
-    type="info"
+    status="info"
   >
     <veui-button>View</veui-button>
   </veui-badge>
@@ -17,13 +17,13 @@
   </veui-badge>
   <veui-badge
     value="New"
-    type="warning"
+    status="warning"
   >
     <veui-button>View</veui-button>
   </veui-badge>
   <veui-badge
     value="New"
-    type="aux"
+    status="aux"
   >
     <veui-button>View</veui-button>
   </veui-badge>
@@ -50,9 +50,9 @@ export default {
 </style>
 
 <docs>
-可以使用 [`type`](#props-type) 属性，指定徽标在不同功能状态下的样式。
+可以使用 [`status`](#props-status) 属性，指定徽标的不同状态。
 </docs>
 
 <docs locale="en-US">
-Use the [`type`](#props-type) prop to apply different contextual styles.
+Use the [`status`](#props-status) prop to apply different contextual status.
 </docs>

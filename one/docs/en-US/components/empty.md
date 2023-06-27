@@ -29,7 +29,7 @@
 | ``title`` | `string` | - | Title of the empty state. |
 | ``desc`` | `string | false` | - | Description of the empty state. If passed as `false`, the description will be hidden. |
 
-[^ui]
+^^^ui
 Predefined styles.
 
 +++Enum values
@@ -38,6 +38,7 @@ Predefined styles.
 | `s` | Small size empty state. The global illustration is not suitable for small size styles. |
 | `m` | Medium size empty state. |
 +++
+^^^
 
 ### Slots
 

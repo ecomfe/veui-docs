@@ -1,19 +1,19 @@
 <template>
 <article>
   <section>
-    <veui-badge type="success">
+    <veui-badge status="success">
       Running
     </veui-badge>
-    <veui-badge type="info">
+    <veui-badge status="info">
       New
     </veui-badge>
     <veui-badge>
       Rejected
     </veui-badge>
-    <veui-badge type="warning">
+    <veui-badge status="warning">
       Auditing
     </veui-badge>
-    <veui-badge type="aux">
+    <veui-badge status="aux">
       Expired
     </veui-badge>
   </section>

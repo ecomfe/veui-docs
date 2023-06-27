@@ -5,25 +5,25 @@
   </veui-tag>
   <veui-tag
     removable
-    type="info"
+    status="info"
   >
     Tony
   </veui-tag>
   <veui-tag
     removable
-    type="success"
+    status="success"
   >
     Peter
   </veui-tag>
   <veui-tag
     removable
-    type="warning"
+    status="warning"
   >
     Natasha
   </veui-tag>
   <veui-tag
     removable
-    type="error"
+    status="error"
   >
     Bruce
   </veui-tag>

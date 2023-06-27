@@ -33,7 +33,8 @@ Use the `color` prop to set the name of the predefined color to be used.
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | Predefined styles. |
-| ``type`` | `string` | `'default'` | Type of the tag. |
+| ``status`` | `string` | `'default'` | Status of the tag. |
+| ``type`` | `string` | `'default'` | Deprecated. Use [`status`](#props-status) instead. |
 | ``color`` | `string` | - | The name of the predefined color for the tag. Currently supported colors are `'turquoise' | 'violet' | 'green'`. |
 | ``selectable`` | `boolean` | `false` | Whether the tag can be selected. |
 | ``selected`` | `boolean` | `false` | Whether the tag is selected. |
@@ -41,7 +42,7 @@ Use the `color` prop to set the name of the predefined color to be used.
 | ``removed`` | `boolean` | `false` | Whether the tag is removed. |
 | ``disabled`` | `boolean` | `false` | Whether the tag is disabled. |
 
-[^ui]
+^^^ui
 Predefined styles.
 
 +++Enum values
@@ -52,9 +53,10 @@ Predefined styles.
 | `reverse` | Reverse style. |
 | `bordered` | Bordered style. |
 +++
+^^^
 
-[^type]
-Type of the tag.
+^^^status
+Status of the tag.
 
 +++Enum values
 | Value | Description |
@@ -65,20 +67,23 @@ Type of the tag.
 | `warning` | Warning tag. |
 | `error` | Error tag. |
 +++
+^^^
 
-[^selected]
+^^^selected
 :::badges
 `.sync`
 :::
 
 Whether the tag is selected.
+^^^
 
-[^removed]
+^^^removed
 :::badges
 `.sync`
 :::
 
 Whether the tag is removed.
+^^^
 
 ### Slots
 

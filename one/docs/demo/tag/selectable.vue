@@ -5,25 +5,25 @@
   </veui-tag>
   <veui-tag
     selectable
-    type="info"
+    status="info"
   >
     Tony
   </veui-tag>
   <veui-tag
     selectable
-    type="success"
+    status="success"
   >
     Peter
   </veui-tag>
   <veui-tag
     selectable
-    type="warning"
+    status="warning"
   >
     Natasha
   </veui-tag>
   <veui-tag
     selectable
-    type="error"
+    status="error"
   >
     Bruce
   </veui-tag>

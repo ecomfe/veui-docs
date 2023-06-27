@@ -21,7 +21,8 @@ After installing, this plugin will provide a `$toast` object on all component in
 ^^^ref
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| `type` | `string` | `'info'` | The type of message, can be `'success'` / `'warning'` / `'info'` / `'error'`. |
+| `status` | `string` | `'info'` | The type of message, can be `'success'` / `'warning'` / `'info'` / `'error'`. |
+| `type` | `string` | `'info'` | Deprecated. Please use the `status` property instead. |
 | `duration` | `number` | `3000` | Sets the duration in milliseconds before the message disappears. |
 ^^^
 

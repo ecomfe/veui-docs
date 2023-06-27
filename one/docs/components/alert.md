@@ -2,11 +2,11 @@
 
 ## 示例
 
-### 类型
+### 状态
 
-`Alert` 有四种类型，分别是 `success`、`info`、`warning` 和 `error`，可以通过 [`type`](#props-type) 属性指定不同的类型。
+`Alert` 有四种状态，分别是 `success`、`info`、`warning` 和 `error`，可以通过 [`status`](#props-status) 属性指定不同的状态。
 
-[[ demo src="/demo/alert/type.vue" ]]
+[[ demo src="/demo/alert/status.vue" ]]
 
 ### 多消息切换
 
@@ -32,23 +32,24 @@
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``type`` | `string` | `'success'` | [^type] |
+| ``status`` | `string` | `'success'` | [^status] |
+| ``type`` | `string` | `'success'` | 已废弃。请使用 [`status`](#props-status) 属性代替。 |
 | ``title`` | `string` | - | 消息标题。 |
 | ``message`` | `string | Array<string>` | - | 消息内容，当类型为数组时会显示多条数据并支持切换上一条/下一条。 |
 | ``closable`` | `boolean` | `false` | 是否允许关闭。 |
 | ``open`` | `boolean` | `true` | [^open] |
 | ``index`` | `number` | `0` | [^index] |
 
-^^^type
-警告框类型。
+^^^status
+警告框的上下文状态。
 
 +++枚举值
 | 值 | 描述 |
 | -- | -- |
-| `info` | 信息提示样式。 |
-| `success` | 成功样式。 |
-| `warning` | 警告样式。 |
-| `error` | 错误样式。 |
+| `info` | 信息提示状态。 |
+| `success` | 成功状态。 |
+| `warning` | 警告状态。 |
+| `error` | 错误状态。 |
 +++
 ^^^
 

@@ -2,21 +2,21 @@
 <article>
   <section>
     <veui-toast
-      type="info"
+      status="info"
       open
       message="Press any key to continue..."
     />
   </section>
   <section>
     <veui-toast
-      type="success"
+      status="success"
       open
       message="Your profile has been updated."
     />
   </section>
   <section>
     <veui-toast
-      type="warning"
+      status="warning"
       open
     >
       v1 is deprecated. Use v2 instead.
@@ -24,7 +24,7 @@
   </section>
   <section>
     <veui-toast
-      type="error"
+      status="error"
       open
       message="Uncaught SyntaxError: Unexpected token +"
     />

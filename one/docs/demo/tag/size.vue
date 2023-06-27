@@ -3,16 +3,16 @@
   <section>
     <h4>Normal</h4>
     <veui-tag>Steve</veui-tag>
-    <veui-tag type="info">
+    <veui-tag status="info">
       Tony
     </veui-tag>
-    <veui-tag type="success">
+    <veui-tag status="success">
       Peter
     </veui-tag>
-    <veui-tag type="warning">
+    <veui-tag status="warning">
       Natasha
     </veui-tag>
-    <veui-tag type="error">
+    <veui-tag status="error">
       Bruce
     </veui-tag>
   </section>
@@ -23,25 +23,25 @@
     </veui-tag>
     <veui-tag
       ui="s"
-      type="info"
+      status="info"
     >
       Tony
     </veui-tag>
     <veui-tag
       ui="s"
-      type="success"
+      status="success"
     >
       Peter
     </veui-tag>
     <veui-tag
       ui="s"
-      type="warning"
+      status="warning"
     >
       Natasha
     </veui-tag>
     <veui-tag
       ui="s"
-      type="error"
+      status="error"
     >
       Bruce
     </veui-tag>

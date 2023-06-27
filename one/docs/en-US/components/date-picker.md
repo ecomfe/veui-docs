@@ -180,7 +180,8 @@ Whether the dropdown overlay is expanded.
 | -- | -- |
 | ``date`` | [^slot-date] |
 
-[^slot-date]: The area inside the single day unit cell of the calendar in the overlay, which can be used to customize the content of the corresponding area for each day.
+^^^slot-date
+The area inside the single day unit cell of the calendar in the overlay, which can be used to customize the content of the corresponding area for each day.
 
 Default content: The `date` corresponding to the date.
 

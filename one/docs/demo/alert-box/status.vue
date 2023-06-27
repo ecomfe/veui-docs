@@ -11,7 +11,7 @@
   </veui-button>
 
   <veui-alert-box
-    type="success"
+    status="success"
     :open.sync="successOpen"
   >
     <template #title>
@@ -21,7 +21,7 @@
   </veui-alert-box>
 
   <veui-alert-box
-    type="error"
+    status="error"
     :open.sync="errorOpen"
   >
     <template #title>
@@ -31,7 +31,7 @@
   </veui-alert-box>
 
   <veui-alert-box
-    type="info"
+    status="info"
     :open.sync="infoOpen"
   >
     <template #title>

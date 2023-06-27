@@ -2,11 +2,11 @@
 
 ## 示例
 
-### 类型
+### 状态
 
-`AlertBox` 有三种类型，分别是 `info`、`success` 和 `error`，可以通过 [`type`](#props-type) 属性指定不同的类型。
+`AlertBox` 有三种状态，分别是 `info`、`success` 和 `error`，可以通过 [`status`](#props-status) 属性指定不同的状态。
 
-[[ demo src="/demo/alert-box/type.vue" ]]
+[[ demo src="/demo/alert-box/status.vue" ]]
 
 ### 标题
 
@@ -21,7 +21,8 @@
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
 | ``open`` | `boolean` | `false` | [^open] |
-| ``type`` | `string` | `'success'` | [^type] |
+| ``status`` | `string` | `'success'` | [^status] |
+| ``type`` | `string` | `'success'` | 已废弃。请使用 [`status`](#props-status) 属性代替。 |
 | ``title`` | `string` | - | 标题。 |
 | ``loading`` | `boolean` | `false` | 是否处于加载状态。处于加载状态时确定按钮也将进入加载状态，无法点击。 |
 | ``disabled`` | `boolean` | `false` | 是否处于禁用状态。处于禁用状态时确定按钮也将进入禁用状态，无法点击。 |
@@ -38,15 +39,15 @@
 是否显示警告弹框。
 ^^^
 
-^^^type
-警告框类型。
+^^^status
+警告框状态。
 
 +++枚举值
 | 值 | 描述 |
 | -- | -- |
-| `info` | 信息提示样式。 |
-| `success` | 成功样式。 |
-| `error` | 错误样式。 |
+| `info` | 信息提示状态。 |
+| `success` | 成功状态。 |
+| `error` | 错误状态。 |
 +++
 ^^^
 

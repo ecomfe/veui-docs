@@ -18,7 +18,7 @@
 | ``fallback`` | `string` | `'span'` | The native element type to use when the [`to`](#props-to) prop is empty. |
 | ``disabled`` | `boolean` | `false` | Whether the link is disabled. |
 
-[^ui]
+^^^ui
 The predefined style.
 
 +++Enum values
@@ -28,13 +28,15 @@ The predefined style.
 | `s` | The small size style. |
 | `m` | The medium size style. |
 +++
+^^^
 
-[^target]
+^^^target
 Specifies where to display the linked resource, see [MDN for more information](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target).
 
 :::tip
 When `target` is `_blank`, the `noopener` value will be automatically added (if the user has not specified it) to enhance security by default.
 :::
+^^^
 
 ### Slots
 

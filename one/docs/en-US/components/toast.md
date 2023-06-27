@@ -2,9 +2,9 @@
 
 ## Examples
 
-### Types
+### Statuses
 
-`Toast` has four types: `info`, `success`, `warning`, and `error`. You can specify different types by using the [`type`](#props-type) prop.
+`Toast` has four statuses: `info`, `success`, `warning`, and `error`. You can specify different statuses by using the [`status`](#props-status) prop.
 
 [[ demo src="/demo/toast/default.vue" ]]
 
@@ -21,7 +21,8 @@ You can use the `veui/plugins/toast` module to load the [`toast` plugin](../plug
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
 | ``open`` | `boolean` | `false` | [^open] |
-| ``type`` | `string` | `'success'` | [^type] |
+| ``status`` | `string` | `'success'` | [^status] |
+| ``type`` | `string` | `'success'` | Deprecated. Use [`status`](#props-status) instead. |
 | ``title`` | `string` | - | The message title. |
 | ``message`` | `string` | - | The message content. |
 | ``duration`` | `number` | `toast.duration` | The duration in milliseconds that the message is displayed. If exceeded, the toast will automatically close. |
@@ -35,8 +36,8 @@ You can use the `veui/plugins/toast` module to load the [`toast` plugin](../plug
 Whether to display the toast.
 ^^^
 
-^^^type
-The type of the toast.
+^^^status
+The status of the toast.
 
 +++Enumeration values
 | Value | Description |

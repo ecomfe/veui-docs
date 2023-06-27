@@ -2,11 +2,11 @@
 
 ## Examples
 
-### Types
+### Statuses
 
-`Alert` has four types: `success`, `info`, `warning`, and `error`. You can specify different types using the [`type`](#props-type) prop.
+`Alert` has four statuses: `success`, `info`, `warning`, and `error`. You can specify different statuses using the [`status`](#props-status) prop.
 
-[[ demo src="/demo/alert/type.vue" ]]
+[[ demo src="/demo/alert/status.vue" ]]
 
 ### Multiple messages
 
@@ -33,23 +33,24 @@ Use the [`extra`](#slots-extra) slot to specify additional content after the mes
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``type`` | `string` | `'success'` | [^type] |
+| ``status`` | `string` | `'success'` | [^status] |
+| ``type`` | `string` | `'success'` | Deprecated. Use [`status`](#props-status) instead. |
 | ``title`` | `string` | - | Message title. |
 | ``message`` | `string | Array<string>` | - | Message content. When an array is passed, multiple messages will be displayed and switchable. |
 | ``closable`` | `boolean` | `false` | Whether to allow closing. |
 | ``open`` | `boolean` | `true` | [^open] |
 | ``index`` | `number` | `0` | [^index] |
 
-^^^type
-The contextual type of the alert message.
+^^^status
+The contextual status of the alert message.
 
 +++Enum values
 | Value | Description |
 | -- | -- |
-| `info` | Informational message. |
-| `success` | Success message. |
-| `warning` | Warning message. |
-| `error` | Error message. |
+| `info` | Informational status. |
+| `success` | Success status. |
+| `warning` | Warning status. |
+| `error` | Error status. |
 +++
 ^^^
 

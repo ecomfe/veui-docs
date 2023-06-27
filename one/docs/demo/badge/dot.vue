@@ -3,20 +3,20 @@
   <section>
     <veui-badge
       value="Running"
-      type="success"
+      status="success"
     />
     <veui-badge
       value="New"
-      type="info"
+      status="info"
     />
     <veui-badge value="Rejected"/>
     <veui-badge
       value="Auditing"
-      type="warning"
+      status="warning"
     />
     <veui-badge
       value="Expired"
-      type="aux"
+      status="aux"
     />
   </section>
 </article>

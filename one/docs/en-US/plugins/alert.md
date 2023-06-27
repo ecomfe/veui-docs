@@ -25,7 +25,8 @@ The method returns a `Promise` object that is resolved when the alert dialog is 
 ^^^options
 | Name | Type | Description |
 | -- | -- | -- |
-| `type` | `string` | The type of the alert, one of `'success'`, `'warning'`, `'info'`, or `'error'`. The default value is `'success'`. |
+| `status` | `string` | The type of the alert, one of `'success'`, `'warning'`, `'info'`, or `'error'`. The default value is `'success'`. |
+| `type` | `string` | Deprecated. Use the `status` property instead. |
 | `overlayClass` | `string | Object | Array<string>` | The class name(s) to be added to the root node of the alert dialog overlay. |
 | `ok` | `function(): Promise<void>` | The function to be called when the "I got it" button is clicked. If the `Promise` returned by this function is resolved, the dialog will be closed, otherwise it will not. |
 ^^^

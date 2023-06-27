@@ -2,9 +2,9 @@
 
 ## 示例
 
-### 类型
+### 状态
 
-`Toast` 有四种类型，分别是 `info`、`success`、`warning` 和 `error`，可以通过 [`type`](#props-type) 属性指定不同的类型。
+`Toast` 有四种状态，分别是 `info`、`success`、`warning` 和 `error`，可以通过 [`status`](#props-status) 属性指定不同的状态。
 
 [[ demo src="/demo/toast/default.vue" ]]
 
@@ -21,7 +21,8 @@
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
 | ``open`` | `boolean` | `false` | [^open] |
-| ``type`` | `string` | `'success'` | [^type] |
+| ``status`` | `string` | `'success'` | [^status] |
+| ``type`` | `string` | `'success'` | 已废弃。请使用 [`status`](#props-status) 属性代替。 |
 | ``title`` | `string` | - | 消息标题。 |
 | ``message`` | `string` | - | 消息内容。 |
 | ``duration`` | `number` | `toast.duration` | 消息展示时间毫秒数，超过此事件则消息提示自动关闭。 |
@@ -35,7 +36,7 @@
 是否显示消息提示。
 ^^^
 
-^^^type
+^^^status
 警告框类型。
 
 +++枚举值

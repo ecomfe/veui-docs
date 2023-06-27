@@ -33,7 +33,8 @@
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
 | ``ui`` | `string` | - | [^ui] |
-| ``type`` | `string` | `'default'` | [^type] |
+| ``status`` | `string` | `'default'` | [^status] |
+| ``type`` | `string` | `'default'` | 已废弃。请使用 [`status`](#props-status) 属性代替。 |
 | ``color`` | `string` | - | 预设的彩色标签颜色名。目前支持的有 `'turquoise' | 'violet' | 'green'`。 |
 | ``selectable`` | `boolean` | `false` | 是否允许选择。 |
 | ``selected`` | `boolean` | `false` | [^selected] |
@@ -54,8 +55,8 @@
 +++
 ^^^
 
-^^^type
-标签类型。
+^^^status
+标签状态。
 
 +++枚举值
 | 值 | 描述 |
