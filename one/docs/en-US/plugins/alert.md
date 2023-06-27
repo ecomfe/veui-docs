@@ -31,11 +31,11 @@ The method returns a `Promise` object that is resolved when the alert dialog is 
 | `ok` | `function(): Promise<void>` | The function to be called when the "I got it" button is clicked. If the `Promise` returned by this function is resolved, the dialog will be closed, otherwise it will not. |
 ^^^
 
-The `$alert` method also provides the following shortcut methods, which set the `type` option to the corresponding value:
+The `$alert` method also provides the following shortcut methods, which set the `status` option to the corresponding value:
 
 | Method | Type | Description |
 | -- | -- | -- |
-| `success` | `function(content, title, options): Promise<void>` | Shows an alert dialog with the "success" style. |
-| `warn` | `function(content, title, options): Promise<void>` | Shows an alert dialog with the "warning" style. |
-| `info` | `function(content, title, options): Promise<void>` | Shows an alert dialog with the "info" style. |
-| `error` | `function(content, title, options): Promise<void>` | Shows an alert dialog with the "error" style. |
+| `success` | `function(content, title, options): Promise<void>` | Shows an alert dialog with the "success" status. |
+| `warn` | `function(content, title, options): Promise<void>` | Shows an alert dialog with the "warning" status. |
+| `info` | `function(content, title, options): Promise<void>` | Shows an alert dialog with the "info" status. |
+| `error` | `function(content, title, options): Promise<void>` | Shows an alert dialog with the "error" status. |

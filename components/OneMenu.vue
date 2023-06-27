@@ -17,42 +17,69 @@
       name="hamburger"
     />
   </div>
-  <veui-menu
+  <veui-sidenav
     class="one-menu"
     :items="menuItems"
     :expanded.sync="menuExpanded"
   >
-    <template #item-label="{ label, sub, cn }">
-      <small
-        v-if="sub"
-        class="sub"
-      >⤷</small>{{ label
-      }}<small
-        v-if="cn"
-        class="cn"
-      >{{ cn }}</small>
+    <template #item-label="{ name, label, sub, cn }">
+      <template v-if="name === '/components'">
+        {{ label }}
+        <veui-button
+          v-tooltip="t(sort ? 'unsort' : 'sort')"
+          class="sort"
+          :ui="`icon ${sort ? 'strong' : 'aux'}`"
+          @click.stop="sort = !sort"
+        >
+          <veui-icon name="one-alphabetical-sort"/>
+        </veui-button>
+      </template>
+      <template v-else>
+        <small
+          v-if="sub"
+          class="sub"
+        >⤷</small>{{ label
+        }}<small
+          v-if="cn"
+          class="cn"
+        >{{ cn }}</small>
+      </template>
     </template>
-  </veui-menu>
+  </veui-sidenav>
 </nav>
 </template>
 
 <script>
+import { Button, Sidenav, Icon } from 'veui'
 import i18n from '../common/i18n'
-import { Menu, Icon } from 'veui'
+import veuiI18n from 'veui/mixins/i18n'
+import tooltip from 'veui/directives/tooltip'
 import outside from 'veui/directives/outside'
+import { loadPref, savePref } from '../common/util'
 import 'veui-theme-dls-icons/hamburger'
 import 'veui-theme-dls-icons/chevron-left'
+
+Icon.register({
+  'one-alphabetical-sort': {
+    width: 24,
+    height: 24,
+    d:
+      'M12 5h10v2H12m0 12v-2h10v2m-10-8h10v2H12m-3 0v2l-3.33 4H9v2H3v-2l3.33-4H3v-2M7 3H5c-1.1 0-2 .9-2 2v6h2V9h2v2h2V5a2 2 0 0 0-2-2m0 4H5V5h2Z'
+  }
+})
 
 export default {
   name: 'one-menu',
   directives: {
-    outside
+    outside,
+    tooltip
   },
   components: {
-    'veui-menu': Menu,
+    'veui-button': Button,
+    'veui-sidenav': Sidenav,
     'veui-icon': Icon
   },
-  mixins: [i18n],
+  mixins: [i18n, veuiI18n],
   props: {
     expanded: Boolean,
     nav: {
@@ -64,12 +91,18 @@ export default {
   },
   data () {
     return {
-      menuExpanded: []
+      menuExpanded: [],
+      sort: loadPref('sort-components') || false
     }
   },
   computed: {
     menuItems () {
       return this.nav.map(item => this.normalizeItem(item))
+    }
+  },
+  watch: {
+    sort (val) {
+      savePref('sort-components', val)
     }
   },
   created () {
@@ -90,16 +123,20 @@ export default {
       const to = link !== false && fullSlug && !disabled ? localePath : null
       const [main, cn] = this.getTitleDetail(title)
 
+      const normalizedChildren = children
+        ? children.map(child => this.normalizeItem(child, fullSlug))
+        : []
+
       return {
         label: main,
         cn,
         to,
         name: fullSlug,
-        sub,
+        sub: this.sort ? false : sub,
         disabled,
-        children: children
-          ? children.map(child => this.normalizeItem(child, fullSlug))
-          : []
+        children: fullSlug === '/components' && this.sort
+          ? normalizedChildren.sort((a, b) => a.label.localeCompare(b.label))
+          : normalizedChildren
       }
     },
     toggleMenu () {
@@ -124,11 +161,6 @@ export default {
   width 100%
   overflow auto
 
-  & >>> .DocSearch
-    margin 0
-    border-radius 6px
-    font inherit
-
   .cn
     margin-left 8px
     opacity 0.7
@@ -136,6 +168,12 @@ export default {
   .sub
     margin-right 8px
     opacity 0.3
+
+  & >>> .veui-menu-item-label
+    flex-grow 1
+
+  .sort
+    margin-left 8px
 
 .toggle
   display none

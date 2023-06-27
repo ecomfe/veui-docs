@@ -31,11 +31,11 @@ Vue.use($alert)
 | `ok` | `function(): Promise<void>` | 点击“知道了”按钮后调用。如果该函数返回的 `Promise` 被 resolve，则弹框会被关闭，否则不会关闭。 |
 ^^^
 
-`$alert` 方法上还提供如下快捷方法，将把 `options` 中的 `type` 指定为对应类型值：
+`$alert` 方法上还提供如下快捷方法，将把 `options` 中的 `status` 指定为对应状态值：
 
 | 方法名 | 类型 | 描述 |
 | -- | -- | -- |
-| `success` | `function(content, title, options): Promise<void>` | 展示“成功”样式的弹框。 |
-| `warn` | `function(content, title, options): Promise<void>` | 展示“警告”样式的弹框。 |
-| `info` | `function(content, title, options): Promise<void>` | 展示“普通消息”样式的弹框。 |
-| `error` | `function(content, title, options): Promise<void>` | 展示“错误”样式的弹框。 |
+| `success` | `function(content, title, options): Promise<void>` | 展示“成功”状态的弹框。 |
+| `warn` | `function(content, title, options): Promise<void>` | 展示“警告”状态的弹框。 |
+| `info` | `function(content, title, options): Promise<void>` | 展示“普通消息”状态的弹框。 |
+| `error` | `function(content, title, options): Promise<void>` | 展示“错误”状态的弹框。 |

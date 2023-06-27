@@ -35,6 +35,28 @@ i18n.register(
 i18n.register(
   'zh-Hans',
   {
+    sort: '按字母顺序排列',
+    unsort: '取消排列'
+  },
+  {
+    ns: 'onemenu'
+  }
+)
+
+i18n.register(
+  'en-US',
+  {
+    sort: 'Sort by alphabetical oder',
+    unsort: 'Unsort'
+  },
+  {
+    ns: 'onemenu'
+  }
+)
+
+i18n.register(
+  'zh-Hans',
+  {
     copyCode: '复制代码',
     copySuccess: '复制成功！',
     copyFailed: '复制失败！',
