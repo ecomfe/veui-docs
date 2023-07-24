@@ -92,7 +92,7 @@ export default {
   data () {
     return {
       menuExpanded: [],
-      sort: loadPref('sort-components') || false
+      sort: false
     }
   },
   computed: {
@@ -107,6 +107,9 @@ export default {
   },
   created () {
     this.menuExpanded = this.menuItems.map(({ name }) => name)
+  },
+  mounted () {
+    this.sort = loadPref('sort-components') || false
   },
   methods: {
     getTitleDetail (title) {
