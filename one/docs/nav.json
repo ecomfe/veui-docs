@@ -456,6 +456,10 @@
       "slug": "changelog"
     },
     {
+      "title": "TypeScript",
+      "slug": "typescript"
+    },
+    {
       "title": "Getting started",
       "slug": "getting-started",
       "children": [
