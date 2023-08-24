@@ -5,9 +5,9 @@
     <veui-uploader
       v-model="media"
       type="media"
-      action="https://app.fakejson.com/q/ELymQ7xh?token=AWFkjMICPSAB_bO_z-Lnog"
+      action="/api/upload"
     >
-      <template #desc>
+      <template #help>
         Normal size
       </template>
     </veui-uploader>
@@ -17,10 +17,10 @@
     <veui-uploader
       v-model="media2"
       type="media"
-      action="https://app.fakejson.com/q/ELymQ7xh?token=AWFkjMICPSAB_bO_z-Lnog"
+      action="/api/upload"
       ui="s"
     >
-      <template #desc>
+      <template #help>
         Small size
       </template>
     </veui-uploader>

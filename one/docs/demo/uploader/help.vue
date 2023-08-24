@@ -13,14 +13,16 @@
       v-model="files"
       :help-position="helpPosition"
       help="Help text"
-      action="https://app.fakejson.com/q/ELymQ7xh?token=AWFkjMICPSAB_bO_z-Lnog"
+      action="/api/upload"
     />
     <veui-uploader
       v-model="files"
       :help-position="helpPosition"
-      action="https://app.fakejson.com/q/ELymQ7xh?token=AWFkjMICPSAB_bO_z-Lnog"
+      action="/api/upload"
     >
-      <template #help>Custom help text via `help` slot</template>
+      <template #help>
+        Custom help text via `help` slot
+      </template>
     </veui-uploader>
   </section>
 </article>

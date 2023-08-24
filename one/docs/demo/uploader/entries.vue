@@ -5,7 +5,7 @@
       v-model="images"
       :entries="entries"
       type="image"
-      action="https://app.fakejson.com/q/ELymQ7xh?token=AWFkjMICPSAB_bO_z-Lnog"
+      action="/api/upload"
       @star="handleStar"
     />
   </section>

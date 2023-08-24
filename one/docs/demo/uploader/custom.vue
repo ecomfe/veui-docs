@@ -10,7 +10,7 @@
       :upload="upload"
       @moveright="handleMoveRight"
     >
-      <template #desc>
+      <template #help>
         点击图片浮层上的向右箭头按钮改变图片位置
       </template>
     </veui-uploader>
@@ -27,7 +27,7 @@ export default {
   },
   data () {
     return {
-      action: 'https://app.fakejson.com/q/ELymQ7xh?token=AWFkjMICPSAB_bO_z-Lnog',
+      action: '/upload',
       images: [
         {
           key: 0,

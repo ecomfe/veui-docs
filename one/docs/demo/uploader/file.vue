@@ -4,14 +4,14 @@
     <h4>Normal size</h4>
     <veui-uploader
       v-model="files"
-      action="https://app.fakejson.com/q/ELymQ7xh?token=AWFkjMICPSAB_bO_z-Lnog"
+      action="/api/upload"
     />
   </section>
   <section>
     <h4>Small size</h4>
     <veui-uploader
       v-model="files2"
-      action="https://app.fakejson.com/q/ELymQ7xh?token=AWFkjMICPSAB_bO_z-Lnog"
+      action="/api/upload"
       ui="s"
     />
   </section>

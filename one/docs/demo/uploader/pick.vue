@@ -4,7 +4,7 @@
     <veui-uploader
       type="file"
       :pick="pick"
-      action="https://app.fakejson.com/q/ELymQ7xh?token=AWFkjMICPSAB_bO_z-Lnog"
+      action="/api/upload"
     />
   </section>
 </article>

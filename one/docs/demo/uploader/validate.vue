@@ -4,13 +4,13 @@
     <veui-uploader
       v-model="images"
       type="image"
-      action="https://app.fakejson.com/q/ELymQ7xh?token=AWFkjMICPSAB_bO_z-Lnog"
+      action="/api/upload"
       accept="jpg,png"
       :max-count="6"
       max-size="100kb"
       :validator="validator"
     >
-      <template #desc>
+      <template #help>
         请选择jpg、png图片，大小不超过100kb，宽高分别大于200px，最多上传6张图片
       </template>
     </veui-uploader>
