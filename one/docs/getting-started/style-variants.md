@@ -22,6 +22,20 @@ VEUI 组件通过 `ui` 属性为组件提供预设样式。不同主题包可以
 
 使用 [`veui-loader`](./veui-loader) 的相应配置，即可在 VEUI 中加载 `veui-theme-dls` 主题包。主题包为很多组件提供了不同维度的可选预设样式，可以参考每个组件对 `ui` 属性的说明来查阅组件支持的预设样式。
 
+#### 内置子主题
+
+`veui-theme-dls` 主题包内置了一些子主题，可以通过 `ui` 属性来切换。比如：
+
+```html
+<veui-input ui="theme:d22"/>
+```
+
+[[ demo src="/demo/style/d22.vue" ]]
+
+:::tip
+除了直接通过 `ui="theme:d22"` 进行指定，也可以为 [ConfigProvider](../components/config-provider) 组件设置 `{ theme: 'd22' }` 来指定子主题。指定子主题的组件内部其他组件会自动继承该子主题。
+:::
+
 ### 自定预设样式
 
 新增自定义的 `ui` 项无需通过组件接口进行注册，只需要在样式文件中针对 `[ui~="..."]` 选择器添加相应样式即可。

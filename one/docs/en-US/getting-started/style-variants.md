@@ -22,6 +22,20 @@ Then there will be a series of problems such as naming and prefixing of `class`,
 
 By using the corresponding configuration of [`veui-loader`](./veui-loader), you can load the `veui-theme-dls` theme package in VEUI. The theme package provides optional preset styles in different dimensions for many components. You can refer to the documentation of each component for the explanation of supported preset styles of the `ui` prop.
 
+#### Built-in Sub-Themes
+
+The `veui-theme-dls` theme package comes with several built-in sub-themes that can be switched using the ui attribute. For example:
+
+```html
+<veui-input ui="theme:d22"/>
+```
+
+[[ demo src="/demo/style/d22.vue" ]]
+
+:::tip
+In addition to specifying it directly with `ui="theme:d22"`, you can also set `{ theme: 'd22' }` for the [ConfigProvider](../components/config-provider) component to specify the sub-theme. Components within the specified sub-theme will automatically inherit it.
+:::
+
 ### Custom preset styles
 
 Adding a custom `ui` item does not require registration through the component API, just add the corresponding styles for the `[ui~="..."]` selector in the style file.

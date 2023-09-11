@@ -93,7 +93,8 @@ Use the [`tooltip`](./column#props-tooltip) prop of the `Column` component to sp
 | ``loading-options`` | `Object` | `table.loadingOptions` | [^loading-options] |
 | ``allowed-orders`` | `Array` | `[false, 'desc', 'asc']` | [^allowed-orders] |
 | ``bordered`` | `boolean` | `false` | Specifies whether the table has a border. |
-| ``column-filter`` | `Array<string>` | - | Used to filter the columns of the table. The value of each element should be the `key-field` of a column, and all columns are displayed by default. |
+| ``column-filter`` | `Array<string> | (field: string) => boolean` | - | Used for filtering the columns of the table. When passed an array, the values of the elements are the field values corresponding to that column. When passed a function, the parameter is the field value corresponding to that column, and the return value indicates whether that column should be displayed. By default, all columns are displayed. |
+
 
 ^^^ui
 Preset style.

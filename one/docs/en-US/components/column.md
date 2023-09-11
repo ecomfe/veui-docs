@@ -27,7 +27,8 @@ See [`Table` examples](./table#examples).
 | ``filter-options`` | `Array<Object>` | - | The filtering options list, the item type is `{label, value, options, disabled, ...}`, refer to the [`options`](./select#props-options) prop of the [`Select`](./select) component. |
 | ``filter-title`` | `string` | - | The title of the filter drop-down. |
 | ``allowed-orders`` | `Array` | `[false, 'desc', 'asc']` | [^allowed-orders] |
-| ``tooltip`` | `boolean | ((item: Object) => string)` | - | Whether to automatically display a hover tooltip when the content overflows. The default is to display the `textContent` of the current cell. When a function is passed in, the `item` parameter is the entire data item, and the returned string will be displayed as the tooltip content. |
+| ``ellipsis`` | `boolean` | `tablecolumn.ellipsis` | Whether to automatically truncate cell content when it overflows. |
+| ``tooltip`` | `boolean | ((item: Object) => string)` | - | Whether to automatically truncate cell content and display a tooltip when it overflows. By default, it displays the current cell's textContent. When a function is provided, the item parameter represents the entire data item, and the returned string will be shown as the tooltip content. |
 
 ^^^sortable
 Whether this column supports sorting.
@@ -129,3 +130,10 @@ The content of the filter layer.
 | Name | Description |
 | -- | -- |
 | ``filterchange`` | Triggered when the filter of this column is modified. The callback parameter is `(value)`. `value` is the current value of the filter. |
+
+### Configs
+
+| Key | Type | Default | Description |
+| -- | -- | -- | -- |
+| `tablecolumn.ellipsis` | `boolean` | `false` | Whether to automatically truncate cell content when it overflows. |
+| `tablecolumn.tooltip` | `boolean | ((item: Object) => string)` | `false` | Whether to automatically truncate cell content and display a tooltip when it overflows. By default, it displays the current cell's textContent. When a function is provided, the item parameter represents the entire data item, and the returned string will be shown as the tooltip content. |
