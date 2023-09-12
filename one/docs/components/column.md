@@ -136,4 +136,4 @@
 | 配置项 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
 | ``tablecolumn.ellipsis`` | `boolean` | `false` | 单元格内容溢出后是否自动截断。 |
-| ``tablecolumn.tooltip`` | `boolean | ((item: Object) => string)` | `false` | 单元格内容溢出后是否自动截断。 |
+| ``tablecolumn.tooltip`` | `boolean | ((item: Object) => string)` | `false` | 单元格内容溢出时是否自动截断并自动显示悬浮提示。默认显示当前单元格的 `textContent`。传入函数时，`item` 参数为整个 data 数据项，返回的字符串将作为提示内容展示。 |
