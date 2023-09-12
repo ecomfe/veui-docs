@@ -18,6 +18,12 @@
     </a>
   </section>
   <section class="desc">
+    <veui-radio-button-group
+      ui="s"
+      :items="themes"
+      :value="theme"
+      @change="$emit('themechange', $event)"
+    />
     <nuxt-link
       :class="{
         'locale-switch': true,
@@ -36,7 +42,7 @@
 </template>
 
 <script>
-import { Icon } from 'veui'
+import { Icon, RadioButtonGroup } from 'veui'
 import i18n from '../common/i18n'
 import OneSearch from './OneSearch'
 
@@ -53,9 +59,21 @@ export default {
   name: 'one-header',
   components: {
     'veui-icon': Icon,
+    'veui-radio-button-group': RadioButtonGroup,
     'one-search': OneSearch
   },
   mixins: [i18n],
+  props: {
+    theme: String
+  },
+  data () {
+    return {
+      themes: [
+        { label: 'D20', value: '' },
+        { label: 'D22', value: 'd22' }
+      ]
+    }
+  },
   computed: {
     altLocale () {
       let { canonicalPath, locale, getLocalePath, isPathDisabled } = this
@@ -111,7 +129,7 @@ export default {
   align-items center
   padding 0 6px
   border 1px solid #dbdbdb
-  border-radius 3px
+  border-radius 4px
   height 28px
   font-size 12px
   text-decoration none

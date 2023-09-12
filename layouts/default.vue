@@ -4,6 +4,8 @@
     <one-header
       ref="header"
       class="header"
+      :theme="config.theme"
+      @themechange="handleThemeChange"
     />
     <div class="body">
       <one-menu
@@ -79,7 +81,8 @@ export default {
   data () {
     return {
       config: {
-        'link.routerLink': 'nuxt-link'
+        'link.routerLink': 'nuxt-link',
+        theme: ''
       },
       expanded: false,
       quickNavOpen: false
@@ -156,6 +159,9 @@ export default {
           }
         }
       }
+    },
+    handleThemeChange (theme) {
+      this.config.theme = theme
     }
   }
 }
