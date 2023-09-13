@@ -22,6 +22,7 @@
     class="editor"
     :code="code"
     :browser="browser"
+    :path="path"
   />
 </article>
 </template>
@@ -62,7 +63,8 @@ export default {
       default: ''
     },
     expanded: Boolean,
-    browser: Boolean
+    browser: Boolean,
+    path: String
   },
   methods: {
     handleClose () {

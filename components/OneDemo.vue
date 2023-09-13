@@ -82,6 +82,7 @@
     ref="source"
     class="source"
     :style="{ height: codeExpanded ? `${sourceHeight || 0}px` : '0' }"
+    @copy="trackCopy('system')"
   >
     <div class="source-toolbar">
       <veui-button
@@ -101,6 +102,7 @@
       :class="{
         'one-demo-editor-shrink': !editorExpanded
       }"
+      :path="path"
       :code="code"
       :expanded="editorExpanded"
       :browser="!!browser"
@@ -121,11 +123,11 @@ import toast from 'veui/plugins/toast'
 import { BrowserWindow } from 'vue-windows'
 import { getLocale } from '../common/i18n'
 import { play } from '../common/play'
+import { track } from '../common/util'
 import OneIframe from './OneIframe'
 import OneEditLink from './OneEditLink'
 import OneRepl from './OneRepl'
 import OneFocus from './OneFocus'
-import { track } from '@vercel/analytics'
 import 'veui-theme-dls-icons/copy'
 
 Vue.use(toast)
@@ -191,13 +193,20 @@ export default {
       play(this.$refs.source.textContent, { locale, vendor })
       track('play', { vendor, path: this.path })
     },
+    trackCopy (action) {
+      if (this.copied) {
+        return
+      }
+
+      this.copied = true
+      track('copy', { from: 'demo', path: this.path, action })
+    },
     async copy () {
       try {
         await navigator.clipboard.writeText(this.code)
-        track('copy', { from: 'demo', success: true })
+        this.trackCopy('button')
         this.$toast.success(this.t('@onelive.copySuccess'))
       } catch (e) {
-        track('copy', { from: 'demo', success: false })
         this.$toast.error(this.t('@onelive.copyFailed'))
       }
     },

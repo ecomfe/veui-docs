@@ -4,7 +4,7 @@ import { render } from './page'
 
 const NAME = 'customblock'
 
-const typeMap = {
+const statusMap = {
   tip: 'info',
   warning: 'warning'
 }
@@ -25,13 +25,13 @@ export default function attacher () {
 
     visit(tree, NAME, ({ className, value }, index, parent) => {
       let { contents } = render(value, path, {})
-      if (typeMap[className]) {
+      if (statusMap[className]) {
         if (!data.hasAlert) {
           data.hasAlert = true
         }
         parent.children.splice(index, 1, {
           type: 'html',
-          value: `<veui-alert ui="s" type="${typeMap[className]}">${contents}</veui-alert>`
+          value: `<veui-alert ui="s" status="${statusMap[className]}">${contents}</veui-alert>`
         })
       } else {
         className = className ? `${className} custom-block` : 'custom-block'

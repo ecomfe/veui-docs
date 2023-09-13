@@ -53,3 +53,11 @@ export function savePref (key, value) {
   pref[key] = value
   localStorage.setItem(PREF_KEY, JSON.stringify(pref))
 }
+
+export function track (...args) {
+  if (typeof window !== 'object' || !window.__vaTrack) {
+    return
+  }
+
+  window.__vaTrack(...args)
+}

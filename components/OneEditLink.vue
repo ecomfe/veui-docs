@@ -27,7 +27,7 @@
 <script>
 import { Icon } from 'veui'
 import i18n from 'veui/mixins/i18n'
-import { track } from '@vercel/analytics'
+import { track } from '../common/util'
 import 'veui-theme-dls-icons/external-link'
 
 const BASE_URL = 'https://github.com/ecomfe/veui-docs/edit/master/one/docs/'

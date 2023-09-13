@@ -16,6 +16,7 @@
         },
         scrollBeyondLastLine: false
       }"
+      @copy.native="trackCopy('system')"
     />
     <div class="editor-toolbar">
       <veui-button
@@ -128,9 +129,8 @@ import 'splitpanes/dist/splitpanes.css'
 import { getLocale } from '../common/i18n'
 import { play } from '../common/play'
 import { transformLessCode } from '../common/transform'
-import { loadPref, savePref } from '../common/util'
+import { loadPref, savePref, track } from '../common/util'
 import OneIframe from './OneIframe'
-import { track } from '@vercel/analytics'
 
 Vue.use(toast)
 
@@ -189,7 +189,8 @@ export default {
       type: String,
       default: ''
     },
-    browser: Boolean
+    browser: Boolean,
+    path: String
   },
   data () {
     return {
@@ -275,6 +276,9 @@ export default {
           this.error = null
         })
       }
+    },
+    transformedCode () {
+      this.copied = false
     }
   },
   mounted () {
@@ -290,13 +294,15 @@ export default {
       let locale = getLocale(this.$route.path)
       play(this.localCode, { locale, vendor })
     },
+    trackCopy (action) {
+      track('copy', { from: 'editor', path: this.path, action })
+    },
     async copy () {
       try {
         await navigator.clipboard.writeText(this.code)
-        track('copy', { from: 'editor', success: true })
+        this.trackCopy('button')
         this.$toast.success(this.t('copySuccess'))
       } catch (e) {
-        track('copy', { from: 'editor', success: false })
         this.$toast.error(this.t('copyFailed'))
       }
     },
