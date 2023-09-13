@@ -130,6 +130,7 @@ import { play } from '../common/play'
 import { transformLessCode } from '../common/transform'
 import { loadPref, savePref } from '../common/util'
 import OneIframe from './OneIframe'
+import { track } from '@vercel/analytics'
 
 Vue.use(toast)
 
@@ -292,8 +293,10 @@ export default {
     async copy () {
       try {
         await navigator.clipboard.writeText(this.code)
+        track('copy', { from: 'editor', success: true })
         this.$toast.success(this.t('copySuccess'))
       } catch (e) {
+        track('copy', { from: 'editor', success: false })
         this.$toast.error(this.t('copyFailed'))
       }
     },

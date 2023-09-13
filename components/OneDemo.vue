@@ -55,7 +55,7 @@
     <veui-button
       v-tooltip="t(codeExpanded ? 'hideCode' : 'showCode')"
       ui="icon"
-      @click="codeExpanded = !codeExpanded"
+      @click="handleCodeToggle"
     >
       <veui-icon
         scale="1.2"
@@ -66,7 +66,7 @@
       v-tooltip="t(editing ? 'closeEditor' : 'openEditor')"
       class="toggle-editor"
       ui="text"
-      @click="editing = !editing"
+      @click="handleEditorOpen"
     >
       Live
     </veui-button>
@@ -125,6 +125,7 @@ import OneIframe from './OneIframe'
 import OneEditLink from './OneEditLink'
 import OneRepl from './OneRepl'
 import OneFocus from './OneFocus'
+import { track } from '@vercel/analytics'
 import 'veui-theme-dls-icons/copy'
 
 Vue.use(toast)
@@ -188,14 +189,25 @@ export default {
     play (vendor) {
       let locale = getLocale(this.$route.path)
       play(this.$refs.source.textContent, { locale, vendor })
+      track('play', { vendor, path: this.path })
     },
     async copy () {
       try {
         await navigator.clipboard.writeText(this.code)
+        track('copy', { from: 'demo', success: true })
         this.$toast.success(this.t('@onelive.copySuccess'))
       } catch (e) {
+        track('copy', { from: 'demo', success: false })
         this.$toast.error(this.t('@onelive.copyFailed'))
       }
+    },
+    handleCodeToggle () {
+      this.codeExpanded = !this.codeExpanded
+      track('code-toggle', { expanded: this.codeExpanded, path: this.path })
+    },
+    handleEditorOpen () {
+      this.editing = true
+      track('live-edit', { path: this.path })
     },
     handleEditorClose () {
       this.editing = false
@@ -205,6 +217,7 @@ export default {
     },
     resetFocus () {
       this.$refs.focuser.focus()
+      track('reset-focus', { path: this.path })
     }
   }
 }

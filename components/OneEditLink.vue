@@ -11,6 +11,7 @@
   :href="href"
   target="_blank"
   rel="noopener"
+  @click="handleClick"
 >
   <slot :label="t('editOnGitHub')">
     <span class="full">{{ t('editOnGitHub', { item: t(type) }) }}</span>
@@ -26,6 +27,7 @@
 <script>
 import { Icon } from 'veui'
 import i18n from 'veui/mixins/i18n'
+import { track } from '@vercel/analytics'
 import 'veui-theme-dls-icons/external-link'
 
 const BASE_URL = 'https://github.com/ecomfe/veui-docs/edit/master/one/docs/'
@@ -50,6 +52,11 @@ export default {
   computed: {
     href () {
       return `${BASE_URL}${this.path}`
+    }
+  },
+  methods: {
+    handleClick () {
+      track('edit-source', { path: this.path })
     }
   }
 }
