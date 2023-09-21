@@ -81,6 +81,7 @@
     :key="version"
     class="version-item"
     data-md
+    :data-version="version"
   >
     <h2
       :id="getHash(version)"
@@ -328,6 +329,14 @@ export default {
       )
       if (index !== -1 && index !== 0) {
         this.page = Math.floor(index / this.pageSize) + 1
+
+        this.$nextTick(() => {
+          const item = this.$el.querySelector(`[data-version="${version}"]`)
+          if (item) {
+            item.dataset.target = ''
+            item.scrollIntoView()
+          }
+        })
       }
     }
   },
