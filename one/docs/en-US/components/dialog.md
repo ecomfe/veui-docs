@@ -30,7 +30,7 @@ Available size/dimensional variants for the [`ui`](#props-ui) prop: `s` / `m` / 
 
 ### Loading and disabled states
 
-[[ demo src="/demo/dialog/status.vue" ]]
+[[ demo src="/demo/dialog/state.vue" ]]
 
 ## API
 

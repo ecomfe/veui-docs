@@ -30,7 +30,7 @@
 
 ### 加载与禁用态
 
-[[ demo src="/demo/dialog/status.vue" ]]
+[[ demo src="/demo/dialog/state.vue" ]]
 
 ## API
 
