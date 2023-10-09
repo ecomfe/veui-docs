@@ -1,7 +1,7 @@
 <template>
 <article>
   <veui-alert
-    type="success"
+    status="success"
     ui="strong"
     message="恭喜你，你的请求已成功处理"
     closable

@@ -23,9 +23,16 @@ function getScrollPaddingTopInPixels () {
 export default async function scrollBehavior (to) {
   if (to.hash) {
     // scroll to anchor by returning the selector
+    const selector = decodeURIComponent(to.hash)
+    try {
+      document.querySelector(decodeURIComponent(to.hash))
+    } catch (e) {
+      return { x: 0, y: 0 }
+    }
+
     await timeout(0)
     return {
-      selector: decodeURIComponent(to.hash),
+      selector,
       offset: {
         y: getScrollPaddingTopInPixels()
       }

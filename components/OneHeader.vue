@@ -2,7 +2,7 @@
 <header class="one-header">
   <section class="brand">
     <h2 class="veui">
-      <nuxt-link to="/">
+      <nuxt-link :to="getLocalePath('/')">
         VEUI
       </nuxt-link>
     </h2>
@@ -18,21 +18,14 @@
     </a>
   </section>
   <section class="desc">
-    <veui-radio-button-group
-      ui="s"
-      :items="themes"
-      :value="theme"
-      @change="$emit('themechange', $event)"
-    />
-    <nuxt-link
-      :class="{
-        'locale-switch': true,
-        disabled: altLocale.disabled
-      }"
-      :to="altLocale.disabled ? '' : altLocale.to"
+    <one-theme-toggle/>
+    <one-locale-link
+      class="play"
+      to="/play"
     >
-      <span class="locale-full">{{ altLocale.label }}</span><span class="locale-short">{{ altLocale.shortLabel }}</span>
-    </nuxt-link>
+      <b>Play<i>!</i></b>
+    </one-locale-link>
+    <one-locale-link toggle/>
     <one-search/>
     <a href="https://github.com/ecomfe/veui">
       <veui-icon name="one-header-github"/>
@@ -42,9 +35,11 @@
 </template>
 
 <script>
-import { Icon, RadioButtonGroup } from 'veui'
+import { Icon } from 'veui'
 import i18n from '../common/i18n'
 import OneSearch from './OneSearch'
+import OneLocaleLink from './OneLocaleLink'
+import OneThemeToggle from './OneThemeToggle'
 
 Icon.register({
   'one-header-github': {
@@ -59,36 +54,11 @@ export default {
   name: 'one-header',
   components: {
     'veui-icon': Icon,
-    'veui-radio-button-group': RadioButtonGroup,
-    'one-search': OneSearch
+    OneSearch,
+    OneLocaleLink,
+    OneThemeToggle
   },
-  mixins: [i18n],
-  props: {
-    theme: String
-  },
-  data () {
-    return {
-      themes: [
-        { label: 'D20', value: '' },
-        { label: 'D22', value: 'd22' }
-      ]
-    }
-  },
-  computed: {
-    altLocale () {
-      let { canonicalPath, locale, getLocalePath, isPathDisabled } = this
-      let altLocale = locale === 'zh-Hans' ? 'en-US' : 'zh-Hans'
-      let label = locale === 'zh-Hans' ? 'English' : '中文'
-      let shortLabel = locale === 'zh-Hans' ? 'EN' : '中'
-      let disabled = isPathDisabled(canonicalPath, altLocale)
-      return {
-        to: disabled ? '' : getLocalePath(canonicalPath, altLocale),
-        disabled,
-        label,
-        shortLabel
-      }
-    }
-  }
+  mixins: [i18n]
 }
 </script>
 
@@ -124,28 +94,11 @@ export default {
 .veui-icon
   font-size 24px
 
-.locale-switch
-  display flex
-  align-items center
-  padding 0 6px
-  border 1px solid #dbdbdb
-  border-radius 4px
-  height 28px
-  font-size 12px
-  text-decoration none
-  transition all 0.2s
-
-  &:hover
-    border-color #999
-
-.locale-short
-  display none
+@media (max-width 540px)
+  .stars
+    display none
 
 @media (max-width 480px)
-  .locale-short
-    display inline
-
-  .stars,
-  .locale-full
+  .play
     display none
 </style>

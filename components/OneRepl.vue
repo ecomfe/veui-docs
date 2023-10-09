@@ -1,9 +1,30 @@
 <template>
-<article class="repl">
+<article
+  class="repl"
+  :class="{
+    standalone
+  }"
+>
   <header class="header">
-    <h1>{{ t('liveEdit') }}</h1>
-    <section class="actions">
+    <h1>{{ t("liveEdit") }}</h1>
+    <section
+      key="standalone"
+      class="actions"
+    >
+      <one-theme-toggle/>
+      <one-locale-link
+        v-if="standalone"
+        toggle
+        :hash="hash"
+      />
+      <one-locale-link
+        v-if="standalone"
+        to="/"
+      >
+        {{ t("docs") }}
+      </one-locale-link>
       <veui-button
+        v-if="!standalone"
         v-tooltip="t(expanded ? 'shrinkEditor' : 'expandEditor')"
         ui="strong icon xl"
         @click="handleToggle"
@@ -11,19 +32,31 @@
         <veui-icon :name="expanded ? 'one-repl-shrink' : 'one-repl-expand'"/>
       </veui-button>
       <veui-button
+        v-if="!standalone"
         ui="strong text"
         @click="handleClose"
       >
-        {{ t('exit') }}
+        {{ t("exit") }}
       </veui-button>
     </section>
   </header>
-  <one-live
-    class="editor"
-    :code="code"
-    :browser="browser"
-    :path="path"
-  />
+  <client-only>
+    <one-live
+      class="editor"
+      :code="code"
+      :browser="browser"
+      :path="path"
+      :standalone="standalone"
+      @codechange="handleCodeChange"
+    />
+    <template #placeholder>
+      <veui-loading
+        loading
+        ui="strong"
+        class="loading"
+      />
+    </template>
+  </client-only>
 </article>
 </template>
 
@@ -31,6 +64,9 @@
 import { Button, Loading, Icon } from 'veui'
 import tooltip from 'veui/directives/tooltip'
 import i18n from 'veui/mixins/i18n'
+import OneLocaleLink from './OneLocaleLink'
+import OneThemeToggle from './OneThemeToggle'
+import oneI18n from '../common/i18n'
 
 export default {
   name: 'one-repl',
@@ -40,6 +76,9 @@ export default {
   components: {
     'veui-button': Button,
     'veui-icon': Icon,
+    'veui-loading': Loading,
+    OneLocaleLink,
+    OneThemeToggle,
     'one-live': () => ({
       component: import('./OneLive'),
       loading: {
@@ -56,15 +95,24 @@ export default {
       }
     })
   },
-  mixins: [i18n],
+  mixins: [i18n, oneI18n],
   props: {
     code: {
       type: String,
       default: ''
     },
+    standalone: Boolean,
     expanded: Boolean,
     browser: Boolean,
     path: String
+  },
+  data () {
+    return {
+      hash: ''
+    }
+  },
+  mounted () {
+    this.hash = location.hash
   },
   methods: {
     handleClose () {
@@ -72,6 +120,10 @@ export default {
     },
     handleToggle () {
       this.$emit('toggle', !this.expanded)
+    },
+    handleCodeChange (code) {
+      this.$emit('codechange', code)
+      this.hash = location.hash
     }
   }
 }
@@ -97,6 +149,13 @@ Icon.register({
   display flex
   flex-direction column
 
+  &.standalone
+    position fixed
+    top 0
+    right 0
+    bottom 0
+    left 0
+
 .header
   display flex
   align-items center
@@ -115,19 +174,22 @@ Icon.register({
   .actions
     display flex
     justify-content flex-end
+    align-items center
     flex 1 1 auto
     gap 24px
 
-.editor:not(.loading)
-  position relative
-  flex 1 1 auto
-  height calc(100% - 48px)
+.standalone
+  .actions
+    gap 12px
+
+.editor
+  &:not(.loading)
+    position relative
+    flex 1 1 auto
+    height calc(100% - 48px)
 
   & >>> .live-preview
     padding 24px 36px
-
-  & >>> .VueLive-error
-    display none
 
 .loading
   position absolute

@@ -5,28 +5,28 @@
     gap="s"
     wrap
   >
-    <veui-tag type="info">
+    <veui-tag status="info">
       Chase
     </veui-tag>
-    <veui-tag type="success">
+    <veui-tag status="success">
       Rocky
     </veui-tag>
-    <veui-tag type="warning">
+    <veui-tag status="warning">
       Skye
     </veui-tag>
-    <veui-tag type="error">
+    <veui-tag status="error">
       Marshall
     </veui-tag>
-    <veui-tag type="info">
+    <veui-tag status="info">
       Rubble
     </veui-tag>
-    <veui-tag type="success">
+    <veui-tag status="success">
       Zuma
     </veui-tag>
-    <veui-tag type="warning">
+    <veui-tag status="warning">
       Everest
     </veui-tag>
-    <veui-tag type="error">
+    <veui-tag status="error">
       Tracker
     </veui-tag>
   </veui-stack>

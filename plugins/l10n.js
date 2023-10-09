@@ -9,6 +9,7 @@ i18n.register(
     closeEditor: '关闭实时编辑',
     playInCodeSandbox: '在 CodeSandbox 中打开',
     playInStackBlitz: '在 StackBlitz 中打开',
+    playInPlayground: '在 VEUI Playground 中打开',
     resetFocus: '重置焦点以测试键盘访问'
   },
   {
@@ -25,6 +26,7 @@ i18n.register(
     closeEditor: 'Close Live editor',
     playInCodeSandbox: 'Open in CodeSandbox',
     playInStackBlitz: 'Open in StackBlitz',
+    playInPlayground: 'Open in VEUI Playground',
     resetFocus: 'Reset focus to test keyboard navigation'
   },
   {
@@ -94,7 +96,8 @@ i18n.register(
     expandEditor: '展开编辑器',
     shrinkEditor: '收缩编辑器',
     exit: '退出',
-    liveEdit: '实时编辑'
+    liveEdit: '实时编辑',
+    docs: '文档'
   },
   {
     ns: 'onerepl'
@@ -107,7 +110,8 @@ i18n.register(
     expandEditor: 'Expand editor',
     shrinkEditor: 'Shrink editor',
     exit: 'Exit',
-    liveEdit: 'Live Edit'
+    liveEdit: 'Live Edit',
+    docs: 'Docs'
   },
   {
     ns: 'onerepl'

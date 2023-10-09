@@ -8,7 +8,7 @@
   </veui-button>
 
   <veui-alert-box
-    type="success"
+    status="success"
     :open.sync="open1"
     title="Success"
     @ok="ok"
@@ -17,7 +17,7 @@
   </veui-alert-box>
 
   <veui-alert-box
-    type="success"
+    status="success"
     :open.sync="open2"
     @ok="ok"
   >

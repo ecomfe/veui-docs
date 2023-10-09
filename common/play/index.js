@@ -1,5 +1,7 @@
 import { loading } from 'dls-graphics'
 import sdk from '@stackblitz/sdk'
+import { utoa } from '../util'
+import config from '../config'
 /* eslint-disable import/no-webpack-loader-syntax */
 import packageCodeSandbox from '!!raw-loader!./templates/package.codesandbox'
 import packageStackBlitz from '!!raw-loader!./templates/package.stackblitz'
@@ -33,11 +35,16 @@ const PLAYGROUND_FILES = {
 
 const PLAY_IMPLS = {
   CodeSandbox: createCodeSandbox,
-  StackBlitz: createStackBlitz
+  StackBlitz: createStackBlitz,
+  VEUI: createPlayground
 }
 
 export function play (sfc, { locale, vendor }) {
   PLAY_IMPLS[vendor](sfc, { locale })
+}
+
+export function createPlayground (sfc) {
+  window.open(`/play#${utoa(JSON.stringify({ code: sfc, theme: config.value.theme || undefined }))}`, '_blank')
 }
 
 const API_CSB = 'https://codesandbox.io/api/v1/sandboxes/define'

@@ -12,6 +12,10 @@ export default ({ app }) => {
   document.documentElement.addEventListener('click', clearTarget)
 
   app.router.afterEach(to => {
+    if (document.querySelector('.repl.standalone')) {
+      return
+    }
+
     clearTarget()
 
     if (!to.hash) {

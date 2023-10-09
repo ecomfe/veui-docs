@@ -4,8 +4,6 @@
     <one-header
       ref="header"
       class="header"
-      :theme="config.theme"
-      @themechange="handleThemeChange"
     />
     <div class="body">
       <one-menu
@@ -50,6 +48,8 @@ import OneGoto from '../components/OneGoto'
 import OneQuickNav from '../components/OneQuickNav'
 import nav from '../common/nav'
 import i18n from '../common/i18n'
+import { loadPref } from '../common/util'
+import config from '../common/config'
 
 function isEditingContent (event) {
   const element = event.target
@@ -80,10 +80,7 @@ export default {
   mixins: [i18n],
   data () {
     return {
-      config: {
-        'link.routerLink': 'nuxt-link',
-        theme: ''
-      },
+      config: config.value,
       expanded: false,
       quickNavOpen: false
     }
@@ -134,6 +131,7 @@ export default {
     }
   },
   mounted () {
+    config.value.theme = loadPref('theme') || ''
     window.addEventListener('keydown', this.handleGlobalKeydown)
   },
   beforeDestroy () {
@@ -159,9 +157,6 @@ export default {
           }
         }
       }
-    },
-    handleThemeChange (theme) {
-      this.config.theme = theme
     }
   }
 }

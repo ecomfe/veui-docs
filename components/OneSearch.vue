@@ -154,7 +154,7 @@ export default {
 .docsearch
   display none
 
-@media (max-width 480px)
+@media (max-width 720px)
   .button
     display flex
     align-items center

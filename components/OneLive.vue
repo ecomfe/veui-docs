@@ -20,6 +20,14 @@
     />
     <div class="editor-toolbar">
       <veui-button
+        v-if="!standalone"
+        v-tooltip="t('@onedemo.playInPlayground')"
+        :ui="iconUi"
+        @click="play('VEUI')"
+      >
+        <veui-icon name="external-link"/>
+      </veui-button>
+      <veui-button
         v-tooltip="t('@onedemo.playInCodeSandbox')"
         :ui="iconUi"
         @click="play('CodeSandbox')"
@@ -97,7 +105,7 @@
         v-if="error"
         v-tooltip="t('dismiss')"
         ui="s"
-        type="error"
+        status="error"
         class="editor-error"
         @click.native="dismissError"
       >
@@ -124,6 +132,7 @@ import i18n from 'veui/mixins/i18n'
 import toast from 'veui/plugins/toast'
 import 'veui-theme-dls-icons/copy'
 import 'veui-theme-dls-icons/anticlockwise'
+import 'veui-theme-dls-icons/external-link'
 import { Splitpanes, Pane } from 'splitpanes'
 import 'splitpanes/dist/splitpanes.css'
 import { getLocale } from '../common/i18n'
@@ -137,6 +146,18 @@ Vue.use(toast)
 editor.defineTheme('night-owl', NightOwl)
 
 Icon.register({
+  'one-demo-codesandbox': {
+    width: 32,
+    height: 32,
+    d:
+      'M2.667 8l13.938-8l13.943 8l.12 15.932L16.605 32L2.667 24zm2.786 3.307v6.344l4.458 2.479v4.688l5.297 3.063V16.85zm22.318 0l-9.755 5.542V27.88l5.292-3.063v-4.682l4.464-2.484zM6.844 8.802l9.74 5.526l9.76-5.573l-5.161-2.932l-4.547 2.594l-4.573-2.625z'
+  },
+  'one-demo-stackblitz': {
+    width: 28,
+    height: 28,
+    d:
+      'M12.747 16.273h-7.46L18.925 1.5l-3.671 10.227h7.46L9.075 26.5l3.671-10.227z'
+  },
   'one-live-color-scheme-auto': {
     width: 24,
     height: 24,
@@ -190,7 +211,8 @@ export default {
       default: ''
     },
     browser: Boolean,
-    path: String
+    path: String,
+    standalone: Boolean
   },
   data () {
     return {
@@ -263,25 +285,23 @@ export default {
     }
   },
   watch: {
-    localCode: {
-      immediate: true,
-      handler (code) {
-        this.$nextTick(() => {
-          try {
-            this.transformedCode = transformLessCode(code)
-          } catch (e) {
-            this.error = e
-            return
-          }
-          this.error = null
-        })
+    code (val) {
+      if (this.localCode !== val) {
+        this.localCode = val
       }
+    },
+    localCode (val) {
+      this.$emit('codechange', val)
+      this.$nextTick(() => {
+        this.renderCode(val)
+      })
     },
     transformedCode () {
       this.copied = false
     }
   },
   mounted () {
+    this.renderCode(this.localCode)
     this.mql = window.matchMedia('(prefers-color-scheme: dark)')
     this.mql.addEventListener('change', this.handleColorSchemeChange)
     this.colorSchemeSystemPref = this.mql.matches ? 'dark' : 'light'
@@ -290,6 +310,15 @@ export default {
     this.mql.removeEventListener('change', this.handleColorSchemeChange)
   },
   methods: {
+    renderCode (code) {
+      try {
+        this.transformedCode = transformLessCode(code)
+      } catch (e) {
+        this.error = e
+        return
+      }
+      this.error = null
+    },
     play (vendor) {
       let locale = getLocale(this.$route.path)
       play(this.localCode, { locale, vendor })

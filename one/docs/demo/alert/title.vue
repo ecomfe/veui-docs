@@ -1,13 +1,13 @@
 <template>
 <article>
   <veui-alert
-    type="success"
+    status="success"
     title="消息标题"
   >
     Your profile has been updated.
   </veui-alert>
   <veui-alert
-    type="success"
+    status="success"
   >
     Your profile has been updated.
     <template #title>

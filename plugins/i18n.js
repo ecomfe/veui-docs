@@ -5,7 +5,10 @@ import i18nMgr from 'veui/managers/i18n'
 
 Vue.use(VueI18n)
 
-export default ({ app, route }) => {
+export default ({ app }) => {
   app.i18n = new VueI18n()
-  i18nMgr.locale = app.i18n.locale = getLocale(route.path)
+
+  app.router.afterEach(to => {
+    i18nMgr.locale = app.i18n.locale = getLocale(to.path)
+  })
 }
