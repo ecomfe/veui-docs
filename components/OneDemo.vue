@@ -31,6 +31,13 @@
   </section>
   <section class="actions">
     <veui-button
+      v-tooltip="t('playInPlayground')"
+      ui="icon"
+      @click="play('VEUI')"
+    >
+      <veui-icon name="external-link"/>
+    </veui-button>
+    <veui-button
       v-tooltip="t('playInCodeSandbox')"
       ui="icon"
       @click="play('CodeSandbox')"
@@ -129,6 +136,7 @@ import OneEditLink from './OneEditLink'
 import OneRepl from './OneRepl'
 import OneFocus from './OneFocus'
 import 'veui-theme-dls-icons/copy'
+import 'veui-theme-dls-icons/external-link'
 
 Vue.use(toast)
 
@@ -194,11 +202,6 @@ export default {
       track('play', { vendor, path: this.path })
     },
     trackCopy (action) {
-      if (this.copied) {
-        return
-      }
-
-      this.copied = true
       track('copy', { from: 'demo', path: this.path, action })
     },
     async copy () {

@@ -56,15 +56,23 @@ export function savePref (key, value) {
   localStorage.setItem(PREF_KEY, JSON.stringify(pref))
 }
 
+function urlBtoA (binary) {
+  return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_')
+}
+
+function urlAtoB (base64) {
+  return atob(base64.replace(/-/g, '+').replace(/_/g, '/'))
+}
+
 export function utoa (data) {
   const buffer = strToU8(data)
   const zipped = zlibSync(buffer, { level: 9 })
   const binary = strFromU8(zipped, true)
-  return btoa(binary)
+  return urlBtoA(binary)
 }
 
 export function atou (base64) {
-  const binary = atob(base64)
+  const binary = urlAtoB(base64)
 
   // zlib header (x78), level 9 (xDA)
   if (binary.startsWith('\x78\xDA')) {

@@ -41,8 +41,8 @@ export default {
   methods: {
     deserialize () {
       try {
-        const stringified = atou(location.hash.slice(1))
-        const { code, theme } = stringified ? JSON.parse(stringified) : {}
+        const hash = atou(location.hash.slice(1))
+        const { code, theme } = hash ? JSON.parse(hash) : {}
         this.code = code || ''
         config.value.theme = theme || ''
       } catch (e) {
@@ -50,11 +50,13 @@ export default {
       }
     },
     serialize () {
-      history.replaceState(
-        {},
-        '',
-        `#${utoa(JSON.stringify({ code: this.code, theme: config.value.theme || undefined }))}`
+      const hash = utoa(
+        JSON.stringify({
+          code: this.code,
+          theme: config.value.theme || undefined
+        })
       )
+      history.replaceState({}, '', `#${hash}`)
     },
     handleCodeChange (code) {
       this.code = code
