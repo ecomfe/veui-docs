@@ -27,7 +27,10 @@ module.exports = {
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1, maximum-scale=1'
+      },
       {
         hid: 'description',
         name: 'description',
@@ -41,8 +44,15 @@ module.exports = {
     link: [
       { rel: 'shortcut icon', href: 'https://www.baidu.com/favicon.ico' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Alata&display=swap' }
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: true
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Alata&display=swap'
+      }
     ]
   },
   /**
@@ -85,7 +95,8 @@ module.exports = {
       'vue-awesome',
       'resize-detector',
       'less-plugin-dls',
-      'dls-graphics'
+      'dls-graphics',
+      '@stackblitz/sdk'
     ],
 
     babel: {
@@ -143,7 +154,9 @@ module.exports = {
       })
 
       config.resolve.alias.vue$ = resolve('./patched/vue.esm.js')
-      config.resolve.alias['vue-inbrowser-compiler-utils'] = resolve('./patched/vue-inbrowser-compiler-utils.esm.js')
+      config.resolve.alias[
+        'vue-inbrowser-compiler-independent-utils/lib/vue-inbrowser-compiler-independent-utils.esm.mjs'
+      ] = resolve('./patched/vue-inbrowser-compiler-independent-utils.esm.mjs')
       config.resolve.alias['vue-monaco'] = '@justfork/vue-monaco'
 
       config.devtool = false
