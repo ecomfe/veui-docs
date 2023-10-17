@@ -12,9 +12,11 @@
       :options="{
         automaticLayout: true,
         minimap: {
-          enabled: false,
+          enabled: false
         },
-        scrollBeyondLastLine: false
+        scrollBeyondLastLine: false,
+        tabSize: 2,
+        fontLigatures: true
       }"
       @copy.native="trackCopy('system')"
     />
