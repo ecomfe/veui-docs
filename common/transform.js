@@ -6,7 +6,7 @@ export function transformLessCode (sfcCode) {
   return sfcCode.replace(lessRE, (_, p1, p2) => {
     const lessCode = p2.trim()
     const cssCode = render(lessCode)
-    return `<style${p1}>${cssCode}</style>`
+    return `<style${p1 || ''}>${cssCode}</style>`
   })
 }
 
