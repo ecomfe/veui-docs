@@ -306,6 +306,10 @@
           "sub": true
         },
         {
+          "title": "Rating - 评分",
+          "slug": "rating"
+        },
+        {
           "title": "Calendar - 日历",
           "slug": "calendar"
         },
@@ -750,6 +754,10 @@
           "title": "CheckButtonGroup",
           "slug": "check-button-group",
           "sub": true
+        },
+        {
+          "title": "Rating",
+          "slug": "rating"
         },
         {
           "title": "Calendar",
