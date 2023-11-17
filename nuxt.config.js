@@ -123,6 +123,18 @@ module.exports = {
       })
     ],
 
+    postcss: {
+      postcssOptions: {
+        plugins: {
+          'postcss-preset-env': {
+            features: {
+              'image-set-function': false
+            }
+          }
+        }
+      }
+    },
+
     extend (config) {
       /**
        * veui-loader

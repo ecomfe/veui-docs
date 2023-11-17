@@ -71,7 +71,7 @@
 | 名称 | 描述 |
 | -- | -- |
 | ``symbol`` | [^slot-symbol] |
-| ``label`` | [^slot-label]。 |
+| ``label`` | [^slot-label] |
 
 ^^^slot-symbol
 每个评分项的符号区域。
