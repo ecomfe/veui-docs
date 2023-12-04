@@ -1,7 +1,7 @@
 # Dropdown
 
 :::tip
-`Dropdown` can be used with embedded [`Option`](./option) or [`OptionGroup`](./option-group).
+`Dropdown` can be used with inline [`Option`](./option) or [`OptionGroup`](./option-group).
 :::
 
 ## Examples
@@ -18,13 +18,13 @@ Available size values for the [`ui`](#props-ui) prop: `xs` / `s` / `m` / `l`.
 
 [[ demo src="/demo/dropdown/size.vue" ]]
 
-### Embedded options
+### Inline options
 
-Can be used with embedded `OptionGroup`s & `Option`s.
+Can be used with inline `OptionGroup`s & `Option`s.
 
 [[ demo src="/demo/dropdown/inline.vue" ]]
 
-### Searchable dropdown
+### Searchable
 
 Using[`searchable`](#props-searchable) prop to make the component support search functionality.
 

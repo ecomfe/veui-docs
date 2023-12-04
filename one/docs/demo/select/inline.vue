@@ -98,5 +98,5 @@ export default {
 </docs>
 
 <docs locale="en-US">
-`clearable` can be used to allow selected values to be discarded for `Select`. Set `position` of the embedded `OptionGroup`s to `popup` to display children options inside a popup menu.
+`clearable` can be used to allow selected values to be discarded for `Select`. Set `position` of the inline `OptionGroup`s to `popup` to display children options inside a popup menu.
 </docs>

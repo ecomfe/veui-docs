@@ -24,19 +24,19 @@
 
 [[ demo src="/demo/dropdown/inline.vue" ]]
 
-### 含搜索的下拉框菜单
+### 可搜索
 
 使用 [`searchable`](#props-searchable) 属性使组件支持搜索并高亮显示符合条件的选项。
 
 [[ demo src="/demo/dropdown/searchable.vue" ]]
 
-### 禁用状态的下拉框菜单
+### 禁用
 
 使用数据源中的 [`disabled`](#props-disabled) 属性来禁用下拉项。
 
 [[ demo src="/demo/dropdown/disable.vue" ]]
 
-### 下拉触发时机与分离按钮
+### 触发时机与分离按钮
 
 使用 [`trigger`](#props-trigger) 属性指定展开下拉菜单的时机，使用 [`split`](#props-split) 属性来使命令按钮与下拉按钮分离。
 
