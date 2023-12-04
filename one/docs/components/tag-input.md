@@ -57,6 +57,7 @@
 | ``readonly`` | `boolean` | `false` | 标签输入框是否为只读状态。 |
 | ``placeholder`` | `string` | - | 输入占位符。 |
 | ``clearable`` | `boolean` | `false` | 是否显示清除按钮。 |
+| ``autofocus`` | `boolean` | `false` | 是否自动聚焦。 |
 | ``maxlength`` | `number` | - | 最大可输入的字符长度。 |
 | ``max`` | `number` | - | 允许输入的标签数上限。 |
 | ``strict`` | `boolean | Object` | `false` | [^strict] |

@@ -37,6 +37,7 @@
 | ``clearable`` | `boolean` | `false` | 是否显示清除按钮。 |
 | ``select-on-focus`` | `boolean` | `false` | 聚焦时是否自动选择文本。 |
 | ``composition`` | `boolean` | `false` | 是否感知输入法状态。 |
+| ``autofocus`` | `boolean` | `false` | 是否自动聚焦。 |
 | ``suggestions`` | `Array<string>|Array<Object>` | - | [^suggestions] |
 | ``replace-on-select`` | `boolean` | `true` | 选择推荐项时是否自动使用其内容填充文本框。 |
 | ``maxlength`` | `number` | - | 最大可输入的字符长度。 |

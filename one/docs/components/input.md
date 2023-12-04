@@ -46,6 +46,7 @@
 | ``placeholder`` | `string` | - | 输入占位符。 |
 | ``clearable`` | `boolean` | `false` | 是否显示清除按钮。 |
 | ``composition`` | `boolean` | `false` | 是否感知输入法输入过程的值。 |
+| ``autofocus`` | `boolean` | `false` | 输入框是否自动聚焦。 |
 | ``select-on-focus`` | `boolean` | `false` | 聚焦时是否自动选中输入框文本。 |
 | ``maxlength`` | `number` | - | 最大可输入的字符长度。 |
 | ``get-length`` | `function(string): number` | - | 自定义的字符长度计算函数。 |

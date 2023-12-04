@@ -33,10 +33,10 @@ Available [`ui`](#props-ui) prop values: `xs` / `s` / `m` / `l`.
 | ``disabled`` | `boolean` | `false` | Whether the input is disabled. |
 | ``readonly`` | `boolean` | `false` | Whether the input is read-only. |
 | ``placeholder`` | `string` | - | Placeholder text of the search box. |
-| ``autofocus`` | `boolean` | `false` | Whether the input is autofocus. |
 | ``clearable`` | `boolean` | `false` | Whether to show the clear button. |
 | ``select-on-focus`` | `boolean` | `false` | Whether to select text on focus. |
 | ``composition`` | `boolean` | `false` | Whether to enable composition mode. |
+| ``autofocus`` | `boolean` | `false` | Whether the input is autofocus. |
 | ``suggestions`` | `Array<string>|Array<Object>` | - | [^suggestions] |
 | ``replace-on-select`` | `boolean` | `true` | Whether to replace input with selected suggestion. |
 | ``maxlength`` | `number` | - | Maximum length of input. |

@@ -57,6 +57,7 @@ Use the [`tag`](#slots-tag) slot to customize the display of tags.
 | ``readonly`` | `boolean` | `false` | Whether the tag input is read-only. |
 | ``placeholder`` | `string` | - | Input placeholder. |
 | ``clearable`` | `boolean` | `false` | Whether to show the clear button. |
+| ``autofocus`` | `boolean` | `false` | Whether to autofocus the tag input. |
 | ``maxlength`` | `number` | - | The maximum number of characters that can be entered. |
 | ``max`` | `number` | - | The maximum number of tags that can be added. |
 | ``strict`` | `boolean | Object` | `false` | [^strict] |

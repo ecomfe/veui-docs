@@ -46,6 +46,7 @@ Set the [`trim`](#props-trim) prop to automatically remove leading and trailing 
 | ``placeholder`` | `string` | - | Placeholder text for the input field. |
 | ``clearable`` | `boolean` | `false` | Whether to show the clear button. |
 | ``composition`` | `boolean` | `false` | Whether to handle input composition. |
+| ``autofocus`` | `boolean` | `false` | Whether to autofocus the input. |
 | ``select-on-focus`` | `boolean` | `false` | Whether to select the input field text on focus. |
 | ``maxlength`` | `number` | - | The maximum length of input characters. |
 | ``get-length`` | `function(string): number` | - | Custom function to calculate the length of input characters. |

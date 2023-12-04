@@ -39,6 +39,7 @@ Set the [`step`](#props-step) prop to specify the value of each increment/decrem
 | ``readonly`` | `boolean` | `false` | Whether the number input box is in readonly state. |
 | ``disabled`` | `boolean` | `false` | Whether the number input box is disabled. |
 | ``placeholder`` | `string` | - | Input placeholder. |
+| ``autofocus`` | `boolean` | `false` | Whether to autofocus the number input. |
 | ``select-on-focus`` | `boolean` | `false` | Whether to automatically select the text in the number input box when focused. |
 | ``max`` | `number` | - | The maximum allowed value. |
 | ``min`` | `number` | - | The minimum allowed value. |

@@ -41,12 +41,12 @@ Set the [`match`](#props-match) prop to customize highlight logic and the [`filt
 | ``placeholder`` | `string` | - | The placeholder text. |
 | ``clearable`` | `boolean` | `false` | Whether to show the clear button. |
 | ``composition`` | `boolean` | `false` | Whether to perceive the value during the input method editor (IME) input process. |
+| ``autofocus`` | `boolean` | `false` | Whether to automatically focus the input. |
 | ``select-on-focus`` | `boolean` | `false` | Whether to automatically select the input box text when focused. |
 | ``maxlength`` | `number` | - | The maximum length of the input string. |
 | ``strict`` | `boolean | Object` | `false` | [^strict] |
 | ``get-length`` | `function(string): number` | A custom function to calculate the length of characters. |
 | ``trim`` | `boolean | string` | `false` | [^trim] |
-| ``autofocus`` | `boolean` | `false` | Whether to automatically focus the input. |
 | ``overlay-class`` | `string | Array | Object` | - | Refers to the [`overlay-class`](./overlay#props-overlay-class) prop of the [`Overlay`](./overlay) component. |
 | ``overlay-style`` | `string | Array | Object` | - | Refers to the [`overlay-style`](./overlay#props-overlay-style) prop of the [`Overlay`](./overlay) component. |
 

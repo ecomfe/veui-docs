@@ -39,6 +39,7 @@
 | ``readonly`` | `boolean` | `false` | 数字输入框是否为只读状态。 |
 | ``disabled`` | `boolean` | `false` | 数字输入框是否为禁用状态。 |
 | ``placeholder`` | `string` | - | 输入占位符。 |
+| ``autofocus`` | `boolean` | `false` | 数字输入框是否自动聚焦。 |
 | ``select-on-focus`` | `boolean` | `false` | 聚焦时是否自动选中数字输入框文本。 |
 | ``max`` | `number` | - | 允许的最大值。 |
 | ``min`` | `number` | - | 允许的最小值。 |
