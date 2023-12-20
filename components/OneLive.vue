@@ -24,6 +24,7 @@
       <veui-button
         v-if="!standalone"
         v-tooltip="t('@onedemo.playInPlayground')"
+        class="button"
         :ui="iconUi"
         @click="play('VEUI')"
       >
@@ -31,6 +32,7 @@
       </veui-button>
       <veui-button
         v-tooltip="t('@onedemo.playInCodeSandbox')"
+        class="button"
         :ui="iconUi"
         @click="play('CodeSandbox')"
       >
@@ -38,6 +40,7 @@
       </veui-button>
       <veui-button
         v-tooltip="t('@onedemo.playInStackBlitz')"
+        class="button"
         :ui="iconUi"
         @click="play('StackBlitz')"
       >
@@ -45,6 +48,7 @@
       </veui-button>
       <veui-button
         v-tooltip="t('reset')"
+        class="button"
         :ui="iconUi"
         @click="reset"
       >
@@ -52,6 +56,7 @@
       </veui-button>
       <veui-button
         v-tooltip="t('copyCode')"
+        class="button"
         :ui="iconUi"
         @click="copy"
       >
@@ -59,6 +64,7 @@
       </veui-button>
       <veui-button
         v-tooltip="t(colorSchemeLabelKey)"
+        class="button"
         :ui="iconUi"
         @click="switchColorScheme"
       >
@@ -82,7 +88,7 @@
     <one-iframe
       v-if="browser"
       live
-      global-style="body { margin: 0 !important; } body > article { margin: 24px 36px; } .veui-layout { min-width: auto !important; }"
+      global-style="body { margin: 0 !important; } body > article { margin: 24px 36px; } .veui-layout, .veui-ai-layout { min-width: auto !important; }"
     >
       <v-live-preview
         class="editor-preview"
@@ -449,7 +455,7 @@ export default {
     transform scale(0.95)
     box-shadow 0 0 0 0 rgba(255, 255, 255, 0)
 
-.veui-button[ui~="icon"][ui~="reverse"]
+.button[ui~="icon"][ui~="reverse"]
   color #ebedf5
 
   &:hover

@@ -38,7 +38,7 @@ module.exports = {
       },
       {
         name: 'theme-color',
-        content: '#0052cc'
+        content: '#0054e6'
       }
     ],
     link: [
@@ -58,7 +58,7 @@ module.exports = {
   /**
    * Customize the progress bar color
    */
-  loading: { color: '#0052cc' },
+  loading: { color: '#0054e6' },
 
   pageTransition: {
     css: false
@@ -67,8 +67,7 @@ module.exports = {
   css: [
     'veui-theme-dls/common.less',
     'veui-theme-dls/typography.less',
-    '@/assets/styles/global.styl',
-    'veui-theme-dls/'
+    '@/assets/styles/global.styl'
   ],
 
   plugins: [
@@ -146,6 +145,16 @@ module.exports = {
         options: {
           locale: ['zh-Hans', 'en-US'],
           modules: [
+            {
+              package: 'veui-theme-dls',
+              path: 'dist/themes/d22/components',
+              fileName: '{module}.css'
+            },
+            {
+              package: 'veui-theme-dls',
+              path: 'dist/themes/ai/components',
+              fileName: '{module}.css'
+            },
             {
               package: 'veui-theme-dls',
               fileName: '{module}.js',

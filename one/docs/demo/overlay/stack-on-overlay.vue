@@ -2,6 +2,7 @@
 <article>
   <veui-button
     ref="parent"
+    class="button"
     @click="parentOpen = !parentOpen"
   >
     Toggle
@@ -14,6 +15,7 @@
   >
     <veui-button
       ref="child"
+      class="button"
       @click="childOpen = !childOpen"
     >
       Toggle
@@ -28,6 +30,7 @@
     </veui-overlay>
   </veui-overlay>
   <veui-button
+    class="button"
     ui="xs"
     @click="parentOpen = childOpen = false"
   >
@@ -61,10 +64,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-overlay {
-  display: none;
-}
-
 .relative-overlay {
   width: 200px;
   height: 100px;
@@ -73,7 +72,7 @@ export default {
   border: 1px solid #dbdbdb;
   background-color: #fff;
 
-  .veui-button {
+  .button {
     margin-left: 10px;
   }
 }

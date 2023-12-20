@@ -5,7 +5,7 @@
     :gutter="10"
     :margin="0"
   >
-    <veui-grid-row>
+    <veui-grid-row class="row">
       <veui-grid-column :span="3">
         <div class="content">
           3/12
@@ -17,7 +17,7 @@
         </div>
       </veui-grid-column>
     </veui-grid-row>
-    <veui-grid-row>
+    <veui-grid-row class="row">
       <veui-grid-column :span="4">
         <div class="content">
           4/12
@@ -56,7 +56,7 @@ article {
   padding: 10px 12px;
 }
 
-.veui-grid-row {
+.row {
   & + & {
     margin: 2px 0; /* Just for showcase */
   }

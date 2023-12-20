@@ -1,21 +1,23 @@
 <template>
 <article>
   <veui-loading
+    class="loading"
     loading
     ui="normal"
   >
     Normal
   </veui-loading>
   <veui-loading
+    class="loading"
     loading
     ui="strong"
   >
     Strong
   </veui-loading>
   <veui-loading
+    class="loading reverse"
     loading
     ui="reverse"
-    class="reverse"
   >
     Reverse
   </veui-loading>
@@ -33,7 +35,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-loading {
+.loading {
   margin-left: 1em;
 }
 

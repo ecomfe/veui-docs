@@ -1,24 +1,45 @@
 <template>
 <article>
-  <veui-button @click="openDialog('s')">
+  <veui-button
+    class="button"
+    @click="openDialog('s')"
+  >
     s
   </veui-button>
-  <veui-button @click="openDialog('m')">
+  <veui-button
+    class="button"
+    @click="openDialog('m')"
+  >
     m
   </veui-button>
-  <veui-button @click="openDialog('narrow')">
+  <veui-button
+    class="button"
+    @click="openDialog('narrow')"
+  >
     narrow
   </veui-button>
-  <veui-button @click="openDialog('medium')">
+  <veui-button
+    class="button"
+    @click="openDialog('medium')"
+  >
     medium
   </veui-button>
-  <veui-button @click="openDialog('wide')">
+  <veui-button
+    class="button"
+    @click="openDialog('wide')"
+  >
     wide
   </veui-button>
-  <veui-button @click="openDialog('fullscreen')">
+  <veui-button
+    class="button"
+    @click="openDialog('fullscreen')"
+  >
     fullscreen
   </veui-button>
-  <veui-button @click="openDialog('auto')">
+  <veui-button
+    class="button"
+    @click="openDialog('auto')"
+  >
     auto
   </veui-button>
   <veui-dialog
@@ -28,7 +49,9 @@
   >
     <section>Current UI: "{{ ui }}"</section>
     <section v-if="ui === 's' || ui === 'm'">
-      <veui-button>Button size: {{ ui }}</veui-button>
+      <veui-button class="button">
+        Button size: {{ ui }}
+      </veui-button>
       <veui-switch>{{ ui }}</veui-switch>
     </section>
   </veui-dialog>
@@ -60,7 +83,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-button {
+.button {
   margin-right: 20px;
 }
 </style>

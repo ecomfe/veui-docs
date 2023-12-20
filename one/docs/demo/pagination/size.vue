@@ -2,6 +2,7 @@
 <article>
   <section>
     <veui-pagination
+      class="pagination"
       :page="page"
       :total="total"
       :to="to"
@@ -9,6 +10,7 @@
   </section>
   <section>
     <veui-pagination
+      class="pagination"
       :page="page"
       :total="total"
       :to="to"
@@ -17,6 +19,7 @@
   </section>
   <section>
     <veui-pagination
+      class="pagination"
       :page="page"
       :total="total"
       :to="to"
@@ -52,7 +55,7 @@ article {
   text-align: right;
 }
 
-.veui-pagination {
+.pagination {
   margin: 1.2em 0;
 }
 </style>

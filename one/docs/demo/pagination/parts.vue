@@ -1,13 +1,22 @@
 <template>
 <article>
   <section class="toggles">
-    <veui-checkbox v-model="showTotal">
+    <veui-checkbox
+      v-model="showTotal"
+      class="checkbox"
+    >
       Show total
     </veui-checkbox>
-    <veui-checkbox v-model="showPageSize">
+    <veui-checkbox
+      v-model="showPageSize"
+      class="checkbox"
+    >
       Show page size
     </veui-checkbox>
-    <veui-checkbox v-model="showGoto">
+    <veui-checkbox
+      v-model="showGoto"
+      class="checkbox"
+    >
       Show goto
     </veui-checkbox>
   </section>
@@ -54,7 +63,7 @@ export default {
   margin-bottom: 20px;
 }
 
-.veui-checkbox + .veui-checkbox {
+.checkbox + .checkbox {
   margin-left: 16px;
 }
 </style>

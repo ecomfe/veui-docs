@@ -24,16 +24,32 @@ By using the corresponding configuration of [`veui-loader`](./veui-loader), you 
 
 #### Built-in Sub-Themes
 
-The `veui-theme-dls` theme package comes with several built-in sub-themes that can be switched using the ui attribute. For example:
+The `veui-theme-dls` theme package comes with several built-in sub-themes that can be switched using the `theme` prop. For example:
 
 ```html
-<veui-input ui="theme:d22"/>
+<veui-search-box theme="d22"/>
 ```
 
-[[ demo src="/demo/style/d22.vue" ]]
+[[ demo src="/demo/style/theme.vue" ]]
+
+##### Available Subthemes
+
+| Name | Description |
+| -- | -- |
+| `d20` | D20 theme, the default theme. |
+| `d22` | D22 theme, shares styling tokens with D20 but features borderless design for input-type components. |
+| `ai` | [^theme-ai] |
+
+^^^theme-ai
+AI theme, an upgraded version based on D22 with enhanced styling tokens. When coexisting with D22, both sets of styles need to be loaded simultaneously. You can see how to configure this at [Getting started › Vue CLI configs](/getting-started#vue-cli-configs).
+
+:::warning
+When components are switched to the `ai` theme, the class prefix in the output will change to `veui-ai` to avoid conflicts when coexisting with the D22 theme.
+:::
+^^^
 
 :::tip
-In addition to specifying it directly with `ui="theme:d22"`, you can also set `{ theme: 'd22' }` for the [ConfigProvider](../components/config-provider) component to specify the sub-theme. Components within the specified sub-theme will automatically inherit it.
+In addition to specifying it directly with `theme="d22"`, you can also set `{ theme: 'd22' }` for the [ConfigProvider](../components/config-provider) component to specify the sub-theme. Components within the specified sub-theme will automatically inherit it.
 :::
 
 ### Custom preset styles

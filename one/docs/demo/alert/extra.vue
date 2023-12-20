@@ -1,6 +1,7 @@
 <template>
 <article>
   <veui-alert
+    class="alert"
     status="success"
     ui="strong"
     message="恭喜你，你的请求已成功处理"
@@ -31,7 +32,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-alert {
+.alert {
   margin-bottom: 20px;
 }
 </style>

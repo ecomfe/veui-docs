@@ -1,24 +1,45 @@
 <template>
 <article>
   <div class="container">
-    <veui-search-box ui="strong xs"/>
+    <veui-search-box
+      class="search-box"
+      ui="strong xs"
+    />
   </div>
   <div class="container">
-    <veui-search-box ui="strong s"/>
+    <veui-search-box
+      class="search-box"
+      ui="strong s"
+    />
   </div>
   <div class="container">
-    <veui-search-box ui="strong"/>
+    <veui-search-box
+      class="search-box"
+      ui="strong"
+    />
   </div>
   <div class="container">
-    <veui-search-box ui="strong l"/>
+    <veui-search-box
+      class="search-box"
+      ui="strong l"
+    />
   </div>
   <div class="container">
-    <veui-search-box ui="xs"/>
-    <veui-search-box ui="s"/>
+    <veui-search-box
+      class="search-box"
+      ui="xs"
+    />
+    <veui-search-box
+      class="search-box"
+      ui="s"
+    />
   </div>
   <div class="container">
-    <veui-search-box/>
-    <veui-search-box ui="l"/>
+    <veui-search-box class="search-box"/>
+    <veui-search-box
+      class="search-box"
+      ui="l"
+    />
   </div>
 </article>
 </template>
@@ -36,7 +57,7 @@ export default {
 <style lang="less" scoped>
 .container {
   margin-bottom: 1em;
-  .veui-search-box {
+  .search-box {
     margin-right: 1em;
   }
 }

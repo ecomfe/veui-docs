@@ -1,19 +1,31 @@
 <template>
 <article>
   <section>
-    <veui-badge status="success">
+    <veui-badge
+      class="badge"
+      status="success"
+    >
       Running
     </veui-badge>
-    <veui-badge status="info">
+    <veui-badge
+      class="badge"
+      status="info"
+    >
       New
     </veui-badge>
-    <veui-badge>
+    <veui-badge class="badge">
       Rejected
     </veui-badge>
-    <veui-badge status="warning">
+    <veui-badge
+      class="badge"
+      status="warning"
+    >
       Auditing
     </veui-badge>
-    <veui-badge status="aux">
+    <veui-badge
+      class="badge"
+      status="aux"
+    >
       Expired
     </veui-badge>
   </section>
@@ -35,7 +47,7 @@ section {
   margin-bottom: 1em;
 }
 
-.veui-badge {
+.badge {
   & + & {
     margin-left: 30px;
   }

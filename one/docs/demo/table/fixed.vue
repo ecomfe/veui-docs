@@ -130,10 +130,6 @@ section {
 h4 {
   margin-top: 0;
 }
-
-.veui-checkbox {
-  margin-right: 20px;
-}
 </style>
 
 <docs>

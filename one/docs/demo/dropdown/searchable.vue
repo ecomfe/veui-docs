@@ -1,6 +1,7 @@
 <template>
 <article>
   <veui-dropdown
+    class="dropdown"
     label="Operation"
     placeholder="Type to search..."
     searchable
@@ -162,7 +163,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-dropdown {
+.dropdown {
   margin-left: 1em;
 }
 </style>

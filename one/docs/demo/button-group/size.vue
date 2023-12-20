@@ -1,22 +1,37 @@
 <template>
 <article>
-  <veui-button-group ui="xl">
+  <veui-button-group
+    class="group"
+    ui="xl"
+  >
     <veui-button>Undo</veui-button>
     <veui-button>Redo</veui-button>
   </veui-button-group>
-  <veui-button-group ui="l">
+  <veui-button-group
+    class="group"
+    ui="l"
+  >
     <veui-button>Undo</veui-button>
     <veui-button>Redo</veui-button>
   </veui-button-group>
-  <veui-button-group ui="m">
+  <veui-button-group
+    class="group"
+    ui="m"
+  >
     <veui-button>Undo</veui-button>
     <veui-button>Redo</veui-button>
   </veui-button-group>
-  <veui-button-group ui="s">
+  <veui-button-group
+    class="group"
+    ui="s"
+  >
     <veui-button>Undo</veui-button>
     <veui-button>Redo</veui-button>
   </veui-button-group>
-  <veui-button-group ui="xs">
+  <veui-button-group
+    class="group"
+    ui="xs"
+  >
     <veui-button>Undo</veui-button>
     <veui-button>Redo</veui-button>
   </veui-button-group>
@@ -35,7 +50,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-button-group {
+.group {
   margin-right: 1em;
 }
 </style>

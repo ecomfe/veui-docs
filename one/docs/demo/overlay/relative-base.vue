@@ -2,6 +2,7 @@
 <article>
   <veui-button
     ref="toggle"
+    class="button"
     @click="open = !open"
   >
     Toggle
@@ -42,10 +43,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-overlay {
-  display: none;
-}
-
 .relative-overlay {
   width: 200px;
   height: 100px;
@@ -54,7 +51,7 @@ export default {
   border: 1px solid #dbdbdb;
   background-color: #fff;
 
-  .veui-button {
+  .button {
     margin-left: 10px;
   }
 }

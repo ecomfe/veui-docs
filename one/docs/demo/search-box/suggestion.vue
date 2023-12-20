@@ -2,6 +2,7 @@
 <article>
   <veui-search-box
     v-model="value"
+    class="search-box"
     clearable
     :suggestions="suggestions"
     replace-on-select
@@ -9,6 +10,7 @@
   />
   <veui-search-box
     v-model="value1"
+    class="search-box"
     ui="strong"
     clearable
     :suggestions="suggestions1"
@@ -71,7 +73,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.veui-search-box {
+.search-box {
   margin-left: 1em;
 }
 </style>

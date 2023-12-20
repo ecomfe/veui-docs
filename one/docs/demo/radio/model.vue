@@ -4,6 +4,7 @@
     v-for="({ value, label }) in flavors"
     :key="value"
     v-model="flavor"
+    class="radio"
     :value="value"
   >
     {{ label }}
@@ -41,7 +42,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-radio {
+.radio {
   margin-right: 20px;
 }
 </style>

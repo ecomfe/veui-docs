@@ -63,6 +63,10 @@ module.exports = {
 }
 ```
 
+:::tip
+If you want to simultaneously support the AI theme in veui-theme-dls and other themes at runtime, please set the environment variable VEUI_STYLE=dual. This will import both the precompiled styles for D22 (including D20) and the AI theme at the same time. But please note that at this point, both sets of styles output are precompiled CSS files. There is no need for configuring Less options, and modifying Less variables is not supported.
+:::
+
 For more details on configuring `veui-loader`, please visit [here](/getting-started/veui-loader).
 
 +++Why do we need to configure these options?

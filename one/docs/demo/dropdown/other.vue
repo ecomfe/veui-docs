@@ -2,18 +2,21 @@
 <article>
   <div class="container">
     <veui-dropdown
+      class="dropdown"
       label="Operation"
       split
       trigger="hover"
       :options="options"
     />
     <veui-dropdown
+      class="dropdown"
       label="Operation"
       split
       trigger="click"
       :options="options"
     />
     <veui-dropdown
+      class="dropdown"
       label="Operation"
       ui="primary"
       split
@@ -21,6 +24,7 @@
       :options="options"
     />
     <veui-dropdown
+      class="dropdown"
       label="Operation"
       ui="primary"
       split
@@ -30,16 +34,19 @@
   </div>
   <div class="container">
     <veui-dropdown
+      class="dropdown"
       label="Operation"
       trigger="hover"
       :options="options"
     />
     <veui-dropdown
+      class="dropdown"
       label="Operation"
       trigger="click"
       :options="options"
     />
     <veui-dropdown
+      class="dropdown"
       label="Operation"
       ui="text"
       split
@@ -47,6 +54,7 @@
       :options="options"
     />
     <veui-dropdown
+      class="dropdown"
       label="Operation"
       ui="text"
       split
@@ -125,9 +133,9 @@ export default {
 <style lang="less" scoped>
 .container {
   margin-bottom: 1em;
+}
 
-  .veui-dropdown {
-    margin-left: 1em;
-  }
+.dropdown {
+  margin-left: 1em;
 }
 </style>

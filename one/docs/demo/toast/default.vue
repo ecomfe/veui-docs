@@ -2,6 +2,7 @@
 <article>
   <section>
     <veui-toast
+      class="toast"
       status="info"
       open
       message="Press any key to continue..."
@@ -9,6 +10,7 @@
   </section>
   <section>
     <veui-toast
+      class="toast"
       status="success"
       open
       message="Your profile has been updated."
@@ -16,6 +18,7 @@
   </section>
   <section>
     <veui-toast
+      class="toast"
       status="warning"
       open
     >
@@ -24,6 +27,7 @@
   </section>
   <section>
     <veui-toast
+      class="toast"
       status="error"
       open
       message="Uncaught SyntaxError: Unexpected token +"
@@ -43,7 +47,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-toast {
+.toast {
   position: relative;
 }
 

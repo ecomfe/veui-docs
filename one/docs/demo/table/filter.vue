@@ -2,7 +2,10 @@
 <article>
   <section>
     <h4>Layout</h4>
-    <veui-checkbox v-model="crowded">
+    <veui-checkbox
+      v-model="crowded"
+      class="checkbox"
+    >
       Crowded layout
     </veui-checkbox>
   </section>
@@ -31,7 +34,10 @@
           {{ bid | currency }}
         </template>
         <template #filter="{ close }">
-          <veui-checkbox v-model="filtered">
+          <veui-checkbox
+            v-model="filtered"
+            class="checkbox"
+          >
             &gt;800
           </veui-checkbox>
         </template>
@@ -131,7 +137,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-checkbox {
+.checkbox {
   margin: 8px 16px;
 }
 

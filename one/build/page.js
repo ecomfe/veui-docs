@@ -85,7 +85,7 @@ function renderFile (file) {
 export function renderDocToPage (file) {
   let src = resolve(DOCS_DIR, file)
   let dest = resolve(PAGES_DIR, replaceExtSync(file, 'vue'))
-  let { contents, data } = renderFile(src, dest)
+  let { contents, data } = renderFile(src)
   let {
     demos = {},
     components = {},

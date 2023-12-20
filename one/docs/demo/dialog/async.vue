@@ -1,12 +1,14 @@
 <template>
 <article>
   <veui-button
+    class="button"
     :disabled="submitting"
     @click="submitOpen = true"
   >
     Submit
   </veui-button>
   <veui-button
+    class="button"
     :disabled="saving"
     @click="saveOpen = true"
   >
@@ -106,7 +108,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-article > .veui-button {
+.button {
   margin-right: 20px;
 }
 </style>

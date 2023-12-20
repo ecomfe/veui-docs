@@ -1,6 +1,9 @@
 <template>
 <article>
-  <veui-button @click="aOpen = true">
+  <veui-button
+    class="button"
+    @click="aOpen = true"
+  >
     Dialog A
   </veui-button>
   <veui-dialog
@@ -14,7 +17,10 @@
     The content of Dialog A.
   </veui-dialog>
 
-  <veui-button @click="bOpen = true">
+  <veui-button
+    class="button"
+    @click="bOpen = true"
+  >
     Dialog B
   </veui-button>
   <veui-dialog
@@ -48,7 +54,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-button {
+.button {
   margin-right: 20px;
 }
 </style>

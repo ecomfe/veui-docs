@@ -21,7 +21,8 @@ export default {
     return {
       themes: [
         { label: 'D20', value: '' },
-        { label: 'D22', value: 'd22' }
+        { label: 'D22', value: 'd22' },
+        { label: 'AI', value: 'ai' }
       ]
     }
   },

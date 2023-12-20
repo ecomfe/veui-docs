@@ -1,27 +1,34 @@
 <template>
 <article>
   <veui-badge
+    class="badge"
     value="New"
     status="success"
   >
     <veui-button>View</veui-button>
   </veui-badge>
   <veui-badge
+    class="badge"
     value="New"
     status="info"
   >
     <veui-button>View</veui-button>
   </veui-badge>
-  <veui-badge value="New">
+  <veui-badge
+    class="badge"
+    value="New"
+  >
     <veui-button>View</veui-button>
   </veui-badge>
   <veui-badge
+    class="badge"
     value="New"
     status="warning"
   >
     <veui-button>View</veui-button>
   </veui-badge>
   <veui-badge
+    class="badge"
     value="New"
     status="aux"
   >
@@ -42,7 +49,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-badge {
+.badge {
   & + & {
     margin-left: 2em;
   }

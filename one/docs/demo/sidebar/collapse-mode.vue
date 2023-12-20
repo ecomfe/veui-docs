@@ -1,6 +1,8 @@
 <template>
 <veui-layout>
-  <veui-header>Header</veui-header>
+  <veui-header class="header">
+    Header
+  </veui-header>
   <veui-layout>
     <veui-sidebar
       collapsible
@@ -11,13 +13,17 @@
       </div>
     </veui-sidebar>
     <veui-layout>
-      <veui-content>
+      <veui-content class="content">
         <veui-radio-button-group
           v-model="mode"
+          class="group"
           :items="modes"
         />
       </veui-content>
-      <veui-footer style="background: #ccc;">
+      <veui-footer
+        class="footer"
+        style="background: #ccc;"
+      >
         Footer（背景仅为演示）
       </veui-footer>
     </veui-layout>
@@ -51,15 +57,15 @@ export default {
 
 <style lang="less" scoped>
 .center,
-.veui-layout-header,
-.veui-layout-footer,
-.veui-layout-content {
+.header,
+.footer,
+.content {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.veui-radio-button-group {
+.group {
   margin-bottom: 12px;
 }
 

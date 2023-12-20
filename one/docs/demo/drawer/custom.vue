@@ -1,6 +1,9 @@
 <template>
 <article>
-  <veui-button @click="simpleOpen = true">
+  <veui-button
+    class="button"
+    @click="simpleOpen = true"
+  >
     Title & content
   </veui-button>
   <veui-drawer
@@ -12,7 +15,10 @@
     Customized content via <code>&lt;slot&gt;</code>.
   </veui-drawer>
 
-  <veui-button @click="titleIconOpen = true">
+  <veui-button
+    class="button"
+    @click="titleIconOpen = true"
+  >
     Icon in Title
   </veui-button>
   <veui-drawer
@@ -26,7 +32,10 @@
     Customized content via <code>&lt;slot&gt;</code>.
   </veui-drawer>
 
-  <veui-button @click="footOpen = true">
+  <veui-button
+    class="button"
+    @click="footOpen = true"
+  >
     Foot
   </veui-button>
   <veui-drawer
@@ -67,7 +76,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-button {
+.button {
   margin-right: 20px;
 }
 </style>

@@ -1,30 +1,53 @@
 <template>
 <article>
-  <veui-calendar class="default" v-model="date">
+  <veui-calendar
+    v-model="date"
+    class="default"
+  >
     <template #before>
-      <div class="before">
-        <veui-button ui="s basic" @click="pickDay(-1)">Yesterday</veui-button>
-        <veui-button ui="s basic" @click="pickDay(0)">Today</veui-button>
-        <veui-button ui="s basic" @click="pickDay(1)">Tomorrow</veui-button>
-      </div>
+      <veui-stack
+        class="before"
+        gap="xxs"
+        justify="center"
+      >
+        <veui-button
+          ui="s ghost"
+          @click="pickDay(-1)"
+        >
+          Yesterday
+        </veui-button>
+        <veui-button
+          ui="s ghost"
+          @click="pickDay(0)"
+        >
+          Today
+        </veui-button>
+        <veui-button
+          ui="s ghost"
+          @click="pickDay(1)"
+        >
+          Tomorrow
+        </veui-button>
+      </veui-stack>
     </template>
     <template #date="d">
-      <sup v-if="d.date === 1" class="month-tip">{{ formatMonth(d) }}</sup>
-      {{ d.date }}
+      <u v-if="d.date === 1">{{ d.date }}</u>
+      <template v-else>
+        {{ d.date }}
+      </template>
     </template>
   </veui-calendar>
 </article>
 </template>
 
 <script>
-import { Calendar, Button } from 'veui'
-
-const formatter = new Intl.DateTimeFormat('zh-CN', { month: 'long' })
+import { Calendar, Button, Stack } from 'veui'
 
 export default {
   components: {
     'veui-calendar': Calendar,
-    'veui-button': Button
+    'veui-button': Button,
+    'veui-stack': Stack
   },
   data () {
     return {
@@ -36,35 +59,14 @@ export default {
       let date = new Date()
       date.setDate(date.getDate() + d)
       this.date = date
-    },
-    formatMonth ({ year, month, date }) {
-      return formatter.format(new Date(year, month, date))
     }
   }
 }
 </script>
 
-<style lang="less" scoped>
-.default {
-  /deep/ .veui-calendar-day,
-  /deep/ .veui-calendar-aux {
-    button {
-      position: relative;
-    }
-  }
-}
-.month-tip {
-  position: absolute;
-  top: -1px;
-  left: -2px;
-  right: -2px;
-  text-align: center;
-  color: #848b99;
-}
+<style scoped>
 .before {
-  padding: 4px;
-  border-bottom: 1px solid #d8d8d8;
-  display: flex;
-  justify-content: space-around;
+  padding: 8px;
+  border-bottom: 1px solid #e2e6f0;
 }
 </style>

@@ -172,8 +172,9 @@ export default {
     margin-right 8px
     opacity 0.3
 
-  & >>> .veui-menu-item-label
-    flex-grow 1
+    & >>> .veui-menu-item-label
+    & >>> .veui-ai-menu-item-label
+      flex-grow 1
 
   .sort
     margin-left 8px

@@ -24,16 +24,32 @@ VEUI 组件通过 `ui` 属性为组件提供预设样式。不同主题包可以
 
 #### 内置子主题
 
-`veui-theme-dls` 主题包内置了一些子主题，可以通过 `ui` 属性来切换。比如：
+`veui-theme-dls` 主题包内置了一些子主题，可以通过 `theme` 属性来切换。比如：
 
 ```html
-<veui-input ui="theme:d22"/>
+<veui-search-box theme="d22"/>
 ```
 
-[[ demo src="/demo/style/d22.vue" ]]
+[[ demo src="/demo/style/theme.vue" ]]
+
+##### 可用的子主题
+
+| 名称 | 描述 |
+| -- | -- |
+| `d20` | D20 主题，为默认主题。 |
+| `d22` | D22 主题，与 D20 共享样式 token，但输入类的组件采用了无边框设计。 |
+| `ai` | [^theme-ai] |
+
+^^^theme-ai
+AI 主题，在 D22 的基础上升级了样式 token，当需要与 D22 共存时，需要同时载入两套样式。配置方式见 [起步 › Vue CLI 配置](/getting-started#vue-cli-配置)。
+
+:::warning
+当组件切换到 `ai` 主题后，输出的 class 前缀将会变为 `veui-ai` 以便与 D22 主题共存时避免冲突。
+:::
+^^^
 
 :::tip
-除了直接通过 `ui="theme:d22"` 进行指定，也可以为 [ConfigProvider](../components/config-provider) 组件设置 `{ theme: 'd22' }` 来指定子主题。指定子主题的组件内部其他组件会自动继承该子主题。
+除了直接通过 `theme="d22"` 进行指定，也可以为 [ConfigProvider](../components/config-provider) 组件设置 `{ theme: 'd22' }` 来指定子主题。指定子主题的组件内部其他组件会自动继承该子主题。
 :::
 
 ### 自定预设样式

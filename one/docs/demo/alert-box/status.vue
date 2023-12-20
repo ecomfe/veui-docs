@@ -1,12 +1,21 @@
 <template>
 <article>
-  <veui-button @click="successOpen = true">
+  <veui-button
+    class="button"
+    @click="successOpen = true"
+  >
     Success
   </veui-button>
-  <veui-button @click="errorOpen = true">
+  <veui-button
+    class="button"
+    @click="errorOpen = true"
+  >
     Error
   </veui-button>
-  <veui-button @click="infoOpen = true">
+  <veui-button
+    class="button"
+    @click="infoOpen = true"
+  >
     Info
   </veui-button>
 
@@ -61,7 +70,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-button {
+.button {
   margin-right: 10px;
 }
 </style>

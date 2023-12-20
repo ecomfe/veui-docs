@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-breadcrumb:first-child {
-  margin-bottom: 20px;
+.console {
+  margin-top: 20px;
 }
 </style>

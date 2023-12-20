@@ -11,15 +11,22 @@
   <section>
     <veui-checkbox
       v-model="mode"
+      class="checkbox"
       true-value="multiple"
       false-value="single"
     >
       Multiple selection
     </veui-checkbox>
-    <veui-checkbox v-model="showOps">
+    <veui-checkbox
+      v-model="showOps"
+      class="checkbox"
+    >
       Display “Operations”
     </veui-checkbox>
-    <veui-checkbox v-model="selectSpanRow">
+    <veui-checkbox
+      v-model="selectSpanRow"
+      class="checkbox"
+    >
       Select by “Group” <small>(instead of “ID”)</small>
     </veui-checkbox>
   </section>
@@ -223,7 +230,7 @@ section {
   margin-bottom: 20px;
 }
 
-.veui-checkbox {
+.checkbox {
   margin-right: 20px;
 }
 </style>

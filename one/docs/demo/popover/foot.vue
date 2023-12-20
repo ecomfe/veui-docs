@@ -1,10 +1,16 @@
 <template>
 <article>
   <section>
-    <veui-button ref="btn1">
+    <veui-button
+      ref="btn1"
+      class="button"
+    >
       按钮1
     </veui-button>
-    <veui-button ref="btn2">
+    <veui-button
+      ref="btn2"
+      class="button"
+    >
       按钮2
     </veui-button>
     <veui-popover
@@ -42,7 +48,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-button + .veui-button {
+.button + .button {
   margin-left: 200px;
 }
 </style>

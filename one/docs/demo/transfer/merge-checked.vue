@@ -3,6 +3,7 @@
   <section>
     <veui-radio-group
       v-model="mergeChecked"
+      class="group"
       :items="items"
     />
     <veui-transfer
@@ -194,7 +195,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-radio-group {
+.group {
   margin-bottom: 20px;
 }
 </style>

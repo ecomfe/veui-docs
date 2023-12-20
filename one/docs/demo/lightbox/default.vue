@@ -1,21 +1,22 @@
 <template>
 <article>
-  <div>
+  <section>
     <veui-check-box
       v-model="wrap"
+      class="checkbox"
     >
       循环播放
     </veui-check-box>
     <veui-check-box
       v-model="indicator"
+      class="checkbox"
       true-value="number"
       false-value="none"
     >
       头部页码
     </veui-check-box>
-  </div>
+  </section>
   <veui-button
-    class="mt-3p"
     ui="primary"
     @click="open = true"
   >
@@ -80,11 +81,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-checkbox {
+.checkbox {
   margin-right: 15px;
 }
 
-.mt-3p {
-  margin-top: 12px;
+section {
+  margin-bottom: 12px;
 }
 </style>

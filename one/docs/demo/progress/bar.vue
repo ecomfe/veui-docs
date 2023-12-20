@@ -4,6 +4,7 @@
     Progress
     <veui-slider
       v-model="value"
+      class="slider"
       :min="0"
       :step="0.1"
       :max="100"
@@ -73,7 +74,7 @@ article {
   gap: 20px;
 }
 
-.veui-slider {
+.slider {
   width: 200px;
 }
 </style>

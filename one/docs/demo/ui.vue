@@ -1,9 +1,15 @@
 <template>
 <article>
-  <veui-button ui="primary">
+  <veui-button
+    class="button"
+    ui="primary"
+  >
     Primary
   </veui-button>
-  <veui-button ui="secondary">
+  <veui-button
+    class="button"
+    ui="secondary"
+  >
     Custom
   </veui-button>
 </article>
@@ -20,12 +26,12 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-button {
+.button {
   width: 120px;
   margin-right: 1em;
 }
 
-.veui-button[ui~="secondary"] {
+.button[ui~="secondary"] {
   background-color: #e5e5ff;
 
   &:hover {

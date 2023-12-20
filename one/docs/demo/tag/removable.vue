@@ -1,27 +1,34 @@
 <template>
 <article>
-  <veui-tag removable>
+  <veui-tag
+    class="tag"
+    removable
+  >
     Steve
   </veui-tag>
   <veui-tag
+    class="tag"
     removable
     status="info"
   >
     Tony
   </veui-tag>
   <veui-tag
+    class="tag"
     removable
     status="success"
   >
     Peter
   </veui-tag>
   <veui-tag
+    class="tag"
     removable
     status="warning"
   >
     Natasha
   </veui-tag>
   <veui-tag
+    class="tag"
     removable
     status="error"
   >
@@ -41,7 +48,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-tag {
+.tag {
   margin-right: 10px;
 }
 

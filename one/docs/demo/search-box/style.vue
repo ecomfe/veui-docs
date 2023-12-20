@@ -1,7 +1,10 @@
 <template>
 <article>
-  <veui-search-box/>
-  <veui-search-box ui="strong"/>
+  <veui-search-box class="search-box"/>
+  <veui-search-box
+    class="search-box"
+    ui="strong"
+  />
 </article>
 </template>
 
@@ -16,7 +19,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-search-box {
+.search-box {
   margin-right: 1em;
 }
 </style>

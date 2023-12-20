@@ -33,6 +33,7 @@
       Max:
       <veui-number-input
         v-model="max2"
+        class="input"
         ui="s"
       />
     </label>
@@ -40,6 +41,7 @@
       columnWidth:
       <veui-input
         v-model="columnWidth2"
+        class="input"
         ui="s"
       />
     </label>
@@ -207,7 +209,7 @@ export default {
     margin-right: 8px;
     font-size: 12px;
   }
-  .veui-input {
+  .input {
     width: 80px;
   }
 }

@@ -3,6 +3,7 @@
   <section>
     <veui-radio
       v-model="size"
+      class="radio"
       value="m"
       :ui="size"
       name="size"
@@ -11,6 +12,7 @@
     </veui-radio>
     <veui-radio
       v-model="size"
+      class="radio"
       value="s"
       :ui="size"
       name="size"
@@ -37,7 +39,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-radio {
+.radio {
   margin-right: 20px;
 }
 

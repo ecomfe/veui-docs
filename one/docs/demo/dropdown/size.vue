@@ -1,23 +1,27 @@
 <template>
 <article>
   <veui-dropdown
+    class="dropdown"
     label="Action"
     ui="xs"
     :options="operations"
     @click="alert"
   />
   <veui-dropdown
+    class="dropdown"
     label="Action"
     ui="s"
     :options="operations"
     @click="alert"
   />
   <veui-dropdown
+    class="dropdown"
     label="Action"
     :options="operations"
     @click="alert"
   />
   <veui-dropdown
+    class="dropdown"
     label="Action"
     ui="l"
     :options="operations"
@@ -64,7 +68,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-dropdown {
+.dropdown {
   max-width: 120px;
   margin-right: 10px;
 }

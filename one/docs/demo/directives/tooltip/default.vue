@@ -2,18 +2,21 @@
 <article>
   <veui-button
     v-tooltip="'Preview'"
+    class="button"
     ui="icon"
   >
     <veui-icon name="zoom-in"/>
   </veui-button>
   <veui-button
     v-tooltip="'Upload'"
+    class="button"
     ui="icon"
   >
     <veui-icon name="upload"/>
   </veui-button>
   <veui-button
     v-tooltip="'Remove'"
+    class="button"
     ui="icon"
   >
     <veui-icon name="trash"/>
@@ -39,7 +42,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-button + .veui-button {
+.button + .button {
   margin-left: 8px;
 }
 </style>

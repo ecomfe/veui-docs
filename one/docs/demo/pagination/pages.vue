@@ -1,6 +1,7 @@
 <template>
 <article>
   <veui-pagination
+    class="pagination"
     :page="page"
     :page-size="pageSize"
     :page-sizes="pageSizes"
@@ -49,7 +50,7 @@ article {
   text-align: right;
 }
 
-.veui-pagination {
+.pagination {
   margin: 1.2em 0;
 }
 </style>

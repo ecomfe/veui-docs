@@ -1,9 +1,15 @@
 <template>
 <article>
-  <veui-button @click="open1 = true">
+  <veui-button
+    class="button"
+    @click="open1 = true"
+  >
     title prop
   </veui-button>
-  <veui-button @click="open2 = true">
+  <veui-button
+    class="button"
+    @click="open2 = true"
+  >
     title slot
   </veui-button>
 
@@ -55,11 +61,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-button {
+.button {
   margin-right: 10px;
-}
-
-.icon {
-  vertical-align: -2px;
 }
 </style>

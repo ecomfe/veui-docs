@@ -2,20 +2,24 @@
 <article>
   <veui-select
     v-model="license"
+    class="select"
     ui="l"
     :options="options"
   />
   <veui-select
     v-model="license"
+    class="select"
     :options="options"
   />
   <veui-select
     v-model="license"
+    class="select"
     ui="s"
     :options="options"
   />
   <veui-select
     v-model="license"
+    class="select"
     ui="xs"
     :options="options"
   />
@@ -52,7 +56,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-select {
+.select {
   max-width: 120px;
   margin-right: 10px;
 }

@@ -1,25 +1,34 @@
 <template>
 <article>
   <section>
-    <veui-button-group ui="primary">
+    <veui-button-group
+      class="group"
+      ui="primary"
+    >
       <veui-button>Undo</veui-button>
       <veui-button>Redo</veui-button>
     </veui-button-group>
   </section>
   <section>
-    <veui-button-group>
+    <veui-button-group class="group">
       <veui-button>Undo</veui-button>
       <veui-button>Redo</veui-button>
     </veui-button-group>
   </section>
   <section>
-    <veui-button-group ui="strong">
+    <veui-button-group
+      class="group"
+      ui="strong"
+    >
       <veui-button>Undo</veui-button>
       <veui-button>Redo</veui-button>
     </veui-button-group>
   </section>
   <section>
-    <veui-button-group ui="basic">
+    <veui-button-group
+      class="group"
+      ui="basic"
+    >
       <veui-button>Undo</veui-button>
       <veui-button>Redo</veui-button>
     </veui-button-group>
@@ -43,7 +52,7 @@ section {
   margin-bottom: 1em;
 }
 
-.veui-button-group {
+.group {
   margin-right: 1em;
 }
 </style>

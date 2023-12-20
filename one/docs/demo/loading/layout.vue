@@ -1,6 +1,9 @@
 <template>
 <article class="container">
-  <veui-loading loading>
+  <veui-loading
+    class="loading"
+    loading
+  >
     Horizontal
   </veui-loading>
   <veui-loading
@@ -27,7 +30,7 @@ export default {
   display: flex;
   align-items: flex-end;
 
-  .veui-loading {
+  .loading {
     margin-left: 1em;
   }
 }

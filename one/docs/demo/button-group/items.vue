@@ -1,6 +1,9 @@
 <template>
 <article>
-  <veui-button-group :items="group"/>
+  <veui-button-group
+    class="group"
+    :items="group"
+  />
 </article>
 </template>
 
@@ -29,7 +32,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-button-group {
+.group {
   margin-right: 1em;
 }
 </style>

@@ -7,27 +7,34 @@
   </section>
   <section>
     <veui-button
+      class="button"
       ui="primary"
       :loading="loading"
     >
       Primary
     </veui-button>
-    <veui-button :loading="loading">
+    <veui-button
+      class="button"
+      :loading="loading"
+    >
       Normal
     </veui-button>
     <veui-button
+      class="button"
       ui="basic"
       :loading="loading"
     >
       Basic
     </veui-button>
     <veui-button
+      class="button"
       ui="strong"
       :loading="loading"
     >
       Strong
     </veui-button>
     <veui-button
+      class="button"
       ui="translucent"
       :loading="loading"
     >
@@ -36,30 +43,35 @@
   </section>
   <section>
     <veui-button
+      class="button"
       ui="text"
       :loading="loading"
     >
       Text
     </veui-button>
     <veui-button
+      class="button"
       ui="icon"
       :loading="loading"
     >
       <veui-icon name="home"/>
     </veui-button>
     <veui-button
+      class="button"
       ui="icon strong"
       :loading="loading"
     >
       <veui-icon name="home"/>
     </veui-button>
     <veui-button
+      class="button"
       ui="icon aux"
       :loading="loading"
     >
       <veui-icon name="home"/>
     </veui-button>
     <veui-button
+      class="button"
       ui="primary square"
       :loading="loading"
     >
@@ -92,7 +104,7 @@ section {
   margin-bottom: 1em;
 }
 
-.veui-button {
+.button {
   margin-right: 1em;
 }
 </style>

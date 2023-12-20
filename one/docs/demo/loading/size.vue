@@ -2,18 +2,21 @@
 <article>
   <div class="container">
     <veui-loading
+      class="loading"
       loading
       ui="s"
     >
       s
     </veui-loading>
     <veui-loading
+      class="loading"
       loading
       ui="m"
     >
       m
     </veui-loading>
     <veui-loading
+      class="loading"
       loading
       ui="l"
     >
@@ -22,18 +25,21 @@
   </div>
   <div class="container">
     <veui-loading
+      class="loading"
       loading
       ui="strong s"
     >
       s
     </veui-loading>
     <veui-loading
+      class="loading"
       loading
       ui="strong m"
     >
       m
     </veui-loading>
     <veui-loading
+      class="loading"
       loading
       ui="strong l"
     >
@@ -42,22 +48,22 @@
   </div>
   <div class="container">
     <veui-loading
+      class="loading reverse"
       loading
-      class="reverse"
       ui="reverse s"
     >
       s
     </veui-loading>
     <veui-loading
+      class="loading reverse"
       loading
-      class="reverse"
       ui="reverse m"
     >
       m
     </veui-loading>
     <veui-loading
+      class="loading reverse"
       loading
-      class="reverse"
       ui="reverse l"
     >
       l
@@ -82,7 +88,7 @@ export default {
   padding: 8px;
 }
 
-.veui-loading {
+.loading {
   margin-left: 1em;
 }
 

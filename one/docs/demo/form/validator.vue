@@ -1,5 +1,5 @@
 <template>
-<article class="veui-form-demo">
+<article class="form-demo">
   <veui-form
     ref="form"
     :data="data"
@@ -17,11 +17,23 @@
         :rules="numRequiredRule"
         class="start-field"
       >
-        <veui-input v-model="data.start"/>
+        <veui-input
+          v-model="data.start"
+          class="input"
+        />
       </veui-field>
-      <veui-span style="margin: 0 4px">-</veui-span>
-      <veui-field field="end" name="end" :rules="numRequiredRule">
-        <veui-input v-model="data.end"/>
+      <veui-span style="margin: 0 4px">
+        -
+      </veui-span>
+      <veui-field
+        field="end"
+        name="end"
+        :rules="numRequiredRule"
+      >
+        <veui-input
+          v-model="data.end"
+          class="input"
+        />
       </veui-field>
       <veui-span>万</veui-span>
     </veui-fieldset>
@@ -31,7 +43,9 @@
         ui="primary"
         :loading="validating"
         type="submit"
-      >提交</veui-button>
+      >
+        提交
+      </veui-button>
     </template>
   </veui-form>
 </article>
@@ -108,9 +122,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-form-demo {
+.form-demo {
   .salary {
-  .veui-input {
+    .input {
       width: 80px;
     }
   }

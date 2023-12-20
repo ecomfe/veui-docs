@@ -11,12 +11,14 @@
     </div>
     <veui-uploader
       v-model="files"
+      class="uploader"
       :help-position="helpPosition"
       help="Help text"
       action="/api/upload"
     />
     <veui-uploader
       v-model="files"
+      class="uploader"
       :help-position="helpPosition"
       action="/api/upload"
     >
@@ -60,7 +62,7 @@ article {
   display: flex;
 }
 
-.veui-uploader {
+.uploader {
   margin-top: 16px;
 }
 

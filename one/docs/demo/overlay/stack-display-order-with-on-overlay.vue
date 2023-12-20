@@ -2,6 +2,7 @@
 <article>
   <veui-button
     ref="a"
+    class="button"
     @click="aOpen = !aOpen"
   >
     Toggle A
@@ -17,6 +18,7 @@
 
   <veui-button
     ref="b"
+    class="button"
     @click="bOpen = !bOpen"
   >
     Toggle B
@@ -30,6 +32,7 @@
     B
     <veui-button
       ref="b-a"
+      class="button"
       ui="s"
       @click="bAOpen = !bAOpen"
     >
@@ -47,6 +50,7 @@
 
   <veui-button
     ref="c"
+    class="button"
     @click="cOpen = !cOpen"
   >
     Toggle C
@@ -60,6 +64,7 @@
     C
   </veui-overlay>
   <veui-button
+    class="button"
     ui="xs"
     @click="aOpen = bOpen = cOpen = bAOpen = false"
   >
@@ -88,10 +93,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-overlay {
-  display: none;
-}
-
 .relative-overlay {
   width: 200px;
   height: 100px;
@@ -100,7 +101,7 @@ export default {
   border: 1px solid #dbdbdb;
   background-color: #fff;
 
-  .veui-button {
+  .button {
     margin-left: 10px;
   }
 }

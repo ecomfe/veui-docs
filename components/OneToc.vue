@@ -8,7 +8,7 @@
   <veui-anchor
     ui="s"
     target-offset="120px"
-    :items="flattenItems"
+    :items="items"
   />
   <div
     class="toggle"
@@ -26,6 +26,8 @@
 import { Anchor, Icon } from 'veui'
 import outside from 'veui/directives/outside'
 import 'veui-theme-dls-icons/list-unordered'
+
+const flattenRe = /(?:^|\/)(?:components|directives)\//
 
 export default {
   name: 'one-toc',
@@ -52,6 +54,13 @@ export default {
       return this.items.flatMap(
         ({ children }) => (children || []).map(({ children, ...child }) => child) || []
       )
+    },
+    toc () {
+      if (flattenRe.test(this.$route.path)) {
+        return this.flattenItems
+      }
+
+      return this.items
     }
   },
   methods: {

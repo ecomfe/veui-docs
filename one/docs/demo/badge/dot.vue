@@ -2,19 +2,26 @@
 <article>
   <section>
     <veui-badge
+      class="badge"
       value="Running"
       status="success"
     />
     <veui-badge
+      class="badge"
       value="New"
       status="info"
     />
-    <veui-badge value="Rejected"/>
     <veui-badge
+      class="badge"
+      value="Rejected"
+    />
+    <veui-badge
+      class="badge"
       value="Auditing"
       status="warning"
     />
     <veui-badge
+      class="badge"
       value="Expired"
       status="aux"
     />
@@ -37,7 +44,7 @@ section {
   margin-bottom: 1em;
 }
 
-.veui-badge {
+.badge {
   & + & {
     margin-left: 30px;
   }

@@ -3,6 +3,7 @@
   <section>
     <veui-select
       v-model="ui"
+      class="select"
       :options="options"
     />
     <veui-button @click="reset">
@@ -57,7 +58,7 @@ export default {
 section + section {
   margin-top: 20px;
 }
-.veui-select {
+.select {
   max-width: 120px;
   margin-right: 10px;
 }

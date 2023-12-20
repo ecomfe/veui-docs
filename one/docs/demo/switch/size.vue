@@ -3,6 +3,7 @@
   <section>
     <veui-switch
       v-model="disabled"
+      class="switch"
       ui="xs"
     >
       Disabled
@@ -11,12 +12,14 @@
   <section>
     <veui-switch
       v-model="on"
+      class="switch"
       :disabled="disabled"
     >
       Medium size
     </veui-switch>
     <veui-switch
       v-model="on"
+      class="switch"
       :disabled="disabled"
       ui="s"
     >
@@ -24,6 +27,7 @@
     </veui-switch>
     <veui-switch
       v-model="on"
+      class="switch"
       :disabled="disabled"
       ui="xs"
     >
@@ -58,7 +62,7 @@ h4 {
   margin-top: 0;
 }
 
-.veui-switch {
+.switch {
   margin-right: 30px;
 }
 </style>

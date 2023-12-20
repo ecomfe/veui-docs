@@ -1,9 +1,15 @@
 <template>
 <article>
-  <veui-button @click="modalOpen = true">
+  <veui-button
+    class="button"
+    @click="modalOpen = true"
+  >
     Modal
   </veui-button>
-  <veui-button @click="nonModalOpen = true">
+  <veui-button
+    class="button"
+    @click="nonModalOpen = true"
+  >
     Non-modal
   </veui-button>
   <veui-dialog
@@ -58,7 +64,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-button {
+.button {
   margin-right: 20px;
 }
 </style>

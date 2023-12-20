@@ -2,6 +2,7 @@
 <article>
   <veui-select
     v-model="item"
+    class="select"
     placeholder="Pick one..."
     clearable
   >
@@ -88,7 +89,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-select {
+.select {
   width: 180px;
 }
 </style>

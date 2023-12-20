@@ -28,7 +28,10 @@
     <one-locale-link toggle/>
     <one-search/>
     <a href="https://github.com/ecomfe/veui">
-      <veui-icon name="one-header-github"/>
+      <veui-icon
+        class="icon"
+        name="one-header-github"
+      />
     </a>
   </section>
 </header>
@@ -91,7 +94,7 @@ export default {
   flex-grow 1
   justify-content flex-end
 
-.veui-icon
+.icon
   font-size 24px
 
 @media (max-width 540px)

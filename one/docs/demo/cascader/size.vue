@@ -2,20 +2,24 @@
 <div class="cascader-wrap">
   <veui-cascader
     v-model="value"
+    class="cascader"
     ui="l"
     :options="options"
   />
   <veui-cascader
     v-model="value"
+    class="cascader"
     :options="options"
   />
   <veui-cascader
     v-model="value"
+    class="cascader"
     ui="s"
     :options="options"
   />
   <veui-cascader
     v-model="value"
+    class="cascader"
     ui="xs"
     :options="options"
   />
@@ -148,7 +152,7 @@ export default {
   align-items: flex-start;
 }
 
-.veui-cascader + .veui-cascader {
+.cascader + .cascader {
   margin-top: 12px;
 }
 </style>

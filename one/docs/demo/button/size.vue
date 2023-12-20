@@ -1,18 +1,33 @@
 <template>
 <article>
-  <veui-button ui="xl">
+  <veui-button
+    class="button"
+    ui="xl"
+  >
     xl
   </veui-button>
-  <veui-button ui="l">
+  <veui-button
+    class="button"
+    ui="l"
+  >
     l
   </veui-button>
-  <veui-button ui="m">
+  <veui-button
+    class="button"
+    ui="m"
+  >
     m
   </veui-button>
-  <veui-button ui="s">
+  <veui-button
+    class="button"
+    ui="s"
+  >
     s
   </veui-button>
-  <veui-button ui="xs">
+  <veui-button
+    class="button"
+    ui="xs"
+  >
     xs
   </veui-button>
 </article>
@@ -29,7 +44,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-button {
+.button {
   margin-right: 1em;
 }
 </style>

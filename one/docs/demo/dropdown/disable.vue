@@ -1,29 +1,34 @@
 <template>
 <article>
   <veui-dropdown
+    class="dropdown"
     label="Operation"
     disabled
     ui="text"
     :options="options"
   />
   <veui-dropdown
+    class="dropdown"
     label="Operation"
     disabled
     :options="options"
   />
   <veui-dropdown
+    class="dropdown"
     label="Operation"
     disabled
     ui="primary"
     :options="options"
   />
   <veui-dropdown
+    class="dropdown"
     label="Operation"
     disabled
     split
     :options="options"
   />
   <veui-dropdown
+    class="dropdown"
     label="Operation"
     disabled
     split
@@ -99,7 +104,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-dropdown {
+.dropdown {
   margin-left: 1em;
 }
 </style>

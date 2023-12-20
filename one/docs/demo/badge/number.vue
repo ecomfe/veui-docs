@@ -1,6 +1,7 @@
 <template>
 <article>
   <veui-badge
+    class="badge"
     :value="count"
     :max="100"
   >
@@ -47,7 +48,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-badge {
+.badge {
   margin-right: 2em;
 }
 </style>

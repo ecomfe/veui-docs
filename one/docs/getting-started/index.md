@@ -63,6 +63,10 @@ module.exports = {
 }
 ```
 
+:::tip
+如果想在运行时同时支持 `veui-theme-dls` 中的 AI 主题和其它主题，请设置环境变量 `VEUI_STYLE=dual`，此时会同时引入 D22（样式包括 D20） 和 AI 两套预编译好的样式。
+:::
+
 想了解配置 `veui-loader` 的更多细节，请移步[这里](/getting-started/veui-loader)。
 
 +++为什么要配置这些选项？

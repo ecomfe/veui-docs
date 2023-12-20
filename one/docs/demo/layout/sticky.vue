@@ -1,6 +1,9 @@
 <template>
 <veui-layout style="--dls-layout-header-height: 64px;">
-  <veui-header sticky>
+  <veui-header
+    class="header"
+    sticky
+  >
     Header
   </veui-header>
   <veui-layout>
@@ -10,7 +13,7 @@
       </div>
     </veui-sidebar>
     <veui-layout>
-      <veui-content>
+      <veui-content class="content">
         <div
           class="center"
           style="height: 800px;"
@@ -19,6 +22,7 @@
         </div>
       </veui-content>
       <veui-footer
+        class="footer"
         sticky
         style="background: #ccc;"
       >
@@ -54,9 +58,9 @@ export default {
 
 <style lang="less" scoped>
 .center,
-.veui-layout-header,
-.veui-layout-footer,
-.veui-layout-content {
+.header,
+.footer,
+.content {
   display: flex;
   align-items: center;
   justify-content: center;

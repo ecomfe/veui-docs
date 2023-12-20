@@ -1,11 +1,17 @@
 <template>
 <article>
-  <veui-breadcrumb :routes="routes">
+  <veui-breadcrumb
+    class="breadcrumb"
+    :routes="routes"
+  >
     <template #separator>
       -
     </template>
   </veui-breadcrumb>
-  <veui-breadcrumb :routes="routes">
+  <veui-breadcrumb
+    class="breadcrumb"
+    :routes="routes"
+  >
     <template #separator>
       <veui-icon name="arrow-right"/>
     </template>
@@ -43,7 +49,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-breadcrumb:first-child {
-  margin-bottom: 20px;
+.breadcrumb {
+  & + & {
+    margin-top: 20px;
+  }
 }
 </style>

@@ -1,15 +1,25 @@
 <template>
 <article>
-  <veui-alert status="success">
+  <veui-alert
+    class="alert"
+    status="success"
+  >
     Your profile has been updated.
   </veui-alert>
-  <veui-alert status="info">
+  <veui-alert
+    class="alert"
+    status="info"
+  >
     Press any key to continue...
   </veui-alert>
-  <veui-alert status="warning">
+  <veui-alert
+    class="alert"
+    status="warning"
+  >
     <code>slot-scope</code> is deprecated. Use <code>v-slot</code> instead.
   </veui-alert>
   <veui-alert
+    class="alert"
     status="error"
     message="Uncaught SyntaxError: Unexpected token +"
   />
@@ -27,7 +37,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-alert {
+.alert {
   margin-bottom: 20px;
 }
 </style>

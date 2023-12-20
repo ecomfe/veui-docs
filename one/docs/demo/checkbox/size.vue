@@ -3,6 +3,7 @@
   <section>
     <veui-checkbox
       v-model="checked"
+      class="checkbox"
       :ui="size"
       :indeterminate.sync="indeterminate"
     >
@@ -12,12 +13,14 @@
   <section>
     <veui-checkbox
       v-model="small"
+      class="checkbox"
       ui="s"
     >
       Small
     </veui-checkbox>
     <veui-checkbox
       v-model="indeterminate"
+      class="checkbox"
       ui="s"
     >
       Indeterminate
@@ -49,7 +52,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-checkbox {
+.checkbox {
   & + & {
     margin-left: 20px;
   }

@@ -1,7 +1,7 @@
 <template>
 <article>
   <veui-grid-container>
-    <veui-grid-row>
+    <veui-grid-row class="row">
       <veui-grid-column :span="8">
         <div class="content">
           8/24
@@ -13,7 +13,7 @@
         </div>
       </veui-grid-column>
     </veui-grid-row>
-    <veui-grid-row>
+    <veui-grid-row class="row">
       <veui-grid-column :span="6">
         <div class="content">
           6/24
@@ -35,7 +35,7 @@
         </div>
       </veui-grid-column>
     </veui-grid-row>
-    <veui-grid-row>
+    <veui-grid-row class="row">
       <veui-grid-column :span="12">
         <div class="content">
           12/24
@@ -68,7 +68,7 @@ article {
   padding: 10px 12px;
 }
 
-.veui-grid-row {
+.row {
   & + & {
     margin: 2px 0; /* Just for showcase */
   }

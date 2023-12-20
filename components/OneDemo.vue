@@ -10,7 +10,7 @@
       width="auto"
       height="400px"
     >
-      <one-iframe global-style="body { margin: 0 !important; } .veui-layout { min-width: auto !important; }">
+      <one-iframe global-style="body { margin: 0 !important; } .veui-layout, .veui-ai-layout { min-width: auto !important; }">
         <one-focus ref="focuser"/>
         <slot/>
       </one-iframe>
@@ -32,6 +32,7 @@
   <section class="actions">
     <veui-button
       v-tooltip="t('playInPlayground')"
+      class="button"
       ui="icon"
       @click="play('VEUI')"
     >
@@ -39,6 +40,7 @@
     </veui-button>
     <veui-button
       v-tooltip="t('playInCodeSandbox')"
+      class="button"
       ui="icon"
       @click="play('CodeSandbox')"
     >
@@ -46,6 +48,7 @@
     </veui-button>
     <veui-button
       v-tooltip="t('playInStackBlitz')"
+      class="button"
       ui="icon"
       @click="play('StackBlitz')"
     >
@@ -53,7 +56,7 @@
     </veui-button>
     <veui-button
       v-tooltip="t('resetFocus')"
-      class="reset-focus"
+      class="button reset-focus"
       ui="icon"
       @click="resetFocus"
     >
@@ -61,6 +64,7 @@
     </veui-button>
     <veui-button
       v-tooltip="t(codeExpanded ? 'hideCode' : 'showCode')"
+      class="button"
       ui="icon"
       @click="handleCodeToggle"
     >
@@ -71,7 +75,7 @@
     </veui-button>
     <veui-button
       v-tooltip="t(editing ? 'closeEditor' : 'openEditor')"
-      class="toggle-editor"
+      class="button toggle-editor"
       ui="text"
       @click="handleEditorOpen"
     >
@@ -94,6 +98,7 @@
     <div class="source-toolbar">
       <veui-button
         v-tooltip="t('@onelive.copyCode')"
+        class="button"
         ui="icon reverse"
         @click="copy"
       >
@@ -327,10 +332,10 @@ Icon.register({
   .codeExpanded &
     border-radius 0
 
-  .veui-button:not(.toggle-editor)
+  .button:not(.toggle-editor)
     font-size 18px
 
-  .veui-button + .veui-button
+  .button + .button
     margin-left 12px
 
 .edit
@@ -379,7 +384,7 @@ Icon.register({
     border 1.5px solid currentColor !important
 
   &[data-focus-visible-added]
-    border-color #0052cc !important
+    border-color #0054e6 !important
     box-shadow 0 0 0 2px rgba(0, 102, 255, 0.2) !important
 
 .source-toolbar
@@ -389,7 +394,7 @@ Icon.register({
   display flex
   align-items center
 
-.veui-button[ui~="icon"][ui~="reverse"]
+.button[ui~="icon"][ui~="reverse"]
   color #ebedf5
 
   &:hover

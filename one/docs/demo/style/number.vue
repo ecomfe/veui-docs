@@ -10,6 +10,7 @@
   </section>
   <veui-slider
     v-model="value"
+    class="slider"
     :step="1"
     :min="19000101"
     :max="21001231"
@@ -50,7 +51,7 @@ strong {
   font-variant-numeric: tabular-nums;
 }
 
-.veui-slider {
+.slider {
   width: 50%;
   margin-top: 24px;
 }

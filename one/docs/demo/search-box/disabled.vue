@@ -8,10 +8,12 @@
   </section>
   <section>
     <veui-search-box
+      class="search-box"
       :readonly="isReadonly"
       :disabled="isDisabled"
     />
     <veui-search-box
+      class="search-box"
       :readonly="isReadonly"
       :disabled="isDisabled"
       ui="strong"
@@ -63,7 +65,7 @@ section {
   margin-bottom: 1em;
 }
 
-.veui-search-box {
+.search-box {
   margin-right: 1em;
 }
 </style>

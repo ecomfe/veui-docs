@@ -1,20 +1,24 @@
 <template>
 <article>
   <veui-dropdown
+    class="dropdown"
     label="Primary"
     ui="primary"
     :options="options"
   />
   <veui-dropdown
+    class="dropdown"
     label="Default"
     :options="options"
   />
   <veui-dropdown
+    class="dropdown"
     label="Normal"
     ui="normal"
     :options="options"
   />
   <veui-dropdown
+    class="dropdown"
     label="Text"
     ui="text"
     :options="options"
@@ -51,7 +55,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-dropdown {
+.dropdown {
   & + & {
     margin-left: 1em;
   }

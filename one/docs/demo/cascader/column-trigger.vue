@@ -3,6 +3,7 @@
   <section>
     <veui-radio-group
       v-model="trigger"
+      class="group"
       :items="triggers"
     />
     <veui-cascader
@@ -138,7 +139,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-radio-group {
+.group {
   margin-bottom: 20px;
 }
 </style>

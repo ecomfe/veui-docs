@@ -41,6 +41,6 @@ export default {
 
   &:focus
     transform scale(1)
-    box-shadow 0 0 0 2px #0052cc
+    box-shadow 0 0 0 2px #0054e6
     outline none
 </style>

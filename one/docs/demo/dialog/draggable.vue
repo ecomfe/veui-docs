@@ -30,9 +30,3 @@ export default {
   }
 }
 </script>
-
-<style lang="less" scoped>
-.veui-button {
-  margin-right: 20px;
-}
-</style>

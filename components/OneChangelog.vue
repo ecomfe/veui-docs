@@ -12,6 +12,7 @@
     class="form"
   >
     <veui-field
+      class="field"
       ui="s"
       label="变更类型"
     >
@@ -27,6 +28,7 @@
     </veui-field>
     <veui-field
       v-if="!tag"
+      class="field"
       ui="s"
       label="功能筛选"
     >
@@ -40,10 +42,11 @@
       />
     </veui-field>
     <veui-fieldset
+      class="field"
       ui="s"
       label="版本对比"
     >
-      <veui-field>
+      <veui-field class="field">
         <veui-checkbox
           v-model="compare"
           class="compare-toggle"
@@ -52,7 +55,7 @@
         </veui-checkbox>
       </veui-field>
       <template v-if="compare">
-        <veui-field>
+        <veui-field class="field">
           <veui-select
             v-model="from"
             class="version-select"
@@ -63,7 +66,7 @@
           />
         </veui-field>
         →
-        <veui-field>
+        <veui-field class="field">
           <veui-select
             v-model="to"
             class="version-select"
@@ -370,21 +373,24 @@ export default {
   width 160px
   margin 0 8px
 
-.veui-field
+.field
   --dls-field-label-width inherit
 
 .form
   & >>> .veui-field
+  & >>> .veui-ai-field
     margin-bottom 12px
 
     &-main
       flex-grow 1
 
     & .veui-field
+    & .veui-ai-field
       margin-bottom 0
 
-  & >>> .veui-field .veui-field-no-label
-    margin-bottom 0
+    & .veui-field .veui-field-no-label
+    & .veui-ai-field .veui-ai-field-no-label
+      margin-bottom 0
 
 .version-item
   position relative
@@ -396,7 +402,7 @@ export default {
     bottom -2px
     left -12px
     width 3px
-    background-color #0052cc
+    background-color #0054e6
     border-radius 1px
     opacity 0
     transform-origin 50% 0
@@ -497,6 +503,7 @@ h2
 
 @media (max-width 480px)
   .types >>> .veui-checkbox-group-items
+  .types >>> .veui-ai-checkbox-group-items
     display flex
     flex-direction column
     margin 0
@@ -505,6 +512,7 @@ h2
     margin-top 5px
 
     .veui-checkbox
+    .veui-ai-checkbox
       margin 0
 
   .feature-filter

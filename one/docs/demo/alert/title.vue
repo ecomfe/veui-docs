@@ -1,12 +1,14 @@
 <template>
 <article>
   <veui-alert
+    class="alert"
     status="success"
     title="消息标题"
   >
     Your profile has been updated.
   </veui-alert>
   <veui-alert
+    class="alert"
     status="success"
   >
     Your profile has been updated.
@@ -28,7 +30,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.veui-alert {
+.alert {
   margin-bottom: 20px;
 }
 </style>

@@ -1,25 +1,43 @@
 <template>
 <article>
   <section>
-    <veui-checkbox v-model="modal">
+    <veui-checkbox
+      v-model="modal"
+      class="item"
+    >
       Modal
     </veui-checkbox>
-    <veui-checkbox v-model="outsideClosable">
+    <veui-checkbox
+      v-model="outsideClosable"
+      class="item"
+    >
       Outside Closable
     </veui-checkbox>
   </section>
 
   <section>
-    <veui-button @click="topOpen = true">
+    <veui-button
+      class="item"
+      @click="topOpen = true"
+    >
       Top
     </veui-button>
-    <veui-button @click="rightOpen = true">
+    <veui-button
+      class="item"
+      @click="rightOpen = true"
+    >
       Right
     </veui-button>
-    <veui-button @click="bottomOpen = true">
+    <veui-button
+      class="item"
+      @click="bottomOpen = true"
+    >
       Bottom
     </veui-button>
-    <veui-button @click="leftOpen = true">
+    <veui-button
+      class="item"
+      @click="leftOpen = true"
+    >
       Left
     </veui-button>
   </section>
@@ -94,8 +112,7 @@ section {
   }
 }
 
-.veui-button,
-.veui-checkbox {
+.item {
   & + & {
     margin-left: 20px;
   }
