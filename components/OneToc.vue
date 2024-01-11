@@ -1,6 +1,6 @@
 <template>
 <nav
-  v-if="flattenItems.length"
+  v-if="toc.length"
   v-outside="collapseToc"
   class="one-toc"
   :class="{ expanded }"
@@ -8,7 +8,7 @@
   <veui-anchor
     ui="s"
     target-offset="120px"
-    :items="items"
+    :items="toc"
   />
   <div
     class="toggle"
