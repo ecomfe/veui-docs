@@ -80,6 +80,11 @@ export default {
 .toggle
   display none
 
+/deep/
+  .veui-anchor-wrapper[ui~=s] .veui-tree-item
+  .veui-ai-anchor-wrapper[ui~=s] .veui-ai-tree-item
+    height 16.8px
+
 @media (max-width 480px)
   .one-toc
     position fixed
