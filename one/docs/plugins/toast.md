@@ -24,6 +24,7 @@ Vue.use(toast)
 | `status` | `string` | `'info'` | 提示类型，可选值为 `'success'` / `'warning'` / `'info'` / `'errro'`。 |
 | `type` | `string` | `'info'` |  已废弃。请使用 `status` 属性代替。 |
 | `duration` | `number` | `3000` |  设置消息经过指定的毫秒数之后消失。 |
+| `theme` | `string` | 消息弹层的[主题](/getting-started/style-variants#内置子主题)。可选值为 `'d20'` / `'d22'` / `'ai'`。 |
 ^^^
 
 `$toast` 方法上还提供如下快捷方法，将把 `options` 中的 `status` 指定为对应状态值：

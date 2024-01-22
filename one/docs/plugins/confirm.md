@@ -20,8 +20,6 @@ Vue.use($confirm)
 | `content` | `string` | 显示在确认弹框中的文本内容。 |
 | `title` | `string` | 确认弹框的标题。 |
 | `options` | `Object` | [^options] |
-| `okLabel` | `string` | “确定”按钮的文字内容。 |
-| `cancelLabel` | `string` | “取消”按钮的文字内容。 |
 
 ^^^options
 | 名称 | 类型 | 描述 |
@@ -29,4 +27,7 @@ Vue.use($confirm)
 | `overlayClass` | `string | Object | Array<string>` | 添加到确认弹框浮层根节点的类名。 |
 | `ok` | `function(): Promise<void>` | 点击“确定”按钮后调用。如果该函数返回的 `Promise` 被 resolve，则弹框会被关闭，否则不会关闭。 |
 | `cancel` | `function(): Promise<void>` | 点击“取消”按钮后调用。如果该函数返回的 `Promise` 被 resolve，则弹框会被关闭，否则不会关闭。 |
+| `okLabel` | `string` | “确定”按钮的文字内容。 |
+| `cancelLabel` | `string` | “取消”按钮的文字内容。 |
+| `theme` | `string` | 确认弹框的[主题](/getting-started/style-variants#内置子主题)。可选值为 `'d20'` / `'d22'` / `'ai'`。 |
 ^^^

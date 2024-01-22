@@ -20,8 +20,6 @@ Vue.use($prompt)
 | `content` | `string` | 显示在输入弹框中的文本内容。 |
 | `title` | `string` | 输入弹框的标题。 |
 | `options` | `Object` | [^options] |
-| `okLabel` | `string` | “确定”按钮的文字内容。 |
-| `cancelLabel` | `string` | “取消”按钮的文字内容。 |
 
 ^^^options
 | 名称 | 类型 | 描述 |
@@ -29,4 +27,7 @@ Vue.use($prompt)
 | `overlayClass` | `string | Object | Array<string>` | 添加到输入弹框浮层根节点的类名。 |
 | `ok` | `function(): Promise<void>` | 点击“确定”按钮后，在 `success` 方法返回的 `Promise` resolve 前插入异步流程。如果该函数返回的 `Promise` 被 resolve，则弹框会被关闭，否则不会关闭。 |
 | `cancel` | `function(): Promise<void>` | 点击“取消”按钮后，在 `success` 方法返回的 `Promise` resolve 前插入异步流程。如果该函数返回的 `Promise` 被 resolve，则弹框会被关闭，否则不会关闭。 |
+| `okLabel` | `string` | “确定”按钮的文字内容。 |
+| `cancelLabel` | `string` | “取消”按钮的文字内容。 |
+| `theme` | `string` | 输入弹框的[主题](/getting-started/style-variants#内置子主题)。可选值为 `'d20'` / `'d22'` / `'ai'`。 |
 ^^^

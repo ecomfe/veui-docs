@@ -20,8 +20,6 @@ This method returns a `Promise` object that will be resolved after the prompt is
 | `content` | `string` | The text content displayed in the prompt. |
 | `title` | `string` | The title of the prompt. |
 | `options` | `Object` | [^options] |
-| `okLabel` | `string` | The text content of the "OK" button. |
-| `cancelLabel` | `string` | The text content of the "Cancel" button. |
 
 ^^^options
 | Name | Type | Description |
@@ -29,4 +27,7 @@ This method returns a `Promise` object that will be resolved after the prompt is
 | `overlayClass` | `string | Object | Array<string>` | The class name added to the root node of the prompt. |
 | `ok` | `function(): Promise<void>` | Inserts an asynchronous process before the `Promise` returned by the `success` method is resolved after clicking the "OK" button. If the `Promise` returned by this function is resolved, the prompt will be closed; otherwise, it will remain open. |
 | `cancel` | `function(): Promise<void>` | Inserts an asynchronous process before the `Promise` returned by the `success` method is resolved after clicking the "Cancel" button. If the `Promise` returned by this function is resolved, the prompt will be closed; otherwise, it will remain open. |
+| `okLabel` | `string` | The text content of the "OK" button. |
+| `cancelLabel` | `string` | The text content of the "Cancel" button. |
+| `theme` | `string` | The [theme](/getting-started/style-variants#built-in-sub-themes) of the prompt box. Can be `'d20'` / `'d22'` / `'ai'`. |
 ^^^

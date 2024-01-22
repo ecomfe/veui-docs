@@ -67,7 +67,8 @@ module.exports = {
   css: [
     'veui-theme-dls/common.less',
     'veui-theme-dls/typography.less',
-    '@/assets/styles/global.styl'
+    '@/assets/styles/global.styl',
+    'veui-theme-dls/dist/dls.css'
   ],
 
   plugins: [
@@ -145,16 +146,6 @@ module.exports = {
         options: {
           locale: ['zh-Hans', 'en-US'],
           modules: [
-            {
-              package: 'veui-theme-dls',
-              path: 'dist/themes/d22/components',
-              fileName: '{module}.css'
-            },
-            {
-              package: 'veui-theme-dls',
-              path: 'dist/themes/ai/components',
-              fileName: '{module}.css'
-            },
             {
               package: 'veui-theme-dls',
               fileName: '{module}.js',

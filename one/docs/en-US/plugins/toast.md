@@ -24,6 +24,7 @@ After installing, this plugin will provide a `$toast` object on all component in
 | `status` | `string` | `'info'` | The type of message, can be `'success'` / `'warning'` / `'info'` / `'error'`. |
 | `type` | `string` | `'info'` | Deprecated. Please use the `status` property instead. |
 | `duration` | `number` | `3000` | Sets the duration in milliseconds before the message disappears. |
+| `theme` | `string` | The [theme](/getting-started/style-variants#built-in-sub-themes) of the toast. Can be `'d20'` / `'d22'` / `'ai'`. |
 ^^^
 
 The `$toast` method also provides the following shortcut methods, which will set the `status` value of `options` to the corresponding value:
