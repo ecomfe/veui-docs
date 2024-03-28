@@ -4,8 +4,6 @@
     <h3>大小写敏感搜索叶子节点</h3>
     <veui-autocomplete
       :datasource="suggestions"
-      placeholder="请输入"
-      suggest-trigger="focus"
       :match="match"
       :filter="filter"
     />
@@ -24,8 +22,7 @@ export default {
     return {
       suggestions: [
         {
-          label: 'Milk coffee',
-          value: 'milk-coffee',
+          value: 'Milk coffee',
           options: [
             {
               value: 'Moka'
@@ -36,10 +33,10 @@ export default {
           value: 'Turkish'
         },
         {
-          value: 'latte'
+          value: 'Latte'
         },
         {
-          value: 'cappuccino'
+          value: 'Cappuccino'
         }
       ]
     }

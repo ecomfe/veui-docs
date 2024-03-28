@@ -425,6 +425,12 @@ Triggered when the upload progress changes in the case where the value of `reque
 +++
 ^^^
 
+### Methods
+
+| Name | Description |
+| -- | -- |
+| ``startUpload`` | Manually start uploading when [autoupload](#props-autoupload) is `false`. |
+
 ### Configs
 
 | Key | Type | Default | Description |

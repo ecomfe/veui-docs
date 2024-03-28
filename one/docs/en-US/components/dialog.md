@@ -147,7 +147,7 @@ Footer area. By default, the "OK" and "Cancel" buttons are displayed.
 
 | Name | Type | Default | Description |
 | -- | -- | -- | -- |
-| ``--dls-dialog-content-width`` | `<length>` | - | [^css-width] |
+| ``--dls-dialog-width`` | `<length>` | - | [^css-width] |
 | ``--dls-dialog-content-width`` | `<length>` | - | [^css-content-width] |
 
 ^^^css-width

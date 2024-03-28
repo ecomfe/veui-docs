@@ -1,19 +1,17 @@
 <template>
 <article class="autocomplete-normal-demo">
   <section>
-    <h3>suggest on input</h3>
+    <h3>Suggest on input</h3>
     <veui-autocomplete
       :datasource="suggestions"
-      placeholder="请输入"
       clearable
     />
   </section>
   <section>
-    <h3>suggest on focus</h3>
+    <h3>Suggest on focus</h3>
     <veui-autocomplete
       :datasource="coffees"
-      placeholder="请输入"
-      suggest-trigger="focus"
+      suggest-on-focus="focus"
     />
   </section>
 </article>
@@ -36,10 +34,10 @@ export default {
           value: 'Turkish'
         },
         {
-          value: 'latte'
+          value: 'Latte'
         },
         {
-          value: 'cappuccino'
+          value: 'Cappuccino'
         }
       ],
       coffees: [

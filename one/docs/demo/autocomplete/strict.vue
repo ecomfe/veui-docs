@@ -11,8 +11,6 @@
   <section>
     <veui-autocomplete
       :datasource="suggestions"
-      placeholder="请输入"
-      suggest-trigger="focus"
       :maxlength="6"
       :strict="strict"
     />

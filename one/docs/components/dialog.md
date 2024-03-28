@@ -148,7 +148,7 @@ methods: {
 
 | 名称 | 类型 | 默认值 | 描述 |
 | -- | -- | -- | -- |
-| ``--dls-dialog-content-width`` | `<length>` | - | [^css-width] |
+| ``--dls-dialog-width`` | `<length>` | - | [^css-width] |
 | ``--dls-dialog-content-width`` | `<length>` | - | [^css-content-width] |
 
 

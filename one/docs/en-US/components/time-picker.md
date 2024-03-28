@@ -49,8 +49,10 @@ Presets for style variants. A combination of space-separated enumerated values.
 +++Enum values
 | Value | Description |
 | -- | -- |
+| `xs` | Extra small size style. |
 | `s` | Small size style. |
 | `m` | Medium size style. |
+| `l` | Large size style. |
 +++
 ^^^
 
