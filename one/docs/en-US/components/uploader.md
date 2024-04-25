@@ -429,7 +429,15 @@ Triggered when the upload progress changes in the case where the value of `reque
 
 | Name | Description |
 | -- | -- |
-| ``startUpload`` | Manually start uploading when [autoupload](#props-autoupload) is `false`. |
+| ``startUpload`` | [^start-upload] |
+
+^^^start-upload
+Manually start uploading when [autoupload](#props-autoupload) is `false`.
+
+```ts
+function startUpload(): void
+```
+^^^
 
 ### Configs
 

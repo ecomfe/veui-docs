@@ -65,8 +65,6 @@ module.exports = {
   },
 
   css: [
-    'veui-theme-dls/common.less',
-    'veui-theme-dls/typography.less',
     '@/assets/styles/global.styl',
     'veui-theme-dls/dist/dls.css'
   ],

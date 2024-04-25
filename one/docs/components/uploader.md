@@ -429,7 +429,15 @@ type PickedFile = {
 
 | 名称 | 描述 |
 | -- | -- |
-| ``startUpload`` | 当 [autoupload](#props-autoupload) 为 `false` 时，可手动调用此方法来触发上传。 |
+| ``startUpload`` | [^start-upload] |
+
+^^^start-upload
+当 [autoupload](#props-autoupload) 为 `false` 时，可手动调用此方法来触发上传。
+
+```ts
+function startUpload(): void
+```
+^^^
 
 ### 全局配置
 
