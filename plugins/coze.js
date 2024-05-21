@@ -18,8 +18,27 @@ const componentProps = {
   title: 'Ask AI'
 }
 
-let currentLocale
 let client
+let currentLocale
+let currentLayout = 'pc'
+
+const mql = window.matchMedia('(max-width: 480px)')
+if (mql.matches) {
+  currentLayout = 'mobile'
+}
+
+mql.addEventListener('change', async ({ matches }) => {
+  await loading
+
+  currentLayout = matches ? 'mobile' : 'pc'
+  console.log('mql changed', currentLayout)
+
+  if (client) {
+    client.destroy()
+  }
+
+  client = createClient(currentLocale, currentLayout)
+})
 
 export default ({ app }) => {
   app.router.afterEach(async to => {
@@ -30,19 +49,24 @@ export default ({ app }) => {
       return
     }
 
+    currentLocale = locale
+
     if (client) {
       client.destroy()
     }
 
-    currentLocale = locale
-
-    const options = {
-      config,
-      componentProps: {
-        ...componentProps,
-        lang: locale === 'zh-Hans' ? 'zh-CN' : 'en'
-      }
-    }
-    client = new window.CozeWebSDK.WebChatClient(options)
+    client = createClient(currentLocale, currentLayout)
   })
+}
+
+function createClient (locale, layout) {
+  const options = {
+    config,
+    componentProps: {
+      ...componentProps,
+      lang: locale === 'zh-Hans' ? 'zh-CN' : 'en',
+      layout
+    }
+  }
+  return new window.CozeWebSDK.WebChatClient(options)
 }
