@@ -41,6 +41,11 @@ module.exports = {
         content: '#0054e6'
       }
     ],
+    script: [
+      {
+        src: 'https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/0.1.0-beta.2/libs/oversea/index.js'
+      }
+    ],
     link: [
       { rel: 'shortcut icon', href: 'https://www.baidu.com/favicon.ico' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -77,6 +82,7 @@ module.exports = {
     { src: '~plugins/l10n.js' },
     { src: '~plugins/target.js', mode: 'client' },
     { src: '~plugins/prism.js', mode: 'client' },
+    { src: '~plugins/coze.js', mode: 'client' },
     { src: '~plugins/vercel.js', mode: 'client' }
   ],
 
